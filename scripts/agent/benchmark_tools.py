@@ -93,8 +93,13 @@ def benchmark(warm_repetitions: int = 7) -> dict[str, Any]:
                 "result_rows": len(full.get("data", [])),
             }
         )
+    resolved_data_dir = Path(os.environ["GIPUZKOA360_DATA_DIR"]).resolve()
+    try:
+        displayed_data_dir = resolved_data_dir.relative_to(ROOT).as_posix()
+    except ValueError:
+        displayed_data_dir = str(resolved_data_dir)
     return {
-        "data_dir": str(Path(os.environ["GIPUZKOA360_DATA_DIR"]).resolve()),
+        "data_dir": displayed_data_dir,
         "warm_repetitions": warm_repetitions,
         "tools": rows,
     }
