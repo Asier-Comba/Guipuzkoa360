@@ -68,6 +68,8 @@ La relación es `runtime_servicios.municipality_code -> municipios.municipality_
 
 Compatibilidad comprobada con `docs/EXPECTED_RESULT_SCHEMA.md` de `work/product-integration`/PR #2. No se ha copiado ni alterado esa rama. El adaptador debe conservar el JSON original del agente y etiquetar la distancia como geométrica.
 
+`scripts/data/export_work3_smoke_result.py <salida.json>` genera un resultado determinista con tres municipios para probar el contrato y el renderizador de Work 3. Usa datos reales, pero se etiqueta explícitamente como **prueba de integración que no acredita una ejecución del agente**.
+
 ## Soporte de Work 2
 
 - 65+/75+: seleccionar las columnas de conteo y porcentaje correspondientes; no recalcular 75+ restando grupos.

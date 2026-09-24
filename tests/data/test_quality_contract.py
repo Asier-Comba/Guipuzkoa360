@@ -1,6 +1,8 @@
 import hashlib
 import json
 from pathlib import Path
+import subprocess
+import sys
 
 import geopandas as gpd
 import numpy as np
@@ -189,3 +191,23 @@ def test_work3_v1_mapping_has_no_implicit_unit_or_null_conversion():
         "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
         "source_ids": ["EUSTAT_EMH_2025", "ODE_HEALTH_CENTRES_2026", "GEOEUSKADI_MUNICIPIOS_2025"],
     }
+
+
+def test_work3_smoke_export_is_real_but_explicitly_not_an_agent_run(tmp_path):
+    output = tmp_path / "work3-smoke.json"
+    process = subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "data" / "export_work3_smoke_result.py"), str(output)],
+        capture_output=True, text=True,
+    )
+    assert process.returncode == 0, process.stderr
+    result = json.loads(output.read_text(encoding="utf-8"))
+    assert result["schema_version"] == "1.0.0"
+    assert result["data_mode"] == "real"
+    assert len(result["comparison"]) == 3
+    assert result["scenario"] is None
+    assert result["trace"]["agent_version"] == "data-contract-smoke-not-agent"
+    assert "no es una respuesta producida por el agente" in result["summary"]
+    source_ids = {source["source_id"] for source in result["sources"]}
+    assert all(source["url"].startswith("https://") for source in result["sources"])
+    assert set(result["trace"]["data_refs"]) == source_ids
+    assert all(set(row["source_ids"]) <= source_ids for row in result["comparison"])
