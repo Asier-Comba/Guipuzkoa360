@@ -16,14 +16,16 @@ Véanse `FUENTES.md`, `docs/METODOLOGIA_GEOESPACIAL.md`, `docs/HANDOFF_WORK_1_DA
 
 ## Visualización e integración
 
-Los HTML versionados se generan con el fixture sintético de desarrollo y no deben presentarse como resultados territoriales. Para probarlos:
+Los HTML versionados se generan desde una salida real de `comparar_municipios`, adaptada sin cambiar sus cifras y enriquecida con geometría municipal. El banner deja claro que es una ejecución determinista del tool, no una conversación LLM. Para regenerarlos:
 
 ```bash
-node scripts/build_results.mjs
+python scripts/agent/build_work3_result.py
+node scripts/enrich_work1_result.mjs analisis/work3_agent_result.json analisis/work3_agent_result_with_geometry.json
+node scripts/build_results.mjs analisis/work3_agent_result_with_geometry.json resultados
 node --test tests/e2e/contract_flow.test.mjs
 ```
 
-`scripts/enrich_work1_result.mjs` añade contornos municipales reales a un resultado compatible sin modificar sus cifras. `scripts/data/export_work3_smoke_result.py` genera una prueba local con datos reales, marcada expresamente como cálculo local y no como ejecución del agente.
+`scripts/enrich_work1_result.mjs` añade contornos municipales reales sin modificar las cifras.
 
 Leer `docs/HANDOFF_WORK_3_INTEGRATION.md` y `docs/SUBMISSION_CHECKLIST.md`. La publicación final requiere autorización humana expresa.
 
@@ -36,3 +38,7 @@ python -m pytest -q
 ```
 
 Véanse `docs/HANDOFF_WORK_2_AGENT.md`, `docs/RESULT_SCHEMA.md` y `docs/RUNTIME_PACKAGE.md`.
+
+## Release candidate
+
+`docs/PORTAL_DEPLOYMENT.md` contiene la secuencia exacta para generar el bundle autocontenido de dos archivos Python, crear una versión en el portal y probarla sin publicar la entrega. `docs/JURY_TEST_PLAN.md` define el recorrido de demostración y `analisis/release_e2e_report.json` registra las ocho pruebas A–H.

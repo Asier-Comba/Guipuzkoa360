@@ -1,0 +1,175 @@
+{
+  "schema_version": "1.0.0",
+  "data_mode": "real",
+  "title": "Comparación territorial reproducible",
+  "question": "Compara envejecimiento y distancia geométrica a atención primaria en Donostia, Eibar y Tolosa.",
+  "summary": "Resultado construido directamente desde la salida real de comparar_municipios; las cifras conservan claves, unidades, periodos y fuentes del runtime del agente.",
+  "generated_at": "2026-09-24T00:00:00+02:00",
+  "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+  "geography": "Municipios de Gipuzkoa",
+  "parameters": {
+    "age_group": "65+",
+    "service": "primary_care",
+    "distance_threshold_km": 2
+  },
+  "metrics": [
+    {
+      "id": "population_total",
+      "label": "Población total comparada",
+      "value": 230554,
+      "unit": "personas",
+      "period": "2025-01-01",
+      "source_ids": [
+        "EUSTAT_EMH_2025"
+      ]
+    },
+    {
+      "id": "population_65_plus",
+      "label": "Población de 65 años o más comparada",
+      "value": 60651,
+      "unit": "personas",
+      "period": "2025-01-01",
+      "source_ids": [
+        "EUSTAT_EMH_2025"
+      ]
+    }
+  ],
+  "comparison": [
+    {
+      "unit_id": "20069",
+      "name": "Donostia / San Sebastián",
+      "population": 183388,
+      "age_65_count": 48832,
+      "age_75_count": 24884,
+      "service_distance_km": 0.3231,
+      "service_count": 18,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    },
+    {
+      "unit_id": "20030",
+      "name": "Eibar",
+      "population": 27118,
+      "age_65_count": 7101,
+      "age_75_count": 3727,
+      "service_distance_km": 1.2235999999999998,
+      "service_count": 4,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    },
+    {
+      "unit_id": "20071",
+      "name": "Tolosa",
+      "population": 20048,
+      "age_65_count": 4718,
+      "age_75_count": 2432,
+      "service_distance_km": 1.0805,
+      "service_count": 2,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    }
+  ],
+  "map_layers": [
+    {
+      "id": "older_share",
+      "label": "Población de 65 años o más",
+      "metric": "age_65_count / population * 100",
+      "unit": "%",
+      "period": "2025-01-01",
+      "source_ids": [
+        "EUSTAT_EMH_2025"
+      ]
+    },
+    {
+      "id": "primary_care_distance",
+      "label": "Distancia geométrica a atención primaria",
+      "metric": "service_distance_km",
+      "unit": "km",
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    }
+  ],
+  "scenario": null,
+  "sources": [
+    {
+      "source_id": "EUSTAT_EMH_2025",
+      "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+      "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px",
+      "period": "2025-01-01",
+      "unit": "personas",
+      "license": "Creative Commons (según ficha Eustat de la operación 010154)",
+      "method": "Consulta PXWeb por municipio, sexo total y periodo 2025-01-01; pivote de total/65+ y suma de nacidos hasta 1949 para 75+."
+    },
+    {
+      "source_id": "ODE_HEALTH_CENTRES_2026",
+      "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+      "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/",
+      "period": "2026-09-20",
+      "unit": "registro de centro sanitario público",
+      "license": "Licencia abierta indicada por Open Data Euskadi; atribución y fecha obligatorias",
+      "method": "Filtro Provincia=Gipuzkoa, normalización de tipo y unión espacial within en EPSG:4326."
+    },
+    {
+      "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+      "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+      "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/",
+      "period": "2025-05-07",
+      "unit": "polígono municipal",
+      "license": "Uso permitido citando Eusko Jaurlaritza / Gobierno Vasco",
+      "method": "Filtro por territorio y catálogo Eustat; área y simplificación calculadas en EPSG:25830."
+    }
+  ],
+  "method": "Selección por código municipal y comparación campo a campo; sin agregación opaca. Distancias convertidas de metros a kilómetros para la visualización.",
+  "limitations": [
+    "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+    "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+    "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
+    "La comparación no demuestra causalidad.",
+    "Los periodos de demografía, servicios y geometría no son simultáneos.",
+    "El recuento registrado no mide capacidad, citas, horario ni disponibilidad."
+  ],
+  "trace": {
+    "execution_mode": "local_tool",
+    "question_id": "RC1-WORK3-COMPARE-001",
+    "agent_version": "urban-challenge-rc1",
+    "tool_calls": [
+      {
+        "tool": "comparar_municipios",
+        "arguments": {
+          "municipios": [
+            "Donostia / San Sebastián",
+            "Eibar",
+            "Tolosa"
+          ],
+          "grupo_edad": "65",
+          "categoria_servicio": "primary_care",
+          "umbral_km": 2.0,
+          "periodo": "2025-01-01"
+        },
+        "output_ref": "RC1-COMPARE-20069-20030-20071"
+      }
+    ],
+    "data_refs": [
+      "EUSTAT_EMH_2025",
+      "ODE_HEALTH_CENTRES_2026",
+      "GEOEUSKADI_MUNICIPIOS_2025"
+    ],
+    "result_ref": "RC1-COMPARE-20069-20030-20071"
+  }
+}
