@@ -1,0 +1,22 @@
+{
+  "sources": [
+    {
+      "source_id": "SRC_TEST_DEMO",
+      "title": "Fuente demográfica sintética",
+      "institution": "TEST_ONLY",
+      "reference_period": "2025",
+      "unit": "personas y porcentaje",
+      "license": "fixture de pruebas",
+      "limitations": ["Datos inventados y no atribuibles a municipios reales."]
+    },
+    {
+      "source_id": "SRC_TEST_SERV",
+      "title": "Servicios sintéticos",
+      "institution": "TEST_ONLY",
+      "reference_period": "2025",
+      "unit": "puntos",
+      "license": "fixture de pruebas",
+      "limitations": ["Coordenadas inventadas para pruebas."]
+    }
+  ]
+}

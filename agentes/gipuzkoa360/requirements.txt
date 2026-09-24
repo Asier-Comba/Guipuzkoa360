@@ -1,0 +1,1 @@
+# Sin dependencias adicionales: Studio aporta langchain y studio.
