@@ -65,6 +65,16 @@ def main() -> None:
     representative_wgs84 = gpd.GeoSeries(representative_points, crs=25830).to_crs(4326)
     metrics["representative_point_longitude"] = representative_wgs84.x.round(7).to_numpy()
     metrics["representative_point_latitude"] = representative_wgs84.y.round(7).to_numpy()
+    pd.DataFrame({
+        "municipality_code": boundaries["municipality_code"].astype(str).str.zfill(5),
+        "municipality_name": boundaries["municipality_name"],
+        "latitude": representative_wgs84.y.round(7).to_numpy(),
+        "longitude": representative_wgs84.x.round(7).to_numpy(),
+        "easting_m": representative_points.x.round(3).to_numpy(),
+        "northing_m": representative_points.y.round(3).to_numpy(),
+        "reference_period": "2025-05-07",
+        "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+    }).to_csv(OUT / "runtime_municipality_points.csv", index=False, lineterminator="\n")
     for category_name in SERVICE_CATEGORIES:
         destinations = service_points.loc[service_points["service_category"].eq(category_name), "geometry"]
         if destinations.empty:

@@ -44,6 +44,8 @@ def main() -> None:
         missing = joined.loc[joined["municipality_code"].isna(), ["Nombre", "Municipio"]]
         raise ValueError(f"Centros de Gipuzkoa fuera de límites municipales:\n{missing}")
 
+    projected = points.to_crs(25830).loc[joined.index].geometry
+
     result = pd.DataFrame({
         "service_id": joined["Código del centro"].astype(str),
         "service_name": joined["Nombre"].astype(str),
@@ -57,11 +59,19 @@ def main() -> None:
         "reference_period": "2026-09-20",
         "source_id": "ODE_HEALTH_CENTRES_2026",
     })
+    result["_easting_m"] = projected.x.to_numpy()
+    result["_northing_m"] = projected.y.to_numpy()
     result = result.sort_values(["municipality_code", "service_category", "service_name"])
-    result.to_csv(OUT / "servicios.csv", index=False, lineterminator="\n")
-    result[["service_id", "service_name", "service_category", "municipality_code", "latitude", "longitude"]].to_csv(
-        OUT / "runtime_servicios.csv", index=False, lineterminator="\n"
+    result.drop(columns=["_easting_m", "_northing_m"]).to_csv(
+        OUT / "servicios.csv", index=False, lineterminator="\n"
     )
+    runtime = result[[
+        "service_id", "service_name", "service_category", "municipality_code", "latitude", "longitude",
+        "reference_period", "source_id",
+    ]].copy()
+    runtime["easting_m"] = result["_easting_m"].to_numpy()
+    runtime["northing_m"] = result["_northing_m"].to_numpy()
+    runtime.to_csv(OUT / "runtime_servicios.csv", index=False, lineterminator="\n")
     print(f"Servicios: {len(result)} centros; {result['service_id'].nunique()} IDs únicos.")
 
 

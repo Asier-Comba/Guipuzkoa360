@@ -61,7 +61,15 @@
     "datos_preparados/runtime_servicios.csv": {
       "row_semantics": "Vista mínima de servicios para consulta y simulación; conserva una fila por service_id.",
       "primary_key": ["service_id"],
-      "coordinate_crs": "EPSG:4326"
+      "coordinate_crs": "EPSG:4326 y EPSG:25830",
+      "required_columns": ["service_id", "service_name", "service_category", "municipality_code", "latitude", "longitude", "reference_period", "source_id", "easting_m", "northing_m"]
+    },
+    "datos_preparados/runtime_municipality_points.csv": {
+      "row_semantics": "Un punto interior representativo por municipio para cálculos sin GeoPandas en runtime.",
+      "primary_key": ["municipality_code"],
+      "expected_rows": 88,
+      "coordinate_crs": "EPSG:4326 y EPSG:25830",
+      "required_columns": ["municipality_code", "municipality_name", "latitude", "longitude", "easting_m", "northing_m", "reference_period", "source_id"]
     },
     "datos_preparados/runtime_municipios.geojson": {
       "row_semantics": "Una Feature por municipio con geometría simplificada y las mismas métricas de municipios.csv.",

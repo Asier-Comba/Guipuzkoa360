@@ -16,6 +16,8 @@ ANALYSIS = ROOT / "analisis"
 CATEGORIES = ("primary_care", "hospital", "mental_health", "other_health")
 RUNTIME_FILES = (
     "datos_preparados/municipios.csv",
+    "datos_preparados/demografia.csv",
+    "datos_preparados/runtime_municipality_points.csv",
     "datos_preparados/runtime_servicios.csv",
     "datos_preparados/runtime_municipios.geojson",
     "datos_preparados/metadata_sources.json",
@@ -48,6 +50,7 @@ def main() -> None:
     runtime_services = pd.read_csv(
         OUT / "runtime_servicios.csv", dtype={"municipality_code": str, "service_id": str}
     )
+    runtime_points = pd.read_csv(OUT / "runtime_municipality_points.csv", dtype={"municipality_code": str})
     sources = json.loads((OUT / "metadata_sources.json").read_text(encoding="utf-8"))
     contract = json.loads((OUT / "data_contract.json").read_text(encoding="utf-8"))
 
@@ -77,6 +80,7 @@ def main() -> None:
         "municipios.csv": int(municipalities.isna().sum().sum()),
         "servicios.csv": int(services.isna().sum().sum()),
         "runtime_servicios.csv": int(runtime_services.isna().sum().sum()),
+        "runtime_municipality_points.csv": int(runtime_points.isna().sum().sum()),
     }
     check("no_nulls_prepared_tables", sum(nulls.values()) == 0, nulls)
     check("population_hierarchy",
@@ -153,10 +157,28 @@ def main() -> None:
               "Euclidean metres in EPSG:25830; rounded to 0.1 m")
 
     expected_runtime_columns = [
-        "service_id", "service_name", "service_category", "municipality_code", "latitude", "longitude"
+        "service_id", "service_name", "service_category", "municipality_code", "latitude", "longitude",
+        "reference_period", "source_id",
     ]
     check("runtime_services_exact_view",
-          runtime_services.equals(services[expected_runtime_columns].reset_index(drop=True)), expected_runtime_columns)
+          runtime_services[expected_runtime_columns].equals(services[expected_runtime_columns].reset_index(drop=True)),
+          expected_runtime_columns)
+    runtime_service_points = gpd.GeoSeries(
+        gpd.points_from_xy(runtime_services.longitude, runtime_services.latitude), crs=4326
+    ).to_crs(25830)
+    check("runtime_services_projected_coordinates",
+          np.allclose(runtime_services.easting_m, runtime_service_points.x, atol=0.01)
+          and np.allclose(runtime_services.northing_m, runtime_service_points.y, atol=0.01),
+          "easting_m/northing_m in EPSG:25830")
+    check("runtime_municipality_points_coverage",
+          runtime_points.municipality_code.is_unique
+          and set(runtime_points.municipality_code) == code_sets["municipalities"],
+          {"rows": len(runtime_points), "unique": runtime_points.municipality_code.nunique()})
+    check("runtime_municipality_points_match_metrics",
+          np.allclose(runtime_points.longitude, municipalities.representative_point_longitude, atol=1e-7)
+          and np.allclose(runtime_points.latitude, municipalities.representative_point_latitude, atol=1e-7)
+          and set(runtime_points.reference_period) == {"2025-05-07"},
+          "representative points and period")
     critical_columns = ["municipality_code", "population_total", "population_65_plus", "population_75_plus",
                         "services_total", "distance_to_nearest_primary_care_m"]
     left = municipalities[critical_columns].sort_values("municipality_code").reset_index(drop=True)
@@ -233,8 +255,7 @@ def main() -> None:
         "portal_budget_bytes": 24 * 1024 * 1024,
         "within_portal_budget": sum(item["bytes"] for item in manifest_files) < 24 * 1024 * 1024,
         "exclude_from_runtime": ["datos_originales/", "analisis/", "resultados/metricas_municipales.csv",
-                                 "datos_preparados/municipios.geojson", "datos_preparados/demografia.csv",
-                                 "datos_preparados/servicios.csv"],
+                                 "datos_preparados/municipios.geojson", "datos_preparados/servicios.csv"],
     }
     (OUT / "runtime_manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n"

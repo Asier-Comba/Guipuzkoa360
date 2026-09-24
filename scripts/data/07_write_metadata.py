@@ -57,7 +57,11 @@ def main() -> None:
             "unit": "polígono municipal",
             "license": "Uso permitido citando Eusko Jaurlaritza / Gobierno Vasco",
             "original_file": "datos_originales/MUNICIPIOS_5000_ETRS89.zip",
-            "prepared_files": ["datos_preparados/municipios.geojson", "datos_preparados/runtime_municipios.geojson"],
+            "prepared_files": [
+                "datos_preparados/municipios.geojson",
+                "datos_preparados/runtime_municipios.geojson",
+                "datos_preparados/runtime_municipality_points.csv",
+            ],
             "notes": ["CRS original y de cálculo: EPSG:25830; publicación runtime: EPSG:4326."],
             "method": "Filtro por territorio y catálogo Eustat; área y simplificación calculadas en EPSG:25830.",
             "limitations": ["El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007."],
@@ -65,7 +69,8 @@ def main() -> None:
         {
             "source_id": "G360_DERIVED_MUNICIPAL_METRICS_V1",
             "title": "Métricas municipales derivadas de GIPUZKOA 360",
-            "institution": "GIPUZKOA 360",
+            "institution": "DeustoAI Labs",
+            "producer": "GIPUZKOA 360",
             "url": "https://github.com/Asier-Comba/Guipuzkoa360/blob/work/data-foundation/FUENTES.md",
             "download_date": None,
             "reference_period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
@@ -73,9 +78,18 @@ def main() -> None:
             "unit": "indicador municipal",
             "license": "Hereda las condiciones de atribución de las tres fuentes ascendentes",
             "original_file": None,
-            "prepared_files": ["datos_preparados/municipios.csv", "datos_preparados/runtime_municipios.geojson"],
+            "prepared_files": [
+                "datos_preparados/municipios.csv",
+                "datos_preparados/runtime_municipios.geojson",
+                "datos_preparados/runtime_municipality_points.csv",
+            ],
             "source_type": "derived",
             "upstream_source_ids": [
+                "EUSTAT_EMH_2025",
+                "ODE_HEALTH_CENTRES_2026",
+                "GEOEUSKADI_MUNICIPIOS_2025",
+            ],
+            "input_source_ids": [
                 "EUSTAT_EMH_2025",
                 "ODE_HEALTH_CENTRES_2026",
                 "GEOEUSKADI_MUNICIPIOS_2025",

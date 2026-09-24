@@ -8,9 +8,19 @@
       "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
     },
     {
+      "path": "datos_preparados/demografia.csv",
+      "bytes": 6161,
+      "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+    },
+    {
+      "path": "datos_preparados/runtime_municipality_points.csv",
+      "bytes": 8689,
+      "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11"
+    },
+    {
       "path": "datos_preparados/runtime_servicios.csv",
-      "bytes": 14705,
-      "sha256": "60a3ba141a4a799e31638c497fa671965ed6198dcd8db2a7e622a3362ec7f57a"
+      "bytes": 25258,
+      "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
     },
     {
       "path": "datos_preparados/runtime_municipios.geojson",
@@ -19,16 +29,16 @@
     },
     {
       "path": "datos_preparados/metadata_sources.json",
-      "bytes": 4558,
-      "sha256": "6a26fac486ff04655c5109934592dbe5dcb0d72e8a4701c0762daf33248efcf3"
+      "bytes": 4833,
+      "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
     },
     {
       "path": "datos_preparados/data_contract.json",
-      "bytes": 4623,
-      "sha256": "b21b9010812178d65cf7e01a3471547d20c2de080d6818e0ba6308da7d2ee6ae"
+      "bytes": 5274,
+      "sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae"
     }
   ],
-  "total_bytes": 549353,
+  "total_bytes": 575682,
   "portal_budget_bytes": 25165824,
   "within_portal_budget": true,
   "exclude_from_runtime": [
@@ -36,7 +46,6 @@
     "analisis/",
     "resultados/metricas_municipales.csv",
     "datos_preparados/municipios.geojson",
-    "datos_preparados/demografia.csv",
     "datos_preparados/servicios.csv"
   ]
 }

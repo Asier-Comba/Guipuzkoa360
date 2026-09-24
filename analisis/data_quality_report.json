@@ -38,7 +38,8 @@
         "demografia.csv": 0,
         "municipios.csv": 0,
         "servicios.csv": 0,
-        "runtime_servicios.csv": 0
+        "runtime_servicios.csv": 0,
+        "runtime_municipality_points.csv": 0
       }
     },
     {
@@ -220,8 +221,28 @@
         "service_category",
         "municipality_code",
         "latitude",
-        "longitude"
+        "longitude",
+        "reference_period",
+        "source_id"
       ]
+    },
+    {
+      "check_id": "runtime_services_projected_coordinates",
+      "status": "PASS",
+      "detail": "easting_m/northing_m in EPSG:25830"
+    },
+    {
+      "check_id": "runtime_municipality_points_coverage",
+      "status": "PASS",
+      "detail": {
+        "rows": 88,
+        "unique": 88
+      }
+    },
+    {
+      "check_id": "runtime_municipality_points_match_metrics",
+      "status": "PASS",
+      "detail": "representative points and period"
     },
     {
       "check_id": "runtime_geo_attributes_match",

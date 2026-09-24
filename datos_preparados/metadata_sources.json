@@ -61,7 +61,8 @@
     "original_file": "datos_originales/MUNICIPIOS_5000_ETRS89.zip",
     "prepared_files": [
       "datos_preparados/municipios.geojson",
-      "datos_preparados/runtime_municipios.geojson"
+      "datos_preparados/runtime_municipios.geojson",
+      "datos_preparados/runtime_municipality_points.csv"
     ],
     "notes": [
       "CRS original y de cálculo: EPSG:25830; publicación runtime: EPSG:4326."
@@ -74,7 +75,8 @@
   {
     "source_id": "G360_DERIVED_MUNICIPAL_METRICS_V1",
     "title": "Métricas municipales derivadas de GIPUZKOA 360",
-    "institution": "GIPUZKOA 360",
+    "institution": "DeustoAI Labs",
+    "producer": "GIPUZKOA 360",
     "url": "https://github.com/Asier-Comba/Guipuzkoa360/blob/work/data-foundation/FUENTES.md",
     "download_date": null,
     "reference_period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
@@ -84,10 +86,16 @@
     "original_file": null,
     "prepared_files": [
       "datos_preparados/municipios.csv",
-      "datos_preparados/runtime_municipios.geojson"
+      "datos_preparados/runtime_municipios.geojson",
+      "datos_preparados/runtime_municipality_points.csv"
     ],
     "source_type": "derived",
     "upstream_source_ids": [
+      "EUSTAT_EMH_2025",
+      "ODE_HEALTH_CENTRES_2026",
+      "GEOEUSKADI_MUNICIPIOS_2025"
+    ],
+    "input_source_ids": [
       "EUSTAT_EMH_2025",
       "ODE_HEALTH_CENTRES_2026",
       "GEOEUSKADI_MUNICIPIOS_2025"
