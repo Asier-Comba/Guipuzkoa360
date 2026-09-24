@@ -93,6 +93,7 @@ def build_result() -> dict[str, object]:
             "Los periodos de demografía, servicios y geometría no son simultáneos.",
         ],
         "trace": {
+            "execution_mode": "local_tool",
             "question_id": "DATA-QA-SMOKE-001",
             "agent_version": "data-contract-smoke-not-agent",
             "tool_calls": [{

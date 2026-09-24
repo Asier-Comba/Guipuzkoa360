@@ -238,6 +238,7 @@ def test_work3_smoke_export_is_real_but_explicitly_not_an_agent_run(tmp_path):
     assert result["data_mode"] == "real"
     assert len(result["comparison"]) == 3
     assert result["scenario"] is None
+    assert result["trace"]["execution_mode"] == "local_tool"
     assert result["trace"]["agent_version"] == "data-contract-smoke-not-agent"
     assert "no es una respuesta producida por el agente" in result["summary"]
     source_ids = {source["source_id"] for source in result["sources"]}
