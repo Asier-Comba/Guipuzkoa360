@@ -53,6 +53,31 @@ def main() -> None:
             "notes": ["CRS original y de cálculo: EPSG:25830; publicación runtime: EPSG:4326."],
             "limitations": ["El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007."],
         },
+        {
+            "source_id": "G360_DERIVED_MUNICIPAL_METRICS_V1",
+            "title": "Métricas municipales derivadas de GIPUZKOA 360",
+            "institution": "DeustoAI Labs",
+            "url": None,
+            "download_date": "2026-09-24",
+            "reference_period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+            "territory": "Gipuzkoa, 88 municipios",
+            "license": "Hereda las condiciones de las fuentes de entrada",
+            "original_file": None,
+            "prepared_files": [
+                "datos_preparados/municipios.csv",
+                "datos_preparados/runtime_municipality_points.csv"
+            ],
+            "input_source_ids": [
+                "EUSTAT_EMH_2025", "ODE_HEALTH_CENTRES_2026", "GEOEUSKADI_MUNICIPIOS_2025"
+            ],
+            "notes": [
+                "Distancia euclídea EPSG:25830 desde representative_point() municipal al servicio más cercano."
+            ],
+            "limitations": [
+                "El punto representativo no está ponderado por población.",
+                "La distancia no es viaria, peatonal ni tiempo de viaje."
+            ]
+        },
     ]
     (OUT / "metadata_sources.json").write_text(
         json.dumps(sources, ensure_ascii=False, indent=2), encoding="utf-8"

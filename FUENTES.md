@@ -50,3 +50,9 @@ Fecha de descarga común: **2026-09-24**. Los códigos `municipality_code` son c
 
 `datos_preparados/metadata_sources.json` replica estos metadatos en formato legible por máquina. `datos_originales/download_manifest.json` contiene tamaño y SHA-256 de cada descarga/consulta. No se han utilizado blogs, prensa ni datos sintéticos en resultados.
 
+## Uso por el agente
+
+El agente utiliza estos datos reales y mantiene periodo, unidad y `source_id` en cada salida. Los fixtures bajo
+`tests/fixtures/` empiezan por `TEST_`/`SRC_TEST_`, son exclusivamente sintéticos y nunca se mezclan con los
+resultados territoriales. Ausencia no significa cero. Una localización registrada no acredita apertura,
+horario, capacidad, calidad ni accesibilidad real.

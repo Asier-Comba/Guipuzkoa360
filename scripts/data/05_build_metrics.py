@@ -49,6 +49,17 @@ def main() -> None:
     ).round(3)
 
     representative_points = boundaries.geometry.representative_point()
+    representative_wgs84 = gpd.GeoSeries(representative_points, crs=25830).to_crs(4326)
+    pd.DataFrame({
+        "municipality_code": boundaries["municipality_code"].astype(str).str.zfill(5),
+        "municipality_name": boundaries["municipality_name"],
+        "latitude": representative_wgs84.y,
+        "longitude": representative_wgs84.x,
+        "easting_m": representative_points.x,
+        "northing_m": representative_points.y,
+        "reference_period": "2025-05-07",
+        "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+    }).to_csv(OUT / "runtime_municipality_points.csv", index=False)
     for category_name in ["primary_care", "hospital"]:
         destinations = service_points.loc[service_points["service_category"].eq(category_name), "geometry"]
         metrics[f"distance_to_nearest_{category_name}_m"] = nearest_distance(representative_points, destinations).round(1)

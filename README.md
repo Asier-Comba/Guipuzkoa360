@@ -1,6 +1,6 @@
 # GIPUZKOA 360
 
-Análisis territorial reproducible de población mayor y proximidad geométrica a servicios sanitarios públicos en Gipuzkoa. La base de Work 1 contiene 88 municipios y 148 centros; la distancia se calcula desde un punto representativo municipal, no como tiempo de viaje ni acceso individual.
+Agente y análisis territorial reproducible de población mayor y proximidad geométrica a servicios sanitarios públicos en Gipuzkoa. La base contiene 88 municipios y 148 centros. La distancia se calcula desde un punto representativo municipal; no equivale a tiempo de viaje ni acceso individual.
 
 ## Datos
 
@@ -9,18 +9,19 @@ Las fuentes, periodos, licencias y transformaciones están en `FUENTES.md`, `doc
 ```powershell
 python -m pip install -r requirements.txt
 python scripts/data/build_all.py
-python -m pytest tests/data -q
+python -m pytest
 ```
 
 ## Producto y demo
 
-`scripts/build_results.mjs` genera tres HTML autocontenidos desde un resultado JSON validado. `scripts/enrich_work1_result.mjs` incorpora contornos municipales del runtime de Work 1 sin alterar las cifras del agente. El contrato está en `docs/EXPECTED_RESULT_SCHEMA.md`.
+El agente está en `agentes/gipuzkoa360/` y dispone de siete herramientas deterministas. Su salida original sigue `docs/RESULT_SCHEMA.md`; `scripts/adapt_work2_envelope.mjs` prepara el enlace con el contrato de producto en `docs/EXPECTED_RESULT_SCHEMA.md`. `scripts/enrich_work1_result.mjs` añade contornos municipales y `scripts/build_results.mjs` genera HTML autocontenidos.
 
 ```powershell
 node scripts/build_results.mjs tests/fixtures/synthetic_agent_result.json resultados
-node --test tests/e2e/contract_flow.test.mjs
+node --test tests/e2e/*.test.mjs
+node scripts/build_jury_demo.mjs
 ```
 
-Los HTML del fixture llevan una marca visible de **datos sintéticos de desarrollo**. La demo real de Work 1 se genera con `node scripts/build_jury_demo.mjs` y se abre en `resultados/demo_real/index.html`. Sus cuatro consultas se calculan con una herramienta local reproducible y están marcadas como tales. La interfaz local no demuestra por sí sola que el agente haya recalculado.
+Los HTML del fixture llevan una marca visible de **datos sintéticos de desarrollo**. La demo real local se abre en `resultados/demo_real/index.html` y sus cuatro consultas se calculan con una herramienta local reproducible. La versión fija del agente todavía debe probarse en el portal; esta demo no sustituye esa prueba.
 
-Seguir `docs/README_DEMO_JURADO.md`, `docs/WORK2_AGENT_ENVELOPE.md`, `docs/INTEGRATION_PLAYBOOK.md` y `docs/SUBMISSION_CHECKLIST.md` antes de preparar la entrega en el portal.
+Seguir `docs/README_DEMO_JURADO.md`, `docs/HANDOFF_WORK_2_AGENT.md`, `docs/INTEGRATION_PLAYBOOK.md` y `docs/SUBMISSION_CHECKLIST.md` antes de preparar la entrega en el portal.
