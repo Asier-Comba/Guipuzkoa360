@@ -30,6 +30,17 @@ ALIASES: dict[str, tuple[str, ...]] = {
     "service_category": ("service_category", "categoria_servicio", "category"),
     "latitude": ("latitude", "latitud", "lat"),
     "longitude": ("longitude", "longitud", "lon", "lng"),
+    "easting_m": ("easting_m", "reference_easting_m", "x_25830"),
+    "northing_m": ("northing_m", "reference_northing_m", "y_25830"),
+    "area_km2": ("area_km2",),
+    "services_primary_care": ("services_primary_care",),
+    "services_hospital": ("services_hospital",),
+    "services_mental_health": ("services_mental_health",),
+    "services_other_health": ("services_other_health",),
+    "primary_care_per_10000_65_plus": ("primary_care_per_10000_65_plus",),
+    "distance_to_nearest_primary_care_m": ("distance_to_nearest_primary_care_m",),
+    "distance_to_nearest_hospital_m": ("distance_to_nearest_hospital_m",),
+    "metrics_reference_period": ("metrics_reference_period",),
 }
 
 
@@ -41,6 +52,26 @@ NUMERIC_FIELDS = {
     "pct_75_plus",
     "latitude",
     "longitude",
+    "easting_m",
+    "northing_m",
+    "area_km2",
+    "services_primary_care",
+    "services_hospital",
+    "services_mental_health",
+    "services_other_health",
+    "primary_care_per_10000_65_plus",
+    "distance_to_nearest_primary_care_m",
+    "distance_to_nearest_hospital_m",
+}
+
+INTEGER_FIELDS = {
+    "population_total",
+    "population_65_plus",
+    "population_75_plus",
+    "services_primary_care",
+    "services_hospital",
+    "services_mental_health",
+    "services_other_health",
 }
 
 
@@ -131,6 +162,13 @@ class DataRepository:
                     value: Any = raw.get(original)
                     if canonical in NUMERIC_FIELDS:
                         value = _float(value, canonical, number)
+                        if canonical in INTEGER_FIELDS and value is not None:
+                            if not value.is_integer():
+                                raise DataContractError(
+                                    "invalid_type",
+                                    f"{canonical} debe ser entero en la fila {number}: {value!r}.",
+                                )
+                            value = int(value)
                     elif value is not None:
                         value = str(value).strip()
                     row[canonical] = value
@@ -162,6 +200,7 @@ class DataRepository:
             duplicates = self._duplicates(rows, ("municipality_code",))
             if duplicates:
                 raise DataContractError("duplicate_keys", "Códigos municipales duplicados: " + ", ".join(duplicates))
+            self._apply_runtime_reference_points(rows)
             self._apply_geojson_centroids(rows)
             self._municipalities = rows
         return self._municipalities
@@ -209,8 +248,9 @@ class DataRepository:
 
     def services(self) -> list[dict[str, Any]]:
         if self._services is None:
+            filename = "runtime_servicios.csv" if (self.data_dir / "runtime_servicios.csv").is_file() else "servicios.csv"
             rows = self._csv(
-                "servicios.csv",
+                filename,
                 (
                     "service_id",
                     "service_name",
@@ -315,3 +355,32 @@ class DataRepository:
             pair = centroids.get(str(row["municipality_code"]))
             if pair:
                 row["latitude"], row["longitude"] = pair
+
+    def _apply_runtime_reference_points(self, municipalities: list[dict[str, Any]]) -> None:
+        path = self.data_dir / "runtime_municipality_points.csv"
+        if not path.is_file():
+            return
+        points = self._csv(
+            "runtime_municipality_points.csv",
+            ("municipality_code", "latitude", "longitude", "easting_m", "northing_m"),
+        )
+        duplicates = self._duplicates(points, ("municipality_code",))
+        if duplicates:
+            raise DataContractError(
+                "duplicate_keys", "Puntos municipales duplicados: " + ", ".join(duplicates)
+            )
+        by_code = {row["municipality_code"]: row for row in points}
+        missing: list[str] = []
+        for municipality in municipalities:
+            point = by_code.get(municipality["municipality_code"])
+            if point is None:
+                missing.append(municipality["municipality_name"])
+                continue
+            for field in ("latitude", "longitude", "easting_m", "northing_m"):
+                municipality[field] = point[field]
+            municipality["reference_point_source_id"] = point.get("source_id")
+            municipality["reference_point_period"] = point.get("reference_period")
+        if missing:
+            self.warnings.append(
+                "Sin punto representativo runtime para: " + ", ".join(missing)
+            )

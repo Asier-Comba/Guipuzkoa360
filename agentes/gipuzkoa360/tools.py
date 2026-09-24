@@ -15,11 +15,11 @@ except ImportError:  # Permite pruebas locales sin el runtime del portal.
 
 try:
     from .data_access import DataRepository
-    from .metrics import nearest_service, percentile_rank, quantile
+    from .metrics import nearest_service_projected, percentile_rank, quantile, wgs84_to_utm30
     from .schemas import DataContractError, ResultEnvelope
 except ImportError:  # Studio ejecuta main.py y tools.py desde la carpeta del agente.
     from data_access import DataRepository
-    from metrics import nearest_service, percentile_rank, quantile
+    from metrics import nearest_service_projected, percentile_rank, quantile, wgs84_to_utm30
     from schemas import DataContractError, ResultEnvelope
 
 
@@ -176,8 +176,14 @@ class TerritorialAnalysis:
         if municipality_names:
             selected_codes = {self.repo.municipality_lookup(name)["municipality_code"] for name in municipality_names}
             municipalities = [row for row in municipalities if row["municipality_code"] in selected_codes]
-        missing_centroids = [row["municipality_name"] for row in municipalities if row.get("latitude") is None or row.get("longitude") is None]
-        municipalities = [row for row in municipalities if row.get("latitude") is not None and row.get("longitude") is not None]
+        missing_centroids = [
+            row["municipality_name"] for row in municipalities
+            if row.get("easting_m") is None or row.get("northing_m") is None
+        ]
+        municipalities = [
+            row for row in municipalities
+            if row.get("easting_m") is not None and row.get("northing_m") is not None
+        ]
         if not municipalities:
             raise DataContractError(
                 "missing_coordinates",
@@ -192,37 +198,46 @@ class TerritorialAnalysis:
             )
         data: list[dict[str, Any]] = []
         for municipality in municipalities:
-            distance, service = nearest_service(
-                municipality["latitude"], municipality["longitude"], services
+            distance, service = nearest_service_projected(
+                municipality["easting_m"], municipality["northing_m"], services
             )
             data.append(
                 {
                     "municipality_code": municipality["municipality_code"],
                     "municipality_name": municipality["municipality_name"],
                     "nearest_service_id": service["service_id"] if service else None,
-                    "nearest_distance_km": round(distance, 4) if distance is not None else None,
-                    "within_threshold": bool(distance is not None and distance <= threshold_km),
+                    "nearest_distance_m": round(distance, 1) if distance is not None else None,
+                    "within_threshold": bool(distance is not None and distance <= threshold_km * 1000),
                 }
             )
-        data.sort(key=lambda item: (-item["nearest_distance_km"], item["municipality_name"]))
+        data.sort(key=lambda item: (-item["nearest_distance_m"], item["municipality_name"]))
         warnings = list(dict.fromkeys(self.repo.warnings))
         if missing_centroids:
             warnings.append("Municipios omitidos por falta de coordenadas: " + ", ".join(missing_centroids))
         service_periods = sorted({str(row.get("reference_period")) for row in services if row.get("reference_period")})
+        geography_periods = sorted({
+            str(row.get("reference_point_period")) for row in municipalities if row.get("reference_point_period")
+        })
+        provenance_rows = services + [
+            {"source_id": row.get("reference_point_source_id")} for row in municipalities
+        ]
         return ResultEnvelope(
             question=f"Acceso geométrico a {service_category}",
             filters={"service_category": service_category, "threshold_km": threshold_km, "period_requested": period},
-            period=", ".join(service_periods) or None,
-            metric="nearest_straight_line_distance",
-            unit="km",
+            period="; ".join(service_periods + geography_periods) or None,
+            metric="distance_geométrica_aproximada_desde_punto_representativo_municipal",
+            unit="m",
             rows_used=len(municipalities) + len(services),
             data=data,
-            method="Distancia Haversine desde el centroide/punto municipal al servicio más cercano de la categoría.",
-            sources=self._sources(services),
+            method=(
+                "Distancia euclídea en EPSG:25830 desde representative_point() del polígono municipal "
+                "al punto del servicio más cercano de la categoría."
+            ),
+            sources=self._sources(provenance_rows),
             warnings=warnings,
             limitations=[
-                "Es distancia geodésica entre puntos, no distancia de red, tiempo de viaje ni acceso peatonal real.",
-                "El centroide municipal no representa dónde vive cada persona.",
+                "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+                "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
                 "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
             ],
         ).to_dict()
@@ -274,8 +289,8 @@ class TerritorialAnalysis:
                 "threshold_km": threshold_km if service_category else None,
             },
             period=selected,
-            metric=metric + (" + nearest_straight_line_distance" if service_category else ""),
-            unit="% y km" if service_category else "%",
+            metric=metric + (" + distance_geométrica_aproximada" if service_category else ""),
+            unit="% y m" if service_category else "%",
             rows_used=len(data),
             data=data,
             method="Selección por código municipal y comparación campo a campo; sin agregación opaca.",
@@ -306,22 +321,22 @@ class TerritorialAnalysis:
         if not joined:
             raise DataContractError("no_joined_rows", "No hay municipios con ambas métricas disponibles.")
         age_values = [row[metric] for row in joined]
-        distance_values = [row["nearest_distance_km"] for row in joined]
+        distance_values = [row["nearest_distance_m"] for row in joined]
         age_cut = quantile(age_values, quantile_threshold)
         distance_cut = quantile(distance_values, quantile_threshold)
         for row in joined:
             row["age_percentile_rank"] = round(percentile_rank(age_values, row[metric]), 4)
             row["distance_percentile_rank"] = round(
-                percentile_rank(distance_values, row["nearest_distance_km"]), 4
+                percentile_rank(distance_values, row["nearest_distance_m"]), 4
             )
             row["meets_age_criterion"] = row[metric] >= age_cut
-            row["meets_access_criterion"] = row["nearest_distance_km"] >= distance_cut
+            row["meets_access_criterion"] = row["nearest_distance_m"] >= distance_cut
             row["highlighted"] = row["meets_age_criterion"] and row["meets_access_criterion"]
         joined.sort(
             key=lambda row: (
                 not row["highlighted"],
                 -row[metric],
-                -row["nearest_distance_km"],
+                -row["nearest_distance_m"],
                 row["municipality_name"],
             )
         )
@@ -338,13 +353,13 @@ class TerritorialAnalysis:
                 "quantile_threshold": quantile_threshold,
             },
             period=selected,
-            metric=f"{metric} + nearest_straight_line_distance",
-            unit="% y km",
+            metric=f"{metric} + distance_geométrica_aproximada",
+            unit="% y m",
             rows_used=len(joined),
             data=joined,
             method=(
                 f"Cruce por código municipal. Se destacan valores >= cuantil {quantile_threshold:.2f} "
-                f"en ambas métricas (cortes: {age_cut:.4f}% y {distance_cut:.4f} km). "
+                f"en ambas métricas (cortes: {age_cut:.4f}% y {distance_cut:.1f} m). "
                 "Se muestran ambos componentes y no se usa una puntuación compuesta."
             ),
             sources=list(deduped.values()),
@@ -376,6 +391,7 @@ class TerritorialAnalysis:
             if latitude is None or longitude is None or not (-90 <= latitude <= 90) or not (-180 <= longitude <= 180):
                 raise DataContractError("invalid_coordinates", "add_service requiere latitud y longitud válidas.")
             hypothetical_id = service_id or "HYPOTHETICAL_SERVICE"
+            easting_m, northing_m = wgs84_to_utm30(float(latitude), float(longitude))
             scenario_services.append(
                 {
                     "service_id": hypothetical_id,
@@ -383,6 +399,8 @@ class TerritorialAnalysis:
                     "service_category": service_category,
                     "latitude": float(latitude),
                     "longitude": float(longitude),
+                    "easting_m": easting_m,
+                    "northing_m": northing_m,
                     "reference_period": "escenario",
                     "source_id": "SCENARIO_INPUT",
                 }
@@ -414,15 +432,15 @@ class TerritorialAnalysis:
         differences = []
         for item in scenario["data"]:
             original = baseline_by_code[item["municipality_code"]]
-            before, after = original["nearest_distance_km"], item["nearest_distance_km"]
+            before, after = original["nearest_distance_m"], item["nearest_distance_m"]
             absolute = after - before
             differences.append(
                 {
                     "municipality_code": item["municipality_code"],
                     "municipality_name": item["municipality_name"],
-                    "baseline_distance_km": before,
-                    "scenario_distance_km": after,
-                    "difference_absolute_km": round(absolute, 4),
+                    "baseline_distance_m": before,
+                    "scenario_distance_m": after,
+                    "difference_absolute_m": round(absolute, 1),
                     "difference_relative_pct": round(100 * absolute / before, 4) if before else None,
                     "baseline_within_threshold": original["within_threshold"],
                     "scenario_within_threshold": item["within_threshold"],
@@ -432,8 +450,8 @@ class TerritorialAnalysis:
             question=f"Escenario {action} para {service_category}",
             filters={"period": period, "service_category": service_category},
             period=scenario.get("period"),
-            metric="nearest_straight_line_distance",
-            unit="km",
+            metric="distance_geométrica_aproximada_desde_punto_representativo_municipal",
+            unit="m",
             rows_used=scenario["rows_used"],
             data=differences,
             method="Recalculo determinista del mismo indicador antes y después del cambio hipotético.",
@@ -449,7 +467,7 @@ class TerritorialAnalysis:
             "baseline": {"threshold_km": threshold_km, "service_count": len(services)},
             "scenario": {"threshold_km": scenario_threshold, "service_count": len(scenario_services)},
             "changed_parameters": changed,
-            "affected_metric": "nearest_straight_line_distance / within_threshold",
+            "affected_metric": "distance_geométrica_aproximada_desde_punto_representativo_municipal / within_threshold",
             "assumptions": ["El resto de datos permanece constante.", "Las coordenadas representan puntos válidos."],
             "limitations": result["limitations"],
         }
@@ -522,7 +540,7 @@ def analizar_acceso_servicios(
     periodo: str | None = None,
     municipios: list[str] | None = None,
 ) -> str:
-    """Calcula distancia recta centroide-servicio; no devuelve tiempos de viaje ni acceso real."""
+    """Calcula distancia euclídea EPSG:25830 desde punto representativo; no acceso real."""
     return _safe(lambda: _analysis().acceso(categoria_servicio, umbral_km, periodo, municipios))
 
 

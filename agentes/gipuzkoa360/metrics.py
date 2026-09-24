@@ -47,3 +47,59 @@ def nearest_service(
         for item in services
     ]
     return min(pairs, key=lambda pair: pair[0])
+
+
+def nearest_service_projected(
+    easting_m: float,
+    northing_m: float,
+    services: list[dict[str, Any]],
+) -> tuple[float | None, dict[str, Any] | None]:
+    """Distancia euclídea en EPSG:25830, en metros."""
+    projected = [
+        item for item in services
+        if item.get("easting_m") is not None and item.get("northing_m") is not None
+    ]
+    if not projected:
+        return None, None
+    pairs = [
+        (math.hypot(item["easting_m"] - easting_m, item["northing_m"] - northing_m), item)
+        for item in projected
+    ]
+    return min(pairs, key=lambda pair: pair[0])
+
+
+def wgs84_to_utm30(latitude: float, longitude: float) -> tuple[float, float]:
+    """Convierte WGS84 a ETRS89/UTM 30N con precisión suficiente para escenarios locales.
+
+    Para la escala de Gipuzkoa, WGS84 y ETRS89 son equivalentes a efectos del indicador.
+    Implementa la serie Transverse Mercator estándar para evitar dependencias runtime.
+    """
+    a = 6378137.0
+    f = 1 / 298.257223563
+    e2 = f * (2 - f)
+    ep2 = e2 / (1 - e2)
+    k0 = 0.9996
+    phi = math.radians(latitude)
+    lam = math.radians(longitude)
+    lam0 = math.radians(-3.0)
+    n = a / math.sqrt(1 - e2 * math.sin(phi) ** 2)
+    t = math.tan(phi) ** 2
+    c = ep2 * math.cos(phi) ** 2
+    aa = math.cos(phi) * (lam - lam0)
+    m = a * (
+        (1 - e2 / 4 - 3 * e2**2 / 64 - 5 * e2**3 / 256) * phi
+        - (3 * e2 / 8 + 3 * e2**2 / 32 + 45 * e2**3 / 1024) * math.sin(2 * phi)
+        + (15 * e2**2 / 256 + 45 * e2**3 / 1024) * math.sin(4 * phi)
+        - (35 * e2**3 / 3072) * math.sin(6 * phi)
+    )
+    easting = 500000 + k0 * n * (
+        aa + (1 - t + c) * aa**3 / 6 + (5 - 18 * t + t**2 + 72 * c - 58 * ep2) * aa**5 / 120
+    )
+    northing = k0 * (
+        m + n * math.tan(phi) * (
+            aa**2 / 2
+            + (5 - t + 9 * c + 4 * c**2) * aa**4 / 24
+            + (61 - 58 * t + t**2 + 600 * c - 330 * ep2) * aa**6 / 720
+        )
+    )
+    return easting, northing

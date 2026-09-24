@@ -15,7 +15,8 @@ STUDIO_CONTEXT_FILES = [
     "docs/RESULT_SCHEMA.md",
     "datos_preparados/municipios.csv",
     "datos_preparados/demografia.csv",
-    "datos_preparados/servicios.csv",
+    "datos_preparados/runtime_municipality_points.csv",
+    "datos_preparados/runtime_servicios.csv",
     "datos_preparados/metadata_sources.json",
 ]
 

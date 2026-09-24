@@ -62,7 +62,7 @@ def test_unknown_municipality_does_not_fabricate(analysis: TerritorialAnalysis):
 
 def test_coincidence_exposes_components_and_sources(analysis: TerritorialAnalysis):
     result = analysis.coincidencia("salud", "65", 1.0, "2025", 0.75)
-    assert all("pct_65_plus" in row and "nearest_distance_km" in row for row in result["data"])
+    assert all("pct_65_plus" in row and "nearest_distance_m" in row for row in result["data"])
     assert all("highlighted" in row for row in result["data"])
     assert result["sources"]
     assert "no se usa una puntuación compuesta" in result["method"]
@@ -77,7 +77,7 @@ def test_change_threshold_scenario(analysis: TerritorialAnalysis):
 def test_add_service_changes_distance(analysis: TerritorialAnalysis):
     result = analysis.escenario("add_service", "salud", 1.0, "2025", 43.2, -2.35)
     target = next(row for row in result["data"] if row["municipality_name"] == "TEST_MUNICIPIO_D")
-    assert target["difference_absolute_km"] < 0
+    assert target["difference_absolute_m"] < 0
     assert "contrafactual" in " ".join(result["limitations"]).lower()
 
 
