@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import json
 import os
+import re
+import unicodedata
 from pathlib import Path
 from typing import Any, Callable
 
@@ -53,15 +55,104 @@ def _safe(operation: Callable[[], dict[str, Any]]) -> str:
         )
 
 
+def _normalized_key(value: Any) -> str:
+    """Normaliza texto humano sin convertir entradas ausentes en valores válidos."""
+    if value is None:
+        return ""
+    text = unicodedata.normalize("NFKD", str(value).strip().casefold())
+    text = "".join(character for character in text if not unicodedata.combining(character))
+    return re.sub(r"[\s_-]+", " ", text).strip()
+
+
+def normalize_service_category(value: Any) -> str:
+    aliases = {
+        "primary_care": {
+            "atencion primaria",
+            "primary care",
+        },
+        "mental_health": {
+            "salud mental",
+            "mental health",
+        },
+        "hospital": {
+            "hospital",
+            "hospitals",
+            "hospitales",
+        },
+        "other_health": {
+            "other health",
+            "otra salud",
+            "otras prestaciones sanitarias",
+            "otros servicios sanitarios",
+        },
+    }
+    key = _normalized_key(value)
+    for canonical, choices in aliases.items():
+        if key == _normalized_key(canonical) or key in choices:
+            return canonical
+    raise DataContractError(
+        "invalid_service_category",
+        f"Categoría de servicio no reconocida: {value!r}.",
+        list(aliases),
+    )
+
+
+def normalize_age_group(value: Any) -> str:
+    key = _normalized_key(value).replace("≥", ">=")
+    compact = re.sub(r"\s+", "", key)
+    aliases = {
+        "65": {"65", "65+", ">=65"},
+        "75": {"75", "75+", ">=75"},
+    }
+    for canonical, choices in aliases.items():
+        if compact in choices:
+            return canonical
+    raise DataContractError(
+        "invalid_age_group",
+        f"Grupo de edad no reconocido: {value!r}.",
+        ["65", "65+", "≥65", ">=65", "75", "75+", "≥75", ">=75"],
+    )
+
+
+def normalize_scenario_action(value: Any) -> str:
+    aliases = {
+        "add_service": {"add service", "anadir", "anadir servicio", "agregar", "agregar servicio"},
+        "remove_service": {"remove", "remove service", "eliminar", "eliminar servicio"},
+        "change_threshold": {"change threshold", "cambiar umbral", "cambio de umbral"},
+    }
+    key = _normalized_key(value)
+    for canonical, choices in aliases.items():
+        if key == _normalized_key(canonical) or key in choices:
+            return canonical
+    raise DataContractError(
+        "invalid_scenario",
+        f"Acción de escenario no reconocida: {value!r}.",
+        list(aliases),
+    )
+
+
 class TerritorialAnalysis:
     def __init__(self, repository: DataRepository) -> None:
         self.repo = repository
 
+    def _service_category(self, value: Any) -> str:
+        categories = sorted({row["service_category"] for row in self.repo.services()})
+        try:
+            return normalize_service_category(value)
+        except DataContractError:
+            key = _normalized_key(value)
+            exact = [category for category in categories if _normalized_key(category) == key]
+            if len(exact) == 1:
+                return exact[0]
+            raise DataContractError(
+                "service_category_not_found",
+                f"No hay una categoría de servicio inequívoca para {value!r}.",
+                categories,
+            ) from None
+
     @staticmethod
     def _age_fields(age_group: str, measure: str = "percentage") -> tuple[str, str]:
-        age = str(age_group).replace("≥", "").replace("+", "").strip()
-        if age not in {"65", "75"}:
-            raise DataContractError("invalid_age_group", "El grupo de edad debe ser 65 o 75.", ["65", "75"])
+        age = normalize_age_group(age_group)
         if measure not in {"percentage", "count"}:
             raise DataContractError(
                 "invalid_measure", "La medida debe ser percentage o count.", ["percentage", "count"]
@@ -184,6 +275,7 @@ class TerritorialAnalysis:
         municipality_names: list[str] | None = None,
         service_override: list[dict[str, Any]] | None = None,
     ) -> dict[str, Any]:
+        service_category = self._service_category(service_category)
         if threshold_km <= 0 or threshold_km > 100:
             raise DataContractError("invalid_threshold", "threshold_km debe ser mayor que 0 y no superar 100.")
         municipalities = self.repo.municipalities()
@@ -278,6 +370,7 @@ class TerritorialAnalysis:
         access_result: dict[str, Any] | None = None
         if service_category:
             access_result = self.acceso(service_category, threshold_km, selected, municipality_names)
+            service_category = access_result["filters"]["service_category"]
             access_by_code = {row["municipality_code"]: row for row in access_result["data"]}
         data = []
         for municipality in resolved:
@@ -321,6 +414,7 @@ class TerritorialAnalysis:
         period: str | None = None,
         quantile_threshold: float = 0.75,
     ) -> dict[str, Any]:
+        service_category = self._service_category(service_category)
         if not 0.5 <= quantile_threshold <= 0.95:
             raise DataContractError("invalid_quantile", "quantile_threshold debe estar entre 0.5 y 0.95.")
         metric, age = self._age_fields(age_group, "percentage")
@@ -396,7 +490,8 @@ class TerritorialAnalysis:
         service_id: str | None = None,
         new_threshold_km: float | None = None,
     ) -> dict[str, Any]:
-        action = action.strip().casefold()
+        action = normalize_scenario_action(action)
+        service_category = self._service_category(service_category)
         services = list(self.repo.services())
         changed: dict[str, Any]
         scenario_services = list(services)
