@@ -15,6 +15,7 @@ STEPS = [
     "05_build_metrics.py",
     "06_validate_data.py",
     "07_write_metadata.py",
+    "08_build_qa_assets.py",
 ]
 
 

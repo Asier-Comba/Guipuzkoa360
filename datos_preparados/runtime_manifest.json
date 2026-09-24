@@ -1,0 +1,42 @@
+{
+  "manifest_version": "1.0.0",
+  "source_snapshot_date": "2026-09-24",
+  "files": [
+    {
+      "path": "datos_preparados/municipios.csv",
+      "bytes": 30164,
+      "sha256": "f8f043ab646ba0d7a6984b6937570e630195a844fa204d075c94becfd84edd75"
+    },
+    {
+      "path": "datos_preparados/runtime_servicios.csv",
+      "bytes": 14854,
+      "sha256": "1efa0665b351b31f1039f9565f9ca25a45cd90c5dfde9312bc2abff2ffa4a676"
+    },
+    {
+      "path": "datos_preparados/runtime_municipios.geojson",
+      "bytes": 495392,
+      "sha256": "c30ba24034312e2d1f5fab487c0ec78126436311a02ec54fc9bdf6f0b84dad1c"
+    },
+    {
+      "path": "datos_preparados/metadata_sources.json",
+      "bytes": 4661,
+      "sha256": "4a9de06aa59860524468016f415eb34ab99dce90ad0e82643f2c9231bda2a543"
+    },
+    {
+      "path": "datos_preparados/data_contract.json",
+      "bytes": 4623,
+      "sha256": "b21b9010812178d65cf7e01a3471547d20c2de080d6818e0ba6308da7d2ee6ae"
+    }
+  ],
+  "total_bytes": 549694,
+  "portal_budget_bytes": 25165824,
+  "within_portal_budget": true,
+  "exclude_from_runtime": [
+    "datos_originales/",
+    "analisis/",
+    "resultados/metricas_municipales.csv",
+    "datos_preparados/municipios.geojson",
+    "datos_preparados/demografia.csv",
+    "datos_preparados/servicios.csv"
+  ]
+}
