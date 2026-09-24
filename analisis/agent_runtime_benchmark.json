@@ -1,0 +1,83 @@
+{
+  "data_dir": "C:\\Users\\asier.comba\\Documents\\Codex\\2026-09-24\\eres-el-ingeniero-principal-de-ia\\gipuzkoa360\\datos_preparados",
+  "warm_repetitions": 11,
+  "tools": [
+    {
+      "tool": "consultar_fuente",
+      "cold_ms": 1.115,
+      "warm_median_ms": 0.36,
+      "serialization_ms": 0.176,
+      "full_chars": 8975,
+      "compact_chars": 4896,
+      "reduction_percent": 45.4,
+      "rows_used": 4,
+      "result_rows": 4
+    },
+    {
+      "tool": "obtener_resumen_territorial",
+      "cold_ms": 7.938,
+      "warm_median_ms": 0.455,
+      "serialization_ms": 0.065,
+      "full_chars": 3571,
+      "compact_chars": 2537,
+      "reduction_percent": 29.0,
+      "rows_used": 7,
+      "result_rows": 1
+    },
+    {
+      "tool": "comparar_municipios",
+      "cold_ms": 8.178,
+      "warm_median_ms": 1.546,
+      "serialization_ms": 0.087,
+      "full_chars": 4484,
+      "compact_chars": 2867,
+      "reduction_percent": 36.1,
+      "rows_used": 3,
+      "result_rows": 3
+    },
+    {
+      "tool": "analizar_envejecimiento",
+      "cold_ms": 2.453,
+      "warm_median_ms": 0.351,
+      "serialization_ms": 0.104,
+      "full_chars": 2691,
+      "compact_chars": 2181,
+      "reduction_percent": 19.0,
+      "rows_used": 88,
+      "result_rows": 10
+    },
+    {
+      "tool": "analizar_acceso_servicios",
+      "cold_ms": 10.708,
+      "warm_median_ms": 3.136,
+      "serialization_ms": 0.204,
+      "full_chars": 17059,
+      "compact_chars": 3614,
+      "reduction_percent": 78.8,
+      "rows_used": 208,
+      "result_rows": 88
+    },
+    {
+      "tool": "analizar_coincidencia",
+      "cold_ms": 13.033,
+      "warm_median_ms": 6.127,
+      "serialization_ms": 0.434,
+      "full_chars": 36838,
+      "compact_chars": 5216,
+      "reduction_percent": 85.8,
+      "rows_used": 88,
+      "result_rows": 88
+    },
+    {
+      "tool": "simular_escenario",
+      "cold_ms": 12.015,
+      "warm_median_ms": 6.269,
+      "serialization_ms": 0.306,
+      "full_chars": 26719,
+      "compact_chars": 13664,
+      "reduction_percent": 48.9,
+      "rows_used": 208,
+      "result_rows": 88
+    }
+  ]
+}

@@ -6,6 +6,7 @@ import json
 import os
 import re
 import unicodedata
+from functools import lru_cache
 from pathlib import Path
 from typing import Any, Callable
 
@@ -694,8 +695,19 @@ class TerritorialAnalysis:
         ).to_dict()
 
 
+@lru_cache(maxsize=8)
+def _analysis_for_data_dir(data_dir: str) -> TerritorialAnalysis:
+    """Una instancia inmutable por ruta evita releer CSV en cada llamada del mismo proceso."""
+    return TerritorialAnalysis(DataRepository(Path(data_dir)))
+
+
 def _analysis() -> TerritorialAnalysis:
-    return TerritorialAnalysis(DataRepository(_default_data_dir()))
+    return _analysis_for_data_dir(str(_default_data_dir().resolve()))
+
+
+def clear_analysis_cache() -> None:
+    """Gancho explícito para tests o recargas controladas de datasets."""
+    _analysis_for_data_dir.cache_clear()
 
 
 @tool
