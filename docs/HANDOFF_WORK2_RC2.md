@@ -1,5 +1,10 @@
 # Handoff Work 2 · hardening independiente para RC2
 
+> Documento histórico del trabajo previo de Work 2. El manifiesto desincronizado descrito abajo correspondía
+> a aquel checkout y quedó resuelto al regenerar RC2 con finales de línea LF. La recomendación antigua de pedir
+> `detalle=true` no aplica a Studio: RC2 ya no expone ese argumento en las firmas públicas; el modo completo se
+> conserva exclusivamente para auditoría offline. El estado autoritativo está en `docs/RC2_FINAL_STATUS.md`.
+
 Fecha: 2026-09-24  
 Base auditada: `main` en `bacc29d3b4d4d48eab11e5bf1ad00134f5b12a01`  
 Rama: `work/agent-runtime-hardening`

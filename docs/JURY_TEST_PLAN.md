@@ -1,6 +1,7 @@
 # Recorrido corto para el jurado
 
-Duración objetivo: 6–8 minutos. Usar la versión `urban-challenge-rc1` y mostrar la traza de tool cuando el portal la ofrezca.
+Duración objetivo: 6–8 minutos. Usar exclusivamente la versión privada `urban-challenge-rc2` asociada al SHA
+exacto comunicado por Work 1 y mostrar la traza de tool cuando el portal la ofrezca. RC1 queda como histórico.
 
 ## 1. Pregunta principal
 

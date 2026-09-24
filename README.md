@@ -41,4 +41,4 @@ Véanse `docs/HANDOFF_WORK_2_AGENT.md`, `docs/RESULT_SCHEMA.md` y `docs/RUNTIME_
 
 ## Release candidate
 
-`docs/PORTAL_DEPLOYMENT.md` contiene la secuencia exacta para generar el bundle autocontenido de dos archivos Python, crear una versión en el portal y probarla sin publicar la entrega. `docs/JURY_TEST_PLAN.md` define el recorrido de demostración y `analisis/release_e2e_report.json` registra las ocho pruebas A–H.
+El candidato actual es `urban-challenge-rc2`; `urban-challenge-rc1` se conserva como histórico. `docs/PORTAL_DEPLOYMENT.md` contiene la secuencia exacta para generar el bundle autocontenido de dos archivos Python, crear una versión privada en el portal y probarla sin publicar la entrega. `docs/JURY_TEST_PLAN.md` define el recorrido de demostración, `analisis/release_e2e_report.json` registra las ocho pruebas A–H y `docs/RC2_FINAL_STATUS.md` concentra la evidencia de congelación.
