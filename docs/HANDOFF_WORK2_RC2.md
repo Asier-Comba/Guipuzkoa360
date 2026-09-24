@@ -115,8 +115,8 @@ actualizan durante un proceso, debe llamarse `clear_analysis_cache()` o reinicia
 ## Tests
 
 - Core/agente y e2e fuera de `tests/data`: **102 passed**.
-- Datos: **16 passed, 1 failed**.
-- Total: **118 passed, 1 failed**.
+- Datos: **17 passed, 1 failed**.
+- Total: **119 passed, 1 failed**.
 - Nuevos casos: aliases bilingües, Unicode, mayúsculas, espacios, nulos, municipio/periodo/categoría inexistentes,
   cuantiles 0,5/0,75/0,85/0,95, umbrales inválidos, escenarios incompletos, JSON válido, límites de tamaño,
   repetición byte a byte, 65/75, Eibar-salud mental, Aduna-cero registros y cortes reales q0,75/q0,85.
