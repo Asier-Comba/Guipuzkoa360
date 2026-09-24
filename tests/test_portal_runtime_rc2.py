@@ -142,6 +142,20 @@ def test_non_finite_threshold_is_controlled_strict_json(monkeypatch):
     assert result["error_code"] == "invalid_threshold"
 
 
+def test_scenario_numeric_inputs_never_leak_python_exceptions(monkeypatch):
+    monkeypatch.setenv("GIPUZKOA360_DATA_DIR", str(ROOT / "datos_preparados"))
+    invalid_threshold = json.loads(main.simular_escenario(
+        "cambiar umbral", "primary_care", 1, "2025-01-01", nuevo_umbral_km="no-numérico"
+    ))
+    invalid_coordinates = json.loads(main.simular_escenario(
+        "añadir servicio", "primary_care", 1, "2025-01-01", latitud="NaN", longitud=-2.0
+    ))
+    assert invalid_threshold["error_code"] == "invalid_threshold"
+    assert invalid_coordinates["error_code"] == "invalid_coordinates"
+    assert "could not convert" not in invalid_threshold["message"]
+    assert "not supported" not in invalid_coordinates["message"]
+
+
 def test_compact_output_never_suggests_hidden_detail_parameter(monkeypatch):
     monkeypatch.setenv("GIPUZKOA360_DATA_DIR", str(ROOT / "datos_preparados"))
     raw = main.analizar_acceso_servicios("primary_care", 2, "2025-01-01")
