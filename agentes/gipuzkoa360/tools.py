@@ -4,10 +4,16 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import unicodedata
-from functools import lru_cache
 from pathlib import Path
 from typing import Any, Callable
+
+try:
+    from studio import tool
+except ImportError:  # Permite pruebas locales sin el runtime del portal.
+    def tool(function: Callable[..., Any]) -> Callable[..., Any]:
+        return function
 
 try:
     from .data_access import DataRepository
@@ -33,54 +39,6 @@ def _json(result: dict[str, Any]) -> str:
     return json.dumps(result, ensure_ascii=False, sort_keys=True)
 
 
-def _normalized_token(value: Any) -> str:
-    text = unicodedata.normalize("NFKD", str(value or ""))
-    return " ".join(
-        "".join(character for character in text if not unicodedata.combining(character))
-        .casefold()
-        .replace("_", " ")
-        .replace("≥", ">=")
-        .split()
-    )
-
-
-SERVICE_ALIASES = {
-    "primary_care": {"atencion primaria", "primary care", "primary care service", "primary"},
-    "mental_health": {"salud mental", "mental health"},
-    "hospital": {"hospital", "hospitales"},
-    "other_health": {"otros", "otros servicios sanitarios", "other health"},
-}
-ACTION_ALIASES = {
-    "add_service": {"add service", "anadir servicio", "añadir servicio", "alta servicio", "crear servicio"},
-    "remove_service": {"remove service", "eliminar servicio", "quitar servicio", "baja servicio"},
-    "change_threshold": {"change threshold", "cambiar umbral", "modificar umbral"},
-}
-
-
-def _normalize_alias(value: Any, aliases: dict[str, set[str]]) -> str:
-    token = _normalized_token(value)
-    for canonical, choices in aliases.items():
-        if token == _normalized_token(canonical) or token in {_normalized_token(choice) for choice in choices}:
-            return canonical
-    return token.replace(" ", "_")
-
-
-def normalize_service_category(value: Any) -> str:
-    return _normalize_alias(value, SERVICE_ALIASES)
-
-
-def normalize_age_group(value: Any) -> str:
-    token = _normalized_token(value).replace("años", "").replace("anos", "").strip()
-    token = token.replace(">=", "").replace("+", "").strip()
-    if token in {"65", "75"}:
-        return token
-    raise DataContractError("invalid_age_group", "El grupo de edad debe ser 65 o 75.", ["65", "75"])
-
-
-def normalize_scenario_action(value: Any) -> str:
-    return _normalize_alias(value, ACTION_ALIASES)
-
-
 def _safe(operation: Callable[[], dict[str, Any]]) -> str:
     try:
         return _json(operation())
@@ -97,9 +55,100 @@ def _safe(operation: Callable[[], dict[str, Any]]) -> str:
         )
 
 
+def _normalized_key(value: Any) -> str:
+    """Normaliza texto humano sin convertir entradas ausentes en valores válidos."""
+    if value is None:
+        return ""
+    text = unicodedata.normalize("NFKD", str(value).strip().casefold())
+    text = "".join(character for character in text if not unicodedata.combining(character))
+    return re.sub(r"[\s_-]+", " ", text).strip()
+
+
+def normalize_service_category(value: Any) -> str:
+    aliases = {
+        "primary_care": {
+            "atencion primaria",
+            "primary care",
+        },
+        "mental_health": {
+            "salud mental",
+            "mental health",
+        },
+        "hospital": {
+            "hospital",
+            "hospitals",
+            "hospitales",
+        },
+        "other_health": {
+            "other health",
+            "otra salud",
+            "otras prestaciones sanitarias",
+            "otros servicios sanitarios",
+        },
+    }
+    key = _normalized_key(value)
+    for canonical, choices in aliases.items():
+        if key == _normalized_key(canonical) or key in choices:
+            return canonical
+    raise DataContractError(
+        "invalid_service_category",
+        f"Categoría de servicio no reconocida: {value!r}.",
+        list(aliases),
+    )
+
+
+def normalize_age_group(value: Any) -> str:
+    key = _normalized_key(value).replace("≥", ">=")
+    compact = re.sub(r"\s+", "", key)
+    aliases = {
+        "65": {"65", "65+", ">=65"},
+        "75": {"75", "75+", ">=75"},
+    }
+    for canonical, choices in aliases.items():
+        if compact in choices:
+            return canonical
+    raise DataContractError(
+        "invalid_age_group",
+        f"Grupo de edad no reconocido: {value!r}.",
+        ["65", "65+", "≥65", ">=65", "75", "75+", "≥75", ">=75"],
+    )
+
+
+def normalize_scenario_action(value: Any) -> str:
+    aliases = {
+        "add_service": {"add service", "anadir", "anadir servicio", "agregar", "agregar servicio"},
+        "remove_service": {"remove", "remove service", "eliminar", "eliminar servicio"},
+        "change_threshold": {"change threshold", "cambiar umbral", "cambio de umbral"},
+    }
+    key = _normalized_key(value)
+    for canonical, choices in aliases.items():
+        if key == _normalized_key(canonical) or key in choices:
+            return canonical
+    raise DataContractError(
+        "invalid_scenario",
+        f"Acción de escenario no reconocida: {value!r}.",
+        list(aliases),
+    )
+
+
 class TerritorialAnalysis:
     def __init__(self, repository: DataRepository) -> None:
         self.repo = repository
+
+    def _service_category(self, value: Any) -> str:
+        categories = sorted({row["service_category"] for row in self.repo.services()})
+        try:
+            return normalize_service_category(value)
+        except DataContractError:
+            key = _normalized_key(value)
+            exact = [category for category in categories if _normalized_key(category) == key]
+            if len(exact) == 1:
+                return exact[0]
+            raise DataContractError(
+                "service_category_not_found",
+                f"No hay una categoría de servicio inequívoca para {value!r}.",
+                categories,
+            ) from None
 
     @staticmethod
     def _age_fields(age_group: str, measure: str = "percentage") -> tuple[str, str]:
@@ -226,7 +275,7 @@ class TerritorialAnalysis:
         municipality_names: list[str] | None = None,
         service_override: list[dict[str, Any]] | None = None,
     ) -> dict[str, Any]:
-        service_category = normalize_service_category(service_category)
+        service_category = self._service_category(service_category)
         if threshold_km <= 0 or threshold_km > 100:
             raise DataContractError("invalid_threshold", "threshold_km debe ser mayor que 0 y no superar 100.")
         municipalities = self.repo.municipalities()
@@ -310,8 +359,6 @@ class TerritorialAnalysis:
         if not 2 <= len(municipality_names) <= 20:
             raise DataContractError("invalid_municipality_count", "Indica entre 2 y 20 municipios.")
         metric, age = self._age_fields(age_group, "percentage")
-        if service_category:
-            service_category = normalize_service_category(service_category)
         selected, demo_rows = self._demography_for_period(period)
         resolved = [self.repo.municipality_lookup(name) for name in municipality_names]
         codes = {row["municipality_code"] for row in resolved}
@@ -323,6 +370,7 @@ class TerritorialAnalysis:
         access_result: dict[str, Any] | None = None
         if service_category:
             access_result = self.acceso(service_category, threshold_km, selected, municipality_names)
+            service_category = access_result["filters"]["service_category"]
             access_by_code = {row["municipality_code"]: row for row in access_result["data"]}
         data = []
         for municipality in resolved:
@@ -366,7 +414,7 @@ class TerritorialAnalysis:
         period: str | None = None,
         quantile_threshold: float = 0.75,
     ) -> dict[str, Any]:
-        service_category = normalize_service_category(service_category)
+        service_category = self._service_category(service_category)
         if not 0.5 <= quantile_threshold <= 0.95:
             raise DataContractError("invalid_quantile", "quantile_threshold debe estar entre 0.5 y 0.95.")
         metric, age = self._age_fields(age_group, "percentage")
@@ -403,7 +451,7 @@ class TerritorialAnalysis:
         used_demo = [by_code[row["municipality_code"]] for row in joined]
         sources = self._sources(used_demo) + access["sources"]
         deduped = {str(item.get("source_id", item)): item for item in sources}
-        result = ResultEnvelope(
+        return ResultEnvelope(
             question=f"Coincidencia de envejecimiento >= {age} y peor acceso a {service_category}",
             filters={
                 "age_group": age,
@@ -430,13 +478,6 @@ class TerritorialAnalysis:
                 "Los resultados dependen del cuantil, grupo de edad, categoría y periodo elegidos.",
             ],
         ).to_dict()
-        result["analysis"] = {
-            "total_municipalities": len(joined),
-            "highlighted_count": sum(row["highlighted"] for row in joined),
-            "age_cut_pct": round(age_cut, 4),
-            "distance_cut_m": round(distance_cut, 1),
-        }
-        return result
 
     def escenario(
         self,
@@ -450,7 +491,7 @@ class TerritorialAnalysis:
         new_threshold_km: float | None = None,
     ) -> dict[str, Any]:
         action = normalize_scenario_action(action)
-        service_category = normalize_service_category(service_category)
+        service_category = self._service_category(service_category)
         services = list(self.repo.services())
         changed: dict[str, Any]
         scenario_services = list(services)
@@ -568,100 +609,64 @@ class TerritorialAnalysis:
         ).to_dict()
 
 
-@lru_cache(maxsize=4)
-def _analysis_for_dir(data_dir: str) -> TerritorialAnalysis:
-    return TerritorialAnalysis(DataRepository(Path(data_dir)))
-
-
 def _analysis() -> TerritorialAnalysis:
-    return _analysis_for_dir(str(_default_data_dir().resolve()))
+    return TerritorialAnalysis(DataRepository(_default_data_dir()))
 
 
-def clear_runtime_cache() -> None:
-    _analysis_for_dir.cache_clear()
+@tool
+def obtener_resumen_territorial(municipio: str, periodo: str | None = None) -> str:
+    """Resume demografía y servicios de un municipio; no interpreta ausencia como cero."""
+    return _safe(lambda: _analysis().resumen(municipio, periodo))
 
 
-def compact_result(result: dict[str, Any], operation: str) -> dict[str, Any]:
-    """Reduce payload para el coordinador sin cambiar cálculos ni trazabilidad."""
-    compact = dict(result)
-    rows = list(result.get("data", []))
-    if result.get("status") != "ok":
-        return compact
-    if operation == "coincidence":
-        highlighted = [row for row in rows if row.get("highlighted")]
-        context = [row for row in rows if not row.get("highlighted")][:3]
-        compact["data"] = highlighted + context
-        compact.setdefault("analysis", {})["returned_rows"] = len(compact["data"])
-        compact["analysis"]["context_rows"] = len(context)
-        compact["analysis"]["output_compact"] = True
-    elif operation == "scenario":
-        changed = [
-            row for row in rows
-            if abs(float(row.get("difference_absolute_m") or 0)) > 0.05
-            or row.get("baseline_within_threshold") != row.get("scenario_within_threshold")
-        ]
-        compact["data"] = changed
-        compact["analysis"] = {
-            "total_municipalities": len(rows),
-            "affected_count": len(changed),
-            "returned_rows": len(changed),
-            "output_compact": True,
-        }
-    return compact
-
-
-def _execute(operation: str, callback: Callable[[], dict[str, Any]]) -> str:
-    try:
-        return _json(compact_result(callback(), operation))
-    except DataContractError as exc:
-        return _json(exc.as_result())
-    except (ValueError, TypeError) as exc:
-        return _json({"status": "error", "error_code": "invalid_request", "message": str(exc), "available_options": []})
-
-
-def execute_obtener_resumen_territorial(municipio: str, periodo: str | None = None) -> str:
-    return _execute("summary", lambda: _analysis().resumen(municipio, periodo))
-
-
-def execute_comparar_municipios(
+@tool
+def comparar_municipios(
     municipios: list[str],
     grupo_edad: str = "65",
     categoria_servicio: str | None = None,
     umbral_km: float = 1.0,
     periodo: str | None = None,
 ) -> str:
-    return _execute("comparison", lambda: _analysis().comparar(municipios, grupo_edad, categoria_servicio, umbral_km, periodo))
+    """Compara 2-20 municipios con porcentaje de edad y, opcionalmente, distancia a servicios."""
+    return _safe(lambda: _analysis().comparar(municipios, grupo_edad, categoria_servicio, umbral_km, periodo))
 
 
-def execute_analizar_envejecimiento(
+@tool
+def analizar_envejecimiento(
     grupo_edad: str = "65",
     medida: str = "percentage",
     periodo: str | None = None,
     top_n: int = 10,
 ) -> str:
-    return _execute("aging", lambda: _analysis().envejecimiento(grupo_edad, medida, periodo, top_n))
+    """Calcula ranking de población >=65 o >=75 por porcentaje o recuento."""
+    return _safe(lambda: _analysis().envejecimiento(grupo_edad, medida, periodo, top_n))
 
 
-def execute_analizar_acceso_servicios(
+@tool
+def analizar_acceso_servicios(
     categoria_servicio: str,
     umbral_km: float = 1.0,
     periodo: str | None = None,
     municipios: list[str] | None = None,
 ) -> str:
-    return _execute("access", lambda: _analysis().acceso(categoria_servicio, umbral_km, periodo, municipios))
+    """Calcula distancia euclídea EPSG:25830 desde punto representativo; no acceso real."""
+    return _safe(lambda: _analysis().acceso(categoria_servicio, umbral_km, periodo, municipios))
 
 
-def execute_analizar_coincidencia(
+@tool
+def analizar_coincidencia(
     categoria_servicio: str,
     grupo_edad: str = "65",
     umbral_km: float = 1.0,
     periodo: str | None = None,
     cuantil: float = 0.75,
 ) -> str:
-    return _execute("coincidence", lambda: _analysis().coincidencia(categoria_servicio, grupo_edad, umbral_km, periodo, cuantil))
+    """Cruza envejecimiento y distancia mostrando ambos componentes y criterios de corte."""
+    return _safe(lambda: _analysis().coincidencia(categoria_servicio, grupo_edad, umbral_km, periodo, cuantil))
 
 
-def execute_simular_escenario(
+@tool
+def simular_escenario(
     accion: str,
     categoria_servicio: str,
     umbral_km: float = 1.0,
@@ -671,8 +676,8 @@ def execute_simular_escenario(
     service_id: str | None = None,
     nuevo_umbral_km: float | None = None,
 ) -> str:
-    return _execute(
-        "scenario",
+    """Recalcula un contrafactual: add_service, remove_service o change_threshold."""
+    return _safe(
         lambda: _analysis().escenario(
             accion,
             categoria_servicio,
@@ -686,5 +691,18 @@ def execute_simular_escenario(
     )
 
 
-def execute_consultar_fuente(source_id: str | None = None) -> str:
-    return _execute("source", lambda: _analysis().fuente(source_id))
+@tool
+def consultar_fuente(source_id: str | None = None) -> str:
+    """Devuelve procedencia, periodo, institución, unidad, licencia y limitaciones disponibles."""
+    return _safe(lambda: _analysis().fuente(source_id))
+
+
+TOOLS = [
+    obtener_resumen_territorial,
+    comparar_municipios,
+    analizar_envejecimiento,
+    analizar_acceso_servicios,
+    analizar_coincidencia,
+    simular_escenario,
+    consultar_fuente,
+]
