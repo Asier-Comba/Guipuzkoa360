@@ -49,3 +49,23 @@ def test_na_does_not_become_zero(tmp_path: Path):
     )
     row = DataRepository(tmp_path).demography()[0]
     assert row["pct_65_plus"] is None
+
+
+def test_aliases_are_controlled(tmp_path: Path):
+    (tmp_path / "municipios.csv").write_text(
+        "codigo_municipio,nombre_municipio\n001,TEST_ALIAS\n", encoding="utf-8"
+    )
+    row = DataRepository(tmp_path).municipalities()[0]
+    assert row["municipality_code"] == "001"
+    assert row["municipality_name"] == "TEST_ALIAS"
+
+
+def test_invalid_percentage_is_rejected(tmp_path: Path):
+    (tmp_path / "demografia.csv").write_text(
+        "municipality_code,municipality_name,population_total,pct_65_plus,reference_period,source_id\n"
+        "T1,TEST_A,100,120,2025,SRC\n",
+        encoding="utf-8",
+    )
+    with pytest.raises(DataContractError) as error:
+        DataRepository(tmp_path).demography()
+    assert error.value.code == "invalid_percentage"

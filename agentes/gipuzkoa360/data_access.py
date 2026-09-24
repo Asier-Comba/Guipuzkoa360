@@ -134,6 +134,12 @@ class DataRepository:
                     elif value is not None:
                         value = str(value).strip()
                     row[canonical] = value
+                for required_field in required:
+                    if _blank(row.get(required_field)):
+                        raise DataContractError(
+                            "missing_value",
+                            f"Falta {required_field} en la fila {number} de {filename}.",
+                        )
                 row["_row_number"] = number
                 row["_file"] = path.as_posix()
                 rows.append(row)
@@ -168,9 +174,26 @@ class DataRepository:
             )
             for row in rows:
                 total = row.get("population_total")
+                for population_field in ("population_total", "population_65_plus", "population_75_plus"):
+                    value = row.get(population_field)
+                    if value is not None and value < 0:
+                        raise DataContractError(
+                            "invalid_population",
+                            f"{population_field} no puede ser negativo en la fila {row['_row_number']}.",
+                        )
                 for age in ("65", "75"):
                     count_key, pct_key = f"population_{age}_plus", f"pct_{age}_plus"
                     count, pct = row.get(count_key), row.get(pct_key)
+                    if pct is not None and not 0 <= pct <= 100:
+                        raise DataContractError(
+                            "invalid_percentage",
+                            f"{pct_key} debe estar entre 0 y 100 en la fila {row['_row_number']}.",
+                        )
+                    if count is not None and total is not None and count > total:
+                        raise DataContractError(
+                            "invalid_population",
+                            f"{count_key} supera population_total en la fila {row['_row_number']}.",
+                        )
                     if pct is None and count is not None and total not in (None, 0):
                         row[pct_key] = 100.0 * count / total
                         self.warnings.append(f"{pct_key} calculado a partir de recuento y población total.")
