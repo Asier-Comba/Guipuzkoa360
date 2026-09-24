@@ -1,51 +1,51 @@
 {
   "release": "urban-challenge-rc2",
   "repeats": 5,
-  "cold_data_load_ms": 8.31,
+  "cold_data_load_ms": 7.364,
   "tools": [
     {
       "tool": "obtener_resumen_territorial",
-      "calculation_ms_median": 0.257,
-      "serialization_ms_median": 0.047,
-      "wrapper_ms_median": 0.609
+      "calculation_ms_median": 0.256,
+      "serialization_ms_median": 0.054,
+      "wrapper_ms_median": 0.592
     },
     {
       "tool": "comparar_municipios",
-      "calculation_ms_median": 0.937,
-      "serialization_ms_median": 0.051,
-      "wrapper_ms_median": 1.311
+      "calculation_ms_median": 1.114,
+      "serialization_ms_median": 0.064,
+      "wrapper_ms_median": 1.444
     },
     {
       "tool": "analizar_envejecimiento",
-      "calculation_ms_median": 0.108,
-      "serialization_ms_median": 0.04,
-      "wrapper_ms_median": 0.431
+      "calculation_ms_median": 0.111,
+      "serialization_ms_median": 0.039,
+      "wrapper_ms_median": 0.433
     },
     {
       "tool": "analizar_acceso_servicios",
-      "calculation_ms_median": 0.255,
-      "serialization_ms_median": 0.036,
-      "wrapper_ms_median": 0.552
+      "calculation_ms_median": 0.264,
+      "serialization_ms_median": 0.035,
+      "wrapper_ms_median": 0.573
     },
     {
       "tool": "analizar_coincidencia",
-      "calculation_ms_median": 4.975,
-      "serialization_ms_median": 0.392,
-      "wrapper_ms_median": 5.696
+      "calculation_ms_median": 5.003,
+      "serialization_ms_median": 0.38,
+      "wrapper_ms_median": 5.518
     },
     {
       "tool": "simular_escenario",
-      "calculation_ms_median": 6.93,
-      "serialization_ms_median": 0.295,
-      "wrapper_ms_median": 8.406
+      "calculation_ms_median": 6.181,
+      "serialization_ms_median": 0.27,
+      "wrapper_ms_median": 6.682
     },
     {
       "tool": "consultar_fuente",
-      "calculation_ms_median": 0.027,
+      "calculation_ms_median": 0.028,
       "serialization_ms_median": 0.028,
-      "wrapper_ms_median": 0.266
+      "wrapper_ms_median": 0.29
     }
   ],
-  "max_wrapper_ms_median": 8.406,
+  "max_wrapper_ms_median": 6.682,
   "status": "PASS"
 }
