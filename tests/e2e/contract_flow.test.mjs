@@ -10,6 +10,7 @@ const root=path.resolve(import.meta.dirname,'../..');
 const fixture=JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/synthetic_agent_result.json'),'utf8'));
 const runner=path.join(root,'scripts/build_results.mjs');
 function run(data){const dir=fs.mkdtempSync(path.join(os.tmpdir(),'g360-e2e-'));const input=path.join(dir,'result.json'),out=path.join(dir,'out');fs.writeFileSync(input,JSON.stringify(data));const p=spawnSync(process.execPath,[runner,input,out],{encoding:'utf8'});return {dir,out,...p};}
+function asReal(d){d.data_mode='real';d.parameters.older_share_threshold_pct=25;d.analysis={total_units:4,matched_count:0,matched_unit_ids:[],older_population_total:5790};return d}
 
 test('pregunta → herramienta → dato → resultado → visualización → fuente',()=>{
   const x=run(fixture);assert.equal(x.status,0,x.stderr);
@@ -27,7 +28,7 @@ test('pregunta → herramienta → dato → resultado → visualización → fue
 });
 test('falla si una fuente no se puede rastrear',()=>{const d=structuredClone(fixture);d.comparison[0].source_ids=['FUENTE_INEXISTENTE'];const x=run(d);assert.notEqual(x.status,0);assert.match(x.stderr,/fuente inexistente/);fs.rmSync(x.dir,{recursive:true,force:true});});
 test('falla si el resultado no enlaza con una salida de herramienta',()=>{const d=structuredClone(fixture);d.trace.result_ref='OTRO_RESULTADO';const x=run(d);assert.notEqual(x.status,0);assert.match(x.stderr,/tool sin resultado enlazado/);fs.rmSync(x.dir,{recursive:true,force:true});});
-test('falla si un dato real carece de origen',()=>{const d=structuredClone(fixture);d.data_mode='real';d.trace.execution_mode='local_tool';const x=run(d);assert.notEqual(x.status,0);assert.match(x.stderr,/fuente real sin URL/);fs.rmSync(x.dir,{recursive:true,force:true});});
+test('falla si un dato real carece de origen',()=>{const d=asReal(structuredClone(fixture));d.trace.execution_mode='local_tool';const x=run(d);assert.notEqual(x.status,0);assert.match(x.stderr,/fuente real sin URL/);fs.rmSync(x.dir,{recursive:true,force:true});});
 test('geometría de Work 1 se enlaza por código sin cambiar las cifras',()=>{
   const dir=fs.mkdtempSync(path.join(os.tmpdir(),'g360-geo-'));
   const input=path.join(dir,'input.json'),output=path.join(dir,'output.json'),geo=path.join(dir,'geo.json'),meta=path.join(dir,'meta.json');
@@ -54,7 +55,7 @@ const invalidCases=[
   ['distancia NaN convertida a null',d=>{d.comparison[0].service_distance_km=NaN},/comparison.service_distance_km/],
   ['source_id desconocido',d=>{d.metrics[0].source_ids=['NO_EXISTE']},/referencia de fuente inexistente/],
   ['escenario con unidad inexistente',d=>{d.scenario.unit_id='NO_EXISTE'},/scenario inválido/],
-  ['traza que finge agente con fixture',d=>{d.data_mode='real';d.trace.execution_mode='synthetic_fixture'},/modo de ejecución sintético/],
+  ['traza que finge agente con fixture',d=>{asReal(d);d.trace.execution_mode='synthetic_fixture'},/modo de ejecución sintético/],
   ['fecha inválida',d=>{d.generated_at='ayer'},/generated_at/]
 ];
 for(const [name,change,error] of invalidCases) test(`rechaza ${name}`,()=>{const d=structuredClone(fixture);change(d);const x=run(d);assert.notEqual(x.status,0);assert.match(x.stderr,error);fs.rmSync(x.dir,{recursive:true,force:true})});

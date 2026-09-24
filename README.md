@@ -21,6 +21,6 @@ node scripts/build_results.mjs tests/fixtures/synthetic_agent_result.json result
 node --test tests/e2e/contract_flow.test.mjs
 ```
 
-Los HTML del fixture llevan una marca visible de **datos sintéticos de desarrollo**. Una demo con datos reales debe indicar si su cálculo proviene de una herramienta local reproducible o de una ejecución del agente. La interfaz local no demuestra por sí sola que el agente haya recalculado.
+Los HTML del fixture llevan una marca visible de **datos sintéticos de desarrollo**. La demo real de Work 1 se genera con `node scripts/build_jury_demo.mjs` y se abre en `resultados/demo_real/index.html`. Sus cuatro consultas se calculan con una herramienta local reproducible y están marcadas como tales. La interfaz local no demuestra por sí sola que el agente haya recalculado.
 
-Seguir `docs/DEMO_QUERIES.md`, `docs/INTEGRATION_PLAYBOOK.md` y `docs/SUBMISSION_CHECKLIST.md` antes de preparar la entrega en el portal.
+Seguir `docs/README_DEMO_JURADO.md`, `docs/WORK2_AGENT_ENVELOPE.md`, `docs/INTEGRATION_PLAYBOOK.md` y `docs/SUBMISSION_CHECKLIST.md` antes de preparar la entrega en el portal.

@@ -1,0 +1,208 @@
+{
+  "schema_version": "1.0.0",
+  "data_mode": "real",
+  "title": "Envejecimiento y proximidad a servicios sanitarios",
+  "question": "¿Qué municipios tienen al menos 25% de población de 65 años o más y más de 2 km de distancia geométrica aproximada desde su punto representativo al centro de atención primaria más cercano?",
+  "summary": "5 de 88 municipios cumplen ambos criterios. La tabla muestra los municipios solicitados. Las distancias se miden desde un punto representativo municipal.",
+  "generated_at": "2026-09-24T17:02:00+02:00",
+  "period": "Demografía 2025-01-01 · centros 2026-09-20 · límites 2025-05-07",
+  "geography": "Gipuzkoa · 88 municipios",
+  "parameters": {
+    "age_group": "65+",
+    "older_share_threshold_pct": 25,
+    "service": "primary_care",
+    "distance_threshold_km": 2
+  },
+  "analysis": {
+    "total_units": 88,
+    "matched_count": 5,
+    "matched_unit_ids": [
+      "20051",
+      "20036",
+      "20041",
+      "20035",
+      "20029"
+    ],
+    "older_population_total": 175452
+  },
+  "metrics": [
+    {
+      "id": "population_total",
+      "label": "Población total",
+      "value": 724797,
+      "unit": "personas",
+      "period": "2025-01-01",
+      "source_ids": [
+        "EUSTAT_EMH_2025"
+      ]
+    },
+    {
+      "id": "older_population_total",
+      "label": "Población ≥65",
+      "value": 175452,
+      "unit": "personas",
+      "period": "2025-01-01",
+      "source_ids": [
+        "EUSTAT_EMH_2025"
+      ]
+    },
+    {
+      "id": "matched_municipalities",
+      "label": "Municipios que cumplen ambos criterios",
+      "value": 5,
+      "unit": "municipios",
+      "period": "2025/2026",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    }
+  ],
+  "comparison": [
+    {
+      "unit_id": "20069",
+      "name": "Donostia / San Sebastián",
+      "population": 183388,
+      "age_65_count": 48832,
+      "age_75_count": 24884,
+      "service_distance_km": 0.3231,
+      "service_count": 18,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "row_ref": "resultados/metricas_municipales.csv#municipality_code=20069",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    },
+    {
+      "unit_id": "20051",
+      "name": "Legazpi",
+      "population": 8377,
+      "age_65_count": 2276,
+      "age_75_count": 1190,
+      "service_distance_km": 2.6248,
+      "service_count": 1,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "row_ref": "resultados/metricas_municipales.csv#municipality_code=20051",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    },
+    {
+      "unit_id": "20036",
+      "name": "Hondarribia",
+      "population": 16960,
+      "age_65_count": 4377,
+      "age_75_count": 2254,
+      "service_distance_km": 2.5835,
+      "service_count": 1,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "row_ref": "resultados/metricas_municipales.csv#municipality_code=20036",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    }
+  ],
+  "map_layers": [
+    {
+      "id": "older_share",
+      "label": "Población ≥65",
+      "metric": "age_65_count / population * 100",
+      "unit": "%",
+      "period": "2025-01-01",
+      "source_ids": [
+        "EUSTAT_EMH_2025"
+      ]
+    },
+    {
+      "id": "service_distance",
+      "label": "Distancia geométrica aproximada a atención primaria",
+      "metric": "service_distance_km",
+      "unit": "km",
+      "period": "2026-09-20",
+      "source_ids": [
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    }
+  ],
+  "scenario": null,
+  "sources": [
+    {
+      "source_id": "EUSTAT_EMH_2025",
+      "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+      "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px",
+      "period": "2025-01-01",
+      "unit": "personas",
+      "license": "Creative Commons (según ficha Eustat de la operación 010154)",
+      "method": "Recuento municipal oficial"
+    },
+    {
+      "source_id": "ODE_HEALTH_CENTRES_2026",
+      "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+      "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/",
+      "period": "2026-09-20",
+      "unit": "centros y distancia en m",
+      "license": "Licencia abierta indicada por Open Data Euskadi; atribución y fecha obligatorias",
+      "method": "Centros públicos; proximidad geométrica derivada desde punto representativo municipal"
+    },
+    {
+      "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+      "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+      "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/",
+      "period": "2025-05-07",
+      "unit": "polígonos municipales",
+      "license": "Uso permitido citando Eusko Jaurlaritza / Gobierno Vasco",
+      "method": "Límites municipales usados para punto representativo y mapa"
+    }
+  ],
+  "method": "Por cada municipio: población ≥65 / población total × 100 ≥25%, y distancia euclídea desde un punto representativo municipal al centro de atención primaria más cercano >2 km. Se leen las 88 filas de resultados/metricas_municipales.csv; m → km dividiendo entre 1.000. Orden por distancia descendente.",
+  "limitations": [
+    "El punto representativo municipal no está ponderado por población; la distancia no representa el recorrido de una persona concreta.",
+    "Distancia euclídea no equivale a tiempo de viaje, accesibilidad universal, apertura, capacidad ni disponibilidad de citas.",
+    "Demografía, centros y límites tienen periodos distintos (separación máxima documentada de 627 días).",
+    "Un municipio que no cumple estos umbrales no implica ausencia de necesidad; los criterios son exploratorios."
+  ],
+  "trace": {
+    "execution_mode": "local_tool",
+    "question_id": "LOCAL-Q-1aee84960762",
+    "agent_version": "local-analysis/1.0.0 (sin agente)",
+    "tool_calls": [
+      {
+        "tool": "compare_municipal_services_local",
+        "arguments": {
+          "age_group": "65+",
+          "older_share_threshold_pct": 25,
+          "distance_threshold_km": 2,
+          "service": "primary_care",
+          "compare_codes": "20069,20051,20036"
+        },
+        "output_ref": "LOCAL-58a21aee84960762"
+      }
+    ],
+    "data_refs": [
+      "EUSTAT_EMH_2025",
+      "ODE_HEALTH_CENTRES_2026",
+      "GEOEUSKADI_MUNICIPIOS_2025"
+    ],
+    "result_ref": "LOCAL-58a21aee84960762",
+    "input_files": [
+      {
+        "path": "resultados/metricas_municipales.csv",
+        "sha256": "27628accd750bd2a209873ca7e82e880d69058951fdae10dd4363ccec84f6f6a",
+        "rows": 88
+      },
+      {
+        "path": "datos_preparados/metadata_sources.json",
+        "sha256": "b20ef4e798aa36a32b4a4353c65c36f28f602c27b4551397ec321972970c4b0e",
+        "rows": 3
+      }
+    ]
+  }
+}
