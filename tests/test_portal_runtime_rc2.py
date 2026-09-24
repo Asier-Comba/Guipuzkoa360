@@ -43,6 +43,21 @@ def test_studio_wrappers_do_not_expose_full_detail_payload():
     assert all("detalle" not in inspect.signature(item).parameters for item in main.TOOLS)
 
 
+def test_core_keeps_explicit_offline_full_detail_capability():
+    assert all(
+        "detalle" in inspect.signature(item).parameters
+        for item in (
+            tools.obtener_resumen_territorial,
+            tools.comparar_municipios,
+            tools.analizar_envejecimiento,
+            tools.analizar_acceso_servicios,
+            tools.analizar_coincidencia,
+            tools.simular_escenario,
+            tools.consultar_fuente,
+        )
+    )
+
+
 def test_service_age_and_action_aliases():
     for value in ("atención primaria", "atencion primaria", "primary care", "primary_care"):
         assert tools.normalize_service_category(value) == "primary_care"

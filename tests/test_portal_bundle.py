@@ -5,6 +5,7 @@ import ast
 import json
 import subprocess
 import sys
+import zipfile
 from pathlib import Path
 
 
@@ -67,3 +68,44 @@ def test_portal_main_physically_declares_seven_unique_tools():
     }
     assert {node.name for node in decorated} == expected
     assert len(decorated) == len(expected) == 7
+
+
+def test_rc2_zip_extracts_and_executes_a_real_smoke_case(tmp_path):
+    subprocess.run([sys.executable, "scripts/agent/build_portal_sources.py"], cwd=ROOT, check=True)
+    subprocess.run([sys.executable, "scripts/agent/build_portal_package.py"], cwd=ROOT, check=True)
+    archive_path = ROOT / "dist" / "gipuzkoa360-urban-challenge-rc2.zip"
+    with zipfile.ZipFile(archive_path) as archive:
+        assert set(archive.namelist()) == {
+            "FUENTES.md",
+            "docs/METODOLOGIA.md",
+            "docs/PORTAL_DEPLOYMENT.md",
+            "docs/RESULT_SCHEMA.md",
+            "main.py",
+            "requirements.txt",
+            "tools.py",
+            "datos_preparados/data_contract.json",
+            "datos_preparados/demografia.csv",
+            "datos_preparados/metadata_sources.json",
+            "datos_preparados/municipios.csv",
+            "datos_preparados/runtime_manifest.json",
+            "datos_preparados/runtime_municipality_points.csv",
+            "datos_preparados/runtime_servicios.csv",
+        }
+        archive.extractall(tmp_path)
+    smoke = subprocess.run(
+        [
+            sys.executable,
+            "-c",
+            (
+                "import json, main; "
+                "r=json.loads(main.analizar_coincidencia('atención primaria','65+',2,'2025-01-01',.75)); "
+                "assert r['status']=='ok'; assert r['summary']['highlighted_count']==7; "
+                "assert r['summary']['joined_rows']==88; print('ZIP_SMOKE_PASS')"
+            ),
+        ],
+        cwd=tmp_path,
+        capture_output=True,
+        text=True,
+    )
+    assert smoke.returncode == 0, smoke.stderr
+    assert "ZIP_SMOKE_PASS" in smoke.stdout
