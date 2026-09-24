@@ -32,7 +32,7 @@ def _invoke(function: Callable[..., str], *args: Any) -> dict[str, Any]:
 
 
 def build_report(repeats: int = 5) -> dict[str, Any]:
-    core.clear_runtime_cache()
+    core.clear_analysis_cache()
     repository = core.DataRepository(ROOT / "datos_preparados")
     load_seconds, _ = _seconds(lambda: (repository.municipalities(), repository.demography(), repository.services(), repository.metadata()))
     analysis = core.TerritorialAnalysis(repository)
