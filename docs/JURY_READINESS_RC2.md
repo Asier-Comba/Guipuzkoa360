@@ -1,7 +1,9 @@
 # Preparación de jurado · GIPUZKOA 360 RC2
 
-Fecha: 2026-09-24  
-Duración objetivo: 2–3 minutos  
+Fecha: 2026-09-24
+
+Duración objetivo: 2–3 minutos
+
 Estado actual: **bloqueado para demo en vivo**. La versión privada exacta RC2 `v1` pasa G-01…G-03 y queda sin salida en G-04 cuando el coordinador solicita `detalle=true` para las 88 filas.
 
 ## Qué se puede afirmar hoy

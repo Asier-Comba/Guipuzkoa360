@@ -1,9 +1,13 @@
 # Validación privada del portal · RC1 exacto y puerta RC2
 
-Fecha de ejecución: 2026-09-24  
-Responsable: Work 3 · validación, red team y experiencia de jurado  
-Rama de evidencias: `work/portal-redteam-rc2`  
-Base limpia: `bacc29d3b4d4d48eab11e5bf1ad00134f5b12a01`  
+Fecha de ejecución: 2026-09-24
+
+Responsable: Work 3 · validación, red team y experiencia de jurado
+
+Rama de evidencias: `work/portal-redteam-rc2`
+
+Base limpia: `bacc29d3b4d4d48eab11e5bf1ad00134f5b12a01`
+
 Portal: workspace privado de DeustoAI Labs; no se abrió ni modificó Entrega.
 
 ## Regla de aceptación
