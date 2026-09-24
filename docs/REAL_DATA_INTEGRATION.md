@@ -13,5 +13,6 @@
 9. Sustituir o complementar los fixtures solo en pruebas; nunca renombrarlos como datos reales.
 10. Crear una versión nueva en el portal y probar esa versión. Editar archivos no actualiza versiones previas.
 
-Si faltan centroides en `municipios.csv`, se intentan derivar de `municipios.geojson`. Antes de utilizar
-distancias de red o tiempos de viaje debe añadirse una fuente y un cálculo específicamente validado.
+Los escenarios consumen `runtime_municipality_points.csv` y `runtime_servicios.csv` con coordenadas EPSG:25830.
+Si faltan, la herramienta debe informar la ausencia; no debe sustituir silenciosamente la métrica por otra.
+Antes de utilizar distancias de red o tiempos de viaje debe añadirse una fuente y un cálculo validado.

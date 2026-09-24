@@ -1,0 +1,5 @@
+check,source_value,pipeline_value,difference,result,source_id
+population_total:Donostia / San Sebastián,183388,183388,0,PASS,EUSTAT_EMH_2025
+population_total:Eibar,27118,27118,0,PASS,EUSTAT_EMH_2025
+population_total:Tolosa,20048,20048,0,PASS,EUSTAT_EMH_2025
+health_services:Gipuzkoa,148,148,0,PASS,ODE_HEALTH_CENTRES_2026

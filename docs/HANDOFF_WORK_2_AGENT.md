@@ -1,10 +1,19 @@
 # Handoff — Work 2 Agent
 
+## Estado de integración
+
+Integrado con `work/data-foundation` de Work 1 el 24/09/2026. La rama conserva los commits originales de Work 2
+`419a427` y `b197c32` y la historia completa de Work 1. No se modificó la rama remota de Work 1.
+
+Datos reales cargados: 88 municipios, 148 centros sanitarios públicos, demografía 2025-01-01, geometría
+2025-05-07 y servicios 2026-09-20. Los fixtures `TEST_*` siguen aislados bajo `tests/fixtures/`.
+
 ## Arquitectura
 
 Un coordinador LangChain creado por `build_agent(model)` y siete herramientas deterministas. `data_access.py`
-normaliza aliases, valida esquema/tipos/claves y resuelve municipios. `metrics.py` contiene Haversine, cuantiles
-y rangos percentiles. `tools.py` compone salidas homogéneas y errores controlados. No hay Internet ni secretos.
+normaliza aliases, valida esquema/tipos/claves y resuelve municipios. `metrics.py` contiene distancia euclídea
+EPSG:25830, conversión WGS84→UTM 30N para puntos hipotéticos, cuantiles y rangos percentiles. `tools.py`
+compone salidas homogéneas y errores controlados. No hay Internet ni secretos en runtime.
 
 ## Herramientas
 
@@ -16,55 +25,76 @@ y rangos percentiles. `tools.py` compone salidas homogéneas y errores controlad
 - `simular_escenario(accion, categoria_servicio, ..., latitud, longitud, service_id, nuevo_umbral_km)`
 - `consultar_fuente(source_id)`
 
-Todas devuelven el contrato de `docs/RESULT_SCHEMA.md`. Acciones de escenario válidas: `add_service`,
-`remove_service`, `change_threshold`.
+Acciones de escenario: `add_service`, `remove_service`, `change_threshold`. Cada salida sigue
+`docs/RESULT_SCHEMA.md`.
 
-## Datos esperados
+## Métrica territorial integrada
 
-`municipios.csv`, `demografia.csv`, `servicios.csv`, `metadata_sources.json` y opcionalmente
-`municipios.geojson`. Los aliases aceptados están declarados en `data_access.py`. Son obligatorios códigos,
-nombres, periodo y `source_id`; los porcentajes pueden derivarse de recuento/población total cuando existan.
+La proximidad es **distancia geométrica aproximada desde el punto representativo municipal**: distancia
+euclídea en EPSG:25830 entre `representative_point()` del polígono y el servicio más cercano. Unidad: metros.
+Los cálculos del agente reproducen las columnas precomputadas de Work 1 para atención primaria y hospitales
+con tolerancia de 0,1 m. No es distancia por red, tiempo de viaje ni acceso real.
 
-## Pruebas
+`runtime_municipality_points.csv` y las coordenadas proyectadas añadidas a `runtime_servicios.csv` permiten
+recalcular altas/bajas hipotéticas con la misma métrica sin GeoPandas en el runtime del portal.
 
-Desde la raíz:
+## Pruebas ejecutadas
+
+Comando:
 
 ```text
-python -m pytest
+py -m pytest
 ```
 
-Las pruebas cubren archivos/columnas ausentes, códigos de texto, NA, duplicados, edades 65/75, categorías,
-municipios sin servicio, comparaciones, escenarios, trazabilidad y no invención. Los diez golden cases están
-en `tests/golden_cases.json`; la conversación real debe ejecutarse después contra una versión del portal.
+Resultado de integración: **38 passed**. Incluye las 24 pruebas originales de Work 2, las pruebas de integridad
+de Work 1 y nuevas pruebas reales de carga, tipos, cobertura, reproducción de distancias, comparación municipal,
+escenario, conversión de coordenadas, fuentes y trazabilidad.
 
-## Compatibilidad con el portal
+Contraste manual automatizado: Donostia / San Sebastián tiene **183.388 habitantes** tanto en
+`datos_originales/eustat_demografia_2025.csv` como en el registro preparado. Fuente: `EUSTAT_EMH_2025`, periodo
+2025-01-01. El registro de Work 1 contiene además Eibar 27.118, Tolosa 20.048 y 148 centros, todos `PASS`.
 
-Implementado: `main.py`, función síncrona `build_agent(model)`, `create_agent`, 7 tools, Internet desactivado,
-8 iteraciones, rutas relativas y contexto explícito. Pendiente hasta disponer de datos reales/subida: ejecutar
-“Comprobar preparación”, crear versión y ejecutar golden tests en el banco de Pruebas. Nunca asumir que editar
-el borrador actualiza una versión existente.
+## Datos y fuentes
 
-## Datos sintéticos
+- `municipios.csv`: tabla analítica y métricas precomputadas.
+- `demografia.csv`: población total, 65+, 75+ y porcentajes.
+- `runtime_municipality_points.csv`: puntos representativos en WGS84 y EPSG:25830.
+- `runtime_servicios.csv`: servicios con coordenadas WGS84/EPSG:25830, periodo y fuente.
+- `metadata_sources.json`: tres fuentes oficiales y el registro derivado.
 
-Solo `tests/fixtures/`; municipios `TEST_*`, fuentes `SRC_TEST_*`. No incluirlos en la versión final ni describir
-sus resultados como Gipuzkoa.
-
-## Integración con Work 1
-
-Seguir `docs/REAL_DATA_INTEGRATION.md`, corregir todos los errores de contrato, contrastar una cifra y actualizar
-`FUENTES.md`. No sobrescribir originales.
+La población 75+ se deriva de año de nacimiento <=1949. Los periodos no son idénticos (máximo 627 días).
 
 ## Contrato para Work 3
 
-Usar `docs/RESULT_SCHEMA.md`. La visualización consume `data`, `sources`, `method`, `limitations` y el bloque
-opcional `scenario`; no recalcula métricas ni interpreta ausencias como cero.
+Definido en `docs/RESULT_SCHEMA.md`. Unir siempre por `municipality_code`. Para mapas usar
+`runtime_municipios.geojson`; para puntos, `runtime_servicios.csv`. No recalcular métricas en la interfaz ni
+convertir ausencias en cero. Ejemplos reales reproducibles en `docs/examples/`, regenerables con:
+
+```text
+py scripts/agent/generate_examples.py
+```
+
+## Preparación para el portal
+
+`main.py` mantiene `build_agent(model)` síncrono, `create_agent`, siete tools, 8 iteraciones, memoria activa,
+Internet desactivado y contexto explícito. El runtime incluye solo código, metodología, contrato y CSV/JSON
+ligeros; excluye originales, tests y el GeoJSON maestro. Ejecutar `scripts/agent/build_portal_package.py` para
+crear el ZIP y revisar su informe de tamaño antes de subir.
+
+Secuencia oficial: editar → tests → comprobar preparación → crear versión → probar esa versión → seleccionarla.
+Crear una versión no publica la entrega ni sustituye automáticamente una versión seleccionada.
 
 ## Limitaciones
 
-La métrica base es distancia geodésica centroide-punto. No modela red, tiempos, horarios, capacidad, calidad,
-accesibilidad universal, demanda ni conducta. Coincidencia no implica causalidad. Escenario no implica impacto.
+- Punto municipal no ponderado por población.
+- Sin red viaria/peatonal, tiempos, horarios, capacidad, citas, calidad, demanda o accesibilidad universal.
+- Coincidencia no implica causalidad ni necesidad individual.
+- Escenario no es predicción ni recomendación administrativa.
+- Periodos de demografía, geometría y servicios distintos.
 
-## Git y portal
+## Pendientes
 
-Rama prevista: `work/agent-engine`. Secuencia: editar → tests → comprobar preparación → crear versión → probar
-esa versión → seleccionarla para entrega. Publicación final y selección de entrega quedan fuera de este handoff.
+1. Subir/probar el paquete en un borrador del portal sin sobrescribir trabajo ajeno.
+2. Crear una versión fija y ejecutar los diez golden cases conversacionales con el modelo del portal.
+3. Work 3 debe validar el join y visualizaciones con los tres ejemplos reales.
+4. No publicar ni hacer merge sin autorización expresa.

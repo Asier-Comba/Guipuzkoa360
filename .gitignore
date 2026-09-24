@@ -5,3 +5,5 @@ __pycache__/
 htmlcov/
 .env
 *.log
+datos_originales/municipios_etrs89/
+dist/
