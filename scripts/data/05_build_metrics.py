@@ -12,6 +12,12 @@ ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "datos_preparados"
 ANALYSIS = ROOT / "analisis"
 RESULTS = ROOT / "resultados"
+SERVICE_CATEGORIES = ("primary_care", "hospital", "mental_health", "other_health")
+UPSTREAM_SOURCE_IDS = (
+    "EUSTAT_EMH_2025",
+    "ODE_HEALTH_CENTRES_2026",
+    "GEOEUSKADI_MUNICIPIOS_2025",
+)
 
 
 def nearest_distance(origins: gpd.GeoSeries, destinations: gpd.GeoSeries) -> np.ndarray:
@@ -42,19 +48,32 @@ def main() -> None:
     )
     counts.columns = [f"services_{column}" for column in counts.columns]
     metrics = metrics.merge(counts.reset_index(), on="municipality_code", how="left", validate="one_to_one")
-    service_cols = [column for column in metrics if column.startswith("services_")]
+    for category_name in SERVICE_CATEGORIES:
+        column = f"services_{category_name}"
+        if column not in metrics:
+            metrics[column] = 0
+    service_cols = [f"services_{category_name}" for category_name in SERVICE_CATEGORIES]
     metrics[service_cols] = metrics[service_cols].fillna(0).astype(int)
-    metrics["primary_care_per_10000_65_plus"] = (
-        metrics.get("services_primary_care", 0) / metrics["population_65_plus"] * 10_000
-    ).round(3)
+    metrics["services_total"] = metrics[service_cols].sum(axis=1).astype(int)
+    for category_name in SERVICE_CATEGORIES:
+        for age_group in ("65", "75"):
+            metrics[f"{category_name}_per_10000_{age_group}_plus"] = (
+                metrics[f"services_{category_name}"] / metrics[f"population_{age_group}_plus"] * 10_000
+            ).round(3)
 
     representative_points = boundaries.geometry.representative_point()
-    for category_name in ["primary_care", "hospital"]:
+    representative_wgs84 = gpd.GeoSeries(representative_points, crs=25830).to_crs(4326)
+    metrics["representative_point_longitude"] = representative_wgs84.x.round(7).to_numpy()
+    metrics["representative_point_latitude"] = representative_wgs84.y.round(7).to_numpy()
+    for category_name in SERVICE_CATEGORIES:
         destinations = service_points.loc[service_points["service_category"].eq(category_name), "geometry"]
+        if destinations.empty:
+            raise ValueError(f"No hay destinos para la categoría {category_name}")
         metrics[f"distance_to_nearest_{category_name}_m"] = nearest_distance(representative_points, destinations).round(1)
 
     metrics["metrics_reference_period"] = "demography=2025-01-01;services=2026-09-20;geography=2025-05-07"
     metrics["source_id"] = "G360_DERIVED_MUNICIPAL_METRICS_V1"
+    metrics["source_ids"] = "|".join(UPSTREAM_SOURCE_IDS)
     metrics.to_csv(OUT / "municipios.csv", index=False)
     metrics.to_csv(RESULTS / "metricas_municipales.csv", index=False)
 
@@ -75,4 +94,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
