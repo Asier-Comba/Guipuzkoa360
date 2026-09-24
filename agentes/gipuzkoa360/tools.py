@@ -100,6 +100,16 @@ class TerritorialAnalysis:
             "pct_65_plus": demo.get("pct_65_plus"),
             "pct_75_plus": demo.get("pct_75_plus"),
             "services_in_municipality": categories,
+            "service_indicators": {
+                category: {
+                    "registered_service_count": municipality_row.get(f"services_{category}"),
+                    "rate_per_10000_65_plus": municipality_row.get(f"{category}_per_10000_65_plus"),
+                    "rate_per_10000_75_plus": municipality_row.get(f"{category}_per_10000_75_plus"),
+                    "nearest_distance_m": municipality_row.get(f"distance_to_nearest_{category}_m"),
+                }
+                for category in ("primary_care", "hospital", "mental_health", "other_health")
+            },
+            "metrics_reference_period": municipality_row.get("metrics_reference_period"),
         }
         used = [demo] + service_rows
         return ResultEnvelope(
@@ -110,7 +120,11 @@ class TerritorialAnalysis:
             unit="varias; ver cada campo",
             rows_used=len(used),
             data=[data],
-            method="Selección por código municipal; recuento de servicios por categoría.",
+            method=(
+                "Selección por código municipal; recuento de registros por categoría; tasas por 10.000 "
+                "personas del grupo de edad y mínima distancia euclídea EPSG:25830 desde el punto "
+                "representativo municipal."
+            ),
             sources=self._sources(used),
             warnings=list(dict.fromkeys(self.repo.warnings)),
             limitations=[

@@ -41,6 +41,16 @@ ALIASES: dict[str, tuple[str, ...]] = {
     "distance_to_nearest_primary_care_m": ("distance_to_nearest_primary_care_m",),
     "distance_to_nearest_hospital_m": ("distance_to_nearest_hospital_m",),
     "metrics_reference_period": ("metrics_reference_period",),
+    "services_total": ("services_total",),
+    "primary_care_per_10000_75_plus": ("primary_care_per_10000_75_plus",),
+    "hospital_per_10000_65_plus": ("hospital_per_10000_65_plus",),
+    "hospital_per_10000_75_plus": ("hospital_per_10000_75_plus",),
+    "mental_health_per_10000_65_plus": ("mental_health_per_10000_65_plus",),
+    "mental_health_per_10000_75_plus": ("mental_health_per_10000_75_plus",),
+    "other_health_per_10000_65_plus": ("other_health_per_10000_65_plus",),
+    "other_health_per_10000_75_plus": ("other_health_per_10000_75_plus",),
+    "distance_to_nearest_mental_health_m": ("distance_to_nearest_mental_health_m",),
+    "distance_to_nearest_other_health_m": ("distance_to_nearest_other_health_m",),
 }
 
 
@@ -62,6 +72,16 @@ NUMERIC_FIELDS = {
     "primary_care_per_10000_65_plus",
     "distance_to_nearest_primary_care_m",
     "distance_to_nearest_hospital_m",
+    "services_total",
+    "primary_care_per_10000_75_plus",
+    "hospital_per_10000_65_plus",
+    "hospital_per_10000_75_plus",
+    "mental_health_per_10000_65_plus",
+    "mental_health_per_10000_75_plus",
+    "other_health_per_10000_65_plus",
+    "other_health_per_10000_75_plus",
+    "distance_to_nearest_mental_health_m",
+    "distance_to_nearest_other_health_m",
 }
 
 INTEGER_FIELDS = {
@@ -72,6 +92,7 @@ INTEGER_FIELDS = {
     "services_hospital",
     "services_mental_health",
     "services_other_health",
+    "services_total",
 }
 
 
