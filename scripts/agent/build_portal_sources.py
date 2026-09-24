@@ -50,6 +50,10 @@ def main() -> None:
         newline="\n",
     )
     main_source = (SOURCE / "main.py").read_text(encoding="utf-8")
+    package_import = "try:\n    from . import tools as core\nexcept ImportError:\n    import tools as core"
+    if package_import not in main_source:
+        raise SystemExit("No se encontró el import controlado del core en main.py.")
+    main_source = main_source.replace(package_import, "import tools as core", 1)
     (OUTPUT / "main.py").write_text(main_source, encoding="utf-8", newline="\n")
     print("agentes/gipuzkoa360/portal/main.py")
     print("agentes/gipuzkoa360/portal/tools.py")

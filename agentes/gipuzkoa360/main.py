@@ -4,30 +4,14 @@ from typing import Any, Callable
 
 try:
     from studio import tool
-except ImportError:
+except ImportError:  # Permite comprobar el contrato fuera de Studio.
     def tool(function: Callable[..., Any]) -> Callable[..., Any]:
         return function
 
 try:
-    from .tools import (
-        execute_analizar_acceso_servicios,
-        execute_analizar_coincidencia,
-        execute_analizar_envejecimiento,
-        execute_comparar_municipios,
-        execute_consultar_fuente,
-        execute_obtener_resumen_territorial,
-        execute_simular_escenario,
-    )
+    from . import tools as core
 except ImportError:
-    from tools import (
-        execute_analizar_acceso_servicios,
-        execute_analizar_coincidencia,
-        execute_analizar_envejecimiento,
-        execute_comparar_municipios,
-        execute_consultar_fuente,
-        execute_obtener_resumen_territorial,
-        execute_simular_escenario,
-    )
+    import tools as core
 
 AGENT_NAME = "GIPUZKOA 360"
 STUDIO_MAX_ITERATIONS = 8
@@ -74,9 +58,11 @@ como datos reales de Gipuzkoa."""
 
 
 @tool
-def obtener_resumen_territorial(municipio: str, periodo: str | None = None) -> str:
+def obtener_resumen_territorial(
+    municipio: str, periodo: str | None = None, detalle: bool = False
+) -> str:
     """Resume demografía y servicios de un municipio; no interpreta ausencia como cero."""
-    return execute_obtener_resumen_territorial(municipio, periodo)
+    return core.obtener_resumen_territorial(municipio, periodo, detalle)
 
 
 @tool
@@ -86,17 +72,24 @@ def comparar_municipios(
     categoria_servicio: str | None = None,
     umbral_km: float = 1.0,
     periodo: str | None = None,
+    detalle: bool = False,
 ) -> str:
-    """Compara 2-20 municipios; acepta nombres naturales de edad y servicio."""
-    return execute_comparar_municipios(municipios, grupo_edad, categoria_servicio, umbral_km, periodo)
+    """Compara 2-20 municipios y opcionalmente su distancia geométrica a servicios."""
+    return core.comparar_municipios(
+        municipios, grupo_edad, categoria_servicio, umbral_km, periodo, detalle
+    )
 
 
 @tool
 def analizar_envejecimiento(
-    grupo_edad: str = "65", medida: str = "percentage", periodo: str | None = None, top_n: int = 10
+    grupo_edad: str = "65",
+    medida: str = "percentage",
+    periodo: str | None = None,
+    top_n: int = 10,
+    detalle: bool = False,
 ) -> str:
-    """Calcula ranking de población 65+ o 75+ por porcentaje o recuento."""
-    return execute_analizar_envejecimiento(grupo_edad, medida, periodo, top_n)
+    """Calcula ranking de población >=65 o >=75 por porcentaje o recuento."""
+    return core.analizar_envejecimiento(grupo_edad, medida, periodo, top_n, detalle)
 
 
 @tool
@@ -105,9 +98,12 @@ def analizar_acceso_servicios(
     umbral_km: float = 1.0,
     periodo: str | None = None,
     municipios: list[str] | None = None,
+    detalle: bool = False,
 ) -> str:
-    """Calcula distancia euclídea EPSG:25830; acepta categorías en lenguaje natural."""
-    return execute_analizar_acceso_servicios(categoria_servicio, umbral_km, periodo, municipios)
+    """Calcula distancia euclídea EPSG:25830; no representa acceso real."""
+    return core.analizar_acceso_servicios(
+        categoria_servicio, umbral_km, periodo, municipios, detalle
+    )
 
 
 @tool
@@ -117,9 +113,12 @@ def analizar_coincidencia(
     umbral_km: float = 1.0,
     periodo: str | None = None,
     cuantil: float = 0.75,
+    detalle: bool = False,
 ) -> str:
-    """Cruza envejecimiento y distancia y devuelve una salida compacta con todos los destacados."""
-    return execute_analizar_coincidencia(categoria_servicio, grupo_edad, umbral_km, periodo, cuantil)
+    """Cruza envejecimiento y distancia con cortes explícitos y sin inferir causalidad."""
+    return core.analizar_coincidencia(
+        categoria_servicio, grupo_edad, umbral_km, periodo, cuantil, detalle
+    )
 
 
 @tool
@@ -132,17 +131,26 @@ def simular_escenario(
     longitud: float | None = None,
     service_id: str | None = None,
     nuevo_umbral_km: float | None = None,
+    detalle: bool = False,
 ) -> str:
-    """Recalcula un contrafactual y devuelve solo municipios afectados; acepta acciones naturales."""
-    return execute_simular_escenario(
-        accion, categoria_servicio, umbral_km, periodo, latitud, longitud, service_id, nuevo_umbral_km
+    """Recalcula un contrafactual soportado; no es una predicción ni recomendación."""
+    return core.simular_escenario(
+        accion,
+        categoria_servicio,
+        umbral_km,
+        periodo,
+        latitud,
+        longitud,
+        service_id,
+        nuevo_umbral_km,
+        detalle,
     )
 
 
 @tool
-def consultar_fuente(source_id: str | None = None) -> str:
-    """Devuelve procedencia, periodo, institución, unidad, licencia y limitaciones."""
-    return execute_consultar_fuente(source_id)
+def consultar_fuente(source_id: str | None = None, detalle: bool = False) -> str:
+    """Devuelve procedencia, periodo, unidad, licencia y limitaciones documentadas."""
+    return core.consultar_fuente(source_id, detalle)
 
 
 TOOLS = [
