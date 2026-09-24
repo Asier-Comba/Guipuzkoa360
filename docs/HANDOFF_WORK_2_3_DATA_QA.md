@@ -7,6 +7,8 @@ Contrato de datos: **1.1.0**. Snapshot de fuentes: **2026-09-24**. Este document
 | Consumidor | Archivo | Uso |
 |---|---|---|
 | Work 2 | `datos_preparados/municipios.csv` | búsqueda, población 65+/75+, comparación, conteos, tasas y distancias |
+| Work 2 | `datos_preparados/demografia.csv` | periodos y medidas demográficas consumidas por `DataRepository` |
+| Work 2 | `datos_preparados/runtime_municipality_points.csv` | punto representativo en EPSG:4326/25830 para acceso y escenarios |
 | Work 2 | `datos_preparados/runtime_servicios.csv` | detalle de centros y simulación de altas/bajas hipotéticas |
 | Work 2 | `datos_preparados/metadata_sources.json` | títulos, URL, periodo, licencia, método y linaje |
 | Work 2 | `datos_preparados/data_contract.json` | schema, unidades, invariantes y mapping de salida |
@@ -20,7 +22,8 @@ No subir al runtime `datos_originales/`, `analisis/`, la geometría maestra ni l
 - `municipality_code`: clave territorial, texto de cinco dígitos `20xxx`; 88 valores, sin nulos ni duplicados. No convertir a entero.
 - `service_id`: clave de registro sanitario; 148 valores únicos. Dos IDs pueden compartir coordenada y seguir siendo registros distintos.
 - `municipios.csv`: una fila por municipio.
-- `runtime_servicios.csv`: una fila por registro oficial de centro/tipo de servicio.
+- `runtime_servicios.csv`: una fila por registro oficial de centro/tipo de servicio, con coordenadas WGS84 y EPSG:25830.
+- `runtime_municipality_points.csv`: una fila por municipio; punto interior de cálculo, no ubicación de la población.
 - `runtime_municipios.geojson`: una Feature por municipio; `Polygon` o `MultiPolygon` en EPSG:4326.
 
 La relación es `runtime_servicios.municipality_code -> municipios.municipality_code`. Todos los servicios pasan una unión espacial `within`; 11 municipios no contienen ningún registro sanitario y conservan todos sus conteos a cero.

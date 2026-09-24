@@ -108,7 +108,31 @@ def test_periods_and_source_lineage_are_explicit():
     upstream = set(municipalities.source_ids.iloc[0].split("|"))
     assert all(set(value.split("|")) == upstream for value in municipalities.source_ids)
     assert upstream == set(by_id["G360_DERIVED_MUNICIPAL_METRICS_V1"]["upstream_source_ids"])
+    assert upstream == set(by_id["G360_DERIVED_MUNICIPAL_METRICS_V1"]["input_source_ids"])
+    assert by_id["G360_DERIVED_MUNICIPAL_METRICS_V1"]["institution"] == "DeustoAI Labs"
     assert upstream <= set(by_id)
+
+
+def test_work2_runtime_coordinates_are_complete_and_reprojectable():
+    municipalities, _, services = load_tables()
+    points = pd.read_csv(OUT / "runtime_municipality_points.csv", dtype={"municipality_code": str})
+    runtime_services = pd.read_csv(
+        OUT / "runtime_servicios.csv", dtype={"municipality_code": str, "service_id": str}
+    )
+    assert len(points) == 88 and points.municipality_code.is_unique
+    assert set(points.municipality_code) == set(municipalities.municipality_code)
+    assert len(runtime_services) == len(services) == 148
+    assert {"easting_m", "northing_m", "reference_period", "source_id"} <= set(runtime_services)
+    projected_points = gpd.GeoSeries(
+        gpd.points_from_xy(points.longitude, points.latitude), crs=4326
+    ).to_crs(25830)
+    assert np.allclose(points.easting_m, projected_points.x, atol=0.1)
+    assert np.allclose(points.northing_m, projected_points.y, atol=0.1)
+    projected_services = gpd.GeoSeries(
+        gpd.points_from_xy(runtime_services.longitude, runtime_services.latitude), crs=4326
+    ).to_crs(25830)
+    assert np.allclose(runtime_services.easting_m, projected_services.x, atol=0.1)
+    assert np.allclose(runtime_services.northing_m, projected_services.y, atol=0.1)
 
 
 def test_municipalities_without_registered_resources_remain_explicit():
