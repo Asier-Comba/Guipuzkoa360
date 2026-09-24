@@ -19,10 +19,13 @@ def main() -> None:
             "download_date": "2026-09-24",
             "reference_period": "2025-01-01",
             "territory": "Gipuzkoa, 88 municipios",
+            "source_type": "official",
+            "unit": "personas",
             "license": "Creative Commons (según ficha Eustat de la operación 010154)",
             "original_file": "datos_originales/eustat_demografia_2025.csv",
             "prepared_files": ["datos_preparados/demografia.csv", "datos_preparados/municipios.csv"],
             "notes": ["Códigos municipales Eustat/INE de cinco caracteres conservados como texto."],
+            "method": "Consulta PXWeb por municipio, sexo total y periodo 2025-01-01; pivote de total/65+ y suma de nacidos hasta 1949 para 75+.",
             "limitations": ["75+ se deriva de año de nacimiento <=1949 a 2025-01-01."],
         },
         {
@@ -33,10 +36,13 @@ def main() -> None:
             "download_date": "2026-09-24",
             "reference_period": "2026-09-20",
             "territory": "Euskadi; filtrado a Gipuzkoa",
+            "source_type": "official",
+            "unit": "registro de centro sanitario público",
             "license": "Licencia abierta indicada por Open Data Euskadi; atribución y fecha obligatorias",
             "original_file": "datos_originales/centros-salud.xlsx",
             "prepared_files": ["datos_preparados/servicios.csv", "datos_preparados/runtime_servicios.csv"],
             "notes": ["Asignación municipal por punto dentro de polígono oficial."],
+            "method": "Filtro Provincia=Gipuzkoa, normalización de tipo y unión espacial within en EPSG:4326.",
             "limitations": ["La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad."],
         },
         {
@@ -47,40 +53,60 @@ def main() -> None:
             "download_date": "2026-09-24",
             "reference_period": "2025-05-07",
             "territory": "Euskadi; filtrado a Gipuzkoa",
+            "source_type": "official",
+            "unit": "polígono municipal",
             "license": "Uso permitido citando Eusko Jaurlaritza / Gobierno Vasco",
             "original_file": "datos_originales/MUNICIPIOS_5000_ETRS89.zip",
-            "prepared_files": ["datos_preparados/municipios.geojson", "datos_preparados/runtime_municipios.geojson"],
+            "prepared_files": [
+                "datos_preparados/municipios.geojson",
+                "datos_preparados/runtime_municipios.geojson",
+                "datos_preparados/runtime_municipality_points.csv",
+            ],
             "notes": ["CRS original y de cálculo: EPSG:25830; publicación runtime: EPSG:4326."],
+            "method": "Filtro por territorio y catálogo Eustat; área y simplificación calculadas en EPSG:25830.",
             "limitations": ["El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007."],
         },
         {
             "source_id": "G360_DERIVED_MUNICIPAL_METRICS_V1",
             "title": "Métricas municipales derivadas de GIPUZKOA 360",
             "institution": "DeustoAI Labs",
-            "url": None,
-            "download_date": "2026-09-24",
+            "producer": "GIPUZKOA 360",
+            "url": "https://github.com/Asier-Comba/Guipuzkoa360/blob/work/data-foundation/FUENTES.md",
+            "download_date": None,
             "reference_period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
             "territory": "Gipuzkoa, 88 municipios",
-            "license": "Hereda las condiciones de las fuentes de entrada",
+            "unit": "indicador municipal",
+            "license": "Hereda las condiciones de atribución de las tres fuentes ascendentes",
             "original_file": None,
             "prepared_files": [
                 "datos_preparados/municipios.csv",
-                "datos_preparados/runtime_municipality_points.csv"
+                "datos_preparados/runtime_municipios.geojson",
+                "datos_preparados/runtime_municipality_points.csv",
+            ],
+            "source_type": "derived",
+            "upstream_source_ids": [
+                "EUSTAT_EMH_2025",
+                "ODE_HEALTH_CENTRES_2026",
+                "GEOEUSKADI_MUNICIPIOS_2025",
             ],
             "input_source_ids": [
-                "EUSTAT_EMH_2025", "ODE_HEALTH_CENTRES_2026", "GEOEUSKADI_MUNICIPIOS_2025"
+                "EUSTAT_EMH_2025",
+                "ODE_HEALTH_CENTRES_2026",
+                "GEOEUSKADI_MUNICIPIOS_2025",
             ],
-            "notes": [
-                "Distancia euclídea EPSG:25830 desde representative_point() municipal al servicio más cercano."
-            ],
+            "method": (
+                "Conteos por municipio, tasas por 10.000 personas de 65+/75+ y distancia euclídea en metros "
+                "desde el punto representativo municipal al servicio más cercano, calculada en EPSG:25830."
+            ),
+            "notes": ["No es una fuente externa; registra el linaje de las transformaciones reproducibles."],
             "limitations": [
-                "El punto representativo no está ponderado por población.",
-                "La distancia no es viaria, peatonal ni tiempo de viaje."
-            ]
+                "La distancia no es tiempo de viaje ni accesibilidad individual.",
+                "Los periodos de las fuentes ascendentes no son idénticos.",
+            ],
         },
     ]
     (OUT / "metadata_sources.json").write_text(
-        json.dumps(sources, ensure_ascii=False, indent=2), encoding="utf-8"
+        json.dumps(sources, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n"
     )
 
     rows = []
@@ -99,10 +125,11 @@ def main() -> None:
     for path, size in rows:
         role = "runtime" if "runtime_" in path else "maestro/auditoría"
         lines.append(f"| `{path}` | {size:,} | {role} |")
-    (ROOT / "analisis" / "runtime_size_report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (ROOT / "analisis" / "runtime_size_report.md").write_text(
+        "\n".join(lines) + "\n", encoding="utf-8", newline="\n"
+    )
     print("Metadatos e informe de tamaño generados.")
 
 
 if __name__ == "__main__":
     main()
-

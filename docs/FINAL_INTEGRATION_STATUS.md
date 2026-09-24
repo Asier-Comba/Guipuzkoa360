@@ -2,7 +2,7 @@
 
 ## Cadena comprobada
 
-`datos_originales/` → pipeline Work 1 → `resultados/metricas_municipales.csv` / runtime → tools deterministas Work 2 → `docs/examples/*.json` → `scripts/adapt_agent_tool_result.mjs` → contrato Work 3 → `scripts/enrich_work1_result.mjs` → `resultados/demo_work2/*/*.html`.
+`datos_originales/` → pipeline Work 1 + QA (PR #4) → `resultados/metricas_municipales.csv` / runtime → tools deterministas Work 2 → `docs/examples/*.json` → `scripts/adapt_agent_tool_result.mjs` → contrato Work 3 → `scripts/enrich_work1_result.mjs` → `resultados/demo_work2/*/*.html`.
 
 El adaptador comprueba antes de publicar un HTML que los códigos municipales son únicos y existen, que las distancias de Work 2 coinciden con Work 1 a 0,1 m, que los porcentajes coinciden, que las fuentes esperadas están presentes y que el escenario conserva base, diferencia y resultado. El JSON registra hashes SHA-256 de salidas y archivos leídos, `rows_used`, periodos, unidades y `source_id`.
 

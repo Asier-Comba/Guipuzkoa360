@@ -1,6 +1,6 @@
 {
   "download_date": "2026-09-24",
-  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
   "files": [
     {
       "path": "datos_originales\\centros-salud.xlsx",

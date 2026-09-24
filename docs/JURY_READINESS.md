@@ -5,7 +5,7 @@ No se asigna una nota. Esta rama combina datos reales, las tools de Work 2 y pro
 | Criterio | Evidencia existente | Evidencia ausente | Riesgo | Acción |
 |---|---|---|---|---|
 | Utilidad urbana | Pregunta de atención primaria, 88 municipios y comparación real | Validación con técnicos municipales y ficha del portal | Utilidad práctica sin contrastar con usuarios | Revisar con destinatario y completar ficha |
-| Análisis y fuentes | 3 fuentes oficiales, periodos, hashes, fila, método; tools cotejadas con Work 1 y cifra de Donostia cotejada con original | Salida del coordinador en versión fija | Ejemplos directos de tool no acreditan coordinación | Probar en portal y conservar conversación |
+| Análisis y fuentes | 3 fuentes oficiales, periodos, hashes, fila, método, contrato 1.1.0 y 41 controles QA; tools cotejadas con Work 1 y cifra de Donostia cotejada con original | Salida del coordinador en versión fija | Ejemplos directos de tool no acreditan coordinación | Probar en portal y conservar conversación |
 | Funcionamiento y herramientas | Dos ejecuciones de `analizar_coincidencia`: 7/88 y 2/88 con refs distintos | Selección de tool por coordinador en portal | Ser percibido como pipeline estático | Enseñar llamada y observación del agente en prueba fija |
 | Claridad | HTML real con mapa GeoJSON, barras, tabla, detalle y escenario Beasain | Revisión visual en el portal | Interpretar mapa parcial como todo Gipuzkoa | Mantener etiqueta “unidades comparadas” y revisar visualmente |
 | Fiabilidad y límites | Error `municipality_not_found`, validación de nulos, periodos separados, escenario marcado hipotético | Respuesta del coordinador a límite metodológico | Sobreinterpretar “acceso” | Probar pregunta de acceso individual en portal |

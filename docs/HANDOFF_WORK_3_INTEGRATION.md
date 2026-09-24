@@ -22,7 +22,7 @@ Contrato v1.0.0 en `docs/EXPECTED_RESULT_SCHEMA.md`. Todos los nombres `MUNICIPI
 
 ## Integración Work 1
 
-La rama `work/data-foundation` (PR #1) aporta 88 municipios, demografía, servicios y geometría, y es base de esta rama dependiente. `scripts/run_local_analysis.mjs` usa `municipality_code` como `unit_id`, convierte metros a kilómetros explícitamente `/1000` y conserva el periodo por fuente. La distancia es desde un punto representativo municipal; no es tiempo de viaje. El script de enriquecimiento añade contornos de las 2–5 unidades comparadas. Si Work 2 usa otra métrica, adaptar contrato y etiquetas antes de renderizar.
+La rama `work/data-qa-integration` (PR #4) endurece los datos del PR #1 con contrato 1.1.0, auditoría de 41 controles y manifiesto SHA-256. Esta integración incorpora ambos trabajos. `scripts/run_local_analysis.mjs` usa `municipality_code` como `unit_id`, convierte metros a kilómetros explícitamente `/1000` y conserva el periodo por fuente. La distancia es desde un punto representativo municipal; no es tiempo de viaje. El script de enriquecimiento añade contornos de las 2–5 unidades comparadas.
 
 ## Integración Work 2
 
@@ -38,7 +38,7 @@ Secuencia de tres minutos y cuatro consultas en `docs/DEMO_QUERIES.md`. Cobertur
 
 ## Riesgos priorizados
 
-1. Falta todavía el dataset real y su definición semántica.
+1. El PR de datos QA aún debe integrarse en la rama final; esta rama ya incluye su contenido y supera sus pruebas.
 2. Falta probar la selección y observación de herramientas por el coordinador en una versión fija del portal; las tools ya se ejecutaron directamente.
 3. Los HTML principales de `resultados/` son reales pero proceden de ejecución directa de tools, no del coordinador del portal. Usar `resultados/demo_work2/index.html` para la presentación.
 4. El escenario de Work 2 es hipotético y solo cambia una distancia en el ejemplo de Beasain; no es predicción ni recomendación.

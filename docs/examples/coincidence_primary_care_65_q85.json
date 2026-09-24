@@ -1256,6 +1256,8 @@
       "download_date": "2026-09-24",
       "reference_period": "2025-01-01",
       "territory": "Gipuzkoa, 88 municipios",
+      "source_type": "official",
+      "unit": "personas",
       "license": "Creative Commons (según ficha Eustat de la operación 010154)",
       "original_file": "datos_originales/eustat_demografia_2025.csv",
       "prepared_files": [
@@ -1265,6 +1267,7 @@
       "notes": [
         "Códigos municipales Eustat/INE de cinco caracteres conservados como texto."
       ],
+      "method": "Consulta PXWeb por municipio, sexo total y periodo 2025-01-01; pivote de total/65+ y suma de nacidos hasta 1949 para 75+.",
       "limitations": [
         "75+ se deriva de año de nacimiento <=1949 a 2025-01-01."
       ]
@@ -1277,15 +1280,19 @@
       "download_date": "2026-09-24",
       "reference_period": "2025-05-07",
       "territory": "Euskadi; filtrado a Gipuzkoa",
+      "source_type": "official",
+      "unit": "polígono municipal",
       "license": "Uso permitido citando Eusko Jaurlaritza / Gobierno Vasco",
       "original_file": "datos_originales/MUNICIPIOS_5000_ETRS89.zip",
       "prepared_files": [
         "datos_preparados/municipios.geojson",
-        "datos_preparados/runtime_municipios.geojson"
+        "datos_preparados/runtime_municipios.geojson",
+        "datos_preparados/runtime_municipality_points.csv"
       ],
       "notes": [
         "CRS original y de cálculo: EPSG:25830; publicación runtime: EPSG:4326."
       ],
+      "method": "Filtro por territorio y catálogo Eustat; área y simplificación calculadas en EPSG:25830.",
       "limitations": [
         "El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007."
       ]
@@ -1298,6 +1305,8 @@
       "download_date": "2026-09-24",
       "reference_period": "2026-09-20",
       "territory": "Euskadi; filtrado a Gipuzkoa",
+      "source_type": "official",
+      "unit": "registro de centro sanitario público",
       "license": "Licencia abierta indicada por Open Data Euskadi; atribución y fecha obligatorias",
       "original_file": "datos_originales/centros-salud.xlsx",
       "prepared_files": [
@@ -1307,6 +1316,7 @@
       "notes": [
         "Asignación municipal por punto dentro de polígono oficial."
       ],
+      "method": "Filtro Provincia=Gipuzkoa, normalización de tipo y unión espacial within en EPSG:4326.",
       "limitations": [
         "La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad."
       ]

@@ -5,6 +5,7 @@ Agente y análisis territorial reproducible de población mayor y proximidad geo
 ## Datos
 
 Las fuentes, periodos, licencias y transformaciones están en `FUENTES.md`, `docs/METODOLOGIA_GEOESPACIAL.md` y `docs/HANDOFF_WORK_1_DATA.md`.
+El contrato de datos 1.1.0, el manifiesto SHA-256, 41 controles de calidad y los casos de referencia de la rama QA están en `datos_preparados/data_contract.json`, `datos_preparados/runtime_manifest.json`, `analisis/data_quality_report.json` y `tests/fixtures/golden_cases.json`.
 
 ```powershell
 python -m pip install -r requirements.txt

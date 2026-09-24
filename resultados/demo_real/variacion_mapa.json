@@ -152,7 +152,7 @@
   ],
   "trace": {
     "execution_mode": "local_tool",
-    "question_id": "LOCAL-Q-5a6e3d3a6bbd",
+    "question_id": "LOCAL-Q-932b0c0783ce",
     "agent_version": "local-analysis/1.0.0 (sin agente)",
     "tool_calls": [
       {
@@ -164,7 +164,7 @@
           "service": "primary_care",
           "compare_codes": null
         },
-        "output_ref": "LOCAL-1d835a6e3d3a6bbd"
+        "output_ref": "LOCAL-4746932b0c0783ce"
       }
     ],
     "data_refs": [
@@ -172,16 +172,16 @@
       "ODE_HEALTH_CENTRES_2026",
       "GEOEUSKADI_MUNICIPIOS_2025"
     ],
-    "result_ref": "LOCAL-1d835a6e3d3a6bbd",
+    "result_ref": "LOCAL-4746932b0c0783ce",
     "input_files": [
       {
         "path": "resultados/metricas_municipales.csv",
-        "sha256": "27628accd750bd2a209873ca7e82e880d69058951fdae10dd4363ccec84f6f6a",
+        "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
         "rows": 88
       },
       {
         "path": "datos_preparados/metadata_sources.json",
-        "sha256": "14ad18d1c135b753c0c617c96a3576ca7d87df22993b7f9404a2b99e4cf90fde",
+        "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
         "rows": 4
       }
     ]

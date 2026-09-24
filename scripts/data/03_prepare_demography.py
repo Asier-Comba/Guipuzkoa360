@@ -53,10 +53,9 @@ def main() -> None:
     integer_cols = ["population_total", "population_65_plus", "population_75_plus"]
     result[integer_cols] = result[integer_cols].astype("int64")
     result[["pct_65_plus", "pct_75_plus"]] = result[["pct_65_plus", "pct_75_plus"]].round(3)
-    result.to_csv(OUT / "demografia.csv", index=False)
+    result.to_csv(OUT / "demografia.csv", index=False, lineterminator="\n")
     print(f"Demografía: {len(result)} municipios; referencia 2025-01-01.")
 
 
 if __name__ == "__main__":
     main()
-

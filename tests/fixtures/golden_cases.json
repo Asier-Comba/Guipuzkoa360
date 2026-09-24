@@ -1,0 +1,69 @@
+{
+  "golden_contract_version": "1.0.0",
+  "data_contract_version": "1.1.0",
+  "source_snapshot_date": "2026-09-24",
+  "update_policy": "Valores fijos. Si cambia una fuente, el test debe fallar hasta que una persona contraste y actualice explícitamente el caso.",
+  "cases": [
+    {
+      "case_id": "GOLD-DEM-001",
+      "question": "¿Cuántas personas de 65 años o más viven en Donostia / San Sebastián y qué porcentaje representan?",
+      "inputs": {"municipality_code": "20069", "age_group": "65+"},
+      "rows_used": [
+        {"file": "datos_preparados/demografia.csv", "key": {"municipality_code": "20069"}, "source_id": "EUSTAT_EMH_2025"}
+      ],
+      "calculation": "48832 / 183388 * 100; redondeo a 3 decimales",
+      "expected": {"municipality_name": "Donostia / San Sebastián", "population_total": 183388, "population_count": 48832, "percentage": 26.628, "unit": "personas y porcentaje", "period": "2025-01-01"}
+    },
+    {
+      "case_id": "GOLD-DEM-002",
+      "question": "Compara la población de 75 años o más de Eibar y Tolosa.",
+      "inputs": {"municipality_codes": ["20030", "20071"], "age_group": "75+"},
+      "rows_used": [
+        {"file": "datos_preparados/demografia.csv", "key": {"municipality_code": "20030"}, "source_id": "EUSTAT_EMH_2025"},
+        {"file": "datos_preparados/demografia.csv", "key": {"municipality_code": "20071"}, "source_id": "EUSTAT_EMH_2025"}
+      ],
+      "calculation": "Comparación de recuentos y porcentajes municipales; sin agregar denominadores.",
+      "expected": {
+        "rows": [
+          {"municipality_code": "20030", "municipality_name": "Eibar", "population_total": 27118, "population_count": 3727, "percentage": 13.744},
+          {"municipality_code": "20071", "municipality_name": "Tolosa", "population_total": 20048, "population_count": 2432, "percentage": 12.131}
+        ],
+        "higher_percentage_municipality_code": "20030",
+        "period": "2025-01-01"
+      }
+    },
+    {
+      "case_id": "GOLD-SVC-001",
+      "question": "¿Tiene Aduna atención primaria registrada y cuál es la distancia geométrica al centro más cercano?",
+      "inputs": {"municipality_code": "20002", "service_category": "primary_care", "distance_threshold_km": 2.0},
+      "rows_used": [
+        {"file": "datos_preparados/municipios.csv", "key": {"municipality_code": "20002"}, "source_id": "G360_DERIVED_MUNICIPAL_METRICS_V1"},
+        {"file": "datos_preparados/servicios.csv", "key": {"service_id": "entityF0E8348B"}, "source_id": "ODE_HEALTH_CENTRES_2026"}
+      ],
+      "calculation": "Distancia euclídea EPSG:25830 desde el punto representativo de Aduna al Centro de Salud de Villabona; 2756.2 / 1000.",
+      "expected": {"registered_service_count": 0, "nearest_service_id": "entityF0E8348B", "nearest_service_municipality_code": "20075", "distance_m": 2756.2, "distance_km": 2.7562, "exceeds_threshold": true}
+    },
+    {
+      "case_id": "GOLD-SVC-002",
+      "question": "Consulta el indicador de salud mental de Eibar.",
+      "inputs": {"municipality_code": "20030", "service_category": "mental_health"},
+      "rows_used": [
+        {"file": "datos_preparados/municipios.csv", "key": {"municipality_code": "20030"}, "source_id": "G360_DERIVED_MUNICIPAL_METRICS_V1"},
+        {"file": "datos_preparados/servicios.csv", "key": {"service_id": "entity7809ADB5"}, "source_id": "ODE_HEALTH_CENTRES_2026"}
+      ],
+      "calculation": "Conteo municipal de registros mental_health y mínima distancia euclídea EPSG:25830.",
+      "expected": {"registered_service_count": 1, "nearest_service_id": "entity7809ADB5", "distance_m": 1859.7, "rate_per_10000_65_plus": 1.408, "rate_per_10000_75_plus": 2.683}
+    },
+    {
+      "case_id": "GOLD-SCN-001",
+      "question": "¿Qué ocurriría con la distancia de Aduna si se añadiera hipotéticamente un centro de atención primaria exactamente en su punto representativo?",
+      "inputs": {"municipality_code": "20002", "service_category": "primary_care", "hypothetical_location": {"longitude": -2.0593393, "latitude": 43.2134915}},
+      "rows_used": [
+        {"file": "datos_preparados/municipios.csv", "key": {"municipality_code": "20002"}, "source_id": "G360_DERIVED_MUNICIPAL_METRICS_V1"}
+      ],
+      "calculation": "min(distancia observada 2756.2 m, distancia al punto hipotético 0.0 m); delta = escenario - observado.",
+      "expected": {"observed_distance_m": 2756.2, "scenario_distance_m": 0.0, "distance_delta_m": -2756.2, "label": "ESCENARIO HIPOTÉTICO"},
+      "limitations": ["No propone una ubicación real ni estima costes, capacidad, red viaria o tiempo de viaje."]
+    }
+  ]
+}

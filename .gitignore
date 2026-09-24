@@ -7,3 +7,5 @@ htmlcov/
 *.log
 datos_originales/municipios_etrs89/
 dist/
+.venv/
+uv.lock
