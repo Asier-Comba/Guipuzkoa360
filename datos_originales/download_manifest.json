@@ -1,0 +1,26 @@
+{
+  "download_date": "2026-09-24",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "files": [
+    {
+      "path": "datos_originales\\centros-salud.xlsx",
+      "bytes": 88479,
+      "sha256": "87a2b8ea3309678ff743e2f267320b94216c3d1e4f52b578bdd0a77bd8bf29ab"
+    },
+    {
+      "path": "datos_originales\\MUNICIPIOS_5000_ETRS89.zip",
+      "bytes": 3601805,
+      "sha256": "9bf03701c5ae5e80f1d4cd3f00ffb3cb76142d01af352c67f5250054530423c3"
+    },
+    {
+      "path": "datos_originales\\eustat_demografia_2025.csv",
+      "bytes": 11809,
+      "sha256": "8e9c0a1642558f4449208a334666368713dc9801807c65099955e435c126ac8f"
+    },
+    {
+      "path": "datos_originales\\eustat_nacimientos_hasta_1949_2025.csv",
+      "bytes": 142445,
+      "sha256": "f16c4a922fa435514330255c6717cad8ce7d287af425b11563e8d75a220cf993"
+    }
+  ]
+}

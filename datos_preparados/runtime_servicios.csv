@@ -1,0 +1,149 @@
+service_id,service_name,service_category,municipality_code,latitude,longitude
+entityC5CE8164,Consultorio de Abaltzisketa,primary_care,20001,43.04782714383536,-2.1054531469294
+entity575DBFCE,Consultorio de Aizarnazabal,primary_care,20003,43.25469283797177,-2.2377668948288885
+entity71BB9A3F,Consultorio de Albiztur,primary_care,20004,43.12979582618247,-2.137108191302312
+entityE8C2F026,Centro de Salud de Alegia,primary_care,20005,43.10065185129113,-2.0985628642720497
+entity771AD8EE,Consultorio de Amezketa,primary_care,20008,43.04980158428751,-2.0880884073683093
+entity2174F0DA,Centro de Salud Mental de Andoain,mental_health,20009,43.221231365992296,-2.0221942454753545
+entityA8E7BFB5,Centro de Salud de Andoain,primary_care,20009,43.221231365992296,-2.0221942454753545
+entityC40323E8,Consultorio de Anoeta,primary_care,20010,43.16153416153941,-2.0718495998802555
+entityC2E572D7,Consultorio de Antzuola,primary_care,20011,43.09776417115158,-2.381919611145804
+entity74310650,Centro de Salud de Aretxabaleta,primary_care,20013,43.03539979726118,-2.5051540798410152
+entityB9C373D0,Consultorio de Asteasu,primary_care,20014,43.193716642518666,-2.097834552823683
+entity1DF833DF,Consultorio de Ataun-San Gregorio,primary_care,20015,42.97863551869698,-2.180404705207041
+entityABD80EAC,Consultorio de Ataun-San Martin,primary_care,20015,43.00600829417225,-2.177502097607772
+entity85CF7DBB,Consultorio de Aia,primary_care,20016,43.237544497889566,-2.1474415179798245
+entityE7146F42,Centro de Salud de Azkoitia,primary_care,20017,43.17592886388753,-2.3150229473149824
+entity0ECFC0DA,Centro de Salud Mental de Azpeitia,mental_health,20018,43.18143667003693,-2.267977469507896
+entity458B7E4D,Ambulatorio de Azpeitia,primary_care,20018,43.18143667003693,-2.267977469507896
+entity88E353B4,Ambulatorio de Azpeitia,primary_care,20018,43.18143667003693,-2.267977469507896
+entityF54FA5AA,Consultorio de Urrestilla,primary_care,20018,43.15708148404615,-2.2444112630994173
+entity466E5112,PAC DE AZPEITIA,primary_care,20018,43.18143667003693,-2.267977469507896
+entity17DDCC5A,Centro de Salud Mental de Beasain,mental_health,20019,43.05155274355186,-2.19005597084824
+entityBC631DA5,Ambulatorio de Beasain,primary_care,20019,43.04527740634045,-2.1977014177917447
+entity24E39531,Ambulatorio de Beasain,primary_care,20019,43.04527740634045,-2.1977014177917447
+entity38D83782,PAC DE BEASAIN,primary_care,20019,43.04527740634045,-2.1977014177917447
+entity58B952FE,Consultorio de Beizama,primary_care,20020,43.13414544520059,-2.200279712634888
+entityCE9F796C,Consultorio de Belauntza,primary_care,20021,43.13479302421061,-2.0511328791385024
+entity421CF1DE,Consultorio de Berastegi,primary_care,20022,43.124091640455646,-1.9793039026365664
+entityB5A8FFF6,Consultorio de Berrobi,primary_care,20023,43.14564839600344,-2.0272017443670998
+entity32419E1A,Consultorio de Bidania-Goiatz,primary_care,20024,43.14008753872753,-2.1606788715978538
+entityEC2BA125,Consultorio de Zegama,primary_care,20025,42.97485183209362,-2.289613393803866
+entityD769B429,Consultorio de Zerain,primary_care,20026,43.01258213502594,-2.2731912235961613
+entityC2AAF486,Centro de Salud de Zestoa,primary_care,20027,43.23959905551925,-2.257793830406939
+entity3D67AC7E,Centro de Salud de Deba,primary_care,20029,43.2968697914459,-2.354233337164097
+entityE5A4FE1E,Consultorio de Itziar,primary_care,20029,43.27583408160199,-2.3302608892242724
+entity8712C3F6,Hospital de Eibar,hospital,20030,43.18234397228921,-2.482236927474425
+entity7809ADB5,Centro de Salud Mental de Eibar,mental_health,20030,43.18448088339966,-2.479829262195021
+entity383A127E,Ambulatorio de Eibar,primary_care,20030,43.186026185746265,-2.470748703052018
+entity64796EFF,Ambulatorio de Eibar,primary_care,20030,43.186026185746265,-2.470748703052018
+entity97C609A4,Centro de Salud de Torrekua,primary_care,20030,43.18234397228921,-2.482236927474425
+entityD3E97B98,PAC DEL HOSPITAL DE EIBAR,primary_care,20030,43.18234397228921,-2.482236927474425
+entity7D4411E9,Consultorio de Elduain,primary_care,20031,43.14086346072606,-2.000127466361488
+entity9843FCC6,Centro de Salud de Elgoibar,primary_care,20032,43.215379844964495,-2.4131320975912622
+entityF197214B,Consultorio de Elgeta,primary_care,20033,43.136848205947935,-2.487675274481719
+entity4FB54082,Centro de Salud de Eskoriatza,primary_care,20034,43.01830113914543,-2.5248765678570524
+entity837A9D6A,Consultorio de Ezkio-Itsaso,primary_care,20035,43.06489924972245,-2.277258882279827
+entity7441E391,Hospital de Bidasoa,hospital,20036,43.341808455125886,-1.8148483033053324
+entity8EA5D441,Centro de Salud de Hondarribia,primary_care,20036,43.3673393105757,-1.7930609474090815
+entity63EF5EE9,Consultorio de Gabiria,primary_care,20038,43.05011240036527,-2.280266852659813
+entity83C716DD,Centro de Salud de Getaria,primary_care,20039,43.30194715976432,-2.2058836953210568
+entity7425D4D1,Centro de Salud de Hernani,primary_care,20040,43.26734817861745,-1.977693872557828
+entityEDE2CA03,PAC DE HERNANI,primary_care,20040,43.26734817861745,-1.977693872557828
+entity4D362056,Centro de Salud de Ibarra,primary_care,20042,43.132938987276994,-2.068756663696381
+entityBFD365AA,Consultorio de Idiazabal,primary_care,20043,43.01091383998051,-2.2345230946824897
+entityD0F906D7,Consultorio de Ikaztegieta,primary_care,20044,43.09322062692517,-2.126168795809712
+entityFBC226A8,Centro de Salud Mental de Irun,mental_health,20045,43.33544343627544,-1.7875726664018368
+entity77741462,Equipo de Psiquiatría Infanto Juvenil de Irún,mental_health,20045,43.33674829629418,-1.7877870697702454
+entityDCF0E44B,Ambulatorio de Irun Centro,primary_care,20045,43.33750113266984,-1.7952194226885752
+entityFD00E6AA,Ambulatorio de Irun Centro,primary_care,20045,43.33750113266984,-1.7952194226885752
+entityDEE2EED1,Centro de Salud de Dumboa,primary_care,20045,43.33995263033484,-1.7810235803578958
+entity86D41A67,PAC DE IRUN CENTRO,primary_care,20045,43.33750113266984,-1.7952194226885752
+entityD69ECB4C,Consultorio de Irura,primary_care,20046,43.16696571277916,-2.0692120914812207
+entity2721854A,Consultorio de Itsasondo,primary_care,20047,43.0690430708654,-2.1636602290992903
+entity3ABA1316,Centro de Salud de Lazkao,primary_care,20049,43.03412836130665,-2.1881247048566914
+entity9EAEB1E4,Consultorio de Leaburu,primary_care,20050,43.1246988099968,-2.0518612519160966
+entityB4343EC6,Consultorio de Txarama,primary_care,20050,43.115960473281895,-2.0734177771266
+entity94B2E778,Centro de Salud de Legazpi,primary_care,20051,43.052303727751806,-2.3336932743352725
+entity0304FECE,Consultorio de Legorreta,primary_care,20052,43.085250483572565,-2.1488853728392634
+entity4B0E440D,Centro de Salud de Lezo,primary_care,20053,43.3216056215937,-1.8923397293566595
+entityFE32842B,Consultorio de Lizartza,primary_care,20054,43.10306792772424,-2.0347600928212297
+entity890F297C,Hospital de Alto Deba,hospital,20055,43.06327803498619,-2.482371459545515
+entity8DA20792,Centro de Salud Mental de Arrasate,mental_health,20055,43.0634076701305,-2.4831660437146232
+entity93AABD71,Centro de Salud de Arrasate,primary_care,20055,43.0634076701305,-2.4831660437146232
+entity13F7A477,Consultorio de Mutriku,primary_care,20056,43.30714101504333,-2.389105872797348
+entity80EA1B01,Consultorio de Mutiloa,primary_care,20057,43.022236886015925,-2.2733774043456507
+entityE020B623,Consultorio de Olaberria,primary_care,20058,43.03641821230378,-2.21612000552347
+entity10969F0F,Centro de Salud de Oñati,primary_care,20059,43.03294533081465,-2.416691126854892
+entity1B396481,Consultorio de Orexa,primary_care,20060,43.09391244165767,-2.01156404330839
+entity46F83D6E,Centro de Salud de Orio,primary_care,20061,43.275981740386285,-2.1293245457376893
+entity771C7012,Consultorio de Ormaiztegi,primary_care,20062,43.04271494532885,-2.255105982014164
+entity84DCE82C,Centro de Salud de Oiartzun,primary_care,20063,43.298445732744135,-1.8618250783313008
+entityA51B0B40,Ambulatorio de Pasai San Pedro,primary_care,20064,43.32329230919057,-1.929295713274758
+entity94943E11,Ambulatorio de Pasai San Pedro,primary_care,20064,43.32329230919057,-1.929295713274758
+entity90DD2178,Centro de Salud de Pasai Donibane,primary_care,20064,43.32453002335408,-1.917012644208508
+entity3C01C255,Consultorio de Soraluze,primary_care,20065,43.17487346216715,-2.4133782077691217
+entityD6C10D3B,Consultorio de Errezil,primary_care,20066,43.16501931246312,-2.173912282481256
+entity9C21889E,Centro de Salud Mental de Errenteria,mental_health,20067,43.31428829513423,-1.910771050610432
+entityBC1BAF15,Centro de Día de Errenteria,other_health,20067,43.31428829513423,-1.910771050610432
+entity91954134,Ambulatorio de Larzabal,primary_care,20067,43.309836750341866,-1.8827268326249151
+entity49268CAF,Centro de Salud de Errenteria-Beraun,primary_care,20067,43.31385089900464,-1.9112294233799652
+entity34E82C38,Centro de Salud de Errenteria-Iztieta,primary_care,20067,43.31523515088846,-1.9011669872702055
+entity488D63D1,PAC DE ERRENTERIA-IZTIETA,primary_care,20067,43.31523515088846,-1.9011669872702055
+entity2772BA48,Consultorio de Leintz-Gatzaga,primary_care,20068,42.98691579556596,-2.5679316841123225
+entityB90C729B,Hospital Universitario de Donostia,hospital,20069,43.292907649655966,-1.9687196827583755
+entity4E9237C6,Centro de Salud Mental de Donostia Antiguo,mental_health,20069,43.31361476246078,-2.005252359137495
+entity083DDCA3,Centro de Salud Mental de Donostia-Amara,mental_health,20069,43.30808529171807,-1.981064078038852
+entity08BBED20,Centro de Salud Mental de Donostia-Egia,mental_health,20069,43.31696906345006,-1.9735555946224717
+entityCCC1F402,Centro de Salud Mental de Martutene (Centro Penitenciario),mental_health,20069,43.30296440025264,-1.9580338122309977
+entity3398F257,Equipo de psiquiatría del niño y adolescente Donostialdea,mental_health,20069,43.324126638192176,-1.982705117751455
+entity9DDE91B6,Centro de Adicciones Bitarte,other_health,20069,43.32362024816622,-1.97021249893006
+entityD32FC8AF,Unidad de Atención Intensiva de Día,other_health,20069,43.30844800846867,-1.9918118509528924
+entity0D8E319C,Unidad de Atención Precoz,other_health,20069,43.30844800846867,-1.9918118509528924
+entityD96EC52F,Ambulatorio de Amara Berri,primary_care,20069,43.30597269636659,-1.9820014913420856
+entity2C9E9AC2,Ambulatorio de Amara Berri,primary_care,20069,43.30597269636659,-1.9820014913420856
+entityA0EB5C2F,Ambulatorio de Gros,primary_care,20069,43.325420614820295,-1.970594185206822
+entity9E82AF4A,Ambulatorio de Gros,primary_care,20069,43.325420614820295,-1.970594185206822
+entityF8EC1A1C,Centro de Salud de Aiete,primary_care,20069,43.30844800846867,-1.9918118509528924
+entityF0AB2E0A,Centro de Salud de Alde Zaharra,primary_care,20069,43.32293621867683,-1.9848533374531965
+entity00D25176,Centro de Salud de Altza,primary_care,20069,43.31661100985079,-1.9325920200546745
+entity2BFB79C1,Centro de Salud de Amara Centro,primary_care,20069,43.31354117457219,-1.98013352701756
+entity8B9FBAA9,Centro de Salud de Bidebieta,primary_care,20069,43.32328078592063,-1.9403148403026391
+entity9BA769CD,Centro de Salud de Egia,primary_care,20069,43.31604889179736,-1.971079946624063
+entity6B5A894C,Centro de Salud de Intxaurrondo,primary_care,20069,43.31553302530196,-1.95538723690516
+entity598620A3,Centro de Salud de Loiola,primary_care,20069,43.3050239686461,-1.9626118628057665
+entityE49758E2,Centro de Salud de Martutene (Centro Penitenciario),primary_care,20069,43.30296440025264,-1.9580338122309977
+entityB72BE54E,Centro de Salud de Ondarreta,primary_care,20069,43.31361476246078,-2.005252359137495
+entityB32290B8,Centro de Salud de Pasai Antxo,primary_care,20069,43.31547743257897,-1.9191760466323704
+entity2A3E39B5,PAC DE DONOSTIA,primary_care,20069,43.321899432877245,-1.98179049935228
+entity26926018,PUNTO DE REFUERZO AMARA BERRI,primary_care,20069,43.30597269636659,-1.9820014913420856
+entityBCD827A7,PUNTO DE REFUERZO GROS,primary_care,20069,43.325420614820295,-1.970594185206822
+entityEBF6CB77,Consultorio de Segura,primary_care,20070,43.00936659176156,-2.252950055931008
+entityA08EC1F6,Centro de Salud Mental de Tolosa,mental_health,20071,43.136229860841006,-2.0790139331154105
+entity37CC3072,Centro de Salud de Tolosa,primary_care,20071,43.13670767537059,-2.0765600223276954
+entity02D72FD4,Consultorio de Amaroz,primary_care,20071,43.12603330320841,-2.077989186128764
+entity8CC93949,Centro de Salud de Urnieta,primary_care,20072,43.25000137518337,-1.9901886016919872
+entity0F957D00,Centro de Salud de Usurbil,primary_care,20073,43.2719415007021,-2.049715864726021
+entity4ECBA8FE,Centro de Salud de Bergara,primary_care,20074,43.11960327108315,-2.4182806922260456
+entityB5228216,PAC DE BERGARA,primary_care,20074,43.11960327108315,-2.4182806922260456
+entity824911B8,PAC DE TOLOSALDEA,primary_care,20074,43.11960327108315,-2.4182806922260456
+entityF0E8348B,Centro de Salud de Villabona,primary_care,20075,43.189218973972366,-2.052268749200748
+entity4EC7BAC0,Centro de Salud de Ordizia,primary_care,20076,43.05360119798279,-2.1781698586552003
+entityE1FFA405,Consultorio de Zaldibia,primary_care,20078,43.03856007832245,-2.150301065961195
+entity46A22BE5,Centro de Salud Mental de Zarautz,mental_health,20079,43.28226015370401,-2.1782658625817466
+entityFFC358CB,Ambulatorio de Zarautz,primary_care,20079,43.28226015370401,-2.1782658625817466
+entity5C9F8D19,Ambulatorio de Zarautz,primary_care,20079,43.28226015370401,-2.1782658625817466
+entityDC8FB110,PAC DE ZARAUTZ,primary_care,20079,43.28226015370401,-2.1782658625817466
+entityFFB756AE,Hospital de Día de Zumarraga,hospital,20080,43.086460603321136,-2.317000942940739
+entity9768B2CE,Hospital de Zumarraga,hospital,20080,43.083862711467134,-2.3126616183348325
+entity716518B0,Centro de Salud Mental de Zumarraga,mental_health,20080,43.086460603321136,-2.317000942940739
+entityCF7A2788,Centro de Salud de Zumarraga,primary_care,20080,43.08772509551919,-2.3201776327900534
+entityC2BE5ED0,PUNTO DE REFUERZO ZUMARRAGA,primary_care,20080,43.08772509551919,-2.3201776327900534
+entityCE027A47,Centro de Salud de Zumaia,primary_care,20081,43.29224017778071,-2.2574197800217566
+entityEDEDD050,Hospital de Mendaro,hospital,20901,43.25045193173712,-2.384859249546228
+entity9B629AE2,Consultorio de Mendaro,primary_care,20901,43.2519740793383,-2.3863584060346303
+entity855253D8,Unidad Terapéutica Educativa de Lasarte-Oria,other_health,20902,43.26411663237257,-2.015343243794401
+entityD49942B1,Centro de Salud de Lasarte-Oria,primary_care,20902,43.26771482934346,-2.018829088277635
+entity0B11978C,Centro de Salud de Astigarraga,primary_care,20903,43.2840466086258,-1.94811409644532
+entity2BC8E9C2,Consultorio de Baliarrain,primary_care,20904,43.06928112727821,-2.1279225831576336
+entity859D0B9C,Consultorio de Gaztelu,primary_care,20907,43.11615444900062,-2.0242981209437576
