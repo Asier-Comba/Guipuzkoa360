@@ -370,14 +370,10 @@ class DataRepository:
             self.warnings.append('Sin punto representativo runtime para: ' + ', '.join(missing))
 import json
 import os
+import unicodedata
+from functools import lru_cache
 from pathlib import Path
 from typing import Any, Callable
-try:
-    from studio import tool
-except ImportError:
-
-    def tool(function: Callable[..., Any]) -> Callable[..., Any]:
-        return function
 
 def _default_data_dir() -> Path:
     configured = os.environ.get('GIPUZKOA360_DATA_DIR')
@@ -390,6 +386,32 @@ def _default_data_dir() -> Path:
 
 def _json(result: dict[str, Any]) -> str:
     return json.dumps(result, ensure_ascii=False, sort_keys=True)
+
+def _normalized_token(value: Any) -> str:
+    text = unicodedata.normalize('NFKD', str(value or ''))
+    return ' '.join(''.join((character for character in text if not unicodedata.combining(character))).casefold().replace('_', ' ').replace('≥', '>=').split())
+SERVICE_ALIASES = {'primary_care': {'atencion primaria', 'primary care', 'primary care service', 'primary'}, 'mental_health': {'salud mental', 'mental health'}, 'hospital': {'hospital', 'hospitales'}, 'other_health': {'otros', 'otros servicios sanitarios', 'other health'}}
+ACTION_ALIASES = {'add_service': {'add service', 'anadir servicio', 'añadir servicio', 'alta servicio', 'crear servicio'}, 'remove_service': {'remove service', 'eliminar servicio', 'quitar servicio', 'baja servicio'}, 'change_threshold': {'change threshold', 'cambiar umbral', 'modificar umbral'}}
+
+def _normalize_alias(value: Any, aliases: dict[str, set[str]]) -> str:
+    token = _normalized_token(value)
+    for canonical, choices in aliases.items():
+        if token == _normalized_token(canonical) or token in {_normalized_token(choice) for choice in choices}:
+            return canonical
+    return token.replace(' ', '_')
+
+def normalize_service_category(value: Any) -> str:
+    return _normalize_alias(value, SERVICE_ALIASES)
+
+def normalize_age_group(value: Any) -> str:
+    token = _normalized_token(value).replace('años', '').replace('anos', '').strip()
+    token = token.replace('>=', '').replace('+', '').strip()
+    if token in {'65', '75'}:
+        return token
+    raise DataContractError('invalid_age_group', 'El grupo de edad debe ser 65 o 75.', ['65', '75'])
+
+def normalize_scenario_action(value: Any) -> str:
+    return _normalize_alias(value, ACTION_ALIASES)
 
 def _safe(operation: Callable[[], dict[str, Any]]) -> str:
     try:
@@ -406,9 +428,7 @@ class TerritorialAnalysis:
 
     @staticmethod
     def _age_fields(age_group: str, measure: str='percentage') -> tuple[str, str]:
-        age = str(age_group).replace('≥', '').replace('+', '').strip()
-        if age not in {'65', '75'}:
-            raise DataContractError('invalid_age_group', 'El grupo de edad debe ser 65 o 75.', ['65', '75'])
+        age = normalize_age_group(age_group)
         if measure not in {'percentage', 'count'}:
             raise DataContractError('invalid_measure', 'La medida debe ser percentage o count.', ['percentage', 'count'])
         return (f'pct_{age}_plus' if measure == 'percentage' else f'population_{age}_plus', age)
@@ -455,6 +475,7 @@ class TerritorialAnalysis:
         return ResultEnvelope(question=f'Envejecimiento de población >= {age}', filters={'age_group': age, 'measure': measure, 'period': selected, 'top_n': int(top_n)}, period=selected, metric=metric, unit='% de población' if measure == 'percentage' else 'personas', rows_used=len(available), data=data, method=f'Orden descendente de {metric}; empates por nombre municipal.', sources=self._sources(available), warnings=warnings, limitations=['El indicador describe estructura demográfica; no explica sus causas.']).to_dict()
 
     def acceso(self, service_category: str, threshold_km: float=1.0, period: str | None=None, municipality_names: list[str] | None=None, service_override: list[dict[str, Any]] | None=None) -> dict[str, Any]:
+        service_category = normalize_service_category(service_category)
         if threshold_km <= 0 or threshold_km > 100:
             raise DataContractError('invalid_threshold', 'threshold_km debe ser mayor que 0 y no superar 100.')
         municipalities = self.repo.municipalities()
@@ -487,6 +508,8 @@ class TerritorialAnalysis:
         if not 2 <= len(municipality_names) <= 20:
             raise DataContractError('invalid_municipality_count', 'Indica entre 2 y 20 municipios.')
         metric, age = self._age_fields(age_group, 'percentage')
+        if service_category:
+            service_category = normalize_service_category(service_category)
         selected, demo_rows = self._demography_for_period(period)
         resolved = [self.repo.municipality_lookup(name) for name in municipality_names]
         codes = {row['municipality_code'] for row in resolved}
@@ -511,6 +534,7 @@ class TerritorialAnalysis:
         return ResultEnvelope(question='Comparación municipal', filters={'municipalities': [row['municipality_name'] for row in resolved], 'age_group': age, 'service_category': service_category, 'threshold_km': threshold_km if service_category else None}, period=selected, metric=metric + (' + distance_geométrica_aproximada' if service_category else ''), unit='% y m' if service_category else '%', rows_used=len(data), data=data, method='Selección por código municipal y comparación campo a campo; sin agregación opaca.', sources=sources, warnings=list(dict.fromkeys(self.repo.warnings)), limitations=(access_result or {}).get('limitations', []) + ['La comparación no demuestra causalidad.']).to_dict()
 
     def coincidencia(self, service_category: str, age_group: str='65', threshold_km: float=1.0, period: str | None=None, quantile_threshold: float=0.75) -> dict[str, Any]:
+        service_category = normalize_service_category(service_category)
         if not 0.5 <= quantile_threshold <= 0.95:
             raise DataContractError('invalid_quantile', 'quantile_threshold debe estar entre 0.5 y 0.95.')
         metric, age = self._age_fields(age_group, 'percentage')
@@ -538,10 +562,13 @@ class TerritorialAnalysis:
         used_demo = [by_code[row['municipality_code']] for row in joined]
         sources = self._sources(used_demo) + access['sources']
         deduped = {str(item.get('source_id', item)): item for item in sources}
-        return ResultEnvelope(question=f'Coincidencia de envejecimiento >= {age} y peor acceso a {service_category}', filters={'age_group': age, 'service_category': service_category, 'threshold_km': threshold_km, 'period': selected, 'quantile_threshold': quantile_threshold}, period=selected, metric=f'{metric} + distance_geométrica_aproximada', unit='% y m', rows_used=len(joined), data=joined, method=f'Cruce por código municipal. Se destacan valores >= cuantil {quantile_threshold:.2f} en ambas métricas (cortes: {age_cut:.4f}% y {distance_cut:.1f} m). Se muestran ambos componentes y no se usa una puntuación compuesta.', sources=list(deduped.values()), warnings=list(dict.fromkeys(self.repo.warnings + access['warnings'])), limitations=access['limitations'] + ['La coincidencia estadística no demuestra causalidad ni identifica necesidades individuales.', 'Los resultados dependen del cuantil, grupo de edad, categoría y periodo elegidos.']).to_dict()
+        result = ResultEnvelope(question=f'Coincidencia de envejecimiento >= {age} y peor acceso a {service_category}', filters={'age_group': age, 'service_category': service_category, 'threshold_km': threshold_km, 'period': selected, 'quantile_threshold': quantile_threshold}, period=selected, metric=f'{metric} + distance_geométrica_aproximada', unit='% y m', rows_used=len(joined), data=joined, method=f'Cruce por código municipal. Se destacan valores >= cuantil {quantile_threshold:.2f} en ambas métricas (cortes: {age_cut:.4f}% y {distance_cut:.1f} m). Se muestran ambos componentes y no se usa una puntuación compuesta.', sources=list(deduped.values()), warnings=list(dict.fromkeys(self.repo.warnings + access['warnings'])), limitations=access['limitations'] + ['La coincidencia estadística no demuestra causalidad ni identifica necesidades individuales.', 'Los resultados dependen del cuantil, grupo de edad, categoría y periodo elegidos.']).to_dict()
+        result['analysis'] = {'total_municipalities': len(joined), 'highlighted_count': sum((row['highlighted'] for row in joined)), 'age_cut_pct': round(age_cut, 4), 'distance_cut_m': round(distance_cut, 1)}
+        return result
 
     def escenario(self, action: str, service_category: str, threshold_km: float=1.0, period: str | None=None, latitude: float | None=None, longitude: float | None=None, service_id: str | None=None, new_threshold_km: float | None=None) -> dict[str, Any]:
-        action = action.strip().casefold()
+        action = normalize_scenario_action(action)
+        service_category = normalize_service_category(service_category)
         services = list(self.repo.services())
         changed: dict[str, Any]
         scenario_services = list(services)
@@ -595,41 +622,60 @@ class TerritorialAnalysis:
             warnings.append('No hay metadatos de fuente disponibles; no se debe inventar procedencia.')
         return ResultEnvelope(question='Consulta de procedencia', filters={'source_id': source_id}, metric='source_metadata', unit='no aplica', rows_used=len(data), data=data, method='Lectura directa de metadata_sources.json.', sources=data, warnings=warnings, limitations=['La ficha de fuente describe procedencia; no valida por sí sola la calidad del dato.']).to_dict()
 
+@lru_cache(maxsize=4)
+def _analysis_for_dir(data_dir: str) -> TerritorialAnalysis:
+    return TerritorialAnalysis(DataRepository(Path(data_dir)))
+
 def _analysis() -> TerritorialAnalysis:
-    return TerritorialAnalysis(DataRepository(_default_data_dir()))
+    return _analysis_for_dir(str(_default_data_dir().resolve()))
 
-@tool
-def obtener_resumen_territorial(municipio: str, periodo: str | None=None) -> str:
-    """Resume demografía y servicios de un municipio; no interpreta ausencia como cero."""
-    return _safe(lambda: _analysis().resumen(municipio, periodo))
+def clear_runtime_cache() -> None:
+    _analysis_for_dir.cache_clear()
 
-@tool
-def comparar_municipios(municipios: list[str], grupo_edad: str='65', categoria_servicio: str | None=None, umbral_km: float=1.0, periodo: str | None=None) -> str:
-    """Compara 2-20 municipios con porcentaje de edad y, opcionalmente, distancia a servicios."""
-    return _safe(lambda: _analysis().comparar(municipios, grupo_edad, categoria_servicio, umbral_km, periodo))
+def compact_result(result: dict[str, Any], operation: str) -> dict[str, Any]:
+    """Reduce payload para el coordinador sin cambiar cálculos ni trazabilidad."""
+    compact = dict(result)
+    rows = list(result.get('data', []))
+    if result.get('status') != 'ok':
+        return compact
+    if operation == 'coincidence':
+        highlighted = [row for row in rows if row.get('highlighted')]
+        context = [row for row in rows if not row.get('highlighted')][:3]
+        compact['data'] = highlighted + context
+        compact.setdefault('analysis', {})['returned_rows'] = len(compact['data'])
+        compact['analysis']['context_rows'] = len(context)
+        compact['analysis']['output_compact'] = True
+    elif operation == 'scenario':
+        changed = [row for row in rows if abs(float(row.get('difference_absolute_m') or 0)) > 0.05 or row.get('baseline_within_threshold') != row.get('scenario_within_threshold')]
+        compact['data'] = changed
+        compact['analysis'] = {'total_municipalities': len(rows), 'affected_count': len(changed), 'returned_rows': len(changed), 'output_compact': True}
+    return compact
 
-@tool
-def analizar_envejecimiento(grupo_edad: str='65', medida: str='percentage', periodo: str | None=None, top_n: int=10) -> str:
-    """Calcula ranking de población >=65 o >=75 por porcentaje o recuento."""
-    return _safe(lambda: _analysis().envejecimiento(grupo_edad, medida, periodo, top_n))
+def _execute(operation: str, callback: Callable[[], dict[str, Any]]) -> str:
+    try:
+        return _json(compact_result(callback(), operation))
+    except DataContractError as exc:
+        return _json(exc.as_result())
+    except (ValueError, TypeError) as exc:
+        return _json({'status': 'error', 'error_code': 'invalid_request', 'message': str(exc), 'available_options': []})
 
-@tool
-def analizar_acceso_servicios(categoria_servicio: str, umbral_km: float=1.0, periodo: str | None=None, municipios: list[str] | None=None) -> str:
-    """Calcula distancia euclídea EPSG:25830 desde punto representativo; no acceso real."""
-    return _safe(lambda: _analysis().acceso(categoria_servicio, umbral_km, periodo, municipios))
+def execute_obtener_resumen_territorial(municipio: str, periodo: str | None=None) -> str:
+    return _execute('summary', lambda: _analysis().resumen(municipio, periodo))
 
-@tool
-def analizar_coincidencia(categoria_servicio: str, grupo_edad: str='65', umbral_km: float=1.0, periodo: str | None=None, cuantil: float=0.75) -> str:
-    """Cruza envejecimiento y distancia mostrando ambos componentes y criterios de corte."""
-    return _safe(lambda: _analysis().coincidencia(categoria_servicio, grupo_edad, umbral_km, periodo, cuantil))
+def execute_comparar_municipios(municipios: list[str], grupo_edad: str='65', categoria_servicio: str | None=None, umbral_km: float=1.0, periodo: str | None=None) -> str:
+    return _execute('comparison', lambda: _analysis().comparar(municipios, grupo_edad, categoria_servicio, umbral_km, periodo))
 
-@tool
-def simular_escenario(accion: str, categoria_servicio: str, umbral_km: float=1.0, periodo: str | None=None, latitud: float | None=None, longitud: float | None=None, service_id: str | None=None, nuevo_umbral_km: float | None=None) -> str:
-    """Recalcula un contrafactual: add_service, remove_service o change_threshold."""
-    return _safe(lambda: _analysis().escenario(accion, categoria_servicio, umbral_km, periodo, latitud, longitud, service_id, nuevo_umbral_km))
+def execute_analizar_envejecimiento(grupo_edad: str='65', medida: str='percentage', periodo: str | None=None, top_n: int=10) -> str:
+    return _execute('aging', lambda: _analysis().envejecimiento(grupo_edad, medida, periodo, top_n))
 
-@tool
-def consultar_fuente(source_id: str | None=None) -> str:
-    """Devuelve procedencia, periodo, institución, unidad, licencia y limitaciones disponibles."""
-    return _safe(lambda: _analysis().fuente(source_id))
-TOOLS = [obtener_resumen_territorial, comparar_municipios, analizar_envejecimiento, analizar_acceso_servicios, analizar_coincidencia, simular_escenario, consultar_fuente]
+def execute_analizar_acceso_servicios(categoria_servicio: str, umbral_km: float=1.0, periodo: str | None=None, municipios: list[str] | None=None) -> str:
+    return _execute('access', lambda: _analysis().acceso(categoria_servicio, umbral_km, periodo, municipios))
+
+def execute_analizar_coincidencia(categoria_servicio: str, grupo_edad: str='65', umbral_km: float=1.0, periodo: str | None=None, cuantil: float=0.75) -> str:
+    return _execute('coincidence', lambda: _analysis().coincidencia(categoria_servicio, grupo_edad, umbral_km, periodo, cuantil))
+
+def execute_simular_escenario(accion: str, categoria_servicio: str, umbral_km: float=1.0, periodo: str | None=None, latitud: float | None=None, longitud: float | None=None, service_id: str | None=None, nuevo_umbral_km: float | None=None) -> str:
+    return _execute('scenario', lambda: _analysis().escenario(accion, categoria_servicio, umbral_km, periodo, latitud, longitud, service_id, nuevo_umbral_km))
+
+def execute_consultar_fuente(source_id: str | None=None) -> str:
+    return _execute('source', lambda: _analysis().fuente(source_id))

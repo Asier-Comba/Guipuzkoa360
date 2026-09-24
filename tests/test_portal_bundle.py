@@ -23,10 +23,11 @@ def _load(name: str, path: Path):
 def test_generated_portal_bundle_is_self_contained(monkeypatch):
     subprocess.run([sys.executable, "scripts/agent/build_portal_sources.py"], cwd=ROOT, check=True)
     monkeypatch.syspath_prepend(str(PORTAL))
-    bundled_tools = _load("portal_tools_test", PORTAL / "tools.py")
-    assert len(bundled_tools.TOOLS) == 7
+    bundled_tools = _load("tools", PORTAL / "tools.py")
+    bundled_main = _load("portal_main_test", PORTAL / "main.py")
+    assert len(bundled_main.TOOLS) == 7
     monkeypatch.setenv("GIPUZKOA360_DATA_DIR", str(ROOT / "datos_preparados"))
-    result = json.loads(bundled_tools.obtener_resumen_territorial("Aduna", "2025-01-01"))
+    result = json.loads(bundled_main.obtener_resumen_territorial("Aduna", "2025-01-01"))
     assert result["status"] == "ok"
     assert result["data"][0]["municipality_code"] == "20002"
 
@@ -35,6 +36,7 @@ def test_portal_main_build_agent_is_synchronous_and_has_no_local_path():
     source = (PORTAL / "main.py").read_text(encoding="utf-8")
     assert "async def build_agent" not in source
     assert "def build_agent(model):" in source
-    assert "from tools import TOOLS" in source
+    assert source.count("@tool") == 7
+    assert "TOOLS = [" in source
     assert "C:\\\\Users" not in source
     assert "STUDIO_INTERNET_ENABLED = False" in source

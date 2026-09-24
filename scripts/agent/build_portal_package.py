@@ -9,7 +9,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-RELEASE_VERSION = "urban-challenge-rc1"
+RELEASE_VERSION = "urban-challenge-rc2"
 OUTPUT = ROOT / "dist" / f"gipuzkoa360-{RELEASE_VERSION}.zip"
 MAX_BYTES = 24 * 1024 * 1024
 FIXED_ZIP_TIME = (2026, 9, 24, 0, 0, 0)

@@ -1,0 +1,51 @@
+{
+  "release": "urban-challenge-rc2",
+  "repeats": 5,
+  "cold_data_load_ms": 12.123,
+  "tools": [
+    {
+      "tool": "obtener_resumen_territorial",
+      "calculation_ms_median": 0.398,
+      "serialization_ms_median": 0.079,
+      "wrapper_ms_median": 1.087
+    },
+    {
+      "tool": "comparar_municipios",
+      "calculation_ms_median": 1.392,
+      "serialization_ms_median": 0.072,
+      "wrapper_ms_median": 1.928
+    },
+    {
+      "tool": "analizar_envejecimiento",
+      "calculation_ms_median": 0.144,
+      "serialization_ms_median": 0.051,
+      "wrapper_ms_median": 0.643
+    },
+    {
+      "tool": "analizar_acceso_servicios",
+      "calculation_ms_median": 0.37,
+      "serialization_ms_median": 0.048,
+      "wrapper_ms_median": 0.883
+    },
+    {
+      "tool": "analizar_coincidencia",
+      "calculation_ms_median": 7.163,
+      "serialization_ms_median": 0.483,
+      "wrapper_ms_median": 7.704
+    },
+    {
+      "tool": "simular_escenario",
+      "calculation_ms_median": 8.739,
+      "serialization_ms_median": 0.389,
+      "wrapper_ms_median": 9.355
+    },
+    {
+      "tool": "consultar_fuente",
+      "calculation_ms_median": 0.037,
+      "serialization_ms_median": 0.034,
+      "wrapper_ms_median": 0.491
+    }
+  ],
+  "max_wrapper_ms_median": 9.355,
+  "status": "PASS"
+}

@@ -1,6 +1,33 @@
 """Entrada compatible con el agente Python del portal."""
 
-from tools import TOOLS
+from typing import Any, Callable
+
+try:
+    from studio import tool
+except ImportError:
+    def tool(function: Callable[..., Any]) -> Callable[..., Any]:
+        return function
+
+try:
+    from .tools import (
+        execute_analizar_acceso_servicios,
+        execute_analizar_coincidencia,
+        execute_analizar_envejecimiento,
+        execute_comparar_municipios,
+        execute_consultar_fuente,
+        execute_obtener_resumen_territorial,
+        execute_simular_escenario,
+    )
+except ImportError:
+    from tools import (
+        execute_analizar_acceso_servicios,
+        execute_analizar_coincidencia,
+        execute_analizar_envejecimiento,
+        execute_comparar_municipios,
+        execute_consultar_fuente,
+        execute_obtener_resumen_territorial,
+        execute_simular_escenario,
+    )
 
 AGENT_NAME = "GIPUZKOA 360"
 STUDIO_MAX_ITERATIONS = 8
@@ -44,6 +71,89 @@ denominadores. Para escenarios etiqueta el resultado como ESCENARIO HIPOTÉTICO 
 Si la consulta queda fuera de demografía, servicios territoriales, coincidencias, comparaciones, fuentes o
 escenarios soportados, dilo claramente y no llames herramientas irrelevantes. Nunca presentes fixtures TEST_*
 como datos reales de Gipuzkoa."""
+
+
+@tool
+def obtener_resumen_territorial(municipio: str, periodo: str | None = None) -> str:
+    """Resume demografía y servicios de un municipio; no interpreta ausencia como cero."""
+    return execute_obtener_resumen_territorial(municipio, periodo)
+
+
+@tool
+def comparar_municipios(
+    municipios: list[str],
+    grupo_edad: str = "65",
+    categoria_servicio: str | None = None,
+    umbral_km: float = 1.0,
+    periodo: str | None = None,
+) -> str:
+    """Compara 2-20 municipios; acepta nombres naturales de edad y servicio."""
+    return execute_comparar_municipios(municipios, grupo_edad, categoria_servicio, umbral_km, periodo)
+
+
+@tool
+def analizar_envejecimiento(
+    grupo_edad: str = "65", medida: str = "percentage", periodo: str | None = None, top_n: int = 10
+) -> str:
+    """Calcula ranking de población 65+ o 75+ por porcentaje o recuento."""
+    return execute_analizar_envejecimiento(grupo_edad, medida, periodo, top_n)
+
+
+@tool
+def analizar_acceso_servicios(
+    categoria_servicio: str,
+    umbral_km: float = 1.0,
+    periodo: str | None = None,
+    municipios: list[str] | None = None,
+) -> str:
+    """Calcula distancia euclídea EPSG:25830; acepta categorías en lenguaje natural."""
+    return execute_analizar_acceso_servicios(categoria_servicio, umbral_km, periodo, municipios)
+
+
+@tool
+def analizar_coincidencia(
+    categoria_servicio: str,
+    grupo_edad: str = "65",
+    umbral_km: float = 1.0,
+    periodo: str | None = None,
+    cuantil: float = 0.75,
+) -> str:
+    """Cruza envejecimiento y distancia y devuelve una salida compacta con todos los destacados."""
+    return execute_analizar_coincidencia(categoria_servicio, grupo_edad, umbral_km, periodo, cuantil)
+
+
+@tool
+def simular_escenario(
+    accion: str,
+    categoria_servicio: str,
+    umbral_km: float = 1.0,
+    periodo: str | None = None,
+    latitud: float | None = None,
+    longitud: float | None = None,
+    service_id: str | None = None,
+    nuevo_umbral_km: float | None = None,
+) -> str:
+    """Recalcula un contrafactual y devuelve solo municipios afectados; acepta acciones naturales."""
+    return execute_simular_escenario(
+        accion, categoria_servicio, umbral_km, periodo, latitud, longitud, service_id, nuevo_umbral_km
+    )
+
+
+@tool
+def consultar_fuente(source_id: str | None = None) -> str:
+    """Devuelve procedencia, periodo, institución, unidad, licencia y limitaciones."""
+    return execute_consultar_fuente(source_id)
+
+
+TOOLS = [
+    obtener_resumen_territorial,
+    comparar_municipios,
+    analizar_envejecimiento,
+    analizar_acceso_servicios,
+    analizar_coincidencia,
+    simular_escenario,
+    consultar_fuente,
+]
 
 
 def build_agent(model):
