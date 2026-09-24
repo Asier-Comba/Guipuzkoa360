@@ -454,11 +454,11 @@ def normalize_service_category(value: Any) -> str:
 def normalize_age_group(value: Any) -> str:
     key = _normalized_key(value).replace('≥', '>=')
     compact = re.sub('\\s+', '', key)
-    aliases = {'65': {'65', '65+', '>=65'}, '75': {'75', '75+', '>=75'}}
+    aliases = {'65': {'65', '65+', '>=65', '65omas'}, '75': {'75', '75+', '>=75', '75omas'}}
     for canonical, choices in aliases.items():
         if compact in choices:
             return canonical
-    raise DataContractError('invalid_age_group', f'Grupo de edad no reconocido: {value!r}.', ['65', '65+', '≥65', '>=65', '75', '75+', '≥75', '>=75'])
+    raise DataContractError('invalid_age_group', f'Grupo de edad no reconocido: {value!r}.', ['65', '65+', '65 o más', '≥65', '>=65', '75', '75+', '75 o más', '≥75', '>=75'])
 
 def normalize_scenario_action(value: Any) -> str:
     aliases = {'add_service': {'add service', 'anadir', 'anadir servicio', 'agregar', 'agregar servicio'}, 'remove_service': {'remove', 'remove service', 'eliminar', 'eliminar servicio', 'quitar servicio'}, 'change_threshold': {'change threshold', 'cambiar umbral', 'cambio de umbral'}}

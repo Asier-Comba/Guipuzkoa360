@@ -25,12 +25,12 @@ def test_service_category_aliases(value: str, expected: str):
     assert tools.normalize_service_category(value) == expected
 
 
-@pytest.mark.parametrize("value", ["65", "65+", "≥65", ">=65", " 65 + "])
+@pytest.mark.parametrize("value", ["65", "65+", "65 o más", "65 O MAS", "≥65", ">=65", " 65 + "])
 def test_age_65_aliases(value: str):
     assert tools.normalize_age_group(value) == "65"
 
 
-@pytest.mark.parametrize("value", ["75", "75+", "≥75", ">=75", " 75 + "])
+@pytest.mark.parametrize("value", ["75", "75+", "75 o más", "75 O MAS", "≥75", ">=75", " 75 + "])
 def test_age_75_aliases(value: str):
     assert tools.normalize_age_group(value) == "75"
 
@@ -75,6 +75,14 @@ def test_public_tool_normalizes_human_service_and_age(monkeypatch):
     assert result["status"] == "ok"
     assert result["filters"]["service_category"] == "primary_care"
     assert result["filters"]["age_group"] == "75"
+
+
+def test_public_tool_accepts_natural_age_phrase_from_g04(monkeypatch):
+    monkeypatch.setenv("GIPUZKOA360_DATA_DIR", str(tools.Path(__file__).parents[1] / "datos_preparados"))
+    result = json.loads(tools.analizar_coincidencia("atención primaria", "65 o más", 2.0, "2025-01-01", 0.75))
+    assert result["status"] == "ok"
+    assert result["filters"]["age_group"] == "65"
+    assert result["rows_used"] == 88
 
 
 def test_public_tool_rejects_unknown_category_as_json():

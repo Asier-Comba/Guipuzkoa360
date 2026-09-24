@@ -176,8 +176,8 @@ def normalize_age_group(value: Any) -> str:
     key = _normalized_key(value).replace("≥", ">=")
     compact = re.sub(r"\s+", "", key)
     aliases = {
-        "65": {"65", "65+", ">=65"},
-        "75": {"75", "75+", ">=75"},
+        "65": {"65", "65+", ">=65", "65omas"},
+        "75": {"75", "75+", ">=75", "75omas"},
     }
     for canonical, choices in aliases.items():
         if compact in choices:
@@ -185,7 +185,7 @@ def normalize_age_group(value: Any) -> str:
     raise DataContractError(
         "invalid_age_group",
         f"Grupo de edad no reconocido: {value!r}.",
-        ["65", "65+", "≥65", ">=65", "75", "75+", "≥75", ">=75"],
+        ["65", "65+", "65 o más", "≥65", ">=65", "75", "75+", "75 o más", "≥75", ">=75"],
     )
 
 
