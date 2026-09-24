@@ -369,6 +369,7 @@ class DataRepository:
         if missing:
             self.warnings.append('Sin punto representativo runtime para: ' + ', '.join(missing))
 import json
+import math
 import os
 import re
 import unicodedata
@@ -386,7 +387,7 @@ def _default_data_dir() -> Path:
     return Path(__file__).resolve().parents[2] / 'datos_preparados'
 
 def _json(result: dict[str, Any]) -> str:
-    return json.dumps(result, ensure_ascii=False, sort_keys=True)
+    return json.dumps(result, ensure_ascii=False, sort_keys=True, allow_nan=False)
 
 def _compact_sources(sources: list[dict[str, Any]]) -> list[dict[str, Any]]:
     audit_fields = ('source_id', 'institution', 'title', 'reference_period', 'unit', 'url', 'limitations')
@@ -401,7 +402,7 @@ def compact_result(result: dict[str, Any], result_kind: str) -> dict[str, Any]:
     if result_kind == 'access' and len(rows) > 20:
         within = sum((bool(row.get('within_threshold')) for row in rows))
         distances = [row['nearest_distance_m'] for row in rows if row.get('nearest_distance_m') is not None]
-        summary.update({'within_threshold_count': within, 'outside_threshold_count': len(rows) - within, 'minimum_distance_m': min(distances) if distances else None, 'maximum_distance_m': max(distances) if distances else None, 'returned_rows': min(10, len(rows)), 'selection': '10 municipios con mayor distancia; use detalle=true para las 88 filas.'})
+        summary.update({'within_threshold_count': within, 'outside_threshold_count': len(rows) - within, 'minimum_distance_m': min(distances) if distances else None, 'maximum_distance_m': max(distances) if distances else None, 'returned_rows': min(10, len(rows)), 'selection': '10 municipios con mayor distancia; indique municipios concretos para acotar la consulta.'})
         compact['data'] = rows[:10]
     elif result_kind == 'coincidence':
         highlighted = [row for row in rows if row.get('highlighted')]
@@ -484,6 +485,16 @@ class TerritorialAnalysis:
             raise DataContractError('service_category_not_found', f'No hay una categoría de servicio inequívoca para {value!r}.', categories) from None
 
     @staticmethod
+    def _threshold(value: Any) -> float:
+        try:
+            threshold = float(value)
+        except (TypeError, ValueError) as exc:
+            raise DataContractError('invalid_threshold', 'threshold_km debe ser un número mayor que 0 y no superar 100.') from exc
+        if not math.isfinite(threshold) or threshold <= 0 or threshold > 100:
+            raise DataContractError('invalid_threshold', 'threshold_km debe ser mayor que 0 y no superar 100.')
+        return threshold
+
+    @staticmethod
     def _age_fields(age_group: str, measure: str='percentage') -> tuple[str, str]:
         age = normalize_age_group(age_group)
         if measure not in {'percentage', 'count'}:
@@ -533,8 +544,7 @@ class TerritorialAnalysis:
 
     def acceso(self, service_category: str, threshold_km: float=1.0, period: str | None=None, municipality_names: list[str] | None=None, service_override: list[dict[str, Any]] | None=None) -> dict[str, Any]:
         service_category = self._service_category(service_category)
-        if threshold_km <= 0 or threshold_km > 100:
-            raise DataContractError('invalid_threshold', 'threshold_km debe ser mayor que 0 y no superar 100.')
+        threshold_km = self._threshold(threshold_km)
         municipalities = self.repo.municipalities()
         if municipality_names:
             selected_codes = {self.repo.municipality_lookup(name)['municipality_code'] for name in municipality_names}
@@ -625,12 +635,18 @@ class TerritorialAnalysis:
     def escenario(self, action: str, service_category: str, threshold_km: float=1.0, period: str | None=None, latitude: float | None=None, longitude: float | None=None, service_id: str | None=None, new_threshold_km: float | None=None) -> dict[str, Any]:
         action = normalize_scenario_action(action)
         service_category = self._service_category(service_category)
+        threshold_km = self._threshold(threshold_km)
         services = list(self.repo.services())
         changed: dict[str, Any]
         scenario_services = list(services)
         scenario_threshold = threshold_km
         if action == 'add_service':
-            if latitude is None or longitude is None or (not -90 <= latitude <= 90) or (not -180 <= longitude <= 180):
+            try:
+                latitude = float(latitude) if latitude is not None else None
+                longitude = float(longitude) if longitude is not None else None
+            except (TypeError, ValueError) as exc:
+                raise DataContractError('invalid_coordinates', 'add_service requiere latitud y longitud numéricas y válidas.') from exc
+            if latitude is None or longitude is None or (not math.isfinite(latitude)) or (not math.isfinite(longitude)) or (not -90 <= latitude <= 90) or (not -180 <= longitude <= 180):
                 raise DataContractError('invalid_coordinates', 'add_service requiere latitud y longitud válidas.')
             hypothetical_id = service_id or 'HYPOTHETICAL_SERVICE'
             easting_m, northing_m = wgs84_to_utm30(float(latitude), float(longitude))
@@ -646,7 +662,7 @@ class TerritorialAnalysis:
         elif action == 'change_threshold':
             if new_threshold_km is None:
                 raise DataContractError('threshold_required', 'change_threshold requiere new_threshold_km.')
-            scenario_threshold = float(new_threshold_km)
+            scenario_threshold = self._threshold(new_threshold_km)
             changed = {'action': action, 'threshold_km': threshold_km, 'new_threshold_km': scenario_threshold}
         else:
             raise DataContractError('invalid_scenario', 'Escenario no compatible.', ['add_service', 'remove_service', 'change_threshold'])

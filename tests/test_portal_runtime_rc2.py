@@ -3,6 +3,7 @@ from __future__ import annotations
 import ast
 import inspect
 import json
+import math
 from pathlib import Path
 
 import main
@@ -58,6 +59,15 @@ def test_core_keeps_explicit_offline_full_detail_capability():
     )
 
 
+def test_core_full_payload_remains_available_offline(monkeypatch):
+    monkeypatch.setenv("GIPUZKOA360_DATA_DIR", str(ROOT / "datos_preparados"))
+    result = json.loads(tools.analizar_coincidencia(
+        "primary_care", "65", 2, "2025-01-01", 0.75, detalle=True
+    ))
+    assert result["detail_level"] == "full"
+    assert len(result["data"]) == result["rows_used"] == 88
+
+
 def test_service_age_and_action_aliases():
     for value in ("atención primaria", "atencion primaria", "primary care", "primary_care"):
         assert tools.normalize_service_category(value) == "primary_care"
@@ -96,6 +106,8 @@ def test_compact_coincidence_matches_full_core(monkeypatch):
     assert compact_highlighted == full_highlighted
     assert len(compact["data"]) == 7
     assert len(json.dumps(compact, ensure_ascii=False)) < 12_000
+    for field in ("period", "unit", "sources", "limitations"):
+        assert compact[field]
 
 
 def test_compact_scenario_only_returns_changed_municipalities(monkeypatch):
@@ -114,6 +126,55 @@ def test_compact_scenario_only_returns_changed_municipalities(monkeypatch):
         or row["baseline_within_threshold"] != row["scenario_within_threshold"]
         for row in compact["data"]
     )
+    assert compact["scenario"]["baseline"]["service_count"] == 148
+    assert compact["scenario"]["scenario"]["service_count"] == 149
+    assert all("baseline_distance_m" in row and "scenario_distance_m" in row for row in compact["data"])
+
+
+def test_scenario_does_not_contaminate_next_normal_query(monkeypatch):
+    monkeypatch.setenv("GIPUZKOA360_DATA_DIR", str(ROOT / "datos_preparados"))
+    tools.clear_analysis_cache()
+    before = main.analizar_acceso_servicios("primary_care", 2, "2025-01-01", ["Aduna"])
+    aduna = tools._analysis().repo.municipality_lookup("Aduna")
+    main.simular_escenario(
+        "añadir servicio", "primary_care", 2, "2025-01-01",
+        aduna["latitude"], aduna["longitude"], "TEMP_AUDIT",
+    )
+    after = main.analizar_acceso_servicios("primary_care", 2, "2025-01-01", ["Aduna"])
+    assert after == before
+    assert all(item["service_id"] != "TEMP_AUDIT" for item in tools._analysis().repo.services())
+
+
+def test_non_finite_threshold_is_controlled_strict_json(monkeypatch):
+    monkeypatch.setenv("GIPUZKOA360_DATA_DIR", str(ROOT / "datos_preparados"))
+    raw = main.simular_escenario(
+        "cambiar umbral", "primary_care", 1, "2025-01-01",
+        nuevo_umbral_km=math.nan,
+    )
+    assert "NaN" not in raw
+    result = json.loads(raw)
+    assert result["status"] == "error"
+    assert result["error_code"] == "invalid_threshold"
+
+
+def test_scenario_numeric_inputs_never_leak_python_exceptions(monkeypatch):
+    monkeypatch.setenv("GIPUZKOA360_DATA_DIR", str(ROOT / "datos_preparados"))
+    invalid_threshold = json.loads(main.simular_escenario(
+        "cambiar umbral", "primary_care", 1, "2025-01-01", nuevo_umbral_km="no-numérico"
+    ))
+    invalid_coordinates = json.loads(main.simular_escenario(
+        "añadir servicio", "primary_care", 1, "2025-01-01", latitud="NaN", longitud=-2.0
+    ))
+    assert invalid_threshold["error_code"] == "invalid_threshold"
+    assert invalid_coordinates["error_code"] == "invalid_coordinates"
+    assert "could not convert" not in invalid_threshold["message"]
+    assert "not supported" not in invalid_coordinates["message"]
+
+
+def test_compact_output_never_suggests_hidden_detail_parameter(monkeypatch):
+    monkeypatch.setenv("GIPUZKOA360_DATA_DIR", str(ROOT / "datos_preparados"))
+    raw = main.analizar_acceso_servicios("primary_care", 2, "2025-01-01")
+    assert "detalle" not in raw.casefold()
 
 
 def test_context_paths_exist_and_runtime_has_no_forbidden_mechanisms():
