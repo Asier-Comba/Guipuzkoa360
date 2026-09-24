@@ -5,6 +5,7 @@
 - Terminado: ingesta oficial, demografía, servicios sanitarios, límites municipales, métricas nivel 1/2, runtime, metadatos, pruebas y verificaciones.
 - Parcial: `population_75_plus` derivada por año de nacimiento <=1949.
 - Bloqueado/pendiente: no estaban visibles los tres documentos `contexto-principal.md`, `revision-completa-17-09-2026.md` y `comprobacion-adicional-portal.md`. El portal oficial solo mostraba las nueve plantillas base y ningún archivo propio.
+- Endurecimiento posterior: contrato 1.1.0, métricas para las cuatro categorías, 38 controles QA, 15 tests y cinco golden cases. Handoff detallado en `docs/HANDOFF_WORK_2_3_DATA_QA.md`.
 
 ## Fuentes utilizadas
 
@@ -27,7 +28,7 @@ Detalle completo en `FUENTES.md` y `datos_preparados/metadata_sources.json`.
 
 ## Contrato de columnas
 
-`municipality_code` es texto de 5 dígitos. `reference_period` es ISO. Poblaciones son enteros; porcentajes están en 0–100. Distancias terminadas en `_m` son metros euclídeos en EPSG:25830. `service_category` admite `primary_care`, `hospital`, `mental_health`, `other_health`. Cada tabla conserva `source_id`; las métricas derivadas usan `G360_DERIVED_MUNICIPAL_METRICS_V1`.
+`municipality_code` es texto de 5 dígitos. `reference_period` es ISO. Poblaciones son enteros; porcentajes están en 0–100. Distancias terminadas en `_m` son metros euclídeos en EPSG:25830. `service_category` admite `primary_care`, `hospital`, `mental_health`, `other_health`. Cada tabla conserva `source_id`; las métricas derivadas usan `G360_DERIVED_MUNICIPAL_METRICS_V1`, ahora registrado con su linaje. El schema ejecutable completo está en `datos_preparados/data_contract.json`.
 
 ## Cómo reconstruir
 
@@ -39,7 +40,7 @@ python -m pytest tests/data -q
 
 ## Tests
 
-Validan 88 municipios, formato/unicidad de códigos, joins completos, desigualdad 75+ <= 65+ <= total, porcentajes, 148 IDs de servicio únicos, coordenadas, categorías, CRS y geometrías válidas. El último pipeline terminó `PASS`.
+Validan 88 municipios, formato/unicidad de códigos, joins completos, desigualdad 75+ <= 65+ <= total, porcentajes, 148 IDs de servicio únicos, coordenadas, asignación espacial, categorías, recálculo de tasas/distancias, CRS, geometrías, periodos, fuentes, runtime, SHA-256 y golden cases. El último pipeline terminó `PASS`.
 
 ## Cifras manualmente verificadas
 
@@ -69,7 +70,7 @@ Registro: `analisis/verificaciones_manuales.csv`.
 
 ## Qué necesita Work 2
 
-Usar `municipios.csv` para consultas tabulares y `runtime_servicios.csv` para escenarios de alta/baja hipotética. Mantener las etiquetas metodológicas exactas de las distancias.
+Usar `municipios.csv` para consultas tabulares y `runtime_servicios.csv` para escenarios de alta/baja hipotética. Mantener las etiquetas metodológicas exactas de las distancias. Seguir `HANDOFF_WORK_2_3_DATA_QA.md`; Work 2 aún no tiene rama remota visible.
 
 ## Qué necesita Work 3
 
@@ -82,4 +83,3 @@ Usar `runtime_municipios.geojson` para mapa y `runtime_servicios.csv` para punto
 3. Añadir GTFS únicamente tras auditar cobertura y calendario.
 4. Revisar los tres documentos oficiales ausentes cuando estén disponibles.
 5. Revalidar periodos justo antes de la entrega.
-
