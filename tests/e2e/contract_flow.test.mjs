@@ -55,6 +55,7 @@ const invalidCases=[
   ['distancia NaN convertida a null',d=>{d.comparison[0].service_distance_km=NaN},/comparison.service_distance_km/],
   ['source_id desconocido',d=>{d.metrics[0].source_ids=['NO_EXISTE']},/referencia de fuente inexistente/],
   ['escenario con unidad inexistente',d=>{d.scenario.unit_id='NO_EXISTE'},/scenario inválido/],
+  ['baseline de escenario contradictoria',d=>{d.scenario.baseline_distance_km=999},/baseline del escenario/],
   ['traza que finge agente con fixture',d=>{asReal(d);d.trace.execution_mode='synthetic_fixture'},/modo de ejecución sintético/],
   ['fecha inválida',d=>{d.generated_at='ayer'},/generated_at/]
 ];
