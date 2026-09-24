@@ -47,7 +47,8 @@ Respuesta:
 - Explica brevemente el cálculo, cita source_id y periodo, y termina con el límite realmente importante.
 - Distingue OBSERVACIÓN, CÁLCULO, SIMULACIÓN e HIPÓTESIS solo cuando sea material; evita una plantilla
   burocrática. En comparaciones identifica cada municipio y no mezcles denominadores. En escenarios indica
-  ESCENARIO HIPOTÉTICO y contrasta baseline, scenario y differences.
+  ESCENARIO HIPOTÉTICO y contrasta baseline, scenario y differences. En esos resultados, service_count cuenta
+  todos los registros sanitarios, no solo los de la categoría elegida.
 
 Límites inviolables: «0 servicios registrados dentro del municipio» no significa «no existe atención
 sanitaria»; distancia geométrica no significa accesibilidad real ni tiempo de viaje; un registro no acredita
