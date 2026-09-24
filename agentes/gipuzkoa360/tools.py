@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import math
 import os
 import re
 import unicodedata
@@ -31,7 +32,7 @@ def _default_data_dir() -> Path:
 
 
 def _json(result: dict[str, Any]) -> str:
-    return json.dumps(result, ensure_ascii=False, sort_keys=True)
+    return json.dumps(result, ensure_ascii=False, sort_keys=True, allow_nan=False)
 
 
 def _compact_sources(sources: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -56,7 +57,7 @@ def compact_result(result: dict[str, Any], result_kind: str) -> dict[str, Any]:
                 "minimum_distance_m": min(distances) if distances else None,
                 "maximum_distance_m": max(distances) if distances else None,
                 "returned_rows": min(10, len(rows)),
-                "selection": "10 municipios con mayor distancia; use detalle=true para las 88 filas.",
+                "selection": "10 municipios con mayor distancia; indique municipios concretos para acotar la consulta.",
             }
         )
         compact["data"] = rows[:10]
@@ -350,7 +351,13 @@ class TerritorialAnalysis:
         service_override: list[dict[str, Any]] | None = None,
     ) -> dict[str, Any]:
         service_category = self._service_category(service_category)
-        if threshold_km <= 0 or threshold_km > 100:
+        try:
+            threshold_km = float(threshold_km)
+        except (TypeError, ValueError) as exc:
+            raise DataContractError(
+                "invalid_threshold", "threshold_km debe ser un número mayor que 0 y no superar 100."
+            ) from exc
+        if not math.isfinite(threshold_km) or threshold_km <= 0 or threshold_km > 100:
             raise DataContractError("invalid_threshold", "threshold_km debe ser mayor que 0 y no superar 100.")
         municipalities = self.repo.municipalities()
         if municipality_names:

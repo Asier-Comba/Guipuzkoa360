@@ -145,7 +145,7 @@ def _canonical_columns(fieldnames: Iterable[str] | None) -> dict[str, str]:
 def _require_columns(mapping: dict[str, str], required: Iterable[str], filename: str) -> None:
     missing = [name for name in required if name not in mapping]
     if missing:
-        raise DataContractError('missing_columns', f'{filename} no contiene columnas requeridas: {', '.join(missing)}.', sorted(mapping))
+        raise DataContractError('missing_columns', f"{filename} no contiene columnas requeridas: {', '.join(missing)}.", sorted(mapping))
 
 def _polygon_centroid(ring: list[list[float]]) -> tuple[float, float] | None:
     if len(ring) < 3:
@@ -231,19 +231,19 @@ class DataRepository:
                 for population_field in ('population_total', 'population_65_plus', 'population_75_plus'):
                     value = row.get(population_field)
                     if value is not None and value < 0:
-                        raise DataContractError('invalid_population', f'{population_field} no puede ser negativo en la fila {row['_row_number']}.')
+                        raise DataContractError('invalid_population', f"{population_field} no puede ser negativo en la fila {row['_row_number']}.")
                 for age in ('65', '75'):
                     count_key, pct_key = (f'population_{age}_plus', f'pct_{age}_plus')
                     count, pct = (row.get(count_key), row.get(pct_key))
                     if pct is not None and (not 0 <= pct <= 100):
-                        raise DataContractError('invalid_percentage', f'{pct_key} debe estar entre 0 y 100 en la fila {row['_row_number']}.')
+                        raise DataContractError('invalid_percentage', f"{pct_key} debe estar entre 0 y 100 en la fila {row['_row_number']}.")
                     if count is not None and total is not None and (count > total):
-                        raise DataContractError('invalid_population', f'{count_key} supera population_total en la fila {row['_row_number']}.')
+                        raise DataContractError('invalid_population', f"{count_key} supera population_total en la fila {row['_row_number']}.")
                     if pct is None and count is not None and (total not in (None, 0)):
                         row[pct_key] = 100.0 * count / total
                         self.warnings.append(f'{pct_key} calculado a partir de recuento y población total.')
                     if count is None and pct is None:
-                        self.warnings.append(f'Sin métrica >= {age} para {row.get('municipality_name')} ({row.get('reference_period')}).')
+                        self.warnings.append(f"Sin métrica >= {age} para {row.get('municipality_name')} ({row.get('reference_period')}).")
             duplicates = self._duplicates(rows, ('municipality_code', 'reference_period'))
             if duplicates:
                 raise DataContractError('duplicate_keys', 'Filas demográficas duplicadas: ' + ', '.join(duplicates))
@@ -260,7 +260,7 @@ class DataRepository:
             for row in rows:
                 lat, lon = (row.get('latitude'), row.get('longitude'))
                 if lat is None or lon is None or (not -90 <= lat <= 90) or (not -180 <= lon <= 180):
-                    raise DataContractError('invalid_coordinates', f'Coordenadas inválidas para {row.get('service_id')}.')
+                    raise DataContractError('invalid_coordinates', f"Coordenadas inválidas para {row.get('service_id')}.")
             self._services = rows
         return self._services
 
@@ -369,6 +369,7 @@ class DataRepository:
         if missing:
             self.warnings.append('Sin punto representativo runtime para: ' + ', '.join(missing))
 import json
+import math
 import os
 import re
 import unicodedata
@@ -386,7 +387,7 @@ def _default_data_dir() -> Path:
     return Path(__file__).resolve().parents[2] / 'datos_preparados'
 
 def _json(result: dict[str, Any]) -> str:
-    return json.dumps(result, ensure_ascii=False, sort_keys=True)
+    return json.dumps(result, ensure_ascii=False, sort_keys=True, allow_nan=False)
 
 def _compact_sources(sources: list[dict[str, Any]]) -> list[dict[str, Any]]:
     audit_fields = ('source_id', 'institution', 'title', 'reference_period', 'unit', 'url', 'limitations')
@@ -401,7 +402,7 @@ def compact_result(result: dict[str, Any], result_kind: str) -> dict[str, Any]:
     if result_kind == 'access' and len(rows) > 20:
         within = sum((bool(row.get('within_threshold')) for row in rows))
         distances = [row['nearest_distance_m'] for row in rows if row.get('nearest_distance_m') is not None]
-        summary.update({'within_threshold_count': within, 'outside_threshold_count': len(rows) - within, 'minimum_distance_m': min(distances) if distances else None, 'maximum_distance_m': max(distances) if distances else None, 'returned_rows': min(10, len(rows)), 'selection': '10 municipios con mayor distancia; use detalle=true para las 88 filas.'})
+        summary.update({'within_threshold_count': within, 'outside_threshold_count': len(rows) - within, 'minimum_distance_m': min(distances) if distances else None, 'maximum_distance_m': max(distances) if distances else None, 'returned_rows': min(10, len(rows)), 'selection': '10 municipios con mayor distancia; indique municipios concretos para acotar la consulta.'})
         compact['data'] = rows[:10]
     elif result_kind == 'coincidence':
         highlighted = [row for row in rows if row.get('highlighted')]
@@ -504,7 +505,7 @@ class TerritorialAnalysis:
         code = municipality_row['municipality_code']
         matches = [row for row in demo_rows if row.get('municipality_code') == code]
         if not matches:
-            raise DataContractError('missing_demography', f'No hay demografía para {municipality_row['municipality_name']} en {selected}.')
+            raise DataContractError('missing_demography', f"No hay demografía para {municipality_row['municipality_name']} en {selected}.")
         demo = matches[0]
         service_rows = [row for row in self.repo.services() if row.get('municipality_code') == code]
         categories: dict[str, int] = {}
@@ -513,7 +514,7 @@ class TerritorialAnalysis:
             categories[category] = categories.get(category, 0) + 1
         data = {'municipality_code': code, 'municipality_name': municipality_row['municipality_name'], 'population_total': demo.get('population_total'), 'population_65_plus': demo.get('population_65_plus'), 'population_75_plus': demo.get('population_75_plus'), 'pct_65_plus': demo.get('pct_65_plus'), 'pct_75_plus': demo.get('pct_75_plus'), 'services_in_municipality': categories, 'service_indicators': {category: {'registered_service_count': municipality_row.get(f'services_{category}'), 'rate_per_10000_65_plus': municipality_row.get(f'{category}_per_10000_65_plus'), 'rate_per_10000_75_plus': municipality_row.get(f'{category}_per_10000_75_plus'), 'nearest_distance_m': municipality_row.get(f'distance_to_nearest_{category}_m')} for category in ('primary_care', 'hospital', 'mental_health', 'other_health')}, 'metrics_reference_period': municipality_row.get('metrics_reference_period')}
         used = [demo] + service_rows
-        return ResultEnvelope(question=f'Resumen territorial de {municipality_row['municipality_name']}', filters={'municipality_code': code, 'period': selected}, period=selected, metric='territorial_summary', unit='varias; ver cada campo', rows_used=len(used), data=[data], method='Selección por código municipal; recuento de registros por categoría; tasas por 10.000 personas del grupo de edad y mínima distancia euclídea EPSG:25830 desde el punto representativo municipal.', sources=self._sources(used), warnings=list(dict.fromkeys(self.repo.warnings)), limitations=['La presencia de un servicio no acredita capacidad, horario, calidad ni acceso real.', 'Los periodos de demografía y servicios pueden ser distintos; se muestran en las fuentes.']).to_dict()
+        return ResultEnvelope(question=f"Resumen territorial de {municipality_row['municipality_name']}", filters={'municipality_code': code, 'period': selected}, period=selected, metric='territorial_summary', unit='varias; ver cada campo', rows_used=len(used), data=[data], method='Selección por código municipal; recuento de registros por categoría; tasas por 10.000 personas del grupo de edad y mínima distancia euclídea EPSG:25830 desde el punto representativo municipal.', sources=self._sources(used), warnings=list(dict.fromkeys(self.repo.warnings)), limitations=['La presencia de un servicio no acredita capacidad, horario, calidad ni acceso real.', 'Los periodos de demografía y servicios pueden ser distintos; se muestran en las fuentes.']).to_dict()
 
     def envejecimiento(self, age_group: str='65', measure: str='percentage', period: str | None=None, top_n: int=10) -> dict[str, Any]:
         metric, age = self._age_fields(age_group, measure)
@@ -533,7 +534,11 @@ class TerritorialAnalysis:
 
     def acceso(self, service_category: str, threshold_km: float=1.0, period: str | None=None, municipality_names: list[str] | None=None, service_override: list[dict[str, Any]] | None=None) -> dict[str, Any]:
         service_category = self._service_category(service_category)
-        if threshold_km <= 0 or threshold_km > 100:
+        try:
+            threshold_km = float(threshold_km)
+        except (TypeError, ValueError) as exc:
+            raise DataContractError('invalid_threshold', 'threshold_km debe ser un número mayor que 0 y no superar 100.') from exc
+        if not math.isfinite(threshold_km) or threshold_km <= 0 or threshold_km > 100:
             raise DataContractError('invalid_threshold', 'threshold_km debe ser mayor que 0 y no superar 100.')
         municipalities = self.repo.municipalities()
         if municipality_names:
