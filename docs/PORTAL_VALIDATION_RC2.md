@@ -23,7 +23,7 @@ Un resultado local, un HTML o una respuesta correcta sin salida de tool visible 
 | Agente privado RC1 | `GIPUZKOA 360 · RC1 exacto`, versión `v1` | Fijado y probado; sin Internet, memoria activa |
 | RC2 integrado Git | `fix/portal-runtime-rc2` en `e13c3e58d22d8f01d07c27d571711b3a6d0a4a4d` | 128/128 tests locales; no fusionado |
 | Hardening Work 2 | `work/agent-runtime-hardening` en `7ac6e36166fcc40cf4c90aefb25769461461b02d` | Integrado por Work 1 en el candidato anterior |
-| Borrador de portal RC2 | `GIPUZKOA 360 · RC2 runtime` | No validado: cambió durante la prueba y el código visible no coincidía con el `portal/main.py` del commit `e13c3e5` |
+| Versión de portal RC2 | `GIPUZKOA 360 · RC2 runtime`, versión `v1` | `main.py` y `tools.py` coinciden con `e13c3e5`; puerta detenida en G-04 |
 
 ## Preparación física del RC1
 
@@ -77,14 +77,14 @@ La puerta se ejecuta en este orden y se detiene en el primer fallo largo:
 
 | Orden | ID | Caso | Criterio de paso | Estado |
 |---:|---|---|---|---|
-| 1 | G-01 | fuente Eustat | salida JSON, respuesta usa institución, periodo, unidad, licencia y límite | Pendiente de versión exacta |
-| 2 | G-02 | resumen Donostia | 183.388 / 48.832 / 26,628%, filas, fuentes y periodos | Pendiente de versión exacta |
-| 3 | G-03 | Eibar vs Tolosa | cifras anteriores, dos municipios separados, `%` y `m` | Pendiente de versión exacta |
-| 4 | G-04 | coincidencia q0,75 | 7 destacados y cortes 23,9730% / 2.019,2 m | Pendiente de versión exacta |
-| 5 | G-05 | alias natural | `atención primaria`, `65+` normalizados sin pedir tecnicismos | Pendiente de versión exacta |
-| 6 | G-06 | seguimiento | 75+, q0,80, 3 km; 4 destacados y nuevos cortes | Pendiente de versión exacta |
+| 1 | G-01 | fuente Eustat | salida JSON, respuesta usa institución, periodo, unidad, licencia y límite | **PASS**, 50,5 s; `consultar_fuente`, argumentos `source_id=EUSTAT_EMH_2025`, `detalle=true` |
+| 2 | G-02 | resumen Donostia | 183.388 / 48.832 / 26,628%, filas, fuentes y periodos | **PASS**, 44,1 s; 28 filas, periodos 2025-01-01 y 2026-09-20 |
+| 3 | G-03 | Eibar vs Tolosa | cifras anteriores, dos municipios separados, `%` y `m` | **PASS**, 44,5 s; cifras y tres fuentes correctas |
+| 4 | G-04 | coincidencia q0,75 | 7 destacados y cortes 23,9730% / 2.019,2 m | **FAIL**, detenida a 67,4 s; tool sin salida visible |
+| 5 | G-05 | alias natural | `atención primaria`, `65+` normalizados sin pedir tecnicismos | **INCOMPLETO**: argumentos visibles normalizados a `primary_care` y `65+`, pero faltó la salida |
+| 6 | G-06 | seguimiento | 75+, q0,80, 3 km; 4 destacados y nuevos cortes | No ejecutado por parada de la puerta |
 
-El candidato Git supera su puerta local: **128/128 tests en 7,08 s**. Esto valida matemáticas, aliases, serialización, wrappers y contratos fuera del portal; no valida el registry ni el runner del portal.
+El candidato Git supera su puerta local: **128/128 tests en 7,08 s**. La versión privada confirma que el registry ejecuta al menos `consultar_fuente`, `obtener_resumen_territorial` y `comparar_municipios`. La puerta falla porque el coordinador añadió `detalle=true` a la coincidencia: el contrato completo serializa las 88 filas, aunque el prompt solo pedía destacados, cortes, filas usadas, unidades, fuentes y límites, todos disponibles en la salida compacta. El core local calcula la misma operación en milisegundos; el bloqueo observado pertenece a la cadena del portal y su salida completa.
 
 ## Matriz A–H para RC2
 
@@ -185,12 +185,13 @@ Todos los casos exigen tool, argumentos, salida, respuesta y control contra dato
 
 1. RC1 no normaliza `atención primaria` ni `65+` antes de `analizar_coincidencia`.
 2. El runner compartido respondió ocupado en dos llamadas distintas y bloqueó otra durante más de 70 s.
-3. El borrador `GIPUZKOA 360 · RC2 runtime` cambió mientras se preparaba una versión. Tras recargar, el código visible seguía usando wrappers `execute_*` sin el parámetro `detalle`, mientras que `e13c3e5:agentes/gipuzkoa360/portal/main.py` importa `tools as core` y expone `detalle`. Hasta comparar o fijar hashes, no es una versión exacta del commit.
-4. La validación RC2 de portal debe empezar en una conversación nueva y con una versión inmutable creada después de terminar las ediciones concurrentes.
+3. Después de terminar las ediciones concurrentes, la versión privada RC2 `v1` quedó fijada. La copia del portal de `main.py` tiene 6.109 caracteres y FNV-1a `63c9a4c1`; `tools.py`, 52.867 caracteres y FNV-1a `5e2dd344`. Ambos valores coinciden con el contenido de `e13c3e5` normalizado a LF y sin salto final.
+4. El coordinador seleccionó `detalle=true` en G-01…G-04. En G-04 no era necesario y provocó una ejecución sin resultado durante más de 67 s. La siguiente versión debe reservar `detalle=true` para una petición explícita de las 88 filas o una visualización que realmente las necesite.
+5. Reproducción mínima: conversación nueva en RC2 `v1` → prompt de G-04 → llamada visible `analizar_coincidencia({"categoria_servicio":"primary_care","grupo_edad":"65+","umbral_km":2,"periodo":"2025-01-01","cuantil":0.75,"detalle":true})` → sin salida al superar un minuto.
 
 ## Estado de salida
 
 - RC1 portal: **FAIL**.
 - RC2 local en `e13c3e5`: **PASS, 128/128**.
-- RC2 portal exacto: **PENDIENTE**.
-- Listo para jurado: **NO**, hasta superar G-01…G-06 y al menos un control de cada familia A–H.
+- RC2 portal exacto: **FAIL en G-04**; G-01…G-03 pasan.
+- Listo para jurado: **NO**, hasta corregir la selección de detalle, superar G-01…G-06 y ejecutar al menos un control de cada familia A–H.

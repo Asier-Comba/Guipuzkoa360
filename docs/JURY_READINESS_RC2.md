@@ -2,7 +2,7 @@
 
 Fecha: 2026-09-24  
 Duración objetivo: 2–3 minutos  
-Estado actual: **bloqueado para demo en vivo** hasta superar la puerta G-01…G-06 de `PORTAL_VALIDATION_RC2.md` con una versión privada exacta e inmutable.
+Estado actual: **bloqueado para demo en vivo**. La versión privada exacta RC2 `v1` pasa G-01…G-03 y queda sin salida en G-04 cuando el coordinador solicita `detalle=true` para las 88 filas.
 
 ## Qué se puede afirmar hoy
 
@@ -10,7 +10,7 @@ Estado actual: **bloqueado para demo en vivo** hasta superar la puerta G-01…G-
 - La suite del candidato Git `e13c3e58d22d8f01d07c27d571711b3a6d0a4a4d` pasa 128/128 tests.
 - Las matemáticas, aliases, errores controlados, siete wrappers y contratos compacto/completo están verificados localmente.
 - El RC1 exacto no supera la prueba privada del portal: 1/5 cadenas completas.
-- El RC2 todavía no tiene evidencia de portal asociada al commit exacto. No debe presentarse como validado hasta fijar y probar esa versión.
+- El RC2 `v1` del portal coincide con el commit exacto y ejecuta fuente, resumen y comparación. La coincidencia q0,75 se detuvo a los 67,4 s sin salida de tool, por lo que el agente completo todavía no está validado.
 
 ## Guion recomendado, condicionado a la puerta RC2
 
@@ -157,4 +157,4 @@ RC2 normaliza aliases españoles e ingleses, acentos, espacios y notaciones de e
 
 ## Decisión actual
 
-**NO GO para demo en vivo.** El candidato local es sólido, pero falta una versión del portal cuya identidad esté ligada al commit y que complete la puerta G-01…G-06. En cuanto eso ocurra, el guion anterior es la secuencia recomendada.
+**NO GO para demo en vivo.** La identidad de RC2 `v1` ya está ligada a `e13c3e5` y G-01…G-03 pasan. Falta impedir que el coordinador solicite `detalle=true` para la coincidencia normal, crear una versión nueva y completar G-01…G-06. En cuanto eso ocurra, el guion anterior es la secuencia recomendada.
