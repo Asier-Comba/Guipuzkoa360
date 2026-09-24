@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "data_mode": "synthetic",
+  "title": "Exploración territorial de prueba",
+  "question": "¿Qué unidades de prueba combinan mayor proporción de personas mayores y más distancia geométrica al servicio?",
+  "summary": "Resultado exclusivamente sintético para comprobar la interfaz y el contrato.",
+  "generated_at": "2026-09-24T10:00:00+02:00",
+  "period": "2025 (periodo ficticio)",
+  "geography": "Unidades abstractas de prueba; no representan Gipuzkoa",
+  "parameters": {"age_group": "65+", "service": "SERVICIO_TEST_1", "distance_threshold_km": 2},
+  "metrics": [
+    {"id":"population_total","label":"Población total","value":24200,"unit":"personas","period":"2025 (ficticio)","source_ids":["SYN-DEM"]},
+    {"id":"older_population","label":"Población ≥65","value":5790,"unit":"personas","period":"2025 (ficticio)","source_ids":["SYN-DEM"]}
+  ],
+  "comparison": [
+    {"unit_id":"TEST_A","name":"MUNICIPIO_TEST_A","population":6200,"age_65_count":1612,"age_75_count":868,"service_distance_km":3.2,"service_count":1,"period":"2025 (ficticio)","source_ids":["SYN-DEM","SYN-SVC"]},
+    {"unit_id":"TEST_B","name":"MUNICIPIO_TEST_B","population":8400,"age_65_count":1764,"age_75_count":840,"service_distance_km":1.4,"service_count":3,"period":"2025 (ficticio)","source_ids":["SYN-DEM","SYN-SVC"]},
+    {"unit_id":"TEST_C","name":"MUNICIPIO_TEST_C","population":3700,"age_65_count":1110,"age_75_count":666,"service_distance_km":4.1,"service_count":0,"period":"2025 (ficticio)","source_ids":["SYN-DEM","SYN-SVC"]},
+    {"unit_id":"TEST_D","name":"MUNICIPIO_TEST_D","population":5900,"age_65_count":1304,"age_75_count":706,"service_distance_km":2.7,"service_count":1,"period":"2025 (ficticio)","source_ids":["SYN-DEM","SYN-SVC"]}
+  ],
+  "map_layers": [{"id":"older_share","label":"Población ≥65","metric":"age_65_count / population * 100","unit":"%","period":"2025 (ficticio)","source_ids":["SYN-DEM"]},{"id":"service_distance","label":"Distancia euclídea al servicio de prueba","metric":"service_distance_km","unit":"km","period":"2025 (ficticio)","source_ids":["SYN-SVC"]}],
+  "scenario": {"label":"ESCENARIO HIPOTÉTICO","change":"Reducir en 1,0 km la distancia geométrica de TEST_C (simulación abstracta)","unit_id":"TEST_C","distance_delta_km":-1,"assumptions":["Cambio numérico de prueba; no representa una nueva ubicación real."]},
+  "sources": [{"source_id":"SYN-DEM","title":"Población sintética de desarrollo","url":null,"period":"2025 (ficticio)","unit":"personas","license":"fixture de desarrollo","method":"Valores inventados solo para pruebas"},{"source_id":"SYN-SVC","title":"Servicios sintéticos de desarrollo","url":null,"period":"2025 (ficticio)","unit":"km euclídeos","license":"fixture de desarrollo","method":"Distancias inventadas solo para pruebas"}],
+  "method":"Porcentaje = población del grupo de edad / población total × 100. Distancia de prueba en km. La condición conjunta usa umbrales explícitos, sin índice compuesto.",
+  "limitations":["No representa ningún municipio ni servicio real.","La distancia geométrica no equivale a tiempo de viaje ni a disponibilidad del servicio.","Una condición territorial no describe el acceso de una persona concreta."],
+  "trace": {"execution_mode":"synthetic_fixture","question_id":"SYN-Q-001","agent_version":"synthetic-fixture","tool_calls":[{"tool":"synthetic_territorial_analysis","arguments":{"age_group":"65+","service":"SERVICIO_TEST_1","distance_threshold_km":2},"output_ref":"SYN-RESULT-001"}],"data_refs":["SYN-DEM","SYN-SVC"],"result_ref":"SYN-RESULT-001"}
+}
