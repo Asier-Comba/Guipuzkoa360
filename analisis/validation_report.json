@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "expected_municipalities": 88,
+  "present_municipalities": 88,
+  "missing_municipalities": [],
+  "duplicate_municipality_codes": 0,
+  "services": 148,
+  "service_categories": {
+    "primary_care": 120,
+    "mental_health": 16,
+    "hospital": 7,
+    "other_health": 5
+  },
+  "services_missing_coordinates": 0,
+  "invalid_geometries": 0,
+  "manual_checks_passed": 4,
+  "manual_checks_total": 4
+}
