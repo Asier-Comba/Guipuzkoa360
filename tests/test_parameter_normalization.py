@@ -85,6 +85,16 @@ def test_public_tool_accepts_natural_age_phrase_from_g04(monkeypatch):
     assert result["rows_used"] == 88
 
 
+@pytest.mark.parametrize("measure", ["porcentaje", "percent", "pct"])
+def test_public_tool_accepts_natural_percentage_measure(monkeypatch, measure: str):
+    monkeypatch.setenv("GIPUZKOA360_DATA_DIR", str(tools.Path(__file__).parents[1] / "datos_preparados"))
+    result = json.loads(tools.analizar_envejecimiento("75+", measure, "2025-01-01", 5))
+    assert result["status"] == "ok"
+    assert result["unit"] == "% de población"
+    assert result["filters"]["measure"] == "percentage"
+    assert len(result["data"]) == 5
+
+
 def test_public_tool_rejects_unknown_category_as_json():
     result = json.loads(tools.analizar_acceso_servicios("farmacia"))
     assert result["status"] == "error"

@@ -497,9 +497,10 @@ class TerritorialAnalysis:
     @staticmethod
     def _age_fields(age_group: str, measure: str='percentage') -> tuple[str, str]:
         age = normalize_age_group(age_group)
-        if measure not in {'percentage', 'count'}:
+        normalized_measure = {'percentage': 'percentage', 'percent': 'percentage', 'pct': 'percentage', 'porcentaje': 'percentage', 'count': 'count', 'recuento': 'count', 'conteo': 'count', 'personas': 'count'}.get(_normalized_key(measure))
+        if normalized_measure is None:
             raise DataContractError('invalid_measure', 'La medida debe ser percentage o count.', ['percentage', 'count'])
-        return (f'pct_{age}_plus' if measure == 'percentage' else f'population_{age}_plus', age)
+        return (f'pct_{age}_plus' if normalized_measure == 'percentage' else f'population_{age}_plus', age)
 
     def _demography_for_period(self, period: str | None) -> tuple[str, list[dict[str, Any]]]:
         selected = self.repo.choose_period(period)
@@ -528,6 +529,7 @@ class TerritorialAnalysis:
 
     def envejecimiento(self, age_group: str='65', measure: str='percentage', period: str | None=None, top_n: int=10) -> dict[str, Any]:
         metric, age = self._age_fields(age_group, measure)
+        normalized_measure = 'percentage' if metric.startswith('pct_') else 'count'
         if not 1 <= int(top_n) <= 100:
             raise DataContractError('invalid_top_n', 'top_n debe estar entre 1 y 100.')
         selected, rows = self._demography_for_period(period)
@@ -540,7 +542,7 @@ class TerritorialAnalysis:
         warnings = list(dict.fromkeys(self.repo.warnings))
         if omitted:
             warnings.append(f'Se omitieron {omitted} filas sin {metric}; no se trataron como cero.')
-        return ResultEnvelope(question=f'Envejecimiento de población >= {age}', filters={'age_group': age, 'measure': measure, 'period': selected, 'top_n': int(top_n)}, period=selected, metric=metric, unit='% de población' if measure == 'percentage' else 'personas', rows_used=len(available), data=data, method=f'Orden descendente de {metric}; empates por nombre municipal.', sources=self._sources(available), warnings=warnings, limitations=['El indicador describe estructura demográfica; no explica sus causas.']).to_dict()
+        return ResultEnvelope(question=f'Envejecimiento de población >= {age}', filters={'age_group': age, 'measure': normalized_measure, 'period': selected, 'top_n': int(top_n)}, period=selected, metric=metric, unit='% de población' if normalized_measure == 'percentage' else 'personas', rows_used=len(available), data=data, method=f'Orden descendente de {metric}; empates por nombre municipal.', sources=self._sources(available), warnings=warnings, limitations=['El indicador describe estructura demográfica; no explica sus causas.']).to_dict()
 
     def acceso(self, service_category: str, threshold_km: float=1.0, period: str | None=None, municipality_names: list[str] | None=None, service_override: list[dict[str, Any]] | None=None) -> dict[str, Any]:
         service_category = self._service_category(service_category)
