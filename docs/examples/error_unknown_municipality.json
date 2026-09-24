@@ -1,0 +1,27 @@
+{
+  "available_options": [
+    "Abaltzisketa",
+    "Aduna",
+    "Aia",
+    "Aizarnazabal",
+    "Albiztur",
+    "Alegia",
+    "Alkiza",
+    "Altzaga",
+    "Altzo",
+    "Amezketa",
+    "Andoain",
+    "Anoeta",
+    "Antzuola",
+    "Arama",
+    "Aretxabaleta",
+    "Arrasate/Mondragón",
+    "Asteasu",
+    "Astigarraga",
+    "Ataun",
+    "Azkoitia"
+  ],
+  "error_code": "municipality_not_found",
+  "message": "No se pudo resolver el municipio 'MUNICIPIO_INEXISTENTE' de forma inequívoca.",
+  "status": "error"
+}

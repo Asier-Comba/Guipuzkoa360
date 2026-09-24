@@ -1,0 +1,199 @@
+{
+  "schema_version": "1.0.0",
+  "data_mode": "real",
+  "title": "Envejecimiento y servicios sanitarios en Gipuzkoa",
+  "question": "¿Qué municipios están en el cuantil superior de población ≥65 y distancia geométrica aproximada a atención primaria?",
+  "summary": "La herramienta de Work 2 destaca 2 de 88 municipios por ambos cuantiles. El umbral de 1 km informa la columna de cercanía, pero no define el grupo destacado. Se muestran hasta cinco municipios.",
+  "generated_at": "2026-09-24T18:01:00+02:00",
+  "period": "Demografía 2025-01-01 · centros 2026-09-20 · límites 2025-05-07",
+  "geography": "Gipuzkoa · 88 municipios",
+  "parameters": {
+    "age_group": "65+",
+    "older_share_threshold_pct": null,
+    "criteria_label": "Cuantil 0.85 en porcentaje ≥65 y distancia geométrica",
+    "service": "primary_care",
+    "distance_threshold_km": 1
+  },
+  "analysis": {
+    "total_units": 88,
+    "matched_count": 2,
+    "matched_unit_ids": [
+      "20051",
+      "20036"
+    ],
+    "older_population_total": 175452,
+    "match_label": "Municipios destacados por ambos cuantiles"
+  },
+  "metrics": [
+    {
+      "id": "population_total",
+      "label": "Población total",
+      "value": 724797,
+      "unit": "personas",
+      "period": "2025-01-01",
+      "source_ids": [
+        "EUSTAT_EMH_2025"
+      ]
+    },
+    {
+      "id": "older_population_total",
+      "label": "Población ≥65",
+      "value": 175452,
+      "unit": "personas",
+      "period": "2025-01-01",
+      "source_ids": [
+        "EUSTAT_EMH_2025"
+      ]
+    },
+    {
+      "id": "selected_municipalities",
+      "label": "Municipios destacados por ambos cuantiles",
+      "value": 2,
+      "unit": "municipios",
+      "period": "2025/2026",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    }
+  ],
+  "comparison": [
+    {
+      "unit_id": "20051",
+      "name": "Legazpi",
+      "population": 8377,
+      "age_65_count": 2276,
+      "age_75_count": 1190,
+      "service_distance_km": 2.6248,
+      "service_count": 1,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "row_ref": "resultados/metricas_municipales.csv#municipality_code=20051",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    },
+    {
+      "unit_id": "20036",
+      "name": "Hondarribia",
+      "population": 16960,
+      "age_65_count": 4377,
+      "age_75_count": 2254,
+      "service_distance_km": 2.5835,
+      "service_count": 1,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "row_ref": "resultados/metricas_municipales.csv#municipality_code=20036",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    }
+  ],
+  "map_layers": [
+    {
+      "id": "older_share",
+      "label": "Población ≥65",
+      "metric": "age_65_count / population * 100",
+      "unit": "%",
+      "period": "2025-01-01",
+      "source_ids": [
+        "EUSTAT_EMH_2025"
+      ]
+    },
+    {
+      "id": "service_distance",
+      "label": "Distancia geométrica aproximada a atención primaria",
+      "metric": "service_distance_km",
+      "unit": "km",
+      "period": "2026-09-20",
+      "source_ids": [
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    }
+  ],
+  "scenario": null,
+  "sources": [
+    {
+      "source_id": "EUSTAT_EMH_2025",
+      "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+      "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px",
+      "period": "2025-01-01",
+      "unit": "personas",
+      "license": "Creative Commons (según ficha Eustat de la operación 010154)",
+      "method": "Censo municipal por grupo de edad"
+    },
+    {
+      "source_id": "ODE_HEALTH_CENTRES_2026",
+      "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+      "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/",
+      "period": "2026-09-20",
+      "unit": "centros y metros",
+      "license": "Licencia abierta indicada por Open Data Euskadi; atribución y fecha obligatorias",
+      "method": "Puntos de servicios públicos; distancia euclídea derivada"
+    },
+    {
+      "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+      "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+      "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/",
+      "period": "2025-05-07",
+      "unit": "polígonos municipales",
+      "license": "Uso permitido citando Eusko Jaurlaritza / Gobierno Vasco",
+      "method": "Límites municipales y punto representativo"
+    }
+  ],
+  "method": "Cruce por código municipal. Se destacan valores >= cuantil 0.85 en ambas métricas (cortes: 25.3557% y 2308.7 m). Se muestran ambos componentes y no se usa una puntuación compuesta. Se muestran recuentos demográficos de Work 1 unidos por municipality_code; distancias de Work 2 contrastadas con Work 1 (tolerancia 0,1 m).",
+  "limitations": [
+    "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+    "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+    "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
+    "La coincidencia estadística no demuestra causalidad ni identifica necesidades individuales.",
+    "Los resultados dependen del cuantil, grupo de edad, categoría y periodo elegidos.",
+    "No demuestra acceso individual, tiempo de viaje ni capacidad de los centros."
+  ],
+  "trace": {
+    "execution_mode": "agent_tool",
+    "question_id": "WORK2-Q-f7453811391b",
+    "agent_version": "Work 2 tool direct/1.0 (sin coordinador del portal)",
+    "tool_calls": [
+      {
+        "tool": "analizar_coincidencia",
+        "arguments": {
+          "age_group": "65",
+          "service_category": "primary_care",
+          "threshold_km": 1,
+          "period": "2025-01-01",
+          "quantile_threshold": 0.85
+        },
+        "output_ref": "WORK2-TOOL-7cedf7453811391b"
+      }
+    ],
+    "data_refs": [
+      "EUSTAT_EMH_2025",
+      "ODE_HEALTH_CENTRES_2026",
+      "GEOEUSKADI_MUNICIPIOS_2025"
+    ],
+    "result_ref": "WORK2-TOOL-7cedf7453811391b",
+    "input_files": [
+      {
+        "path": "docs/examples/coincidence_primary_care_65_q85.json",
+        "sha256": "7cedf7453811391bc49178a79942ea47bc615c29c126a2899b3d859ce234d065",
+        "rows": 88
+      },
+      {
+        "path": "resultados/metricas_municipales.csv",
+        "sha256": "27628accd750bd2a209873ca7e82e880d69058951fdae10dd4363ccec84f6f6a",
+        "rows": 88
+      },
+      {
+        "path": "datos_preparados/metadata_sources.json",
+        "sha256": "14ad18d1c135b753c0c617c96a3576ca7d87df22993b7f9404a2b99e4cf90fde",
+        "rows": 4
+      }
+    ],
+    "original_question": "Coincidencia de envejecimiento >= 65 y peor acceso a primary_care"
+  }
+}
