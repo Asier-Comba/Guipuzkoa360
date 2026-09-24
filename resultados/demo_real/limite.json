@@ -1,0 +1,234 @@
+{
+  "schema_version": "1.0.0",
+  "data_mode": "real",
+  "title": "Envejecimiento y proximidad a servicios sanitarios",
+  "question": "¿Qué municipios tienen al menos 90% de población de 75 años o más y más de 100 km de distancia geométrica aproximada desde su punto representativo al centro de atención primaria más cercano?",
+  "summary": "Ninguno de los 88 municipios cumple ambos criterios. La tabla muestra unidades de referencia con mayores distancias para examinar por qué no cumplen; no son resultados positivos.",
+  "generated_at": "2026-09-24T17:03:00+02:00",
+  "period": "Demografía 2025-01-01 · centros 2026-09-20 · límites 2025-05-07",
+  "geography": "Gipuzkoa · 88 municipios",
+  "parameters": {
+    "age_group": "75+",
+    "older_share_threshold_pct": 90,
+    "service": "primary_care",
+    "distance_threshold_km": 100
+  },
+  "analysis": {
+    "total_units": 88,
+    "matched_count": 0,
+    "matched_unit_ids": [],
+    "older_population_total": 90037
+  },
+  "metrics": [
+    {
+      "id": "population_total",
+      "label": "Población total",
+      "value": 724797,
+      "unit": "personas",
+      "period": "2025-01-01",
+      "source_ids": [
+        "EUSTAT_EMH_2025"
+      ]
+    },
+    {
+      "id": "older_population_total",
+      "label": "Población ≥75",
+      "value": 90037,
+      "unit": "personas",
+      "period": "2025-01-01",
+      "source_ids": [
+        "EUSTAT_EMH_2025"
+      ]
+    },
+    {
+      "id": "matched_municipalities",
+      "label": "Municipios que cumplen ambos criterios",
+      "value": 0,
+      "unit": "municipios",
+      "period": "2025/2026",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    }
+  ],
+  "comparison": [
+    {
+      "unit_id": "20040",
+      "name": "Hernani",
+      "population": 20428,
+      "age_65_count": 4557,
+      "age_75_count": 2298,
+      "service_distance_km": 5.882,
+      "service_count": 2,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "row_ref": "resultados/metricas_municipales.csv#municipality_code=20040",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    },
+    {
+      "unit_id": "20063",
+      "name": "Oiartzun",
+      "population": 10473,
+      "age_65_count": 2369,
+      "age_75_count": 1138,
+      "service_distance_km": 4.4381,
+      "service_count": 1,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "row_ref": "resultados/metricas_municipales.csv#municipality_code=20063",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    },
+    {
+      "unit_id": "20067",
+      "name": "Errenteria",
+      "population": 39779,
+      "age_65_count": 9667,
+      "age_75_count": 5372,
+      "service_distance_km": 3.9255,
+      "service_count": 4,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "row_ref": "resultados/metricas_municipales.csv#municipality_code=20067",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    },
+    {
+      "unit_id": "20019",
+      "name": "Beasain",
+      "population": 13915,
+      "age_65_count": 3129,
+      "age_75_count": 1541,
+      "service_distance_km": 3.6173,
+      "service_count": 3,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "row_ref": "resultados/metricas_municipales.csv#municipality_code=20019",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    },
+    {
+      "unit_id": "20072",
+      "name": "Urnieta",
+      "population": 6294,
+      "age_65_count": 1244,
+      "age_75_count": 585,
+      "service_distance_km": 3.5631,
+      "service_count": 1,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "row_ref": "resultados/metricas_municipales.csv#municipality_code=20072",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    }
+  ],
+  "map_layers": [
+    {
+      "id": "older_share",
+      "label": "Población ≥75",
+      "metric": "age_75_count / population * 100",
+      "unit": "%",
+      "period": "2025-01-01",
+      "source_ids": [
+        "EUSTAT_EMH_2025"
+      ]
+    },
+    {
+      "id": "service_distance",
+      "label": "Distancia geométrica aproximada a atención primaria",
+      "metric": "service_distance_km",
+      "unit": "km",
+      "period": "2026-09-20",
+      "source_ids": [
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    }
+  ],
+  "scenario": null,
+  "sources": [
+    {
+      "source_id": "EUSTAT_EMH_2025",
+      "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+      "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px",
+      "period": "2025-01-01",
+      "unit": "personas",
+      "license": "Creative Commons (según ficha Eustat de la operación 010154)",
+      "method": "Recuento municipal oficial"
+    },
+    {
+      "source_id": "ODE_HEALTH_CENTRES_2026",
+      "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+      "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/",
+      "period": "2026-09-20",
+      "unit": "centros y distancia en m",
+      "license": "Licencia abierta indicada por Open Data Euskadi; atribución y fecha obligatorias",
+      "method": "Centros públicos; proximidad geométrica derivada desde punto representativo municipal"
+    },
+    {
+      "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+      "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+      "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/",
+      "period": "2025-05-07",
+      "unit": "polígonos municipales",
+      "license": "Uso permitido citando Eusko Jaurlaritza / Gobierno Vasco",
+      "method": "Límites municipales usados para punto representativo y mapa"
+    }
+  ],
+  "method": "Por cada municipio: población ≥75 / población total × 100 ≥90%, y distancia euclídea desde un punto representativo municipal al centro de atención primaria más cercano >100 km. Se leen las 88 filas de resultados/metricas_municipales.csv; m → km dividiendo entre 1.000. Orden por distancia descendente.",
+  "limitations": [
+    "El punto representativo municipal no está ponderado por población; la distancia no representa el recorrido de una persona concreta.",
+    "Distancia euclídea no equivale a tiempo de viaje, accesibilidad universal, apertura, capacidad ni disponibilidad de citas.",
+    "Demografía, centros y límites tienen periodos distintos (separación máxima documentada de 627 días).",
+    "Un municipio que no cumple estos umbrales no implica ausencia de necesidad; los criterios son exploratorios."
+  ],
+  "trace": {
+    "execution_mode": "local_tool",
+    "question_id": "LOCAL-Q-4a722ac5facc",
+    "agent_version": "local-analysis/1.0.0 (sin agente)",
+    "tool_calls": [
+      {
+        "tool": "compare_municipal_services_local",
+        "arguments": {
+          "age_group": "75+",
+          "older_share_threshold_pct": 90,
+          "distance_threshold_km": 100,
+          "service": "primary_care",
+          "compare_codes": null
+        },
+        "output_ref": "LOCAL-38064a722ac5facc"
+      }
+    ],
+    "data_refs": [
+      "EUSTAT_EMH_2025",
+      "ODE_HEALTH_CENTRES_2026",
+      "GEOEUSKADI_MUNICIPIOS_2025"
+    ],
+    "result_ref": "LOCAL-38064a722ac5facc",
+    "input_files": [
+      {
+        "path": "resultados/metricas_municipales.csv",
+        "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
+        "rows": 88
+      },
+      {
+        "path": "datos_preparados/metadata_sources.json",
+        "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
+        "rows": 4
+      }
+    ]
+  }
+}

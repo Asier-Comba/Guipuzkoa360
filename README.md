@@ -1,28 +1,28 @@
 # GIPUZKOA 360
 
-Base reproducible y experiencia de visualización para analizar dónde coinciden envejecimiento y condiciones territoriales de acceso a servicios esenciales en Gipuzkoa.
+Agente y análisis territorial reproducible de población mayor y proximidad geométrica a servicios sanitarios públicos en Gipuzkoa. La base contiene 88 municipios y 148 centros. La distancia se calcula desde un punto representativo municipal; no equivale a tiempo de viaje ni acceso individual.
 
-## Datos y QA
+## Datos
 
-```bash
+Las fuentes, periodos, licencias y transformaciones están en `FUENTES.md`, `docs/METODOLOGIA_GEOESPACIAL.md` y `docs/HANDOFF_WORK_1_DATA.md`.
+El contrato de datos 1.1.0, el manifiesto SHA-256, 41 controles de calidad y los casos de referencia de la rama QA están en `datos_preparados/data_contract.json`, `datos_preparados/runtime_manifest.json`, `analisis/data_quality_report.json` y `tests/fixtures/golden_cases.json`.
+
+```powershell
 python -m pip install -r requirements.txt
 python scripts/data/build_all.py
-python -m pytest tests/data -q
+python -m pytest
 ```
 
-El pipeline prepara 88 municipios, 148 registros de centros sanitarios públicos, métricas transparentes y un runtime ligero. Incluye contrato legible por máquina, auditoría cruzada, SHA-256 y golden cases fijos. La proximidad es una distancia euclídea desde un punto representativo municipal; no equivale a tiempo de viaje ni accesibilidad real.
+## Producto y demo
 
-Véanse `FUENTES.md`, `docs/METODOLOGIA_GEOESPACIAL.md`, `docs/HANDOFF_WORK_1_DATA.md` y `docs/HANDOFF_WORK_2_3_DATA_QA.md`.
+El agente está en `agentes/gipuzkoa360/` y dispone de siete herramientas deterministas. Su salida original sigue `docs/RESULT_SCHEMA.md`; `scripts/adapt_agent_tool_result.mjs` la conecta con el contrato de producto en `docs/EXPECTED_RESULT_SCHEMA.md`. `scripts/enrich_work1_result.mjs` añade contornos municipales y `scripts/build_results.mjs` genera HTML autocontenidos. `scripts/adapt_work2_envelope.mjs` queda preparado para una futura traza observada del coordinador en el portal.
 
-## Visualización e integración
-
-Los HTML versionados se generan con el fixture sintético de desarrollo y no deben presentarse como resultados territoriales. Para probarlos:
-
-```bash
-node scripts/build_results.mjs
-node --test tests/e2e/contract_flow.test.mjs
+```powershell
+node scripts/build_results.mjs tests/fixtures/synthetic_agent_result.json resultados/dev_sintetico
+node --test tests/e2e/*.test.mjs
+node scripts/build_work2_demo.mjs
 ```
 
-`scripts/enrich_work1_result.mjs` añade contornos municipales reales a un resultado compatible sin modificar sus cifras. `scripts/data/export_work3_smoke_result.py` genera una prueba local con datos reales, marcada expresamente como cálculo local y no como ejecución del agente.
+El fixture se genera en `resultados/dev_sintetico/` y lleva una marca visible. Los tres HTML principales de `resultados/` ya proceden de las herramientas reales de Work 2. La demo recomendada se abre en `resultados/demo_work2/index.html`; incluye dos cálculos por cuantil, comparación, escenario y error controlado. La prueba privada del coordinador en el portal detectó un bloqueo del runtime y está documentada en `docs/PORTAL_PRIVATE_TEST_2026-09-24.md`.
 
-Leer `docs/HANDOFF_WORK_3_INTEGRATION.md` y `docs/SUBMISSION_CHECKLIST.md`. La publicación final requiere autorización humana expresa.
+Seguir `docs/README_DEMO_JURADO.md`, `docs/HANDOFF_WORK_2_AGENT.md`, `docs/INTEGRATION_PLAYBOOK.md` y `docs/SUBMISSION_CHECKLIST.md` antes de preparar la entrega en el portal.

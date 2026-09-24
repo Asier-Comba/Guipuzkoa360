@@ -1,0 +1,218 @@
+{
+  "schema_version": "1.0.0",
+  "data_mode": "real",
+  "title": "Envejecimiento y servicios sanitarios en Gipuzkoa",
+  "question": "¿Cómo se comparan Tolosa, Beasain, Azpeitia en población mayor y distancia geométrica a atención primaria?",
+  "summary": "Se comparan 3 municipios por código territorial, sin índice compuesto ni clasificación de “mejor/peor”.",
+  "generated_at": "2026-09-24T18:02:00+02:00",
+  "period": "Demografía 2025-01-01 · centros 2026-09-20 · límites 2025-05-07",
+  "geography": "Gipuzkoa · 88 municipios",
+  "parameters": {
+    "age_group": "65+",
+    "older_share_threshold_pct": null,
+    "criteria_label": "Comparación por municipio, sin clasificación conjunta",
+    "service": "primary_care",
+    "distance_threshold_km": 1
+  },
+  "analysis": {
+    "total_units": 3,
+    "matched_count": 3,
+    "matched_unit_ids": [
+      "20071",
+      "20019",
+      "20018"
+    ],
+    "older_population_total": 11331,
+    "match_label": "Municipios comparados"
+  },
+  "metrics": [
+    {
+      "id": "population_total",
+      "label": "Población total",
+      "value": 49394,
+      "unit": "personas",
+      "period": "2025-01-01",
+      "source_ids": [
+        "EUSTAT_EMH_2025"
+      ]
+    },
+    {
+      "id": "older_population_total",
+      "label": "Población ≥65",
+      "value": 11331,
+      "unit": "personas",
+      "period": "2025-01-01",
+      "source_ids": [
+        "EUSTAT_EMH_2025"
+      ]
+    },
+    {
+      "id": "selected_municipalities",
+      "label": "Municipios comparados",
+      "value": 3,
+      "unit": "municipios",
+      "period": "2025/2026",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    }
+  ],
+  "comparison": [
+    {
+      "unit_id": "20071",
+      "name": "Tolosa",
+      "population": 20048,
+      "age_65_count": 4718,
+      "age_75_count": 2432,
+      "service_distance_km": 1.0805,
+      "service_count": 2,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "row_ref": "resultados/metricas_municipales.csv#municipality_code=20071",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    },
+    {
+      "unit_id": "20019",
+      "name": "Beasain",
+      "population": 13915,
+      "age_65_count": 3129,
+      "age_75_count": 1541,
+      "service_distance_km": 3.6173,
+      "service_count": 3,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "row_ref": "resultados/metricas_municipales.csv#municipality_code=20019",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    },
+    {
+      "unit_id": "20018",
+      "name": "Azpeitia",
+      "population": 15431,
+      "age_65_count": 3484,
+      "age_75_count": 1780,
+      "service_distance_km": 1.4068,
+      "service_count": 4,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "row_ref": "resultados/metricas_municipales.csv#municipality_code=20018",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    }
+  ],
+  "map_layers": [
+    {
+      "id": "older_share",
+      "label": "Población ≥65",
+      "metric": "age_65_count / population * 100",
+      "unit": "%",
+      "period": "2025-01-01",
+      "source_ids": [
+        "EUSTAT_EMH_2025"
+      ]
+    },
+    {
+      "id": "service_distance",
+      "label": "Distancia geométrica aproximada a atención primaria",
+      "metric": "service_distance_km",
+      "unit": "km",
+      "period": "2026-09-20",
+      "source_ids": [
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    }
+  ],
+  "scenario": null,
+  "sources": [
+    {
+      "source_id": "EUSTAT_EMH_2025",
+      "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+      "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px",
+      "period": "2025-01-01",
+      "unit": "personas",
+      "license": "Creative Commons (según ficha Eustat de la operación 010154)",
+      "method": "Censo municipal por grupo de edad"
+    },
+    {
+      "source_id": "ODE_HEALTH_CENTRES_2026",
+      "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+      "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/",
+      "period": "2026-09-20",
+      "unit": "centros y metros",
+      "license": "Licencia abierta indicada por Open Data Euskadi; atribución y fecha obligatorias",
+      "method": "Puntos de servicios públicos; distancia euclídea derivada"
+    },
+    {
+      "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+      "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+      "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/",
+      "period": "2025-05-07",
+      "unit": "polígonos municipales",
+      "license": "Uso permitido citando Eusko Jaurlaritza / Gobierno Vasco",
+      "method": "Límites municipales y punto representativo"
+    }
+  ],
+  "method": "Selección por código municipal y comparación campo a campo; sin agregación opaca. Se muestran recuentos demográficos de Work 1 unidos por municipality_code; distancias de Work 2 contrastadas con Work 1 (tolerancia 0,1 m).",
+  "limitations": [
+    "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+    "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+    "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
+    "La comparación no demuestra causalidad.",
+    "No demuestra acceso individual, tiempo de viaje ni capacidad de los centros."
+  ],
+  "trace": {
+    "execution_mode": "agent_tool",
+    "question_id": "WORK2-Q-04e963f865dc",
+    "agent_version": "Work 2 tool direct/1.0 (sin coordinador del portal)",
+    "tool_calls": [
+      {
+        "tool": "comparar_municipios",
+        "arguments": {
+          "municipalities": [
+            "Tolosa",
+            "Beasain",
+            "Azpeitia"
+          ],
+          "age_group": "65",
+          "service_category": "primary_care",
+          "threshold_km": 1
+        },
+        "output_ref": "WORK2-TOOL-3f8704e963f865dc"
+      }
+    ],
+    "data_refs": [
+      "EUSTAT_EMH_2025",
+      "ODE_HEALTH_CENTRES_2026",
+      "GEOEUSKADI_MUNICIPIOS_2025"
+    ],
+    "result_ref": "WORK2-TOOL-3f8704e963f865dc",
+    "input_files": [
+      {
+        "path": "docs/examples/comparison_tolosa_beasain_azpeitia.json",
+        "sha256": "3f8704e963f865dc07ef7e0970cb5392bae8682d65bdd0efc4acabd3382ebd5e",
+        "rows": 3
+      },
+      {
+        "path": "resultados/metricas_municipales.csv",
+        "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
+        "rows": 88
+      },
+      {
+        "path": "datos_preparados/metadata_sources.json",
+        "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
+        "rows": 4
+      }
+    ],
+    "original_question": "Comparación municipal"
+  }
+}

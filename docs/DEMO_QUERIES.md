@@ -1,6 +1,6 @@
 # Consultas de demostración y guion de 3 minutos
 
-Estas consultas se ejecutarán sobre una versión fija del agente con datos reales. En los HTML actuales las respuestas son sintéticas y están señaladas como tales.
+La demo reproducible actual usa datos reales y salidas ejecutadas directamente por las tools de Work 2: `resultados/demo_work2/index.html`. La prueba del coordinador en una versión fija del portal sigue pendiente. El fixture sintético está aislado en `tests/fixtures/` y `resultados/dev_sintetico/`.
 
 | Consulta | Qué debe mostrar | Evidencia mínima |
 |---|---|---|
@@ -13,7 +13,7 @@ Estas consultas se ejecutarán sobre una versión fija del agente con datos real
 
 1. **0:00–0:25 — Problema.** Presentar la necesidad de estudiar conjuntamente población mayor y servicio territorial. Evitar afirmar una distribución desigual hasta comprobarla con datos reales.
 2. **0:25–1:10 — Pregunta principal.** Ejecutar consulta 1. Mostrar herramienta, parámetro, resultado, mapa y fuente con periodo y unidad.
-3. **1:10–1:40 — Variación.** Ejecutar consulta 2; enseñar dos identificadores de ejecución diferentes y el cálculo nuevo. Un cambio local de filtro en `demo.html` solo prueba la interfaz.
+3. **1:10–1:40 — Variación.** Repetir `analizar_coincidencia` con cuantil 0,75 → 0,85; enseñar 7/88 → 2/88 y dos `output_ref` distintos.
 4. **1:40–2:05 — Profundización.** Preguntar por qué una unidad aparece en el resultado; abrir sus cifras, denominador y fuente.
 5. **2:05–2:35 — Escenario.** Ejecutar consulta 3; señalar “OBSERVADO” y “ESCENARIO HIPOTÉTICO”, cambio, resultado y diferencia.
 6. **2:35–2:50 — Fiabilidad.** Ejecutar consulta 4; mostrar el límite interpretativo.

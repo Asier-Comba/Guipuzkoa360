@@ -3,7 +3,7 @@
 ## Orden
 
 1. Work 1 — datos: recibir originales, preparados, diccionario, fuentes y comprobaciones.
-2. Work 2 — agente: recibir versión, herramientas, formato de resultado y traza.
+2. Work 2 — agente: `work/agent-engine` (PR #3), `docs/RESULT_SCHEMA.md`, siete tools y ejemplos reales; falta la prueba del coordinador en el portal.
 3. Work 3 — visualización: adaptar a `docs/EXPECTED_RESULT_SCHEMA.md` v1.0.0 y generar HTML.
 4. Tests E2E y contraste manual de una cifra.
 5. Subir la versión preparada al portal; verificar límites de archivos/contexto.
@@ -14,7 +14,7 @@
 
 De Work 1, acordar rutas antes de copiar: `datos_originales/`, `datos_preparados/`, `FUENTES.md`, scripts de preparación, diccionario de columnas, licencias y comprobaciones de filas. De Work 2: `agentes/<nombre>/main.py`, `tools.py`, dependencias, instrucciones, versión de contrato, ejemplo de salida, traza de llamada y tests. Si su estructura difiere, registrar las rutas exactas en el handoff; no asumirlas.
 
-La versión endurecida de Work 1 está en `work/data-qa-integration`; incorpora el `main` actual y sustituye funcionalmente al PR #1 bloqueado. Campos confirmados: `municipality_code` (texto de 5 dígitos), población 65+/75+, conteos/tasas/distancias para cuatro categorías, puntos representativos, periodos y linaje. Las distancias son desde un punto representativo municipal en EPSG:25830, no tiempos de viaje. Fuentes y contrato están en `metadata_sources.json` y `data_contract.json`; estado actual en `INTEGRATION_STATUS_2026-09-24.md`.
+Work 1 está disponible en `work/data-foundation` (PR #1) y su versión auditada en `work/data-qa-integration` (PR #4), incorporada en esta rama. Campos confirmados: `municipality_code` (texto de 5 dígitos), población 65+/75+, conteos, tasas y distancias para cuatro categorías sanitarias, puntos representativos, periodos y linaje. Las distancias son desde un punto representativo municipal en EPSG:25830, no tiempos de viaje. Fuentes y contrato están en `metadata_sources.json` y `data_contract.json`.
 
 ## Archivos que no se sobrescriben
 
@@ -25,8 +25,10 @@ No sobrescribir originales, `FUENTES.md`, `ejecucion.py`, `main.py` o `tools.py`
 Desde la raíz del proyecto:
 
 ```powershell
-node scripts/build_results.mjs tests/fixtures/synthetic_agent_result.json resultados
+node scripts/build_results.mjs tests/fixtures/synthetic_agent_result.json resultados/dev_sintetico
 node --test tests/e2e/contract_flow.test.mjs
+node scripts/build_jury_demo.mjs
+node --test tests/e2e/*.test.mjs
 ```
 
 Al recibir una salida real JSON:
@@ -35,12 +37,14 @@ Al recibir una salida real JSON:
 node scripts/build_results.mjs ruta\al\resultado_real.json resultados
 ```
 
-Para añadir geometría municipal después de integrar Work 1:
+Para añadir geometría municipal a una salida del agente:
 
 ```powershell
 node scripts/enrich_work1_result.mjs ruta\al\resultado_real.json resultado_con_mapa.json
 node scripts/build_results.mjs resultado_con_mapa.json resultados
 ```
+
+Para ejemplos reales de Work 2, ejecutar `node scripts/build_work2_demo.mjs`: usa `scripts/adapt_agent_tool_result.mjs`, coteja las cifras con Work 1 y genera `resultados/demo_work2/index.html`. Para una conversación del coordinador del portal, capturar su salida observada según `docs/WORK2_AGENT_ENVELOPE.md` y ejecutar `node scripts/adapt_work2_envelope.mjs envelope.json resultado_agente.json`; no convertir ejemplos directos de tools en una supuesta ejecución del coordinador.
 
 El comando falla si faltan fuentes, referencias o traza. Antes de subir resultados al portal, comprobar que `data_mode` es `real`, abrir los HTML sin red y revisar etiquetas, unidades, periodo, escenarios y ausencia de marca sintética. El fixture actual solo permite probar la interfaz y el contrato.
 

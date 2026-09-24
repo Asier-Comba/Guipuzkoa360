@@ -1,5 +1,11 @@
 __pycache__/
+*.py[cod]
 .pytest_cache/
-*.pyc
+.coverage
+htmlcov/
+.env
+*.log
 datos_originales/municipios_etrs89/
-work/
+dist/
+.venv/
+uv.lock

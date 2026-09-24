@@ -1,0 +1,259 @@
+{
+  "schema_version": "1.0.0",
+  "data_mode": "real",
+  "title": "Envejecimiento y servicios sanitarios en Gipuzkoa",
+  "question": "¿Cómo cambia hipotéticamente la distancia geométrica a atención primaria al añadir el servicio de prueba?",
+  "summary": "La herramienta de Work 2 recalcula 88 municipios; 1 cambia de distancia. Para Beasain, la base es 3617.3 m y el escenario 0 m. Es un contrafactual, no una predicción.",
+  "generated_at": "2026-09-24T18:03:00+02:00",
+  "period": "Demografía 2025-01-01 · centros 2026-09-20 · límites 2025-05-07",
+  "geography": "Gipuzkoa · 88 municipios",
+  "parameters": {
+    "age_group": "65+",
+    "older_share_threshold_pct": null,
+    "criteria_label": "Escenario hipotético: distancia antes y después",
+    "service": "primary_care",
+    "distance_threshold_km": 1
+  },
+  "analysis": {
+    "total_units": 88,
+    "matched_count": 1,
+    "matched_unit_ids": [
+      "20019"
+    ],
+    "older_population_total": 175452,
+    "match_label": "Municipios cuya distancia cambia"
+  },
+  "metrics": [
+    {
+      "id": "population_total",
+      "label": "Población total",
+      "value": 724797,
+      "unit": "personas",
+      "period": "2025-01-01",
+      "source_ids": [
+        "EUSTAT_EMH_2025"
+      ]
+    },
+    {
+      "id": "older_population_total",
+      "label": "Población ≥65",
+      "value": 175452,
+      "unit": "personas",
+      "period": "2025-01-01",
+      "source_ids": [
+        "EUSTAT_EMH_2025"
+      ]
+    },
+    {
+      "id": "selected_municipalities",
+      "label": "Municipios cuya distancia cambia",
+      "value": 1,
+      "unit": "municipios",
+      "period": "2025/2026",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    }
+  ],
+  "comparison": [
+    {
+      "unit_id": "20019",
+      "name": "Beasain",
+      "population": 13915,
+      "age_65_count": 3129,
+      "age_75_count": 1541,
+      "service_distance_km": 3.6173,
+      "service_count": 3,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "row_ref": "resultados/metricas_municipales.csv#municipality_code=20019",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    },
+    {
+      "unit_id": "20040",
+      "name": "Hernani",
+      "population": 20428,
+      "age_65_count": 4557,
+      "age_75_count": 2298,
+      "service_distance_km": 5.882,
+      "service_count": 2,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "row_ref": "resultados/metricas_municipales.csv#municipality_code=20040",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    },
+    {
+      "unit_id": "20063",
+      "name": "Oiartzun",
+      "population": 10473,
+      "age_65_count": 2369,
+      "age_75_count": 1138,
+      "service_distance_km": 4.4381,
+      "service_count": 1,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "row_ref": "resultados/metricas_municipales.csv#municipality_code=20063",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    },
+    {
+      "unit_id": "20067",
+      "name": "Errenteria",
+      "population": 39779,
+      "age_65_count": 9667,
+      "age_75_count": 5372,
+      "service_distance_km": 3.9255,
+      "service_count": 4,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "row_ref": "resultados/metricas_municipales.csv#municipality_code=20067",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    },
+    {
+      "unit_id": "20072",
+      "name": "Urnieta",
+      "population": 6294,
+      "age_65_count": 1244,
+      "age_75_count": 585,
+      "service_distance_km": 3.5631,
+      "service_count": 1,
+      "period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "row_ref": "resultados/metricas_municipales.csv#municipality_code=20072",
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    }
+  ],
+  "map_layers": [
+    {
+      "id": "older_share",
+      "label": "Población ≥65",
+      "metric": "age_65_count / population * 100",
+      "unit": "%",
+      "period": "2025-01-01",
+      "source_ids": [
+        "EUSTAT_EMH_2025"
+      ]
+    },
+    {
+      "id": "service_distance",
+      "label": "Distancia geométrica aproximada a atención primaria",
+      "metric": "service_distance_km",
+      "unit": "km",
+      "period": "2026-09-20",
+      "source_ids": [
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ]
+    }
+  ],
+  "scenario": {
+    "label": "ESCENARIO HIPOTÉTICO",
+    "change": "add_service: HYPOTHETICAL_BEASAIN; punto hipotético (43.07477358204083, -2.2165435210016398)",
+    "unit_id": "20019",
+    "distance_delta_km": -3.6173,
+    "baseline_distance_km": 3.6173,
+    "scenario_distance_km": 0,
+    "assumptions": [
+      "El resto de datos permanece constante.",
+      "Las coordenadas representan puntos válidos.",
+      "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+      "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+      "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
+      "Es un contrafactual analítico, no una predicción de uso, conducta, coste o impacto social.",
+      "No constituye una recomendación de ubicación ni una decisión administrativa."
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "EUSTAT_EMH_2025",
+      "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+      "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px",
+      "period": "2025-01-01",
+      "unit": "personas",
+      "license": "Creative Commons (según ficha Eustat de la operación 010154)",
+      "method": "Censo municipal por grupo de edad"
+    },
+    {
+      "source_id": "ODE_HEALTH_CENTRES_2026",
+      "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+      "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/",
+      "period": "2026-09-20",
+      "unit": "centros y metros",
+      "license": "Licencia abierta indicada por Open Data Euskadi; atribución y fecha obligatorias",
+      "method": "Puntos de servicios públicos; distancia euclídea derivada"
+    },
+    {
+      "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+      "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+      "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/",
+      "period": "2025-05-07",
+      "unit": "polígonos municipales",
+      "license": "Uso permitido citando Eusko Jaurlaritza / Gobierno Vasco",
+      "method": "Límites municipales y punto representativo"
+    }
+  ],
+  "method": "Recalculo determinista del mismo indicador antes y después del cambio hipotético. Se muestran recuentos demográficos de Work 1 unidos por municipality_code; distancias de Work 2 contrastadas con Work 1 (tolerancia 0,1 m).",
+  "limitations": [
+    "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+    "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+    "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
+    "Es un contrafactual analítico, no una predicción de uso, conducta, coste o impacto social.",
+    "No constituye una recomendación de ubicación ni una decisión administrativa.",
+    "No demuestra acceso individual, tiempo de viaje ni capacidad de los centros."
+  ],
+  "trace": {
+    "execution_mode": "agent_tool",
+    "question_id": "WORK2-Q-961e211828dd",
+    "agent_version": "Work 2 tool direct/1.0 (sin coordinador del portal)",
+    "tool_calls": [
+      {
+        "tool": "simular_escenario",
+        "arguments": {
+          "period": "2025-01-01",
+          "service_category": "primary_care"
+        },
+        "output_ref": "WORK2-TOOL-2867961e211828dd"
+      }
+    ],
+    "data_refs": [
+      "EUSTAT_EMH_2025",
+      "ODE_HEALTH_CENTRES_2026",
+      "GEOEUSKADI_MUNICIPIOS_2025"
+    ],
+    "result_ref": "WORK2-TOOL-2867961e211828dd",
+    "input_files": [
+      {
+        "path": "docs/examples/scenario_add_primary_care_beasain.json",
+        "sha256": "2867961e211828dd9bb4deff7457d72fc54f118956484eb497c06a1e500c846b",
+        "rows": 209
+      },
+      {
+        "path": "resultados/metricas_municipales.csv",
+        "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
+        "rows": 88
+      },
+      {
+        "path": "datos_preparados/metadata_sources.json",
+        "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
+        "rows": 4
+      }
+    ],
+    "original_question": "Escenario add_service para primary_care"
+  }
+}

@@ -44,3 +44,17 @@ def test_manual_reference_checks_pass():
     assert len(checks) >= 3
     assert checks.result.eq("PASS").all()
 
+
+def test_runtime_reference_points_and_projected_services():
+    points = pd.read_csv(
+        ROOT / "datos_preparados" / "runtime_municipality_points.csv",
+        dtype={"municipality_code": str},
+    )
+    services = pd.read_csv(ROOT / "datos_preparados" / "runtime_servicios.csv")
+    assert len(points) == 88
+    assert points["municipality_code"].is_unique
+    assert points["easting_m"].between(530_000, 620_000).all()
+    assert points["northing_m"].between(4_750_000, 4_815_000).all()
+    assert len(services) == 148
+    assert services[["easting_m", "northing_m"]].notna().all().all()
+
