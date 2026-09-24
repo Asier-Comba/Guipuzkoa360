@@ -9,8 +9,8 @@
     },
     {
       "path": "datos_preparados/demografia.csv",
-      "bytes": 6161,
-      "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+      "bytes": 6250,
+      "sha256": "8dc7850baf6794678743fd51e63d85d55706bebfffa2e2352d9a07ad2a669dc4"
     },
     {
       "path": "datos_preparados/runtime_municipality_points.csv",
@@ -19,8 +19,8 @@
     },
     {
       "path": "datos_preparados/runtime_servicios.csv",
-      "bytes": 25258,
-      "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
+      "bytes": 25407,
+      "sha256": "214871b1b410f0fb7a0266d32fbc6f3f494f829d2650803af81e47c59cc9d958"
     },
     {
       "path": "datos_preparados/runtime_municipios.geojson",
@@ -38,7 +38,7 @@
       "sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae"
     }
   ],
-  "total_bytes": 575682,
+  "total_bytes": 575920,
   "portal_budget_bytes": 25165824,
   "within_portal_budget": true,
   "exclude_from_runtime": [

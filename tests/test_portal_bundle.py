@@ -2,9 +2,11 @@ from __future__ import annotations
 
 import importlib.util
 import ast
+import hashlib
 import json
 import subprocess
 import sys
+import zipfile
 from pathlib import Path
 
 
@@ -67,3 +69,41 @@ def test_portal_main_physically_declares_seven_unique_tools():
     }
     assert {node.name for node in decorated} == expected
     assert len(decorated) == len(expected) == 7
+
+
+def test_release_package_manifest_and_context_are_coherent():
+    subprocess.run([sys.executable, "scripts/agent/build_portal_package.py"], cwd=ROOT, check=True)
+    package_manifest_path = ROOT / "dist" / "gipuzkoa360-urban-challenge-rc2-manifest.json"
+    package_manifest = json.loads(package_manifest_path.read_text(encoding="utf-8"))
+    package_path = ROOT / package_manifest["path"]
+    assert package_path.stat().st_size == package_manifest["bytes"]
+    assert hashlib.sha256(package_path.read_bytes()).hexdigest() == package_manifest["sha256"]
+
+    with zipfile.ZipFile(package_path) as archive:
+        packaged_files = sorted(archive.namelist())
+        assert packaged_files == package_manifest["files"]
+        assert len(packaged_files) == len(set(packaged_files))
+
+    source = (ROOT / "agentes" / "gipuzkoa360" / "main.py").read_text(encoding="utf-8")
+    tree = ast.parse(source)
+    context_assignment = next(
+        node for node in tree.body
+        if isinstance(node, ast.Assign)
+        and any(isinstance(target, ast.Name) and target.id == "STUDIO_CONTEXT_FILES" for target in node.targets)
+    )
+    context_files = ast.literal_eval(context_assignment.value)
+    assert set(context_files) <= set(packaged_files)
+    assert all((ROOT / path).is_file() for path in context_files)
+
+    runtime_manifest = json.loads(
+        (ROOT / "datos_preparados" / "runtime_manifest.json").read_text(encoding="utf-8")
+    )
+    runtime_files = {item["path"] for item in runtime_manifest["files"]}
+    packaged_runtime_data = {
+        path for path in packaged_files
+        if path.startswith("datos_preparados/") and path != "datos_preparados/runtime_manifest.json"
+    }
+    assert packaged_runtime_data <= runtime_files
+    # La geometría es deliberadamente de Work 3 y no forma parte del runtime conversacional.
+    assert "datos_preparados/runtime_municipios.geojson" in runtime_files
+    assert "datos_preparados/runtime_municipios.geojson" not in packaged_files
