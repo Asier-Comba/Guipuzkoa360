@@ -3,3 +3,7 @@ __pycache__/
 *.pyc
 datos_originales/municipios_etrs89/
 work/
+.coverage
+htmlcov/
+.env
+*.log

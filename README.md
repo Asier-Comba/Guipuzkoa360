@@ -26,3 +26,13 @@ node --test tests/e2e/contract_flow.test.mjs
 `scripts/enrich_work1_result.mjs` añade contornos municipales reales a un resultado compatible sin modificar sus cifras. `scripts/data/export_work3_smoke_result.py` genera una prueba local con datos reales, marcada expresamente como cálculo local y no como ejecución del agente.
 
 Leer `docs/HANDOFF_WORK_3_INTEGRATION.md` y `docs/SUBMISSION_CHECKLIST.md`. La publicación final requiere autorización humana expresa.
+
+## Agente territorial
+
+La implementación determinista del agente está en `agentes/gipuzkoa360/`. Sus siete herramientas públicas consumen exclusivamente los datos preparados, devuelven resultados estructurados y mantienen periodo, unidades, fuentes, método y limitaciones. Los fixtures de `tests/fixtures/` son sintéticos y se usan solo en pruebas.
+
+```bash
+python -m pytest -q
+```
+
+Véanse `docs/HANDOFF_WORK_2_AGENT.md`, `docs/RESULT_SCHEMA.md` y `docs/RUNTIME_PACKAGE.md`.

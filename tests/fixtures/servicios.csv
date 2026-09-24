@@ -1,0 +1,4 @@
+service_id,service_name,service_category,municipality_code,latitude,longitude,reference_period,source_id
+S001,TEST_CENTRO_A,salud,T001,43.0020,-2.0020,2025,SRC_TEST_SERV
+S002,TEST_CENTRO_B,salud,T002,43.0550,-2.1050,2025,SRC_TEST_SERV
+S003,TEST_BIBLIOTECA_A,biblioteca,T001,43.0010,-2.0010,2025,SRC_TEST_SERV
