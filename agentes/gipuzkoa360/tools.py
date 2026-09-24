@@ -39,9 +39,87 @@ def _json(result: dict[str, Any]) -> str:
     return json.dumps(result, ensure_ascii=False, sort_keys=True)
 
 
-def _safe(operation: Callable[[], dict[str, Any]]) -> str:
+def _compact_sources(sources: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    audit_fields = ("source_id", "institution", "title", "reference_period", "unit", "url", "limitations")
+    return [{field: item[field] for field in audit_fields if field in item} for item in sources]
+
+
+def compact_result(result: dict[str, Any], result_kind: str) -> dict[str, Any]:
+    """Reduce transporte al LLM sin alterar métricas ni la salida completa del core."""
+    compact = dict(result)
+    rows = list(result.get("data", []))
+    summary = dict(result.get("summary", {}))
+    summary.setdefault("total_result_rows", len(rows))
+
+    if result_kind == "access" and len(rows) > 20:
+        within = sum(bool(row.get("within_threshold")) for row in rows)
+        distances = [row["nearest_distance_m"] for row in rows if row.get("nearest_distance_m") is not None]
+        summary.update(
+            {
+                "within_threshold_count": within,
+                "outside_threshold_count": len(rows) - within,
+                "minimum_distance_m": min(distances) if distances else None,
+                "maximum_distance_m": max(distances) if distances else None,
+                "returned_rows": min(10, len(rows)),
+                "selection": "10 municipios con mayor distancia; use detalle=true para las 88 filas.",
+            }
+        )
+        compact["data"] = rows[:10]
+    elif result_kind == "coincidence":
+        highlighted = [row for row in rows if row.get("highlighted")]
+        selected = highlighted or rows[:5]
+        summary.update(
+            {
+                "highlighted_count": len(highlighted),
+                "returned_rows": len(selected),
+                "selection": "Todos los destacados; si no hay ninguno, los 5 primeros por criterio.",
+            }
+        )
+        compact["data"] = selected
+    elif result_kind == "scenario":
+        changed = [
+            row
+            for row in rows
+            if row.get("difference_absolute_m") not in (None, 0, 0.0)
+            or row.get("baseline_within_threshold") != row.get("scenario_within_threshold")
+        ]
+        summary.update(
+            {
+                "affected_rows": len(changed),
+                "improved_distance_rows": sum((row.get("difference_absolute_m") or 0) < 0 for row in changed),
+                "worsened_distance_rows": sum((row.get("difference_absolute_m") or 0) > 0 for row in changed),
+                "threshold_status_changes": sum(
+                    row.get("baseline_within_threshold") != row.get("scenario_within_threshold") for row in changed
+                ),
+                "returned_rows": len(changed),
+                "selection": "Solo municipios con distancia o estado de umbral modificado.",
+            }
+        )
+        compact["data"] = changed
+
+    compact["summary"] = summary
+    compact["detail_level"] = "compact"
+    if result_kind == "source":
+        compact["sources"] = [{"source_id": item.get("source_id")} for item in result.get("sources", [])]
+    else:
+        compact["sources"] = _compact_sources(result.get("sources", []))
+    return compact
+
+
+def _safe(
+    operation: Callable[[], dict[str, Any]],
+    *,
+    result_kind: str | None = None,
+    detail: bool = False,
+) -> str:
     try:
-        return _json(operation())
+        result = operation()
+        if detail:
+            result = dict(result)
+            result["detail_level"] = "full"
+        elif result_kind:
+            result = compact_result(result, result_kind)
+        return _json(result)
     except DataContractError as exc:
         return _json(exc.as_result())
     except (ValueError, TypeError) as exc:
@@ -451,7 +529,7 @@ class TerritorialAnalysis:
         used_demo = [by_code[row["municipality_code"]] for row in joined]
         sources = self._sources(used_demo) + access["sources"]
         deduped = {str(item.get("source_id", item)): item for item in sources}
-        return ResultEnvelope(
+        result = ResultEnvelope(
             question=f"Coincidencia de envejecimiento >= {age} y peor acceso a {service_category}",
             filters={
                 "age_group": age,
@@ -478,6 +556,13 @@ class TerritorialAnalysis:
                 "Los resultados dependen del cuantil, grupo de edad, categoría y periodo elegidos.",
             ],
         ).to_dict()
+        result["summary"] = {
+            "age_cut_percent": round(age_cut, 4),
+            "distance_cut_m": round(distance_cut, 1),
+            "joined_rows": len(joined),
+            "highlighted_count": sum(row["highlighted"] for row in joined),
+        }
+        return result
 
     def escenario(
         self,
@@ -614,9 +699,11 @@ def _analysis() -> TerritorialAnalysis:
 
 
 @tool
-def obtener_resumen_territorial(municipio: str, periodo: str | None = None) -> str:
+def obtener_resumen_territorial(
+    municipio: str, periodo: str | None = None, detalle: bool = False
+) -> str:
     """Resume demografía y servicios de un municipio; no interpreta ausencia como cero."""
-    return _safe(lambda: _analysis().resumen(municipio, periodo))
+    return _safe(lambda: _analysis().resumen(municipio, periodo), result_kind="summary", detail=detalle)
 
 
 @tool
@@ -626,9 +713,14 @@ def comparar_municipios(
     categoria_servicio: str | None = None,
     umbral_km: float = 1.0,
     periodo: str | None = None,
+    detalle: bool = False,
 ) -> str:
     """Compara 2-20 municipios con porcentaje de edad y, opcionalmente, distancia a servicios."""
-    return _safe(lambda: _analysis().comparar(municipios, grupo_edad, categoria_servicio, umbral_km, periodo))
+    return _safe(
+        lambda: _analysis().comparar(municipios, grupo_edad, categoria_servicio, umbral_km, periodo),
+        result_kind="comparison",
+        detail=detalle,
+    )
 
 
 @tool
@@ -637,9 +729,14 @@ def analizar_envejecimiento(
     medida: str = "percentage",
     periodo: str | None = None,
     top_n: int = 10,
+    detalle: bool = False,
 ) -> str:
     """Calcula ranking de población >=65 o >=75 por porcentaje o recuento."""
-    return _safe(lambda: _analysis().envejecimiento(grupo_edad, medida, periodo, top_n))
+    return _safe(
+        lambda: _analysis().envejecimiento(grupo_edad, medida, periodo, top_n),
+        result_kind="aging",
+        detail=detalle,
+    )
 
 
 @tool
@@ -648,9 +745,14 @@ def analizar_acceso_servicios(
     umbral_km: float = 1.0,
     periodo: str | None = None,
     municipios: list[str] | None = None,
+    detalle: bool = False,
 ) -> str:
     """Calcula distancia euclídea EPSG:25830 desde punto representativo; no acceso real."""
-    return _safe(lambda: _analysis().acceso(categoria_servicio, umbral_km, periodo, municipios))
+    return _safe(
+        lambda: _analysis().acceso(categoria_servicio, umbral_km, periodo, municipios),
+        result_kind="access",
+        detail=detalle,
+    )
 
 
 @tool
@@ -660,9 +762,14 @@ def analizar_coincidencia(
     umbral_km: float = 1.0,
     periodo: str | None = None,
     cuantil: float = 0.75,
+    detalle: bool = False,
 ) -> str:
     """Cruza envejecimiento y distancia mostrando ambos componentes y criterios de corte."""
-    return _safe(lambda: _analysis().coincidencia(categoria_servicio, grupo_edad, umbral_km, periodo, cuantil))
+    return _safe(
+        lambda: _analysis().coincidencia(categoria_servicio, grupo_edad, umbral_km, periodo, cuantil),
+        result_kind="coincidence",
+        detail=detalle,
+    )
 
 
 @tool
@@ -675,6 +782,7 @@ def simular_escenario(
     longitud: float | None = None,
     service_id: str | None = None,
     nuevo_umbral_km: float | None = None,
+    detalle: bool = False,
 ) -> str:
     """Recalcula un contrafactual: add_service, remove_service o change_threshold."""
     return _safe(
@@ -687,14 +795,16 @@ def simular_escenario(
             longitud,
             service_id,
             nuevo_umbral_km,
-        )
+        ),
+        result_kind="scenario",
+        detail=detalle,
     )
 
 
 @tool
-def consultar_fuente(source_id: str | None = None) -> str:
+def consultar_fuente(source_id: str | None = None, detalle: bool = False) -> str:
     """Devuelve procedencia, periodo, institución, unidad, licencia y limitaciones disponibles."""
-    return _safe(lambda: _analysis().fuente(source_id))
+    return _safe(lambda: _analysis().fuente(source_id), result_kind="source", detail=detalle)
 
 
 TOOLS = [
