@@ -7,6 +7,8 @@
 - `scripts/run_local_analysis.mjs`: cálculo reproducible sobre las 88 filas de Work 1, marcado como herramienta local.
 - `scripts/build_jury_demo.mjs`: cuatro ejecuciones reales locales y recorrido HTML en `resultados/demo_real/index.html`.
 - `scripts/adapt_work2_envelope.mjs`: puente preparado para salida observada de Work 2.
+- `scripts/adapt_agent_tool_result.mjs`: mapea el JSON real de `docs/RESULT_SCHEMA.md` y coteja distancias/porcentajes con Work 1.
+- `scripts/build_work2_demo.mjs`: demo recomendada con herramientas reales de Work 2 en `resultados/demo_work2/index.html`.
 - `resultados/demo.html`: explorador de prueba.
 - `resultados/informe_principal.html`: informe reusable para una consulta.
 - `resultados/scenario_comparison.html`: vista de base y escenario.
@@ -24,11 +26,11 @@ La rama `work/data-foundation` (PR #1) aporta 88 municipios, demografía, servic
 
 ## Integración Work 2
 
-Todavía no hay rama/PR de Work 2. Entregar pregunta, parámetros, versión fija, salida observada de tool, `data_refs`, resultado JSON y limitaciones. `docs/WORK2_AGENT_ENVELOPE.md` y `scripts/adapt_work2_envelope.mjs` fijan el puente. Dos preguntas distintas deben producir dos llamadas y `output_ref` diferentes. No basta con cambiar un selector en el HTML.
+Work 2 está en `work/agent-engine` (PR #3), incorporado en esta rama dependiente. Su contrato `docs/RESULT_SCHEMA.md` y tres ejemplos oficiales alimentan el adaptador real. Una cuarta salida con cuantil 0,85 se genera con `scripts/generate_work2_variation.py`. Las tools producen 7/88 y 2/88 destacados, con `output_ref` diferentes. `docs/WORK2_AGENT_ENVELOPE.md` describe la traza adicional que debe capturarse cuando el coordinador se pruebe en el portal.
 
 ## E2E
 
-Ejecutar `node --test tests/e2e/*.test.mjs`. La suite comprueba el fixture, las 88 filas reales, el mapa, cambios de umbral y la cifra de Donostia contra la fuente Eustat original. Después repetir la cadena con una versión fija del agente en el portal.
+Ejecutar `node --test tests/e2e/*.test.mjs` y `python -m pytest -q` en un entorno con dependencias. Las suites comprueban el fixture, 88 filas reales, tool de Work 2, mapa, cambios de cuantil, escenario, errores y la cifra de Donostia contra la fuente Eustat original. Después repetir la cadena con una versión fija del coordinador en el portal.
 
 ## Demo y rúbrica
 
@@ -37,9 +39,9 @@ Secuencia de tres minutos y cuatro consultas en `docs/DEMO_QUERIES.md`. Cobertur
 ## Riesgos priorizados
 
 1. Falta todavía el dataset real y su definición semántica.
-2. Falta el agente y la prueba de una nueva llamada de herramienta.
-3. Los HTML sintéticos de la raíz siguen siendo fixtures; usar `resultados/demo_real/index.html` para datos reales.
-4. El escenario de servicio del fixture no es un contrafactual real; no presentarlo al jurado como tal.
+2. Falta probar la selección y observación de herramientas por el coordinador en una versión fija del portal; las tools ya se ejecutaron directamente.
+3. Los HTML principales de `resultados/` son reales pero proceden de ejecución directa de tools, no del coordinador del portal. Usar `resultados/demo_work2/index.html` para la presentación.
+4. El escenario de Work 2 es hipotético y solo cambia una distancia en el ejemplo de Beasain; no es predicción ni recomendación.
 5. La versión del portal y el paquete de 24 MB requieren validación.
 
 ## Entrega

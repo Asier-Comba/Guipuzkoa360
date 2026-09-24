@@ -1,6 +1,6 @@
-# Interfaz preparada para Work 2
+# Captura de traza del coordinador del portal
 
-Al 24/09/2026 no hay rama ni PR de Work 2 en el repositorio. Este contrato define el mínimo necesario para conectar una ejecución real sin atribuir al agente un cálculo que solo se hizo localmente. Se ajustará mediante adaptador cuando Work 2 publique su formato real; no se exige que cambie su implementación.
+Work 2 ya publica su contrato real en `docs/RESULT_SCHEMA.md` y las salidas de sus tools se adaptan mediante `scripts/adapt_agent_tool_result.mjs`. Este envelope adicional define la evidencia que falta capturar **del coordinador ejecutado en el portal**. No debe fabricarse a partir de los ejemplos locales.
 
 ```json
 {
@@ -26,4 +26,4 @@ Al 24/09/2026 no hay rama ni PR de Work 2 en el repositorio. Este contrato defin
 
 `scripts/adapt_work2_envelope.mjs` exige una salida **observada** de herramienta, calcula su `output_ref` y comprueba que `comparison`, `analysis`, `metrics` y `sources` del resultado coincidan exactamente con esa salida. Así una respuesta narrativa no puede introducir cifras diferentes. El JSON adaptado lleva `trace.execution_mode = "agent"`; después se añaden contornos con `scripts/enrich_work1_result.mjs` y se renderiza con `scripts/build_results.mjs`.
 
-Si Work 2 devuelve otro JSON, crear un mapeo de su traza real a este envelope sin alterar valores. Rechazar eventos sin salida observada, identificadores de ejecución reutilizados, herramientas no permitidas o referencias de datos inexistentes. La versión fija del portal y sus pruebas siguen siendo necesarias: una traza JSON local no acredita por sí sola la ejecución en el portal.
+Al capturar una prueba del portal, mapear sus eventos reales a este envelope sin alterar cifras. Rechazar eventos sin salida observada o referencias de datos inexistentes. La versión fija y su conversación deben conservarse para demostrar que el coordinador eligió y usó la herramienta; los ejemplos locales por sí solos no lo prueban.

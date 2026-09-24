@@ -3,7 +3,7 @@
 ## Orden
 
 1. Work 1 — datos: recibir originales, preparados, diccionario, fuentes y comprobaciones.
-2. Work 2 — agente: recibir versión, herramientas, formato de resultado y traza.
+2. Work 2 — agente: `work/agent-engine` (PR #3), `docs/RESULT_SCHEMA.md`, siete tools y ejemplos reales; falta la prueba del coordinador en el portal.
 3. Work 3 — visualización: adaptar a `docs/EXPECTED_RESULT_SCHEMA.md` v1.0.0 y generar HTML.
 4. Tests E2E y contraste manual de una cifra.
 5. Subir la versión preparada al portal; verificar límites de archivos/contexto.
@@ -25,7 +25,7 @@ No sobrescribir originales, `FUENTES.md`, `ejecucion.py`, `main.py` o `tools.py`
 Desde la raíz del proyecto:
 
 ```powershell
-node scripts/build_results.mjs tests/fixtures/synthetic_agent_result.json resultados
+node scripts/build_results.mjs tests/fixtures/synthetic_agent_result.json resultados/dev_sintetico
 node --test tests/e2e/contract_flow.test.mjs
 node scripts/build_jury_demo.mjs
 node --test tests/e2e/*.test.mjs
@@ -44,7 +44,7 @@ node scripts/enrich_work1_result.mjs ruta\al\resultado_real.json resultado_con_m
 node scripts/build_results.mjs resultado_con_mapa.json resultados
 ```
 
-Work 2 debe entregar una ejecución con salida observada de herramienta según `docs/WORK2_AGENT_ENVELOPE.md`. Ejecutar `node scripts/adapt_work2_envelope.mjs envelope.json resultado_agente.json` antes del enriquecimiento geométrico. Si su formato difiere, mapear su traza original a ese envelope sin alterar cifras.
+Para ejemplos reales de Work 2, ejecutar `node scripts/build_work2_demo.mjs`: usa `scripts/adapt_agent_tool_result.mjs`, coteja las cifras con Work 1 y genera `resultados/demo_work2/index.html`. Para una conversación del coordinador del portal, capturar su salida observada según `docs/WORK2_AGENT_ENVELOPE.md` y ejecutar `node scripts/adapt_work2_envelope.mjs envelope.json resultado_agente.json`; no convertir ejemplos directos de tools en una supuesta ejecución del coordinador.
 
 El comando falla si faltan fuentes, referencias o traza. Antes de subir resultados al portal, comprobar que `data_mode` es `real`, abrir los HTML sin red y revisar etiquetas, unidades, periodo, escenarios y ausencia de marca sintética. El fixture actual solo permite probar la interfaz y el contrato.
 

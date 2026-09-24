@@ -14,14 +14,14 @@ python -m pytest
 
 ## Producto y demo
 
-El agente está en `agentes/gipuzkoa360/` y dispone de siete herramientas deterministas. Su salida original sigue `docs/RESULT_SCHEMA.md`; `scripts/adapt_work2_envelope.mjs` prepara el enlace con el contrato de producto en `docs/EXPECTED_RESULT_SCHEMA.md`. `scripts/enrich_work1_result.mjs` añade contornos municipales y `scripts/build_results.mjs` genera HTML autocontenidos.
+El agente está en `agentes/gipuzkoa360/` y dispone de siete herramientas deterministas. Su salida original sigue `docs/RESULT_SCHEMA.md`; `scripts/adapt_agent_tool_result.mjs` la conecta con el contrato de producto en `docs/EXPECTED_RESULT_SCHEMA.md`. `scripts/enrich_work1_result.mjs` añade contornos municipales y `scripts/build_results.mjs` genera HTML autocontenidos. `scripts/adapt_work2_envelope.mjs` queda preparado para una futura traza observada del coordinador en el portal.
 
 ```powershell
-node scripts/build_results.mjs tests/fixtures/synthetic_agent_result.json resultados
+node scripts/build_results.mjs tests/fixtures/synthetic_agent_result.json resultados/dev_sintetico
 node --test tests/e2e/*.test.mjs
-node scripts/build_jury_demo.mjs
+node scripts/build_work2_demo.mjs
 ```
 
-Los HTML del fixture llevan una marca visible de **datos sintéticos de desarrollo**. La demo real local se abre en `resultados/demo_real/index.html` y sus cuatro consultas se calculan con una herramienta local reproducible. La versión fija del agente todavía debe probarse en el portal; esta demo no sustituye esa prueba.
+El fixture se genera en `resultados/dev_sintetico/` y lleva una marca visible. Los tres HTML principales de `resultados/` ya proceden de las herramientas reales de Work 2. La demo recomendada se abre en `resultados/demo_work2/index.html`; incluye dos cálculos por cuantil, comparación, escenario y error controlado. Una versión fija del coordinador todavía debe probarse en el portal.
 
 Seguir `docs/README_DEMO_JURADO.md`, `docs/HANDOFF_WORK_2_AGENT.md`, `docs/INTEGRATION_PLAYBOOK.md` y `docs/SUBMISSION_CHECKLIST.md` antes de preparar la entrega en el portal.
