@@ -23,6 +23,6 @@ node --test tests/e2e/*.test.mjs
 node scripts/build_work2_demo.mjs
 ```
 
-El fixture se genera en `resultados/dev_sintetico/` y lleva una marca visible. Los tres HTML principales de `resultados/` ya proceden de las herramientas reales de Work 2. La demo recomendada se abre en `resultados/demo_work2/index.html`; incluye dos cálculos por cuantil, comparación, escenario y error controlado. Una versión fija del coordinador todavía debe probarse en el portal.
+El fixture se genera en `resultados/dev_sintetico/` y lleva una marca visible. Los tres HTML principales de `resultados/` ya proceden de las herramientas reales de Work 2. La demo recomendada se abre en `resultados/demo_work2/index.html`; incluye dos cálculos por cuantil, comparación, escenario y error controlado. La prueba privada del coordinador en el portal detectó un bloqueo del runtime y está documentada en `docs/PORTAL_PRIVATE_TEST_2026-09-24.md`.
 
 Seguir `docs/README_DEMO_JURADO.md`, `docs/HANDOFF_WORK_2_AGENT.md`, `docs/INTEGRATION_PLAYBOOK.md` y `docs/SUBMISSION_CHECKLIST.md` antes de preparar la entrega en el portal.

@@ -21,15 +21,15 @@ Los archivos principales `resultados/demo.html`, `informe_principal.html` y `sce
 
 ## Pendiente para afirmar “agente end-to-end en portal”
 
-1. Subir el paquete de Work 2 al workspace del portal sin sobrescribir cambios de otros integrantes; crear versión privada fija.
-2. Ejecutar las consultas de `docs/README_DEMO_JURADO.md` en Pruebas y conservar una traza en la que el coordinador elige la tool, observa su resultado y responde.
+1. Resolver el fallo observado en la prueba privada del portal (`docs/PORTAL_PRIVATE_TEST_2026-09-24.md`): las versiones v1/v2 detectaron las tools pero el runtime no las registró; v3 ejecutó errores controlados, pero la llamada válida quedó en curso más de dos minutos y fue detenida.
+2. Registrar las siete tools y los CSV como archivos físicos del agente, crear otra versión privada y ejecutar las consultas de `docs/README_DEMO_JURADO.md`, conservando una traza donde el coordinador observa el resultado y responde.
 3. Capturar esa traza en el envelope de `docs/WORK2_AGENT_ENVELOPE.md`, regenerar el HTML como `execution_mode=agent` y comprobar una cifra.
 4. Revisar visualmente el HTML en el entorno real del portal y la vista previa de entrega. Esta revisión aún no se ha realizado.
 5. Completar ficha, seleccionar versión y track; la publicación final requiere autorización humana expresa.
 
 ## Riesgos que pueden costar puntos
 
-- **Funcionamiento (25 %):** las tools sí funcionan, pero los ejemplos actuales se ejecutaron directamente. La selección de herramientas por el coordinador no se ha probado en el portal.
+- **Funcionamiento (25 %):** las tools funcionan localmente y el coordinador las seleccionó en el portal, pero ninguna consulta válida terminó allí con resultado observado; no hay demostración conversacional completa.
 - **Semántica:** `analizar_coincidencia` selecciona por doble cuantil. `threshold_km` solo determina `within_threshold`, no el conjunto `highlighted`; variar ese umbral no demuestra un cambio del ranking. La demo varía el cuantil 0,75→0,85.
 - **Territorio:** el mapa de cada HTML muestra solo las unidades comparadas (2–5), no los 88 polígonos. El recuento 7/88 o 2/88 sí usa todas las filas.
 - **Interpretación:** distancia euclídea desde punto representativo municipal; no mide recorrido, capacidad, cita, accesibilidad universal ni acceso individual.

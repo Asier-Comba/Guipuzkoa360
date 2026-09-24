@@ -1,6 +1,6 @@
 # Demo de jurado · 2–3 minutos
 
-Abrir `resultados/demo_work2/index.html`. Los resultados enlazados proceden de las herramientas deterministas de Work 2 ejecutadas directamente contra los datos reales de Work 1. El adaptador comprueba cada distancia y porcentaje frente al CSV preparado antes de producir JSON y HTML. **El coordinador del agente todavía debe probarse en una versión fija del portal**; las páginas lo indican de forma visible.
+Abrir `resultados/demo_work2/index.html`. Los resultados enlazados proceden de las herramientas deterministas de Work 2 ejecutadas directamente contra los datos reales de Work 1. El adaptador comprueba cada distancia y porcentaje frente al CSV preparado antes de producir JSON y HTML. **La prueba privada del coordinador en el portal todavía no ha completado una consulta válida**; detalles en `docs/PORTAL_PRIVATE_TEST_2026-09-24.md`. Las páginas indican que son ejecuciones directas de tools.
 
 ## Secuencia exacta
 
