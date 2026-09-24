@@ -1,0 +1,5 @@
+municipality_code,municipality_name,population_total,population_65_plus,population_75_plus,pct_65_plus,pct_75_plus,reference_period,source_id
+T001,TEST_MUNICIPIO_A,1000,200,90,20.0,9.0,2025,SRC_TEST_DEMO
+T002,TEST_MUNICIPIO_B,800,240,120,30.0,15.0,2025,SRC_TEST_DEMO
+T003,TEST_MUNICIPIO_C,1200,420,240,35.0,20.0,2025,SRC_TEST_DEMO
+T004,TEST_MUNICIPIO_D,500,200,125,40.0,25.0,2025,SRC_TEST_DEMO

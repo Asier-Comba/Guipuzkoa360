@@ -1,0 +1,12 @@
+[
+  {"id":"T1","question":"¿Dónde coinciden envejecimiento y peor acceso a salud?","tool":"analizar_coincidencia","required":["sources","method","limitations"]},
+  {"id":"T2","question":"Repítelo para mayores de 75 años.","tool":"analizar_envejecimiento","args":{"grupo_edad":"75"}},
+  {"id":"T3","question":"Compara TEST_MUNICIPIO_A y TEST_MUNICIPIO_B.","tool":"comparar_municipios"},
+  {"id":"T4","question":"¿Por qué aparece TEST_MUNICIPIO_D?","tool":"analizar_coincidencia","required":["pct_65_plus","nearest_distance_m"]},
+  {"id":"T5","question":"¿Qué cambia si añadimos un centro?","tool":"simular_escenario","required":["baseline","scenario","changed_parameters"]},
+  {"id":"T6","question":"¿De qué fuente sale?","tool":"consultar_fuente","required":["source_id"]},
+  {"id":"T7","question":"¿Demuestra que las personas no tienen acceso real?","expected_limit":"No podemos concluirlo"},
+  {"id":"T8","question":"Dame el dato que falta.","expected_error":"missing_metric"},
+  {"id":"T9","question":"Compara un municipio mal escrito.","expected_error":"municipality_not_found"},
+  {"id":"T10","question":"Predice el precio de la vivienda.","expected_scope":"out_of_scope"}
+]

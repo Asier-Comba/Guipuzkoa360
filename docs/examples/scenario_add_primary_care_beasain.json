@@ -1,0 +1,975 @@
+{
+  "status": "ok",
+  "question": "Escenario add_service para primary_care",
+  "filters": {
+    "period": "2025-01-01",
+    "service_category": "primary_care"
+  },
+  "period": "2026-09-20; escenario; 2025-05-07",
+  "metric": "distance_geométrica_aproximada_desde_punto_representativo_municipal",
+  "unit": "m",
+  "rows_used": 209,
+  "data": [
+    {
+      "municipality_code": "20040",
+      "municipality_name": "Hernani",
+      "baseline_distance_m": 5882.0,
+      "scenario_distance_m": 5882.0,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20063",
+      "municipality_name": "Oiartzun",
+      "baseline_distance_m": 4438.1,
+      "scenario_distance_m": 4438.1,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20067",
+      "municipality_name": "Errenteria",
+      "baseline_distance_m": 3925.5,
+      "scenario_distance_m": 3925.5,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20072",
+      "municipality_name": "Urnieta",
+      "baseline_distance_m": 3563.1,
+      "scenario_distance_m": 3563.1,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20013",
+      "municipality_name": "Aretxabaleta",
+      "baseline_distance_m": 3509.2,
+      "scenario_distance_m": 3509.2,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20006",
+      "municipality_name": "Alkiza",
+      "baseline_distance_m": 2855.9,
+      "scenario_distance_m": 2855.9,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20064",
+      "municipality_name": "Pasaia",
+      "baseline_distance_m": 2813.4,
+      "scenario_distance_m": 2813.4,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20002",
+      "municipality_name": "Aduna",
+      "baseline_distance_m": 2756.2,
+      "scenario_distance_m": 2756.2,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20051",
+      "municipality_name": "Legazpi",
+      "baseline_distance_m": 2624.8,
+      "scenario_distance_m": 2624.8,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20036",
+      "municipality_name": "Hondarribia",
+      "baseline_distance_m": 2583.5,
+      "scenario_distance_m": 2583.5,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20007",
+      "municipality_name": "Altzo",
+      "baseline_distance_m": 2477.2,
+      "scenario_distance_m": 2477.2,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20028",
+      "municipality_name": "Zizurkil",
+      "baseline_distance_m": 2469.6,
+      "scenario_distance_m": 2469.6,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20043",
+      "municipality_name": "Idiazabal",
+      "baseline_distance_m": 2311.2,
+      "scenario_distance_m": 2311.2,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20034",
+      "municipality_name": "Eskoriatza",
+      "baseline_distance_m": 2261.6,
+      "scenario_distance_m": 2261.6,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20041",
+      "municipality_name": "Hernialde",
+      "baseline_distance_m": 2192.5,
+      "scenario_distance_m": 2192.5,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20061",
+      "municipality_name": "Orio",
+      "baseline_distance_m": 2190.3,
+      "scenario_distance_m": 2190.3,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20059",
+      "municipality_name": "Oñati",
+      "baseline_distance_m": 2149.6,
+      "scenario_distance_m": 2149.6,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20014",
+      "municipality_name": "Asteasu",
+      "baseline_distance_m": 2122.0,
+      "scenario_distance_m": 2122.0,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20035",
+      "municipality_name": "Ezkio-Itsaso",
+      "baseline_distance_m": 2110.1,
+      "scenario_distance_m": 2110.1,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20031",
+      "municipality_name": "Elduain",
+      "baseline_distance_m": 2064.3,
+      "scenario_distance_m": 2064.3,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20905",
+      "municipality_name": "Orendain",
+      "baseline_distance_m": 2044.6,
+      "scenario_distance_m": 2044.6,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20078",
+      "municipality_name": "Zaldibia",
+      "baseline_distance_m": 2010.8,
+      "scenario_distance_m": 2010.8,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20048",
+      "municipality_name": "Larraul",
+      "baseline_distance_m": 2009.1,
+      "scenario_distance_m": 2009.1,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20029",
+      "municipality_name": "Deba",
+      "baseline_distance_m": 2001.8,
+      "scenario_distance_m": 2001.8,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20047",
+      "municipality_name": "Itsasondo",
+      "baseline_distance_m": 1981.8,
+      "scenario_distance_m": 1981.8,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20080",
+      "municipality_name": "Zumarraga",
+      "baseline_distance_m": 1870.8,
+      "scenario_distance_m": 1870.8,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20079",
+      "municipality_name": "Zarautz",
+      "baseline_distance_m": 1866.2,
+      "scenario_distance_m": 1866.2,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20058",
+      "municipality_name": "Olaberria",
+      "baseline_distance_m": 1863.0,
+      "scenario_distance_m": 1863.0,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20045",
+      "municipality_name": "Irun",
+      "baseline_distance_m": 1862.8,
+      "scenario_distance_m": 1862.8,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20022",
+      "municipality_name": "Berastegi",
+      "baseline_distance_m": 1800.8,
+      "scenario_distance_m": 1800.8,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20066",
+      "municipality_name": "Errezil",
+      "baseline_distance_m": 1756.7,
+      "scenario_distance_m": 1756.7,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20068",
+      "municipality_name": "Leintz-Gatzaga",
+      "baseline_distance_m": 1749.1,
+      "scenario_distance_m": 1749.1,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20070",
+      "municipality_name": "Segura",
+      "baseline_distance_m": 1740.4,
+      "scenario_distance_m": 1740.4,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20901",
+      "municipality_name": "Mendaro",
+      "baseline_distance_m": 1700.5,
+      "scenario_distance_m": 1700.5,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20075",
+      "municipality_name": "Villabona",
+      "baseline_distance_m": 1691.7,
+      "scenario_distance_m": 1691.7,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20037",
+      "municipality_name": "Gaintza",
+      "baseline_distance_m": 1664.7,
+      "scenario_distance_m": 1664.7,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20049",
+      "municipality_name": "Lazkao",
+      "baseline_distance_m": 1661.9,
+      "scenario_distance_m": 1661.9,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20008",
+      "municipality_name": "Amezketa",
+      "baseline_distance_m": 1570.5,
+      "scenario_distance_m": 1570.5,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20056",
+      "municipality_name": "Mutriku",
+      "baseline_distance_m": 1517.1,
+      "scenario_distance_m": 1517.1,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20055",
+      "municipality_name": "Arrasate/Mondragón",
+      "baseline_distance_m": 1467.8,
+      "scenario_distance_m": 1467.8,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20033",
+      "municipality_name": "Elgeta",
+      "baseline_distance_m": 1429.8,
+      "scenario_distance_m": 1429.8,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20018",
+      "municipality_name": "Azpeitia",
+      "baseline_distance_m": 1406.8,
+      "scenario_distance_m": 1406.8,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20001",
+      "municipality_name": "Abaltzisketa",
+      "baseline_distance_m": 1394.2,
+      "scenario_distance_m": 1394.2,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20025",
+      "municipality_name": "Zegama",
+      "baseline_distance_m": 1344.9,
+      "scenario_distance_m": 1344.9,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20073",
+      "municipality_name": "Usurbil",
+      "baseline_distance_m": 1317.5,
+      "scenario_distance_m": 1317.5,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20077",
+      "municipality_name": "Urretxu",
+      "baseline_distance_m": 1295.0,
+      "scenario_distance_m": 1295.0,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20026",
+      "municipality_name": "Zerain",
+      "baseline_distance_m": 1278.6,
+      "scenario_distance_m": 1278.6,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20081",
+      "municipality_name": "Zumaia",
+      "baseline_distance_m": 1267.9,
+      "scenario_distance_m": 1267.9,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20032",
+      "municipality_name": "Elgoibar",
+      "baseline_distance_m": 1244.2,
+      "scenario_distance_m": 1244.2,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20903",
+      "municipality_name": "Astigarraga",
+      "baseline_distance_m": 1235.0,
+      "scenario_distance_m": 1235.0,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20030",
+      "municipality_name": "Eibar",
+      "baseline_distance_m": 1223.6,
+      "scenario_distance_m": 1223.6,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20060",
+      "municipality_name": "Orexa",
+      "baseline_distance_m": 1215.8,
+      "scenario_distance_m": 1215.8,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20053",
+      "municipality_name": "Lezo",
+      "baseline_distance_m": 1169.1,
+      "scenario_distance_m": 1169.1,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20902",
+      "municipality_name": "Lasarte-Oria",
+      "baseline_distance_m": 1165.2,
+      "scenario_distance_m": 1165.2,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20017",
+      "municipality_name": "Azkoitia",
+      "baseline_distance_m": 1157.2,
+      "scenario_distance_m": 1157.2,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20039",
+      "municipality_name": "Getaria",
+      "baseline_distance_m": 1153.5,
+      "scenario_distance_m": 1153.5,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20003",
+      "municipality_name": "Aizarnazabal",
+      "baseline_distance_m": 1146.7,
+      "scenario_distance_m": 1146.7,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20057",
+      "municipality_name": "Mutiloa",
+      "baseline_distance_m": 1115.9,
+      "scenario_distance_m": 1115.9,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20074",
+      "municipality_name": "Bergara",
+      "baseline_distance_m": 1107.9,
+      "scenario_distance_m": 1107.9,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20906",
+      "municipality_name": "Altzaga",
+      "baseline_distance_m": 1083.5,
+      "scenario_distance_m": 1083.5,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20071",
+      "municipality_name": "Tolosa",
+      "baseline_distance_m": 1080.5,
+      "scenario_distance_m": 1080.5,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20012",
+      "municipality_name": "Arama",
+      "baseline_distance_m": 1079.0,
+      "scenario_distance_m": 1079.0,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20038",
+      "municipality_name": "Gabiria",
+      "baseline_distance_m": 1065.1,
+      "scenario_distance_m": 1065.1,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20015",
+      "municipality_name": "Ataun",
+      "baseline_distance_m": 1054.1,
+      "scenario_distance_m": 1054.1,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20076",
+      "municipality_name": "Ordizia",
+      "baseline_distance_m": 1008.5,
+      "scenario_distance_m": 1008.5,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": false
+    },
+    {
+      "municipality_code": "20042",
+      "municipality_name": "Ibarra",
+      "baseline_distance_m": 927.7,
+      "scenario_distance_m": 927.7,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20054",
+      "municipality_name": "Lizartza",
+      "baseline_distance_m": 902.6,
+      "scenario_distance_m": 902.6,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20027",
+      "municipality_name": "Zestoa",
+      "baseline_distance_m": 900.0,
+      "scenario_distance_m": 900.0,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20009",
+      "municipality_name": "Andoain",
+      "baseline_distance_m": 873.2,
+      "scenario_distance_m": 873.2,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20046",
+      "municipality_name": "Irura",
+      "baseline_distance_m": 835.0,
+      "scenario_distance_m": 835.0,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20020",
+      "municipality_name": "Beizama",
+      "baseline_distance_m": 821.4,
+      "scenario_distance_m": 821.4,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20004",
+      "municipality_name": "Albiztur",
+      "baseline_distance_m": 809.9,
+      "scenario_distance_m": 809.9,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20010",
+      "municipality_name": "Anoeta",
+      "baseline_distance_m": 751.1,
+      "scenario_distance_m": 751.1,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20021",
+      "municipality_name": "Belauntza",
+      "baseline_distance_m": 739.4,
+      "scenario_distance_m": 739.4,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20016",
+      "municipality_name": "Aia",
+      "baseline_distance_m": 676.1,
+      "scenario_distance_m": 676.1,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20065",
+      "municipality_name": "Soraluze-Placencia de las Armas",
+      "baseline_distance_m": 618.3,
+      "scenario_distance_m": 618.3,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20050",
+      "municipality_name": "Leaburu",
+      "baseline_distance_m": 581.3,
+      "scenario_distance_m": 581.3,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20044",
+      "municipality_name": "Ikaztegieta",
+      "baseline_distance_m": 558.9,
+      "scenario_distance_m": 558.9,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20011",
+      "municipality_name": "Antzuola",
+      "baseline_distance_m": 544.4,
+      "scenario_distance_m": 544.4,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20024",
+      "municipality_name": "Bidania-Goiatz",
+      "baseline_distance_m": 535.5,
+      "scenario_distance_m": 535.5,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20052",
+      "municipality_name": "Legorreta",
+      "baseline_distance_m": 489.3,
+      "scenario_distance_m": 489.3,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20904",
+      "municipality_name": "Baliarrain",
+      "baseline_distance_m": 477.9,
+      "scenario_distance_m": 477.9,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20907",
+      "municipality_name": "Gaztelu",
+      "baseline_distance_m": 400.7,
+      "scenario_distance_m": 400.7,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20005",
+      "municipality_name": "Alegia",
+      "baseline_distance_m": 386.1,
+      "scenario_distance_m": 386.1,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20069",
+      "municipality_name": "Donostia / San Sebastián",
+      "baseline_distance_m": 323.1,
+      "scenario_distance_m": 323.1,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20062",
+      "municipality_name": "Ormaiztegi",
+      "baseline_distance_m": 320.3,
+      "scenario_distance_m": 320.3,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20023",
+      "municipality_name": "Berrobi",
+      "baseline_distance_m": 49.5,
+      "scenario_distance_m": 49.5,
+      "difference_absolute_m": 0.0,
+      "difference_relative_pct": 0.0,
+      "baseline_within_threshold": true,
+      "scenario_within_threshold": true
+    },
+    {
+      "municipality_code": "20019",
+      "municipality_name": "Beasain",
+      "baseline_distance_m": 3617.3,
+      "scenario_distance_m": 0.0,
+      "difference_absolute_m": -3617.3,
+      "difference_relative_pct": -100.0,
+      "baseline_within_threshold": false,
+      "scenario_within_threshold": true
+    }
+  ],
+  "method": "Recalculo determinista del mismo indicador antes y después del cambio hipotético.",
+  "sources": [
+    {
+      "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+      "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+      "institution": "Gobierno Vasco - geoEuskadi",
+      "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/",
+      "download_date": "2026-09-24",
+      "reference_period": "2025-05-07",
+      "territory": "Euskadi; filtrado a Gipuzkoa",
+      "license": "Uso permitido citando Eusko Jaurlaritza / Gobierno Vasco",
+      "original_file": "datos_originales/MUNICIPIOS_5000_ETRS89.zip",
+      "prepared_files": [
+        "datos_preparados/municipios.geojson",
+        "datos_preparados/runtime_municipios.geojson"
+      ],
+      "notes": [
+        "CRS original y de cálculo: EPSG:25830; publicación runtime: EPSG:4326."
+      ],
+      "limitations": [
+        "El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007."
+      ]
+    },
+    {
+      "source_id": "ODE_HEALTH_CENTRES_2026",
+      "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+      "institution": "Gobierno Vasco - Departamento de Salud",
+      "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/",
+      "download_date": "2026-09-24",
+      "reference_period": "2026-09-20",
+      "territory": "Euskadi; filtrado a Gipuzkoa",
+      "license": "Licencia abierta indicada por Open Data Euskadi; atribución y fecha obligatorias",
+      "original_file": "datos_originales/centros-salud.xlsx",
+      "prepared_files": [
+        "datos_preparados/servicios.csv",
+        "datos_preparados/runtime_servicios.csv"
+      ],
+      "notes": [
+        "Asignación municipal por punto dentro de polígono oficial."
+      ],
+      "limitations": [
+        "La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad."
+      ]
+    }
+  ],
+  "warnings": [],
+  "limitations": [
+    "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+    "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+    "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
+    "Es un contrafactual analítico, no una predicción de uso, conducta, coste o impacto social.",
+    "No constituye una recomendación de ubicación ni una decisión administrativa."
+  ],
+  "scenario": {
+    "baseline": {
+      "threshold_km": 1.0,
+      "service_count": 148
+    },
+    "scenario": {
+      "threshold_km": 1.0,
+      "service_count": 149
+    },
+    "changed_parameters": {
+      "action": "add_service",
+      "service_id": "HYPOTHETICAL_BEASAIN",
+      "latitude": 43.07477358204083,
+      "longitude": -2.2165435210016398
+    },
+    "affected_metric": "distance_geométrica_aproximada_desde_punto_representativo_municipal / within_threshold",
+    "assumptions": [
+      "El resto de datos permanece constante.",
+      "Las coordenadas representan puntos válidos."
+    ],
+    "limitations": [
+      "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+      "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+      "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
+      "Es un contrafactual analítico, no una predicción de uso, conducta, coste o impacto social.",
+      "No constituye una recomendación de ubicación ni una decisión administrativa."
+    ]
+  }
+}
