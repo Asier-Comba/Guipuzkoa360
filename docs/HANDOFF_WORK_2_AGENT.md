@@ -46,7 +46,7 @@ Comando:
 py -m pytest
 ```
 
-Resultado de integración: **38 passed**. Incluye las 24 pruebas originales de Work 2, las pruebas de integridad
+Resultado del release candidate: **56 passed** en Python y **17 passed** en la suite Node/HTML. Incluye las pruebas originales de Work 2, las pruebas de integridad
 de Work 1 y nuevas pruebas reales de carga, tipos, cobertura, reproducción de distancias, comparación municipal,
 escenario, conversión de coordenadas, fuentes y trazabilidad.
 
@@ -94,7 +94,6 @@ Crear una versión no publica la entrega ni sustituye automáticamente una versi
 
 ## Pendientes
 
-1. Subir/probar el paquete en un borrador del portal sin sobrescribir trabajo ajeno.
-2. Crear una versión fija y ejecutar los diez golden cases conversacionales con el modelo del portal.
-3. Work 3 debe validar el join y visualizaciones con los tres ejemplos reales.
-4. No publicar ni hacer merge sin autorización expresa.
+1. Copiar el paquete en el borrador del portal siguiendo `docs/PORTAL_DEPLOYMENT.md`.
+2. Crear una versión fija y ejecutar los ocho casos A–H con el modelo del portal.
+3. No publicar la entrega hasta autorización expresa del equipo.

@@ -2,10 +2,10 @@
 
 ## Incluido
 
-- `agentes/gipuzkoa360/`: `main.py`, `tools.py`, `schemas.py`, `data_access.py`, `metrics.py` y README.
+- `main.py` y `tools.py` autocontenido, generados bajo `agentes/gipuzkoa360/portal/` para los dos editores Python del portal.
 - `FUENTES.md`, `docs/METODOLOGIA.md` y `docs/RESULT_SCHEMA.md`.
 - Los archivos reales compactos enumerados en `STUDIO_CONTEXT_FILES`: `municipios.csv`, `demografia.csv`,
-  `runtime_municipality_points.csv`, `runtime_servicios.csv` y `metadata_sources.json`.
+  `runtime_municipality_points.csv`, `runtime_servicios.csv`, `metadata_sources.json`, `data_contract.json` y `runtime_manifest.json`.
 
 ## Excluido
 
@@ -15,10 +15,10 @@
 Ejecutar antes de versionar:
 
 ```text
-python -c "from pathlib import Path; p=Path('.'); print(sum(f.stat().st_size for f in p.rglob('*') if f.is_file()))"
+python scripts/agent/build_portal_sources.py
+python scripts/agent/build_portal_package.py
 ```
 
-El paquete no necesita `municipios.geojson`; Work 3 lo consume fuera del runtime conversacional. El límite
-observado del portal es 24 MB. Si los datos reales lo superan, reducirlos
-mediante selección de columnas, tipos y granularidad documentada; no eliminar trazabilidad ni extrapolar una
-muestra.
+El paquete no necesita `municipios.geojson`; Work 3 lo consume fuera del runtime conversacional. El ZIP RC1
+ocupa aproximadamente 45 KB frente al límite de 24 MB. El constructor fija orden y fecha ZIP para que dos
+builds del mismo contenido produzcan el mismo SHA-256.
