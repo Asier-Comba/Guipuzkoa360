@@ -38,14 +38,15 @@ def main() -> None:
     if not municipalities.geometry.is_valid.all():
         raise ValueError("Hay geometrías municipales inválidas")
 
-    municipalities.to_crs(4326).to_file(OUT / "municipios.geojson", driver="GeoJSON")
+    geometry_path = OUT / "municipios.geojson"
+    municipalities.to_crs(4326).to_file(geometry_path, driver="GeoJSON")
+    geometry_path.write_text(geometry_path.read_text(encoding="utf-8"), encoding="utf-8", newline="\n")
     excluded = gipuzkoa_entities.loc[~gipuzkoa_entities["EUSTAT"].isin(official_codes), ["EUSTAT", "NOMBRE_TOP"]]
     excluded.rename(columns={"EUSTAT": "territory_code", "NOMBRE_TOP": "territory_name"}).to_csv(
-        ROOT / "analisis" / "entidades_no_municipales_excluidas.csv", index=False
+        ROOT / "analisis" / "entidades_no_municipales_excluidas.csv", index=False, lineterminator="\n"
     )
     print(f"Geografía: {len(municipalities)} municipios; {len(excluded)} entidades no municipales excluidas.")
 
 
 if __name__ == "__main__":
     main()
-

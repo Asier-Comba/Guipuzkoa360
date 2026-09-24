@@ -92,7 +92,7 @@ def main() -> None:
         },
     ]
     (OUT / "metadata_sources.json").write_text(
-        json.dumps(sources, ensure_ascii=False, indent=2), encoding="utf-8"
+        json.dumps(sources, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n"
     )
 
     rows = []
@@ -111,7 +111,9 @@ def main() -> None:
     for path, size in rows:
         role = "runtime" if "runtime_" in path else "maestro/auditoría"
         lines.append(f"| `{path}` | {size:,} | {role} |")
-    (ROOT / "analisis" / "runtime_size_report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (ROOT / "analisis" / "runtime_size_report.md").write_text(
+        "\n".join(lines) + "\n", encoding="utf-8", newline="\n"
+    )
     print("Metadatos e informe de tamaño generados.")
 
 

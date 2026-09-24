@@ -4,13 +4,13 @@
   "files": [
     {
       "path": "datos_preparados/municipios.csv",
-      "bytes": 30164,
-      "sha256": "f8f043ab646ba0d7a6984b6937570e630195a844fa204d075c94becfd84edd75"
+      "bytes": 30075,
+      "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
     },
     {
       "path": "datos_preparados/runtime_servicios.csv",
-      "bytes": 14854,
-      "sha256": "1efa0665b351b31f1039f9565f9ca25a45cd90c5dfde9312bc2abff2ffa4a676"
+      "bytes": 14705,
+      "sha256": "60a3ba141a4a799e31638c497fa671965ed6198dcd8db2a7e622a3362ec7f57a"
     },
     {
       "path": "datos_preparados/runtime_municipios.geojson",
@@ -19,8 +19,8 @@
     },
     {
       "path": "datos_preparados/metadata_sources.json",
-      "bytes": 4661,
-      "sha256": "4a9de06aa59860524468016f415eb34ab99dce90ad0e82643f2c9231bda2a543"
+      "bytes": 4558,
+      "sha256": "6a26fac486ff04655c5109934592dbe5dcb0d72e8a4701c0762daf33248efcf3"
     },
     {
       "path": "datos_preparados/data_contract.json",
@@ -28,7 +28,7 @@
       "sha256": "b21b9010812178d65cf7e01a3471547d20c2de080d6818e0ba6308da7d2ee6ae"
     }
   ],
-  "total_bytes": 549694,
+  "total_bytes": 549353,
   "portal_budget_bytes": 25165824,
   "within_portal_budget": true,
   "exclude_from_runtime": [

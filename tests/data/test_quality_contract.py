@@ -131,6 +131,15 @@ def test_runtime_bundle_is_compact_and_hashes_match():
         assert hashlib.sha256(path.read_bytes()).hexdigest() == item["sha256"]
 
 
+def test_original_download_snapshot_hashes_match():
+    manifest = json.loads((ROOT / "datos_originales" / "download_manifest.json").read_text(encoding="utf-8"))
+    assert len(manifest["files"]) == 4
+    for item in manifest["files"]:
+        path = ROOT / item["path"]
+        assert path.stat().st_size == item["bytes"]
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == item["sha256"]
+
+
 def test_golden_cases_against_fixed_source_snapshot():
     municipalities, demography, services = load_tables()
     fixture = json.loads((ROOT / "tests" / "fixtures" / "golden_cases.json").read_text(encoding="utf-8"))

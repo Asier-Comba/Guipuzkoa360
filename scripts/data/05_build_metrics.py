@@ -74,21 +74,23 @@ def main() -> None:
     metrics["metrics_reference_period"] = "demography=2025-01-01;services=2026-09-20;geography=2025-05-07"
     metrics["source_id"] = "G360_DERIVED_MUNICIPAL_METRICS_V1"
     metrics["source_ids"] = "|".join(UPSTREAM_SOURCE_IDS)
-    metrics.to_csv(OUT / "municipios.csv", index=False)
-    metrics.to_csv(RESULTS / "metricas_municipales.csv", index=False)
+    metrics.to_csv(OUT / "municipios.csv", index=False, lineterminator="\n")
+    metrics.to_csv(RESULTS / "metricas_municipales.csv", index=False, lineterminator="\n")
 
     runtime = boundaries[["municipality_code", "municipality_name", "geometry"]].merge(
         metrics.drop(columns="municipality_name"), on="municipality_code", validate="one_to_one"
     )
     runtime["geometry"] = runtime.geometry.simplify(25, preserve_topology=True)
-    runtime.to_crs(4326).to_file(OUT / "runtime_municipios.geojson", driver="GeoJSON")
+    runtime_path = OUT / "runtime_municipios.geojson"
+    runtime.to_crs(4326).to_file(runtime_path, driver="GeoJSON")
+    runtime_path.write_text(runtime_path.read_text(encoding="utf-8"), encoding="utf-8", newline="\n")
 
     temporal = pd.DataFrame([
         {"dataset": "demografia.csv", "reference_period": "2025-01-01", "difference_from_demography_days": 0},
         {"dataset": "municipios.geojson", "reference_period": "2025-05-07", "difference_from_demography_days": 126},
         {"dataset": "servicios.csv", "reference_period": "2026-09-20", "difference_from_demography_days": 627},
     ])
-    temporal.to_csv(ANALYSIS / "compatibilidad_temporal.csv", index=False)
+    temporal.to_csv(ANALYSIS / "compatibilidad_temporal.csv", index=False, lineterminator="\n")
     print(f"Métricas construidas para {len(metrics)} municipios.")
 
 

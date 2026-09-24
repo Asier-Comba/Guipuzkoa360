@@ -57,7 +57,7 @@ def main() -> None:
         "pipeline_value": len(services), "difference": len(services) - source_count,
         "result": "PASS" if source_count == len(services) else "FAIL", "source_id": "ODE_HEALTH_CENTRES_2026",
     })
-    pd.DataFrame(verifications).to_csv(ANALYSIS / "verificaciones_manuales.csv", index=False)
+    pd.DataFrame(verifications).to_csv(ANALYSIS / "verificaciones_manuales.csv", index=False, lineterminator="\n")
 
     report = {
         "status": "PASS",
@@ -72,10 +72,11 @@ def main() -> None:
         "manual_checks_passed": int(sum(v["result"] == "PASS" for v in verifications)),
         "manual_checks_total": len(verifications),
     }
-    (ANALYSIS / "validation_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    (ANALYSIS / "validation_report.json").write_text(
+        json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n"
+    )
     print(json.dumps(report, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
     main()
-

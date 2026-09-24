@@ -7,3 +7,4 @@
 *.py text eol=lf
 *.xlsx binary
 *.zip binary
+datos_originales/*.csv binary

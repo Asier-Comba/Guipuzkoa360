@@ -218,7 +218,7 @@ def main() -> None:
         },
     }
     (ANALYSIS / "data_quality_report.json").write_text(
-        json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n"
     )
 
     manifest_files = []
@@ -237,7 +237,7 @@ def main() -> None:
                                  "datos_preparados/servicios.csv"],
     }
     (OUT / "runtime_manifest.json").write_text(
-        json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n"
     )
     if report["status"] != "PASS":
         failed = [item["check_id"] for item in checks if item["status"] == "FAIL"]

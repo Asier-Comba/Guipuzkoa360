@@ -58,13 +58,12 @@ def main() -> None:
         "source_id": "ODE_HEALTH_CENTRES_2026",
     })
     result = result.sort_values(["municipality_code", "service_category", "service_name"])
-    result.to_csv(OUT / "servicios.csv", index=False)
+    result.to_csv(OUT / "servicios.csv", index=False, lineterminator="\n")
     result[["service_id", "service_name", "service_category", "municipality_code", "latitude", "longitude"]].to_csv(
-        OUT / "runtime_servicios.csv", index=False
+        OUT / "runtime_servicios.csv", index=False, lineterminator="\n"
     )
     print(f"Servicios: {len(result)} centros; {result['service_id'].nunique()} IDs únicos.")
 
 
 if __name__ == "__main__":
     main()
-

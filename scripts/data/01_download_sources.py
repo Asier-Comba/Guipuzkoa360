@@ -66,10 +66,10 @@ def main() -> None:
     meta_65 = get(PX_65_URL).json()
     meta_birth = get(PX_BIRTH_URL).json()
     (RAW / "eustat_ep06b_metadata.json").write_text(
-        json.dumps(meta_65, ensure_ascii=False, indent=2), encoding="utf-8"
+        json.dumps(meta_65, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n"
     )
     (RAW / "eustat_ep10b_metadata.json").write_text(
-        json.dumps(meta_birth, ensure_ascii=False, indent=2), encoding="utf-8"
+        json.dumps(meta_birth, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n"
     )
 
     territorial = meta_65["variables"][0]
@@ -125,11 +125,10 @@ def main() -> None:
         ],
     }
     (RAW / "download_manifest.json").write_text(
-        json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
+        json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n"
     )
     print(f"Descargadas 4 fuentes/consultas; {len(municipality_codes)} municipios Eustat.")
 
 
 if __name__ == "__main__":
     main()
-
