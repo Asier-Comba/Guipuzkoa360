@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import ast
+import inspect
 import json
 from pathlib import Path
 
@@ -36,6 +37,10 @@ def test_tools_core_has_no_decorators_or_registration_list():
     source = (ROOT / "agentes/gipuzkoa360/tools.py").read_text(encoding="utf-8")
     assert "@tool" not in source
     assert "TOOLS = [" not in source
+
+
+def test_studio_wrappers_do_not_expose_full_detail_payload():
+    assert all("detalle" not in inspect.signature(item).parameters for item in main.TOOLS)
 
 
 def test_service_age_and_action_aliases():

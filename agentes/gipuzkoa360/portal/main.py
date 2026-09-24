@@ -55,11 +55,9 @@ como datos reales de Gipuzkoa."""
 
 
 @tool
-def obtener_resumen_territorial(
-    municipio: str, periodo: str | None = None, detalle: bool = False
-) -> str:
+def obtener_resumen_territorial(municipio: str, periodo: str | None = None) -> str:
     """Resume demografía y servicios de un municipio; no interpreta ausencia como cero."""
-    return core.obtener_resumen_territorial(municipio, periodo, detalle)
+    return core.obtener_resumen_territorial(municipio, periodo)
 
 
 @tool
@@ -69,11 +67,10 @@ def comparar_municipios(
     categoria_servicio: str | None = None,
     umbral_km: float = 1.0,
     periodo: str | None = None,
-    detalle: bool = False,
 ) -> str:
     """Compara 2-20 municipios y opcionalmente su distancia geométrica a servicios."""
     return core.comparar_municipios(
-        municipios, grupo_edad, categoria_servicio, umbral_km, periodo, detalle
+        municipios, grupo_edad, categoria_servicio, umbral_km, periodo
     )
 
 
@@ -83,10 +80,9 @@ def analizar_envejecimiento(
     medida: str = "percentage",
     periodo: str | None = None,
     top_n: int = 10,
-    detalle: bool = False,
 ) -> str:
     """Calcula ranking de población >=65 o >=75 por porcentaje o recuento."""
-    return core.analizar_envejecimiento(grupo_edad, medida, periodo, top_n, detalle)
+    return core.analizar_envejecimiento(grupo_edad, medida, periodo, top_n)
 
 
 @tool
@@ -95,11 +91,10 @@ def analizar_acceso_servicios(
     umbral_km: float = 1.0,
     periodo: str | None = None,
     municipios: list[str] | None = None,
-    detalle: bool = False,
 ) -> str:
     """Calcula distancia euclídea EPSG:25830; no representa acceso real."""
     return core.analizar_acceso_servicios(
-        categoria_servicio, umbral_km, periodo, municipios, detalle
+        categoria_servicio, umbral_km, periodo, municipios
     )
 
 
@@ -110,11 +105,10 @@ def analizar_coincidencia(
     umbral_km: float = 1.0,
     periodo: str | None = None,
     cuantil: float = 0.75,
-    detalle: bool = False,
 ) -> str:
     """Cruza envejecimiento y distancia con cortes explícitos y sin inferir causalidad."""
     return core.analizar_coincidencia(
-        categoria_servicio, grupo_edad, umbral_km, periodo, cuantil, detalle
+        categoria_servicio, grupo_edad, umbral_km, periodo, cuantil
     )
 
 
@@ -128,7 +122,6 @@ def simular_escenario(
     longitud: float | None = None,
     service_id: str | None = None,
     nuevo_umbral_km: float | None = None,
-    detalle: bool = False,
 ) -> str:
     """Recalcula un contrafactual soportado; no es una predicción ni recomendación."""
     return core.simular_escenario(
@@ -140,14 +133,13 @@ def simular_escenario(
         longitud,
         service_id,
         nuevo_umbral_km,
-        detalle,
     )
 
 
 @tool
-def consultar_fuente(source_id: str | None = None, detalle: bool = False) -> str:
+def consultar_fuente(source_id: str | None = None) -> str:
     """Devuelve procedencia, periodo, unidad, licencia y limitaciones documentadas."""
-    return core.consultar_fuente(source_id, detalle)
+    return core.consultar_fuente(source_id)
 
 
 TOOLS = [
