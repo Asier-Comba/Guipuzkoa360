@@ -11,12 +11,6 @@ from pathlib import Path
 from typing import Any, Callable
 
 try:
-    from studio import tool
-except ImportError:  # Permite pruebas locales sin el runtime del portal.
-    def tool(function: Callable[..., Any]) -> Callable[..., Any]:
-        return function
-
-try:
     from .data_access import DataRepository
     from .metrics import nearest_service_projected, percentile_rank, quantile, wgs84_to_utm30
     from .schemas import DataContractError, ResultEnvelope
@@ -710,7 +704,6 @@ def clear_analysis_cache() -> None:
     _analysis_for_data_dir.cache_clear()
 
 
-@tool
 def obtener_resumen_territorial(
     municipio: str, periodo: str | None = None, detalle: bool = False
 ) -> str:
@@ -718,7 +711,6 @@ def obtener_resumen_territorial(
     return _safe(lambda: _analysis().resumen(municipio, periodo), result_kind="summary", detail=detalle)
 
 
-@tool
 def comparar_municipios(
     municipios: list[str],
     grupo_edad: str = "65",
@@ -735,7 +727,6 @@ def comparar_municipios(
     )
 
 
-@tool
 def analizar_envejecimiento(
     grupo_edad: str = "65",
     medida: str = "percentage",
@@ -751,7 +742,6 @@ def analizar_envejecimiento(
     )
 
 
-@tool
 def analizar_acceso_servicios(
     categoria_servicio: str,
     umbral_km: float = 1.0,
@@ -767,7 +757,6 @@ def analizar_acceso_servicios(
     )
 
 
-@tool
 def analizar_coincidencia(
     categoria_servicio: str,
     grupo_edad: str = "65",
@@ -784,7 +773,6 @@ def analizar_coincidencia(
     )
 
 
-@tool
 def simular_escenario(
     accion: str,
     categoria_servicio: str,
@@ -813,18 +801,6 @@ def simular_escenario(
     )
 
 
-@tool
 def consultar_fuente(source_id: str | None = None, detalle: bool = False) -> str:
     """Devuelve procedencia, periodo, institución, unidad, licencia y limitaciones disponibles."""
     return _safe(lambda: _analysis().fuente(source_id), result_kind="source", detail=detalle)
-
-
-TOOLS = [
-    obtener_resumen_territorial,
-    comparar_municipios,
-    analizar_envejecimiento,
-    analizar_acceso_servicios,
-    analizar_coincidencia,
-    simular_escenario,
-    consultar_fuente,
-]

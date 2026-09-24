@@ -1,9 +1,17 @@
 """Entrada compatible con el agente Python del portal."""
 
+from typing import Any, Callable
+
 try:
-    from .tools import TOOLS
+    from studio import tool
+except ImportError:  # Permite comprobar el contrato fuera de Studio.
+    def tool(function: Callable[..., Any]) -> Callable[..., Any]:
+        return function
+
+try:
+    from . import tools as core
 except ImportError:
-    from tools import TOOLS
+    import tools as core
 
 AGENT_NAME = "GIPUZKOA 360"
 STUDIO_MAX_ITERATIONS = 8
@@ -47,6 +55,113 @@ denominadores. Para escenarios etiqueta el resultado como ESCENARIO HIPOTÉTICO 
 Si la consulta queda fuera de demografía, servicios territoriales, coincidencias, comparaciones, fuentes o
 escenarios soportados, dilo claramente y no llames herramientas irrelevantes. Nunca presentes fixtures TEST_*
 como datos reales de Gipuzkoa."""
+
+
+@tool
+def obtener_resumen_territorial(
+    municipio: str, periodo: str | None = None, detalle: bool = False
+) -> str:
+    """Resume demografía y servicios de un municipio; no interpreta ausencia como cero."""
+    return core.obtener_resumen_territorial(municipio, periodo, detalle)
+
+
+@tool
+def comparar_municipios(
+    municipios: list[str],
+    grupo_edad: str = "65",
+    categoria_servicio: str | None = None,
+    umbral_km: float = 1.0,
+    periodo: str | None = None,
+    detalle: bool = False,
+) -> str:
+    """Compara 2-20 municipios y opcionalmente su distancia geométrica a servicios."""
+    return core.comparar_municipios(
+        municipios, grupo_edad, categoria_servicio, umbral_km, periodo, detalle
+    )
+
+
+@tool
+def analizar_envejecimiento(
+    grupo_edad: str = "65",
+    medida: str = "percentage",
+    periodo: str | None = None,
+    top_n: int = 10,
+    detalle: bool = False,
+) -> str:
+    """Calcula ranking de población >=65 o >=75 por porcentaje o recuento."""
+    return core.analizar_envejecimiento(grupo_edad, medida, periodo, top_n, detalle)
+
+
+@tool
+def analizar_acceso_servicios(
+    categoria_servicio: str,
+    umbral_km: float = 1.0,
+    periodo: str | None = None,
+    municipios: list[str] | None = None,
+    detalle: bool = False,
+) -> str:
+    """Calcula distancia euclídea EPSG:25830; no representa acceso real."""
+    return core.analizar_acceso_servicios(
+        categoria_servicio, umbral_km, periodo, municipios, detalle
+    )
+
+
+@tool
+def analizar_coincidencia(
+    categoria_servicio: str,
+    grupo_edad: str = "65",
+    umbral_km: float = 1.0,
+    periodo: str | None = None,
+    cuantil: float = 0.75,
+    detalle: bool = False,
+) -> str:
+    """Cruza envejecimiento y distancia con cortes explícitos y sin inferir causalidad."""
+    return core.analizar_coincidencia(
+        categoria_servicio, grupo_edad, umbral_km, periodo, cuantil, detalle
+    )
+
+
+@tool
+def simular_escenario(
+    accion: str,
+    categoria_servicio: str,
+    umbral_km: float = 1.0,
+    periodo: str | None = None,
+    latitud: float | None = None,
+    longitud: float | None = None,
+    service_id: str | None = None,
+    nuevo_umbral_km: float | None = None,
+    detalle: bool = False,
+) -> str:
+    """Recalcula un contrafactual soportado; no es una predicción ni recomendación."""
+    return core.simular_escenario(
+        accion,
+        categoria_servicio,
+        umbral_km,
+        periodo,
+        latitud,
+        longitud,
+        service_id,
+        nuevo_umbral_km,
+        detalle,
+    )
+
+
+@tool
+def consultar_fuente(source_id: str | None = None, detalle: bool = False) -> str:
+    """Devuelve procedencia, periodo, unidad, licencia y limitaciones documentadas."""
+    return core.consultar_fuente(source_id, detalle)
+
+
+TOOLS = [
+    obtener_resumen_territorial,
+    comparar_municipios,
+    analizar_envejecimiento,
+    analizar_acceso_servicios,
+    analizar_coincidencia,
+    simular_escenario,
+    consultar_fuente,
+]
 
 
 def build_agent(model):
