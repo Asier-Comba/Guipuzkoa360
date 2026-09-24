@@ -66,28 +66,28 @@ def test_unknown_alias_is_controlled_json(monkeypatch):
 
 def test_compact_coincidence_matches_full_core(monkeypatch):
     monkeypatch.setenv("GIPUZKOA360_DATA_DIR", str(ROOT / "datos_preparados"))
-    tools.clear_runtime_cache()
+    tools.clear_analysis_cache()
     full = tools._analysis().coincidencia("primary_care", "65+", 2, "2025-01-01", 0.75)
     compact = json.loads(main.analizar_coincidencia("atención primaria", "65+", 2, "2025-01-01", 0.75))
     full_highlighted = [row for row in full["data"] if row["highlighted"]]
     compact_highlighted = [row for row in compact["data"] if row["highlighted"]]
-    assert compact["analysis"]["total_municipalities"] == len(full["data"]) == 88
-    assert compact["analysis"]["highlighted_count"] == len(full_highlighted) == 7
+    assert compact["summary"]["joined_rows"] == len(full["data"]) == 88
+    assert compact["summary"]["highlighted_count"] == len(full_highlighted) == 7
     assert compact_highlighted == full_highlighted
-    assert len(compact["data"]) == 10
+    assert len(compact["data"]) == 7
     assert len(json.dumps(compact, ensure_ascii=False)) < 12_000
 
 
 def test_compact_scenario_only_returns_changed_municipalities(monkeypatch):
     monkeypatch.setenv("GIPUZKOA360_DATA_DIR", str(ROOT / "datos_preparados"))
-    tools.clear_runtime_cache()
+    tools.clear_analysis_cache()
     aduna = tools._analysis().repo.municipality_lookup("Aduna")
     compact = json.loads(main.simular_escenario(
         "añadir servicio", "atención primaria", 2, "2025-01-01",
         aduna["latitude"], aduna["longitude"], "HYPOTHETICAL_ADUNA"
     ))
-    assert compact["analysis"]["total_municipalities"] == 88
-    assert compact["analysis"]["affected_count"] >= 1
+    assert compact["summary"]["total_result_rows"] == 88
+    assert compact["summary"]["affected_rows"] >= 1
     assert any(row["municipality_name"] == "Aduna" for row in compact["data"])
     assert all(
         abs(row["difference_absolute_m"]) > 0.05
@@ -111,5 +111,5 @@ def test_follow_up_age_recalculation_changes_effective_filter(monkeypatch):
     b = json.loads(main.analizar_coincidencia("atención primaria", "75+", 3, "2025-01-01", 0.80))
     assert a["filters"]["age_group"] == "65"
     assert b["filters"]["age_group"] == "75"
-    assert a["analysis"]["highlighted_count"] == 7
-    assert b["analysis"]["highlighted_count"] == 4
+    assert a["summary"]["highlighted_count"] == 7
+    assert b["summary"]["highlighted_count"] == 4

@@ -154,6 +154,7 @@ def normalize_service_category(value: Any) -> str:
         },
         "other_health": {
             "other health",
+            "otros",
             "otra salud",
             "otras prestaciones sanitarias",
             "otros servicios sanitarios",
@@ -190,7 +191,7 @@ def normalize_age_group(value: Any) -> str:
 def normalize_scenario_action(value: Any) -> str:
     aliases = {
         "add_service": {"add service", "anadir", "anadir servicio", "agregar", "agregar servicio"},
-        "remove_service": {"remove", "remove service", "eliminar", "eliminar servicio"},
+        "remove_service": {"remove", "remove service", "eliminar", "eliminar servicio", "quitar servicio"},
         "change_threshold": {"change threshold", "cambiar umbral", "cambio de umbral"},
     }
     key = _normalized_key(value)
