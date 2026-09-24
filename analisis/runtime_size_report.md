@@ -10,7 +10,7 @@ La geometría runtime se simplifica a 25 m en EPSG:25830 conservando topología;
 | `datos_preparados\metadata_sources.json` | 4,833 | maestro/auditoría |
 | `datos_preparados\municipios.csv` | 30,075 | maestro/auditoría |
 | `datos_preparados\municipios.geojson` | 12,902,261 | maestro/auditoría |
-| `datos_preparados\runtime_manifest.json` | 1,284 | runtime |
+| `datos_preparados\runtime_manifest.json` | 1,594 | runtime |
 | `datos_preparados\runtime_municipality_points.csv` | 8,689 | runtime |
 | `datos_preparados\runtime_municipios.geojson` | 495,392 | runtime |
 | `datos_preparados\runtime_servicios.csv` | 25,258 | runtime |

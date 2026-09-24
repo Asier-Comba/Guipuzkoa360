@@ -70,7 +70,7 @@ Registro: `analisis/verificaciones_manuales.csv`.
 
 ## Qué necesita Work 2
 
-Usar `municipios.csv` para consultas tabulares y `runtime_servicios.csv` para escenarios de alta/baja hipotética. Mantener las etiquetas metodológicas exactas de las distancias. Seguir `HANDOFF_WORK_2_3_DATA_QA.md`; Work 2 aún no tiene rama remota visible.
+Usar `municipios.csv` y `demografia.csv` para consultas, `runtime_municipality_points.csv` para puntos de cálculo y `runtime_servicios.csv` para escenarios de alta/baja hipotética. Mantener las etiquetas metodológicas exactas de las distancias. Compatibilidad validada contra `work/agent-engine`/PR #3; seguir `HANDOFF_WORK_2_3_DATA_QA.md`.
 
 ## Qué necesita Work 3
 

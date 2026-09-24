@@ -5,7 +5,7 @@ No se asigna una nota. La evidencia actual es una interfaz y contrato con datos 
 | Criterio | Evidencia existente | Evidencia ausente | Riesgo | Acción |
 |---|---|---|---|---|
 | Utilidad urbana | Pregunta y destinatarios propuestos; flujo de comparación | Validación con fuentes y tarea real del usuario | Problema demasiado amplio | Concretar servicio y unidad después de auditar datos |
-| Análisis y fuentes | Schema con IDs, periodo, unidad y método; tests de referencias; Work 1 aporta fuentes y cifras contrastadas en PR #1 | Incorporación de Work 1 a `main` y salida del agente rastreable | Conclusión aún no defendible desde esta rama | Integrar PR #1 y enlazar cada cifra del agente |
+| Análisis y fuentes | Contrato 1.1.0, IDs, periodo, unidad, método, 41 controles QA y golden cases | Fusionar `work/data-qa-integration` y obtener salida del agente rastreable | Cadena local validada; ejecución conversacional pendiente | Integrar el PR QA y enlazar cada cifra del agente |
 | Funcionamiento y herramientas | Traza sintética exigida por contrato | Ejecución de versión fija del agente y recalculación ≥75 | Ser percibido como dashboard | Enseñar dos llamadas reales, argumentos y salidas diferentes |
 | Claridad | Tres HTML autocontenidos con mapa abstracto, barras, tabla y escenario; adaptador para GeoJSON de Work 1 | Resultado real del agente y prueba en portal | Confusión del mapa de prueba con Gipuzkoa | Generar mapa real tras integrar el agente y verificar etiquetas |
 | Fiabilidad y límites | Banner sintético, separación observado/hipotético y advertencias | Respuesta real del agente a pregunta límite y manejo de nulos | Sobreinterpretar “acceso” | Probar límites y ajustar etiqueta a Work 1 |

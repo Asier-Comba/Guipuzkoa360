@@ -17,7 +17,7 @@ Contrato v1.0.0 en `docs/EXPECTED_RESULT_SCHEMA.md`. Todos los nombres `MUNICIPI
 
 ## Integración Work 1
 
-La rama `work/data-foundation` (PR #1) aporta 88 municipios, demografía, servicios y geometría. Usar `municipality_code` como `unit_id`, metros a kilómetros solo con conversión explícita `/1000`, y periodo por fuente. La distancia es desde un punto representativo municipal; no es tiempo de viaje. El script de enriquecimiento añade contornos de las 2–5 unidades comparadas. Requeridos también ficha de origen, licencia, transformaciones, nulos y auditoría de uniones. Si Work 2 usa otra métrica, adaptar contrato y etiquetas antes de renderizar.
+La rama `work/data-qa-integration` sustituye funcionalmente al PR #1 bloqueado y aporta 88 municipios, demografía, servicios, geometría, contrato 1.1.0 y QA exhaustivo. Usar `municipality_code` como `unit_id`, metros a kilómetros solo con conversión explícita `/1000`, y periodo por fuente. La distancia es desde un punto representativo municipal; no es tiempo de viaje. El script de enriquecimiento añade contornos de las 2–5 unidades comparadas. Requeridos también ficha de origen, licencia, transformaciones, nulos y auditoría de uniones. Si Work 2 usa otra métrica, adaptar contrato y etiquetas antes de renderizar.
 
 ## Integración Work 2
 
@@ -33,11 +33,11 @@ Secuencia de tres minutos y cuatro consultas en `docs/DEMO_QUERIES.md`. Cobertur
 
 ## Riesgos priorizados
 
-1. Falta todavía el dataset real y su definición semántica.
-2. Falta el agente y la prueba de una nueva llamada de herramienta.
-3. El mapa actual es esquemático; no representa municipios de Gipuzkoa.
-4. La métrica de escenario actual es una perturbación numérica de prueba, no una ubicación de servicio.
-5. La versión del portal y el paquete de 24 MB requieren validación.
+1. Falta fusionar la rama QA de datos y actualizar PR #3 contra `main`.
+2. Falta una prueba conversacional de una versión fija del agente en el portal.
+3. Los HTML versionados siguen siendo sintéticos; la cadena local con geometría real ya pasa como `local_tool`.
+4. La métrica de escenario visual actual es una perturbación numérica de prueba; el agente sí admite ubicación hipotética.
+5. El paquete de Work 2 se construye localmente por debajo del límite; falta validarlo en una versión privada del portal.
 
 ## Entrega
 

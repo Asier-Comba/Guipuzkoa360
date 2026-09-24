@@ -69,7 +69,7 @@ La relación es `runtime_servicios.municipality_code -> municipios.municipality_
 | `period` | `metrics_reference_period` | conservar los tres periodos |
 | `source_ids` | `source_ids` | `split('|')` |
 
-Compatibilidad comprobada con `docs/EXPECTED_RESULT_SCHEMA.md` de `work/product-integration`/PR #2. No se ha copiado ni alterado esa rama. El adaptador debe conservar el JSON original del agente y etiquetar la distancia como geométrica.
+Compatibilidad comprobada con `docs/EXPECTED_RESULT_SCHEMA.md` de Work 3, ya integrado en `main` mediante PR #2. El adaptador conserva los valores originales y etiqueta la distancia como geométrica.
 
 `scripts/data/export_work3_smoke_result.py <salida.json>` genera un resultado determinista con tres municipios para probar el contrato y el renderizador de Work 3. Usa datos reales, pero se etiqueta explícitamente como **prueba de integración que no acredita una ejecución del agente**.
 
@@ -82,7 +82,9 @@ Compatibilidad comprobada con `docs/EXPECTED_RESULT_SCHEMA.md` de `work/product-
 - Escenario de alta: transformar ubicación hipotética a EPSG:25830 y usar la mínima distancia entre base y punto nuevo. Mantener resultado base, escenario, delta y supuestos.
 - Escenario de baja: retirar el `service_id` solicitado en memoria y recalcular; no modificar los CSV.
 
-No hay todavía rama o contrato remoto de Work 2. Cuando aparezca, debe añadirse un adaptador independiente y un test de contrato; no renombrar campos de esta capa para hacerlos encajar.
+Work 2 está en `work/agent-engine`/PR #3. Su suite completa de 38 tests pasa al sustituir únicamente `datos_preparados/` por este contrato QA; su paquete del portal se genera correctamente con 42.430 bytes. Se añadieron `runtime_municipality_points.csv`, coordenadas EPSG:25830 en `runtime_servicios.csv` y el alias de linaje `input_source_ids` sin eliminar campos anteriores.
+
+PR #3 sigue basado en una historia anterior a la fusión de Work 3 y presenta conflicto en `README.md`. La resolución segura es integrar primero la rama QA de datos, actualizar PR #3 contra `main`, conservar los módulos `agentes/gipuzkoa360/`, tests y ejemplos de Work 2, y mantener las versiones QA de datos/scripts. Véase `docs/INTEGRATION_STATUS_2026-09-24.md`.
 
 ## Golden cases
 
@@ -104,7 +106,7 @@ python scripts/data/build_all.py
 python -m pytest tests/data -q
 ```
 
-`build_all.py` descarga/copias las fuentes, reconstruye datos, ejecuta validaciones básicas, escribe metadatos y genera el informe exhaustivo/manifiesto. El resultado esperado actual es 38 controles de auditoría y 15 tests automáticos correctos.
+`build_all.py` descarga/copias las fuentes, reconstruye datos, ejecuta validaciones básicas, escribe metadatos y genera el informe exhaustivo/manifiesto. El resultado esperado actual es 41 controles de auditoría y 18 tests automáticos correctos.
 
 Artefactos de QA:
 

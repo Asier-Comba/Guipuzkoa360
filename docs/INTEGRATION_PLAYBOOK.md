@@ -14,7 +14,7 @@
 
 De Work 1, acordar rutas antes de copiar: `datos_originales/`, `datos_preparados/`, `FUENTES.md`, scripts de preparación, diccionario de columnas, licencias y comprobaciones de filas. De Work 2: `agentes/<nombre>/main.py`, `tools.py`, dependencias, instrucciones, versión de contrato, ejemplo de salida, traza de llamada y tests. Si su estructura difiere, registrar las rutas exactas en el handoff; no asumirlas.
 
-Work 1 ya está disponible en la rama `work/data-foundation` (PR #1). Campos confirmados: `municipality_code` (texto de 5 dígitos), `population_total`, `population_65_plus`, `population_75_plus`, `distance_to_nearest_primary_care_m`, `distance_to_nearest_hospital_m`, `services_primary_care`, `reference_period` y `metrics_reference_period`. Las distancias son desde un punto representativo municipal en EPSG:25830, no tiempos de viaje. Las fuentes se identifican en `datos_preparados/metadata_sources.json`. No se copian esos archivos a esta rama para evitar duplicar trabajo del PR #1.
+La versión endurecida de Work 1 está en `work/data-qa-integration`; incorpora el `main` actual y sustituye funcionalmente al PR #1 bloqueado. Campos confirmados: `municipality_code` (texto de 5 dígitos), población 65+/75+, conteos/tasas/distancias para cuatro categorías, puntos representativos, periodos y linaje. Las distancias son desde un punto representativo municipal en EPSG:25830, no tiempos de viaje. Fuentes y contrato están en `metadata_sources.json` y `data_contract.json`; estado actual en `INTEGRATION_STATUS_2026-09-24.md`.
 
 ## Archivos que no se sobrescriben
 
