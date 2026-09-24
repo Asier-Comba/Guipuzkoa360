@@ -1,0 +1,4 @@
+dataset,reference_period,difference_from_demography_days
+demografia.csv,2025-01-01,0
+municipios.geojson,2025-05-07,126
+servicios.csv,2026-09-20,627
