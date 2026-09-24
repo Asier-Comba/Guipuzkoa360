@@ -17,7 +17,7 @@ El agente entrega un objeto JSON a `scripts/build_results.mjs`. `schema_version`
 | `scenario` | object o null | `label`, `change`, `unit_id`, `distance_delta_km`, `assumptions`; solo hipótesis |
 | `sources` | array | `source_id`, `title`, `url`, `period`, `unit`, `license`, `method` |
 | `method`, `limitations` | string, array | Fórmula y advertencias interpretativas |
-| `trace` | object | `question_id`, `agent_version`, `tool_calls` con `tool`, `arguments`, `output_ref`; `data_refs`, `result_ref` |
+| `trace` | object | `execution_mode` (`synthetic_fixture`, `local_tool`, `agent`), `question_id`, `agent_version`, `tool_calls` con `tool`, `arguments`, `output_ref`; `data_refs`, `result_ref` |
 
 `map_features` es opcional: array de `unit_id`, `geometry` GeoJSON `Polygon`/`MultiPolygon` en EPSG:4326 y `source_ids`. Si se proporciona, el HTML dibuja los contornos reales de las 2–5 unidades comparadas. Si no se proporciona, muestra celdas esquemáticas y lo indica expresamente. `scripts/enrich_work1_result.mjs` añade geometría desde `datos_preparados/runtime_municipios.geojson` de Work 1 conservando la fuente cartográfica. No modifica cifras del agente.
 
