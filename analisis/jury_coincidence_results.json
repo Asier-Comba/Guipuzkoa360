@@ -1,0 +1,96 @@
+{
+  "status": "PASS",
+  "period": "2025-01-01",
+  "service_category": "primary_care",
+  "cases": [
+    {
+      "id": "Q75_65_PRIMARY_2KM",
+      "age_group": "65",
+      "quantile": 0.75,
+      "threshold_km": 2.0,
+      "age_cut_percent": 23.973,
+      "distance_cut_m": 2019.2,
+      "joined_rows": 88,
+      "highlighted_count": 7,
+      "municipalities": [
+        "Legazpi",
+        "Ezkio-Itsaso",
+        "Hondarribia",
+        "Hernialde",
+        "Oñati",
+        "Idiazabal",
+        "Errenteria"
+      ],
+      "checks": {
+        "joined_rows_88": true,
+        "cut_recomputed_from_requested_quantile": true,
+        "exact_expected_cuts": true,
+        "exact_expected_municipalities": true,
+        "highlighted_count_matches": true,
+        "every_highlighted_meets_both_cuts": true,
+        "no_non_highlighted_meets_both_cuts": true
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "Q80_75_PRIMARY_3KM",
+      "age_group": "75",
+      "quantile": 0.8,
+      "threshold_km": 3.0,
+      "age_cut_percent": 12.9796,
+      "distance_cut_m": 2138.6,
+      "joined_rows": 88,
+      "highlighted_count": 4,
+      "municipalities": [
+        "Legazpi",
+        "Errenteria",
+        "Hondarribia",
+        "Idiazabal"
+      ],
+      "checks": {
+        "joined_rows_88": true,
+        "cut_recomputed_from_requested_quantile": true,
+        "exact_expected_cuts": true,
+        "exact_expected_municipalities": true,
+        "highlighted_count_matches": true,
+        "every_highlighted_meets_both_cuts": true,
+        "no_non_highlighted_meets_both_cuts": true
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "Q85_65_PRIMARY_2KM",
+      "age_group": "65",
+      "quantile": 0.85,
+      "threshold_km": 2.0,
+      "age_cut_percent": 25.3557,
+      "distance_cut_m": 2308.7,
+      "joined_rows": 88,
+      "highlighted_count": 2,
+      "municipalities": [
+        "Legazpi",
+        "Hondarribia"
+      ],
+      "checks": {
+        "joined_rows_88": true,
+        "cut_recomputed_from_requested_quantile": true,
+        "exact_expected_cuts": true,
+        "exact_expected_municipalities": true,
+        "highlighted_count_matches": true,
+        "every_highlighted_meets_both_cuts": true,
+        "no_non_highlighted_meets_both_cuts": true
+      },
+      "status": "PASS"
+    }
+  ],
+  "quantile_sensitivity": {
+    "checks": {
+      "q75_and_q85_have_different_age_cuts": true,
+      "q75_and_q85_have_different_distance_cuts": true,
+      "q75_and_q85_have_different_highlighted_sets": true,
+      "implemented_quantiles_are_not_a_fixed_top_quartile": true
+    },
+    "status": "PASS"
+  },
+  "candidate_comparison": null
+}
