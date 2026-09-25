@@ -1,0 +1,1948 @@
+{
+  "scope": "OFFLINE PROTOTYPE: bounded structured intents; no LLM, no portal, no production promotion",
+  "versions": {
+    "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+    "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371",
+    "CAPABILITY_VERSION": "next-registry-0.1",
+    "PROMPT_VERSION": "none-deterministic-template-0.1",
+    "BENCHMARK_VERSION": "next-evaluation-0.1"
+  },
+  "python": "3.12.4",
+  "git_head": "d6a60b7d51e3c632349c65972ab65b10efeacc9a",
+  "evaluated_code_sha256": {
+    "prototypes/gipuzkoa360_next/__init__.py": "81d1129196a8d24ceb718b67fd933a010b1da87c9612171a21b8ef8a4bddecfd",
+    "prototypes/gipuzkoa360_next/core.py": "8c4b3896bf4e93cd26f0d3eddb9e11de323d1d6be7a6ad6ac1ab6e245192d8ba",
+    "prototypes/gipuzkoa360_next/evaluation.py": "4d4d0383b011e47a96f89a2ca41140a26ddd15ca8c4249a5e0d7c73618931a82",
+    "prototypes/gipuzkoa360_next/evolution.py": "8b7eeb68067e41acf8e2b19e325615547105b34b88324a91591cf4c49dfecba6",
+    "prototypes/gipuzkoa360_next/providers.py": "f24a14c58d8183428cd51ae74903aa20b74e2b6617c4430f735594db841900f8",
+    "scripts/evaluation/evaluate_next.py": "6e86173bb6aa303fdad09deef7c2fda3ef790917744d7c21cdd40a2e67acd3c7"
+  },
+  "records": [
+    {
+      "case": "summary_aduna",
+      "tool_selection_correct": true,
+      "parameters_correct": true,
+      "numeric_grounding": true,
+      "source_grounding": true,
+      "limitation_present": true,
+      "followup_recalculated": null,
+      "out_of_scope_handled": null,
+      "unsupported_claim": false
+    },
+    {
+      "case": "comparison_eibar_tolosa",
+      "tool_selection_correct": true,
+      "parameters_correct": true,
+      "numeric_grounding": true,
+      "source_grounding": true,
+      "limitation_present": true,
+      "followup_recalculated": null,
+      "out_of_scope_handled": null,
+      "unsupported_claim": false
+    },
+    {
+      "case": "aging75",
+      "tool_selection_correct": true,
+      "parameters_correct": true,
+      "numeric_grounding": true,
+      "source_grounding": true,
+      "limitation_present": true,
+      "followup_recalculated": null,
+      "out_of_scope_handled": null,
+      "unsupported_claim": false
+    },
+    {
+      "case": "access_aduna",
+      "tool_selection_correct": true,
+      "parameters_correct": true,
+      "numeric_grounding": true,
+      "source_grounding": true,
+      "limitation_present": true,
+      "followup_recalculated": null,
+      "out_of_scope_handled": null,
+      "unsupported_claim": false
+    },
+    {
+      "case": "coincidence65",
+      "tool_selection_correct": true,
+      "parameters_correct": true,
+      "numeric_grounding": true,
+      "source_grounding": true,
+      "limitation_present": true,
+      "followup_recalculated": null,
+      "out_of_scope_handled": null,
+      "unsupported_claim": false
+    },
+    {
+      "case": "followup75",
+      "tool_selection_correct": true,
+      "parameters_correct": true,
+      "numeric_grounding": true,
+      "source_grounding": true,
+      "limitation_present": true,
+      "followup_recalculated": true,
+      "out_of_scope_handled": null,
+      "unsupported_claim": false
+    },
+    {
+      "case": "source",
+      "tool_selection_correct": true,
+      "parameters_correct": true,
+      "numeric_grounding": true,
+      "source_grounding": true,
+      "limitation_present": true,
+      "followup_recalculated": null,
+      "out_of_scope_handled": null,
+      "unsupported_claim": false
+    },
+    {
+      "case": "scenario_add",
+      "tool_selection_correct": true,
+      "parameters_correct": true,
+      "numeric_grounding": true,
+      "source_grounding": true,
+      "limitation_present": true,
+      "followup_recalculated": null,
+      "out_of_scope_handled": null,
+      "unsupported_claim": false
+    },
+    {
+      "case": "alias",
+      "tool_selection_correct": true,
+      "parameters_correct": true,
+      "numeric_grounding": true,
+      "source_grounding": true,
+      "limitation_present": true,
+      "followup_recalculated": null,
+      "out_of_scope_handled": null,
+      "unsupported_claim": false
+    },
+    {
+      "case": "unknown",
+      "tool_selection_correct": null,
+      "parameters_correct": null,
+      "numeric_grounding": null,
+      "source_grounding": null,
+      "limitation_present": null,
+      "followup_recalculated": null,
+      "out_of_scope_handled": true,
+      "unsupported_claim": null
+    },
+    {
+      "case": "mobility",
+      "tool_selection_correct": null,
+      "parameters_correct": null,
+      "numeric_grounding": null,
+      "source_grounding": null,
+      "limitation_present": null,
+      "followup_recalculated": null,
+      "out_of_scope_handled": true,
+      "unsupported_claim": null
+    },
+    {
+      "case": "housing",
+      "tool_selection_correct": null,
+      "parameters_correct": null,
+      "numeric_grounding": null,
+      "source_grounding": null,
+      "limitation_present": null,
+      "followup_recalculated": null,
+      "out_of_scope_handled": true,
+      "unsupported_claim": null
+    },
+    {
+      "case": "capacity",
+      "tool_selection_correct": null,
+      "parameters_correct": null,
+      "numeric_grounding": null,
+      "source_grounding": null,
+      "limitation_present": null,
+      "followup_recalculated": null,
+      "out_of_scope_handled": true,
+      "unsupported_claim": null
+    },
+    {
+      "case": "demand",
+      "tool_selection_correct": null,
+      "parameters_correct": null,
+      "numeric_grounding": null,
+      "source_grounding": null,
+      "limitation_present": null,
+      "followup_recalculated": null,
+      "out_of_scope_handled": true,
+      "unsupported_claim": null
+    },
+    {
+      "case": "environment",
+      "tool_selection_correct": null,
+      "parameters_correct": null,
+      "numeric_grounding": null,
+      "source_grounding": null,
+      "limitation_present": null,
+      "followup_recalculated": null,
+      "out_of_scope_handled": true,
+      "unsupported_claim": null
+    }
+  ],
+  "goldens": {
+    "aduna_population": true,
+    "aduna_65": true,
+    "aduna_registered_primary": true,
+    "q75_count": true,
+    "q75_rows": true,
+    "q75_age_cut": true,
+    "q75_distance_cut": true,
+    "followup_count": true
+  },
+  "attacks": [
+    {
+      "case": "fake_number",
+      "critic": {
+        "status": "FAIL",
+        "reasons": [
+          "output_not_equal_to_trusted_recalculation"
+        ],
+        "missing_evidence": [],
+        "safe_next_action": "Block; inspect evidence and request correction.",
+        "evidence_json": "",
+        "evidence_sha256": "",
+        "versions": {}
+      },
+      "composer_blocked": true
+    },
+    {
+      "case": "fake_source",
+      "critic": {
+        "status": "FAIL",
+        "reasons": [
+          "unknown_source",
+          "output_not_equal_to_trusted_recalculation"
+        ],
+        "missing_evidence": [],
+        "safe_next_action": "Block; inspect evidence and request correction.",
+        "evidence_json": "",
+        "evidence_sha256": "",
+        "versions": {}
+      },
+      "composer_blocked": true
+    },
+    {
+      "case": "missing_period",
+      "critic": {
+        "status": "FAIL",
+        "reasons": [
+          "output_not_equal_to_trusted_recalculation"
+        ],
+        "missing_evidence": [
+          "period"
+        ],
+        "safe_next_action": "Block; inspect evidence and request correction.",
+        "evidence_json": "",
+        "evidence_sha256": "",
+        "versions": {}
+      },
+      "composer_blocked": true
+    },
+    {
+      "case": "missing_unit",
+      "critic": {
+        "status": "FAIL",
+        "reasons": [
+          "output_not_equal_to_trusted_recalculation"
+        ],
+        "missing_evidence": [
+          "unit"
+        ],
+        "safe_next_action": "Block; inspect evidence and request correction.",
+        "evidence_json": "",
+        "evidence_sha256": "",
+        "versions": {}
+      },
+      "composer_blocked": true
+    },
+    {
+      "case": "missing_method",
+      "critic": {
+        "status": "FAIL",
+        "reasons": [
+          "output_not_equal_to_trusted_recalculation"
+        ],
+        "missing_evidence": [
+          "method"
+        ],
+        "safe_next_action": "Block; inspect evidence and request correction.",
+        "evidence_json": "",
+        "evidence_sha256": "",
+        "versions": {}
+      },
+      "composer_blocked": true
+    },
+    {
+      "case": "missing_rows",
+      "critic": {
+        "status": "FAIL",
+        "reasons": [
+          "output_not_equal_to_trusted_recalculation"
+        ],
+        "missing_evidence": [
+          "rows_used"
+        ],
+        "safe_next_action": "Block; inspect evidence and request correction.",
+        "evidence_json": "",
+        "evidence_sha256": "",
+        "versions": {}
+      },
+      "composer_blocked": true
+    },
+    {
+      "case": "missing_limits",
+      "critic": {
+        "status": "FAIL",
+        "reasons": [
+          "output_not_equal_to_trusted_recalculation"
+        ],
+        "missing_evidence": [
+          "limitations"
+        ],
+        "safe_next_action": "Block; inspect evidence and request correction.",
+        "evidence_json": "",
+        "evidence_sha256": "",
+        "versions": {}
+      },
+      "composer_blocked": true
+    },
+    {
+      "case": "nan",
+      "critic": {
+        "status": "FAIL",
+        "reasons": [
+          "ValueError: invalid evidence or plan"
+        ],
+        "missing_evidence": [],
+        "safe_next_action": "Block normal answer.",
+        "evidence_json": "",
+        "evidence_sha256": "",
+        "versions": {}
+      },
+      "composer_blocked": true
+    },
+    {
+      "case": "duplicate_key",
+      "critic": {
+        "status": "FAIL",
+        "reasons": [
+          "ValueError: invalid evidence or plan"
+        ],
+        "missing_evidence": [],
+        "safe_next_action": "Block normal answer.",
+        "evidence_json": "",
+        "evidence_sha256": "",
+        "versions": {}
+      },
+      "composer_blocked": true
+    },
+    {
+      "case": "causality",
+      "critic": {
+        "status": "FAIL",
+        "reasons": [
+          "unapproved_claim_or_number: only evidence-bound rendering is supported"
+        ],
+        "missing_evidence": [],
+        "safe_next_action": "Block; inspect evidence and request correction.",
+        "evidence_json": "",
+        "evidence_sha256": "",
+        "versions": {}
+      },
+      "composer_blocked": true
+    },
+    {
+      "case": "minutes",
+      "critic": {
+        "status": "FAIL",
+        "reasons": [
+          "unapproved_claim_or_number: only evidence-bound rendering is supported"
+        ],
+        "missing_evidence": [],
+        "safe_next_action": "Block; inspect evidence and request correction.",
+        "evidence_json": "",
+        "evidence_sha256": "",
+        "versions": {}
+      },
+      "composer_blocked": true
+    },
+    {
+      "case": "recommendation",
+      "critic": {
+        "status": "FAIL",
+        "reasons": [
+          "unapproved_claim_or_number: only evidence-bound rendering is supported"
+        ],
+        "missing_evidence": [],
+        "safe_next_action": "Block; inspect evidence and request correction.",
+        "evidence_json": "",
+        "evidence_sha256": "",
+        "versions": {}
+      },
+      "composer_blocked": true
+    },
+    {
+      "case": "prediction",
+      "critic": {
+        "status": "FAIL",
+        "reasons": [
+          "unapproved_claim_or_number: only evidence-bound rendering is supported"
+        ],
+        "missing_evidence": [],
+        "safe_next_action": "Block; inspect evidence and request correction.",
+        "evidence_json": "",
+        "evidence_sha256": "",
+        "versions": {}
+      },
+      "composer_blocked": true
+    },
+    {
+      "case": "capacity",
+      "critic": {
+        "status": "FAIL",
+        "reasons": [
+          "unapproved_claim_or_number: only evidence-bound rendering is supported"
+        ],
+        "missing_evidence": [],
+        "safe_next_action": "Block; inspect evidence and request correction.",
+        "evidence_json": "",
+        "evidence_sha256": "",
+        "versions": {}
+      },
+      "composer_blocked": true
+    },
+    {
+      "case": "invent_source",
+      "critic": {
+        "status": "FAIL",
+        "reasons": [
+          "unapproved_claim_or_number: only evidence-bound rendering is supported"
+        ],
+        "missing_evidence": [],
+        "safe_next_action": "Block; inspect evidence and request correction.",
+        "evidence_json": "",
+        "evidence_sha256": "",
+        "versions": {}
+      },
+      "composer_blocked": true
+    },
+    {
+      "case": "ignore_tools",
+      "critic": {
+        "status": "FAIL",
+        "reasons": [
+          "unapproved_claim_or_number: only evidence-bound rendering is supported"
+        ],
+        "missing_evidence": [],
+        "safe_next_action": "Block; inspect evidence and request correction.",
+        "evidence_json": "",
+        "evidence_sha256": "",
+        "versions": {}
+      },
+      "composer_blocked": true
+    }
+  ],
+  "kpis": {
+    "tool_selection_accuracy": {
+      "numerator": 9,
+      "denominator": 9,
+      "value": 1.0,
+      "definition": "Correct deterministic routing / supported structured-intent cases; not natural-language accuracy."
+    },
+    "parameter_accuracy": {
+      "numerator": 9,
+      "denominator": 9,
+      "value": 1.0,
+      "definition": "Exact requested/merged parameters / supported cases."
+    },
+    "numeric_grounding_rate": {
+      "numerator": 9,
+      "denominator": 9,
+      "value": 1.0,
+      "definition": "Whole result equals existing core / supported cases; shared algorithm, not independent validation."
+    },
+    "source_grounding_rate": {
+      "numerator": 9,
+      "denominator": 9,
+      "value": 1.0,
+      "definition": "Declared source identifiers resolve in catalog / supported cases; not completeness of every field provenance."
+    },
+    "limitation_present_rate": {
+      "numerator": 9,
+      "denominator": 9,
+      "value": 1.0,
+      "definition": "Nonempty limitations / supported cases."
+    },
+    "followup_recalculation_rate": {
+      "numerator": 1,
+      "denominator": 1,
+      "value": 1.0,
+      "definition": "Follow-ups triggering execution and critic recalculation / follow-up cases."
+    },
+    "out_of_scope_rejection_rate": {
+      "numerator": 6,
+      "denominator": 6,
+      "value": 1.0,
+      "definition": "Unsupported explicit intents with no tool / unsupported cases."
+    },
+    "critic_detection_rate": {
+      "numerator": 16,
+      "denominator": 16,
+      "value": 1.0,
+      "definition": "Injected corruptions/unapproved free-text drafts rejected / injections. This is template allowlisting, not general semantic detection."
+    },
+    "composer_block_rate": {
+      "numerator": 16,
+      "denominator": 16,
+      "value": 1.0,
+      "definition": "Corruptions blocked by composer / injections."
+    },
+    "determinism_rate": {
+      "numerator": 8,
+      "denominator": 8,
+      "value": 1.0,
+      "definition": "Byte-equivalent canonical complete session results / repeated identical structured requests."
+    }
+  },
+  "shadow": [
+    {
+      "case": "summary_aduna",
+      "output_equal": true,
+      "source_grounding": true,
+      "traceability_fields": true,
+      "stable_ms": 16.326100012520328,
+      "candidate_ms": 11.966400023084134,
+      "stable_payload_bytes": 2029,
+      "candidate_evidence_bytes": 2029,
+      "candidate_response_bytes": 1883,
+      "candidate_blocked": false
+    },
+    {
+      "case": "comparison_eibar_tolosa",
+      "output_equal": true,
+      "source_grounding": true,
+      "traceability_fields": true,
+      "stable_ms": 1.3691000058315694,
+      "candidate_ms": 10.465800005476922,
+      "stable_payload_bytes": 2628,
+      "candidate_evidence_bytes": 2628,
+      "candidate_response_bytes": 2402,
+      "candidate_blocked": false
+    },
+    {
+      "case": "aging75",
+      "output_equal": true,
+      "source_grounding": true,
+      "traceability_fields": true,
+      "stable_ms": 0.2936999953817576,
+      "candidate_ms": 2.1804999851156026,
+      "stable_payload_bytes": 1537,
+      "candidate_evidence_bytes": 1537,
+      "candidate_response_bytes": 1367,
+      "candidate_blocked": false
+    },
+    {
+      "case": "access_aduna",
+      "output_equal": true,
+      "source_grounding": true,
+      "traceability_fields": true,
+      "stable_ms": 0.5294000147841871,
+      "candidate_ms": 7.533399999374524,
+      "stable_payload_bytes": 1938,
+      "candidate_evidence_bytes": 1938,
+      "candidate_response_bytes": 1709,
+      "candidate_blocked": false
+    },
+    {
+      "case": "coincidence65",
+      "output_equal": true,
+      "source_grounding": true,
+      "traceability_fields": true,
+      "stable_ms": 5.378499976359308,
+      "candidate_ms": 20.18690001568757,
+      "stable_payload_bytes": 5236,
+      "candidate_evidence_bytes": 5236,
+      "candidate_response_bytes": 4955,
+      "candidate_blocked": false
+    },
+    {
+      "case": "source",
+      "output_equal": true,
+      "source_grounding": true,
+      "traceability_fields": true,
+      "stable_ms": 0.16599998343735933,
+      "candidate_ms": 1.121900015277788,
+      "stable_payload_bytes": 1421,
+      "candidate_evidence_bytes": 1421,
+      "candidate_response_bytes": 1306,
+      "candidate_blocked": false
+    },
+    {
+      "case": "scenario_add",
+      "output_equal": true,
+      "source_grounding": true,
+      "traceability_fields": true,
+      "stable_ms": 6.766900012735277,
+      "candidate_ms": 33.94660001504235,
+      "stable_payload_bytes": 3334,
+      "candidate_evidence_bytes": 3334,
+      "candidate_response_bytes": 3112,
+      "candidate_blocked": false
+    },
+    {
+      "case": "alias",
+      "output_equal": true,
+      "source_grounding": true,
+      "traceability_fields": true,
+      "stable_ms": 0.5663000047206879,
+      "candidate_ms": 8.82160000037402,
+      "stable_payload_bytes": 2614,
+      "candidate_evidence_bytes": 2614,
+      "candidate_response_bytes": 2448,
+      "candidate_blocked": false
+    }
+  ],
+  "shadow_limitations": [
+    "Single warm measurements, no statistical speed claim. Candidate recalculates twice; expected extra latency.",
+    "Evidence equality uses the same core, not an independent numerical oracle. Golden constants are separate.",
+    "No LLM quality or general language claim. Guard benefit is rejection of injected output/draft tampering."
+  ],
+  "geometric_examples": {
+    "addition": {
+      "label": "MARGINAL GEOMETRIC EFFECT",
+      "affected_municipalities": 1,
+      "sum_distance_change_m": 1365.8,
+      "median_change_m": 1365.8,
+      "max_change_m": 1365.8,
+      "threshold_transitions": 0,
+      "denominator": "Municipalities with non-zero distance difference; equal unweighted municipalities.",
+      "direction": "reduction",
+      "limitations": [
+        "Geometric distance only, rounded core differences; no population weighting.",
+        "Not social benefit, health improvement, resilience or an optimal location."
+      ]
+    },
+    "removal": {
+      "service_id": "entityC5CE8164",
+      "label": "GEOMETRIC SERVICE-REMOVAL SENSITIVITY",
+      "affected_municipalities": 1,
+      "sum_distance_change_m": 713.5,
+      "median_change_m": 713.5,
+      "max_change_m": 713.5,
+      "threshold_transitions": 0,
+      "denominator": "Municipalities with non-zero distance difference; equal unweighted municipalities.",
+      "direction": "increase",
+      "limitations": [
+        "Geometric distance only, rounded core differences; no population weighting.",
+        "Not social benefit, health improvement, resilience or an optimal location."
+      ]
+    }
+  },
+  "case_evidence": {
+    "summary_aduna": {
+      "plan": {
+        "intent": "summary",
+        "candidate_capability": "summary",
+        "parameters": {
+          "municipio": "Aduna"
+        },
+        "ambiguities": [],
+        "missing_inputs": [],
+        "out_of_scope": false,
+        "expected_evidence": [
+          "sources",
+          "period",
+          "unit",
+          "rows_used",
+          "method",
+          "limitations"
+        ],
+        "followup": false
+      },
+      "tool": "obtener_resumen_territorial",
+      "arguments": {
+        "municipio": "Aduna"
+      },
+      "output": {
+        "data": [
+          {
+            "metrics_reference_period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+            "municipality_code": "20002",
+            "municipality_name": "Aduna",
+            "pct_65_plus": 14.793,
+            "pct_75_plus": 7.101,
+            "population_65_plus": 75,
+            "population_75_plus": 36,
+            "population_total": 507,
+            "service_indicators": {
+              "hospital": {
+                "nearest_distance_m": 11485.3,
+                "rate_per_10000_65_plus": 0.0,
+                "rate_per_10000_75_plus": 0.0,
+                "registered_service_count": 0
+              },
+              "mental_health": {
+                "nearest_distance_m": 3137.2,
+                "rate_per_10000_65_plus": 0.0,
+                "rate_per_10000_75_plus": 0.0,
+                "registered_service_count": 0
+              },
+              "other_health": {
+                "nearest_distance_m": 6661.4,
+                "rate_per_10000_65_plus": 0.0,
+                "rate_per_10000_75_plus": 0.0,
+                "registered_service_count": 0
+              },
+              "primary_care": {
+                "nearest_distance_m": 2756.2,
+                "rate_per_10000_65_plus": 0.0,
+                "rate_per_10000_75_plus": 0.0,
+                "registered_service_count": 0
+              }
+            },
+            "services_in_municipality": {}
+          }
+        ],
+        "detail_level": "compact",
+        "filters": {
+          "municipality_code": "20002",
+          "period": "2025-01-01"
+        },
+        "limitations": [
+          "La presencia de un servicio no acredita capacidad, horario, calidad ni acceso real.",
+          "Los periodos de demografía y servicios pueden ser distintos; se muestran en las fuentes."
+        ],
+        "method": "Selección por código municipal; recuento de registros por categoría; tasas por 10.000 personas del grupo de edad y mínima distancia euclídea EPSG:25830 desde el punto representativo municipal.",
+        "metric": "territorial_summary",
+        "period": "2025-01-01",
+        "question": "Resumen territorial de Aduna",
+        "rows_used": 1,
+        "sources": [
+          {
+            "institution": "Eustat - Instituto Vasco de Estadística",
+            "limitations": [
+              "75+ se deriva de año de nacimiento <=1949 a 2025-01-01."
+            ],
+            "reference_period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+            "unit": "personas",
+            "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px"
+          }
+        ],
+        "status": "ok",
+        "summary": {
+          "total_result_rows": 1
+        },
+        "unit": "varias; ver cada campo",
+        "warnings": []
+      },
+      "critic": {
+        "status": "PASS",
+        "reasons": [],
+        "missing_evidence": [],
+        "safe_next_action": "Render with original limitations.",
+        "evidence_json": "{\"data\": [{\"metrics_reference_period\": \"demography=2025-01-01;services=2026-09-20;geography=2025-05-07\", \"municipality_code\": \"20002\", \"municipality_name\": \"Aduna\", \"pct_65_plus\": 14.793, \"pct_75_plus\": 7.101, \"population_65_plus\": 75, \"population_75_plus\": 36, \"population_total\": 507, \"service_indicators\": {\"hospital\": {\"nearest_distance_m\": 11485.3, \"rate_per_10000_65_plus\": 0.0, \"rate_per_10000_75_plus\": 0.0, \"registered_service_count\": 0}, \"mental_health\": {\"nearest_distance_m\": 3137.2, \"rate_per_10000_65_plus\": 0.0, \"rate_per_10000_75_plus\": 0.0, \"registered_service_count\": 0}, \"other_health\": {\"nearest_distance_m\": 6661.4, \"rate_per_10000_65_plus\": 0.0, \"rate_per_10000_75_plus\": 0.0, \"registered_service_count\": 0}, \"primary_care\": {\"nearest_distance_m\": 2756.2, \"rate_per_10000_65_plus\": 0.0, \"rate_per_10000_75_plus\": 0.0, \"registered_service_count\": 0}}, \"services_in_municipality\": {}}], \"detail_level\": \"compact\", \"filters\": {\"municipality_code\": \"20002\", \"period\": \"2025-01-01\"}, \"limitations\": [\"La presencia de un servicio no acredita capacidad, horario, calidad ni acceso real.\", \"Los periodos de demografía y servicios pueden ser distintos; se muestran en las fuentes.\"], \"method\": \"Selección por código municipal; recuento de registros por categoría; tasas por 10.000 personas del grupo de edad y mínima distancia euclídea EPSG:25830 desde el punto representativo municipal.\", \"metric\": \"territorial_summary\", \"period\": \"2025-01-01\", \"question\": \"Resumen territorial de Aduna\", \"rows_used\": 1, \"sources\": [{\"institution\": \"Eustat - Instituto Vasco de Estadística\", \"limitations\": [\"75+ se deriva de año de nacimiento <=1949 a 2025-01-01.\"], \"reference_period\": \"2025-01-01\", \"source_id\": \"EUSTAT_EMH_2025\", \"title\": \"Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo\", \"unit\": \"personas\", \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\"}], \"status\": \"ok\", \"summary\": {\"total_result_rows\": 1}, \"unit\": \"varias; ver cada campo\", \"warnings\": []}",
+        "evidence_sha256": "425872fe109a17ab11f4c5847fbb0c162a289fe77edad747ed10a26099f88211",
+        "versions": {
+          "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+          "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371",
+          "CAPABILITY_VERSION": "next-registry-0.1",
+          "PROMPT_VERSION": "none-deterministic-template-0.1",
+          "BENCHMARK_VERSION": "next-evaluation-0.1"
+        }
+      },
+      "blocked": false,
+      "response": "Evidencia territorial. {\"data\": [{\"metrics_reference_period\": \"demography=2025-01-01;services=2026-09-20;geography=2025-05-07\", \"municipality_code\": \"20002\", \"municipality_name\": \"Aduna\", \"pct_65_plus\": 14.793, \"pct_75_plus\": 7.101, \"population_65_plus\": 75, \"population_75_plus\": 36, \"population_total\": 507, \"service_indicators\": {\"hospital\": {\"nearest_distance_m\": 11485.3, \"rate_per_10000_65_plus\": 0.0, \"rate_per_10000_75_plus\": 0.0, \"registered_service_count\": 0}, \"mental_health\": {\"nearest_distance_m\": 3137.2, \"rate_per_10000_65_plus\": 0.0, \"rate_per_10000_75_plus\": 0.0, \"registered_service_count\": 0}, \"other_health\": {\"nearest_distance_m\": 6661.4, \"rate_per_10000_65_plus\": 0.0, \"rate_per_10000_75_plus\": 0.0, \"registered_service_count\": 0}, \"primary_care\": {\"nearest_distance_m\": 2756.2, \"rate_per_10000_65_plus\": 0.0, \"rate_per_10000_75_plus\": 0.0, \"registered_service_count\": 0}}, \"services_in_municipality\": {}}], \"limitations\": [\"La presencia de un servicio no acredita capacidad, horario, calidad ni acceso real.\", \"Los periodos de demografía y servicios pueden ser distintos; se muestran en las fuentes.\"], \"method\": \"Selección por código municipal; recuento de registros por categoría; tasas por 10.000 personas del grupo de edad y mínima distancia euclídea EPSG:25830 desde el punto representativo municipal.\", \"period\": \"2025-01-01\", \"rows_used\": 1, \"scenario\": null, \"sources\": [{\"institution\": \"Eustat - Instituto Vasco de Estadística\", \"limitations\": [\"75+ se deriva de año de nacimiento <=1949 a 2025-01-01.\"], \"reference_period\": \"2025-01-01\", \"source_id\": \"EUSTAT_EMH_2025\", \"title\": \"Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo\", \"unit\": \"personas\", \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\"}], \"summary\": {\"total_result_rows\": 1}, \"unit\": \"varias; ver cada campo\", \"warnings\": []}",
+      "versions": {
+        "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+        "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371",
+        "CAPABILITY_VERSION": "next-registry-0.1",
+        "PROMPT_VERSION": "none-deterministic-template-0.1",
+        "BENCHMARK_VERSION": "next-evaluation-0.1"
+      }
+    },
+    "comparison_eibar_tolosa": {
+      "plan": {
+        "intent": "comparison",
+        "candidate_capability": "comparison",
+        "parameters": {
+          "municipios": [
+            "Eibar",
+            "Tolosa"
+          ],
+          "categoria_servicio": "mental_health"
+        },
+        "ambiguities": [],
+        "missing_inputs": [],
+        "out_of_scope": false,
+        "expected_evidence": [
+          "sources",
+          "period",
+          "unit",
+          "rows_used",
+          "method",
+          "limitations"
+        ],
+        "followup": false
+      },
+      "tool": "comparar_municipios",
+      "arguments": {
+        "categoria_servicio": "mental_health",
+        "municipios": [
+          "Eibar",
+          "Tolosa"
+        ]
+      },
+      "output": {
+        "data": [
+          {
+            "municipality_code": "20030",
+            "municipality_name": "Eibar",
+            "nearest_distance_m": 1859.7,
+            "nearest_service_id": "entity7809ADB5",
+            "pct_65_plus": 26.186,
+            "population_total": 27118,
+            "source_id": "EUSTAT_EMH_2025",
+            "within_threshold": false
+          },
+          {
+            "municipality_code": "20071",
+            "municipality_name": "Tolosa",
+            "nearest_distance_m": 1375.0,
+            "nearest_service_id": "entityA08EC1F6",
+            "pct_65_plus": 23.534,
+            "population_total": 20048,
+            "source_id": "EUSTAT_EMH_2025",
+            "within_threshold": false
+          }
+        ],
+        "detail_level": "compact",
+        "filters": {
+          "age_group": "65",
+          "municipalities": [
+            "Eibar",
+            "Tolosa"
+          ],
+          "service_category": "mental_health",
+          "threshold_km": 1
+        },
+        "limitations": [
+          "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+          "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+          "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
+          "La comparación no demuestra causalidad."
+        ],
+        "method": "Selección por código municipal y comparación campo a campo; sin agregación opaca.",
+        "metric": "pct_65_plus + distance_geométrica_aproximada",
+        "period": "2025-01-01",
+        "question": "Comparación municipal",
+        "rows_used": 2,
+        "sources": [
+          {
+            "institution": "Eustat - Instituto Vasco de Estadística",
+            "limitations": [
+              "75+ se deriva de año de nacimiento <=1949 a 2025-01-01."
+            ],
+            "reference_period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+            "unit": "personas",
+            "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px"
+          },
+          {
+            "institution": "Gobierno Vasco - geoEuskadi",
+            "limitations": [
+              "El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007."
+            ],
+            "reference_period": "2025-05-07",
+            "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+            "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+            "unit": "polígono municipal",
+            "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/"
+          },
+          {
+            "institution": "Gobierno Vasco - Departamento de Salud",
+            "limitations": [
+              "La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad."
+            ],
+            "reference_period": "2026-09-20",
+            "source_id": "ODE_HEALTH_CENTRES_2026",
+            "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+            "unit": "registro de centro sanitario público",
+            "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+          }
+        ],
+        "status": "ok",
+        "summary": {
+          "total_result_rows": 2
+        },
+        "unit": "% y m",
+        "warnings": []
+      },
+      "critic": {
+        "status": "PASS",
+        "reasons": [],
+        "missing_evidence": [],
+        "safe_next_action": "Render with original limitations.",
+        "evidence_json": "{\"data\": [{\"municipality_code\": \"20030\", \"municipality_name\": \"Eibar\", \"nearest_distance_m\": 1859.7, \"nearest_service_id\": \"entity7809ADB5\", \"pct_65_plus\": 26.186, \"population_total\": 27118, \"source_id\": \"EUSTAT_EMH_2025\", \"within_threshold\": false}, {\"municipality_code\": \"20071\", \"municipality_name\": \"Tolosa\", \"nearest_distance_m\": 1375.0, \"nearest_service_id\": \"entityA08EC1F6\", \"pct_65_plus\": 23.534, \"population_total\": 20048, \"source_id\": \"EUSTAT_EMH_2025\", \"within_threshold\": false}], \"detail_level\": \"compact\", \"filters\": {\"age_group\": \"65\", \"municipalities\": [\"Eibar\", \"Tolosa\"], \"service_category\": \"mental_health\", \"threshold_km\": 1}, \"limitations\": [\"Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.\", \"El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.\", \"La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.\", \"La comparación no demuestra causalidad.\"], \"method\": \"Selección por código municipal y comparación campo a campo; sin agregación opaca.\", \"metric\": \"pct_65_plus + distance_geométrica_aproximada\", \"period\": \"2025-01-01\", \"question\": \"Comparación municipal\", \"rows_used\": 2, \"sources\": [{\"institution\": \"Eustat - Instituto Vasco de Estadística\", \"limitations\": [\"75+ se deriva de año de nacimiento <=1949 a 2025-01-01.\"], \"reference_period\": \"2025-01-01\", \"source_id\": \"EUSTAT_EMH_2025\", \"title\": \"Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo\", \"unit\": \"personas\", \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\"}, {\"institution\": \"Gobierno Vasco - geoEuskadi\", \"limitations\": [\"El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007.\"], \"reference_period\": \"2025-05-07\", \"source_id\": \"GEOEUSKADI_MUNICIPIOS_2025\", \"title\": \"Límites Administrativos del País Vasco - Municipios 1:5.000\", \"unit\": \"polígono municipal\", \"url\": \"https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/\"}, {\"institution\": \"Gobierno Vasco - Departamento de Salud\", \"limitations\": [\"La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad.\"], \"reference_period\": \"2026-09-20\", \"source_id\": \"ODE_HEALTH_CENTRES_2026\", \"title\": \"Centros de salud, ambulatorios y hospitales públicos de Euskadi\", \"unit\": \"registro de centro sanitario público\", \"url\": \"https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/\"}], \"status\": \"ok\", \"summary\": {\"total_result_rows\": 2}, \"unit\": \"% y m\", \"warnings\": []}",
+        "evidence_sha256": "37888ce082399ce0f4791802b552da999d175bb806ffd74f0f958c4c45937e91",
+        "versions": {
+          "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+          "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371",
+          "CAPABILITY_VERSION": "next-registry-0.1",
+          "PROMPT_VERSION": "none-deterministic-template-0.1",
+          "BENCHMARK_VERSION": "next-evaluation-0.1"
+        }
+      },
+      "blocked": false,
+      "response": "Evidencia territorial. {\"data\": [{\"municipality_code\": \"20030\", \"municipality_name\": \"Eibar\", \"nearest_distance_m\": 1859.7, \"nearest_service_id\": \"entity7809ADB5\", \"pct_65_plus\": 26.186, \"population_total\": 27118, \"source_id\": \"EUSTAT_EMH_2025\", \"within_threshold\": false}, {\"municipality_code\": \"20071\", \"municipality_name\": \"Tolosa\", \"nearest_distance_m\": 1375.0, \"nearest_service_id\": \"entityA08EC1F6\", \"pct_65_plus\": 23.534, \"population_total\": 20048, \"source_id\": \"EUSTAT_EMH_2025\", \"within_threshold\": false}], \"limitations\": [\"Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.\", \"El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.\", \"La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.\", \"La comparación no demuestra causalidad.\"], \"method\": \"Selección por código municipal y comparación campo a campo; sin agregación opaca.\", \"period\": \"2025-01-01\", \"rows_used\": 2, \"scenario\": null, \"sources\": [{\"institution\": \"Eustat - Instituto Vasco de Estadística\", \"limitations\": [\"75+ se deriva de año de nacimiento <=1949 a 2025-01-01.\"], \"reference_period\": \"2025-01-01\", \"source_id\": \"EUSTAT_EMH_2025\", \"title\": \"Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo\", \"unit\": \"personas\", \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\"}, {\"institution\": \"Gobierno Vasco - geoEuskadi\", \"limitations\": [\"El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007.\"], \"reference_period\": \"2025-05-07\", \"source_id\": \"GEOEUSKADI_MUNICIPIOS_2025\", \"title\": \"Límites Administrativos del País Vasco - Municipios 1:5.000\", \"unit\": \"polígono municipal\", \"url\": \"https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/\"}, {\"institution\": \"Gobierno Vasco - Departamento de Salud\", \"limitations\": [\"La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad.\"], \"reference_period\": \"2026-09-20\", \"source_id\": \"ODE_HEALTH_CENTRES_2026\", \"title\": \"Centros de salud, ambulatorios y hospitales públicos de Euskadi\", \"unit\": \"registro de centro sanitario público\", \"url\": \"https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/\"}], \"summary\": {\"total_result_rows\": 2}, \"unit\": \"% y m\", \"warnings\": []}",
+      "versions": {
+        "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+        "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371",
+        "CAPABILITY_VERSION": "next-registry-0.1",
+        "PROMPT_VERSION": "none-deterministic-template-0.1",
+        "BENCHMARK_VERSION": "next-evaluation-0.1"
+      }
+    },
+    "aging75": {
+      "plan": {
+        "intent": "aging",
+        "candidate_capability": "aging",
+        "parameters": {
+          "grupo_edad": "75",
+          "top_n": 5
+        },
+        "ambiguities": [],
+        "missing_inputs": [],
+        "out_of_scope": false,
+        "expected_evidence": [
+          "sources",
+          "period",
+          "unit",
+          "rows_used",
+          "method",
+          "limitations"
+        ],
+        "followup": false
+      },
+      "tool": "analizar_envejecimiento",
+      "arguments": {
+        "grupo_edad": "75",
+        "top_n": 5
+      },
+      "output": {
+        "data": [
+          {
+            "municipality_code": "20058",
+            "municipality_name": "Olaberria",
+            "rank": 1,
+            "source_id": "EUSTAT_EMH_2025",
+            "value": 15.579
+          },
+          {
+            "municipality_code": "20012",
+            "municipality_name": "Arama",
+            "rank": 2,
+            "source_id": "EUSTAT_EMH_2025",
+            "value": 14.917
+          },
+          {
+            "municipality_code": "20902",
+            "municipality_name": "Lasarte-Oria",
+            "rank": 3,
+            "source_id": "EUSTAT_EMH_2025",
+            "value": 14.282
+          },
+          {
+            "municipality_code": "20051",
+            "municipality_name": "Legazpi",
+            "rank": 4,
+            "source_id": "EUSTAT_EMH_2025",
+            "value": 14.206
+          },
+          {
+            "municipality_code": "20080",
+            "municipality_name": "Zumarraga",
+            "rank": 5,
+            "source_id": "EUSTAT_EMH_2025",
+            "value": 14.141
+          }
+        ],
+        "detail_level": "compact",
+        "filters": {
+          "age_group": "75",
+          "measure": "percentage",
+          "period": "2025-01-01",
+          "top_n": 5
+        },
+        "limitations": [
+          "El indicador describe estructura demográfica; no explica sus causas."
+        ],
+        "method": "Orden descendente de pct_75_plus; empates por nombre municipal.",
+        "metric": "pct_75_plus",
+        "period": "2025-01-01",
+        "question": "Envejecimiento de población >= 75",
+        "rows_used": 88,
+        "sources": [
+          {
+            "institution": "Eustat - Instituto Vasco de Estadística",
+            "limitations": [
+              "75+ se deriva de año de nacimiento <=1949 a 2025-01-01."
+            ],
+            "reference_period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+            "unit": "personas",
+            "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px"
+          }
+        ],
+        "status": "ok",
+        "summary": {
+          "total_result_rows": 5
+        },
+        "unit": "% de población",
+        "warnings": []
+      },
+      "critic": {
+        "status": "PASS",
+        "reasons": [],
+        "missing_evidence": [],
+        "safe_next_action": "Render with original limitations.",
+        "evidence_json": "{\"data\": [{\"municipality_code\": \"20058\", \"municipality_name\": \"Olaberria\", \"rank\": 1, \"source_id\": \"EUSTAT_EMH_2025\", \"value\": 15.579}, {\"municipality_code\": \"20012\", \"municipality_name\": \"Arama\", \"rank\": 2, \"source_id\": \"EUSTAT_EMH_2025\", \"value\": 14.917}, {\"municipality_code\": \"20902\", \"municipality_name\": \"Lasarte-Oria\", \"rank\": 3, \"source_id\": \"EUSTAT_EMH_2025\", \"value\": 14.282}, {\"municipality_code\": \"20051\", \"municipality_name\": \"Legazpi\", \"rank\": 4, \"source_id\": \"EUSTAT_EMH_2025\", \"value\": 14.206}, {\"municipality_code\": \"20080\", \"municipality_name\": \"Zumarraga\", \"rank\": 5, \"source_id\": \"EUSTAT_EMH_2025\", \"value\": 14.141}], \"detail_level\": \"compact\", \"filters\": {\"age_group\": \"75\", \"measure\": \"percentage\", \"period\": \"2025-01-01\", \"top_n\": 5}, \"limitations\": [\"El indicador describe estructura demográfica; no explica sus causas.\"], \"method\": \"Orden descendente de pct_75_plus; empates por nombre municipal.\", \"metric\": \"pct_75_plus\", \"period\": \"2025-01-01\", \"question\": \"Envejecimiento de población >= 75\", \"rows_used\": 88, \"sources\": [{\"institution\": \"Eustat - Instituto Vasco de Estadística\", \"limitations\": [\"75+ se deriva de año de nacimiento <=1949 a 2025-01-01.\"], \"reference_period\": \"2025-01-01\", \"source_id\": \"EUSTAT_EMH_2025\", \"title\": \"Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo\", \"unit\": \"personas\", \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\"}], \"status\": \"ok\", \"summary\": {\"total_result_rows\": 5}, \"unit\": \"% de población\", \"warnings\": []}",
+        "evidence_sha256": "db88c14ab011a027086152530dae750e2dd190387fcd3a2c26e784caeb55ee83",
+        "versions": {
+          "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+          "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371",
+          "CAPABILITY_VERSION": "next-registry-0.1",
+          "PROMPT_VERSION": "none-deterministic-template-0.1",
+          "BENCHMARK_VERSION": "next-evaluation-0.1"
+        }
+      },
+      "blocked": false,
+      "response": "Evidencia territorial. {\"data\": [{\"municipality_code\": \"20058\", \"municipality_name\": \"Olaberria\", \"rank\": 1, \"source_id\": \"EUSTAT_EMH_2025\", \"value\": 15.579}, {\"municipality_code\": \"20012\", \"municipality_name\": \"Arama\", \"rank\": 2, \"source_id\": \"EUSTAT_EMH_2025\", \"value\": 14.917}, {\"municipality_code\": \"20902\", \"municipality_name\": \"Lasarte-Oria\", \"rank\": 3, \"source_id\": \"EUSTAT_EMH_2025\", \"value\": 14.282}, {\"municipality_code\": \"20051\", \"municipality_name\": \"Legazpi\", \"rank\": 4, \"source_id\": \"EUSTAT_EMH_2025\", \"value\": 14.206}, {\"municipality_code\": \"20080\", \"municipality_name\": \"Zumarraga\", \"rank\": 5, \"source_id\": \"EUSTAT_EMH_2025\", \"value\": 14.141}], \"limitations\": [\"El indicador describe estructura demográfica; no explica sus causas.\"], \"method\": \"Orden descendente de pct_75_plus; empates por nombre municipal.\", \"period\": \"2025-01-01\", \"rows_used\": 88, \"scenario\": null, \"sources\": [{\"institution\": \"Eustat - Instituto Vasco de Estadística\", \"limitations\": [\"75+ se deriva de año de nacimiento <=1949 a 2025-01-01.\"], \"reference_period\": \"2025-01-01\", \"source_id\": \"EUSTAT_EMH_2025\", \"title\": \"Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo\", \"unit\": \"personas\", \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\"}], \"summary\": {\"total_result_rows\": 5}, \"unit\": \"% de población\", \"warnings\": []}",
+      "versions": {
+        "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+        "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371",
+        "CAPABILITY_VERSION": "next-registry-0.1",
+        "PROMPT_VERSION": "none-deterministic-template-0.1",
+        "BENCHMARK_VERSION": "next-evaluation-0.1"
+      }
+    },
+    "access_aduna": {
+      "plan": {
+        "intent": "access",
+        "candidate_capability": "access",
+        "parameters": {
+          "categoria_servicio": "primary_care",
+          "municipios": [
+            "Aduna"
+          ],
+          "umbral_km": 3
+        },
+        "ambiguities": [],
+        "missing_inputs": [],
+        "out_of_scope": false,
+        "expected_evidence": [
+          "sources",
+          "period",
+          "unit",
+          "rows_used",
+          "method",
+          "limitations"
+        ],
+        "followup": false
+      },
+      "tool": "analizar_acceso_servicios",
+      "arguments": {
+        "categoria_servicio": "primary_care",
+        "municipios": [
+          "Aduna"
+        ],
+        "umbral_km": 3
+      },
+      "output": {
+        "data": [
+          {
+            "municipality_code": "20002",
+            "municipality_name": "Aduna",
+            "nearest_distance_m": 2756.2,
+            "nearest_service_id": "entityF0E8348B",
+            "within_threshold": true
+          }
+        ],
+        "detail_level": "compact",
+        "filters": {
+          "period_requested": null,
+          "service_category": "primary_care",
+          "threshold_km": 3.0
+        },
+        "limitations": [
+          "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+          "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+          "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal."
+        ],
+        "method": "Distancia euclídea en EPSG:25830 desde representative_point() del polígono municipal al punto del servicio más cercano de la categoría.",
+        "metric": "distance_geométrica_aproximada_desde_punto_representativo_municipal",
+        "period": "2026-09-20; 2025-05-07",
+        "question": "Acceso geométrico a primary_care",
+        "rows_used": 121,
+        "sources": [
+          {
+            "institution": "Gobierno Vasco - geoEuskadi",
+            "limitations": [
+              "El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007."
+            ],
+            "reference_period": "2025-05-07",
+            "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+            "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+            "unit": "polígono municipal",
+            "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/"
+          },
+          {
+            "institution": "Gobierno Vasco - Departamento de Salud",
+            "limitations": [
+              "La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad."
+            ],
+            "reference_period": "2026-09-20",
+            "source_id": "ODE_HEALTH_CENTRES_2026",
+            "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+            "unit": "registro de centro sanitario público",
+            "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+          }
+        ],
+        "status": "ok",
+        "summary": {
+          "total_result_rows": 1
+        },
+        "unit": "m",
+        "warnings": []
+      },
+      "critic": {
+        "status": "PASS",
+        "reasons": [],
+        "missing_evidence": [],
+        "safe_next_action": "Render with original limitations.",
+        "evidence_json": "{\"data\": [{\"municipality_code\": \"20002\", \"municipality_name\": \"Aduna\", \"nearest_distance_m\": 2756.2, \"nearest_service_id\": \"entityF0E8348B\", \"within_threshold\": true}], \"detail_level\": \"compact\", \"filters\": {\"period_requested\": null, \"service_category\": \"primary_care\", \"threshold_km\": 3.0}, \"limitations\": [\"Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.\", \"El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.\", \"La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.\"], \"method\": \"Distancia euclídea en EPSG:25830 desde representative_point() del polígono municipal al punto del servicio más cercano de la categoría.\", \"metric\": \"distance_geométrica_aproximada_desde_punto_representativo_municipal\", \"period\": \"2026-09-20; 2025-05-07\", \"question\": \"Acceso geométrico a primary_care\", \"rows_used\": 121, \"sources\": [{\"institution\": \"Gobierno Vasco - geoEuskadi\", \"limitations\": [\"El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007.\"], \"reference_period\": \"2025-05-07\", \"source_id\": \"GEOEUSKADI_MUNICIPIOS_2025\", \"title\": \"Límites Administrativos del País Vasco - Municipios 1:5.000\", \"unit\": \"polígono municipal\", \"url\": \"https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/\"}, {\"institution\": \"Gobierno Vasco - Departamento de Salud\", \"limitations\": [\"La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad.\"], \"reference_period\": \"2026-09-20\", \"source_id\": \"ODE_HEALTH_CENTRES_2026\", \"title\": \"Centros de salud, ambulatorios y hospitales públicos de Euskadi\", \"unit\": \"registro de centro sanitario público\", \"url\": \"https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/\"}], \"status\": \"ok\", \"summary\": {\"total_result_rows\": 1}, \"unit\": \"m\", \"warnings\": []}",
+        "evidence_sha256": "99ee0d5a906c82cd189379ac7d0cd5db19153110b26dc292dd08af41695ac0ed",
+        "versions": {
+          "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+          "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371",
+          "CAPABILITY_VERSION": "next-registry-0.1",
+          "PROMPT_VERSION": "none-deterministic-template-0.1",
+          "BENCHMARK_VERSION": "next-evaluation-0.1"
+        }
+      },
+      "blocked": false,
+      "response": "Evidencia territorial. {\"data\": [{\"municipality_code\": \"20002\", \"municipality_name\": \"Aduna\", \"nearest_distance_m\": 2756.2, \"nearest_service_id\": \"entityF0E8348B\", \"within_threshold\": true}], \"limitations\": [\"Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.\", \"El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.\", \"La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.\"], \"method\": \"Distancia euclídea en EPSG:25830 desde representative_point() del polígono municipal al punto del servicio más cercano de la categoría.\", \"period\": \"2026-09-20; 2025-05-07\", \"rows_used\": 121, \"scenario\": null, \"sources\": [{\"institution\": \"Gobierno Vasco - geoEuskadi\", \"limitations\": [\"El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007.\"], \"reference_period\": \"2025-05-07\", \"source_id\": \"GEOEUSKADI_MUNICIPIOS_2025\", \"title\": \"Límites Administrativos del País Vasco - Municipios 1:5.000\", \"unit\": \"polígono municipal\", \"url\": \"https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/\"}, {\"institution\": \"Gobierno Vasco - Departamento de Salud\", \"limitations\": [\"La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad.\"], \"reference_period\": \"2026-09-20\", \"source_id\": \"ODE_HEALTH_CENTRES_2026\", \"title\": \"Centros de salud, ambulatorios y hospitales públicos de Euskadi\", \"unit\": \"registro de centro sanitario público\", \"url\": \"https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/\"}], \"summary\": {\"total_result_rows\": 1}, \"unit\": \"m\", \"warnings\": []}",
+      "versions": {
+        "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+        "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371",
+        "CAPABILITY_VERSION": "next-registry-0.1",
+        "PROMPT_VERSION": "none-deterministic-template-0.1",
+        "BENCHMARK_VERSION": "next-evaluation-0.1"
+      }
+    },
+    "coincidence65": {
+      "plan": {
+        "intent": "coincidence",
+        "candidate_capability": "coincidence",
+        "parameters": {
+          "categoria_servicio": "primary_care",
+          "grupo_edad": "65",
+          "cuantil": 0.75,
+          "umbral_km": 2
+        },
+        "ambiguities": [],
+        "missing_inputs": [],
+        "out_of_scope": false,
+        "expected_evidence": [
+          "sources",
+          "period",
+          "unit",
+          "rows_used",
+          "method",
+          "limitations"
+        ],
+        "followup": false
+      },
+      "tool": "analizar_coincidencia",
+      "arguments": {
+        "categoria_servicio": "primary_care",
+        "cuantil": 0.75,
+        "grupo_edad": "65",
+        "umbral_km": 2
+      },
+      "output": {
+        "data": [
+          {
+            "age_percentile_rank": 0.9655,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.8966,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20051",
+            "municipality_name": "Legazpi",
+            "nearest_distance_m": 2624.8,
+            "nearest_service_id": "entity94B2E778",
+            "pct_65_plus": 27.17,
+            "within_threshold": false
+          },
+          {
+            "age_percentile_rank": 0.9195,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.7816,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20035",
+            "municipality_name": "Ezkio-Itsaso",
+            "nearest_distance_m": 2110.1,
+            "nearest_service_id": "entity837A9D6A",
+            "pct_65_plus": 25.949,
+            "within_threshold": false
+          },
+          {
+            "age_percentile_rank": 0.8966,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.8851,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20036",
+            "municipality_name": "Hondarribia",
+            "nearest_distance_m": 2583.5,
+            "nearest_service_id": "entity8EA5D441",
+            "pct_65_plus": 25.808,
+            "within_threshold": false
+          },
+          {
+            "age_percentile_rank": 0.8621,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.8276,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20041",
+            "municipality_name": "Hernialde",
+            "nearest_distance_m": 2192.5,
+            "nearest_service_id": "entityC40323E8",
+            "pct_65_plus": 25.387,
+            "within_threshold": false
+          },
+          {
+            "age_percentile_rank": 0.8276,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.8046,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20059",
+            "municipality_name": "Oñati",
+            "nearest_distance_m": 2149.6,
+            "nearest_service_id": "entity10969F0F",
+            "pct_65_plus": 24.806,
+            "within_threshold": false
+          },
+          {
+            "age_percentile_rank": 0.7931,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.8506,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20043",
+            "municipality_name": "Idiazabal",
+            "nearest_distance_m": 2311.2,
+            "nearest_service_id": "entityBFD365AA",
+            "pct_65_plus": 24.528,
+            "within_threshold": false
+          },
+          {
+            "age_percentile_rank": 0.7816,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.977,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20067",
+            "municipality_name": "Errenteria",
+            "nearest_distance_m": 3925.5,
+            "nearest_service_id": "entity84DCE82C",
+            "pct_65_plus": 24.302,
+            "within_threshold": false
+          }
+        ],
+        "detail_level": "compact",
+        "filters": {
+          "age_group": "65",
+          "period": "2025-01-01",
+          "quantile_threshold": 0.75,
+          "service_category": "primary_care",
+          "threshold_km": 2
+        },
+        "limitations": [
+          "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+          "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+          "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
+          "La coincidencia estadística no demuestra causalidad ni identifica necesidades individuales.",
+          "Los resultados dependen del cuantil, grupo de edad, categoría y periodo elegidos."
+        ],
+        "method": "Cruce por código municipal. Se destacan valores >= cuantil 0.75 en ambas métricas (cortes: 23.9730% y 2019.2 m). Se muestran ambos componentes y no se usa una puntuación compuesta.",
+        "metric": "pct_65_plus + distance_geométrica_aproximada",
+        "period": "2025-01-01",
+        "question": "Coincidencia de envejecimiento >= 65 y peor acceso a primary_care",
+        "rows_used": 88,
+        "sources": [
+          {
+            "institution": "Eustat - Instituto Vasco de Estadística",
+            "limitations": [
+              "75+ se deriva de año de nacimiento <=1949 a 2025-01-01."
+            ],
+            "reference_period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+            "unit": "personas",
+            "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px"
+          },
+          {
+            "institution": "Gobierno Vasco - geoEuskadi",
+            "limitations": [
+              "El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007."
+            ],
+            "reference_period": "2025-05-07",
+            "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+            "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+            "unit": "polígono municipal",
+            "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/"
+          },
+          {
+            "institution": "Gobierno Vasco - Departamento de Salud",
+            "limitations": [
+              "La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad."
+            ],
+            "reference_period": "2026-09-20",
+            "source_id": "ODE_HEALTH_CENTRES_2026",
+            "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+            "unit": "registro de centro sanitario público",
+            "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+          }
+        ],
+        "status": "ok",
+        "summary": {
+          "age_cut_percent": 23.973,
+          "distance_cut_m": 2019.2,
+          "highlighted_count": 7,
+          "joined_rows": 88,
+          "returned_rows": 7,
+          "selection": "Todos los destacados; si no hay ninguno, los 5 primeros por criterio.",
+          "total_result_rows": 88
+        },
+        "unit": "% y m",
+        "warnings": []
+      },
+      "critic": {
+        "status": "PASS",
+        "reasons": [],
+        "missing_evidence": [],
+        "safe_next_action": "Render with original limitations.",
+        "evidence_json": "{\"data\": [{\"age_percentile_rank\": 0.9655, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.8966, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20051\", \"municipality_name\": \"Legazpi\", \"nearest_distance_m\": 2624.8, \"nearest_service_id\": \"entity94B2E778\", \"pct_65_plus\": 27.17, \"within_threshold\": false}, {\"age_percentile_rank\": 0.9195, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.7816, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20035\", \"municipality_name\": \"Ezkio-Itsaso\", \"nearest_distance_m\": 2110.1, \"nearest_service_id\": \"entity837A9D6A\", \"pct_65_plus\": 25.949, \"within_threshold\": false}, {\"age_percentile_rank\": 0.8966, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.8851, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20036\", \"municipality_name\": \"Hondarribia\", \"nearest_distance_m\": 2583.5, \"nearest_service_id\": \"entity8EA5D441\", \"pct_65_plus\": 25.808, \"within_threshold\": false}, {\"age_percentile_rank\": 0.8621, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.8276, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20041\", \"municipality_name\": \"Hernialde\", \"nearest_distance_m\": 2192.5, \"nearest_service_id\": \"entityC40323E8\", \"pct_65_plus\": 25.387, \"within_threshold\": false}, {\"age_percentile_rank\": 0.8276, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.8046, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20059\", \"municipality_name\": \"Oñati\", \"nearest_distance_m\": 2149.6, \"nearest_service_id\": \"entity10969F0F\", \"pct_65_plus\": 24.806, \"within_threshold\": false}, {\"age_percentile_rank\": 0.7931, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.8506, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20043\", \"municipality_name\": \"Idiazabal\", \"nearest_distance_m\": 2311.2, \"nearest_service_id\": \"entityBFD365AA\", \"pct_65_plus\": 24.528, \"within_threshold\": false}, {\"age_percentile_rank\": 0.7816, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.977, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20067\", \"municipality_name\": \"Errenteria\", \"nearest_distance_m\": 3925.5, \"nearest_service_id\": \"entity84DCE82C\", \"pct_65_plus\": 24.302, \"within_threshold\": false}], \"detail_level\": \"compact\", \"filters\": {\"age_group\": \"65\", \"period\": \"2025-01-01\", \"quantile_threshold\": 0.75, \"service_category\": \"primary_care\", \"threshold_km\": 2}, \"limitations\": [\"Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.\", \"El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.\", \"La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.\", \"La coincidencia estadística no demuestra causalidad ni identifica necesidades individuales.\", \"Los resultados dependen del cuantil, grupo de edad, categoría y periodo elegidos.\"], \"method\": \"Cruce por código municipal. Se destacan valores >= cuantil 0.75 en ambas métricas (cortes: 23.9730% y 2019.2 m). Se muestran ambos componentes y no se usa una puntuación compuesta.\", \"metric\": \"pct_65_plus + distance_geométrica_aproximada\", \"period\": \"2025-01-01\", \"question\": \"Coincidencia de envejecimiento >= 65 y peor acceso a primary_care\", \"rows_used\": 88, \"sources\": [{\"institution\": \"Eustat - Instituto Vasco de Estadística\", \"limitations\": [\"75+ se deriva de año de nacimiento <=1949 a 2025-01-01.\"], \"reference_period\": \"2025-01-01\", \"source_id\": \"EUSTAT_EMH_2025\", \"title\": \"Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo\", \"unit\": \"personas\", \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\"}, {\"institution\": \"Gobierno Vasco - geoEuskadi\", \"limitations\": [\"El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007.\"], \"reference_period\": \"2025-05-07\", \"source_id\": \"GEOEUSKADI_MUNICIPIOS_2025\", \"title\": \"Límites Administrativos del País Vasco - Municipios 1:5.000\", \"unit\": \"polígono municipal\", \"url\": \"https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/\"}, {\"institution\": \"Gobierno Vasco - Departamento de Salud\", \"limitations\": [\"La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad.\"], \"reference_period\": \"2026-09-20\", \"source_id\": \"ODE_HEALTH_CENTRES_2026\", \"title\": \"Centros de salud, ambulatorios y hospitales públicos de Euskadi\", \"unit\": \"registro de centro sanitario público\", \"url\": \"https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/\"}], \"status\": \"ok\", \"summary\": {\"age_cut_percent\": 23.973, \"distance_cut_m\": 2019.2, \"highlighted_count\": 7, \"joined_rows\": 88, \"returned_rows\": 7, \"selection\": \"Todos los destacados; si no hay ninguno, los 5 primeros por criterio.\", \"total_result_rows\": 88}, \"unit\": \"% y m\", \"warnings\": []}",
+        "evidence_sha256": "305dfd776891b1ec47f138f6b69e94416f0db59e83d90800f19164a00ab1de6e",
+        "versions": {
+          "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+          "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371",
+          "CAPABILITY_VERSION": "next-registry-0.1",
+          "PROMPT_VERSION": "none-deterministic-template-0.1",
+          "BENCHMARK_VERSION": "next-evaluation-0.1"
+        }
+      },
+      "blocked": false,
+      "response": "Evidencia territorial. {\"data\": [{\"age_percentile_rank\": 0.9655, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.8966, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20051\", \"municipality_name\": \"Legazpi\", \"nearest_distance_m\": 2624.8, \"nearest_service_id\": \"entity94B2E778\", \"pct_65_plus\": 27.17, \"within_threshold\": false}, {\"age_percentile_rank\": 0.9195, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.7816, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20035\", \"municipality_name\": \"Ezkio-Itsaso\", \"nearest_distance_m\": 2110.1, \"nearest_service_id\": \"entity837A9D6A\", \"pct_65_plus\": 25.949, \"within_threshold\": false}, {\"age_percentile_rank\": 0.8966, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.8851, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20036\", \"municipality_name\": \"Hondarribia\", \"nearest_distance_m\": 2583.5, \"nearest_service_id\": \"entity8EA5D441\", \"pct_65_plus\": 25.808, \"within_threshold\": false}, {\"age_percentile_rank\": 0.8621, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.8276, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20041\", \"municipality_name\": \"Hernialde\", \"nearest_distance_m\": 2192.5, \"nearest_service_id\": \"entityC40323E8\", \"pct_65_plus\": 25.387, \"within_threshold\": false}, {\"age_percentile_rank\": 0.8276, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.8046, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20059\", \"municipality_name\": \"Oñati\", \"nearest_distance_m\": 2149.6, \"nearest_service_id\": \"entity10969F0F\", \"pct_65_plus\": 24.806, \"within_threshold\": false}, {\"age_percentile_rank\": 0.7931, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.8506, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20043\", \"municipality_name\": \"Idiazabal\", \"nearest_distance_m\": 2311.2, \"nearest_service_id\": \"entityBFD365AA\", \"pct_65_plus\": 24.528, \"within_threshold\": false}, {\"age_percentile_rank\": 0.7816, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.977, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20067\", \"municipality_name\": \"Errenteria\", \"nearest_distance_m\": 3925.5, \"nearest_service_id\": \"entity84DCE82C\", \"pct_65_plus\": 24.302, \"within_threshold\": false}], \"limitations\": [\"Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.\", \"El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.\", \"La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.\", \"La coincidencia estadística no demuestra causalidad ni identifica necesidades individuales.\", \"Los resultados dependen del cuantil, grupo de edad, categoría y periodo elegidos.\"], \"method\": \"Cruce por código municipal. Se destacan valores >= cuantil 0.75 en ambas métricas (cortes: 23.9730% y 2019.2 m). Se muestran ambos componentes y no se usa una puntuación compuesta.\", \"period\": \"2025-01-01\", \"rows_used\": 88, \"scenario\": null, \"sources\": [{\"institution\": \"Eustat - Instituto Vasco de Estadística\", \"limitations\": [\"75+ se deriva de año de nacimiento <=1949 a 2025-01-01.\"], \"reference_period\": \"2025-01-01\", \"source_id\": \"EUSTAT_EMH_2025\", \"title\": \"Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo\", \"unit\": \"personas\", \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\"}, {\"institution\": \"Gobierno Vasco - geoEuskadi\", \"limitations\": [\"El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007.\"], \"reference_period\": \"2025-05-07\", \"source_id\": \"GEOEUSKADI_MUNICIPIOS_2025\", \"title\": \"Límites Administrativos del País Vasco - Municipios 1:5.000\", \"unit\": \"polígono municipal\", \"url\": \"https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/\"}, {\"institution\": \"Gobierno Vasco - Departamento de Salud\", \"limitations\": [\"La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad.\"], \"reference_period\": \"2026-09-20\", \"source_id\": \"ODE_HEALTH_CENTRES_2026\", \"title\": \"Centros de salud, ambulatorios y hospitales públicos de Euskadi\", \"unit\": \"registro de centro sanitario público\", \"url\": \"https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/\"}], \"summary\": {\"age_cut_percent\": 23.973, \"distance_cut_m\": 2019.2, \"highlighted_count\": 7, \"joined_rows\": 88, \"returned_rows\": 7, \"selection\": \"Todos los destacados; si no hay ninguno, los 5 primeros por criterio.\", \"total_result_rows\": 88}, \"unit\": \"% y m\", \"warnings\": []}",
+      "versions": {
+        "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+        "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371",
+        "CAPABILITY_VERSION": "next-registry-0.1",
+        "PROMPT_VERSION": "none-deterministic-template-0.1",
+        "BENCHMARK_VERSION": "next-evaluation-0.1"
+      }
+    },
+    "followup75": {
+      "plan": {
+        "intent": "seguimiento",
+        "candidate_capability": "coincidence",
+        "parameters": {
+          "categoria_servicio": "primary_care",
+          "grupo_edad": "75",
+          "cuantil": 0.8,
+          "umbral_km": 3
+        },
+        "ambiguities": [],
+        "missing_inputs": [],
+        "out_of_scope": false,
+        "expected_evidence": [
+          "sources",
+          "period",
+          "unit",
+          "rows_used",
+          "method",
+          "limitations"
+        ],
+        "followup": true
+      },
+      "tool": "analizar_coincidencia",
+      "arguments": {
+        "categoria_servicio": "primary_care",
+        "cuantil": 0.8,
+        "grupo_edad": "75",
+        "umbral_km": 3
+      },
+      "output": {
+        "data": [
+          {
+            "age_percentile_rank": 0.9655,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.8966,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20051",
+            "municipality_name": "Legazpi",
+            "nearest_distance_m": 2624.8,
+            "nearest_service_id": "entity94B2E778",
+            "pct_75_plus": 14.206,
+            "within_threshold": true
+          },
+          {
+            "age_percentile_rank": 0.8851,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.977,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20067",
+            "municipality_name": "Errenteria",
+            "nearest_distance_m": 3925.5,
+            "nearest_service_id": "entity84DCE82C",
+            "pct_75_plus": 13.505,
+            "within_threshold": false
+          },
+          {
+            "age_percentile_rank": 0.8621,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.8851,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20036",
+            "municipality_name": "Hondarribia",
+            "nearest_distance_m": 2583.5,
+            "nearest_service_id": "entity8EA5D441",
+            "pct_75_plus": 13.29,
+            "within_threshold": true
+          },
+          {
+            "age_percentile_rank": 0.8161,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.8506,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20043",
+            "municipality_name": "Idiazabal",
+            "nearest_distance_m": 2311.2,
+            "nearest_service_id": "entityBFD365AA",
+            "pct_75_plus": 13.12,
+            "within_threshold": true
+          }
+        ],
+        "detail_level": "compact",
+        "filters": {
+          "age_group": "75",
+          "period": "2025-01-01",
+          "quantile_threshold": 0.8,
+          "service_category": "primary_care",
+          "threshold_km": 3
+        },
+        "limitations": [
+          "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+          "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+          "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
+          "La coincidencia estadística no demuestra causalidad ni identifica necesidades individuales.",
+          "Los resultados dependen del cuantil, grupo de edad, categoría y periodo elegidos."
+        ],
+        "method": "Cruce por código municipal. Se destacan valores >= cuantil 0.80 en ambas métricas (cortes: 12.9796% y 2138.6 m). Se muestran ambos componentes y no se usa una puntuación compuesta.",
+        "metric": "pct_75_plus + distance_geométrica_aproximada",
+        "period": "2025-01-01",
+        "question": "Coincidencia de envejecimiento >= 75 y peor acceso a primary_care",
+        "rows_used": 88,
+        "sources": [
+          {
+            "institution": "Eustat - Instituto Vasco de Estadística",
+            "limitations": [
+              "75+ se deriva de año de nacimiento <=1949 a 2025-01-01."
+            ],
+            "reference_period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+            "unit": "personas",
+            "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px"
+          },
+          {
+            "institution": "Gobierno Vasco - geoEuskadi",
+            "limitations": [
+              "El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007."
+            ],
+            "reference_period": "2025-05-07",
+            "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+            "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+            "unit": "polígono municipal",
+            "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/"
+          },
+          {
+            "institution": "Gobierno Vasco - Departamento de Salud",
+            "limitations": [
+              "La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad."
+            ],
+            "reference_period": "2026-09-20",
+            "source_id": "ODE_HEALTH_CENTRES_2026",
+            "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+            "unit": "registro de centro sanitario público",
+            "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+          }
+        ],
+        "status": "ok",
+        "summary": {
+          "age_cut_percent": 12.9796,
+          "distance_cut_m": 2138.6,
+          "highlighted_count": 4,
+          "joined_rows": 88,
+          "returned_rows": 4,
+          "selection": "Todos los destacados; si no hay ninguno, los 5 primeros por criterio.",
+          "total_result_rows": 88
+        },
+        "unit": "% y m",
+        "warnings": []
+      },
+      "critic": {
+        "status": "PASS",
+        "reasons": [],
+        "missing_evidence": [],
+        "safe_next_action": "Render with original limitations.",
+        "evidence_json": "{\"data\": [{\"age_percentile_rank\": 0.9655, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.8966, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20051\", \"municipality_name\": \"Legazpi\", \"nearest_distance_m\": 2624.8, \"nearest_service_id\": \"entity94B2E778\", \"pct_75_plus\": 14.206, \"within_threshold\": true}, {\"age_percentile_rank\": 0.8851, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.977, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20067\", \"municipality_name\": \"Errenteria\", \"nearest_distance_m\": 3925.5, \"nearest_service_id\": \"entity84DCE82C\", \"pct_75_plus\": 13.505, \"within_threshold\": false}, {\"age_percentile_rank\": 0.8621, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.8851, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20036\", \"municipality_name\": \"Hondarribia\", \"nearest_distance_m\": 2583.5, \"nearest_service_id\": \"entity8EA5D441\", \"pct_75_plus\": 13.29, \"within_threshold\": true}, {\"age_percentile_rank\": 0.8161, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.8506, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20043\", \"municipality_name\": \"Idiazabal\", \"nearest_distance_m\": 2311.2, \"nearest_service_id\": \"entityBFD365AA\", \"pct_75_plus\": 13.12, \"within_threshold\": true}], \"detail_level\": \"compact\", \"filters\": {\"age_group\": \"75\", \"period\": \"2025-01-01\", \"quantile_threshold\": 0.8, \"service_category\": \"primary_care\", \"threshold_km\": 3}, \"limitations\": [\"Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.\", \"El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.\", \"La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.\", \"La coincidencia estadística no demuestra causalidad ni identifica necesidades individuales.\", \"Los resultados dependen del cuantil, grupo de edad, categoría y periodo elegidos.\"], \"method\": \"Cruce por código municipal. Se destacan valores >= cuantil 0.80 en ambas métricas (cortes: 12.9796% y 2138.6 m). Se muestran ambos componentes y no se usa una puntuación compuesta.\", \"metric\": \"pct_75_plus + distance_geométrica_aproximada\", \"period\": \"2025-01-01\", \"question\": \"Coincidencia de envejecimiento >= 75 y peor acceso a primary_care\", \"rows_used\": 88, \"sources\": [{\"institution\": \"Eustat - Instituto Vasco de Estadística\", \"limitations\": [\"75+ se deriva de año de nacimiento <=1949 a 2025-01-01.\"], \"reference_period\": \"2025-01-01\", \"source_id\": \"EUSTAT_EMH_2025\", \"title\": \"Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo\", \"unit\": \"personas\", \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\"}, {\"institution\": \"Gobierno Vasco - geoEuskadi\", \"limitations\": [\"El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007.\"], \"reference_period\": \"2025-05-07\", \"source_id\": \"GEOEUSKADI_MUNICIPIOS_2025\", \"title\": \"Límites Administrativos del País Vasco - Municipios 1:5.000\", \"unit\": \"polígono municipal\", \"url\": \"https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/\"}, {\"institution\": \"Gobierno Vasco - Departamento de Salud\", \"limitations\": [\"La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad.\"], \"reference_period\": \"2026-09-20\", \"source_id\": \"ODE_HEALTH_CENTRES_2026\", \"title\": \"Centros de salud, ambulatorios y hospitales públicos de Euskadi\", \"unit\": \"registro de centro sanitario público\", \"url\": \"https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/\"}], \"status\": \"ok\", \"summary\": {\"age_cut_percent\": 12.9796, \"distance_cut_m\": 2138.6, \"highlighted_count\": 4, \"joined_rows\": 88, \"returned_rows\": 4, \"selection\": \"Todos los destacados; si no hay ninguno, los 5 primeros por criterio.\", \"total_result_rows\": 88}, \"unit\": \"% y m\", \"warnings\": []}",
+        "evidence_sha256": "d9c9881ec35c9968ebcd567fc70f8524a67357418cf7e90ea8da13c8f1490921",
+        "versions": {
+          "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+          "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371",
+          "CAPABILITY_VERSION": "next-registry-0.1",
+          "PROMPT_VERSION": "none-deterministic-template-0.1",
+          "BENCHMARK_VERSION": "next-evaluation-0.1"
+        }
+      },
+      "blocked": false,
+      "response": "Evidencia territorial. {\"data\": [{\"age_percentile_rank\": 0.9655, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.8966, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20051\", \"municipality_name\": \"Legazpi\", \"nearest_distance_m\": 2624.8, \"nearest_service_id\": \"entity94B2E778\", \"pct_75_plus\": 14.206, \"within_threshold\": true}, {\"age_percentile_rank\": 0.8851, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.977, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20067\", \"municipality_name\": \"Errenteria\", \"nearest_distance_m\": 3925.5, \"nearest_service_id\": \"entity84DCE82C\", \"pct_75_plus\": 13.505, \"within_threshold\": false}, {\"age_percentile_rank\": 0.8621, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.8851, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20036\", \"municipality_name\": \"Hondarribia\", \"nearest_distance_m\": 2583.5, \"nearest_service_id\": \"entity8EA5D441\", \"pct_75_plus\": 13.29, \"within_threshold\": true}, {\"age_percentile_rank\": 0.8161, \"age_source_id\": \"EUSTAT_EMH_2025\", \"distance_percentile_rank\": 0.8506, \"highlighted\": true, \"meets_access_criterion\": true, \"meets_age_criterion\": true, \"municipality_code\": \"20043\", \"municipality_name\": \"Idiazabal\", \"nearest_distance_m\": 2311.2, \"nearest_service_id\": \"entityBFD365AA\", \"pct_75_plus\": 13.12, \"within_threshold\": true}], \"limitations\": [\"Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.\", \"El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.\", \"La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.\", \"La coincidencia estadística no demuestra causalidad ni identifica necesidades individuales.\", \"Los resultados dependen del cuantil, grupo de edad, categoría y periodo elegidos.\"], \"method\": \"Cruce por código municipal. Se destacan valores >= cuantil 0.80 en ambas métricas (cortes: 12.9796% y 2138.6 m). Se muestran ambos componentes y no se usa una puntuación compuesta.\", \"period\": \"2025-01-01\", \"rows_used\": 88, \"scenario\": null, \"sources\": [{\"institution\": \"Eustat - Instituto Vasco de Estadística\", \"limitations\": [\"75+ se deriva de año de nacimiento <=1949 a 2025-01-01.\"], \"reference_period\": \"2025-01-01\", \"source_id\": \"EUSTAT_EMH_2025\", \"title\": \"Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo\", \"unit\": \"personas\", \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\"}, {\"institution\": \"Gobierno Vasco - geoEuskadi\", \"limitations\": [\"El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007.\"], \"reference_period\": \"2025-05-07\", \"source_id\": \"GEOEUSKADI_MUNICIPIOS_2025\", \"title\": \"Límites Administrativos del País Vasco - Municipios 1:5.000\", \"unit\": \"polígono municipal\", \"url\": \"https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/\"}, {\"institution\": \"Gobierno Vasco - Departamento de Salud\", \"limitations\": [\"La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad.\"], \"reference_period\": \"2026-09-20\", \"source_id\": \"ODE_HEALTH_CENTRES_2026\", \"title\": \"Centros de salud, ambulatorios y hospitales públicos de Euskadi\", \"unit\": \"registro de centro sanitario público\", \"url\": \"https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/\"}], \"summary\": {\"age_cut_percent\": 12.9796, \"distance_cut_m\": 2138.6, \"highlighted_count\": 4, \"joined_rows\": 88, \"returned_rows\": 4, \"selection\": \"Todos los destacados; si no hay ninguno, los 5 primeros por criterio.\", \"total_result_rows\": 88}, \"unit\": \"% y m\", \"warnings\": []}",
+      "versions": {
+        "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+        "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371",
+        "CAPABILITY_VERSION": "next-registry-0.1",
+        "PROMPT_VERSION": "none-deterministic-template-0.1",
+        "BENCHMARK_VERSION": "next-evaluation-0.1"
+      }
+    },
+    "source": {
+      "plan": {
+        "intent": "source",
+        "candidate_capability": "source",
+        "parameters": {
+          "source_id": "EUSTAT_EMH_2025"
+        },
+        "ambiguities": [],
+        "missing_inputs": [],
+        "out_of_scope": false,
+        "expected_evidence": [
+          "sources",
+          "period",
+          "unit",
+          "rows_used",
+          "method",
+          "limitations"
+        ],
+        "followup": false
+      },
+      "tool": "consultar_fuente",
+      "arguments": {
+        "source_id": "EUSTAT_EMH_2025"
+      },
+      "output": {
+        "data": [
+          {
+            "download_date": "2026-09-24",
+            "institution": "Eustat - Instituto Vasco de Estadística",
+            "license": "Creative Commons (según ficha Eustat de la operación 010154)",
+            "limitations": [
+              "75+ se deriva de año de nacimiento <=1949 a 2025-01-01."
+            ],
+            "method": "Consulta PXWeb por municipio, sexo total y periodo 2025-01-01; pivote de total/65+ y suma de nacidos hasta 1949 para 75+.",
+            "notes": [
+              "Códigos municipales Eustat/INE de cinco caracteres conservados como texto."
+            ],
+            "original_file": "datos_originales/eustat_demografia_2025.csv",
+            "prepared_files": [
+              "datos_preparados/demografia.csv",
+              "datos_preparados/municipios.csv"
+            ],
+            "reference_period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "source_type": "official",
+            "territory": "Gipuzkoa, 88 municipios",
+            "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+            "unit": "personas",
+            "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px"
+          }
+        ],
+        "detail_level": "compact",
+        "filters": {
+          "source_id": "EUSTAT_EMH_2025"
+        },
+        "limitations": [
+          "La ficha de fuente describe procedencia; no valida por sí sola la calidad del dato."
+        ],
+        "method": "Lectura directa de metadata_sources.json.",
+        "metric": "source_metadata",
+        "period": null,
+        "question": "Consulta de procedencia",
+        "rows_used": 1,
+        "sources": [
+          {
+            "source_id": "EUSTAT_EMH_2025"
+          }
+        ],
+        "status": "ok",
+        "summary": {
+          "total_result_rows": 1
+        },
+        "unit": "no aplica",
+        "warnings": []
+      },
+      "critic": {
+        "status": "PASS",
+        "reasons": [],
+        "missing_evidence": [],
+        "safe_next_action": "Render with original limitations.",
+        "evidence_json": "{\"data\": [{\"download_date\": \"2026-09-24\", \"institution\": \"Eustat - Instituto Vasco de Estadística\", \"license\": \"Creative Commons (según ficha Eustat de la operación 010154)\", \"limitations\": [\"75+ se deriva de año de nacimiento <=1949 a 2025-01-01.\"], \"method\": \"Consulta PXWeb por municipio, sexo total y periodo 2025-01-01; pivote de total/65+ y suma de nacidos hasta 1949 para 75+.\", \"notes\": [\"Códigos municipales Eustat/INE de cinco caracteres conservados como texto.\"], \"original_file\": \"datos_originales/eustat_demografia_2025.csv\", \"prepared_files\": [\"datos_preparados/demografia.csv\", \"datos_preparados/municipios.csv\"], \"reference_period\": \"2025-01-01\", \"source_id\": \"EUSTAT_EMH_2025\", \"source_type\": \"official\", \"territory\": \"Gipuzkoa, 88 municipios\", \"title\": \"Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo\", \"unit\": \"personas\", \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\"}], \"detail_level\": \"compact\", \"filters\": {\"source_id\": \"EUSTAT_EMH_2025\"}, \"limitations\": [\"La ficha de fuente describe procedencia; no valida por sí sola la calidad del dato.\"], \"method\": \"Lectura directa de metadata_sources.json.\", \"metric\": \"source_metadata\", \"period\": null, \"question\": \"Consulta de procedencia\", \"rows_used\": 1, \"sources\": [{\"source_id\": \"EUSTAT_EMH_2025\"}], \"status\": \"ok\", \"summary\": {\"total_result_rows\": 1}, \"unit\": \"no aplica\", \"warnings\": []}",
+        "evidence_sha256": "ca4c2af45c18fb4733b4b807ba44a9d79354ec02d447ae81ba77e939f5b43e91",
+        "versions": {
+          "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+          "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371",
+          "CAPABILITY_VERSION": "next-registry-0.1",
+          "PROMPT_VERSION": "none-deterministic-template-0.1",
+          "BENCHMARK_VERSION": "next-evaluation-0.1"
+        }
+      },
+      "blocked": false,
+      "response": "Evidencia territorial. {\"data\": [{\"download_date\": \"2026-09-24\", \"institution\": \"Eustat - Instituto Vasco de Estadística\", \"license\": \"Creative Commons (según ficha Eustat de la operación 010154)\", \"limitations\": [\"75+ se deriva de año de nacimiento <=1949 a 2025-01-01.\"], \"method\": \"Consulta PXWeb por municipio, sexo total y periodo 2025-01-01; pivote de total/65+ y suma de nacidos hasta 1949 para 75+.\", \"notes\": [\"Códigos municipales Eustat/INE de cinco caracteres conservados como texto.\"], \"original_file\": \"datos_originales/eustat_demografia_2025.csv\", \"prepared_files\": [\"datos_preparados/demografia.csv\", \"datos_preparados/municipios.csv\"], \"reference_period\": \"2025-01-01\", \"source_id\": \"EUSTAT_EMH_2025\", \"source_type\": \"official\", \"territory\": \"Gipuzkoa, 88 municipios\", \"title\": \"Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo\", \"unit\": \"personas\", \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\"}], \"limitations\": [\"La ficha de fuente describe procedencia; no valida por sí sola la calidad del dato.\"], \"method\": \"Lectura directa de metadata_sources.json.\", \"period\": null, \"rows_used\": 1, \"scenario\": null, \"sources\": [{\"source_id\": \"EUSTAT_EMH_2025\"}], \"summary\": {\"total_result_rows\": 1}, \"unit\": \"no aplica\", \"warnings\": []}",
+      "versions": {
+        "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+        "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371",
+        "CAPABILITY_VERSION": "next-registry-0.1",
+        "PROMPT_VERSION": "none-deterministic-template-0.1",
+        "BENCHMARK_VERSION": "next-evaluation-0.1"
+      }
+    },
+    "scenario_add": {
+      "plan": {
+        "intent": "scenario",
+        "candidate_capability": "scenario",
+        "parameters": {
+          "accion": "add_service",
+          "categoria_servicio": "primary_care",
+          "latitud": 43.203,
+          "longitud": -2.05
+        },
+        "ambiguities": [],
+        "missing_inputs": [],
+        "out_of_scope": false,
+        "expected_evidence": [
+          "sources",
+          "period",
+          "unit",
+          "rows_used",
+          "method",
+          "limitations"
+        ],
+        "followup": false
+      },
+      "tool": "simular_escenario",
+      "arguments": {
+        "accion": "add_service",
+        "categoria_servicio": "primary_care",
+        "latitud": 43.203,
+        "longitud": -2.05
+      },
+      "output": {
+        "data": [
+          {
+            "baseline_distance_m": 2756.2,
+            "baseline_within_threshold": false,
+            "difference_absolute_m": -1365.8,
+            "difference_relative_pct": -49.5537,
+            "municipality_code": "20002",
+            "municipality_name": "Aduna",
+            "scenario_distance_m": 1390.4,
+            "scenario_within_threshold": false
+          }
+        ],
+        "detail_level": "compact",
+        "filters": {
+          "period": null,
+          "service_category": "primary_care"
+        },
+        "limitations": [
+          "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+          "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+          "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
+          "Es un contrafactual analítico, no una predicción de uso, conducta, coste o impacto social.",
+          "No constituye una recomendación de ubicación ni una decisión administrativa."
+        ],
+        "method": "Recalculo determinista del mismo indicador antes y después del cambio hipotético.",
+        "metric": "distance_geométrica_aproximada_desde_punto_representativo_municipal",
+        "period": "2026-09-20; escenario; 2025-05-07",
+        "question": "Escenario add_service para primary_care",
+        "rows_used": 209,
+        "scenario": {
+          "affected_metric": "distance_geométrica_aproximada_desde_punto_representativo_municipal / within_threshold",
+          "assumptions": [
+            "El resto de datos permanece constante.",
+            "Las coordenadas representan puntos válidos."
+          ],
+          "baseline": {
+            "service_count": 148,
+            "threshold_km": 1.0
+          },
+          "changed_parameters": {
+            "action": "add_service",
+            "latitude": 43.203,
+            "longitude": -2.05,
+            "service_id": "HYPOTHETICAL_SERVICE"
+          },
+          "limitations": [
+            "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+            "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+            "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
+            "Es un contrafactual analítico, no una predicción de uso, conducta, coste o impacto social.",
+            "No constituye una recomendación de ubicación ni una decisión administrativa."
+          ],
+          "scenario": {
+            "service_count": 149,
+            "threshold_km": 1.0
+          }
+        },
+        "sources": [
+          {
+            "institution": "Gobierno Vasco - geoEuskadi",
+            "limitations": [
+              "El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007."
+            ],
+            "reference_period": "2025-05-07",
+            "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+            "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+            "unit": "polígono municipal",
+            "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/"
+          },
+          {
+            "institution": "Gobierno Vasco - Departamento de Salud",
+            "limitations": [
+              "La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad."
+            ],
+            "reference_period": "2026-09-20",
+            "source_id": "ODE_HEALTH_CENTRES_2026",
+            "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+            "unit": "registro de centro sanitario público",
+            "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+          }
+        ],
+        "status": "ok",
+        "summary": {
+          "affected_rows": 1,
+          "improved_distance_rows": 1,
+          "returned_rows": 1,
+          "selection": "Solo municipios con distancia o estado de umbral modificado.",
+          "threshold_status_changes": 0,
+          "total_result_rows": 88,
+          "worsened_distance_rows": 0
+        },
+        "unit": "m",
+        "warnings": []
+      },
+      "critic": {
+        "status": "PASS",
+        "reasons": [],
+        "missing_evidence": [],
+        "safe_next_action": "Render with original limitations.",
+        "evidence_json": "{\"data\": [{\"baseline_distance_m\": 2756.2, \"baseline_within_threshold\": false, \"difference_absolute_m\": -1365.8, \"difference_relative_pct\": -49.5537, \"municipality_code\": \"20002\", \"municipality_name\": \"Aduna\", \"scenario_distance_m\": 1390.4, \"scenario_within_threshold\": false}], \"detail_level\": \"compact\", \"filters\": {\"period\": null, \"service_category\": \"primary_care\"}, \"limitations\": [\"Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.\", \"El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.\", \"La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.\", \"Es un contrafactual analítico, no una predicción de uso, conducta, coste o impacto social.\", \"No constituye una recomendación de ubicación ni una decisión administrativa.\"], \"method\": \"Recalculo determinista del mismo indicador antes y después del cambio hipotético.\", \"metric\": \"distance_geométrica_aproximada_desde_punto_representativo_municipal\", \"period\": \"2026-09-20; escenario; 2025-05-07\", \"question\": \"Escenario add_service para primary_care\", \"rows_used\": 209, \"scenario\": {\"affected_metric\": \"distance_geométrica_aproximada_desde_punto_representativo_municipal / within_threshold\", \"assumptions\": [\"El resto de datos permanece constante.\", \"Las coordenadas representan puntos válidos.\"], \"baseline\": {\"service_count\": 148, \"threshold_km\": 1.0}, \"changed_parameters\": {\"action\": \"add_service\", \"latitude\": 43.203, \"longitude\": -2.05, \"service_id\": \"HYPOTHETICAL_SERVICE\"}, \"limitations\": [\"Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.\", \"El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.\", \"La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.\", \"Es un contrafactual analítico, no una predicción de uso, conducta, coste o impacto social.\", \"No constituye una recomendación de ubicación ni una decisión administrativa.\"], \"scenario\": {\"service_count\": 149, \"threshold_km\": 1.0}}, \"sources\": [{\"institution\": \"Gobierno Vasco - geoEuskadi\", \"limitations\": [\"El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007.\"], \"reference_period\": \"2025-05-07\", \"source_id\": \"GEOEUSKADI_MUNICIPIOS_2025\", \"title\": \"Límites Administrativos del País Vasco - Municipios 1:5.000\", \"unit\": \"polígono municipal\", \"url\": \"https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/\"}, {\"institution\": \"Gobierno Vasco - Departamento de Salud\", \"limitations\": [\"La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad.\"], \"reference_period\": \"2026-09-20\", \"source_id\": \"ODE_HEALTH_CENTRES_2026\", \"title\": \"Centros de salud, ambulatorios y hospitales públicos de Euskadi\", \"unit\": \"registro de centro sanitario público\", \"url\": \"https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/\"}], \"status\": \"ok\", \"summary\": {\"affected_rows\": 1, \"improved_distance_rows\": 1, \"returned_rows\": 1, \"selection\": \"Solo municipios con distancia o estado de umbral modificado.\", \"threshold_status_changes\": 0, \"total_result_rows\": 88, \"worsened_distance_rows\": 0}, \"unit\": \"m\", \"warnings\": []}",
+        "evidence_sha256": "00fd87f9453c04b984a834f698d3dfe18a0e3940686c2d7cebd54b8ae7de378b",
+        "versions": {
+          "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+          "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371",
+          "CAPABILITY_VERSION": "next-registry-0.1",
+          "PROMPT_VERSION": "none-deterministic-template-0.1",
+          "BENCHMARK_VERSION": "next-evaluation-0.1"
+        }
+      },
+      "blocked": false,
+      "response": "ESCENARIO HIPOTÉTICO. {\"data\": [{\"baseline_distance_m\": 2756.2, \"baseline_within_threshold\": false, \"difference_absolute_m\": -1365.8, \"difference_relative_pct\": -49.5537, \"municipality_code\": \"20002\", \"municipality_name\": \"Aduna\", \"scenario_distance_m\": 1390.4, \"scenario_within_threshold\": false}], \"limitations\": [\"Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.\", \"El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.\", \"La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.\", \"Es un contrafactual analítico, no una predicción de uso, conducta, coste o impacto social.\", \"No constituye una recomendación de ubicación ni una decisión administrativa.\"], \"method\": \"Recalculo determinista del mismo indicador antes y después del cambio hipotético.\", \"period\": \"2026-09-20; escenario; 2025-05-07\", \"rows_used\": 209, \"scenario\": {\"affected_metric\": \"distance_geométrica_aproximada_desde_punto_representativo_municipal / within_threshold\", \"assumptions\": [\"El resto de datos permanece constante.\", \"Las coordenadas representan puntos válidos.\"], \"baseline\": {\"service_count\": 148, \"threshold_km\": 1.0}, \"changed_parameters\": {\"action\": \"add_service\", \"latitude\": 43.203, \"longitude\": -2.05, \"service_id\": \"HYPOTHETICAL_SERVICE\"}, \"limitations\": [\"Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.\", \"El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.\", \"La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.\", \"Es un contrafactual analítico, no una predicción de uso, conducta, coste o impacto social.\", \"No constituye una recomendación de ubicación ni una decisión administrativa.\"], \"scenario\": {\"service_count\": 149, \"threshold_km\": 1.0}}, \"sources\": [{\"institution\": \"Gobierno Vasco - geoEuskadi\", \"limitations\": [\"El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007.\"], \"reference_period\": \"2025-05-07\", \"source_id\": \"GEOEUSKADI_MUNICIPIOS_2025\", \"title\": \"Límites Administrativos del País Vasco - Municipios 1:5.000\", \"unit\": \"polígono municipal\", \"url\": \"https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/\"}, {\"institution\": \"Gobierno Vasco - Departamento de Salud\", \"limitations\": [\"La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad.\"], \"reference_period\": \"2026-09-20\", \"source_id\": \"ODE_HEALTH_CENTRES_2026\", \"title\": \"Centros de salud, ambulatorios y hospitales públicos de Euskadi\", \"unit\": \"registro de centro sanitario público\", \"url\": \"https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/\"}], \"summary\": {\"affected_rows\": 1, \"improved_distance_rows\": 1, \"returned_rows\": 1, \"selection\": \"Solo municipios con distancia o estado de umbral modificado.\", \"threshold_status_changes\": 0, \"total_result_rows\": 88, \"worsened_distance_rows\": 0}, \"unit\": \"m\", \"warnings\": []}",
+      "versions": {
+        "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+        "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371",
+        "CAPABILITY_VERSION": "next-registry-0.1",
+        "PROMPT_VERSION": "none-deterministic-template-0.1",
+        "BENCHMARK_VERSION": "next-evaluation-0.1"
+      }
+    },
+    "alias": {
+      "plan": {
+        "intent": "resumen",
+        "candidate_capability": "summary",
+        "parameters": {
+          "municipio": "San Sebastián"
+        },
+        "ambiguities": [],
+        "missing_inputs": [],
+        "out_of_scope": false,
+        "expected_evidence": [
+          "sources",
+          "period",
+          "unit",
+          "rows_used",
+          "method",
+          "limitations"
+        ],
+        "followup": false
+      },
+      "tool": "obtener_resumen_territorial",
+      "arguments": {
+        "municipio": "San Sebastián"
+      },
+      "output": {
+        "data": [
+          {
+            "metrics_reference_period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+            "municipality_code": "20069",
+            "municipality_name": "Donostia / San Sebastián",
+            "pct_65_plus": 26.628,
+            "pct_75_plus": 13.569,
+            "population_65_plus": 48832,
+            "population_75_plus": 24884,
+            "population_total": 183388,
+            "service_indicators": {
+              "hospital": {
+                "nearest_distance_m": 2640.0,
+                "rate_per_10000_65_plus": 0.205,
+                "rate_per_10000_75_plus": 0.402,
+                "registered_service_count": 1
+              },
+              "mental_health": {
+                "nearest_distance_m": 1116.4,
+                "rate_per_10000_65_plus": 1.024,
+                "rate_per_10000_75_plus": 2.009,
+                "registered_service_count": 5
+              },
+              "other_health": {
+                "nearest_distance_m": 323.1,
+                "rate_per_10000_65_plus": 0.614,
+                "rate_per_10000_75_plus": 1.206,
+                "registered_service_count": 3
+              },
+              "primary_care": {
+                "nearest_distance_m": 323.1,
+                "rate_per_10000_65_plus": 3.686,
+                "rate_per_10000_75_plus": 7.234,
+                "registered_service_count": 18
+              }
+            },
+            "services_in_municipality": {
+              "hospital": 1,
+              "mental_health": 5,
+              "other_health": 3,
+              "primary_care": 18
+            }
+          }
+        ],
+        "detail_level": "compact",
+        "filters": {
+          "municipality_code": "20069",
+          "period": "2025-01-01"
+        },
+        "limitations": [
+          "La presencia de un servicio no acredita capacidad, horario, calidad ni acceso real.",
+          "Los periodos de demografía y servicios pueden ser distintos; se muestran en las fuentes."
+        ],
+        "method": "Selección por código municipal; recuento de registros por categoría; tasas por 10.000 personas del grupo de edad y mínima distancia euclídea EPSG:25830 desde el punto representativo municipal.",
+        "metric": "territorial_summary",
+        "period": "2025-01-01",
+        "question": "Resumen territorial de Donostia / San Sebastián",
+        "rows_used": 28,
+        "sources": [
+          {
+            "institution": "Eustat - Instituto Vasco de Estadística",
+            "limitations": [
+              "75+ se deriva de año de nacimiento <=1949 a 2025-01-01."
+            ],
+            "reference_period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+            "unit": "personas",
+            "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px"
+          },
+          {
+            "institution": "Gobierno Vasco - Departamento de Salud",
+            "limitations": [
+              "La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad."
+            ],
+            "reference_period": "2026-09-20",
+            "source_id": "ODE_HEALTH_CENTRES_2026",
+            "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+            "unit": "registro de centro sanitario público",
+            "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+          }
+        ],
+        "status": "ok",
+        "summary": {
+          "total_result_rows": 1
+        },
+        "unit": "varias; ver cada campo",
+        "warnings": []
+      },
+      "critic": {
+        "status": "PASS",
+        "reasons": [],
+        "missing_evidence": [],
+        "safe_next_action": "Render with original limitations.",
+        "evidence_json": "{\"data\": [{\"metrics_reference_period\": \"demography=2025-01-01;services=2026-09-20;geography=2025-05-07\", \"municipality_code\": \"20069\", \"municipality_name\": \"Donostia / San Sebastián\", \"pct_65_plus\": 26.628, \"pct_75_plus\": 13.569, \"population_65_plus\": 48832, \"population_75_plus\": 24884, \"population_total\": 183388, \"service_indicators\": {\"hospital\": {\"nearest_distance_m\": 2640.0, \"rate_per_10000_65_plus\": 0.205, \"rate_per_10000_75_plus\": 0.402, \"registered_service_count\": 1}, \"mental_health\": {\"nearest_distance_m\": 1116.4, \"rate_per_10000_65_plus\": 1.024, \"rate_per_10000_75_plus\": 2.009, \"registered_service_count\": 5}, \"other_health\": {\"nearest_distance_m\": 323.1, \"rate_per_10000_65_plus\": 0.614, \"rate_per_10000_75_plus\": 1.206, \"registered_service_count\": 3}, \"primary_care\": {\"nearest_distance_m\": 323.1, \"rate_per_10000_65_plus\": 3.686, \"rate_per_10000_75_plus\": 7.234, \"registered_service_count\": 18}}, \"services_in_municipality\": {\"hospital\": 1, \"mental_health\": 5, \"other_health\": 3, \"primary_care\": 18}}], \"detail_level\": \"compact\", \"filters\": {\"municipality_code\": \"20069\", \"period\": \"2025-01-01\"}, \"limitations\": [\"La presencia de un servicio no acredita capacidad, horario, calidad ni acceso real.\", \"Los periodos de demografía y servicios pueden ser distintos; se muestran en las fuentes.\"], \"method\": \"Selección por código municipal; recuento de registros por categoría; tasas por 10.000 personas del grupo de edad y mínima distancia euclídea EPSG:25830 desde el punto representativo municipal.\", \"metric\": \"territorial_summary\", \"period\": \"2025-01-01\", \"question\": \"Resumen territorial de Donostia / San Sebastián\", \"rows_used\": 28, \"sources\": [{\"institution\": \"Eustat - Instituto Vasco de Estadística\", \"limitations\": [\"75+ se deriva de año de nacimiento <=1949 a 2025-01-01.\"], \"reference_period\": \"2025-01-01\", \"source_id\": \"EUSTAT_EMH_2025\", \"title\": \"Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo\", \"unit\": \"personas\", \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\"}, {\"institution\": \"Gobierno Vasco - Departamento de Salud\", \"limitations\": [\"La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad.\"], \"reference_period\": \"2026-09-20\", \"source_id\": \"ODE_HEALTH_CENTRES_2026\", \"title\": \"Centros de salud, ambulatorios y hospitales públicos de Euskadi\", \"unit\": \"registro de centro sanitario público\", \"url\": \"https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/\"}], \"status\": \"ok\", \"summary\": {\"total_result_rows\": 1}, \"unit\": \"varias; ver cada campo\", \"warnings\": []}",
+        "evidence_sha256": "c9466331ce5a47ce452b45f51ac230914fe3b039fa0ed2de78f0b696dbcfc2a4",
+        "versions": {
+          "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+          "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371",
+          "CAPABILITY_VERSION": "next-registry-0.1",
+          "PROMPT_VERSION": "none-deterministic-template-0.1",
+          "BENCHMARK_VERSION": "next-evaluation-0.1"
+        }
+      },
+      "blocked": false,
+      "response": "Evidencia territorial. {\"data\": [{\"metrics_reference_period\": \"demography=2025-01-01;services=2026-09-20;geography=2025-05-07\", \"municipality_code\": \"20069\", \"municipality_name\": \"Donostia / San Sebastián\", \"pct_65_plus\": 26.628, \"pct_75_plus\": 13.569, \"population_65_plus\": 48832, \"population_75_plus\": 24884, \"population_total\": 183388, \"service_indicators\": {\"hospital\": {\"nearest_distance_m\": 2640.0, \"rate_per_10000_65_plus\": 0.205, \"rate_per_10000_75_plus\": 0.402, \"registered_service_count\": 1}, \"mental_health\": {\"nearest_distance_m\": 1116.4, \"rate_per_10000_65_plus\": 1.024, \"rate_per_10000_75_plus\": 2.009, \"registered_service_count\": 5}, \"other_health\": {\"nearest_distance_m\": 323.1, \"rate_per_10000_65_plus\": 0.614, \"rate_per_10000_75_plus\": 1.206, \"registered_service_count\": 3}, \"primary_care\": {\"nearest_distance_m\": 323.1, \"rate_per_10000_65_plus\": 3.686, \"rate_per_10000_75_plus\": 7.234, \"registered_service_count\": 18}}, \"services_in_municipality\": {\"hospital\": 1, \"mental_health\": 5, \"other_health\": 3, \"primary_care\": 18}}], \"limitations\": [\"La presencia de un servicio no acredita capacidad, horario, calidad ni acceso real.\", \"Los periodos de demografía y servicios pueden ser distintos; se muestran en las fuentes.\"], \"method\": \"Selección por código municipal; recuento de registros por categoría; tasas por 10.000 personas del grupo de edad y mínima distancia euclídea EPSG:25830 desde el punto representativo municipal.\", \"period\": \"2025-01-01\", \"rows_used\": 28, \"scenario\": null, \"sources\": [{\"institution\": \"Eustat - Instituto Vasco de Estadística\", \"limitations\": [\"75+ se deriva de año de nacimiento <=1949 a 2025-01-01.\"], \"reference_period\": \"2025-01-01\", \"source_id\": \"EUSTAT_EMH_2025\", \"title\": \"Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo\", \"unit\": \"personas\", \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\"}, {\"institution\": \"Gobierno Vasco - Departamento de Salud\", \"limitations\": [\"La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad.\"], \"reference_period\": \"2026-09-20\", \"source_id\": \"ODE_HEALTH_CENTRES_2026\", \"title\": \"Centros de salud, ambulatorios y hospitales públicos de Euskadi\", \"unit\": \"registro de centro sanitario público\", \"url\": \"https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/\"}], \"summary\": {\"total_result_rows\": 1}, \"unit\": \"varias; ver cada campo\", \"warnings\": []}",
+      "versions": {
+        "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+        "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371",
+        "CAPABILITY_VERSION": "next-registry-0.1",
+        "PROMPT_VERSION": "none-deterministic-template-0.1",
+        "BENCHMARK_VERSION": "next-evaluation-0.1"
+      }
+    }
+  },
+  "status": "PASS"
+}
