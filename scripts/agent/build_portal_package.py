@@ -40,6 +40,8 @@ def main() -> None:
     with zipfile.ZipFile(OUTPUT, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
         for source_name, archive_name in sorted(FILES.items(), key=lambda item: item[1]):
             info = zipfile.ZipInfo(archive_name, FIXED_ZIP_TIME)
+            # Pin ZIP metadata across Windows/Linux without changing runtime bytes.
+            info.create_system = 0
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = 0o100644 << 16
             archive.writestr(
