@@ -150,7 +150,8 @@ def test_runtime_bundle_is_compact_and_hashes_match():
     assert manifest["total_bytes"] < 1024 * 1024
     assert manifest["total_bytes"] == sum(item["bytes"] for item in manifest["files"])
     for item in manifest["files"]:
-        path = ROOT / item["path"]
+        # Historic source manifest was emitted on Windows; interpret separators portably.
+        path = ROOT / item["path"].replace("\\", "/")
         assert path.stat().st_size == item["bytes"]
         assert hashlib.sha256(path.read_bytes()).hexdigest() == item["sha256"]
 
