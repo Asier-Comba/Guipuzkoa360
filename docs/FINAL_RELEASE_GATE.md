@@ -74,3 +74,16 @@ es una decisión aceptada, no prueba de capacidad del portal.
 Publicar sigue fuera de autorización: aprobar el merge técnico, verificar main resultante, cambiar
 entonces la rama por defecto, revisar/seleccionar los seis materiales y versión privada, autorizar entrega.
 La PR #8 es cierre parcial histórico. La PR final usa esta rama. Nada se fusiona ni publica aquí.
+
+## PR final y verificación de cierre
+
+[PR #9](https://github.com/Asier-Comba/Guipuzkoa360/pull/9): abierta, base main, mergeable=true,
+mergeable_state=clean al consultar el head 91d1a261a8868e6c14115eb6ead96b0ba369f1c8.
+GitHub no tiene checks/statuses configurados para ese head (0/0); «verde» aquí significa la evidencia
+local ejecutada, no una CI remota inexistente. Se repitieron Python completo, Node y gate adversarial
+después del commit de evidencia 5b0c228: todos pasaron. Worktree limpio y push comprobado.
+Esta anotación posterior es exclusivamente documental.
+
+main permanece en bacc29d3b4d4d48eab11e5bf1ad00134f5b12a01; default=work/data-foundation.
+No se visita como «main final» una rama que todavía no se ha fusionado. El cambio de default se hará
+solo después del merge autorizado y de verificar su resultado.
