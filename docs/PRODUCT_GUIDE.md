@@ -79,7 +79,7 @@ El [centro secundario](../resultados/control_center.html) explica cada KPI con d
 
 La salida extrema de 20.155 caracteres sigue sin demostración en portal. El último smoke quedó bloqueado por infraestructura. Las latencias del motor local no representan la conversación completa.
 
-«Cuando la pregunta cambia» separa **HOY** de **EVOLUCIÓN PROPUESTA** y **REQUIERE NUEVOS DATOS**. Actualización supervisada y mejora con aprobación humana son propuestas. No hay autoactualización ni autoedición activa. Un diagrama multiagente solo se incorporará como prototipo si su responsable aporta evidencia estable; las siete herramientas actuales no son siete agentes.
+«Cuando la pregunta cambia» separa **HOY** de **EVOLUCIÓN PROPUESTA** y **REQUIERE NUEVOS DATOS**. Actualización supervisada y mejora con aprobación humana son propuestas. No hay autoactualización ni autoedición activa. El prototipo publicado en `171b6cb` separa planificación, cálculo, verificación y composición deterministas. Recibe intenciones estructuradas: no interpreta lenguaje natural ni ejecuta cuatro modelos. Se muestra como prototipo offline, no activo en el portal. Las siete herramientas actuales no son siete agentes.
 
 ## Teclado y pantalla pequeña
 

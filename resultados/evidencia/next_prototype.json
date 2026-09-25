@@ -1,0 +1,78 @@
+{
+  "report": {
+    "kpis": {
+      "composer_block_rate": {
+        "definition": "Corruptions blocked by composer / injections.",
+        "denominator": 16,
+        "numerator": 16,
+        "value": 1.0
+      },
+      "critic_detection_rate": {
+        "definition": "Injected corruptions/unapproved free-text drafts rejected / injections. This is template allowlisting, not general semantic detection.",
+        "denominator": 16,
+        "numerator": 16,
+        "value": 1.0
+      },
+      "determinism_rate": {
+        "definition": "Byte-equivalent canonical complete session results / repeated identical structured requests.",
+        "denominator": 8,
+        "numerator": 8,
+        "value": 1.0
+      },
+      "followup_recalculation_rate": {
+        "definition": "Follow-ups triggering execution and critic recalculation / follow-up cases.",
+        "denominator": 1,
+        "numerator": 1,
+        "value": 1.0
+      },
+      "limitation_present_rate": {
+        "definition": "Nonempty limitations / supported cases.",
+        "denominator": 9,
+        "numerator": 9,
+        "value": 1.0
+      },
+      "numeric_grounding_rate": {
+        "definition": "Whole result equals existing core / supported cases; shared algorithm, not independent validation.",
+        "denominator": 9,
+        "numerator": 9,
+        "value": 1.0
+      },
+      "out_of_scope_rejection_rate": {
+        "definition": "Unsupported explicit intents with no tool / unsupported cases.",
+        "denominator": 6,
+        "numerator": 6,
+        "value": 1.0
+      },
+      "parameter_accuracy": {
+        "definition": "Exact requested/merged parameters / supported cases.",
+        "denominator": 9,
+        "numerator": 9,
+        "value": 1.0
+      },
+      "source_grounding_rate": {
+        "definition": "Declared source identifiers resolve in catalog / supported cases; not completeness of every field provenance.",
+        "denominator": 9,
+        "numerator": 9,
+        "value": 1.0
+      },
+      "tool_selection_accuracy": {
+        "definition": "Correct deterministic routing / supported structured-intent cases; not natural-language accuracy.",
+        "denominator": 9,
+        "numerator": 9,
+        "value": 1.0
+      }
+    },
+    "scope": "OFFLINE PROTOTYPE: bounded structured intents; no LLM, no portal, no production promotion",
+    "versions": {
+      "BENCHMARK_VERSION": "next-evaluation-0.1",
+      "CAPABILITY_VERSION": "next-registry-0.1",
+      "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+      "PROMPT_VERSION": "none-deterministic-template-0.1",
+      "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371"
+    }
+  },
+  "scope": "Prototype evidence produced by technical owner; not executed in portal or imported into frozen runtime.",
+  "source_blob_sha256": "435a2a6338a08a95741ef901129b49490f7a9211460e256876fe64a16ab55c8b",
+  "source_commit": "171b6cb2a366f18509d3432d87f46fa21ea4aefa",
+  "source_path": "analisis/next/quality_kpis.json"
+}

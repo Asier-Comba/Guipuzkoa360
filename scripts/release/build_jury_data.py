@@ -92,7 +92,14 @@ def build_product_evidence():
     inputs = [report_path, 'docs/VALIDATION.md', 'docs/FINAL_RELEASE_GATE.md', 'datos_originales/eustat_demografia_2025.csv',
               'agentes/gipuzkoa360/portal/main.py','agentes/gipuzkoa360/portal/tools.py']
     inputs += [p.as_posix() for p in (Path('datos_preparados') / p.name for p in sorted((ROOT / 'datos_preparados').glob('*'))) if (ROOT / p).is_file()]
+    prototype_path = 'resultados/evidencia/next_prototype.json'
+    prototype = json.loads((ROOT / prototype_path).read_text(encoding='utf-8')) if (ROOT / prototype_path).exists() else None
+    if prototype:
+        if prototype['report']['versions']['RUNTIME_VERSION'] != report['runtime_sha']:
+            raise ValueError('Prototype evidence belongs to a different runtime')
+        inputs.append(prototype_path)
     return {'base_sha':'46c1a48f63c307654f45fcb5c18883f264b660ed','runtime_sha':report['runtime_sha'],
+            'next_prototype':prototype,
             'execution':'Cálculos locales guardados; sin conversación en directo en estos HTML.',
             'calls':calls,'sources':repo.metadata()['sources'],
             'inventory':{'municipalities':len(repo.municipalities()),'health_records':len(repo.services()),'tools':tool_names},

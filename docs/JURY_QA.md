@@ -252,9 +252,9 @@ No se autoedita en producción. La evolución propuesta consiste en observar fal
 
 ### 40 · TOOLS · ¿Por qué subagentes?
 
-Separar planificación, cálculo, verificación y explicación podría facilitar la revisión de un sistema futuro, pero también añade coste y coordinación. Las siete herramientas actuales no son siete agentes. Solo mostraríamos un prototipo multiagente como tal si existe evidencia técnica de su funcionamiento.
+Existe un prototipo offline con planificación, cálculo, verificación y composición separadas. Son responsabilidades deterministas, no cuatro modelos de IA: recibe intenciones estructuradas y comparte el core. Las siete herramientas actuales no son siete agentes. El prototipo no está activo en el portal.
 
-**EVIDENCE POINTER:** E → `inventory.tools`; H → «7 operaciones»; [handoff](HUGO_JURY_HANDOFF.md) → dependencia del prototipo.
+**EVIDENCE POINTER:** E → `inventory.tools`, `next_prototype`; centro de validación → «PROTOTIPO DE EVOLUCIÓN»; evidencia publicada en `171b6cb`.
 
 ### 41 · EVOLUTION · ¿Qué pasa cuando la cobertura mejora?
 

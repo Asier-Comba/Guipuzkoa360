@@ -118,3 +118,13 @@ def test_regeneration_is_byte_reproducible_and_preserves_frozen_inputs():
     subprocess.run(['node','scripts/build_jury.mjs'],cwd=ROOT,check=True,capture_output=True)
     assert [p.read_bytes() for p in outputs]==before
     assert all((ROOT/p).read_bytes()==contents for p,contents in protected.items())
+
+def test_prototype_evidence_is_frozen_and_explicitly_offline():
+    prototype=E['next_prototype']
+    saved=json.loads((ROOT/'resultados/evidencia/next_prototype.json').read_text(encoding='utf-8'))
+    assert prototype==saved
+    assert prototype['report']['versions']['RUNTIME_VERSION']==E['runtime_sha']
+    assert 'OFFLINE PROTOTYPE' in prototype['report']['scope']
+    assert 'no LLM, no portal, no production promotion' in prototype['report']['scope']
+    assert len(prototype['source_commit'])==40
+    assert len(prototype['source_blob_sha256'])==64
