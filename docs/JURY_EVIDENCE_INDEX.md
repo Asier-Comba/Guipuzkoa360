@@ -46,7 +46,7 @@ Los pesos proceden de la rúbrica conservada en `contexto-principal.md` y `docs/
 
 **HOW TO SHOW IT LIVE:** abrir pregunta→tool→args→output y contrastar respuesta. Si runner falla, usar evidencia guardada rotulada y mostrar error, no afirmar ejecución exitosa.
 
-**LIMIT:** [smoke actual](operations/PORTAL_SMOKE_ENGINEERING.md) bloqueado. NEXT es prototipo offline con inputs estructurados, no prueba del LLM en portal.
+**LIMIT:** [smoke actual](internal/PORTAL_SMOKE_REFRESH.md) bloqueado. NEXT es prototipo offline con inputs estructurados, no prueba del LLM en portal.
 
 ## 4. Claridad de respuestas y artefactos — 15 %
 

@@ -2,7 +2,7 @@ name: Release fast CI
 on:
   pull_request:
   push:
-    branches: [final/work1-engineering-master]
+    branches: [main, final/work1-engineering-master]
   workflow_dispatch:
 permissions:
   contents: read

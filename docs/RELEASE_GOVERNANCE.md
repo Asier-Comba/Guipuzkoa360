@@ -4,11 +4,13 @@ Base de esta ingeniería: `46c1a48f63c307654f45fcb5c18883f264b660ed`, rama `fina
 
 | Nivel | Qué significa | Qué no autoriza |
 |---|---|---|
-| stable | Versión humana aprobada, inmutable, con datos, runtime y evidencia identificados | No equivale automáticamente a la rama llamada main; main sigue siendo anterior |
-| candidate | Artefacto reproducible con gates verificables y riesgos revisados | CI verde no autoriza merge, publicación ni afirmar PORTAL GO |
-| experimental | NEXT, propuestas, datos candidatos y shadow offline | No entra en ZIP, contexto ni herramientas de producción |
+| **STABLE** | Versión humana aprobada, inmutable, con datos, runtime y evidencia identificados | No equivale automáticamente a la rama llamada main; main sigue siendo anterior |
+| **CANDIDATE** | Artefacto reproducible con gates verificables y riesgos revisados | CI verde no autoriza merge, publicación ni afirmar PORTAL GO |
+| **PROTOTYPE** | NEXT, propuestas, datos candidatos y shadow offline | No entra en ZIP, contexto ni herramientas de producción |
 
 ## Promoción humana
+
+Requisitos mínimos: **0 Critical**, **0 High**, data contract PASS, traceability PASS bajo definición y denominador publicados, regresión relevante PASS y aprobación humana. Nunca hay autopromoción.
 
 1. Fijar SHA y manifiestos. Cuando se reutiliza evidencia v4, comparar **los 12 archivos byte a byte** contra `195b4980fa5998b096c308296a55e452380b0371` (`scripts/ops/verify_runtime_identity.py`). Un byte distinto invalida esa identidad.
 2. CI rápida verde en Linux y Windows desde checkout limpio: suite Python completa, Node, sintaxis, jury gates, extracción y doble build; sin descarga de fuentes ni caché de instalación.

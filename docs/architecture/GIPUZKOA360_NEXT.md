@@ -1,14 +1,23 @@
-# GIPUZKOA 360 NEXT — prototipo aislado, no release
+# GIPUZKOA 360 NEXT — estados reales, sin promesas implícitas
+
+| Etiqueta | Estado |
+|---|---|
+| **LIVE TODAY** | Runtime congelado `195b498…`, 7 tools deterministas, datos versionados de 88 municipios/148 registros y evidencia histórica de la familia de versiones del portal. El smoke más reciente está bloqueado por infraestructura. |
+| **OFFLINE PROTOTYPE** | Planner, CapabilityRegistry, Executor, EvidenceCritic, Composer, Evaluation, ImprovementProposal y source watcher. Solo intents estructurados; no está en el portal ni en producción. |
+| **PROPOSED** | Evaluar patrones de uso agregados, generar propuestas, shadow/benchmark y promoción humana. No hay autoedición ni autodespliegue. |
+| **REQUIRES NEW DATA** | Movilidad, capacidad, demanda, vivienda, ambiente y seguimiento longitudinal comparable. No están implementados. |
 
 Implementación: `prototypes/gipuzkoa360_next/`. No está en STUDIO_CONTEXT_FILES, imports de producción ni ZIP. Ningún nuevo modelo, servicio de red, framework de agentes o proceso persistente. Cinco responsabilidades lógicas bastan; no hay motivo demostrado para desplegar cinco LLMs.
 
 ```text
-Intención estructurada → Planner → CapabilityRegistry → Executor (core existente)
-                                                        ↓
-                 Composer ← PASS/WARN ← EvidenceCritic (recalcula)
-                                      FAIL → bloquear
+CURRENT
+Pregunta → coordinador → tool determinista → evidencia → respuesta
 
-Fuera del request: Data Steward (candidatos) · Evaluation (mediciones)
+NEXT PROTOTYPE
+Structured Intent → Planner → Capability Registry → Executor → Evidence Critic → Composer
+
+OPERATIONS
+Data / Usage Signal → Evaluate → Proposal → Tests → Human Approval
 ```
 
 ## Fronteras que sí aportan
@@ -55,4 +64,13 @@ Cada respuesta validada lleva DATA_VERSION, RUNTIME_VERSION, CAPABILITY_VERSION,
 - La plantilla no promete «responder como v4». Es una opción de investigación de seguridad, no un reemplazo listo para portal.
 - La suite existente y el gate byte a byte son obligatorios tras cualquier experimento.
 
-Véase [evolución segura](SAFE_EVOLUTION.md), [matrix de tools](TOOL_EVIDENCE_MATRIX.md) y [gobierno](../RELEASE_GOVERNANCE.md).
+## Cuando Gipuzkoa esté mejor cubierta
+
+- **LIVE TODAY:** detección de diferencias y descripción `within_threshold`.
+- **OFFLINE PROTOTYPE:** efecto geométrico marginal al añadir un registro y **GEOMETRIC SERVICE-REMOVAL SENSITIVITY** al retirarlo. Agregan diferencias que ya calcula el core; no son beneficio social, resiliencia ni localización óptima.
+- **PROPOSED:** monitorización longitudinal solo con snapshots temporal y metodológicamente comparables.
+- **REQUIRES NEW DATA:** movilidad, capacidad y demanda para estudiar acceso efectivo. Vivienda y ambiente requieren fuentes y contratos propios.
+
+Uso y mejora siguen una política privacy-first: `QueryPatternRecord` conserva intención normalizada, capacidad, éxito/fallo y bucket de latencia, no conversaciones completas. Una frecuencia solo produce `CapabilityGapProposal`; nunca implementa o promueve una capacidad. Promotion requiere cero Critical/High nuevos, goldens, beneficio medido, revisión de latencia/payload/UX, aprobación humana y rollback.
+
+Véase [matrix de tools](TOOL_EVIDENCE_MATRIX.md), [pipeline de datos](../operations/DATA_UPDATE_PIPELINE.md) y [gobierno](../RELEASE_GOVERNANCE.md).

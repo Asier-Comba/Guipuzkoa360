@@ -8,6 +8,18 @@ JSON estricto (sin NaN/Infinity). Éxito: status, question, filters, period, met
 
 Datasets: municipios.csv y demografia.csv por municipality_code (5 caracteres); runtime_municipality_points.csv, coordenadas WGS84 y EPSG:25830; runtime_servicios.csv por service_id y municipio/categoría; metadata_sources.json y manifiesto. Datos: población 2025-01-01, geografía 2025-05-07, catálogo sanitario 2026-09-20. Fuente derivada G360_DERIVED_MUNICIPAL_METRICS_V1 enlaza las oficiales. Métodos completos en METODOLOGIA/RESULT_SCHEMA (congelados).
 
+| TOOL | USER QUESTION | INPUT | OUTPUT | REAL CONTROL | SOURCE | TRACEABILITY | TEST EVIDENCE | PORTAL EVIDENCE | LIMIT |
+|---|---|---|---|---|---|---|---|---|---|
+| `obtener_resumen_territorial` | ¿Qué muestra Aduna? | municipio, periodo | población, edades e indicadores de registro/distancia | Aduna: 507; 75 de 65+; primaria 0 registros internos y 2.756,2 m | Eustat + catálogo/geografía derivados | código, periodos de métricas, unidad/método/fuentes | summary/aliases/goldens/NEXT | Donostia histórico v2; Aduna histórico. Refresh v4: error, no output | cero registros ≠ cero médicos; tasa ≠ capacidad |
+| `comparar_municipios` | ¿En qué difieren Eibar y Tolosa? | 2–20 municipios, edad, categoría, km, periodo | filas comparables, denominadores y distancia opcional | 75+ primaria: 13,744 %/1.223,6 m vs 12,131 %/1.080,5 m | Eustat, geoEuskadi, ODE | mismo criterio por código; sobre común | 3.828 pares + integración/NEXT | G-03 histórico v2 | fechas/tamaños distintos; no causalidad |
+| `analizar_envejecimiento` | ¿Dónde pesa más 75+? | edad, percentage/count, periodo, top_n | ranking con numerador/total | ranking 75+ top 5, regenerable | Eustat | grupo, medida, periodo, personas/% | 88 municipios + aliases/NEXT | ranking histórico v3 | ranking ≠ necesidad ni predicción |
+| `analizar_acceso_servicios` | ¿A qué distancia está el registro más cercano? | categoría, km, periodo, municipios | nearest_distance_m y within_threshold | Aduna primaria: 2.756,2 m | geoEuskadi + ODE | EPSG:25830, ids/periodos, método | matriz 1.760 + adversarial/NEXT | Aduna histórico; no refresh PASS | distancia geométrica ≠ minutos/acceso/citas |
+| `analizar_coincidencia` | ¿Dónde se alcanzan ambos cortes? | categoría, edad, km, periodo, cuantil | cortes, 88 unidas, count y destacados | q0,75: 7; 23,973 %; 2.019,2 m | las tres oficiales + derivada | argumentos, filas, cortes, sources | 320 configuraciones + jury/NEXT | G-04/G-06 históricos v3; refresh v4 con call pero runner ocupado | umbral solo within_threshold; coincidencia ≠ causalidad |
+| `simular_escenario` | ¿Qué cambia al añadir/retirar un registro? | acción, categoría, umbrales, coords/id, periodo | baseline, scenario, differences, supuestos | Aduna: 2.756,2→0,0 m; −2.756,2 m | baseline oficial + SCENARIO_INPUT | parámetros cambiados, filas, sources y etiqueta hipotética | 352 add/148 remove/80 threshold + NEXT | regresión histórica v4 | hipótesis, no predicción/recomendación; payload extremo pendiente |
+| `consultar_fuente` | ¿De dónde sale la cifra? | source_id opcional | institución, URL, licencia, periodo, unidad y límites | EUSTAT_EMH_2025 | metadata_sources.json | source_id y ficha versionada | data access/release/NEXT/fake-source | G-01 histórico v2 | no comprueba disponibilidad o actualización actual |
+
+**Separación obligatoria:** “TEST EVIDENCE” es cálculo determinista local/versionado; “PORTAL EVIDENCE” es observación histórica por versión. Un error de runner no se convierte en PASS de portal.
+
 ## obtener_resumen_territorial
 
 - **USER INTENT:** describir un municipio y sus indicadores.
@@ -92,4 +104,4 @@ Datasets: municipios.csv y demografia.csv por municipality_code (5 caracteres); 
 - **FAILURE MODE:** id inventado se rechaza; no inventar URL ni citar fuente no cargada.
 - **LIMITATION:** ficha local no acredita disponibilidad actual del sitio ni que no exista edición posterior.
 
-La evidencia histórica está corregida por versión en [PORTAL_EVIDENCE_RC2](../PORTAL_EVIDENCE_RC2.md). La actual está en [smoke ingeniería](../operations/PORTAL_SMOKE_ENGINEERING.md). Ninguna tool NEXT se añade al agente v4.
+La evidencia histórica está corregida por versión en [PORTAL_EVIDENCE_RC2](../PORTAL_EVIDENCE_RC2.md). La actual está en [smoke refresh](../internal/PORTAL_SMOKE_REFRESH.md). Ninguna tool NEXT se añade al agente v4.

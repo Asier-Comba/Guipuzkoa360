@@ -1,6 +1,6 @@
 # Evidencia de ingeniería: problemas reales, decisiones comprobables
 
-No se infieren horas a partir del historial; el esfuerzo se acredita mediante artefactos, cambios y pruebas verificables.
+No se infieren horas de trabajo a partir del historial; el esfuerzo se acredita mediante artefactos, commits y pruebas verificables.
 
 Fechas de autor obtenidas con `git log --all --date=iso-strict`. Un commit acredita un cambio; el resultado solo se atribuye a un test o registro conservado. Las cifras finales no se retroatribuyen a etapas anteriores. Rama base `46c1a48…`; runtime `195b498…` congelado; [gobierno](RELEASE_GOVERNANCE.md).
 
@@ -20,9 +20,9 @@ Fechas de autor obtenidas con `git log --all --date=iso-strict`. Un commit acred
 | 25-09-2026 | Hero usaba pct≥25 sobre tres municipios | Mostrar salida provincial real y cortes por cuantiles | Hero 7/4/2 y 88 filas; no recalcular métricas en JS | `d0e1a05` |
 | 25-09-2026 | Pantalla podría divergir silenciosamente | Gate del output completo y ataques a artifacts | 9 corrupciones visuales rechazadas, `test_final_artifacts` | `5b0c228` |
 | 25-09-2026 | Integración necesitaba estado y scope claro | Base canónica, documentación y PR abierta | PR #9, base `46c1a48`; smoke anterior bloqueado, no convertirlo en PASS | `84e9516`, `91d1a26`, `46c1a48` |
-| 25-09-2026 | No existían checks remotos de release | CI separada rápida Linux/Windows y manual exhaustiva | Primeras dos ejecuciones Linux FAIL por ruta de manifiesto; parche completo y ambos PASS | `6217ecd`, `7228bbf`, `47362d3`; [runs](operations/CI_AND_REPRODUCTION.md) |
+| 25-09-2026 | No existían checks remotos de release | CI separada rápida Linux/Windows y manual exhaustiva | Primeras dos ejecuciones Linux FAIL por ruta de manifiesto; parche completo y ambos PASS | `6217ecd`, `7228bbf`, `47362d3`; Actions `36147113831` |
 | 25-09-2026 | Evolucionar podía contaminar el runtime | NEXT aislado, DataOps solo propuestas, medición con denominadores | Suite `tests/next`; 16/16 ataques bloqueados, 8 goldens, core sin duplicar | `171b6cb` y endurecimiento posterior de esta rama |
-| 25-09-2026 | Smoke reciente seguía incierto | Ejecutar P1 sobre v4 sin editar nada | Runner ocupado; fallback confunde threshold/cuántiles: Medium nuevo, no PASS | [registro del intento](operations/PORTAL_SMOKE_ENGINEERING.md) |
+| 25-09-2026 | Smoke reciente seguía incierto | Ejecutar P1 sobre v4 sin editar nada | Runner ocupado; fallback confunde threshold/cuántiles: Medium nuevo, no PASS | [registro del intento](internal/PORTAL_SMOKE_REFRESH.md) |
 
 ## Qué se midió ahora
 

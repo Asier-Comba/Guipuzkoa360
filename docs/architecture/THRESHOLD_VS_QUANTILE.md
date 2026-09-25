@@ -20,4 +20,4 @@ Fuente ejecutable: [jury_coincidence_results](../../analisis/jury_coincidence_re
 
 Respuesta para jurado: «Destacamos municipios simultáneamente en la cola superior de ambas distribuciones; mostramos 2 km como referencia adicional. No seleccionamos simplemente todos los que superan 2 km».
 
-No se cambia el runtime congelado. El nuevo smoke de ingeniería encontró esa confusión en el texto de fallback cuando el runner falla: [registro](../operations/PORTAL_SMOKE_ENGINEERING.md). Es un riesgo explícito, no una validación del cálculo.
+No se cambia el runtime congelado. El nuevo smoke de ingeniería encontró esa confusión en el texto de fallback cuando el runner falla: [registro](../internal/PORTAL_SMOKE_REFRESH.md). Es un riesgo explícito, no una validación del cálculo.
