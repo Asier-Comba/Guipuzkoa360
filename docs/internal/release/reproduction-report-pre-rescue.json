@@ -1,0 +1,1001 @@
+{
+  "checkout_sha": "378a3331936025d78c8424101290b123ab8d981d",
+  "python": "3.12.4",
+  "os": "Windows",
+  "zlib": "1.3.1",
+  "steps": [
+    {
+      "id": "dependencies",
+      "command": [
+        "python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "seconds": 1.63,
+      "exit_code": 0,
+      "log_sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+    },
+    {
+      "id": "pipeline_snapshot",
+      "command": [
+        "python",
+        "scripts/data/build_all.py",
+        "--offline"
+      ],
+      "seconds": 17.63,
+      "exit_code": 0,
+      "log_sha256": "646d9005d0426dd7515151a4adc2c6345767106857677e758c51d4c8e3e40245"
+    },
+    {
+      "id": "python_tests",
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "-o",
+        "addopts=",
+        "-q",
+        "--junitxml=work/release-audit/pytest.xml"
+      ],
+      "seconds": 10.912,
+      "exit_code": 0,
+      "log_sha256": "01fd23ce15a4208cdf3f4db8fe6a34ff967e78cf0354a9763a00230e057df555"
+    },
+    {
+      "id": "node_tests",
+      "command": [
+        "node",
+        "--test",
+        "tests/e2e/contract_flow.test.mjs"
+      ],
+      "seconds": 4.34,
+      "exit_code": 0,
+      "log_sha256": "617d5cc65d6624c41ada388d4a6ab8e8d0cc2f817ffac92c59791f75c45ad130"
+    },
+    {
+      "id": "acceptance",
+      "command": [
+        "python",
+        "scripts/agent/run_release_e2e.py"
+      ],
+      "seconds": 0.48,
+      "exit_code": 0,
+      "log_sha256": "7fe84bd7fb00367982befa5e6d5889a3daf4c2bdbc9665ffa6ed86c2bd55da9b"
+    },
+    {
+      "id": "bundle_sources",
+      "command": [
+        "python",
+        "scripts/agent/build_portal_sources.py"
+      ],
+      "seconds": 0.267,
+      "exit_code": 0,
+      "log_sha256": "69661b8af1fb3cd86d30b7042a0f23468630b45e20d5c3b9ea8d3eeba2a7c8c3"
+    },
+    {
+      "id": "visual_data",
+      "command": [
+        "python",
+        "scripts/agent/build_work3_result.py"
+      ],
+      "seconds": 0.239,
+      "exit_code": 0,
+      "log_sha256": "b42309e85f5dd6f9f47d87942c95221b5a8771b6c891de58b89ac464c8f5e0f8"
+    },
+    {
+      "id": "visual_geometry",
+      "command": [
+        "node",
+        "scripts/enrich_work1_result.mjs",
+        "analisis/work3_agent_result.json",
+        "work/release-audit/visual.json"
+      ],
+      "seconds": 0.191,
+      "exit_code": 0,
+      "log_sha256": "990f4bc4a6aed2874640a829a6e2e0215d0b57cca230b2f2d07e8fd4557f9ded"
+    },
+    {
+      "id": "visual_html",
+      "command": [
+        "node",
+        "scripts/build_results.mjs",
+        "work/release-audit/visual.json",
+        "work/release-audit/html"
+      ],
+      "seconds": 0.212,
+      "exit_code": 0,
+      "log_sha256": "33a389e834a15e77a3539bd4095158094b3dbf08976c3fdcbe5f24d1f517c810"
+    },
+    {
+      "id": "benchmark",
+      "command": [
+        "python",
+        "scripts/agent/benchmark_tools.py",
+        "--warm-repetitions",
+        "7",
+        "--output",
+        "work/release-audit/benchmark.json"
+      ],
+      "seconds": 0.788,
+      "exit_code": 0,
+      "log_sha256": "162d07200e2e8eb9561646bddd6bea92ecc478e42666731f24ee540db41a5127"
+    },
+    {
+      "id": "package_1",
+      "command": [
+        "python",
+        "scripts/agent/build_portal_package.py"
+      ],
+      "seconds": 0.252,
+      "exit_code": 0,
+      "log_sha256": "8ce8718dc8f1ff44c026669fcbc65e77f46a36e4932e3270a2715620f1ec9097"
+    },
+    {
+      "id": "package_2",
+      "command": [
+        "python",
+        "scripts/agent/build_portal_package.py"
+      ],
+      "seconds": 0.229,
+      "exit_code": 0,
+      "log_sha256": "8ce8718dc8f1ff44c026669fcbc65e77f46a36e4932e3270a2715620f1ec9097"
+    }
+  ],
+  "before": {
+    "runtime_sha": "195b4980fa5998b096c308296a55e452380b0371",
+    "frozen": [
+      {
+        "path": "agentes/gipuzkoa360/portal/main.py",
+        "bytes": 6286,
+        "sha256": "c2f4770f234522ac6ccb535d627c1252e19bc8f992e73194dab6e9f6672c585e",
+        "status": "PASS"
+      },
+      {
+        "path": "agentes/gipuzkoa360/portal/tools.py",
+        "bytes": 54274,
+        "sha256": "0a5ab214ecf89cef04c85b5055c8ac42047c151c0411b4aa6c470a8de397edd5",
+        "status": "PASS"
+      },
+      {
+        "path": "FUENTES.md",
+        "bytes": 6963,
+        "sha256": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/METODOLOGIA.md",
+        "bytes": 1210,
+        "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/RESULT_SCHEMA.md",
+        "bytes": 2296,
+        "sha256": "8b1a5e1f5541b41f2e0680dcdc2d2a9a3c6f5a2333088fb98b28fd3b4893c872",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/municipios.csv",
+        "bytes": 30075,
+        "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/demografia.csv",
+        "bytes": 6161,
+        "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/runtime_municipality_points.csv",
+        "bytes": 8689,
+        "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/runtime_servicios.csv",
+        "bytes": 25258,
+        "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/metadata_sources.json",
+        "bytes": 4833,
+        "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/data_contract.json",
+        "bytes": 5274,
+        "sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/runtime_manifest.json",
+        "bytes": 1594,
+        "sha256": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+        "status": "PASS"
+      }
+    ],
+    "manifest": [
+      {
+        "path": "datos_preparados/municipios.csv",
+        "bytes": 30075,
+        "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/demografia.csv",
+        "bytes": 6161,
+        "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/runtime_municipality_points.csv",
+        "bytes": 8689,
+        "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/runtime_servicios.csv",
+        "bytes": 25258,
+        "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/runtime_municipios.geojson",
+        "bytes": 495392,
+        "sha256": "c30ba24034312e2d1f5fab487c0ec78126436311a02ec54fc9bdf6f0b84dad1c",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/metadata_sources.json",
+        "bytes": 4833,
+        "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/data_contract.json",
+        "bytes": 5274,
+        "sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae",
+        "status": "PASS"
+      }
+    ],
+    "manifest_total_bytes": 575682,
+    "status": "PASS"
+  },
+  "python_tests": {
+    "tests": 146,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "subset_tests": {
+    "data": 18,
+    "golden": 3
+  },
+  "acceptance": {
+    "release": "urban-challenge-rc2",
+    "execution": "Deterministic coordinator/tool acceptance; no network and no external LLM.",
+    "cases_total": 8,
+    "cases_passed": 8,
+    "cases_failed": 0,
+    "status": "PASS"
+  },
+  "benchmark": {
+    "data_dir": "datos_preparados",
+    "warm_repetitions": 7,
+    "tools": [
+      {
+        "tool": "consultar_fuente",
+        "cold_ms": 2.808,
+        "warm_median_ms": 1.06,
+        "serialization_ms": 0.367,
+        "full_chars": 8975,
+        "compact_chars": 4896,
+        "reduction_percent": 45.4,
+        "rows_used": 4,
+        "result_rows": 4
+      },
+      {
+        "tool": "obtener_resumen_territorial",
+        "cold_ms": 28.215,
+        "warm_median_ms": 1.579,
+        "serialization_ms": 0.198,
+        "full_chars": 3571,
+        "compact_chars": 2537,
+        "reduction_percent": 29.0,
+        "rows_used": 7,
+        "result_rows": 1
+      },
+      {
+        "tool": "comparar_municipios",
+        "cold_ms": 29.543,
+        "warm_median_ms": 5.516,
+        "serialization_ms": 0.118,
+        "full_chars": 4484,
+        "compact_chars": 2867,
+        "reduction_percent": 36.1,
+        "rows_used": 3,
+        "result_rows": 3
+      },
+      {
+        "tool": "analizar_envejecimiento",
+        "cold_ms": 3.516,
+        "warm_median_ms": 0.715,
+        "serialization_ms": 0.103,
+        "full_chars": 2691,
+        "compact_chars": 2181,
+        "reduction_percent": 19.0,
+        "rows_used": 88,
+        "result_rows": 10
+      },
+      {
+        "tool": "analizar_acceso_servicios",
+        "cold_ms": 21.308,
+        "warm_median_ms": 11.361,
+        "serialization_ms": 0.525,
+        "full_chars": 17059,
+        "compact_chars": 3632,
+        "reduction_percent": 78.7,
+        "rows_used": 208,
+        "result_rows": 88
+      },
+      {
+        "tool": "analizar_coincidencia",
+        "cold_ms": 42.93,
+        "warm_median_ms": 14.693,
+        "serialization_ms": 1.032,
+        "full_chars": 36838,
+        "compact_chars": 5216,
+        "reduction_percent": 85.8,
+        "rows_used": 88,
+        "result_rows": 88
+      },
+      {
+        "tool": "simular_escenario",
+        "cold_ms": 25.322,
+        "warm_median_ms": 12.988,
+        "serialization_ms": 0.393,
+        "full_chars": 26719,
+        "compact_chars": 13664,
+        "reduction_percent": 48.9,
+        "rows_used": 208,
+        "result_rows": 88
+      }
+    ]
+  },
+  "package": {
+    "bytes": 48339,
+    "sha256": "aea14519f838dda82f3ba317c556a2ffed5e2b2cd44c5cf085c216c8897a418b",
+    "two_builds_identical": true,
+    "members": [
+      {
+        "path": "FUENTES.md",
+        "bytes": 6963,
+        "sha256": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de"
+      },
+      {
+        "path": "datos_preparados/data_contract.json",
+        "bytes": 5274,
+        "sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae"
+      },
+      {
+        "path": "datos_preparados/demografia.csv",
+        "bytes": 6161,
+        "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+      },
+      {
+        "path": "datos_preparados/metadata_sources.json",
+        "bytes": 4833,
+        "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+      },
+      {
+        "path": "datos_preparados/municipios.csv",
+        "bytes": 30075,
+        "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
+      },
+      {
+        "path": "datos_preparados/runtime_manifest.json",
+        "bytes": 1594,
+        "sha256": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a"
+      },
+      {
+        "path": "datos_preparados/runtime_municipality_points.csv",
+        "bytes": 8689,
+        "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11"
+      },
+      {
+        "path": "datos_preparados/runtime_servicios.csv",
+        "bytes": 25258,
+        "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
+      },
+      {
+        "path": "docs/METODOLOGIA.md",
+        "bytes": 1210,
+        "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7"
+      },
+      {
+        "path": "docs/PORTAL_DEPLOYMENT.md",
+        "bytes": 4924,
+        "sha256": "49e5437b1451118866d8696f2ebc36987b4f30e759834965725eaefc6752b6ed"
+      },
+      {
+        "path": "docs/RESULT_SCHEMA.md",
+        "bytes": 2296,
+        "sha256": "8b1a5e1f5541b41f2e0680dcdc2d2a9a3c6f5a2333088fb98b28fd3b4893c872"
+      },
+      {
+        "path": "main.py",
+        "bytes": 6286,
+        "sha256": "c2f4770f234522ac6ccb535d627c1252e19bc8f992e73194dab6e9f6672c585e"
+      },
+      {
+        "path": "requirements.txt",
+        "bytes": 67,
+        "sha256": "1690fee4f978ffb8989fa4499f4dc3a30047b16807909e2e7a0dc9456d5782bc"
+      },
+      {
+        "path": "tools.py",
+        "bytes": 54274,
+        "sha256": "0a5ab214ecf89cef04c85b5055c8ac42047c151c0411b4aa6c470a8de397edd5"
+      }
+    ]
+  },
+  "after": {
+    "runtime_sha": "195b4980fa5998b096c308296a55e452380b0371",
+    "frozen": [
+      {
+        "path": "agentes/gipuzkoa360/portal/main.py",
+        "bytes": 6286,
+        "sha256": "c2f4770f234522ac6ccb535d627c1252e19bc8f992e73194dab6e9f6672c585e",
+        "status": "PASS"
+      },
+      {
+        "path": "agentes/gipuzkoa360/portal/tools.py",
+        "bytes": 54274,
+        "sha256": "0a5ab214ecf89cef04c85b5055c8ac42047c151c0411b4aa6c470a8de397edd5",
+        "status": "PASS"
+      },
+      {
+        "path": "FUENTES.md",
+        "bytes": 6963,
+        "sha256": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/METODOLOGIA.md",
+        "bytes": 1210,
+        "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/RESULT_SCHEMA.md",
+        "bytes": 2296,
+        "sha256": "8b1a5e1f5541b41f2e0680dcdc2d2a9a3c6f5a2333088fb98b28fd3b4893c872",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/municipios.csv",
+        "bytes": 30075,
+        "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/demografia.csv",
+        "bytes": 6161,
+        "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/runtime_municipality_points.csv",
+        "bytes": 8689,
+        "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/runtime_servicios.csv",
+        "bytes": 25258,
+        "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/metadata_sources.json",
+        "bytes": 4833,
+        "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/data_contract.json",
+        "bytes": 5274,
+        "sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/runtime_manifest.json",
+        "bytes": 1594,
+        "sha256": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+        "status": "PASS"
+      }
+    ],
+    "manifest": [
+      {
+        "path": "datos_preparados/municipios.csv",
+        "bytes": 30075,
+        "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/demografia.csv",
+        "bytes": 6161,
+        "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/runtime_municipality_points.csv",
+        "bytes": 8689,
+        "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/runtime_servicios.csv",
+        "bytes": 25258,
+        "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/runtime_municipios.geojson",
+        "bytes": 495392,
+        "sha256": "c30ba24034312e2d1f5fab487c0ec78126436311a02ec54fc9bdf6f0b84dad1c",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/metadata_sources.json",
+        "bytes": 4833,
+        "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
+        "status": "PASS"
+      },
+      {
+        "path": "datos_preparados/data_contract.json",
+        "bytes": 5274,
+        "sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae",
+        "status": "PASS"
+      }
+    ],
+    "manifest_total_bytes": 575682,
+    "status": "PASS"
+  },
+  "qa": {
+    "status": "PASS",
+    "contract_version": "1.1.0",
+    "source_snapshot_date": "2026-09-24",
+    "checks": [
+      {
+        "check_id": "coverage_88_all_municipal_files",
+        "status": "PASS",
+        "detail": {
+          "demography": 88,
+          "municipalities": 88,
+          "boundaries": 88,
+          "runtime_geo": 88
+        }
+      },
+      {
+        "check_id": "municipality_key_sets_equal",
+        "status": "PASS",
+        "detail": {}
+      },
+      {
+        "check_id": "municipality_code_format",
+        "status": "PASS",
+        "detail": "^20[0-9]{3}$"
+      },
+      {
+        "check_id": "municipality_keys_unique",
+        "status": "PASS",
+        "detail": {
+          "demography_duplicates": 0,
+          "municipalities_duplicates": 0
+        }
+      },
+      {
+        "check_id": "no_nulls_prepared_tables",
+        "status": "PASS",
+        "detail": {
+          "demografia.csv": 0,
+          "municipios.csv": 0,
+          "servicios.csv": 0,
+          "runtime_servicios.csv": 0,
+          "runtime_municipality_points.csv": 0
+        }
+      },
+      {
+        "check_id": "population_hierarchy",
+        "status": "PASS",
+        "detail": "0 < 75+ <= 65+ <= total"
+      },
+      {
+        "check_id": "pct_65_formula",
+        "status": "PASS",
+        "detail": "count / total * 100; 3 decimals"
+      },
+      {
+        "check_id": "pct_75_formula",
+        "status": "PASS",
+        "detail": "count / total * 100; 3 decimals"
+      },
+      {
+        "check_id": "service_ids_unique",
+        "status": "PASS",
+        "detail": {
+          "rows": 148,
+          "duplicates": 0
+        }
+      },
+      {
+        "check_id": "service_foreign_keys",
+        "status": "PASS",
+        "detail": []
+      },
+      {
+        "check_id": "service_categories",
+        "status": "PASS",
+        "detail": {
+          "hospital": 7,
+          "mental_health": 16,
+          "other_health": 5,
+          "primary_care": 120
+        }
+      },
+      {
+        "check_id": "service_coordinates_bounds",
+        "status": "PASS",
+        "detail": {
+          "latitude": [
+            42.97485183209362,
+            43.3673393105757
+          ],
+          "longitude": [
+            -2.5679316841123225,
+            -1.7810235803578958
+          ]
+        }
+      },
+      {
+        "check_id": "service_spatial_assignment",
+        "status": "PASS",
+        "detail": {
+          "unmatched": 0,
+          "mismatched": 0
+        }
+      },
+      {
+        "check_id": "geometry_crs",
+        "status": "PASS",
+        "detail": {
+          "master": "EPSG:4326",
+          "runtime": "EPSG:4326",
+          "calculation": "EPSG:25830"
+        }
+      },
+      {
+        "check_id": "geometry_valid",
+        "status": "PASS",
+        "detail": {
+          "master_invalid": 0,
+          "runtime_invalid": 0
+        }
+      },
+      {
+        "check_id": "geometry_types",
+        "status": "PASS",
+        "detail": {
+          "Polygon": 72,
+          "MultiPolygon": 16
+        }
+      },
+      {
+        "check_id": "service_count_primary_care",
+        "status": "PASS",
+        "detail": 120
+      },
+      {
+        "check_id": "rate_primary_care_65_formula",
+        "status": "PASS",
+        "detail": "count / population * 10000; 3 decimals"
+      },
+      {
+        "check_id": "rate_primary_care_75_formula",
+        "status": "PASS",
+        "detail": "count / population * 10000; 3 decimals"
+      },
+      {
+        "check_id": "service_count_hospital",
+        "status": "PASS",
+        "detail": 7
+      },
+      {
+        "check_id": "rate_hospital_65_formula",
+        "status": "PASS",
+        "detail": "count / population * 10000; 3 decimals"
+      },
+      {
+        "check_id": "rate_hospital_75_formula",
+        "status": "PASS",
+        "detail": "count / population * 10000; 3 decimals"
+      },
+      {
+        "check_id": "service_count_mental_health",
+        "status": "PASS",
+        "detail": 16
+      },
+      {
+        "check_id": "rate_mental_health_65_formula",
+        "status": "PASS",
+        "detail": "count / population * 10000; 3 decimals"
+      },
+      {
+        "check_id": "rate_mental_health_75_formula",
+        "status": "PASS",
+        "detail": "count / population * 10000; 3 decimals"
+      },
+      {
+        "check_id": "service_count_other_health",
+        "status": "PASS",
+        "detail": 5
+      },
+      {
+        "check_id": "rate_other_health_65_formula",
+        "status": "PASS",
+        "detail": "count / population * 10000; 3 decimals"
+      },
+      {
+        "check_id": "rate_other_health_75_formula",
+        "status": "PASS",
+        "detail": "count / population * 10000; 3 decimals"
+      },
+      {
+        "check_id": "services_total_formula",
+        "status": "PASS",
+        "detail": 148
+      },
+      {
+        "check_id": "distance_primary_care_formula",
+        "status": "PASS",
+        "detail": "Euclidean metres in EPSG:25830; rounded to 0.1 m"
+      },
+      {
+        "check_id": "distance_hospital_formula",
+        "status": "PASS",
+        "detail": "Euclidean metres in EPSG:25830; rounded to 0.1 m"
+      },
+      {
+        "check_id": "distance_mental_health_formula",
+        "status": "PASS",
+        "detail": "Euclidean metres in EPSG:25830; rounded to 0.1 m"
+      },
+      {
+        "check_id": "distance_other_health_formula",
+        "status": "PASS",
+        "detail": "Euclidean metres in EPSG:25830; rounded to 0.1 m"
+      },
+      {
+        "check_id": "runtime_services_exact_view",
+        "status": "PASS",
+        "detail": [
+          "service_id",
+          "service_name",
+          "service_category",
+          "municipality_code",
+          "latitude",
+          "longitude",
+          "reference_period",
+          "source_id"
+        ]
+      },
+      {
+        "check_id": "runtime_services_projected_coordinates",
+        "status": "PASS",
+        "detail": "easting_m/northing_m in EPSG:25830"
+      },
+      {
+        "check_id": "runtime_municipality_points_coverage",
+        "status": "PASS",
+        "detail": {
+          "rows": 88,
+          "unique": 88
+        }
+      },
+      {
+        "check_id": "runtime_municipality_points_match_metrics",
+        "status": "PASS",
+        "detail": "representative points and period"
+      },
+      {
+        "check_id": "runtime_geo_attributes_match",
+        "status": "PASS",
+        "detail": [
+          "municipality_code",
+          "population_total",
+          "population_65_plus",
+          "population_75_plus",
+          "services_total",
+          "distance_to_nearest_primary_care_m"
+        ]
+      },
+      {
+        "check_id": "all_source_ids_registered",
+        "status": "PASS",
+        "detail": []
+      },
+      {
+        "check_id": "derived_lineage_complete",
+        "status": "PASS",
+        "detail": [
+          "EUSTAT_EMH_2025",
+          "ODE_HEALTH_CENTRES_2026",
+          "GEOEUSKADI_MUNICIPIOS_2025"
+        ]
+      },
+      {
+        "check_id": "reference_periods_exact",
+        "status": "PASS",
+        "detail": {
+          "demography": [
+            "2025-01-01"
+          ],
+          "geography": [
+            "2025-05-07"
+          ],
+          "services": [
+            "2026-09-20"
+          ]
+        }
+      }
+    ],
+    "coverage": {
+      "municipalities": 88,
+      "services": 148
+    },
+    "service_category_totals": {
+      "hospital": 7,
+      "mental_health": 16,
+      "other_health": 5,
+      "primary_care": 120
+    },
+    "municipalities_without_registered_services": [
+      {
+        "municipality_code": "20002",
+        "municipality_name": "Aduna",
+        "population_total": 507
+      },
+      {
+        "municipality_code": "20006",
+        "municipality_name": "Alkiza",
+        "population_total": 346
+      },
+      {
+        "municipality_code": "20007",
+        "municipality_name": "Altzo",
+        "population_total": 400
+      },
+      {
+        "municipality_code": "20012",
+        "municipality_name": "Arama",
+        "population_total": 181
+      },
+      {
+        "municipality_code": "20028",
+        "municipality_name": "Zizurkil",
+        "population_total": 2904
+      },
+      {
+        "municipality_code": "20037",
+        "municipality_name": "Gaintza",
+        "population_total": 124
+      },
+      {
+        "municipality_code": "20041",
+        "municipality_name": "Hernialde",
+        "population_total": 323
+      },
+      {
+        "municipality_code": "20048",
+        "municipality_name": "Larraul",
+        "population_total": 262
+      },
+      {
+        "municipality_code": "20077",
+        "municipality_name": "Urretxu",
+        "population_total": 6795
+      },
+      {
+        "municipality_code": "20905",
+        "municipality_name": "Orendain",
+        "population_total": 241
+      },
+      {
+        "municipality_code": "20906",
+        "municipality_name": "Altzaga",
+        "population_total": 159
+      }
+    ],
+    "municipalities_without_registered_services_count": 11,
+    "shared_service_coordinates": 31,
+    "shared_service_coordinates_note": "Varios registros oficiales pueden compartir edificio/coordenada y representar tipos de servicio distintos; no se deduplican por ubicación.",
+    "extremes": {
+      "highest_pct_65_plus": [
+        {
+          "municipality_code": "20026",
+          "municipality_name": "Zerain",
+          "pct_65_plus": 27.931
+        },
+        {
+          "municipality_code": "20042",
+          "municipality_name": "Ibarra",
+          "pct_65_plus": 27.65
+        },
+        {
+          "municipality_code": "20029",
+          "municipality_name": "Deba",
+          "pct_65_plus": 27.461
+        },
+        {
+          "municipality_code": "20051",
+          "municipality_name": "Legazpi",
+          "pct_65_plus": 27.17
+        },
+        {
+          "municipality_code": "20069",
+          "municipality_name": "Donostia / San Sebastián",
+          "pct_65_plus": 26.628
+        }
+      ],
+      "largest_primary_care_distance_m": [
+        {
+          "municipality_code": "20040",
+          "municipality_name": "Hernani",
+          "distance_to_nearest_primary_care_m": 5882.0,
+          "services_primary_care": 2
+        },
+        {
+          "municipality_code": "20063",
+          "municipality_name": "Oiartzun",
+          "distance_to_nearest_primary_care_m": 4438.1,
+          "services_primary_care": 1
+        },
+        {
+          "municipality_code": "20067",
+          "municipality_name": "Errenteria",
+          "distance_to_nearest_primary_care_m": 3925.5,
+          "services_primary_care": 4
+        },
+        {
+          "municipality_code": "20019",
+          "municipality_name": "Beasain",
+          "distance_to_nearest_primary_care_m": 3617.3,
+          "services_primary_care": 3
+        },
+        {
+          "municipality_code": "20072",
+          "municipality_name": "Urnieta",
+          "distance_to_nearest_primary_care_m": 3563.1,
+          "services_primary_care": 1
+        }
+      ]
+    },
+    "temporal_compatibility": {
+      "demography": "2025-01-01",
+      "geography": "2025-05-07",
+      "services": "2026-09-20",
+      "maximum_separation_days": 627,
+      "interpretation": "Comparación exploratoria; los periodos no son simultáneos."
+    }
+  },
+  "tracked_changes_after_build": [
+    " M analisis/release_e2e_report.json",
+    " M analisis/work3_agent_result.json"
+  ],
+  "status": "PASS"
+}
