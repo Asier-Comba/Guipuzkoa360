@@ -4,9 +4,17 @@ Un agente para explorar dónde coinciden envejecimiento municipal y mayor distan
 
 La pregunta se convierte en una operación reproducible sobre datos oficiales. Siete herramientas consultan fuentes, resumen y comparan municipios, analizan envejecimiento y proximidad, identifican coincidencias y simulan cambios hipotéticos. Al cambiar los parámetros del diálogo, el agente vuelve a calcular.
 
+Pensado para **personal técnico municipal y territorial** que necesita detectar patrones y contrastar diferencias entre municipios antes de profundizar con información sectorial adicional. No se afirma implantación administrativa ni validación con usuarios reales.
+
 ## Ver el proyecto
 
 Abra **[la demo territorial](resultados/demo.html)** descargando el HTML: funciona sin servidor ni Internet. Sus tres consultas y el escenario son cálculos reales guardados; la conversación en vivo se realiza en el portal privado. [Guion de demostración](docs/DEMO.md).
+
+La entrada es única: pregunta, hallazgo y mapa. Después se puede abrir «Cómo se obtuvo», comparar municipios o explorar Aduna. El [centro de validación y evolución](resultados/control_center.html) es apoyo secundario: define cada KPI y diferencia capacidades actuales de propuestas futuras.
+
+- **[Una página para el jurado](docs/JURY_ONE_PAGER.md):** problema, destinatario, evidencia y límite.
+- **[Guía para empezar](docs/PRODUCT_GUIDE.md):** qué preguntar, cómo leer los criterios y cómo comprobar una cifra.
+- **[44 preguntas del jurado](docs/JURY_QA.md):** respuestas breves con punteros de evidencia.
 
 Con 65+, cuantil 0,75 y atención primaria, **7 de 88 municipios** cumplen ambos cortes: **23,973 %** y **2.019,2 m**. El seguimiento a 75+ y cuantil 0,80 produce **4**; elevar el cuantil de 65+ a 0,85 produce **2**. El umbral en km se informa por separado y no sustituye al cuantil.
 
@@ -39,8 +47,8 @@ py -3.12 scripts/agent/build_portal_package.py
 
 Se usan los datos versionados; reconstruir esta evidencia no requiere descargar fuentes nuevas. La instalación inicial de dependencias sí puede requerir red.
 
-## Equipo
+## Equipo y contribuciones
 
-**Oier Duñabeitia**: datos, geografía, calidad y reproducibilidad. **Asier Comba**: agente, runtime, benchmark y cierre técnico. **Hugo Fernández Díez**: producto, diseño visual, integración y pruebas conversacionales. [Contribuciones y uso de IA](docs/TEAM.md).
+**Oier Duñabeitia**: datos, geografía, calidad y reproducibilidad. **Asier Comba**: agente, runtime, benchmark y cierre técnico. **Hugo Fernández Díez**: producto, diseño visual, integración y pruebas conversacionales. [Equipo y contribuciones](docs/TEAM.md), incluida la explicación del uso de asistencia de IA.
 
 El cierre técnico está preparado para revisión. La publicación de la entrega requiere una decisión humana.
