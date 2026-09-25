@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "offline": true,
+  "source_count": 3,
+  "catalog_entries": 4,
+  "municipality_coverage": {
+    "present": 88,
+    "expected": 88,
+    "keys_equal": true
+  },
+  "service_record_count": 148,
+  "missing_required_fields": 0,
+  "duplicate_keys": 0,
+  "invalid_coordinates": 0,
+  "orphan_service_municipalities": 0,
+  "traceability_coverage": {
+    "numerator": 412,
+    "denominator": 412,
+    "value": 1.0,
+    "definition": "CSV rows whose declared source identifiers resolve in the versioned catalog"
+  },
+  "manifest_integrity": {
+    "status": "PASS",
+    "files": [
+      {
+        "path": "datos_preparados/municipios.csv",
+        "matches": true
+      },
+      {
+        "path": "datos_preparados/demografia.csv",
+        "matches": true
+      },
+      {
+        "path": "datos_preparados/runtime_municipality_points.csv",
+        "matches": true
+      },
+      {
+        "path": "datos_preparados/runtime_servicios.csv",
+        "matches": true
+      },
+      {
+        "path": "datos_preparados/runtime_municipios.geojson",
+        "matches": true
+      },
+      {
+        "path": "datos_preparados/metadata_sources.json",
+        "matches": true
+      },
+      {
+        "path": "datos_preparados/data_contract.json",
+        "matches": true
+      }
+    ]
+  },
+  "reference_periods": [
+    "2025-01-01",
+    "2025-05-07",
+    "2026-09-20"
+  ],
+  "cross_source_reference_spread_days": 627,
+  "tables": {
+    "municipios.csv": {
+      "rows": 88,
+      "missing_required_cells": 0,
+      "duplicate_keys": 0
+    },
+    "demografia.csv": {
+      "rows": 88,
+      "missing_required_cells": 0,
+      "duplicate_keys": 0
+    },
+    "runtime_servicios.csv": {
+      "rows": 148,
+      "missing_required_cells": 0,
+      "duplicate_keys": 0
+    },
+    "runtime_municipality_points.csv": {
+      "rows": 88,
+      "missing_required_cells": 0,
+      "duplicate_keys": 0
+    }
+  }
+}

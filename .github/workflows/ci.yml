@@ -50,6 +50,10 @@ jobs:
           python scripts/release/verify_final_artifacts.py
       - name: Package double build and context identity
         run: python scripts/ops/verify_package.py
+      - name: Offline health and isolated NEXT evaluation
+        run: |
+          python scripts/ops/compute_source_health.py --output work/source-health.json
+          python scripts/evaluation/evaluate_next.py --output-dir work/next
       - name: Frozen runtime after regeneration tests
         if: always()
         run: python scripts/ops/verify_runtime_identity.py
@@ -61,6 +65,8 @@ jobs:
             work/pytest.xml
             work/jury-gate.json
             work/package-gate.json
+            work/source-health.json
+            work/next/
             analisis/final_artifact_audit.json
             dist/*manifest.json
           if-no-files-found: warn
