@@ -1,44 +1,46 @@
 # GIPUZKOA 360
 
-Base reproducible y experiencia de visualización para analizar dónde coinciden envejecimiento y condiciones territoriales de acceso a servicios esenciales en Gipuzkoa.
+Un agente para explorar dónde coinciden envejecimiento municipal y mayor distancia geométrica a servicios sanitarios en Gipuzkoa.
 
-## Datos y QA
+La pregunta se convierte en una operación reproducible sobre datos oficiales. Siete herramientas consultan fuentes, resumen y comparan municipios, analizan envejecimiento y proximidad, identifican coincidencias y simulan cambios hipotéticos. Al cambiar los parámetros del diálogo, el agente vuelve a calcular.
 
-```bash
-python -m pip install -r requirements.txt
-python scripts/data/build_all.py
-python -m pytest tests/data -q
-```
+## Ver el proyecto
 
-El pipeline prepara 88 municipios, 148 registros de centros sanitarios públicos, métricas transparentes y un runtime ligero. Incluye contrato legible por máquina, auditoría cruzada, SHA-256 y golden cases fijos. La proximidad es una distancia euclídea desde un punto representativo municipal; no equivale a tiempo de viaje ni accesibilidad real.
+Abra **[la demo territorial](resultados/demo.html)** descargando el HTML: funciona sin servidor ni Internet. Sus tres consultas y el escenario son cálculos reales guardados; la conversación en vivo se realiza en el portal privado. [Guion de demostración](docs/DEMO.md).
 
-Véanse `FUENTES.md`, `docs/METODOLOGIA_GEOESPACIAL.md`, `docs/HANDOFF_WORK_1_DATA.md` y `docs/HANDOFF_WORK_2_3_DATA_QA.md`.
+Con 65+, cuantil 0,75 y atención primaria, **7 de 88 municipios** cumplen ambos cortes: **23,973 %** y **2.019,2 m**. El seguimiento a 75+ y cuantil 0,80 produce **4**; elevar el cuantil de 65+ a 0,85 produce **2**. El umbral en km se informa por separado y no sustituye al cuantil.
 
-## Visualización e integración
+## Datos y límites
 
-Los HTML versionados se generan desde una salida real de `comparar_municipios`, adaptada sin cambiar sus cifras y enriquecida con geometría municipal. El banner deja claro que es una ejecución determinista del tool, no una conversación LLM. Para regenerarlos:
+| Fuente | Contenido | Periodo |
+|---|---|---|
+| Eustat | Población de 88 municipios | 2025-01-01 |
+| geoEuskadi | Geometría municipal | 2025-05-07 |
+| Open Data Euskadi | 148 registros sanitarios públicos | 2026-09-20 |
 
-```bash
-python scripts/agent/build_work3_result.py
-node scripts/enrich_work1_result.mjs analisis/work3_agent_result.json analisis/work3_agent_result_with_geometry.json
-node scripts/build_results.mjs analisis/work3_agent_result_with_geometry.json resultados
+Distancia geométrica no es tiempo de viaje. Registro no es capacidad ni cita disponible. Coincidencia no demuestra causalidad. Escenario no es predicción. El punto municipal no está ponderado por población y las fuentes tienen fechas distintas. Una persona supervisa la interpretación.
+
+## Entender y reproducir
+
+La lectura principal se limita a seis documentos: este README, [Fuentes](FUENTES.md), [Metodología](docs/METODOLOGIA.md), [Validación](docs/VALIDATION.md), [Benchmark](docs/BENCHMARKS.md) y [Demo](docs/DEMO.md). La evidencia histórica y los informes de ingeniería son material de apoyo.
+
+Con Python 3.12 y Node, desde este repositorio:
+
+```powershell
+py -3.12 -m pip install -r requirements.txt
+py -3.12 -m pytest -q
 node --test tests/e2e/contract_flow.test.mjs
+py -3.12 scripts/release/build_jury_data.py
+node scripts/build_jury.mjs
+py -3.12 scripts/release/verify_final_artifacts.py
+py -3.12 scripts/benchmark/full_validation.py --output-dir analisis/final
+py -3.12 scripts/agent/build_portal_package.py
 ```
 
-`scripts/enrich_work1_result.mjs` añade contornos municipales reales sin modificar las cifras.
+Se usan los datos versionados; reconstruir esta evidencia no requiere descargar fuentes nuevas. La instalación inicial de dependencias sí puede requerir red.
 
-Leer `docs/HANDOFF_WORK_3_INTEGRATION.md` y `docs/SUBMISSION_CHECKLIST.md`. La publicación final requiere autorización humana expresa.
+## Equipo
 
-## Agente territorial
+**Oier Duñabeitia**: datos, geografía, calidad y reproducibilidad. **Asier Comba**: agente, runtime, benchmark y cierre técnico. **Hugo Fernández Díez**: producto, diseño visual, integración y pruebas conversacionales. [Contribuciones y uso de IA](docs/TEAM.md).
 
-La implementación determinista del agente está en `agentes/gipuzkoa360/`. Sus siete herramientas públicas consumen exclusivamente los datos preparados, devuelven resultados estructurados y mantienen periodo, unidades, fuentes, método y limitaciones. Los fixtures de `tests/fixtures/` son sintéticos y se usan solo en pruebas.
-
-```bash
-python -m pytest -q
-```
-
-Véanse `docs/HANDOFF_WORK_2_AGENT.md`, `docs/RESULT_SCHEMA.md` y `docs/RUNTIME_PACKAGE.md`.
-
-## Release candidate
-
-`docs/PORTAL_DEPLOYMENT.md` contiene la secuencia exacta para generar el bundle autocontenido de dos archivos Python, crear una versión en el portal y probarla sin publicar la entrega. `docs/JURY_TEST_PLAN.md` define el recorrido de demostración y `analisis/release_e2e_report.json` registra las ocho pruebas A–H.
+El cierre técnico está preparado para revisión. La publicación de la entrega requiere una decisión humana.
