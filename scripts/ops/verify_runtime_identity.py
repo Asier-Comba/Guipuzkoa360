@@ -14,7 +14,8 @@ def frozen_files(root=ROOT):
     tree = ast.parse(blob.decode("utf-8"))
     contexts = next(ast.literal_eval(n.value) for n in tree.body if isinstance(n, ast.Assign)
                     and any(isinstance(t, ast.Name) and t.id == "STUDIO_CONTEXT_FILES" for t in n.targets))
-    return ["agentes/gipuzkoa360/portal/main.py", "agentes/gipuzkoa360/portal/tools.py", *contexts]
+    return ["agentes/gipuzkoa360/main.py", "agentes/gipuzkoa360/tools.py",
+            "agentes/gipuzkoa360/portal/main.py", "agentes/gipuzkoa360/portal/tools.py", *contexts]
 
 def audit(root=ROOT):
     rows = []

@@ -2,7 +2,7 @@ name: Release fast CI
 on:
   pull_request:
   push:
-    branches: [main, final/work1-engineering-master]
+    branches: [main, final/work1-engineering-master, final/gipuzkoa360-ultimate]
   workflow_dispatch:
 permissions:
   contents: read
