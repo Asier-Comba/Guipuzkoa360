@@ -1126,8 +1126,8 @@
     "datos_preparados/runtime_municipios.geojson": "c30ba24034312e2d1f5fab487c0ec78126436311a02ec54fc9bdf6f0b84dad1c",
     "datos_preparados/runtime_servicios.csv": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece",
     "datos_preparados/servicios.csv": "b81c62c637a69c27fdbc2b5e2e76050420517807c44a5cb5248dda23b80c52ea",
-    "docs/FINAL_RELEASE_GATE.md": "86e2625dcd529bc095f4c0049ba42c3fc27e2b0748c31678609f09a66d659295",
-    "docs/VALIDATION.md": "7fe6038674b17bf4cf22b1a3728a5f76a09ba4b2c6b6df46c0fd55af7a18b23a",
+    "docs/FINAL_RELEASE_GATE.md": "9562451c371c1a15fc852ddd3da3cc7e96441b9a820a13ffef4374e7db19e4c1",
+    "docs/VALIDATION.md": "fb3af431dfe5de6ce88a5d2e0c096f48d462c81b4d5b341a910113c1415bb803",
     "resultados/evidencia/next_prototype.json": "cd5a83d3338b96ad0671757c9590415f28d7e45ff91bb8ea12e95f0ace8837de"
   },
   "inventory": {
@@ -1373,8 +1373,8 @@
         17
       ],
       "python": [
-        152,
-        152
+        263,
+        263
       ],
       "source": "docs/VALIDATION.md"
     },

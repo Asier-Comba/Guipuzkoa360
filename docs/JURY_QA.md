@@ -2,7 +2,7 @@
 
 44 respuestas breves, pensadas para 15–25 segundos a ritmo normal (algunas requieren menos). **★** identifica las 13 objeciones críticas. Los punteros son para quien presenta; no hay que leer rutas en voz alta.
 
-**E** = [evidencia guardada](../resultados/evidencia/product_evidence.json). **P** = [validación conversacional previa del portal](PORTAL_EVIDENCE_RC2.md), realizada el 24/09/2026 en distintas versiones de la familia del runtime congelado. **H** = [hero](../resultados/demo.html). Los cálculos E son ejecuciones locales reales; P es evidencia histórica, no una nueva ejecución durante esta revisión. El smoke posterior quedó bloqueado por infraestructura, según `docs/FINAL_RELEASE_GATE.md`.
+**E** = [evidencia guardada](../resultados/evidencia/product_evidence.json). **P** = [validación conversacional previa del portal](PORTAL_EVIDENCE_RC2.md), realizada el 24/09/2026 en distintas versiones de la familia del runtime congelado. **H** = [hero](../resultados/demo.html). Los cálculos E son ejecuciones locales reales; P es evidencia histórica. El smoke final de v4 ejecutó P1/P2 y rechazó correctamente P3, según [el gate final](FINAL_RELEASE_GATE.md).
 
 ## Problema y producto
 
@@ -276,6 +276,6 @@ Los checks son evaluaciones de sujeto por propiedad dentro de un benchmark defin
 
 ### 44 · LIMITATIONS · ¿Qué riesgo conocido sigue abierto?
 
-Hay dos riesgos Medium gestionados. M-01: un escenario extremo conserva 66 filas afectadas y genera 20.155 caracteres; no afecta al escenario normal de Aduna y no se trunca para preservar trazabilidad. M-02: en el último smoke, bloqueado por runner ocupado y sin output analítico, el texto de fallback confundió 2 km con el corte de distancia por cuantil. No demuestra un fallo del core. La demo corrige esa lectura y distingue evidencia local, historia conversacional y ejecución nueva.
+Hay dos riesgos Medium gestionados. M-01: un escenario extremo conserva 66 filas afectadas y genera 20.155 caracteres; no afecta al escenario normal de Aduna y no se trunca para preservar trazabilidad. M-02: en un smoke histórico bloqueado por runner ocupado y sin output analítico, el texto de fallback confundió 2 km con el corte de distancia por cuantil. No demuestra un fallo del core; el smoke final posterior separó ambos conceptos. La demo distingue evidencia local, historia conversacional y ejecución nueva.
 
 **EVIDENCE POINTER:** `analisis/final/full_validation.json → issues`; `docs/internal/PORTAL_SMOKE_REFRESH.md` en el handoff final de Work 1; centro de validación → riesgo conocido.

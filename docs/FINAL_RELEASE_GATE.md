@@ -1,89 +1,68 @@
-# Gate de integración final
+# Gate del candidato final
 
-Fecha: 2026-09-25. **FINAL_RELEASE_GO=YES, con advertencias; NO publicación**.
+Fecha: 2026-09-25. **FINAL_CANDIDATE_READY sujeto a CI final y decisión humana; entrega no publicada.**
 
-BASE_SHA: `70c0e06e9858a64043088ed6510c68e857869f46`.
-Rama: `final/gipuzkoa360-integration`.
-Candidato ejecutado: `84e95167bfb9718ebb5f26b533f12cd885901e20`.
-Runtime congelado: `195b4980fa5998b096c308296a55e452380b0371`.
-Los commits posteriores registran evidencia/documentación y corrigen el texto del diagnóstico del
-benchmark; no alteran runtime ni cálculos. El benchmark exhaustivo se ejecutó una vez.
+- `CANDIDATE_BRANCH`: `final/gipuzkoa360-ultimate`
+- `CANDIDATE_SHA`: el commit que contiene este documento; el hash exacto se registra en la PR final sin crear otro commit.
+- `FROZEN_RUNTIME`: `195b4980fa5998b096c308296a55e452380b0371`
+- `MAIN_AT_CLOSURE`: `bacc29d3b4d4d48eab11e5bf1ad00134f5b12a01`
+- `DEFAULT_BRANCH_AT_CLOSURE`: `work/data-foundation`
+
+El gate de identidad compara byte a byte los dos módulos offline, los dos módulos de portal y diez
+archivos de contexto con el runtime congelado. La regeneración de evidencia no puede modificar ese
+conjunto.
 
 ## Matriz de decisión
 
-| Componente | Estado | Evidencia y ataque realizado |
+| Componente | Estado | Evidencia y alcance |
 |---|---|---|
-| Runtime y contexto | PASS | 12 archivos byte a byte contra el runtime congelado; 7 tools, ninguna con parámetro público detalle. |
-| Manifiesto | PASS | 7 entradas contrastadas con bytes y SHA físicos; STUDIO_CONTEXT_FILES completo. |
-| Python | PASS | 152/152; incluye 18 de datos y 3 del módulo golden contractual. Cuatro tests nuevos: 3 de ZIP y 1 del gate adversarial. |
-| Node | PASS | 17/17 y comprobación sintáctica de jury_view.js. |
-| Contrastes y flujo | PASS | 4/4 contrastes fijos; A–H 8/8; QA de datos 41/41 en worktree limpio. No son conversaciones. |
-| Benchmark | PASS | 72.673/72.673; trazabilidad 31.545/31.545; 20/20 corrupciones controladas; soak 1.000 sin deriva/excepciones. |
-| Hero numérica | PASS | Todas las filas, geometrías, fuentes y escenario comparados con recálculo. Nueve mutaciones rechazadas; listas 7/4/2 exactas. |
-| Hero en navegador | PASS acotado | Clicks, retorno sin contaminación, teclado, 88 contornos y escenario inspeccionados en escritorio. No se afirma QA móvil exhaustiva. |
-| ZIP cross-worktree | PASS acotado | 3 checkouts limpios autocrlf false/true/input, mismo SHA. Misma versión Python/zlib. |
-| Payload extremo | WARN | 20.155 caracteres, 66 filas afectadas de 88 analizadas; sin truncar. Extremo no ejecutado en portal. 1 Medium abierto. |
-| Portal actual | WARN | INFRASTRUCTURE_BLOCKED: dos preparaciones con runner ocupado y un envío con Connection Error. Principal sin output; seguimiento no ejecutado. |
-| Historia de portal | Evidencia acotada | Consultas observadas en v2/v3 y escenario en v4, mismo core. No toda la batería ocurrió en v4. |
-| Docs y demo | PASS | Seis documentos canónicos; guiones 10 s/30 s/3 min/6 min; 24 respuestas de defensa; pack mínimo y autorías. |
-| Integración | READY | main es ancestro de la rama final; nueva PR sin merge. main y default sin modificar. |
+| Runtime y contexto | PASS | 14 archivos idénticos al runtime congelado; 7 tools; ningún parámetro público `detalle`. |
+| Datos y manifiesto | PASS | 88/88 municipios, 148 registros sanitarios, 0 nulos obligatorios, duplicados, coordenadas inválidas o referencias huérfanas; 7/7 hashes. |
+| Python integrado | PASS | 263/263 en la suite completa del candidato. No se suma al benchmark exhaustivo. |
+| Node | PASS | 17/17 y sintaxis de los tres scripts críticos. |
+| Fast CI | PASS del pre-cierre | Run 36194062246, Ubuntu 24.04 y Windows latest. El commit documental final requiere su propia ejecución verde. |
+| Benchmark exhaustivo | PASS histórico; repetición final requerida | 72.673/72.673; trazabilidad 31.545/31.545; 20/20 corrupciones controladas; soak 1.000 sin deriva ni excepciones. |
+| Hero y artefactos | PASS | Filas, geometrías, fuentes y escenario contrastados; listas 7/4/2; nueve mutaciones rechazadas. |
+| Navegador | PASS acotado | Matriz Chromium 1920, 1366, 1280, 1024 y 390 px; reflow equivalente 125/150 %, teclado y foco. No es certificación WCAG ni prueba con usuarios. |
+| Q&A | PASS documental | 44 preguntas y respuestas con punteros de evidencia. |
+| NEXT | PASS acotado | 77/77; prototipo offline con intents estructurados. No es benchmark de routing LLM, portal ni producción. |
+| Paquete | PASS | ZIP canónico reproducido dos veces: 48.338 bytes, SHA-256 `2808110d14e0bc30a53018cab1ec39b926e1e6ca1f1be19f0b2c9cf21106680a`. |
+| Portal | PASS acotado | v4: preparación PASS; P1 y seguimiento P2 produjeron output real de `analizar_coincidencia`; P3 rechazó predicción/citas/capacidad. No sustituye la suite local. |
+| Integración | READY | La PR final debe apuntar de `final/gipuzkoa360-ultimate` a `main`, quedar abierta, limpia y sin merge. PR #9 queda sustituida. |
 
-Critical=0 y High=0 conocidos abiertos. El High visual del corte fijo del 25 % fue reproducido y
-corregido fuera del runtime. La política autorizada admite el smoke bloqueado con historia válida y
-delimitada; no se convierte ese bloqueo en un PASS conversacional.
+## Controles municipales
 
-## Identidad
+| Consulta | Resultado | Cortes |
+|---|---:|---|
+| 65+, q0,75, atención primaria, 2 km | 7 de 88 | 23,973 %; 2.019,2 m |
+| 75+, q0,80, atención primaria, 3 km | 4 de 88 | 12,9796 %; 2.138,6 m |
+| 65+, q0,85, atención primaria, 2 km | 2 de 88 | 25,3557 %; 2.308,7 m |
 
-| Artefacto | SHA-256 |
-|---|---|
-| portal/main.py | `c2f4770f234522ac6ccb535d627c1252e19bc8f992e73194dab6e9f6672c585e` |
-| portal/tools.py | `0a5ab214ecf89cef04c85b5055c8ac42047c151c0411b4aa6c470a8de397edd5` |
-| runtime_manifest.json | `866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a` |
-| ZIP canónico, 48.338 bytes | `2808110d14e0bc30a53018cab1ec39b926e1e6ca1f1be19f0b2c9cf21106680a` |
+El umbral en km solo determina `within_threshold`; no reemplaza el corte por cuantil. En Aduna, el
+escenario añade hipotéticamente un servicio en el punto representativo y cambia 2.756,2 m a 0,0 m.
+No es predicción ni recomendación, y cero registros no significa ausencia de atención sanitaria.
 
-La diferencia histórica de un byte procede exclusivamente de requirements.txt LF (66 bytes) frente a
-CRLF (67). Se reconstruyeron exactamente ambos SHA históricos, con metadatos y CRC por miembro.
-El builder fija plataforma Unix, permisos, orden y fecha; canoniza CRLF solo en el ZIP. No escribe
-runtime/contexto. El nuevo ZIP no se atribuye al portal histórico: son controles distintos.
+## Severidad y riesgos conocidos
 
-## Resultados municipales
+**Benchmark exhaustivo:** Critical 0, High 0, Medium 1, Low 0.
 
-| Consulta | Municipios destacados, en orden | Cortes |
-|---|---|---|
-| 65+, q0,75, 2 km | Legazpi; Ezkio-Itsaso; Hondarribia; Hernialde; Oñati; Idiazabal; Errenteria | 23,973 %; 2.019,2 m |
-| 75+, q0,80, 3 km | Legazpi; Errenteria; Hondarribia; Idiazabal | 12,9796 %; 2.138,6 m |
-| 65+, q0,85, 2 km | Legazpi; Hondarribia | 25,3557 %; 2.308,7 m |
+- **M-01:** `simular_escenario` extremo conserva 66 filas afectadas de 88 y produce 20.155 caracteres.
+  No se ha demostrado ese extremo en el portal; no se trunca porque se perdería evidencia municipal.
 
-Siempre 88 filas analizadas. El umbral no sustituye al cuantil. Aduna: 2.756,2→0,0 m, diferencia
-−2.756,2 m, escenario hipotético. El HTML muestra cálculos guardados, no conversación en vivo.
+**Release completo:** Critical 0, High 0, Medium 2 conocidos.
 
-## Evidencia
+- **M-01**, anterior.
+- **M-02:** durante un fallo de runner, el fallback conversacional confundió el umbral de 2 km con el
+  corte de distancia por cuantil. La tool no produjo output: no existe evidencia de cálculo core
+  incorrecto. El smoke final posterior sí separó ambos conceptos, pero el riesgo histórico se conserva.
 
-- [Benchmark final](../analisis/final/BENCHMARKS.md) y [nota de ejecución/errata](../analisis/final/README.md).
-- [ZIP raíz](../analisis/zip_root_cause.json), [tres worktrees](../analisis/cross_worktree_reproducibility.json).
-- [Gate adversarial](../analisis/final_artifact_audit.json), [payload](../analisis/payload_decision.json).
-- [Inspección visual](internal/HERO_BROWSER_REVIEW.md), [smoke actual](internal/PORTAL_SMOKE_FINAL.md).
-- [Rescate y commits](internal/FINAL_INTEGRATION_DECISIONS.md).
+Estas cifras describen hallazgos conocidos y gates definidos; no afirman riesgo cero.
 
-## Bloqueos y acciones humanas
+## Evidencia y acciones humanas
 
-FAIL de identidad, corrupción numérica, fuente inventada, manifiesto incompleto o lista visual errónea
-revocarían este GO. No se conoce ninguno tras los ataques. El Medium sigue abierto: conservar evidencia
-es una decisión aceptada, no prueba de capacidad del portal.
+- [Validación](VALIDATION.md), [benchmark](BENCHMARKS.md), [revisión de navegador](internal/HERO_BROWSER_REVIEW_V2.md) y [smoke de portal](internal/PORTAL_SMOKE_REFRESH.md).
+- [Fuentes](../FUENTES.md), [metodología](METODOLOGIA.md), [pack mínimo](SUBMISSION_PACK.md) y [checklist final](internal/FINAL_SUBMISSION_READINESS.md).
 
-Publicar sigue fuera de autorización: aprobar el merge técnico, verificar main resultante, cambiar
-entonces la rama por defecto, revisar/seleccionar los seis materiales y versión privada, autorizar entrega.
-La PR #8 es cierre parcial histórico. La PR final usa esta rama. Nada se fusiona ni publica aquí.
-
-## PR final y verificación de cierre
-
-[PR #9](https://github.com/Asier-Comba/Guipuzkoa360/pull/9): abierta, base main, mergeable=true,
-mergeable_state=clean al consultar el head 91d1a261a8868e6c14115eb6ead96b0ba369f1c8.
-GitHub no tiene checks/statuses configurados para ese head (0/0); «verde» aquí significa la evidencia
-local ejecutada, no una CI remota inexistente. Se repitieron Python completo, Node y gate adversarial
-después del commit de evidencia 5b0c228: todos pasaron. Worktree limpio y push comprobado.
-Esta anotación posterior es exclusivamente documental.
-
-main permanece en bacc29d3b4d4d48eab11e5bf1ad00134f5b12a01; default=work/data-foundation.
-No se visita como «main final» una rama que todavía no se ha fusionado. El cambio de default se hará
-solo después del merge autorizado y de verificar su resultado.
+Después del commit documental final se registran en la PR, sin cambiar el SHA: fast CI del head,
+`Full release validation` del mismo head y estado mergeable. Una persona debe revisar la PR, autorizar
+el merge, validar `main`, decidir el cambio de rama por defecto y autorizar por separado la publicación.

@@ -1,58 +1,53 @@
 # Validación de GIPUZKOA 360
 
-Esta síntesis distingue cálculo local, presentación visual y conversación privada. Un check de
-propiedad no equivale a una conversación ni demuestra impacto social. Datos: 88 municipios y 148
-registros sanitarios, con fechas y límites en [Fuentes](../FUENTES.md).
+Esta síntesis separa la suite integrada, el benchmark exhaustivo del core, la evidencia visual y la
+conversación privada. Sus denominadores no se suman: un test o check de propiedad no equivale a una
+conversación ni demuestra impacto social.
 
-## Evidencia comprobable
+## Suite integrada del candidato
 
-La suite de integración ampliada ejecutó **152/152 tests Python**, incluidos los **18 de datos**, y
-**17/17 Node**. Se conservan los casos deterministas A–H, los contrastes fijos contra fuente y el control
-de las tres listas de coincidencia. Los 41 controles QA son de datos, no 41 conversaciones.
+Sobre `final/gipuzkoa360-ultimate`:
 
-El benchmark original conserva **72.673/72.673 checks**, **31.545/31.545 outputs numéricos trazables**,
-**20/20 inyecciones controladas** y **1.000 llamadas sin deriva**. El denominador y la cobertura están
-en [Benchmark](BENCHMARKS.md). La ejecución única sobre el candidato final `84e9516` repitió esos
-resultados: 72.673/72.673, cero fallos y 1 Medium. Se almacena separadamente en
-`analisis/final/`. A–H pasó 8/8, contrastes fijos 4/4 y QA de datos 41/41.
+- **263/263 tests Python** de datos, contratos, runtime, integración, artefactos, paquete y NEXT;
+- **17/17 Node** en tests del flujo contractual;
+- sintaxis válida de `jury_view.js`, `build_jury.mjs` y `build_results.mjs`;
+- fast CI en Ubuntu 24.04 y Windows latest: PASS en el pre-cierre; el head documental final se valida
+  otra vez antes de abrir la PR;
+- runtime congelado comprobado antes y después de regeneraciones;
+- source health: 88/88 municipios, 148 registros sanitarios, 412/412 filas con `source_id` resoluble,
+  0 nulos obligatorios, duplicados, coordenadas inválidas o referencias huérfanas, y 7/7 archivos de
+  manifiesto íntegros;
+- NEXT: 77/77 dentro de su alcance de prototipo offline con intents estructurados.
 
-La presentación se compara íntegramente con un recálculo: cada fila, porcentaje, distancia, fuente,
-geometría y escenario. El gate rechaza nueve alteraciones deliberadas: números falsos, corte fijo del
-25 %, filas omitidas, fuente inventada, escenario alterado y reutilización del grupo de edad anterior.
-El navegador confirmó las listas 7/4/2 y 88 contornos, además de la selección mediante teclado.
+## Benchmark exhaustivo del core
 
-## Identidad y reproducibilidad
+El harness publicado conserva **72.673/72.673 checks**, **31.545/31.545 outputs numéricos trazables**,
+**20/20 inyecciones controladas** y **1.000 llamadas sin deriva ni excepciones**. La trazabilidad se
+define como output analítico numérico correcto con periodo, unidad, método y `source_id` resoluble.
+No cubre todas las preguntas posibles. El benchmark se vuelve a ejecutar por GitHub Actions sobre el
+SHA final exacto; su run se registra en la PR para no cambiar ese SHA.
 
-El runtime congelado es `195b4980fa5998b096c308296a55e452380b0371`. Dos archivos Python y diez archivos
-de contexto se comparan byte a byte con ese commit. Las siete entradas del manifiesto se contrastan
-con tamaños y hashes físicos. El builder no escribe en esos archivos.
+Severidad propia del benchmark: 0 Critical, 0 High, **1 Medium**, 0 Low. M-01 es un escenario extremo
+de 20.155 caracteres que conserva 66 filas afectadas de 88; no se ha probado en portal. El release
+completo conoce además M-02: un fallback del portal bajo fallo de runner confundió umbral y cuantil,
+sin output de tool ni evidencia de fallo numérico del core.
 
-La discrepancia histórica del ZIP está demostrada: `requirements.txt` tenía **66 bytes con LF** o
-**67 con CRLF**. Reproducir ese único cambio recupera exactamente los ZIP de 48.338 y 48.339 bytes y
-sus SHA históricos; todos los otros miembros y metadatos coinciden. Evidencia: `analisis/zip_root_cause.json`.
-El nuevo builder valida UTF-8, normaliza CRLF a LF solo dentro del archivo ZIP y fija orden, fecha,
-permisos y plataforma ZIP. La prueba independiente de tres worktrees está en
-`analisis/cross_worktree_reproducibility.json`. Su alcance es la misma versión de Python/zlib, no toda
-implementación de compresión. La identidad del paquete y la del código privado son controles distintos.
+## Evidencia visual y reproducibilidad
 
-## Portal y latencia
+El gate de artefactos recalcula cada fila, porcentaje, distancia, fuente, geometría y escenario y
+rechaza nueve mutaciones deliberadas. La revisión Chromium comprobó 7/4/2, mapa, trazabilidad, Aduna,
+teclado y reflow hasta 390 px; no es una certificación WCAG.
 
-Existe evidencia histórica de preparación y conversación para la familia del runtime congelado, con
-regresión de escenario observada en `urban-challenge-rc2-195b498 · v4`. Las pruebas anteriores se
-repartieron entre versiones; no se atribuyen todas a v4 por compartir el nombre del agente.
-El smoke actual y sus intentos están registrados en [gate final](FINAL_RELEASE_GATE.md).
+El runtime congelado es `195b4980fa5998b096c308296a55e452380b0371`. El paquete canónico contiene
+14 archivos, ocupa **48.338 bytes** y tiene SHA-256
+`2808110d14e0bc30a53018cab1ec39b926e1e6ca1f1be19f0b2c9cf21106680a`. Dos builds consecutivos
+producen el mismo hash bajo la misma toolchain. La identidad del paquete reproducible y la versión
+privada del portal son controles distintos.
 
-Los tiempos locales miden motor y serialización. Los históricos de portal incluyen inferencia y
-sandbox: normalmente 26–47 segundos, con una respuesta que terminó después del output inicial.
-No constituyen garantía de latencia. El [guion](DEMO.md) incluye recuperación por runner ocupado.
+## Límites
 
-## Riesgo de salida extensa
-
-El escenario extremo 1→10 km devuelve **20.155 caracteres** porque conserva **66 filas afectadas de 88 analizadas**.
-El escenario de Aduna devuelve **2 filas y 3.581 caracteres** y tiene evidencia privada histórica, pero eso no demuestra que el extremo
-funcione en el portal. Se acepta preservar la evidencia municipal y se mantiene **1 Medium abierto**
-por incertidumbre operativa de ese extremo. No se recorta el runtime para ocultarlo.
-
-No hay capacidad, citas, tiempos de viaje ni inferencia causal en los datos. Los municipios pequeños
-requieren interpretar denominadores. Las hipótesis no son predicciones y toda decisión requiere revisión
-humana. La validación técnica tampoco autoriza la publicación de una entrega.
+Distancia geométrica no es tiempo de viaje; registro no es capacidad ni disponibilidad; coincidencia
+no demuestra causalidad; escenario no es predicción. Las fuentes tienen periodos distintos y los
+municipios pequeños exigen interpretar denominadores. En el smoke final de v4, P1 y P2 ejecutaron
+`analizar_coincidencia` con resultados 7 y 4, y P3 rechazó predicción de citas/capacidad. La evidencia
+guardada se etiqueta como local o histórica. Ninguna validación técnica autoriza publicar la Entrega.

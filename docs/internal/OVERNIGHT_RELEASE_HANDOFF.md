@@ -1,0 +1,34 @@
+# Overnight release handoff
+
+- **START_SHA:** `c28e3a096676ff2c6a51dbdfdc70a5e9c1728ea4`
+- **FINAL_SHA:** commit que contiene este archivo; hash exacto en la PR final.
+- **COMMITS_NEW:** 1 commit documental de cierre previsto.
+- **RUNTIME_CHANGED:** NO.
+- **FAST_CI_RUN:** pre-cierre 36194062246; ejecución del final SHA a registrar en PR.
+- **CI_UBUNTU:** PASS pre-cierre; final SHA pendiente.
+- **CI_WINDOWS:** PASS pre-cierre; final SHA pendiente.
+- **PYTHON:** 263/263.
+- **NODE:** 17/17.
+- **JURY_GATE:** PASS.
+- **ARTIFACT_GATE:** PASS.
+- **PACKAGE:** PASS; 48.338 bytes; SHA-256 `2808110d14e0bc30a53018cab1ec39b926e1e6ca1f1be19f0b2c9cf21106680a`.
+- **SOURCE_HEALTH:** PASS; 88/88, 148, 412/412, 7/7.
+- **NEXT:** PASS; 77/77, offline prototype only.
+- **FULL_VALIDATION_RUN:** `TO_BE_RECORDED_IN_PR`.
+- **FULL_VALIDATION_RESULT:** pendiente del workflow sobre el exact final SHA; referencia histórica 72.673/72.673.
+- **BENCHMARK_CHECKS:** 72.673/72.673 en evidencia publicada.
+- **TRACEABILITY:** 31.545/31.545 bajo definición publicada.
+- **FAULT_INJECTION:** 20/20 controladas.
+- **SOAK:** 1.000 llamadas, 0 drift, 0 excepciones.
+- **CRITICAL_OPEN:** 0 conocidos.
+- **HIGH_OPEN:** 0 conocidos.
+- **BENCHMARK_MEDIUM:** 1 (M-01).
+- **RELEASE_MEDIUMS:** 2 (M-01 y M-02).
+- **PORTAL_STATUS:** PASS acotado v4: preparación, P1=7, P2=4 y P3 fuera de alcance; no publicado.
+- **FINAL_PR:** `TO_BE_RECORDED_EXTERNALLY`; supersede #9.
+- **PR_MERGEABLE:** pendiente de comprobar tras crearla.
+- **MAIN_STATUS:** sin modificar al inicio, `bacc29d3b4d4d48eab11e5bf1ad00134f5b12a01`.
+- **DEFAULT_BRANCH_STATUS:** `work/data-foundation`, sin modificar.
+- **SUBMISSION_PACK:** READY, seis piezas.
+- **HUMAN_ACTIONS_REQUIRED:** revisión/merge, verificación de main, decisión de default, revisión de portal y autorización separada de publicación.
+- **FINAL_CANDIDATE_READY:** pendiente únicamente de CI final, full validation exacta y PR limpia.
