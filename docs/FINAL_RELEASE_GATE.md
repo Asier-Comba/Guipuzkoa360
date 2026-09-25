@@ -75,3 +75,10 @@ no coincida con el verificador; una firma pública con `detalle`; una preparaci�
 archivos; un smoke privado que no complete la cadena usuario → coordinador → tool → output → respuesta;
 o una experiencia visual todavía no contrastada. El WARN de 20.155 caracteres no bloquea por sí solo:
 es evidencia municipal deliberadamente conservada.
+
+## Estado de integración
+
+- Rama publicada: `final/work2-release-gate`.
+- Pull Request abierta y sin fusionar: `https://github.com/Asier-Comba/Guipuzkoa360/pull/8`.
+- Base de la PR: `main`; head: `final/work2-release-gate`.
+- No se modificó `main`, no se hizo merge y no se publicó la entrega.
