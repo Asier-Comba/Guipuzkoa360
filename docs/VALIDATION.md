@@ -1,121 +1,56 @@
 # Validación de GIPUZKOA 360
 
-Auditoría: 25/09/2026. Se distinguen tres cosas: cálculos locales reproducidos, observaciones
-del portal y autorización de release. Un PASS local no valida por sí solo la conversación.
+Fecha de síntesis: 25/09/2026. Las cifras siguientes proceden de la evidencia publicada por Asier; no se han vuelto a ejecutar los benchmarks durante este rescate.
 
-## Cobertura y fuentes
+## Cobertura
 
-**88 municipios**, códigos únicos de cinco caracteres; **148 registros sanitarios**:
-120 atención primaria, 16 salud mental, 7 hospitales y 5 otros. Hay 11 municipios sin
-registros dentro de su límite, no 11 municipios sin atención sanitaria.
+**88 municipios**, **148 registros sanitarios** y **7 herramientas**. Fuentes: Eustat (población, 2025-01-01), geoEuskadi (geometría, 2025-05-07) y Open Data Euskadi (centros, 2026-09-20). Son snapshots de fechas distintas, no una fotografía temporal homogénea. [Fuentes](../FUENTES.md).
 
-Demografía Eustat: **2025-01-01**. Geometría geoEuskadi: **2025-05-07**.
-Centros de Open Data Euskadi: **2026-09-20**. Snapshot descargado: **2026-09-24**.
-La separación máxima entre referencias es 627 días: la comparación es exploratoria,
-no una fotografía temporal simultánea. [Fuentes y derivaciones](../FUENTES.md).
+## Evidencia técnica
 
-## QA y tests locales
+| Comprobación | Resultado |
+|---|---:|
+| Benchmark funcional y de propiedades | 72.673 / 72.673 checks |
+| Defectos Critical / High del benchmark | 0 / 0 |
+| Outputs numéricos con trazabilidad | 31.545 / 31.545 |
+| Inyecciones de fallo controladas | 20 / 20 |
+| Soak | 1.000 llamadas; 0 drift |
+| Suite Python del gate de Asier | 148 / 148 |
+| Integración Node | 17 / 17 |
 
-| Evidencia reproducida | Resultado | Alcance |
-|---|---:|---|
-| Suite Python | 146 PASS; 0 FAIL, errores o saltos | Core, wrappers, schemas, ZIP y regresiones |
-| Tests de datos | 18 PASS, incluidos en 146 | No se suman otra vez |
-| Node/integración visual | 17 PASS; 0 FAIL | Contrato y procedencia; no conversación de portal |
-| QA de datos | 41/41 PASS | Claves, cobertura, tipos, nulos, CRS, unidades, periodos y fuentes |
-| Contrastes fijos contra fuente | 4/4 PASS | Comprobaciones del pipeline de validación |
-| Casos deterministas A–H | 8/8 PASS | Outputs reales del core con respuestas esperadas escritas en el harness |
-| Módulo de contrato golden | 3 tests PASS, incluidos en 146 | Declaración de casos y reglas del prompt |
+Fuentes verificadas en Git:
+[benchmark de Asier](https://github.com/Asier-Comba/Guipuzkoa360/blob/a1b0ecb/docs/BENCHMARKS.md) y
+[gate de release](https://github.com/Asier-Comba/Guipuzkoa360/blob/70c0e06/docs/FINAL_RELEASE_GATE.md).
 
-Los 41 checks no son «QA conversacional». Los cuatro contrastes de fuente no son cuatro
-conversaciones. Hay cinco recorridos de datos guardados en
-`tests/fixtures/golden_cases.json` y diez casos declarados en `tests/golden_cases.json`;
-declarar un caso no demuestra haberlo ejecutado en el portal. Los archivos de prueba
-con prefijos TEST_ son sintéticos; los golden de fuente no lo son.
+Un check es una evaluación sujeto × propiedad; no una conversación independiente.
+La trazabilidad exige periodo, unidad, método y fuentes resolubles para outputs analíticos numéricos.
+Los 148 tests pertenecen a la rama del gate, que incluye dos pruebas adicionales; la ejecución anterior de Oier tenía 146. No se suman ambos totales.
 
-El caso H del harness local comprueba una respuesta esperada y una regla de alcance;
-no prueba por sí solo que el modelo rechace vivienda 2030. Los tests de build_agent
-usan sustitutos del SDK. La evidencia de conversación debe venir del portal.
+La auditoría previa de datos comprobó 41 controles QA y 18 tests de datos. Los casos A–H son aceptación determinista local, no prueba por sí solos del razonamiento del modelo. Los cuatro contrastes fijos de fuente tampoco son cuatro conversaciones de portal.
 
-## Portal: evidencia y límite del GO registrado
+## Portal
 
-El historial registra **PORTAL GO**, siete tools y G-01…G-06 PASS, con red-team,
-para la familia de versiones privadas del candidato. En la revisión de solo lectura
-del 25/09, la versión **urban-challenge-rc2-195b498 · v4** existe, con memoria activa
-e Internet desactivado.
+**PORTAL GO histórico** asociado al runtime
+`195b4980fa5998b096c308296a55e452380b0371` y la versión privada
+`urban-challenge-rc2-195b498 · v4`.
 
-Sin embargo, el historial visible sitúa G-01/G-02/G-03/G-05 en v2 y la coincidencia,
-seguimiento y red-team en v3. En v4 se ha observado la regresión de Aduna y una
-comparación posterior. **No se acredita aquí toda la batería sobre el SHA final.**
-El nombre actual del agente aparece también en conversaciones antiguas; debe mirarse
-el número de versión de cada prueba.
+Debe distinguirse el registro histórico de una nueva validación: el gate actual informa de runner ocupado y de un smoke que seleccionó la herramienta sin llegar a producir output. No se declara ese intento PASS ni se publica la entrega.
 
-| Caso | Control numérico local | Evidencia privada conservada |
-|---|---|---|
-| G-01 fuente | EUSTAT_EMH_2025, referencia 2025-01-01 | Registrada en v2 |
-| G-02 Donostia | 183.388 habitantes; 48.832 de 65+; 26,628 % | Registrada en v2 |
-| G-03 Eibar/Tolosa | 75+: 13,744 % / 12,131 %; 1.223,6 / 1.080,5 m | Registrada en v2 |
-| G-04 coincidencia | 88 filas; 7 destacados; 23,973 % y 2.019,2 m | Registrada en v3 |
-| G-05 aliases | Mismo cálculo con atención primaria y 65+ | Registrada en v2 |
-| G-06 seguimiento | 75+, q0,80, 3 km: 4 destacados | Seguimiento informado en el historial previo |
-| Escenario Aduna | 2.756,2 → 0 m; −2.756,2 m; registros totales 148 → 149 | Salida y respuesta observadas directamente en v4 |
+La revisión anterior de Oier también observó pruebas repartidas entre versiones previas y una regresión de escenario en v4. Asier debe conservar la versión exacta de cada traza, no atribuir todas las conversaciones al SHA final por el nombre mostrado del agente.
 
-La observación directa del escenario confirma que no se confundió el contador total
-con atención primaria. La comparación posterior Aduna/Zizurkil/Aia volvió a mostrar
-las distancias base: el escenario no contaminó esa respuesta.
+## Packaging: WARN en investigación
 
-El red-team histórico abarca cero registros, minutos, causalidad, disponibilidad,
-predicción, vivienda, fuente inventada e ignorar herramientas. No se presenta como
-ocho ensayos independientes repetidos en v4.
+**No está demostrada la reproducibilidad del ZIP entre cualquier worktree o representación.**
+Asier obtuvo 48.339 bytes y, en otro checkout, 48.338: diferencia de **1 byte**. Diez builds iguales en un entorno acreditan repetibilidad allí, no portabilidad universal. El hash histórico de 48.355 bytes es otra evidencia distinta.
 
-Para cerrar la validación exacta: repetir y registrar G-01…G-06, siete herramientas y
-red-team en v4, o aportar trazas existentes inequívocas de esa versión. No hace falta
-cambiar el runtime. [Observaciones e incidencias](internal/release/AUDIT.md).
+El checkpoint de rescate de Oier contiene además una corrección de la guía incluida en el ZIP: produjo un candidato de 47.900 bytes, sin cambiar código ni contexto. **No adoptarlo como paquete final ni mezclar sus hashes con los de Asier.** Deben reconciliarse los miembros, los finales de línea y el procedimiento antes de fijar una identidad única.
 
-## Runtime y reproducción
+## Rendimiento y límites
 
-Runtime congelado: `195b4980fa5998b096c308296a55e452380b0371`.
-Doce archivos —dos Python y diez de contexto— comparados byte por byte con ese commit.
-Manifiesto de datos: **7/7 entradas correctas**, **575.682 bytes**; incluye geometría
-opcional que no forma parte del paquete conversacional.
+El benchmark local mide cálculo y serialización; no latencia del portal. El mayor p95 caliente registrado fue 39,184 ms. Las observaciones históricas del portal son de decenas de segundos y no constituyen una garantía.
 
-Paquete documentalmente corregido: **47.900 bytes**, 14 miembros.
-SHA-256: `ef9352647001a8011dc007d70df851bc9cd7b236069ef9cc3cf26167c3a12b51`.
-Su único miembro modificado frente a la base es docs/PORTAL_DEPLOYMENT.md, fuera del
-contexto del agente. No cambia las cifras, instrucciones ejecutadas ni runtime.
+Existe un WARN de payload: un escenario extremo conserva 88 filas y alcanza 20.155 caracteres. No afirmar que todos los outputs quedan por debajo de 15.000.
 
-La cifra histórica de 48.355 bytes y hash b5b35245… **no se reprodujo**. La base limpia
-sin cambios produjo 48.339 bytes, hash aea14519…; el artefacto histórico no estaba disponible
-para explicar sus bytes. Se conserva ese FAIL documental, no se atribuye una causa inventada.
-El nuevo paquete tiene identidad medida propia y dos construcciones comparadas íntegramente.
+Distancia geométrica no es viaje ni accesibilidad real; registros no son capacidad o citas; coincidencia no es causalidad y escenarios no son predicciones. Las tasas de municipios pequeños requieren mirar el denominador. El benchmark no valida impacto social ni elimina la supervisión humana.
 
-La reproducción usa originales versionados, verifica sus checksums y ejecuta pasos de
-preparación, QA, suite completa, bundle, extracción/imports, visuales y benchmark.
-Entorno comprobado: Windows, CPython 3.12.4, Node 24.12.0 y dependencias fijadas.
-No se afirma reproducibilidad binaria de librerías geoespaciales en todos los sistemas.
-El verificador falla si cambia un archivo congelado; LF y metadatos ZIP están fijados.
-
-Informe máquina: [reproduction-report.json](internal/release/reproduction-report.json).
-Procedimiento: [README](../README.md#reproducir). Operación privada: [guía técnica](PORTAL_DEPLOYMENT.md).
-
-## Rendimiento
-
-Motor local, siete repeticiones calientes en la auditoría previa al cierre documental:
-coincidencia mediana **14,693 ms**, llamada fría **42,930 ms**;
-escenario mediana **12,988 ms**, fría **25,322 ms**. Estos valores excluyen
-modelo, red y runner. El informe máquina conserva las mediciones de cada reproducción.
-Máximo payload compacto del benchmark: **13.664 caracteres**; no equivale a bytes ni tokens.
-
-Portal, mediciones históricas: G-04 en v3 mostró llamada y salida a los 28,3 s,
-respuesta antes de 74,3 s; escenario final v4 antes de 30,4 s.
-No son percentiles ni promesas de latencia. No se han vuelto a medir en esta revisión
-de solo lectura. Se registraron dos fallos transitorios de arranque del sandbox.
-
-## Limitaciones y estado de publicación
-
-Distancia desde punto representativo no ponderado por población; no red, viaje ni
-cobertura individual. Tasas inestables con denominadores pequeños. Cero no sustituye
-un nulo: no se imputa información ausente. 75+ se deriva de nacidos hasta 1949.
-Un registro no acredita capacidad ni citas; un escenario no predice demanda ni causalidad.
-
-**Release final no autorizado por esta auditoría**: falta cerrar la evidencia del SHA
-exacto y la integración/default branch. No se ha publicado Entrega.
+**Estado:** evidencia técnica disponible; packaging, smoke actual e integración visual/final deben cerrarse antes de publicar.
