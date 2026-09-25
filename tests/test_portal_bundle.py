@@ -8,10 +8,22 @@ import subprocess
 import sys
 import zipfile
 from pathlib import Path
+import pytest
 
 
 ROOT = Path(__file__).resolve().parents[1]
 PORTAL = ROOT / "agentes" / "gipuzkoa360" / "portal"
+
+
+@pytest.fixture(autouse=True)
+def preserve_frozen_portal_bytes():
+    """Generator tests must not replace the deployed snapshot with local ast.unparse output."""
+    originals = {path: path.read_bytes() for path in (PORTAL / 'main.py', PORTAL / 'tools.py')}
+    try:
+        yield
+    finally:
+        for path, content in originals.items():
+            path.write_bytes(content)
 
 
 def _load(name: str, path: Path):
