@@ -42,3 +42,5 @@ def test_evaluator_detects_wrong_tool_arguments_and_numbers():
     assert not score.numeric_grounding and not score.source_grounding
     assert kpi([True,False,None],'test')['value'] == .5
     assert kpi([],'test')['value'] is None
+    unsupported=evaluate('',{},None,{}, {},'',expected_tool=None,expected_parameters={},reference_output={},source_ids=set(),out_of_scope=True)
+    assert unsupported.out_of_scope_handled is False

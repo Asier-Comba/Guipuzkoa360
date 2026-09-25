@@ -18,7 +18,7 @@ def evaluate(query, plan, tool, tool_output, critic, response, *, expected_tool,
              execution_count_delta=None):
     # query is consumed only for interface compatibility; never retained in usage records.
     if out_of_scope:
-        return EvaluationRecord(None,None,None,None,None,None,tool is None,None)
+        return EvaluationRecord(None,None,None,None,None,None,tool is None and plan.get('out_of_scope') is True and bool(response),None)
     numeric = canonical(tool_output) == canonical(reference_output)
     grounded = bool(tool_output.get('sources')) and all(s.get('source_id') in source_ids for s in tool_output.get('sources', []))
     approved = critic.get('status') in {'PASS','WARN'}
