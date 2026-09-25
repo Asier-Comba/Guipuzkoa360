@@ -1,0 +1,4710 @@
+{
+  "baseline": "488f46db7047d9393d4d4a489a869ab246c215b9",
+  "files_total": 121,
+  "categories": {
+    "TECHNICAL": 62,
+    "PUBLIC": 3,
+    "INTERNAL": 38,
+    "OBSOLETE": 1,
+    "HISTORICAL": 17
+  },
+  "occurrences_total": 414,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 180,
+      "sha256": "f89bb9bd720f02de571a1a21b2d5552ae237a9edae337ae47cbb04a49fdc87de"
+    },
+    {
+      "path": ".gitignore",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 148,
+      "sha256": "b82cd43cf23e77217199d4b619f8b9ebec685ad638c1e302008960ba94d43a9e"
+    },
+    {
+      "path": "FUENTES.md",
+      "category": "PUBLIC",
+      "decision": "KEEP",
+      "reason": "Contexto congelado: conservar bytes y trazabilidad.",
+      "bytes": 6963,
+      "sha256": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de"
+    },
+    {
+      "path": "README.md",
+      "category": "PUBLIC",
+      "decision": "UPDATE",
+      "reason": "Nueva entrada canónica del producto.",
+      "bytes": 2633,
+      "sha256": "c991bc5ffe1a79cb7d00613ff6da6be0cbf8c251be72c97ef0aeb2ac6bf82850"
+    },
+    {
+      "path": "agentes/gipuzkoa360/README.md",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 461,
+      "sha256": "2e4528c741ff3bd11ca504ec419af70e8fefeafeecbafbcd1a18261ada4514a8"
+    },
+    {
+      "path": "agentes/gipuzkoa360/__init__.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 144,
+      "sha256": "179a54cb694379f46911287186d0fb3228a4b50eafd69dbcb168e0f5381c3ac0"
+    },
+    {
+      "path": "agentes/gipuzkoa360/data_access.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 18938,
+      "sha256": "1f6f8636a0736d6737861bd83b3d0e198981e5bd510505365b34e8230c56489d"
+    },
+    {
+      "path": "agentes/gipuzkoa360/main.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 6347,
+      "sha256": "24784382ae90787a56e78dce7d737bfb642a4c1b784783f7f6fdc2c9150025fc"
+    },
+    {
+      "path": "agentes/gipuzkoa360/metrics.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 3570,
+      "sha256": "5accc007e29b63f520c00874266a5d1c50bc9a4b4e31ac54aafddbe361f18326"
+    },
+    {
+      "path": "agentes/gipuzkoa360/portal/main.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 6286,
+      "sha256": "c2f4770f234522ac6ccb535d627c1252e19bc8f992e73194dab6e9f6672c585e"
+    },
+    {
+      "path": "agentes/gipuzkoa360/portal/tools.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 54274,
+      "sha256": "0a5ab214ecf89cef04c85b5055c8ac42047c151c0411b4aa6c470a8de397edd5"
+    },
+    {
+      "path": "agentes/gipuzkoa360/requirements.txt",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 66,
+      "sha256": "4e13eca924322e0609075845d1bf03031061b7a0a46530bd00f106c7996e9519"
+    },
+    {
+      "path": "agentes/gipuzkoa360/schemas.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 1549,
+      "sha256": "d3fc90b57b484121da7ea73a87aa97bfd4a9e844d35a3056c9d0667f402bb40b"
+    },
+    {
+      "path": "agentes/gipuzkoa360/tools.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 38123,
+      "sha256": "df8aed05f7d358383d78f94b1ae79ffa631ec2205ba9e13e3342dc145fb40ad4"
+    },
+    {
+      "path": "analisis/agent_runtime_benchmark.json",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 2010,
+      "sha256": "360e43c6f6223ef1161c0567a3e683d018721d7113e0078ce271a88dcf8f04f5"
+    },
+    {
+      "path": "analisis/compatibilidad_temporal.csv",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 148,
+      "sha256": "3716ce6c2a1f0a1d2c81097b634e5e9a8bd69d559029727cffb52224d6cce04f"
+    },
+    {
+      "path": "analisis/data_quality_report.json",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 10445,
+      "sha256": "58723fd0862510c85656f39d512ec8cdaab8755778294faaa3b56119d408c0fc"
+    },
+    {
+      "path": "analisis/entidades_no_municipales_excluidas.csv",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 208,
+      "sha256": "1e953715d4f0096cd4ba7adc2c5f6eec17bff2d949d97c6d4c97ba611b9bbf80"
+    },
+    {
+      "path": "analisis/release_e2e_report.json",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 355666,
+      "sha256": "31215f3b0ed650276a06c1ef2c3f0d583ae552f5a8eed0938d09dc7480d746f3"
+    },
+    {
+      "path": "analisis/runtime_benchmark_rc2.json",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 1298,
+      "sha256": "a32e3adf19a14c5c09b4f9c38b14300bdca2cc6e5023f6cd4e9c8b38f3cf8f04"
+    },
+    {
+      "path": "analisis/runtime_size_report.md",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 1022,
+      "sha256": "8ac1a64837b7e3eba0908ba8ff6bde1198f38ca4a61105b3540d7a23dbdf7539"
+    },
+    {
+      "path": "analisis/validation_report.json",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 418,
+      "sha256": "3c06aabff4786e5775741ee93b4e2a4eb12ef40f9c074c5ba64ccf2173b5d49e"
+    },
+    {
+      "path": "analisis/verificaciones_manuales.csv",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 323,
+      "sha256": "116f53d89228dfdc27b63d977565be47ae4ec0ef5eba68a30fb9c92a31a27956"
+    },
+    {
+      "path": "analisis/work3_agent_result.json",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 6158,
+      "sha256": "fea23ce1cef003582203292c2fef862fc8776fac16bb2c029b8b13d86e2e5002"
+    },
+    {
+      "path": "analisis/work3_agent_result_with_geometry.json",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 91481,
+      "sha256": "5d3fbdd22b079dbc12b4a7ba40105ba76a5a94940709ea0aa7a660d1b9f0bd19"
+    },
+    {
+      "path": "datos_originales/MUNICIPIOS_5000_ETRS89.zip",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 3601805,
+      "sha256": "9bf03701c5ae5e80f1d4cd3f00ffb3cb76142d01af352c67f5250054530423c3"
+    },
+    {
+      "path": "datos_originales/centros-salud.xlsx",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 88479,
+      "sha256": "87a2b8ea3309678ff743e2f267320b94216c3d1e4f52b578bdd0a77bd8bf29ab"
+    },
+    {
+      "path": "datos_originales/download_manifest.json",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 875,
+      "sha256": "135ec1cacb92df81b8dceba58614b5d1eb0428dfaf1fd56dc8ecb526c9dccb0c"
+    },
+    {
+      "path": "datos_originales/eustat_demografia_2025.csv",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 11809,
+      "sha256": "8e9c0a1642558f4449208a334666368713dc9801807c65099955e435c126ac8f"
+    },
+    {
+      "path": "datos_originales/eustat_ep06b_metadata.json",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 12948,
+      "sha256": "fc713877d8a01eea6c5a9541139b9de7fb7e8d2e2093baa58ab4b5d750cfafd5"
+    },
+    {
+      "path": "datos_originales/eustat_ep10b_metadata.json",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 16986,
+      "sha256": "c96c1cc6ce418ab33c9d520aabb5a759ff63dee82e253cf68d1b95bf9f6cefc9"
+    },
+    {
+      "path": "datos_originales/eustat_nacimientos_hasta_1949_2025.csv",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 142445,
+      "sha256": "f16c4a922fa435514330255c6717cad8ce7d287af425b11563e8d75a220cf993"
+    },
+    {
+      "path": "datos_preparados/README.md",
+      "category": "OBSOLETE",
+      "decision": "UPDATE",
+      "reason": "Placeholder incompatible con datos ya disponibles.",
+      "bytes": 384,
+      "sha256": "72fb61862f2fb8fb6c5af8af1a398dd38fad8b2ec55ab7acacb00e719c2b04ba"
+    },
+    {
+      "path": "datos_preparados/data_contract.json",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 5274,
+      "sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae"
+    },
+    {
+      "path": "datos_preparados/demografia.csv",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 6161,
+      "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+    },
+    {
+      "path": "datos_preparados/metadata_sources.json",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 4833,
+      "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+    },
+    {
+      "path": "datos_preparados/municipios.csv",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 30075,
+      "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
+    },
+    {
+      "path": "datos_preparados/municipios.geojson",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 12902261,
+      "sha256": "8f3d8171e5ee6836559d4d3f08a2c05c535797c9fd8771a1cea04dc736b3654e"
+    },
+    {
+      "path": "datos_preparados/runtime_manifest.json",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 1594,
+      "sha256": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a"
+    },
+    {
+      "path": "datos_preparados/runtime_municipality_points.csv",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 8689,
+      "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11"
+    },
+    {
+      "path": "datos_preparados/runtime_municipios.geojson",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 495392,
+      "sha256": "c30ba24034312e2d1f5fab487c0ec78126436311a02ec54fc9bdf6f0b84dad1c"
+    },
+    {
+      "path": "datos_preparados/runtime_servicios.csv",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 25258,
+      "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
+    },
+    {
+      "path": "datos_preparados/servicios.csv",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 31418,
+      "sha256": "b81c62c637a69c27fdbc2b5e2e76050420517807c44a5cb5248dda23b80c52ea"
+    },
+    {
+      "path": "docs/DEMO_QUERIES.md",
+      "category": "HISTORICAL",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "bytes": 2603,
+      "sha256": "14305035bf6afab9cad9282e70e8d408c14770e479da9b73cac1ae998a3eb280"
+    },
+    {
+      "path": "docs/EXPECTED_RESULT_SCHEMA.md",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 3329,
+      "sha256": "ed6104b3fe5357c1343b0f87a5888cca8ff6d3e84013a486a32170b4822b2e59"
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "category": "HISTORICAL",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "bytes": 9693,
+      "sha256": "67dce5a1b823cd25539ed774dec2210ed740fe6650ddc3aacff8bee97106c459"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_1_DATA.md",
+      "category": "HISTORICAL",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "bytes": 4711,
+      "sha256": "92919fecfd9d7eeaf026979c0bb46986e1ae8c736bc9008c715f5368a879aaa8"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "category": "HISTORICAL",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "bytes": 8745,
+      "sha256": "6dec2cc84965f747704fe660ad716297a3ff2ba11596bb7c4a8382c594041768"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_AGENT.md",
+      "category": "HISTORICAL",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "bytes": 5072,
+      "sha256": "f2188ba5b4688bca4978d95a40a1ea05167206c2c7ea9d07c685b44683d34dd6"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_3_INTEGRATION.md",
+      "category": "HISTORICAL",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "bytes": 3184,
+      "sha256": "f19e2f3c0e779c9bf45f8cb1df099c9d28b503e18cebcc28238b4743ea3090a5"
+    },
+    {
+      "path": "docs/INTEGRATION_PLAYBOOK.md",
+      "category": "HISTORICAL",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "bytes": 4317,
+      "sha256": "da685d9de33abeb3f13bb2cc1655208616587d6412b1e3cbb31282d2dca703cc"
+    },
+    {
+      "path": "docs/INTEGRATION_STATUS_2026-09-24.md",
+      "category": "HISTORICAL",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "bytes": 2546,
+      "sha256": "aac83729aa5a7f05cf2beea19a0f6abe8aa9eb84cd9a1a044b481336638f83d2"
+    },
+    {
+      "path": "docs/JURY_READINESS.md",
+      "category": "HISTORICAL",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "bytes": 3421,
+      "sha256": "325efd65022931a6ec02041fd8266f3d081916e9ae61d327116c2b39ab847dfc"
+    },
+    {
+      "path": "docs/JURY_TEST_PLAN.md",
+      "category": "TECHNICAL",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "bytes": 2958,
+      "sha256": "39c25e37335ebcf0846635c84ad6d7a08374811ad33f953c42742d588942e4b3"
+    },
+    {
+      "path": "docs/METODOLOGIA.md",
+      "category": "PUBLIC",
+      "decision": "KEEP",
+      "reason": "Contexto congelado: conservar bytes y trazabilidad.",
+      "bytes": 1210,
+      "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7"
+    },
+    {
+      "path": "docs/METODOLOGIA_GEOESPACIAL.md",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 2973,
+      "sha256": "68a5463ac83db03e1f6ca9e46e2e8add92a93e9379530d438118fa9b6b1ae5f4"
+    },
+    {
+      "path": "docs/PORTAL_DEPLOYMENT.md",
+      "category": "HISTORICAL",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Miembro congelado del ZIP; guía operativa nueva separada.",
+      "bytes": 4924,
+      "sha256": "49e5437b1451118866d8696f2ebc36987b4f30e759834965725eaefc6752b6ed"
+    },
+    {
+      "path": "docs/PORTAL_EVIDENCE_RC2.md",
+      "category": "HISTORICAL",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "bytes": 5469,
+      "sha256": "220a4b0a6eebe09f1c1fbafc9e0ce2f1a6657c7540d5b38022405895e497875b"
+    },
+    {
+      "path": "docs/PR3_RECOVERY_AUDIT.md",
+      "category": "HISTORICAL",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "bytes": 1584,
+      "sha256": "932038f76cb3150b1e52c44ef69aec3c891881bf1122061a321fe387c3752704"
+    },
+    {
+      "path": "docs/RC2_FINAL_STATUS.md",
+      "category": "HISTORICAL",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "bytes": 4681,
+      "sha256": "a1e351e5ea41590aa62ac75052cdb47f7d9b9ee59b035a44e7d97048c5a07511"
+    },
+    {
+      "path": "docs/REAL_DATA_INTEGRATION.md",
+      "category": "HISTORICAL",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "bytes": 1445,
+      "sha256": "2abc72fc749151e77b02e9db0a9abbb525e27388d2adfba58c8867614f7d990c"
+    },
+    {
+      "path": "docs/RELEASE_CANDIDATE.md",
+      "category": "TECHNICAL",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "bytes": 1679,
+      "sha256": "0f26b1a5852dbaa49f16b2b2691fc2f6fd77cbdfc1c1a02f11e56d5feda4abf6"
+    },
+    {
+      "path": "docs/RESULT_SCHEMA.md",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 2296,
+      "sha256": "8b1a5e1f5541b41f2e0680dcdc2d2a9a3c6f5a2333088fb98b28fd3b4893c872"
+    },
+    {
+      "path": "docs/RUBRIC_TRACEABILITY.md",
+      "category": "TECHNICAL",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "bytes": 2160,
+      "sha256": "d0fdbcb216dbc24fa1b41d21f8c8b1cc153dd369505f13851e8c75b98085e9d6"
+    },
+    {
+      "path": "docs/RUNTIME_PACKAGE.md",
+      "category": "TECHNICAL",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "bytes": 1148,
+      "sha256": "4f0c82e9e908eefae7633f90688ef9435d650a31f04ab210287087eb47b99af6"
+    },
+    {
+      "path": "docs/SUBMISSION_CHECKLIST.md",
+      "category": "TECHNICAL",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "bytes": 2201,
+      "sha256": "d5b5c11731ea6a20b5a5c7228bfcf0b3f16edf71f4850c76ec6e78298af05784"
+    },
+    {
+      "path": "docs/examples/coincidence_primary_care_65.json",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 43880,
+      "sha256": "01bf000b49a2ad78eba346464610c83e6646784114e355613bf527b4e0f7162a"
+    },
+    {
+      "path": "docs/examples/comparison_tolosa_beasain_azpeitia.json",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 4607,
+      "sha256": "ba950087558f08e398ac4450e27d8afd6abafeeb90dcce2276192e53f855af4d"
+    },
+    {
+      "path": "docs/examples/scenario_add_primary_care_beasain.json",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 32048,
+      "sha256": "76687945f3f792d2c9ab2702e77fa19021c1edf046f53f6e7b946a1cf9228f72"
+    },
+    {
+      "path": "pyproject.toml",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 63,
+      "sha256": "10db616666c761aa584cc503d370136712e7c67b04fcb6d740eb5800866eeea8"
+    },
+    {
+      "path": "requirements.txt",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 83,
+      "sha256": "ebfad05ff4bf825deb929f73ae26f4f020834167ad8131f3e0aeda6f7f3044fa"
+    },
+    {
+      "path": "resultados/demo.html",
+      "category": "HISTORICAL",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "bytes": 56802,
+      "sha256": "cb769ded9f6291cedcd7ca61fe1ea49c7c817406f03e36adcdc8428146ed79b4"
+    },
+    {
+      "path": "resultados/informe_principal.html",
+      "category": "HISTORICAL",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "bytes": 56794,
+      "sha256": "3831b0c4fe4aa131be1ac4086b17aa8d0a417614292d0f187552701fa8de5b31"
+    },
+    {
+      "path": "resultados/metricas_municipales.csv",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 30075,
+      "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
+    },
+    {
+      "path": "resultados/scenario_comparison.html",
+      "category": "HISTORICAL",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "bytes": 56812,
+      "sha256": "568059e465ce9d8c97771da3f88ce29abb318584b8eac36f9b13b52e0756d119"
+    },
+    {
+      "path": "scripts/agent/benchmark_runtime.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 4310,
+      "sha256": "57fff5446bfc1ae3d9139d0b1b3c357b699f7583f60ae93cb497641e9125804d"
+    },
+    {
+      "path": "scripts/agent/benchmark_tools.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 4047,
+      "sha256": "4d8b25a95f09900a39b7b97be684bfebe38113726d12d78597d1181c3c1a5d71"
+    },
+    {
+      "path": "scripts/agent/build_portal_package.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 2894,
+      "sha256": "ee692021c91f9d8570f719e840cccc6fd92120aea48b442692c2541590879edf"
+    },
+    {
+      "path": "scripts/agent/build_portal_sources.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 2625,
+      "sha256": "1f71a8845664b005b25f5758c81d0c08391bb9dfc29ccb147f884bb98462bfa9"
+    },
+    {
+      "path": "scripts/agent/build_work3_result.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 5243,
+      "sha256": "5122ecede2925d6364dc7af78d34a8514300b360ab2e485830ceabb877cb1fb8"
+    },
+    {
+      "path": "scripts/agent/generate_examples.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 1544,
+      "sha256": "5273c7a665e4ee6238af140b99cc0d02f19e8b4a786f1d2a08151598510518dd"
+    },
+    {
+      "path": "scripts/agent/run_release_e2e.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 11463,
+      "sha256": "81deefc0c2826d0cc32d7bee99c8476f83a1fa8772cfdf8be6cc9d2821781573"
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 26103,
+      "sha256": "28ebd552d93c47158504c6ef5ec952af9e4ecd58a7157ea83c600c3a13d09f9f"
+    },
+    {
+      "path": "scripts/data/01_download_sources.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 4320,
+      "sha256": "e3b5e97be58b843e03ec7d3476dd5ce2e8d3d1d14d02d73bbd8fbfea6092a654"
+    },
+    {
+      "path": "scripts/data/02_prepare_geography.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 2559,
+      "sha256": "ebbe077b7640ae18c0fb9fa4dd59d55a3f47aee96b882a80cae31532e7c73400"
+    },
+    {
+      "path": "scripts/data/03_prepare_demography.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 2758,
+      "sha256": "6cf7af55e080a74ee7fdb8091c8bc936cb633b5e57a4e55a30cb34524d6b9430"
+    },
+    {
+      "path": "scripts/data/04_prepare_services.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 3215,
+      "sha256": "2d4100a791ded69adb14ccd028558593bfd1ba546f114f3f28cdf74d09dbe3c0"
+    },
+    {
+      "path": "scripts/data/05_build_metrics.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 5390,
+      "sha256": "1113c73ff9d9d19004dd4af60f2feb18cb094a6f6c69fd9f1c8622a67776e416"
+    },
+    {
+      "path": "scripts/data/06_validate_data.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 4463,
+      "sha256": "ff16ddf51b37295595ffc517508a58a8c329c7ab251746929bd197701011c913"
+    },
+    {
+      "path": "scripts/data/07_write_metadata.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 6823,
+      "sha256": "598b0b535ba8a72ccef465760ceb7f6a40eb7e83cafa2ba5f2d2977e314535c3"
+    },
+    {
+      "path": "scripts/data/08_build_qa_assets.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 15260,
+      "sha256": "a67b6d7aae69d3c6013ed5713d15d3a326bc990441a36829cbc961fc4842c151"
+    },
+    {
+      "path": "scripts/data/build_all.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 642,
+      "sha256": "cc7254243d09986b5b590682d7b8ac4d7b0499736503e8604e5ad778425508c1"
+    },
+    {
+      "path": "scripts/data/export_work3_smoke_result.py",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 5336,
+      "sha256": "f19cfd02ec7a6843314cdbf0df669331476c45d2b0d1afcf122aca1e9bd53c07"
+    },
+    {
+      "path": "scripts/enrich_work1_result.mjs",
+      "category": "TECHNICAL",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "bytes": 1932,
+      "sha256": "d7226cc0157ba17e549019c6aae493ed1779438339ea5d4cb74754ce07c28984"
+    },
+    {
+      "path": "tests/conftest.py",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 235,
+      "sha256": "429b38ea8720f50ba19f757d16f22f38c1bc8da7137a31e2678999a88b0f7779"
+    },
+    {
+      "path": "tests/data/test_integrity.py",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 1739,
+      "sha256": "58ad2dac808e15a1a05e48f43df19b5d575dd5ee5865d41656812d307e71dda7"
+    },
+    {
+      "path": "tests/data/test_quality_contract.py",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 13389,
+      "sha256": "38c2318d015aad8d32525f660b69e9071316077e030383c2d3da35194ce60b37"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 6009,
+      "sha256": "adf55ed59f83a46e601e83f445c335c36a5eba88958455949945b05171b1cb7b"
+    },
+    {
+      "path": "tests/fixtures/README.md",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 235,
+      "sha256": "b9b20a7865f6e8faaf74e1684942ebd4555296754acf5cae88428426ba86ae7b"
+    },
+    {
+      "path": "tests/fixtures/demografia.csv",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 394,
+      "sha256": "4c88a90d38d9092eeebcc91fb5d16dafb11d9d5d6edbfa58ab52fb0cc8463287"
+    },
+    {
+      "path": "tests/fixtures/golden_cases.json",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 4636,
+      "sha256": "701cf560bacfeeeb5fe3e3b2c225afb5df12ddf1e01bd419054880b1c45719cb"
+    },
+    {
+      "path": "tests/fixtures/metadata_sources.json",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 628,
+      "sha256": "135d66f78eb68b7114fdfae98f42dd5f9672b79e30df53a1afe69084b8a71c3b"
+    },
+    {
+      "path": "tests/fixtures/municipios.csv",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 320,
+      "sha256": "71504193c4a2fa301318a5dbfc90c91c380e41818661c91ccd2f4087dfc1866f"
+    },
+    {
+      "path": "tests/fixtures/servicios.csv",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 399,
+      "sha256": "c897789f928724f1458abe8330f773962e4da2bd63d34c43432f848fdb4f2d9c"
+    },
+    {
+      "path": "tests/fixtures/synthetic_agent_result.json",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 3596,
+      "sha256": "3a7089ea354c1387a97f96fb5c5cb8a22b883907afeb93af63ef8f69ed7edd0d"
+    },
+    {
+      "path": "tests/golden_cases.json",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 1192,
+      "sha256": "4cc1091d414d153aac31c13ae3a99114f4c98a279175540c2218d6e45f2e08c1"
+    },
+    {
+      "path": "tests/test_adversarial_core.py",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 4803,
+      "sha256": "3110290b1b69cd75f192044b66c0edbb880aa655f86dc2405b4a869842563f8f"
+    },
+    {
+      "path": "tests/test_analysis.py",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 4701,
+      "sha256": "d764679110f588699a0125901e6e9eded2e6e2aec6b72c9b55d09645fe992900"
+    },
+    {
+      "path": "tests/test_build_agent.py",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 870,
+      "sha256": "87ad389d69593d9d9be8f1835624d72eb1b0dff82588b5e8216c85941eee798b"
+    },
+    {
+      "path": "tests/test_compact_outputs.py",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 3331,
+      "sha256": "cd3bd581f4e4de5e17ffdcc758a5af1c2e4b2e4e256b12b9837abcd1ed6c05f6"
+    },
+    {
+      "path": "tests/test_data_access.py",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 2482,
+      "sha256": "eac9fa265fc306cc16a93cb9430c25df6cc2b11c76cfa360042df84fc604fd02"
+    },
+    {
+      "path": "tests/test_golden_contract.py",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 1134,
+      "sha256": "12392710d4d1a1f749a60bd030761bc31bd454fb34eeff4abce98e6a5a3c81c1"
+    },
+    {
+      "path": "tests/test_parameter_normalization.py",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 4127,
+      "sha256": "665e22d4deec84a19792fc22504c3c99479468103bbc944dc58cd01f63b71b3f"
+    },
+    {
+      "path": "tests/test_performance_contract.py",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 1586,
+      "sha256": "ffdd0167ee17d60de5a10013b7c8717bf67ce297193f7df8bc682e693041af81"
+    },
+    {
+      "path": "tests/test_portal_bundle.py",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 6233,
+      "sha256": "a5d4a6f4293edcd4ddc9656b4e3303d13be513f463ee44aac551e349d3852f52"
+    },
+    {
+      "path": "tests/test_portal_runtime_rc2.py",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 8984,
+      "sha256": "c4c3fd29e4347ff455e55ec3294af7e5167b04690882be8e42a95a180852635c"
+    },
+    {
+      "path": "tests/test_public_tools.py",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 764,
+      "sha256": "15ac76189c4ccd7586a1ab5450aaa781f49d069af7365312bc77919e13e65ab3"
+    },
+    {
+      "path": "tests/test_real_data_integration.py",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 4653,
+      "sha256": "a61bdd102cfdc6bb213c06de779108cc52abe5b127b7c96fea3280c109f228e2"
+    },
+    {
+      "path": "tests/test_release_e2e.py",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 1329,
+      "sha256": "b3e58f3432d2c362457e1b5cc51437aba266b2a7f90d7cdd81724d73a8d3d90a"
+    },
+    {
+      "path": "tests/test_studio_registry.py",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 3073,
+      "sha256": "1c2ffbd2986f20357e8fb064bae835a1824577e0736067a3700ce0328bd2bbd1"
+    },
+    {
+      "path": "tests/test_work3_agent_adapter.py",
+      "category": "INTERNAL",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "bytes": 835,
+      "sha256": "090d44908c63157af75e2154892d1bbcba2c6c039e2fdc1a6dbeca94ab62d1a4"
+    }
+  ],
+  "occurrences": [
+    {
+      "path": "FUENTES.md",
+      "line": 9,
+      "column": 44,
+      "term": "v1",
+      "decision": "KEEP",
+      "reason": "Contexto congelado: conservar bytes y trazabilidad.",
+      "context": "- API: `https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px` y `PX_010154_cepv1_ep10b.px`."
+    },
+    {
+      "path": "FUENTES.md",
+      "line": 51,
+      "column": 236,
+      "term": "sintéticos",
+      "decision": "KEEP",
+      "reason": "Contexto congelado: conservar bytes y trazabilidad.",
+      "context": "a/consulta. No se han utilizado blogs, prensa ni datos sintéticos en resultados."
+    },
+    {
+      "path": "FUENTES.md",
+      "line": 72,
+      "column": 334,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Contexto congelado: conservar bytes y trazabilidad.",
+      "context": "validar su SHA-256 en `download_manifest.json`. `tests/fixtures/golden_cases.json` contiene cinco recorridos cerrados de esta cadena."
+    },
+    {
+      "path": "README.md",
+      "line": 15,
+      "column": 63,
+      "term": "HANDOFF",
+      "decision": "UPDATE",
+      "reason": "Nueva entrada canónica del producto.",
+      "context": "`FUENTES.md`, `docs/METODOLOGIA_GEOESPACIAL.md`, `docs/HANDOFF_WORK_1_DATA.md` y `docs/HANDOFF_WORK_2_3_DATA_QA.md`."
+    },
+    {
+      "path": "README.md",
+      "line": 15,
+      "column": 95,
+      "term": "HANDOFF",
+      "decision": "UPDATE",
+      "reason": "Nueva entrada canónica del producto.",
+      "context": "GEOESPACIAL.md`, `docs/HANDOFF_WORK_1_DATA.md` y `docs/HANDOFF_WORK_2_3_DATA_QA.md`."
+    },
+    {
+      "path": "README.md",
+      "line": 19,
+      "column": 237,
+      "term": "LLM",
+      "decision": "UPDATE",
+      "reason": "Nueva entrada canónica del producto.",
+      "context": "a ejecución determinista del tool, no una conversación LLM. Para regenerarlos:"
+    },
+    {
+      "path": "README.md",
+      "line": 22,
+      "column": 28,
+      "term": "work3",
+      "decision": "UPDATE",
+      "reason": "Nueva entrada canónica del producto.",
+      "context": "python scripts/agent/build_work3_result.py"
+    },
+    {
+      "path": "README.md",
+      "line": 23,
+      "column": 21,
+      "term": "work1",
+      "decision": "UPDATE",
+      "reason": "Nueva entrada canónica del producto.",
+      "context": "node scripts/enrich_work1_result.mjs analisis/work3_agent_result.json analisis/work3_agent_result_with_ge"
+    },
+    {
+      "path": "README.md",
+      "line": 23,
+      "column": 47,
+      "term": "work3",
+      "decision": "UPDATE",
+      "reason": "Nueva entrada canónica del producto.",
+      "context": "node scripts/enrich_work1_result.mjs analisis/work3_agent_result.json analisis/work3_agent_result_with_geometry.json"
+    },
+    {
+      "path": "README.md",
+      "line": 23,
+      "column": 80,
+      "term": "work3",
+      "decision": "UPDATE",
+      "reason": "Nueva entrada canónica del producto.",
+      "context": "1_result.mjs analisis/work3_agent_result.json analisis/work3_agent_result_with_geometry.json"
+    },
+    {
+      "path": "README.md",
+      "line": 24,
+      "column": 41,
+      "term": "work3",
+      "decision": "UPDATE",
+      "reason": "Nueva entrada canónica del producto.",
+      "context": "node scripts/build_results.mjs analisis/work3_agent_result_with_geometry.json resultados"
+    },
+    {
+      "path": "README.md",
+      "line": 28,
+      "column": 17,
+      "term": "work1",
+      "decision": "UPDATE",
+      "reason": "Nueva entrada canónica del producto.",
+      "context": "`scripts/enrich_work1_result.mjs` añade contornos municipales reales sin modificar las cifras."
+    },
+    {
+      "path": "README.md",
+      "line": 30,
+      "column": 12,
+      "term": "HANDOFF",
+      "decision": "UPDATE",
+      "reason": "Nueva entrada canónica del producto.",
+      "context": "Leer `docs/HANDOFF_WORK_3_INTEGRATION.md` y `docs/SUBMISSION_CHECKLIST.md`. La publicación final r"
+    },
+    {
+      "path": "README.md",
+      "line": 34,
+      "column": 255,
+      "term": "fixture",
+      "decision": "UPDATE",
+      "reason": "Nueva entrada canónica del producto.",
+      "context": "periodo, unidades, fuentes, método y limitaciones. Los fixtures de `tests/fixtures/` son sintéticos y se usan solo en pruebas."
+    },
+    {
+      "path": "README.md",
+      "line": 34,
+      "column": 274,
+      "term": "fixture",
+      "decision": "UPDATE",
+      "reason": "Nueva entrada canónica del producto.",
+      "context": "fuentes, método y limitaciones. Los fixtures de `tests/fixtures/` son sintéticos y se usan solo en pruebas."
+    },
+    {
+      "path": "README.md",
+      "line": 34,
+      "column": 289,
+      "term": "sintéticos",
+      "decision": "UPDATE",
+      "reason": "Nueva entrada canónica del producto.",
+      "context": " y limitaciones. Los fixtures de `tests/fixtures/` son sintéticos y se usan solo en pruebas."
+    },
+    {
+      "path": "README.md",
+      "line": 40,
+      "column": 14,
+      "term": "HANDOFF",
+      "decision": "UPDATE",
+      "reason": "Nueva entrada canónica del producto.",
+      "context": "Véanse `docs/HANDOFF_WORK_2_AGENT.md`, `docs/RESULT_SCHEMA.md` y `docs/RUNTIME_PACKAGE.md`."
+    },
+    {
+      "path": "README.md",
+      "line": 44,
+      "column": 41,
+      "term": "rc2",
+      "decision": "UPDATE",
+      "reason": "Nueva entrada canónica del producto.",
+      "context": "El candidato actual es `urban-challenge-rc2`; `urban-challenge-rc1` se conserva como histórico. `docs/PORTAL_DEPLOYMENT.md`"
+    },
+    {
+      "path": "README.md",
+      "line": 44,
+      "column": 64,
+      "term": "rc1",
+      "decision": "UPDATE",
+      "reason": "Nueva entrada canónica del producto.",
+      "context": "dato actual es `urban-challenge-rc2`; `urban-challenge-rc1` se conserva como histórico. `docs/PORTAL_DEPLOYMENT.md` contiene la secuencia "
+    },
+    {
+      "path": "README.md",
+      "line": 44,
+      "column": 425,
+      "term": "RC2",
+      "decision": "UPDATE",
+      "reason": "Nueva entrada canónica del producto.",
+      "context": "e2e_report.json` registra las ocho pruebas A–H y `docs/RC2_FINAL_STATUS.md` concentra la evidencia de congelación."
+    },
+    {
+      "path": "agentes/gipuzkoa360/README.md",
+      "line": 7,
+      "column": 33,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "Los archivos `TEST_*` de `tests/fixtures/` son exclusivamente sintéticos. No deben incluirse en una versión"
+    },
+    {
+      "path": "agentes/gipuzkoa360/README.md",
+      "line": 7,
+      "column": 63,
+      "term": "sintéticos",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "hivos `TEST_*` de `tests/fixtures/` son exclusivamente sintéticos. No deben incluirse en una versión"
+    },
+    {
+      "path": "agentes/gipuzkoa360/main.py",
+      "line": 62,
+      "column": 51,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "llames herramientas irrelevantes. Nunca presentes fixtures TEST_* como datos reales de Gipuzkoa.\"\"\""
+    },
+    {
+      "path": "agentes/gipuzkoa360/portal/main.py",
+      "line": 59,
+      "column": 51,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "llames herramientas irrelevantes. Nunca presentes fixtures TEST_* como datos reales de Gipuzkoa.\"\"\""
+    },
+    {
+      "path": "agentes/gipuzkoa360/portal/tools.py",
+      "line": 397,
+      "column": 29,
+      "term": "LLM",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "    \"\"\"Reduce transporte al LLM sin alterar métricas ni la salida completa del core.\"\"\""
+    },
+    {
+      "path": "agentes/gipuzkoa360/schemas.py",
+      "line": 1,
+      "column": 38,
+      "term": "pendiente",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "\"\"\"Contratos de entrada y salida independientes del framework del agente.\"\"\""
+    },
+    {
+      "path": "agentes/gipuzkoa360/tools.py",
+      "line": 44,
+      "column": 29,
+      "term": "LLM",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "    \"\"\"Reduce transporte al LLM sin alterar métricas ni la salida completa del core.\"\"\""
+    },
+    {
+      "path": "analisis/release_e2e_report.json",
+      "line": 2,
+      "column": 31,
+      "term": "rc2",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "  \"release\": \"urban-challenge-rc2\","
+    },
+    {
+      "path": "analisis/release_e2e_report.json",
+      "line": 3,
+      "column": 87,
+      "term": "LLM",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "oordinator/tool acceptance; no network and no external LLM.\","
+    },
+    {
+      "path": "analisis/release_e2e_report.json",
+      "line": 1276,
+      "column": 60,
+      "term": "v1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "            \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\","
+    },
+    {
+      "path": "analisis/release_e2e_report.json",
+      "line": 2654,
+      "column": 56,
+      "term": "v1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "            \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\","
+    },
+    {
+      "path": "analisis/release_e2e_report.json",
+      "line": 4017,
+      "column": 60,
+      "term": "v1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "            \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\","
+    },
+    {
+      "path": "analisis/release_e2e_report.json",
+      "line": 5380,
+      "column": 56,
+      "term": "v1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "            \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\","
+    },
+    {
+      "path": "analisis/release_e2e_report.json",
+      "line": 5536,
+      "column": 60,
+      "term": "v1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "            \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\","
+    },
+    {
+      "path": "analisis/release_e2e_report.json",
+      "line": 5682,
+      "column": 56,
+      "term": "v1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "            \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\","
+    },
+    {
+      "path": "analisis/release_e2e_report.json",
+      "line": 6032,
+      "column": 60,
+      "term": "v1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "            \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\","
+    },
+    {
+      "path": "analisis/release_e2e_report.json",
+      "line": 6323,
+      "column": 60,
+      "term": "v1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "            \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\","
+    },
+    {
+      "path": "analisis/release_e2e_report.json",
+      "line": 6445,
+      "column": 56,
+      "term": "v1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "            \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\","
+    },
+    {
+      "path": "analisis/runtime_benchmark_rc2.json",
+      "line": 2,
+      "column": 31,
+      "term": "rc2",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "  \"release\": \"urban-challenge-rc2\","
+    },
+    {
+      "path": "analisis/work3_agent_result.json",
+      "line": 113,
+      "column": 50,
+      "term": "v1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "      \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\","
+    },
+    {
+      "path": "analisis/work3_agent_result.json",
+      "line": 149,
+      "column": 21,
+      "term": "RC1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    \"question_id\": \"RC1-WORK3-COMPARE-001\","
+    },
+    {
+      "path": "analisis/work3_agent_result.json",
+      "line": 149,
+      "column": 25,
+      "term": "WORK3",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    \"question_id\": \"RC1-WORK3-COMPARE-001\","
+    },
+    {
+      "path": "analisis/work3_agent_result.json",
+      "line": 150,
+      "column": 39,
+      "term": "rc1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    \"agent_version\": \"urban-challenge-rc1\","
+    },
+    {
+      "path": "analisis/work3_agent_result.json",
+      "line": 165,
+      "column": 24,
+      "term": "RC1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "        \"output_ref\": \"RC1-COMPARE-20069-20030-20071\""
+    },
+    {
+      "path": "analisis/work3_agent_result.json",
+      "line": 173,
+      "column": 20,
+      "term": "RC1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    \"result_ref\": \"RC1-COMPARE-20069-20030-20071\""
+    },
+    {
+      "path": "analisis/work3_agent_result_with_geometry.json",
+      "line": 113,
+      "column": 50,
+      "term": "v1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "      \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\","
+    },
+    {
+      "path": "analisis/work3_agent_result_with_geometry.json",
+      "line": 149,
+      "column": 21,
+      "term": "RC1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    \"question_id\": \"RC1-WORK3-COMPARE-001\","
+    },
+    {
+      "path": "analisis/work3_agent_result_with_geometry.json",
+      "line": 149,
+      "column": 25,
+      "term": "WORK3",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    \"question_id\": \"RC1-WORK3-COMPARE-001\","
+    },
+    {
+      "path": "analisis/work3_agent_result_with_geometry.json",
+      "line": 150,
+      "column": 39,
+      "term": "rc1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    \"agent_version\": \"urban-challenge-rc1\","
+    },
+    {
+      "path": "analisis/work3_agent_result_with_geometry.json",
+      "line": 165,
+      "column": 24,
+      "term": "RC1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "        \"output_ref\": \"RC1-COMPARE-20069-20030-20071\""
+    },
+    {
+      "path": "analisis/work3_agent_result_with_geometry.json",
+      "line": 173,
+      "column": 20,
+      "term": "RC1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    \"result_ref\": \"RC1-COMPARE-20069-20030-20071\""
+    },
+    {
+      "path": "datos_originales/download_manifest.json",
+      "line": 3,
+      "column": 27,
+      "term": "v3",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "  \"python\": \"3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]\","
+    },
+    {
+      "path": "datos_preparados/README.md",
+      "line": 1,
+      "column": 20,
+      "term": "pendiente",
+      "decision": "UPDATE",
+      "reason": "Placeholder incompatible con datos ya disponibles.",
+      "context": "# Datos preparados pendientes"
+    },
+    {
+      "path": "datos_preparados/README.md",
+      "line": 3,
+      "column": 1,
+      "term": "Work 1",
+      "decision": "UPDATE",
+      "reason": "Placeholder incompatible con datos ya disponibles.",
+      "context": "Work 1 debe sustituir este marcador por:"
+    },
+    {
+      "path": "datos_preparados/README.md",
+      "line": 11,
+      "column": 20,
+      "term": "fixture",
+      "decision": "UPDATE",
+      "reason": "Placeholder incompatible con datos ya disponibles.",
+      "context": "No copiar aquí los fixtures `TEST_*` como evidencia. Antes de crear una versión del portal, ejecutar la"
+    },
+    {
+      "path": "datos_preparados/data_contract.json",
+      "line": 99,
+      "column": 4,
+      "term": "work3",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "  \"work3_mapping\": {"
+    },
+    {
+      "path": "datos_preparados/metadata_sources.json",
+      "line": 6,
+      "column": 48,
+      "term": "v1",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "    \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\","
+    },
+    {
+      "path": "docs/DEMO_QUERIES.md",
+      "line": 3,
+      "column": 123,
+      "term": "sintéticas",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": " datos reales. En los HTML actuales las respuestas son sintéticas y están señaladas como tales."
+    },
+    {
+      "path": "docs/EXPECTED_RESULT_SCHEMA.md",
+      "line": 1,
+      "column": 36,
+      "term": "v1",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "# Contrato de resultado esperado · v1.0.0"
+    },
+    {
+      "path": "docs/EXPECTED_RESULT_SCHEMA.md",
+      "line": 10,
+      "column": 25,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "| `data_mode` | enum | `synthetic` o `real` |"
+    },
+    {
+      "path": "docs/EXPECTED_RESULT_SCHEMA.md",
+      "line": 20,
+      "column": 41,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "| `trace` | object | `execution_mode` (`synthetic_fixture`, `local_tool`, `agent`), `question_id`, `agent_version`, `tool_calls` "
+    },
+    {
+      "path": "docs/EXPECTED_RESULT_SCHEMA.md",
+      "line": 20,
+      "column": 51,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "| `trace` | object | `execution_mode` (`synthetic_fixture`, `local_tool`, `agent`), `question_id`, `agent_version`, `tool_calls` con `too"
+    },
+    {
+      "path": "docs/EXPECTED_RESULT_SCHEMA.md",
+      "line": 22,
+      "column": 301,
+      "term": "work1",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "esquemáticas y lo indica expresamente. `scripts/enrich_work1_result.mjs` añade geometría desde `datos_preparados/runtime_municipios.geojson`"
+    },
+    {
+      "path": "docs/EXPECTED_RESULT_SCHEMA.md",
+      "line": 22,
+      "column": 390,
+      "term": "Work 1",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "desde `datos_preparados/runtime_municipios.geojson` de Work 1 conservando la fuente cartográfica. No modifica cifras del agente."
+    },
+    {
+      "path": "docs/EXPECTED_RESULT_SCHEMA.md",
+      "line": 26,
+      "column": 80,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "ance_km` es *distancia geométrica* en kilómetros en el fixture. Si Work 1 suministra servicios por 10.000 mayores, tiempo de viaje u otra vari"
+    },
+    {
+      "path": "docs/EXPECTED_RESULT_SCHEMA.md",
+      "line": 26,
+      "column": 92,
+      "term": "Work 1",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "*distancia geométrica* en kilómetros en el fixture. Si Work 1 suministra servicios por 10.000 mayores, tiempo de viaje u otra variable, se de"
+    },
+    {
+      "path": "docs/EXPECTED_RESULT_SCHEMA.md",
+      "line": 28,
+      "column": 18,
+      "term": "Work 2",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "## Adaptación de Work 2"
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 1,
+      "column": 3,
+      "term": "Handoff",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "# Handoff Work 2 · hardening independiente para RC2"
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 1,
+      "column": 11,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "# Handoff Work 2 · hardening independiente para RC2"
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 1,
+      "column": 34,
+      "term": "pendiente",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "# Handoff Work 2 · hardening independiente para RC2"
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 1,
+      "column": 49,
+      "term": "RC2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "# Handoff Work 2 · hardening independiente para RC2"
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 3,
+      "column": 45,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "> Documento histórico del trabajo previo de Work 2. El manifiesto desincronizado descrito abajo correspondía"
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 4,
+      "column": 50,
+      "term": "RC2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "> a aquel checkout y quedó resuelto al regenerar RC2 con finales de línea LF. La recomendación antigua de pedir"
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 5,
+      "column": 38,
+      "term": "RC2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "> `detalle=true` no aplica a Studio: RC2 ya no expone ese argumento en las firmas públicas; el modo completo se"
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 6,
+      "column": 88,
+      "term": "RC2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "uditoría offline. El estado autoritativo está en `docs/RC2_FINAL_STATUS.md`."
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 12,
+      "column": 92,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "fusiona PRs y no publica nada en el portal. La rama de Work 1"
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 13,
+      "column": 21,
+      "term": "rc2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "`fix/portal-runtime-rc2` no estaba publicada en `origin` al cerrar esta auditoría, por lo que no fue po"
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 20,
+      "column": 22,
+      "term": "v1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "1. La prueba privada v1 importó las siete tools desde un ZIP. Preparación mostró siete tools, pero una "
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 22,
+      "column": 7,
+      "term": "v2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "2. La v2 declaró siete wrappers físicos en `tools.py` y reprodujo el mismo error."
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 23,
+      "column": 7,
+      "term": "v3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "3. La v3 declaró una única función `@tool` físicamente en `main.py`; esa tool sí se ejec"
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 25,
+      "column": 16,
+      "term": "v3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "4. Una llamada v3 con parámetros técnicos válidos quedó en curso más de dos minutos. No se observ"
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 26,
+      "column": 7,
+      "term": "RC1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "5. En RC1, `main.py` importaba `TOOLS`; el builder fusionaba core y wrappers decorados en"
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 33,
+      "column": 12,
+      "term": "v1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "resultados v1-v3 son compatibles con que Studio construya ese registry ejecutable solo a part"
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 33,
+      "column": 15,
+      "term": "v3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "resultados v1-v3 son compatibles con que Studio construya ese registry ejecutable solo a partir "
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 39,
+      "column": 67,
+      "term": "v1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "d de tool creada por importación dinámica pudo agravar v1, pero v2 demuestra que el ZIP y el import"
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 39,
+      "column": 76,
+      "term": "v2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": " creada por importación dinámica pudo agravar v1, pero v2 demuestra que el ZIP y el import"
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 45,
+      "column": 5,
+      "term": "RC1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "### RC1"
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 98,
+      "column": 1,
+      "term": "Work 3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "Work 3 debe pedir `detalle=true` cuando necesite las 88 filas para una visualización. "
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 132,
+      "column": 39,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "25.407. También difieren sus SHA-256. Work 2 no regeneró ni comprometió activos de Work 1 para no pisar RC2."
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 132,
+      "column": 84,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": " SHA-256. Work 2 no regeneró ni comprometió activos de Work 1 para no pisar RC2."
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 132,
+      "column": 105,
+      "term": "RC2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "egeneró ni comprometió activos de Work 1 para no pisar RC2."
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 150,
+      "column": 12,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "Studio por Work 1 antes de entrar en RC2."
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 150,
+      "column": 38,
+      "term": "RC2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "Studio por Work 1 antes de entrar en RC2."
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 156,
+      "column": 108,
+      "term": "Work 3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "y` y reduce `data` para acceso/coincidencia/escenario. Work 3"
+    },
+    {
+      "path": "docs/HANDOFF_WORK2_RC2.md",
+      "line": 161,
+      "column": 97,
+      "term": "RC2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": " desde la rama propietaria de datos antes de construir RC2."
+    },
+    {
+      "path": "docs/HANDOFF_WORK_1_DATA.md",
+      "line": 1,
+      "column": 3,
+      "term": "HANDOFF",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "# HANDOFF WORK 1 — Data & Geospatial"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_1_DATA.md",
+      "line": 1,
+      "column": 11,
+      "term": "WORK 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "# HANDOFF WORK 1 — Data & Geospatial"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_1_DATA.md",
+      "line": 7,
+      "column": 13,
+      "term": "pendiente",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "- Bloqueado/pendiente: no estaban visibles los tres documentos `contexto-principal.md`, `revision-com"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_1_DATA.md",
+      "line": 8,
+      "column": 130,
+      "term": "Handoff",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "orías, 38 controles QA, 15 tests y cinco golden cases. Handoff detallado en `docs/HANDOFF_WORK_2_3_DATA_QA.md`."
+    },
+    {
+      "path": "docs/HANDOFF_WORK_1_DATA.md",
+      "line": 8,
+      "column": 157,
+      "term": "HANDOFF",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "tests y cinco golden cases. Handoff detallado en `docs/HANDOFF_WORK_2_3_DATA_QA.md`."
+    },
+    {
+      "path": "docs/HANDOFF_WORK_1_DATA.md",
+      "line": 71,
+      "column": 17,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "## Qué necesita Work 2"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_1_DATA.md",
+      "line": 73,
+      "column": 312,
+      "term": "HANDOFF",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "dad validada contra `work/agent-engine`/PR #3; seguir `HANDOFF_WORK_2_3_DATA_QA.md`."
+    },
+    {
+      "path": "docs/HANDOFF_WORK_1_DATA.md",
+      "line": 75,
+      "column": 17,
+      "term": "Work 3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "## Qué necesita Work 3"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 1,
+      "column": 3,
+      "term": "Handoff",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "# Handoff de datos para Work 2 y Work 3"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 1,
+      "column": 25,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "# Handoff de datos para Work 2 y Work 3"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 1,
+      "column": 34,
+      "term": "Work 3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "# Handoff de datos para Work 2 y Work 3"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 3,
+      "column": 96,
+      "term": "HANDOFF",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "e fuentes: **2026-09-24**. Este documento complementa `HANDOFF_WORK_1_DATA.md`; ante una diferencia, prevalece `datos_preparados/data_contract"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 9,
+      "column": 3,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "| Work 2 | `datos_preparados/municipios.csv` | búsqueda, población 65+/75+, comparación,"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 10,
+      "column": 3,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "| Work 2 | `datos_preparados/demografia.csv` | periodos y medidas demográficas consumida"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 11,
+      "column": 3,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "| Work 2 | `datos_preparados/runtime_municipality_points.csv` | punto representativo en "
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 12,
+      "column": 3,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "| Work 2 | `datos_preparados/runtime_servicios.csv` | detalle de centros y simulación de"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 13,
+      "column": 3,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "| Work 2 | `datos_preparados/metadata_sources.json` | títulos, URL, periodo, licencia, m"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 14,
+      "column": 3,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "| Work 2 | `datos_preparados/data_contract.json` | schema, unidades, invariantes y mappi"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 15,
+      "column": 3,
+      "term": "Work 3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "| Work 3 | `datos_preparados/runtime_municipios.geojson` | contornos EPSG:4326 y atribut"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 18,
+      "column": 276,
+      "term": "Work 3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "lo compara con el presupuesto de 24 MB documentado por Work 3."
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 58,
+      "column": 14,
+      "term": "Work 3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "## Mapping a Work 3 v1.0.0"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 58,
+      "column": 21,
+      "term": "v1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "## Mapping a Work 3 v1.0.0"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 60,
+      "column": 3,
+      "term": "Work 3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "| Work 3 | Work 1 | Conversión |"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 60,
+      "column": 12,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "| Work 3 | Work 1 | Conversión |"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 72,
+      "column": 67,
+      "term": "Work 3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "dad comprobada con `docs/EXPECTED_RESULT_SCHEMA.md` de Work 3, ya integrado en `main` mediante PR #2. El adaptador conserva los valores origi"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 74,
+      "column": 22,
+      "term": "work3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "`scripts/data/export_work3_smoke_result.py <salida.json>` genera un resultado determinista con tres munici"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 74,
+      "column": 157,
+      "term": "Work 3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "unicipios para probar el contrato y el renderizador de Work 3. Usa datos reales, pero se etiqueta explícitamente como **prueba de integración"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 76,
+      "column": 15,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "## Soporte de Work 2"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 85,
+      "column": 1,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "Work 2 está en `work/agent-engine`/PR #3. Su suite completa de 38 tests pasa al sustit"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 87,
+      "column": 60,
+      "term": "Work 3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "3 sigue basado en una historia anterior a la fusión de Work 3 y presenta conflicto en `README.md`. La resolución segura es integrar primero l"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 87,
+      "column": 264,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "os módulos `agentes/gipuzkoa360/`, tests y ejemplos de Work 2, y mantener las versiones QA de datos/scripts. Véase `docs/INTEGRATION_STATUS_2"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 91,
+      "column": 8,
+      "term": "fixture",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "`tests/fixtures/golden_cases.json` contiene cinco casos fijos:"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_3_DATA_QA.md",
+      "line": 117,
+      "column": 10,
+      "term": "fixture",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "- `tests/fixtures/golden_cases.json`: casos end-to-end fijos."
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_AGENT.md",
+      "line": 1,
+      "column": 3,
+      "term": "Handoff",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "# Handoff — Work 2 Agent"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_AGENT.md",
+      "line": 1,
+      "column": 13,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "# Handoff — Work 2 Agent"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_AGENT.md",
+      "line": 5,
+      "column": 41,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "Integrado con `work/data-foundation` de Work 1 el 24/09/2026. La rama conserva los commits originales de Work 2"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_AGENT.md",
+      "line": 5,
+      "column": 106,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "24/09/2026. La rama conserva los commits originales de Work 2"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_AGENT.md",
+      "line": 6,
+      "column": 49,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "`419a427` y `b197c32` y la historia completa de Work 1. No se modificó la rama remota de Work 1."
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_AGENT.md",
+      "line": 6,
+      "column": 90,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "a completa de Work 1. No se modificó la rama remota de Work 1."
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_AGENT.md",
+      "line": 9,
+      "column": 40,
+      "term": "fixture",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "2025-05-07 y servicios 2026-09-20. Los fixtures `TEST_*` siguen aislados bajo `tests/fixtures/`."
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_AGENT.md",
+      "line": 9,
+      "column": 86,
+      "term": "fixture",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "-20. Los fixtures `TEST_*` siguen aislados bajo `tests/fixtures/`."
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_AGENT.md",
+      "line": 35,
+      "column": 66,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "os del agente reproducen las columnas precomputadas de Work 1 para atención primaria y hospitales"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_AGENT.md",
+      "line": 49,
+      "column": 131,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": " la suite Node/HTML. Incluye las pruebas originales de Work 2, las pruebas de integridad"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_AGENT.md",
+      "line": 50,
+      "column": 4,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "de Work 1 y nuevas pruebas reales de carga, tipos, cobertura, reproducción de distancias,"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_AGENT.md",
+      "line": 55,
+      "column": 28,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "2025-01-01. El registro de Work 1 contiene además Eibar 27.118, Tolosa 20.048 y 148 centros, todos `PASS`."
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_AGENT.md",
+      "line": 67,
+      "column": 18,
+      "term": "Work 3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "## Contrato para Work 3"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_2_AGENT.md",
+      "line": 95,
+      "column": 4,
+      "term": "Pendiente",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "## Pendientes"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_3_INTEGRATION.md",
+      "line": 1,
+      "column": 3,
+      "term": "Handoff",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "# Handoff Work 3 · integración"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_3_INTEGRATION.md",
+      "line": 1,
+      "column": 11,
+      "term": "Work 3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "# Handoff Work 3 · integración"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_3_INTEGRATION.md",
+      "line": 6,
+      "column": 19,
+      "term": "work1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "- `scripts/enrich_work1_result.mjs`: añade geometría de Work 1 a un resultado del agente sin cambiar su"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_3_INTEGRATION.md",
+      "line": 6,
+      "column": 57,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": " `scripts/enrich_work1_result.mjs`: añade geometría de Work 1 a un resultado del agente sin cambiar sus cifras."
+    },
+    {
+      "path": "docs/HANDOFF_WORK_3_INTEGRATION.md",
+      "line": 10,
+      "column": 10,
+      "term": "fixture",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "- `tests/fixtures/synthetic_agent_result.json`: **sintético**, jamás resultado territorial."
+    },
+    {
+      "path": "docs/HANDOFF_WORK_3_INTEGRATION.md",
+      "line": 10,
+      "column": 19,
+      "term": "synthetic",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "- `tests/fixtures/synthetic_agent_result.json`: **sintético**, jamás resultado territorial."
+    },
+    {
+      "path": "docs/HANDOFF_WORK_3_INTEGRATION.md",
+      "line": 10,
+      "column": 51,
+      "term": "sintético",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "- `tests/fixtures/synthetic_agent_result.json`: **sintético**, jamás resultado territorial."
+    },
+    {
+      "path": "docs/HANDOFF_WORK_3_INTEGRATION.md",
+      "line": 14,
+      "column": 13,
+      "term": "fixture",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "## Schema y fixtures"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_3_INTEGRATION.md",
+      "line": 16,
+      "column": 10,
+      "term": "v1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "Contrato v1.0.0 en `docs/EXPECTED_RESULT_SCHEMA.md`. Todos los nombres `MUNICIPIO_TEST_*`, "
+    },
+    {
+      "path": "docs/HANDOFF_WORK_3_INTEGRATION.md",
+      "line": 16,
+      "column": 125,
+      "term": "fixture",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "s `MUNICIPIO_TEST_*`, servicios, cifras y periodos del fixture son ficticios. Los HTML generados muestran la marca obligatoria. Una salida de "
+    },
+    {
+      "path": "docs/HANDOFF_WORK_3_INTEGRATION.md",
+      "line": 16,
+      "column": 212,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "generados muestran la marca obligatoria. Una salida de Work 2 debe conservar su JSON original y convertirse mediante adaptador si difiere el "
+    },
+    {
+      "path": "docs/HANDOFF_WORK_3_INTEGRATION.md",
+      "line": 18,
+      "column": 16,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "## Integración Work 1"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_3_INTEGRATION.md",
+      "line": 20,
+      "column": 546,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "ia, transformaciones, nulos y auditoría de uniones. Si Work 2 usa otra métrica, adaptar contrato y etiquetas antes de renderizar."
+    },
+    {
+      "path": "docs/HANDOFF_WORK_3_INTEGRATION.md",
+      "line": 22,
+      "column": 16,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "## Integración Work 2"
+    },
+    {
+      "path": "docs/HANDOFF_WORK_3_INTEGRATION.md",
+      "line": 28,
+      "column": 189,
+      "term": "fixture",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "ifra verificada manualmente. El test local solo prueba fixture y validaciones estructurales."
+    },
+    {
+      "path": "docs/HANDOFF_WORK_3_INTEGRATION.md",
+      "line": 38,
+      "column": 39,
+      "term": "sintéticos",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "3. Los HTML versionados siguen siendo sintéticos; la cadena local con geometría real ya pasa como `local_tool`."
+    },
+    {
+      "path": "docs/HANDOFF_WORK_3_INTEGRATION.md",
+      "line": 40,
+      "column": 18,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "5. El paquete de Work 2 se construye localmente por debajo del límite; falta validarlo en una versión p"
+    },
+    {
+      "path": "docs/INTEGRATION_PLAYBOOK.md",
+      "line": 5,
+      "column": 4,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "1. Work 1 — datos: recibir originales, preparados, diccionario, fuentes y comprobaciones."
+    },
+    {
+      "path": "docs/INTEGRATION_PLAYBOOK.md",
+      "line": 6,
+      "column": 4,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "2. Work 2 — agente: recibir versión, herramientas, formato de resultado y traza."
+    },
+    {
+      "path": "docs/INTEGRATION_PLAYBOOK.md",
+      "line": 7,
+      "column": 4,
+      "term": "Work 3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "3. Work 3 — visualización: adaptar a `docs/EXPECTED_RESULT_SCHEMA.md` v1.0.0 y generar HT"
+    },
+    {
+      "path": "docs/INTEGRATION_PLAYBOOK.md",
+      "line": 7,
+      "column": 71,
+      "term": "v1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "ualización: adaptar a `docs/EXPECTED_RESULT_SCHEMA.md` v1.0.0 y generar HTML."
+    },
+    {
+      "path": "docs/INTEGRATION_PLAYBOOK.md",
+      "line": 15,
+      "column": 4,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "De Work 1, acordar rutas antes de copiar: `datos_originales/`, `datos_preparados/`, `FUEN"
+    },
+    {
+      "path": "docs/INTEGRATION_PLAYBOOK.md",
+      "line": 15,
+      "column": 188,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "o de columnas, licencias y comprobaciones de filas. De Work 2: `agentes/<nombre>/main.py`, `tools.py`, dependencias, instrucciones, versión d"
+    },
+    {
+      "path": "docs/INTEGRATION_PLAYBOOK.md",
+      "line": 15,
+      "column": 391,
+      "term": "handoff",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": " estructura difiere, registrar las rutas exactas en el handoff; no asumirlas."
+    },
+    {
+      "path": "docs/INTEGRATION_PLAYBOOK.md",
+      "line": 17,
+      "column": 26,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "La versión endurecida de Work 1 está en `work/data-qa-integration`; incorpora el `main` actual y sustituye func"
+    },
+    {
+      "path": "docs/INTEGRATION_PLAYBOOK.md",
+      "line": 21,
+      "column": 189,
+      "term": "work2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "rvar el JSON original del agente. Crear `scripts/adapt_work2.mjs` para mapear nombres/campos; dejar los archivos de origen intactos. Revisar"
+    },
+    {
+      "path": "docs/INTEGRATION_PLAYBOOK.md",
+      "line": 28,
+      "column": 38,
+      "term": "fixture",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "node scripts/build_results.mjs tests/fixtures/synthetic_agent_result.json resultados"
+    },
+    {
+      "path": "docs/INTEGRATION_PLAYBOOK.md",
+      "line": 28,
+      "column": 47,
+      "term": "synthetic",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "node scripts/build_results.mjs tests/fixtures/synthetic_agent_result.json resultados"
+    },
+    {
+      "path": "docs/INTEGRATION_PLAYBOOK.md",
+      "line": 38,
+      "column": 53,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "Para añadir geometría municipal después de integrar Work 1:"
+    },
+    {
+      "path": "docs/INTEGRATION_PLAYBOOK.md",
+      "line": 41,
+      "column": 21,
+      "term": "work1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "node scripts/enrich_work1_result.mjs ruta\\al\\resultado_real.json resultado_con_mapa.json"
+    },
+    {
+      "path": "docs/INTEGRATION_PLAYBOOK.md",
+      "line": 45,
+      "column": 226,
+      "term": "sintética",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "tas, unidades, periodo, escenarios y ausencia de marca sintética. El fixture actual solo permite probar la interfaz y el contrato."
+    },
+    {
+      "path": "docs/INTEGRATION_PLAYBOOK.md",
+      "line": 45,
+      "column": 240,
+      "term": "fixture",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": " periodo, escenarios y ausencia de marca sintética. El fixture actual solo permite probar la interfaz y el contrato."
+    },
+    {
+      "path": "docs/INTEGRATION_PLAYBOOK.md",
+      "line": 49,
+      "column": 5,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "- **Work 1 sin métrica de distancia geométrica:** no transformarla en km. Cambiar el adapt"
+    },
+    {
+      "path": "docs/INTEGRATION_PLAYBOOK.md",
+      "line": 53,
+      "column": 86,
+      "term": "v1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "rlo explícitamente; no convertirlo a cero. El contrato v1 requiere filas completas para la comparación inicial, así que excluir la fila c"
+    },
+    {
+      "path": "docs/INTEGRATION_PLAYBOOK.md",
+      "line": 55,
+      "column": 138,
+      "term": "pendiente",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "rial; la versión del agente sigue siendo requisito independiente."
+    },
+    {
+      "path": "docs/INTEGRATION_PLAYBOOK.md",
+      "line": 59,
+      "column": 329,
+      "term": "fixture",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "cal incluida comprueba la continuidad del contrato con fixture, no suplanta este recorrido real."
+    },
+    {
+      "path": "docs/INTEGRATION_STATUS_2026-09-24.md",
+      "line": 5,
+      "column": 19,
+      "term": "Work 3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "- `main` contiene Work 3 tras la fusión de PR #2 (`1f9fbd9`)."
+    },
+    {
+      "path": "docs/INTEGRATION_STATUS_2026-09-24.md",
+      "line": 7,
+      "column": 59,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "R #3 (`work/agent-engine`) permanece abierto, contiene Work 1 y Work 2, y presenta el mismo conflicto en `README.md`."
+    },
+    {
+      "path": "docs/INTEGRATION_STATUS_2026-09-24.md",
+      "line": 7,
+      "column": 68,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "rk/agent-engine`) permanece abierto, contiene Work 1 y Work 2, y presenta el mismo conflicto en `README.md`."
+    },
+    {
+      "path": "docs/INTEGRATION_STATUS_2026-09-24.md",
+      "line": 17,
+      "column": 12,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "| Suite de Work 2 usando este `datos_preparados/` | 38/38 PASS |"
+    },
+    {
+      "path": "docs/INTEGRATION_STATUS_2026-09-24.md",
+      "line": 18,
+      "column": 28,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "| Construcción del paquete Work 2 | PASS, 42.430 bytes de 24 MB |"
+    },
+    {
+      "path": "docs/INTEGRATION_STATUS_2026-09-24.md",
+      "line": 19,
+      "column": 12,
+      "term": "Work 3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "| Suite de Work 3 actual | 17/17 PASS |"
+    },
+    {
+      "path": "docs/INTEGRATION_STATUS_2026-09-24.md",
+      "line": 22,
+      "column": 14,
+      "term": "Work 3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "La prueba de Work 3 usa `trace.execution_mode=local_tool` y declara que no es una ejecución del age"
+    },
+    {
+      "path": "docs/INTEGRATION_STATUS_2026-09-24.md",
+      "line": 26,
+      "column": 1,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "Work 2 consume `municipios.csv`, `demografia.csv`, `runtime_municipality_points.csv`, "
+    },
+    {
+      "path": "docs/INTEGRATION_STATUS_2026-09-24.md",
+      "line": 36,
+      "column": 9,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "   - de Work 2: `agentes/gipuzkoa360/`, `scripts/agent/`, `tests/test_*`, `docs/RESULT_SCHEMA."
+    },
+    {
+      "path": "docs/INTEGRATION_STATUS_2026-09-24.md",
+      "line": 37,
+      "column": 9,
+      "term": "Work 3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "   - de Work 3: `scripts/*.mjs`, `tests/e2e/`, HTML y documentación de visualización."
+    },
+    {
+      "path": "docs/JURY_READINESS.md",
+      "line": 3,
+      "column": 81,
+      "term": "sintéticos",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": " evidencia actual es una interfaz y contrato con datos sintéticos; aún no acredita un agente real ni conclusiones territoriales."
+    },
+    {
+      "path": "docs/JURY_READINESS.md",
+      "line": 8,
+      "column": 228,
+      "term": "pendiente",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "able | Cadena local validada; ejecución conversacional pendiente | Integrar el PR QA y enlazar cada cifra del agente |"
+    },
+    {
+      "path": "docs/JURY_READINESS.md",
+      "line": 9,
+      "column": 41,
+      "term": "sintética",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "| Funcionamiento y herramientas | Traza sintética exigida por contrato | Ejecución de versión fija del agente y recalculación ≥75"
+    },
+    {
+      "path": "docs/JURY_READINESS.md",
+      "line": 10,
+      "column": 112,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": ", barras, tabla y escenario; adaptador para GeoJSON de Work 1 | Resultado real del agente y prueba en portal | Confusión del mapa de prueba c"
+    },
+    {
+      "path": "docs/JURY_READINESS.md",
+      "line": 11,
+      "column": 33,
+      "term": "sintético",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "| Fiabilidad y límites | Banner sintético, separación observado/hipotético y advertencias | Respuesta real del agente a p"
+    },
+    {
+      "path": "docs/JURY_READINESS.md",
+      "line": 11,
+      "column": 221,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "rpretar “acceso” | Probar límites y ajustar etiqueta a Work 1 |"
+    },
+    {
+      "path": "docs/JURY_READINESS.md",
+      "line": 18,
+      "column": 126,
+      "term": "Work 1",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "cautela | Campo de periodo en schema | Auditar años de Work 1 |"
+    },
+    {
+      "path": "docs/JURY_READINESS.md",
+      "line": 22,
+      "column": 87,
+      "term": "sintéticos",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "Fuente original, transformación y cálculo manual | IDs sintéticos | Añadir fuente real y cotejo |"
+    },
+    {
+      "path": "docs/JURY_READINESS.md",
+      "line": 26,
+      "column": 100,
+      "term": "mock",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": " | Interpretación de consulta, tool y recálculo | Solo mock de interfaz | Mostrar ejecución real y nuevo artefacto |"
+    },
+    {
+      "path": "docs/JURY_TEST_PLAN.md",
+      "line": 3,
+      "column": 89,
+      "term": "rc2",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "sar exclusivamente la versión privada `urban-challenge-rc2` asociada al SHA"
+    },
+    {
+      "path": "docs/JURY_TEST_PLAN.md",
+      "line": 4,
+      "column": 23,
+      "term": "Work 1",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "exacto comunicado por Work 1 y mostrar la traza de tool cuando el portal la ofrezca. RC1 queda como históric"
+    },
+    {
+      "path": "docs/JURY_TEST_PLAN.md",
+      "line": 4,
+      "column": 86,
+      "term": "RC1",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": " mostrar la traza de tool cuando el portal la ofrezca. RC1 queda como histórico."
+    },
+    {
+      "path": "docs/JURY_TEST_PLAN.md",
+      "line": 38,
+      "column": 152,
+      "term": "work3",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": ", que las cifras proceden del resultado real `analisis/work3_agent_result.json` y que el banner dice «resultado determinista del tool; no es"
+    },
+    {
+      "path": "docs/JURY_TEST_PLAN.md",
+      "line": 38,
+      "column": 252,
+      "term": "LLM",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": " «resultado determinista del tool; no es una ejecución LLM». El mapa usa geometría real tras el enriquecimiento y no representa una red de"
+    },
+    {
+      "path": "docs/PORTAL_DEPLOYMENT.md",
+      "line": 3,
+      "column": 27,
+      "term": "rc2",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Miembro congelado del ZIP; guía operativa nueva separada.",
+      "context": "Release: `urban-challenge-rc2`. RC1 es histórico. Esta guía prepara una versión privada; no autoriza ni descr"
+    },
+    {
+      "path": "docs/PORTAL_DEPLOYMENT.md",
+      "line": 3,
+      "column": 33,
+      "term": "RC1",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Miembro congelado del ZIP; guía operativa nueva separada.",
+      "context": "Release: `urban-challenge-rc2`. RC1 es histórico. Esta guía prepara una versión privada; no autoriza ni describe la"
+    },
+    {
+      "path": "docs/PORTAL_DEPLOYMENT.md",
+      "line": 19,
+      "column": 58,
+      "term": "rc2",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Miembro congelado del ZIP; guía operativa nueva separada.",
+      "context": " último comando crea `dist/gipuzkoa360-urban-challenge-rc2.zip` y su manifiesto SHA-256. El ZIP reproduce la estructura que debe existir e"
+    },
+    {
+      "path": "docs/PORTAL_DEPLOYMENT.md",
+      "line": 79,
+      "column": 68,
+      "term": "rc2",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Miembro congelado del ZIP; guía operativa nueva separada.",
+      "context": "Crear versión del agente**. Nombrarla `urban-challenge-rc2` e identificar el SHA exacto indicado por Work 1."
+    },
+    {
+      "path": "docs/PORTAL_DEPLOYMENT.md",
+      "line": 79,
+      "column": 114,
+      "term": "Work 1",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Miembro congelado del ZIP; guía operativa nueva separada.",
+      "context": "hallenge-rc2` e identificar el SHA exacto indicado por Work 1."
+    },
+    {
+      "path": "docs/PORTAL_DEPLOYMENT.md",
+      "line": 84,
+      "column": 1,
+      "term": "Work 3",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Miembro congelado del ZIP; guía operativa nueva separada.",
+      "context": "Work 3 es el único operador del portal durante esta puerta. No editar el agente ni lan"
+    },
+    {
+      "path": "docs/PORTAL_DEPLOYMENT.md",
+      "line": 85,
+      "column": 88,
+      "term": "Work 1",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Miembro congelado del ZIP; guía operativa nueva separada.",
+      "context": "ión, SHA, pregunta, tool, argumentos, salida y tiempo; Work 1 aplicará únicamente"
+    },
+    {
+      "path": "docs/PORTAL_EVIDENCE_RC2.md",
+      "line": 1,
+      "column": 44,
+      "term": "RC2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "# GIPUZKOA 360 · Evidencia final de portal RC2"
+    },
+    {
+      "path": "docs/PORTAL_EVIDENCE_RC2.md",
+      "line": 5,
+      "column": 27,
+      "term": "rc2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "Rama: `fix/portal-runtime-rc2`"
+    },
+    {
+      "path": "docs/PORTAL_EVIDENCE_RC2.md",
+      "line": 9,
+      "column": 35,
+      "term": "rc2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "Versión privada: `urban-challenge-rc2-195b498 · v4`"
+    },
+    {
+      "path": "docs/PORTAL_EVIDENCE_RC2.md",
+      "line": 64,
+      "column": 18,
+      "term": "v3",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "- G-04 limpio en v3: tool call y output visibles a los **28,3 s**; respuesta final visible antes de"
+    },
+    {
+      "path": "docs/PORTAL_EVIDENCE_RC2.md",
+      "line": 65,
+      "column": 20,
+      "term": "v2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "- G-04 anterior en v2: respuesta completa antes de **34,7 s**."
+    },
+    {
+      "path": "docs/PORTAL_EVIDENCE_RC2.md",
+      "line": 92,
+      "column": 29,
+      "term": "rc2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "La rama `fix/portal-runtime-rc2` está publicada en `origin` con el runtime `195b498`. En el momento de esta val"
+    },
+    {
+      "path": "docs/PR3_RECOVERY_AUDIT.md",
+      "line": 10,
+      "column": 40,
+      "term": "fixture",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "- Tests unitarios, de contrato, build, fixtures y datos reales."
+    },
+    {
+      "path": "docs/PR3_RECOVERY_AUDIT.md",
+      "line": 12,
+      "column": 20,
+      "term": "Work 2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "- Documentación de Work 2 y ejemplos JSON."
+    },
+    {
+      "path": "docs/RC2_FINAL_STATUS.md",
+      "line": 1,
+      "column": 40,
+      "term": "RC2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "# GIPUZKOA 360 · Estado final local de RC2"
+    },
+    {
+      "path": "docs/RC2_FINAL_STATUS.md",
+      "line": 4,
+      "column": 35,
+      "term": "rc2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "Versión privada: `urban-challenge-rc2-195b498 · v4`"
+    },
+    {
+      "path": "docs/RC2_FINAL_STATUS.md",
+      "line": 5,
+      "column": 27,
+      "term": "rc2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "Rama: `fix/portal-runtime-rc2`  "
+    },
+    {
+      "path": "docs/RC2_FINAL_STATUS.md",
+      "line": 14,
+      "column": 46,
+      "term": "rc2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "- Archivo: `dist/gipuzkoa360-urban-challenge-rc2.zip`."
+    },
+    {
+      "path": "docs/RC2_FINAL_STATUS.md",
+      "line": 85,
+      "column": 60,
+      "term": "rc2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "do: **PORTAL GO**. La versión privada `urban-challenge-rc2-195b498 · v4` pasó preparación, G-01…G-06,"
+    },
+    {
+      "path": "docs/RC2_FINAL_STATUS.md",
+      "line": 89,
+      "column": 67,
+      "term": "RC2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "se publicó. Evidencia detallada: `docs/PORTAL_EVIDENCE_RC2.md`."
+    },
+    {
+      "path": "docs/RC2_FINAL_STATUS.md",
+      "line": 91,
+      "column": 20,
+      "term": "pendiente",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "## Riesgos e items pendientes"
+    },
+    {
+      "path": "docs/RC2_FINAL_STATUS.md",
+      "line": 94,
+      "column": 90,
+      "term": "rc2",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "avía no existe una Pull Request de `fix/portal-runtime-rc2` a `main`."
+    },
+    {
+      "path": "docs/REAL_DATA_INTEGRATION.md",
+      "line": 13,
+      "column": 33,
+      "term": "fixture",
+      "decision": "MOVE_TO_INTERNAL",
+      "reason": "Conservar evidencia fechada, no presentarla como estado actual.",
+      "context": "9. Sustituir o complementar los fixtures solo en pruebas; nunca renombrarlos como datos reales."
+    },
+    {
+      "path": "docs/RELEASE_CANDIDATE.md",
+      "line": 3,
+      "column": 44,
+      "term": "rc2",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "Versión candidata actual: `urban-challenge-rc2`."
+    },
+    {
+      "path": "docs/RELEASE_CANDIDATE.md",
+      "line": 5,
+      "column": 1,
+      "term": "RC1",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "RC1 queda preservado como histórico mediante el tag `urban-challenge-rc1` sobre `ma"
+    },
+    {
+      "path": "docs/RELEASE_CANDIDATE.md",
+      "line": 5,
+      "column": 70,
+      "term": "rc1",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "ervado como histórico mediante el tag `urban-challenge-rc1` sobre `main`; no debe utilizarse para"
+    },
+    {
+      "path": "docs/RELEASE_CANDIDATE.md",
+      "line": 6,
+      "column": 32,
+      "term": "RC2",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "las pruebas nuevas del portal. RC2 se construye desde `fix/portal-runtime-rc2`. El SHA exacto validado localmente,"
+    },
+    {
+      "path": "docs/RELEASE_CANDIDATE.md",
+      "line": 6,
+      "column": 75,
+      "term": "rc2",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "del portal. RC2 se construye desde `fix/portal-runtime-rc2`. El SHA exacto validado localmente,"
+    },
+    {
+      "path": "docs/RELEASE_CANDIDATE.md",
+      "line": 7,
+      "column": 58,
+      "term": "RC2",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": " tamaño y el SHA-256 del paquete se registran en `docs/RC2_FINAL_STATUS.md`. El manifiesto reproducible es"
+    },
+    {
+      "path": "docs/RELEASE_CANDIDATE.md",
+      "line": 8,
+      "column": 35,
+      "term": "rc2",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "`dist/gipuzkoa360-urban-challenge-rc2-manifest.json`; el ZIP no se versiona en Git."
+    },
+    {
+      "path": "docs/RELEASE_CANDIDATE.md",
+      "line": 19,
+      "column": 55,
+      "term": "Work 3",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "- Adaptador de salida real de tool a los tres HTML de Work 3."
+    },
+    {
+      "path": "docs/RELEASE_CANDIDATE.md",
+      "line": 25,
+      "column": 58,
+      "term": "RC2",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": " validación local no equivale a validación del portal. RC2 solo pasa a candidato de integración cuando Work 3"
+    },
+    {
+      "path": "docs/RELEASE_CANDIDATE.md",
+      "line": 25,
+      "column": 106,
+      "term": "Work 3",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "ortal. RC2 solo pasa a candidato de integración cuando Work 3"
+    },
+    {
+      "path": "docs/RESULT_SCHEMA.md",
+      "line": 1,
+      "column": 22,
+      "term": "Work 3",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "# Contrato JSON para Work 3"
+    },
+    {
+      "path": "docs/RESULT_SCHEMA.md",
+      "line": 35,
+      "column": 1,
+      "term": "Work 3",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "Work 3 puede transformar cualquier salida satisfactoria sin reinterpretar cálculos:"
+    },
+    {
+      "path": "docs/RESULT_SCHEMA.md",
+      "line": 58,
+      "column": 50,
+      "term": "Work 3",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "absolutas (`difference_absolute_m`) y relativas. Work 3 debe unir por `municipality_code`, no por nombre."
+    },
+    {
+      "path": "docs/RUBRIC_TRACEABILITY.md",
+      "line": 3,
+      "column": 128,
+      "term": "fixture",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "ncipal.md` §11. Estado al 24/09/2026. “Implementado en fixture” no equivale a evidencia de datos reales ni de agente operativo."
+    },
+    {
+      "path": "docs/RUBRIC_TRACEABILITY.md",
+      "line": 7,
+      "column": 237,
+      "term": "Fixture",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "isión de ficha y prueba con destinatario | Actos 1–2 | Fixture; falta validar utilidad con datos reales |"
+    },
+    {
+      "path": "docs/RUBRIC_TRACEABILITY.md",
+      "line": 8,
+      "column": 275,
+      "term": "pendiente",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "st tests/e2e/contract_flow.test.mjs`; contraste manual pendiente | Actos 2, 4 | Contrato probado; fuentes reales pendientes |"
+    },
+    {
+      "path": "docs/RUBRIC_TRACEABILITY.md",
+      "line": 8,
+      "column": 333,
+      "term": "pendiente",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "diente | Actos 2, 4 | Contrato probado; fuentes reales pendientes |"
+    },
+    {
+      "path": "docs/RUBRIC_TRACEABILITY.md",
+      "line": 9,
+      "column": 224,
+      "term": "pendiente",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "ION_PLAYBOOK.md` | E2E final con agente y versión fija pendiente | Actos 2–3 | Mock trazable; agente real pendiente |"
+    },
+    {
+      "path": "docs/RUBRIC_TRACEABILITY.md",
+      "line": 9,
+      "column": 248,
+      "term": "Mock",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "inal con agente y versión fija pendiente | Actos 2–3 | Mock trazable; agente real pendiente |"
+    },
+    {
+      "path": "docs/RUBRIC_TRACEABILITY.md",
+      "line": 9,
+      "column": 275,
+      "term": "pendiente",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "ija pendiente | Actos 2–3 | Mock trazable; agente real pendiente |"
+    },
+    {
+      "path": "docs/RUBRIC_TRACEABILITY.md",
+      "line": 10,
+      "column": 255,
+      "term": "fixture",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "l y prueba de navegación | Actos 2–5 | Implementado en fixture |"
+    },
+    {
+      "path": "docs/RUBRIC_TRACEABILITY.md",
+      "line": 11,
+      "column": 116,
+      "term": "sintético",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "rtidumbre, hipótesis separada y juicio humano | Banner sintético, bloque de límites, base vs escenario | `scripts/build_results.mjs`, `resultado"
+    },
+    {
+      "path": "docs/RUBRIC_TRACEABILITY.md",
+      "line": 11,
+      "column": 231,
+      "term": "sintética",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "uild_results.mjs`, `resultados/*.html` | Test de marca sintética y ensayo de pregunta límite | Acto 6 | Implementado en fixture; comprobar agent"
+    },
+    {
+      "path": "docs/RUBRIC_TRACEABILITY.md",
+      "line": 11,
+      "column": 296,
+      "term": "fixture",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "y ensayo de pregunta límite | Acto 6 | Implementado en fixture; comprobar agente real |"
+    },
+    {
+      "path": "docs/RUBRIC_TRACEABILITY.md",
+      "line": 13,
+      "column": 164,
+      "term": "sintética",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": ", comprobar una cifra manualmente y sustituir la traza sintética por la traza de ejecución."
+    },
+    {
+      "path": "docs/RUNTIME_PACKAGE.md",
+      "line": 12,
+      "column": 13,
+      "term": "fixture",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "- `tests/`, fixtures, cachés, capturas, originales voluminosos, notebooks e historia del proyecto."
+    },
+    {
+      "path": "docs/RUNTIME_PACKAGE.md",
+      "line": 22,
+      "column": 46,
+      "term": "Work 3",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "El paquete no necesita `municipios.geojson`; Work 3 lo consume fuera del runtime conversacional. El ZIP RC2"
+    },
+    {
+      "path": "docs/RUNTIME_PACKAGE.md",
+      "line": 22,
+      "column": 105,
+      "term": "RC2",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": " 3 lo consume fuera del runtime conversacional. El ZIP RC2"
+    },
+    {
+      "path": "docs/RUNTIME_PACKAGE.md",
+      "line": 24,
+      "column": 89,
+      "term": "RC2",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "256. Los valores exactos vigentes se publican en `docs/RC2_FINAL_STATUS.md`."
+    },
+    {
+      "path": "docs/SUBMISSION_CHECKLIST.md",
+      "line": 1,
+      "column": 26,
+      "term": "pendiente",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "# Checklist de entrega · pendiente de publicación humana"
+    },
+    {
+      "path": "docs/SUBMISSION_CHECKLIST.md",
+      "line": 3,
+      "column": 151,
+      "term": "pendiente",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": " portal. Fecha anunciada: **4/10/2026**, hora concreta pendiente. Publicar/actualizar entrega requiere autorización humana expresa."
+    },
+    {
+      "path": "docs/SUBMISSION_CHECKLIST.md",
+      "line": 18,
+      "column": 19,
+      "term": "sintético",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "- [ ] Ningún dato sintético incluido como resultado real."
+    },
+    {
+      "path": "docs/SUBMISSION_CHECKLIST.md",
+      "line": 41,
+      "column": 82,
+      "term": "fixture",
+      "decision": "UPDATE",
+      "reason": "Reemplazar claims por enlaces a evidencia actual.",
+      "context": "a: no expone secretos, datos personales innecesarios o fixtures ambiguos."
+    },
+    {
+      "path": "docs/examples/coincidence_primary_care_65.json",
+      "line": 1255,
+      "column": 50,
+      "term": "v1",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "      \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\","
+    },
+    {
+      "path": "docs/examples/comparison_tolosa_beasain_azpeitia.json",
+      "line": 56,
+      "column": 50,
+      "term": "v1",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "      \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\","
+    },
+    {
+      "path": "resultados/demo.html",
+      "line": 5,
+      "column": 325,
+      "term": "synthetic",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "comparison.html\" >Escenario</a></nav></header><div id=\"synthetic-banner\" class=\"banner\" hidden>DATOS SINTÉTICOS DE DESARROLLO — NO UTILIZAR COMO"
+    },
+    {
+      "path": "resultados/demo.html",
+      "line": 5,
+      "column": 371,
+      "term": "SINTÉTICOS",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "<div id=\"synthetic-banner\" class=\"banner\" hidden>DATOS SINTÉTICOS DE DESARROLLO — NO UTILIZAR COMO RESULTADO</div><div id=\"local-banner\" class=\"b"
+    },
+    {
+      "path": "resultados/demo.html",
+      "line": 5,
+      "column": 571,
+      "term": "LLM",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": " RESULTADO DETERMINISTA DEL TOOL · NO ES UNA EJECUCIÓN LLM</div><main>"
+    },
+    {
+      "path": "resultados/demo.html",
+      "line": 14,
+      "column": 2596,
+      "term": "v1",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "edad y sexo\",\"url\":\"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\",\"period\":\"2025-01-01\",\"unit\":\"personas\",\"licens"
+    },
+    {
+      "path": "resultados/demo.html",
+      "line": 14,
+      "column": 4486,
+      "term": "RC1",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": ",\"trace\":{\"execution_mode\":\"local_tool\",\"question_id\":\"RC1-WORK3-COMPARE-001\",\"agent_version\":\"urban-challenge-rc1\",\"tool_calls\":[{\"tool\":"
+    },
+    {
+      "path": "resultados/demo.html",
+      "line": 14,
+      "column": 4490,
+      "term": "WORK3",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "ace\":{\"execution_mode\":\"local_tool\",\"question_id\":\"RC1-WORK3-COMPARE-001\",\"agent_version\":\"urban-challenge-rc1\",\"tool_calls\":[{\"tool\":\"compa"
+    },
+    {
+      "path": "resultados/demo.html",
+      "line": 14,
+      "column": 4542,
+      "term": "rc1",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "C1-WORK3-COMPARE-001\",\"agent_version\":\"urban-challenge-rc1\",\"tool_calls\":[{\"tool\":\"comparar_municipios\",\"arguments\":{\"municipios\":[\"Donost"
+    },
+    {
+      "path": "resultados/demo.html",
+      "line": 14,
+      "column": 4769,
+      "term": "RC1",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "e\",\"umbral_km\":2,\"periodo\":\"2025-01-01\"},\"output_ref\":\"RC1-COMPARE-20069-20030-20071\"}],\"data_refs\":[\"EUSTAT_EMH_2025\",\"ODE_HEALTH_CENTRES"
+    },
+    {
+      "path": "resultados/demo.html",
+      "line": 14,
+      "column": 4903,
+      "term": "RC1",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "TRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"],\"result_ref\":\"RC1-COMPARE-20069-20030-20071\"},\"map_features\":[{\"unit_id\":\"20069\",\"geometry\":{\"typ"
+    },
+    {
+      "path": "resultados/demo.html",
+      "line": 18,
+      "column": 19,
+      "term": "synthetic",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "if(d.data_mode==='synthetic')q('#synthetic-banner').hidden=false;"
+    },
+    {
+      "path": "resultados/demo.html",
+      "line": 18,
+      "column": 34,
+      "term": "synthetic",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "if(d.data_mode==='synthetic')q('#synthetic-banner').hidden=false;"
+    },
+    {
+      "path": "resultados/demo.html",
+      "line": 24,
+      "column": 902,
+      "term": "synthetic",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "'],0))+'</strong><span>Personas ≥'+age+(d.data_mode==='synthetic'?' (fixture)':'')+'</span></div><div class=\"metric\"><strong>'+fmt(threshold)+' "
+    },
+    {
+      "path": "resultados/demo.html",
+      "line": 24,
+      "column": 916,
+      "term": "fixture",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "ng><span>Personas ≥'+age+(d.data_mode==='synthetic'?' (fixture)':'')+'</span></div><div class=\"metric\"><strong>'+fmt(threshold)+' km</strong><"
+    },
+    {
+      "path": "resultados/informe_principal.html",
+      "line": 5,
+      "column": 327,
+      "term": "synthetic",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "comparison.html\" >Escenario</a></nav></header><div id=\"synthetic-banner\" class=\"banner\" hidden>DATOS SINTÉTICOS DE DESARROLLO — NO UTILIZAR COMO"
+    },
+    {
+      "path": "resultados/informe_principal.html",
+      "line": 5,
+      "column": 373,
+      "term": "SINTÉTICOS",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "<div id=\"synthetic-banner\" class=\"banner\" hidden>DATOS SINTÉTICOS DE DESARROLLO — NO UTILIZAR COMO RESULTADO</div><div id=\"local-banner\" class=\"b"
+    },
+    {
+      "path": "resultados/informe_principal.html",
+      "line": 5,
+      "column": 573,
+      "term": "LLM",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": " RESULTADO DETERMINISTA DEL TOOL · NO ES UNA EJECUCIÓN LLM</div><main>"
+    },
+    {
+      "path": "resultados/informe_principal.html",
+      "line": 14,
+      "column": 2596,
+      "term": "v1",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "edad y sexo\",\"url\":\"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\",\"period\":\"2025-01-01\",\"unit\":\"personas\",\"licens"
+    },
+    {
+      "path": "resultados/informe_principal.html",
+      "line": 14,
+      "column": 4486,
+      "term": "RC1",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": ",\"trace\":{\"execution_mode\":\"local_tool\",\"question_id\":\"RC1-WORK3-COMPARE-001\",\"agent_version\":\"urban-challenge-rc1\",\"tool_calls\":[{\"tool\":"
+    },
+    {
+      "path": "resultados/informe_principal.html",
+      "line": 14,
+      "column": 4490,
+      "term": "WORK3",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "ace\":{\"execution_mode\":\"local_tool\",\"question_id\":\"RC1-WORK3-COMPARE-001\",\"agent_version\":\"urban-challenge-rc1\",\"tool_calls\":[{\"tool\":\"compa"
+    },
+    {
+      "path": "resultados/informe_principal.html",
+      "line": 14,
+      "column": 4542,
+      "term": "rc1",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "C1-WORK3-COMPARE-001\",\"agent_version\":\"urban-challenge-rc1\",\"tool_calls\":[{\"tool\":\"comparar_municipios\",\"arguments\":{\"municipios\":[\"Donost"
+    },
+    {
+      "path": "resultados/informe_principal.html",
+      "line": 14,
+      "column": 4769,
+      "term": "RC1",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "e\",\"umbral_km\":2,\"periodo\":\"2025-01-01\"},\"output_ref\":\"RC1-COMPARE-20069-20030-20071\"}],\"data_refs\":[\"EUSTAT_EMH_2025\",\"ODE_HEALTH_CENTRES"
+    },
+    {
+      "path": "resultados/informe_principal.html",
+      "line": 14,
+      "column": 4903,
+      "term": "RC1",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "TRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"],\"result_ref\":\"RC1-COMPARE-20069-20030-20071\"},\"map_features\":[{\"unit_id\":\"20069\",\"geometry\":{\"typ"
+    },
+    {
+      "path": "resultados/informe_principal.html",
+      "line": 18,
+      "column": 19,
+      "term": "synthetic",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "if(d.data_mode==='synthetic')q('#synthetic-banner').hidden=false;"
+    },
+    {
+      "path": "resultados/informe_principal.html",
+      "line": 18,
+      "column": 34,
+      "term": "synthetic",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "if(d.data_mode==='synthetic')q('#synthetic-banner').hidden=false;"
+    },
+    {
+      "path": "resultados/informe_principal.html",
+      "line": 24,
+      "column": 902,
+      "term": "synthetic",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "'],0))+'</strong><span>Personas ≥'+age+(d.data_mode==='synthetic'?' (fixture)':'')+'</span></div><div class=\"metric\"><strong>'+fmt(threshold)+' "
+    },
+    {
+      "path": "resultados/informe_principal.html",
+      "line": 24,
+      "column": 916,
+      "term": "fixture",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "ng><span>Personas ≥'+age+(d.data_mode==='synthetic'?' (fixture)':'')+'</span></div><div class=\"metric\"><strong>'+fmt(threshold)+' km</strong><"
+    },
+    {
+      "path": "resultados/scenario_comparison.html",
+      "line": 5,
+      "column": 329,
+      "term": "synthetic",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "ia-current=\"page\">Escenario</a></nav></header><div id=\"synthetic-banner\" class=\"banner\" hidden>DATOS SINTÉTICOS DE DESARROLLO — NO UTILIZAR COMO"
+    },
+    {
+      "path": "resultados/scenario_comparison.html",
+      "line": 5,
+      "column": 375,
+      "term": "SINTÉTICOS",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "<div id=\"synthetic-banner\" class=\"banner\" hidden>DATOS SINTÉTICOS DE DESARROLLO — NO UTILIZAR COMO RESULTADO</div><div id=\"local-banner\" class=\"b"
+    },
+    {
+      "path": "resultados/scenario_comparison.html",
+      "line": 5,
+      "column": 575,
+      "term": "LLM",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": " RESULTADO DETERMINISTA DEL TOOL · NO ES UNA EJECUCIÓN LLM</div><main>"
+    },
+    {
+      "path": "resultados/scenario_comparison.html",
+      "line": 14,
+      "column": 2596,
+      "term": "v1",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "edad y sexo\",\"url\":\"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\",\"period\":\"2025-01-01\",\"unit\":\"personas\",\"licens"
+    },
+    {
+      "path": "resultados/scenario_comparison.html",
+      "line": 14,
+      "column": 4486,
+      "term": "RC1",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": ",\"trace\":{\"execution_mode\":\"local_tool\",\"question_id\":\"RC1-WORK3-COMPARE-001\",\"agent_version\":\"urban-challenge-rc1\",\"tool_calls\":[{\"tool\":"
+    },
+    {
+      "path": "resultados/scenario_comparison.html",
+      "line": 14,
+      "column": 4490,
+      "term": "WORK3",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "ace\":{\"execution_mode\":\"local_tool\",\"question_id\":\"RC1-WORK3-COMPARE-001\",\"agent_version\":\"urban-challenge-rc1\",\"tool_calls\":[{\"tool\":\"compa"
+    },
+    {
+      "path": "resultados/scenario_comparison.html",
+      "line": 14,
+      "column": 4542,
+      "term": "rc1",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "C1-WORK3-COMPARE-001\",\"agent_version\":\"urban-challenge-rc1\",\"tool_calls\":[{\"tool\":\"comparar_municipios\",\"arguments\":{\"municipios\":[\"Donost"
+    },
+    {
+      "path": "resultados/scenario_comparison.html",
+      "line": 14,
+      "column": 4769,
+      "term": "RC1",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "e\",\"umbral_km\":2,\"periodo\":\"2025-01-01\"},\"output_ref\":\"RC1-COMPARE-20069-20030-20071\"}],\"data_refs\":[\"EUSTAT_EMH_2025\",\"ODE_HEALTH_CENTRES"
+    },
+    {
+      "path": "resultados/scenario_comparison.html",
+      "line": 14,
+      "column": 4903,
+      "term": "RC1",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "TRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"],\"result_ref\":\"RC1-COMPARE-20069-20030-20071\"},\"map_features\":[{\"unit_id\":\"20069\",\"geometry\":{\"typ"
+    },
+    {
+      "path": "resultados/scenario_comparison.html",
+      "line": 18,
+      "column": 19,
+      "term": "synthetic",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "if(d.data_mode==='synthetic')q('#synthetic-banner').hidden=false;"
+    },
+    {
+      "path": "resultados/scenario_comparison.html",
+      "line": 18,
+      "column": 34,
+      "term": "synthetic",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "if(d.data_mode==='synthetic')q('#synthetic-banner').hidden=false;"
+    },
+    {
+      "path": "resultados/scenario_comparison.html",
+      "line": 24,
+      "column": 902,
+      "term": "synthetic",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "'],0))+'</strong><span>Personas ≥'+age+(d.data_mode==='synthetic'?' (fixture)':'')+'</span></div><div class=\"metric\"><strong>'+fmt(threshold)+' "
+    },
+    {
+      "path": "resultados/scenario_comparison.html",
+      "line": 24,
+      "column": 916,
+      "term": "fixture",
+      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
+      "reason": "Vista local de tres municipios; no equivale a coincidencia provincial.",
+      "context": "ng><span>Personas ≥'+age+(d.data_mode==='synthetic'?' (fixture)':'')+'</span></div><div class=\"metric\"><strong>'+fmt(threshold)+' km</strong><"
+    },
+    {
+      "path": "scripts/agent/benchmark_runtime.py",
+      "line": 21,
+      "column": 49,
+      "term": "rc2",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "OUTPUT = ROOT / \"analisis\" / \"runtime_benchmark_rc2.json\""
+    },
+    {
+      "path": "scripts/agent/benchmark_runtime.py",
+      "line": 77,
+      "column": 37,
+      "term": "rc2",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "        \"release\": \"urban-challenge-rc2\", \"repeats\": repeats,"
+    },
+    {
+      "path": "scripts/agent/build_portal_package.py",
+      "line": 12,
+      "column": 36,
+      "term": "rc2",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "RELEASE_VERSION = \"urban-challenge-rc2\""
+    },
+    {
+      "path": "scripts/agent/build_work3_result.py",
+      "line": 1,
+      "column": 66,
+      "term": "Work 3",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "una salida real del tool de comparación al contrato de Work 3.\"\"\""
+    },
+    {
+      "path": "scripts/agent/build_work3_result.py",
+      "line": 59,
+      "column": 19,
+      "term": "RC1",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "    result_ref = \"RC1-COMPARE-20069-20030-20071\""
+    },
+    {
+      "path": "scripts/agent/build_work3_result.py",
+      "line": 99,
+      "column": 29,
+      "term": "RC1",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "            \"question_id\": \"RC1-WORK3-COMPARE-001\","
+    },
+    {
+      "path": "scripts/agent/build_work3_result.py",
+      "line": 99,
+      "column": 33,
+      "term": "WORK3",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "            \"question_id\": \"RC1-WORK3-COMPARE-001\","
+    },
+    {
+      "path": "scripts/agent/build_work3_result.py",
+      "line": 100,
+      "column": 47,
+      "term": "rc1",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "            \"agent_version\": \"urban-challenge-rc1\","
+    },
+    {
+      "path": "scripts/agent/build_work3_result.py",
+      "line": 114,
+      "column": 35,
+      "term": "work3",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "    output = ROOT / \"analisis\" / \"work3_agent_result.json\""
+    },
+    {
+      "path": "scripts/agent/generate_examples.py",
+      "line": 1,
+      "column": 46,
+      "term": "Work 3",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "\"\"\"Genera ejemplos reales reproducibles para Work 3 sin invocar un LLM.\"\"\""
+    },
+    {
+      "path": "scripts/agent/generate_examples.py",
+      "line": 1,
+      "column": 68,
+      "term": "LLM",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "emplos reales reproducibles para Work 3 sin invocar un LLM.\"\"\""
+    },
+    {
+      "path": "scripts/agent/run_release_e2e.py",
+      "line": 230,
+      "column": 37,
+      "term": "rc2",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "        \"release\": \"urban-challenge-rc2\","
+    },
+    {
+      "path": "scripts/agent/run_release_e2e.py",
+      "line": 231,
+      "column": 93,
+      "term": "LLM",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "oordinator/tool acceptance; no network and no external LLM.\","
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 5,
+      "column": 70,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "path.resolve(process.argv[2] ?? path.join(root, 'tests/fixtures/synthetic_agent_result.json'));"
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 5,
+      "column": 79,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "lve(process.argv[2] ?? path.join(root, 'tests/fixtures/synthetic_agent_result.json'));"
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 16,
+      "column": 10,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "  if (!['synthetic', 'real'].includes(d.data_mode)) fail('data_mode');"
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 58,
+      "column": 10,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "  if (!['synthetic_fixture','local_tool','agent'].includes(trace.execution_mode) || !nonempty(trac"
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 58,
+      "column": 20,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "  if (!['synthetic_fixture','local_tool','agent'].includes(trace.execution_mode) || !nonempty(trace.questi"
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 59,
+      "column": 59,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "f (d.data_mode === 'real' && trace.execution_mode === 'synthetic_fixture') fail('modo de ejecución sintético con datos reales');"
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 59,
+      "column": 69,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "mode === 'real' && trace.execution_mode === 'synthetic_fixture') fail('modo de ejecución sintético con datos reales');"
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 59,
+      "column": 103,
+      "term": "sintético",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "_mode === 'synthetic_fixture') fail('modo de ejecución sintético con datos reales');"
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 73,
+      "column": 9,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "  const synthetic = result.data_mode === 'synthetic';"
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 73,
+      "column": 43,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "  const synthetic = result.data_mode === 'synthetic';"
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 78,
+      "column": 438,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "rrent=\"page\"':''}>Escenario</a></nav></header><div id=\"synthetic-banner\" class=\"banner\" hidden>DATOS SINTÉTICOS DE DESARROLLO — NO UTILIZAR COMO"
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 78,
+      "column": 484,
+      "term": "SINTÉTICOS",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "<div id=\"synthetic-banner\" class=\"banner\" hidden>DATOS SINTÉTICOS DE DESARROLLO — NO UTILIZAR COMO RESULTADO</div><div id=\"local-banner\" class=\"b"
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 78,
+      "column": 684,
+      "term": "LLM",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": " RESULTADO DETERMINISTA DEL TOOL · NO ES UNA EJECUCIÓN LLM</div><main>"
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 80,
+      "column": 104,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "-labelledby=\"controls-title\"><h2 id=\"controls-title\">${synthetic?'Cambiar la pregunta de prueba':'Explorar criterios sobre el resultado'}</h2><d"
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 80,
+      "column": 854,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "vicio</option></select></div></div><p class=\"subtle\">${synthetic?'Los controles recalculan este fixture local para probar la vista. La prueba fi"
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 80,
+      "column": 895,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "ss=\"subtle\">${synthetic?'Los controles recalculan este fixture local para probar la vista. La prueba final debe mostrar una nueva llamada del "
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 82,
+      "column": 171,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "ult.map_features?.length?'Mapa de unidades comparadas':synthetic?'Mapa esquemático de unidades de prueba':'Esquema comparativo de unidades'}</h2"
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 91,
+      "column": 19,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "if(d.data_mode==='synthetic')q('#synthetic-banner').hidden=false;"
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 91,
+      "column": 34,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "if(d.data_mode==='synthetic')q('#synthetic-banner').hidden=false;"
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 97,
+      "column": 902,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "'],0))+'</strong><span>Personas ≥'+age+(d.data_mode==='synthetic'?' (fixture)':'')+'</span></div><div class=\"metric\"><strong>'+fmt(threshold)+' "
+    },
+    {
+      "path": "scripts/build_results.mjs",
+      "line": 97,
+      "column": 916,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "ng><span>Personas ≥'+age+(d.data_mode==='synthetic'?' (fixture)':'')+'</span></div><div class=\"metric\"><strong>'+fmt(threshold)+' km</strong><"
+    },
+    {
+      "path": "scripts/data/01_download_sources.py",
+      "line": 27,
+      "column": 41,
+      "term": "v1",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "    \"https://www.eustat.eus/bankupx/api/v1/es/DB/\""
+    },
+    {
+      "path": "scripts/data/01_download_sources.py",
+      "line": 31,
+      "column": 41,
+      "term": "v1",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "    \"https://www.eustat.eus/bankupx/api/v1/es/DB/\""
+    },
+    {
+      "path": "scripts/data/07_write_metadata.py",
+      "line": 18,
+      "column": 56,
+      "term": "v1",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "            \"url\": \"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\","
+    },
+    {
+      "path": "scripts/data/export_work3_smoke_result.py",
+      "line": 1,
+      "column": 70,
+      "term": "Work 3",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "resultado real determinista para probar el contrato de Work 3."
+    },
+    {
+      "path": "scripts/data/export_work3_smoke_result.py",
+      "line": 61,
+      "column": 21,
+      "term": "Fixture",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "        \"summary\": \"Fixture determinista de QA para validar el adaptador de datos; no es una respuesta prod"
+    },
+    {
+      "path": "scripts/data/export_work3_smoke_result.py",
+      "line": 90,
+      "column": 14,
+      "term": "Fixture",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "            \"Fixture de integración de datos; no acredita una ejecución del agente.\","
+    },
+    {
+      "path": "scripts/data/export_work3_smoke_result.py",
+      "line": 100,
+      "column": 33,
+      "term": "work3",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "                \"tool\": \"export_work3_smoke_result\","
+    },
+    {
+      "path": "scripts/data/export_work3_smoke_result.py",
+      "line": 118,
+      "column": 29,
+      "term": "Work 3",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": "    print(f\"Resultado smoke Work 3 escrito en {args.output}\")"
+    },
+    {
+      "path": "scripts/enrich_work1_result.mjs",
+      "line": 5,
+      "column": 66,
+      "term": "work1",
+      "decision": "KEEP",
+      "reason": "Contrato, código, fuente o recurso de ingeniería; términos internos justificados.",
+      "context": " || !output) throw new Error('Uso: node scripts/enrich_work1_result.mjs resultado_agente.json salida.json [runtime_municipios.geojson] [meta"
+    },
+    {
+      "path": "tests/data/test_quality_contract.py",
+      "line": 116,
+      "column": 10,
+      "term": "work2",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "def test_work2_runtime_coordinates_are_complete_and_reprojectable():"
+    },
+    {
+      "path": "tests/data/test_quality_contract.py",
+      "line": 169,
+      "column": 5,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    fixture = json.loads((ROOT / \"tests\" / \"fixtures\" / \"golden_cases.json\").read_text(enco"
+    },
+    {
+      "path": "tests/data/test_quality_contract.py",
+      "line": 169,
+      "column": 45,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    fixture = json.loads((ROOT / \"tests\" / \"fixtures\" / \"golden_cases.json\").read_text(encoding=\"utf-8\"))"
+    },
+    {
+      "path": "tests/data/test_quality_contract.py",
+      "line": 170,
+      "column": 48,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    cases = {case[\"case_id\"]: case for case in fixture[\"cases\"]}"
+    },
+    {
+      "path": "tests/data/test_quality_contract.py",
+      "line": 201,
+      "column": 10,
+      "term": "work3",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "def test_work3_v1_mapping_has_no_implicit_unit_or_null_conversion():"
+    },
+    {
+      "path": "tests/data/test_quality_contract.py",
+      "line": 204,
+      "column": 25,
+      "term": "work3",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    mapping = contract[\"work3_mapping\"]"
+    },
+    {
+      "path": "tests/data/test_quality_contract.py",
+      "line": 229,
+      "column": 10,
+      "term": "work3",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "def test_work3_smoke_export_is_real_but_explicitly_not_an_agent_run(tmp_path):"
+    },
+    {
+      "path": "tests/data/test_quality_contract.py",
+      "line": 230,
+      "column": 26,
+      "term": "work3",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    output = tmp_path / \"work3-smoke.json\""
+    },
+    {
+      "path": "tests/data/test_quality_contract.py",
+      "line": 232,
+      "column": 66,
+      "term": "work3",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "ys.executable, str(ROOT / \"scripts\" / \"data\" / \"export_work3_smoke_result.py\"), str(output)],"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 10,
+      "column": 7,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "const fixture=JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/synthetic_agent_resul"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 10,
+      "column": 64,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "xture=JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/synthetic_agent_result.json'),'utf8'));"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 10,
+      "column": 73,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "N.parse(fs.readFileSync(path.join(root,'tests/fixtures/synthetic_agent_result.json'),'utf8'));"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 15,
+      "column": 15,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "  const x=run(fixture);assert.equal(x.status,0,x.stderr);"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 17,
+      "column": 23,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "  for(const token of [fixture.question,fixture.trace.question_id,fixture.trace.tool_calls[0].tool,fixture.tra"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 17,
+      "column": 40,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "  for(const token of [fixture.question,fixture.trace.question_id,fixture.trace.tool_calls[0].tool,fixture.trace.result_ref,..."
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 17,
+      "column": 66,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "t token of [fixture.question,fixture.trace.question_id,fixture.trace.tool_calls[0].tool,fixture.trace.result_ref,...fixture.trace.data_refs,'D"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 17,
+      "column": 99,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "ure.trace.question_id,fixture.trace.tool_calls[0].tool,fixture.trace.result_ref,...fixture.trace.data_refs,'DATOS SINTÉTICOS DE DESARROLLO','C"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 17,
+      "column": 127,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "e.trace.tool_calls[0].tool,fixture.trace.result_ref,...fixture.trace.data_refs,'DATOS SINTÉTICOS DE DESARROLLO','Cómo se calculó','OBSERVADO',"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 17,
+      "column": 158,
+      "term": "SINTÉTICOS",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "ure.trace.result_ref,...fixture.trace.data_refs,'DATOS SINTÉTICOS DE DESARROLLO','Cómo se calculó','OBSERVADO','ESCENARIO HIPOTÉTICO']) assert.ok"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 28,
+      "column": 78,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "nte no se puede rastrear',()=>{const d=structuredClone(fixture);d.comparison[0].source_ids=['FUENTE_INEXISTENTE'];const x=run(d);assert.notEqu"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 29,
+      "column": 99,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "na salida de herramienta',()=>{const d=structuredClone(fixture);d.trace.result_ref='OTRO_RESULTADO';const x=run(d);assert.notEqual(x.status,0)"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 30,
+      "column": 76,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "to real carece de origen',()=>{const d=structuredClone(fixture);d.data_mode='real';d.trace.execution_mode='local_tool';const x=run(d);assert.n"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 31,
+      "column": 20,
+      "term": "Work 1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "test('geometría de Work 1 se enlaza por código sin cambiar las cifras',()=>{"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 34,
+      "column": 27,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "  const d=structuredClone(fixture);d.comparison.forEach((r,i)=>r.unit_id=String(20001+i));d.scenario.unit_id=d.co"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 38,
+      "column": 70,
+      "term": "work1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "nSync(process.execPath,[path.join(root,'scripts/enrich_work1_result.mjs'),input,output,geo,meta],{encoding:'utf8'});assert.equal(p.status,0,"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 57,
+      "column": 32,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "  ['traza que finge agente con fixture',d=>{d.data_mode='real';d.trace.execution_mode='synthetic_fixture'},/modo de ej"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 57,
+      "column": 88,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "ixture',d=>{d.data_mode='real';d.trace.execution_mode='synthetic_fixture'},/modo de ejecución sintético/],"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 57,
+      "column": 98,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": ">{d.data_mode='real';d.trace.execution_mode='synthetic_fixture'},/modo de ejecución sintético/],"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 57,
+      "column": 127,
+      "term": "sintético",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "execution_mode='synthetic_fixture'},/modo de ejecución sintético/],"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 60,
+      "column": 100,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "s) test(`rechaza ${name}`,()=>{const d=structuredClone(fixture);change(d);const x=run(d);assert.notEqual(x.status,0);assert.match(x.stderr,err"
+    },
+    {
+      "path": "tests/e2e/contract_flow.test.mjs",
+      "line": 62,
+      "column": 99,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "ente sin fabricar cifras',()=>{const d=structuredClone(fixture);d.parameters.distance_threshold_km=100000;d.scenario=null;const x=run(d);asser"
+    },
+    {
+      "path": "tests/fixtures/README.md",
+      "line": 1,
+      "column": 3,
+      "term": "Fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "# Fixtures sintéticos"
+    },
+    {
+      "path": "tests/fixtures/README.md",
+      "line": 1,
+      "column": 12,
+      "term": "sintéticos",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "# Fixtures sintéticos"
+    },
+    {
+      "path": "tests/fixtures/metadata_sources.json",
+      "line": 5,
+      "column": 36,
+      "term": "sintética",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "      \"title\": \"Fuente demográfica sintética\","
+    },
+    {
+      "path": "tests/fixtures/metadata_sources.json",
+      "line": 9,
+      "column": 19,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "      \"license\": \"fixture de pruebas\","
+    },
+    {
+      "path": "tests/fixtures/metadata_sources.json",
+      "line": 14,
+      "column": 27,
+      "term": "sintéticos",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "      \"title\": \"Servicios sintéticos\","
+    },
+    {
+      "path": "tests/fixtures/metadata_sources.json",
+      "line": 18,
+      "column": 19,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "      \"license\": \"fixture de pruebas\","
+    },
+    {
+      "path": "tests/fixtures/synthetic_agent_result.json",
+      "line": 3,
+      "column": 17,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "  \"data_mode\": \"synthetic\","
+    },
+    {
+      "path": "tests/fixtures/synthetic_agent_result.json",
+      "line": 6,
+      "column": 40,
+      "term": "sintético",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "  \"summary\": \"Resultado exclusivamente sintético para comprobar la interfaz y el contrato.\","
+    },
+    {
+      "path": "tests/fixtures/synthetic_agent_result.json",
+      "line": 23,
+      "column": 57,
+      "term": "sintética",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": " \"sources\": [{\"source_id\":\"SYN-DEM\",\"title\":\"Población sintética de desarrollo\",\"url\":null,\"period\":\"2025 (ficticio)\",\"unit\":\"personas\",\"license"
+    },
+    {
+      "path": "tests/fixtures/synthetic_agent_result.json",
+      "line": 23,
+      "column": 149,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "period\":\"2025 (ficticio)\",\"unit\":\"personas\",\"license\":\"fixture de desarrollo\",\"method\":\"Valores inventados solo para pruebas\"},{\"source_id\":\"S"
+    },
+    {
+      "path": "tests/fixtures/synthetic_agent_result.json",
+      "line": 23,
+      "column": 263,
+      "term": "sintéticos",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "ra pruebas\"},{\"source_id\":\"SYN-SVC\",\"title\":\"Servicios sintéticos de desarrollo\",\"url\":null,\"period\":\"2025 (ficticio)\",\"unit\":\"km euclídeos\",\"lic"
+    },
+    {
+      "path": "tests/fixtures/synthetic_agent_result.json",
+      "line": 23,
+      "column": 360,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "od\":\"2025 (ficticio)\",\"unit\":\"km euclídeos\",\"license\":\"fixture de desarrollo\",\"method\":\"Distancias inventadas solo para pruebas\"}],"
+    },
+    {
+      "path": "tests/fixtures/synthetic_agent_result.json",
+      "line": 26,
+      "column": 31,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "  \"trace\": {\"execution_mode\":\"synthetic_fixture\",\"question_id\":\"SYN-Q-001\",\"agent_version\":\"synthetic-fixture\",\"tool_ca"
+    },
+    {
+      "path": "tests/fixtures/synthetic_agent_result.json",
+      "line": 26,
+      "column": 41,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "  \"trace\": {\"execution_mode\":\"synthetic_fixture\",\"question_id\":\"SYN-Q-001\",\"agent_version\":\"synthetic-fixture\",\"tool_calls\":[{\""
+    },
+    {
+      "path": "tests/fixtures/synthetic_agent_result.json",
+      "line": 26,
+      "column": 93,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "ic_fixture\",\"question_id\":\"SYN-Q-001\",\"agent_version\":\"synthetic-fixture\",\"tool_calls\":[{\"tool\":\"synthetic_territorial_analysis\",\"arguments\":{\"a"
+    },
+    {
+      "path": "tests/fixtures/synthetic_agent_result.json",
+      "line": 26,
+      "column": 103,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "\",\"question_id\":\"SYN-Q-001\",\"agent_version\":\"synthetic-fixture\",\"tool_calls\":[{\"tool\":\"synthetic_territorial_analysis\",\"arguments\":{\"age_group"
+    },
+    {
+      "path": "tests/fixtures/synthetic_agent_result.json",
+      "line": 26,
+      "column": 135,
+      "term": "synthetic",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "nt_version\":\"synthetic-fixture\",\"tool_calls\":[{\"tool\":\"synthetic_territorial_analysis\",\"arguments\":{\"age_group\":\"65+\",\"service\":\"SERVICIO_TEST_1"
+    },
+    {
+      "path": "tests/test_adversarial_core.py",
+      "line": 15,
+      "column": 9,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "@pytest.fixture(autouse=True)"
+    },
+    {
+      "path": "tests/test_analysis.py",
+      "line": 12,
+      "column": 1,
+      "term": "FIXTURE",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "FIXTURES = Path(__file__).parent / \"fixtures\""
+    },
+    {
+      "path": "tests/test_analysis.py",
+      "line": 12,
+      "column": 37,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "FIXTURES = Path(__file__).parent / \"fixtures\""
+    },
+    {
+      "path": "tests/test_analysis.py",
+      "line": 15,
+      "column": 9,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "@pytest.fixture()"
+    },
+    {
+      "path": "tests/test_analysis.py",
+      "line": 17,
+      "column": 47,
+      "term": "FIXTURE",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    return TerritorialAnalysis(DataRepository(FIXTURES))"
+    },
+    {
+      "path": "tests/test_analysis.py",
+      "line": 103,
+      "column": 40,
+      "term": "FIXTURE",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "        (tmp_path / name).write_bytes((FIXTURES / name).read_bytes())"
+    },
+    {
+      "path": "tests/test_analysis.py",
+      "line": 104,
+      "column": 17,
+      "term": "FIXTURE",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    original = (FIXTURES / \"demografia.csv\").read_text(encoding=\"utf-8\")"
+    },
+    {
+      "path": "tests/test_data_access.py",
+      "line": 12,
+      "column": 1,
+      "term": "FIXTURE",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "FIXTURES = Path(__file__).parent / \"fixtures\""
+    },
+    {
+      "path": "tests/test_data_access.py",
+      "line": 12,
+      "column": 37,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "FIXTURES = Path(__file__).parent / \"fixtures\""
+    },
+    {
+      "path": "tests/test_data_access.py",
+      "line": 16,
+      "column": 27,
+      "term": "FIXTURE",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    repo = DataRepository(FIXTURES)"
+    },
+    {
+      "path": "tests/test_golden_contract.py",
+      "line": 18,
+      "column": 13,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    assert \"fixtures test_*\" in normalized"
+    },
+    {
+      "path": "tests/test_portal_bundle.py",
+      "line": 74,
+      "column": 10,
+      "term": "rc2",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "def test_rc2_zip_extracts_and_executes_a_real_smoke_case(tmp_path):"
+    },
+    {
+      "path": "tests/test_portal_bundle.py",
+      "line": 77,
+      "column": 65,
+      "term": "rc2",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "ve_path = ROOT / \"dist\" / \"gipuzkoa360-urban-challenge-rc2.zip\""
+    },
+    {
+      "path": "tests/test_portal_bundle.py",
+      "line": 117,
+      "column": 74,
+      "term": "rc2",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "st_path = ROOT / \"dist\" / \"gipuzkoa360-urban-challenge-rc2-manifest.json\""
+    },
+    {
+      "path": "tests/test_public_tools.py",
+      "line": 17,
+      "column": 5,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    fixtures = Path(__file__).parent / \"fixtures\""
+    },
+    {
+      "path": "tests/test_public_tools.py",
+      "line": 17,
+      "column": 41,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    fixtures = Path(__file__).parent / \"fixtures\""
+    },
+    {
+      "path": "tests/test_public_tools.py",
+      "line": 18,
+      "column": 52,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    monkeypatch.setenv(\"GIPUZKOA360_DATA_DIR\", str(fixtures))"
+    },
+    {
+      "path": "tests/test_real_data_integration.py",
+      "line": 17,
+      "column": 9,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "@pytest.fixture(scope=\"module\")"
+    },
+    {
+      "path": "tests/test_real_data_integration.py",
+      "line": 22,
+      "column": 9,
+      "term": "fixture",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "@pytest.fixture(scope=\"module\")"
+    },
+    {
+      "path": "tests/test_real_data_integration.py",
+      "line": 62,
+      "column": 36,
+      "term": "work1",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "def test_agent_distance_reproduces_work1_metrics("
+    },
+    {
+      "path": "tests/test_work3_agent_adapter.py",
+      "line": 9,
+      "column": 6,
+      "term": "work3",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "    \"work3_adapter\", ROOT / \"scripts\" / \"agent\" / \"build_work3_result.py\""
+    },
+    {
+      "path": "tests/test_work3_agent_adapter.py",
+      "line": 9,
+      "column": 58,
+      "term": "work3",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "  \"work3_adapter\", ROOT / \"scripts\" / \"agent\" / \"build_work3_result.py\""
+    },
+    {
+      "path": "tests/test_work3_agent_adapter.py",
+      "line": 16,
+      "column": 10,
+      "term": "work3",
+      "decision": "KEEP",
+      "reason": "Tests, controles negativos o evidencia; no convertirlos en resultados de portal.",
+      "context": "def test_work3_adapter_uses_real_agent_tool_trace():"
+    }
+  ]
+}
