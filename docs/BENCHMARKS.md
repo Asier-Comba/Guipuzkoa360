@@ -87,3 +87,21 @@ Coverage: **31,545/31,545 = 100.000%**.
 
 This report states measured coverage only; it does not claim prediction quality, causal validity or
 real-world accessibility beyond the documented geometric indicators.
+
+## Work 2 integration audit · 2026-09-25
+
+- Integrated unchanged commits: `bf5c6ccd3e43573a4daf98f39d29e83ee644545a` and
+  `a1b0ecb4ba8d2108d673fbb03c5b6abf4cf2ae34`.
+- Verified base: `488f46db7047d9393d4d4a489a869ab246c215b9` is their ancestor.
+- Runtime diff from that base: zero. The two commits only add the harness and its reports/documentation.
+- Re-executed release suite after integration: 148/148 Python and 17/17 Node PASS.
+- Added a separate jury-result gate: three exact coincidence cases PASS, including 7, 4 and 2
+  municipalities; q0.75 and q0.85 produce different cuts and sets.
+- Preserved the open Medium finding at 20,155 characters. No municipal result was truncated and
+  `simular_escenario` was not modified.
+
+The original 10/10 statement is retained exactly as measured. A clean rebuild during this audit produced
+48,338 bytes and SHA-256 `e642ca6b2848eb01a9e79bd260ac6d18d501fc097e8b8fd0ddf6bbba8e7cd00f`,
+not the recorded 48,339-byte archive. The Git runtime is identical; the archive builder reads worktree
+bytes and the benchmark proves same-worktree repetition, not a cross-representation/EOL canonical ZIP.
+This is a release-process WARN, not a numerical or tool-runtime failure.
