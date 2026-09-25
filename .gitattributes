@@ -5,6 +5,7 @@
 *.md text eol=lf
 *.mjs text eol=lf
 *.py text eol=lf
+*.lock text eol=lf
 *.xlsx binary
 *.zip binary
 datos_originales/*.csv binary

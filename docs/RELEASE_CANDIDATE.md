@@ -1,26 +1,11 @@
-# GIPUZKOA 360 · Urban Challenge release candidate
+# Identidad del release
 
-Versión candidata actual: `urban-challenge-rc2`.
+Producto público: **GIPUZKOA 360**. Runtime congelado: `195b4980fa5998b096c308296a55e452380b0371`.
+Versión privada registrada: `urban-challenge-rc2-195b498 · v4`. No renombrada.
 
-RC1 queda preservado como histórico mediante el tag `urban-challenge-rc1` sobre `main`; no debe utilizarse para
-las pruebas nuevas del portal. RC2 se construye desde `fix/portal-runtime-rc2`. El SHA exacto validado localmente,
-el tamaño y el SHA-256 del paquete se registran en `docs/RC2_FINAL_STATUS.md`. El manifiesto reproducible es
-`dist/gipuzkoa360-urban-challenge-rc2-manifest.json`; el ZIP no se versiona en Git.
+La rama de preparación final es `final/oier-release-polish`, basada en `488f46db7047d9393d4d4a489a869ab246c215b9`.
+Los cambios posteriores son de auditoría, reproducción y documentación, no nuevos datos ni comportamiento.
 
-## Contenido y datos
+[Validación actual](VALIDATION.md) · [Plan exacto de integración](internal/release/INTEGRATION_PLAN.md) · [Incidencias y auditoría](internal/release/AUDIT.md).
 
-- Agente Python síncrono con siete tools deterministas y sin Internet.
-- Bundle de dos archivos Python compatible con el editor del portal.
-- Siete wrappers `@tool` declarados físicamente en `main.py`; sus firmas públicas fuerzan salidas compactas.
-- El modo detallado se conserva solo en el core para auditoría offline y no se expone al coordinador de Studio.
-- Datos preparados bajo contrato `1.1.0`: 88 municipios, demografía 2025-01-01 y 148 registros sanitarios públicos con corte 2026-09-20.
-- Geografía geoEuskadi con corte 2025-05-07 y cálculos métricos en EPSG:25830.
-- Casos A–H y cinco golden cases fijos.
-- Adaptador de salida real de tool a los tres HTML de Work 3.
-
-## Reproducibilidad
-
-Ejecutar la secuencia de `docs/PORTAL_DEPLOYMENT.md`. El paquete usa orden de archivos y timestamp ZIP fijos, por lo que dos builds del mismo commit deben producir el mismo SHA-256.
-
-La validación local no equivale a validación del portal. RC2 solo pasa a candidato de integración cuando Work 3
-publique evidencia privada completa para el SHA exacto; hasta entonces no se fusiona a `main` ni se publica la entrega.
+El checksum del paquete vigente se toma del informe de reproducción, no de documentos históricos. PORTAL GO no equivale a RELEASE_GO ni a publicación.

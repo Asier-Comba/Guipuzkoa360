@@ -461,8 +461,8 @@
     {
       "path": "docs/PORTAL_DEPLOYMENT.md",
       "category": "HISTORICAL",
-      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
-      "reason": "Miembro congelado del ZIP; guía operativa nueva separada.",
+      "decision": "UPDATE",
+      "reason": "Archivar guía y corregir rutas; solo cambia un miembro documental del ZIP, no el contexto.",
       "bytes": 4924,
       "sha256": "49e5437b1451118866d8696f2ebc36987b4f30e759834965725eaefc6752b6ed"
     },
@@ -2803,8 +2803,8 @@
       "line": 3,
       "column": 27,
       "term": "rc2",
-      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
-      "reason": "Miembro congelado del ZIP; guía operativa nueva separada.",
+      "decision": "UPDATE",
+      "reason": "Archivar guía y corregir rutas; solo cambia un miembro documental del ZIP, no el contexto.",
       "context": "Release: `urban-challenge-rc2`. RC1 es histórico. Esta guía prepara una versión privada; no autoriza ni descr"
     },
     {
@@ -2812,8 +2812,8 @@
       "line": 3,
       "column": 33,
       "term": "RC1",
-      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
-      "reason": "Miembro congelado del ZIP; guía operativa nueva separada.",
+      "decision": "UPDATE",
+      "reason": "Archivar guía y corregir rutas; solo cambia un miembro documental del ZIP, no el contexto.",
       "context": "Release: `urban-challenge-rc2`. RC1 es histórico. Esta guía prepara una versión privada; no autoriza ni describe la"
     },
     {
@@ -2821,8 +2821,8 @@
       "line": 19,
       "column": 58,
       "term": "rc2",
-      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
-      "reason": "Miembro congelado del ZIP; guía operativa nueva separada.",
+      "decision": "UPDATE",
+      "reason": "Archivar guía y corregir rutas; solo cambia un miembro documental del ZIP, no el contexto.",
       "context": " último comando crea `dist/gipuzkoa360-urban-challenge-rc2.zip` y su manifiesto SHA-256. El ZIP reproduce la estructura que debe existir e"
     },
     {
@@ -2830,8 +2830,8 @@
       "line": 79,
       "column": 68,
       "term": "rc2",
-      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
-      "reason": "Miembro congelado del ZIP; guía operativa nueva separada.",
+      "decision": "UPDATE",
+      "reason": "Archivar guía y corregir rutas; solo cambia un miembro documental del ZIP, no el contexto.",
       "context": "Crear versión del agente**. Nombrarla `urban-challenge-rc2` e identificar el SHA exacto indicado por Work 1."
     },
     {
@@ -2839,8 +2839,8 @@
       "line": 79,
       "column": 114,
       "term": "Work 1",
-      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
-      "reason": "Miembro congelado del ZIP; guía operativa nueva separada.",
+      "decision": "UPDATE",
+      "reason": "Archivar guía y corregir rutas; solo cambia un miembro documental del ZIP, no el contexto.",
       "context": "hallenge-rc2` e identificar el SHA exacto indicado por Work 1."
     },
     {
@@ -2848,8 +2848,8 @@
       "line": 84,
       "column": 1,
       "term": "Work 3",
-      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
-      "reason": "Miembro congelado del ZIP; guía operativa nueva separada.",
+      "decision": "UPDATE",
+      "reason": "Archivar guía y corregir rutas; solo cambia un miembro documental del ZIP, no el contexto.",
       "context": "Work 3 es el único operador del portal durante esta puerta. No editar el agente ni lan"
     },
     {
@@ -2857,8 +2857,8 @@
       "line": 85,
       "column": 88,
       "term": "Work 1",
-      "decision": "REMOVE_FROM_PUBLIC_NAVIGATION",
-      "reason": "Miembro congelado del ZIP; guía operativa nueva separada.",
+      "decision": "UPDATE",
+      "reason": "Archivar guía y corregir rutas; solo cambia un miembro documental del ZIP, no el contexto.",
       "context": "ión, SHA, pregunta, tool, argumentos, salida y tiempo; Work 1 aplicará únicamente"
     },
     {

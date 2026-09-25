@@ -79,7 +79,9 @@ def main() -> None:
             raise RuntimeError("Regeneration changed frozen runtime or manifest")
         report["qa"] = json.loads((ROOT / "analisis/data_quality_report.json").read_text(encoding="utf-8"))
         report["tracked_changes_after_build"] = subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT).decode().splitlines()
-        # Other generated reports may contain checkout-specific paths; runtime may not.
+        changed_paths = {line[3:] for line in report["tracked_changes_after_build"]}
+        if changed_paths - {"analisis/runtime_size_report.md"}:
+            raise RuntimeError("Unexpected tracked changes after reproduction")
         report["status"] = "PASS"
     except Exception as exc:
         report["status"] = "FAIL"

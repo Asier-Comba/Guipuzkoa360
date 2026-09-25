@@ -112,7 +112,7 @@ def build_result() -> dict[str, Any]:
 
 def main() -> None:
     output = ROOT / "analisis" / "work3_agent_result.json"
-    output.write_text(json.dumps(build_result(), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    output.write_text(json.dumps(build_result(), ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(output.relative_to(ROOT).as_posix())
 
 

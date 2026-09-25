@@ -1,60 +1,28 @@
-# Despliegue del release candidate en el portal
+# Operación del agente privado
 
-Release: `urban-challenge-rc2`. RC1 es histórico. Esta guía prepara una versión privada; no autoriza ni describe la publicación de la entrega final.
+Producto: **GIPUZKOA 360**. No publicar Entrega.
 
-## 1. Construir y verificar
+## Identidad y construcción
 
-Desde la raíz del repositorio:
+Runtime congelado: `195b4980fa5998b096c308296a55e452380b0371`.
+Versión privada existente: `urban-challenge-rc2-195b498 · v4`; conservar sin renombrar.
+Esta rama actualiza solo esta guía entre los miembros del ZIP: no modifica código ni contexto.
+El nuevo checksum está fuera del archivo, en el manifiesto generado que lo acompaña.
 
-```text
-python scripts/data/build_all.py
-python scripts/agent/build_portal_sources.py
-python scripts/agent/run_release_e2e.py
-python -m pytest -q
-node --test tests/e2e/contract_flow.test.mjs
-python scripts/agent/benchmark_tools.py
-python scripts/agent/build_portal_package.py
-```
-
-El último comando crea `dist/gipuzkoa360-urban-challenge-rc2.zip` y su manifiesto SHA-256. El ZIP reproduce la estructura que debe existir en la raíz del workspace del portal. Construirlo dos veces sin cambios debe producir exactamente el mismo tamaño y SHA-256.
-
-## 2. Archivos exactos
-
-En **Datos**, conservar las rutas relativas del ZIP y subir/cotejar:
+Desde checkout limpio y con `requirements-release.lock` instalado:
 
 ```text
-FUENTES.md
-docs/METODOLOGIA.md
-docs/RESULT_SCHEMA.md
-docs/PORTAL_DEPLOYMENT.md
-datos_preparados/municipios.csv
-datos_preparados/demografia.csv
-datos_preparados/runtime_municipality_points.csv
-datos_preparados/runtime_servicios.csv
-datos_preparados/metadata_sources.json
-datos_preparados/data_contract.json
-datos_preparados/runtime_manifest.json
+python scripts/release/reproduce.py
 ```
 
-En **Agentes → Python → Agente principal**, reemplazar el contenido de los dos editores con:
+No descargar fuentes vivas para reconstruir el snapshot. Detenerse si falla la auditoría,
+el manifiesto, los dos builds o la comparación con los bytes congelados.
 
-- `main.py` ← `agentes/gipuzkoa360/portal/main.py` del ZIP.
-- `tools.py` ← `agentes/gipuzkoa360/portal/tools.py` del ZIP.
+## Archivos exactos
 
-`tools.py` es autocontenido porque el portal expone esos dos archivos Python. Se genera desde `schemas.py`, `metrics.py`, `data_access.py` y `tools.py`; no debe editarse a mano.
-
-## 3. Configuración que debe verse en `main.py`
-
-- Entrada síncrona: `build_agent(model)`.
-- Constructor: `langchain.agents.create_agent`.
-- `STUDIO_MAX_ITERATIONS = 8`.
-- `STUDIO_MEMORY_ENABLED = True` para seguimientos.
-- `STUDIO_INTERNET_ENABLED = False`.
-- Siete tools deterministas, sin tool de ejecución arbitraria.
-- Ninguna firma pública de Studio expone `detalle`; las respuestas del coordinador son compactas por diseño.
-- Sin secretos, tokens, llamadas HTTP ni rutas locales.
-
-`STUDIO_CONTEXT_FILES` debe ser exactamente:
+Extraer `dist/gipuzkoa360-urban-challenge-rc2.zip`. Los dos Python están en la raíz del ZIP:
+**main.py** y **tools.py**. `agentes/gipuzkoa360/portal/` es su ruta en el repositorio, no en el ZIP.
+El ZIP añade `requirements.txt` (sin dependencias adicionales), esta guía y los diez archivos:
 
 ```text
 FUENTES.md
@@ -69,34 +37,36 @@ datos_preparados/data_contract.json
 datos_preparados/runtime_manifest.json
 ```
 
-Dependencias del agente: ninguna adicional. El portal aporta `langchain` y `studio`; el bundle usa solo biblioteca estándar de Python. `requirements.txt` se incluye como registro y no requiere instalar paquetes.
+La lista es exactamente `STUDIO_CONTEXT_FILES`. Conservar rutas relativas. No cargar
+originales, geometría maestra, HTML, tests, entornos ni informes de auditoría como contexto.
 
-## 4. Comprobar y crear versión
+## Contrato
 
-1. Abrir `main.py` y pulsar **Comprobar preparación**.
-2. Abrir `tools.py` y repetir la comprobación si el portal lo permite.
-3. Corregir únicamente errores de importación o archivos ausentes; no cambiar cifras ni relajar validaciones.
-4. Pulsar **Crear versión del agente**. Nombrarla `urban-challenge-rc2` e identificar el SHA exacto indicado por Work 1.
-5. Ir a **Pruebas**, seleccionar esa versión y ejecutar, en orden, `docs/JURY_TEST_PLAN.md` y los casos A–H de `analisis/release_e2e_report.json`.
-6. Confirmar que cada respuesta muestra tool, argumentos, periodo, unidad, fuente y límite; revisar especialmente Aduna, Eibar y el caso fuera de alcance.
-7. Si todas pasan, conservar la versión como candidata. **No abrir Entrega ni publicar** hasta la autorización del equipo.
+Entrada síncrona: `build_agent(model)`; el portal aporta `studio` y `langchain`.
+Sin instalaciones adicionales ni Internet durante ejecución. Configuración:
+`STUDIO_MAX_ITERATIONS=8`, memoria activa e Internet desactivado.
+Conservar el `SYSTEM_PROMPT` de main.py, no sustituirlo por otro texto.
 
-Work 3 es el único operador del portal durante esta puerta. No editar el agente ni lanzar pruebas en paralelo. Si
-falla una prueba, registrar versión, SHA, pregunta, tool, argumentos, salida y tiempo; Work 1 aplicará únicamente
-el parche mínimo y entregará un SHA nuevo que invalida cualquier evidencia anterior.
+Tools: `consultar_fuente`, `obtener_resumen_territorial`, `comparar_municipios`,
+`analizar_envejecimiento`, `analizar_acceso_servicios`, `analizar_coincidencia`,
+`simular_escenario`. Ninguna firma pública admite `detalle`.
 
-## 5. Tools definitivas
+## Verificar antes de crear otra versión
 
-| Tool | Uso |
-|---|---|
-| `obtener_resumen_territorial` | Perfil demográfico e indicadores sanitarios de un municipio. |
-| `comparar_municipios` | Comparación de 2–20 municipios, con acceso opcional. |
-| `analizar_envejecimiento` | Ranking 65+/75+ por porcentaje o personas. |
-| `analizar_acceso_servicios` | Distancia geométrica por categoría y umbral. |
-| `analizar_coincidencia` | Cruce explícito de envejecimiento y distancia. |
-| `simular_escenario` | Alta/baja hipotética o cambio de umbral. |
-| `consultar_fuente` | Ficha oficial de procedencia y limitaciones. |
+1. En Pruebas, elegir la versión privada existente. Comprobar el número, no solo el nombre
+   del agente: este puede aparecer actualizado en conversaciones de versiones anteriores.
+2. Consultar docs/DEMO.md y docs/VALIDATION.md en el repositorio. La auditoría encontró
+   G-01…G-06 y red-team distribuidos entre versiones previas; no llamarlos todos pruebas de v4.
+3. Para cerrar la brecha, repetir en v4 G-01…G-06, siete herramientas y ataques críticos.
+   Guardar pregunta, argumentos, salida real, respuesta, versión, identidad del código y
+   latencias hasta tool, output y respuesta. No requiere otra versión si el runtime no cambia.
+4. Si hace falta crear una versión: un solo operador autorizado coteja archivos, pega
+   main.py/tools.py en el agente elegido, conserva las rutas y pulsa Comprobar preparación.
+   No tocar otro agente ni el fichero administrado ejecucion.py.
+5. Tras preparación correcta, Crear versión fija código y contexto. Registrar su identidad
+   y repetir toda la batería. Cambiar código/contexto invalida evidencia anterior; no corregir
+   cifras ni relajar validaciones para conseguir PASS.
+6. Conservar la versión privada. **No abrir Entrega ni publicar.**
 
-## 6. Criterio de aceptación en plataforma
-
-Una versión es válida solo si `build_agent(model)` termina, las siete tools aparecen, no hay archivo ausente y las ocho pruebas A–H son correctas. El caso H no debe invocar una tool irrelevante. Una respuesta que confunda cero registros con ausencia de atención, distancia con accesibilidad, registro con capacidad o coincidencia con causalidad invalida la versión.
+Registrar fallos del runner antes de reintentar. Cero registros no prueba ausencia de
+atención; distancia no es tiempo; registros no son citas; escenarios no son predicciones.

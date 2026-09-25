@@ -6,7 +6,7 @@ Municipio (88 unidades). Se eligió por disponer de demografía y geometría con
 
 ## Escalera de accesibilidad alcanzada
 
-1. **Disponibilidad municipal**: número de registros por cada categoría (`primary_care`, `hospital`, `mental_health`, `other_health`) y tasa por 10.000 residentes de 65+ o 75+.
+1. **Registros municipales**: número de registros por cada categoría (`primary_care`, `hospital`, `mental_health`, `other_health`) y tasa por 10.000 residentes de 65+ o 75+. No mide disponibilidad.
 2. **Proximidad geométrica aproximada**: distancia euclídea en metros desde un punto interior representativo del polígono municipal hasta el centro más cercano de cada categoría, calculada en EPSG:25830.
 
 No se calcula cobertura de población, distancia por red, tiempo de viaje, frecuencia de transporte ni disponibilidad real. El punto representativo no está ponderado por población; en municipios extensos puede quedar lejos del núcleo habitado. Por ello el campo debe describirse literalmente como **distancia geométrica aproximada desde el punto representativo municipal**.

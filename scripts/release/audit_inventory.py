@@ -40,7 +40,7 @@ def classification(path: str) -> tuple[str, str, str]:
     if path in {"FUENTES.md", "docs/METODOLOGIA.md"}:
         return "PUBLIC", "KEEP", "Contexto congelado: conservar bytes y trazabilidad."
     if path == "docs/PORTAL_DEPLOYMENT.md":
-        return "HISTORICAL", "REMOVE_FROM_PUBLIC_NAVIGATION", "Miembro congelado del ZIP; guía operativa nueva separada."
+        return "HISTORICAL", "UPDATE", "Archivar guía y corregir rutas; solo cambia un miembro documental del ZIP, no el contexto."
     if path.startswith("docs/") and (name.startswith("HANDOFF_") or name in HISTORY):
         return "HISTORICAL", "MOVE_TO_INTERNAL", "Conservar evidencia fechada, no presentarla como estado actual."
     if path in UPDATE:

@@ -239,7 +239,7 @@ def build_report() -> dict[str, Any]:
 
 def main() -> None:
     report = build_report()
-    OUTPUT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    OUTPUT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps({key: report[key] for key in ("cases_total", "cases_passed", "cases_failed", "status")}))
     if report["status"] != "PASS":
         raise SystemExit(1)
