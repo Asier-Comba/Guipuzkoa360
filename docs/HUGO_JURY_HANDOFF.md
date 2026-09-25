@@ -11,6 +11,7 @@
 3. `09478c8` — pitches, demo y 44 Q&A.
 4. `36d1842` — etiquetado explícito del prototipo y mejoras responsive.
 5. `8aad017` — revisión final de navegador y frontera del snapshot NEXT.
+6. Commit de cierre posterior — localización al castellano del aviso NEXT y handoff; sin cambios de cálculo.
 
 `RUNTIME_CHANGED:NO` — `portal/main.py` y `portal/tools.py` no difieren de la base.
 
