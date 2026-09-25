@@ -31,7 +31,7 @@ declara PASS en esta auditoría.
 | Coincidencias 7/4/2 | PASS | Recalculadas desde los datos reales; listas y cortes exactos en `analisis/jury_coincidence_results.json`. |
 | Dependencia del cuantil | PASS | q0,75 y q0,85 producen cortes y conjuntos distintos; no se usa un corte fijo del 25 %. |
 | Versión privada | PASS | El selector del portal muestra activa `urban-challenge-rc2-195b498 · v4`, con memoria activa y sin Internet. |
-| Preparación actual del portal | WARN | Tres intentos de esta auditoría terminaron con «El runner está ocupado», incluido el reintento final del 25-09. |
+| Preparación actual del portal | WARN | Dos intentos de esta auditoría terminaron con «El runner está ocupado», incluido el reintento final del 25-09. |
 | Live tests privados actuales | WARN | La pregunta principal eligió `analizar_coincidencia` dos veces, con argumentos correctos y sin `detalle`, pero el runner no produjo output. El resto no se ejecutó para evitar ruido concurrente. |
 | Evidencia histórica de v4 | PASS histórico | `docs/PORTAL_EVIDENCE_RC2.md` registra preparación, G-01…G-06, siete tools, red-team y escenario sobre el mismo runtime. No sustituye el smoke actual pendiente. |
 | Experiencia visual de Work 1 | WARN | `origin/final/hugo-jury-experience` no existía tras `fetch --prune`; no se revisó ni se modificó trabajo visual. |
