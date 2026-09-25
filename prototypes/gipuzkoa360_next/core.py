@@ -86,6 +86,8 @@ class CapabilityRegistry:
             self._entries[name] = Capability(name, "Requires independently verified data", "REQUIRES_DATA", (), None, ())
 
     def resolve(self, identifier):
+        if not isinstance(identifier, str):
+            return None
         return self._entries.get(ALIASES.get(identifier.casefold().strip(), identifier.casefold().strip()))
 
     def entries(self):
@@ -108,6 +110,8 @@ class Planner:
         self.registry = registry or CapabilityRegistry()
 
     def plan(self, intent, parameters=None, previous=None):
+        if not isinstance(intent, str) or (parameters is not None and not isinstance(parameters, dict)):
+            return Plan(str(intent) if isinstance(intent, (int, float)) else "invalid", None, {}, ambiguities=("invalid_contract_type",))
         params = copy.deepcopy(parameters or {})
         followup = intent.casefold().strip() in {"follow-up", "seguimiento"}
         if followup and previous is None:
@@ -118,7 +122,12 @@ class Planner:
             return Plan(intent, cap.id if cap else None, {}, out_of_scope=True)
         if followup:
             params = {**copy.deepcopy(previous.parameters), **params}
+        if any(not isinstance(k, str) for k in params):
+            return Plan(intent, cap.id, {}, ambiguities=("invalid_parameter_key",))
         unknown = tuple(sorted(set(params) - set(cap.parameters)))
+        for key in ("cuantil", "umbral_km", "nuevo_umbral_km", "latitud", "longitud", "top_n"):
+            if key in params and params[key] is not None and (type(params[key]) not in (int, float)):
+                unknown += ("invalid_type:"+key,)
         missing = tuple(k for k in REQUIRED[cap.id] if params.get(k) in (None, "", []))
         try:
             canonical(params)
@@ -160,6 +169,9 @@ class Executor:
             raise ValueError("Plan is not executable")
         if set(plan.parameters) - set(cap.parameters):
             raise ValueError("Unregistered parameter")
+        checked = Planner(self.registry).plan(cap.id, plan.parameters)
+        if checked.ambiguities or checked.missing_inputs:
+            raise ValueError("Invalid plan parameters")
         p = copy.deepcopy(plan.parameters)
         canonical(p)
         operations = {
@@ -179,7 +191,7 @@ class Executor:
 def render(output):
     """Only verbatim evidence and fixed caveats; no free-text numerical inference."""
     prefix = "ESCENARIO HIPOTÉTICO. " if "scenario" in output else "Evidencia territorial. "
-    return prefix + canonical({k: output.get(k) for k in ("data", "summary", "scenario", "unit", "period", "sources", "method", "limitations")})
+    return prefix + canonical({k: output.get(k) for k in ("data", "summary", "scenario", "unit", "period", "sources", "method", "rows_used", "warnings", "limitations")})
 
 @dataclass(frozen=True)
 class Review:

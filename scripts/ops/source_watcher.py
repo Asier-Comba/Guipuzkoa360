@@ -22,6 +22,11 @@ def detect(known, candidate):
     required = {"source_id", "official_url", "period", "sha256", "schema", "primary_key"}
     if not required <= known.keys() or not required <= candidate.keys():
         return result("REVIEW_REQUIRED", "Incomplete metadata; cannot infer no change.")
+    for item in (known, candidate):
+        if any(not isinstance(item[k], str) or not item[k].strip() for k in ('source_id','official_url','primary_key')):
+            return result("REVIEW_REQUIRED", "Invalid identity metadata.")
+        if isinstance(item['schema'], dict) and any(not isinstance(k, str) or not isinstance(v, str) or not v for k,v in item['schema'].items()):
+            return result("REVIEW_REQUIRED", "Schema must map field names to explicit type names.")
     if any(candidate[k] != known[k] for k in ("source_id", "official_url", "primary_key")):
         return result("REVIEW_REQUIRED", "Identity, provenance URL or primary key changed.")
     try:

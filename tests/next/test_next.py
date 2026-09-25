@@ -92,3 +92,21 @@ def test_sessions_do_not_share_followup_state():
     a, b = NextSession(), NextSession()
     a.ask(*CASES[0])
     assert b.ask('seguimiento', {'municipio':'Tolosa'})['blocked']
+
+@pytest.mark.parametrize('intent,params', [(None,{}), ('summary',[]), ('summary',{'municipio':'Aduna','top_n':True}),
+    ('coincidence',{'categoria_servicio':'primary_care','umbral_km':True}),
+    ('coincidence',{'categoria_servicio':'primary_care','cuantil':'nan'})])
+def test_planner_rejects_wrong_contract_types(intent,params):
+    session=NextSession()
+    assert session.ask(intent,params)['blocked']
+    assert session.executor.call_count==0
+
+def test_mixed_parameter_keys_fail_closed():
+    assert NextSession().ask('summary',{1:'bad','municipio':'Aduna'})['blocked']
+
+def test_composer_preserves_warning_and_row_evidence():
+    r=NextSession().ask('access',{'categoria_servicio':'primary_care'})
+    assert not r['blocked']
+    assert '"rows_used":' in r['response']
+    for warning in r['output']['warnings']:
+        assert warning in r['response']

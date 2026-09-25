@@ -101,6 +101,8 @@ def run():
     removal=strict_loads(executor.execute(planner.plan('scenario',{'accion':'remove_service','categoria_servicio':'primary_care','service_id':remove_id})).output_json)
     return {'scope':'OFFLINE PROTOTYPE: bounded structured intents; no LLM, no portal, no production promotion',
             'versions':executor.versions,'python':platform.python_version(),'git_head':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
+            'evaluated_code_sha256':{str(p.relative_to(ROOT)).replace('\\','/'):hashlib.sha256(p.read_bytes()).hexdigest()
+                                    for p in sorted((ROOT/'prototypes/gipuzkoa360_next').glob('*.py'))},
             'records':records,'goldens':goldens,'attacks':attacks,'kpis':metrics,'shadow':shadow,
             'shadow_limitations':['Single warm measurements, no statistical speed claim. Candidate recalculates twice; expected extra latency.',
                                   'Evidence equality uses the same core, not an independent numerical oracle. Golden constants are separate.',

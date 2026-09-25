@@ -40,6 +40,11 @@ def test_incomplete_metadata_not_no_change(metadata):
 def test_metadata_must_be_objects():
     with pytest.raises(ValueError): detect([], {})
 
+@pytest.mark.parametrize('field,value',[('schema',{'id':None}),('source_id',''),('primary_key',None)])
+def test_invalid_metadata_values_require_review(metadata,field,value):
+    metadata[field]=value
+    assert detect(metadata,copy.deepcopy(metadata))['status']=='REVIEW_REQUIRED'
+
 def test_empty_manifest_is_not_valid(tmp_path):
     shutil.copytree(ROOT/'datos_preparados', tmp_path/'datos_preparados')
     (tmp_path/'datos_preparados/runtime_manifest.json').write_text('{"files":[],"total_bytes":0}',encoding='utf-8')
