@@ -160,7 +160,7 @@ def test_original_download_snapshot_hashes_match():
     manifest = json.loads((ROOT / "datos_originales" / "download_manifest.json").read_text(encoding="utf-8"))
     assert len(manifest["files"]) == 4
     for item in manifest["files"]:
-        path = ROOT / item["path"]
+        path = ROOT / item["path"].replace("\\", "/")
         assert path.stat().st_size == item["bytes"]
         assert hashlib.sha256(path.read_bytes()).hexdigest() == item["sha256"]
 
