@@ -178,7 +178,7 @@ No prometemos ausencia absoluta de errores. Comprobamos la herramienta, sus argu
 
 ### 28 · REPRODUCIBILITY · ★ ¿Cómo sé que recalculó?
 
-En el portal mostramos una llamada nueva con grupo 75+, cuantil 0,80 y umbral de 3 kilómetros. Cambian los cortes y aparecen cuatro municipios frente a siete. En el HTML solo cambiamos entre salidas guardadas; no lo presentamos como una ejecución nueva.
+Si el portal completa el seguimiento, comprobamos una llamada nueva con grupo 75+, cuantil 0,80 y umbral de 3 kilómetros antes de presentarla como ejecución en directo. Los cálculos guardados muestran que cambian los cortes y aparecen cuatro municipios frente a siete. En el HTML cambiamos entre esas salidas guardadas; el botón no ejecuta una llamada nueva.
 
 **EVIDENCE POINTER:** P → G-04/G-06; E → `calls.main` frente a `calls.followup`; H → banner.
 

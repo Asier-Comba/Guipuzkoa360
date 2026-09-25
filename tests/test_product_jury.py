@@ -132,3 +132,12 @@ def test_prototype_evidence_is_frozen_and_explicitly_offline():
     assert prototype['quality_kpis']['out_of_scope_rejection_rate']['denominator']==6
     assert len(prototype['source_commit'])==40
     assert len(prototype['snapshot_commit'])==40
+
+def test_final_prototype_snapshot_matches_published_work1_contract():
+    prototype=E['next_prototype']
+    snapshot_keys={'scope','source_commit','source_evidence_path','versions','capabilities',
+                   'quality_kpis','prototype_test_summary','adversarial_summary','limitations',
+                   'self_improvement_policy'}
+    snapshot={key:prototype[key] for key in snapshot_keys}
+    canonical=json.dumps(snapshot,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()
+    assert hashlib.sha256(canonical).hexdigest()=='d9fb03065ec883685baabc2dd65714afec7eab93f182eb0b25ad2abd6b7f0267'
