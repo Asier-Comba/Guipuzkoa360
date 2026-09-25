@@ -1128,7 +1128,7 @@
     "datos_preparados/servicios.csv": "b81c62c637a69c27fdbc2b5e2e76050420517807c44a5cb5248dda23b80c52ea",
     "docs/FINAL_RELEASE_GATE.md": "86e2625dcd529bc095f4c0049ba42c3fc27e2b0748c31678609f09a66d659295",
     "docs/VALIDATION.md": "7fe6038674b17bf4cf22b1a3728a5f76a09ba4b2c6b6df46c0fd55af7a18b23a",
-    "resultados/evidencia/next_prototype.json": "211e5bc0d319db93fc45aa79ec9d1981bef6ea9cb568eedbec6fecb63530f8af"
+    "resultados/evidencia/next_prototype.json": "cd5a83d3338b96ad0671757c9590415f28d7e45ff91bb8ea12e95f0ace8837de"
   },
   "inventory": {
     "health_records": 148,
@@ -1144,86 +1144,114 @@
     ]
   },
   "next_prototype": {
-    "latest_observed_work1_commit": "448009bd97c13f28b85676489ada2a201c362322",
-    "reconciliation_status": "pending",
-    "report": {
-      "kpis": {
-        "composer_block_rate": {
-          "definition": "Corruptions blocked by composer / injections.",
-          "denominator": 16,
-          "numerator": 16,
-          "value": 1.0
-        },
-        "critic_detection_rate": {
-          "definition": "Injected corruptions/unapproved free-text drafts rejected / injections. This is template allowlisting, not general semantic detection.",
-          "denominator": 16,
-          "numerator": 16,
-          "value": 1.0
-        },
-        "determinism_rate": {
-          "definition": "Byte-equivalent canonical complete session results / repeated identical structured requests.",
-          "denominator": 8,
-          "numerator": 8,
-          "value": 1.0
-        },
-        "followup_recalculation_rate": {
-          "definition": "Follow-ups triggering execution and critic recalculation / follow-up cases.",
-          "denominator": 1,
-          "numerator": 1,
-          "value": 1.0
-        },
-        "limitation_present_rate": {
-          "definition": "Nonempty limitations / supported cases.",
-          "denominator": 9,
-          "numerator": 9,
-          "value": 1.0
-        },
-        "numeric_grounding_rate": {
-          "definition": "Whole result equals existing core / supported cases; shared algorithm, not independent validation.",
-          "denominator": 9,
-          "numerator": 9,
-          "value": 1.0
-        },
-        "out_of_scope_rejection_rate": {
-          "definition": "Unsupported explicit intents with no tool / unsupported cases.",
-          "denominator": 6,
-          "numerator": 6,
-          "value": 1.0
-        },
-        "parameter_accuracy": {
-          "definition": "Exact requested/merged parameters / supported cases.",
-          "denominator": 9,
-          "numerator": 9,
-          "value": 1.0
-        },
-        "source_grounding_rate": {
-          "definition": "Declared source identifiers resolve in catalog / supported cases; not completeness of every field provenance.",
-          "denominator": 9,
-          "numerator": 9,
-          "value": 1.0
-        },
-        "tool_selection_accuracy": {
-          "definition": "Correct deterministic routing / supported structured-intent cases; not natural-language accuracy.",
-          "denominator": 9,
-          "numerator": 9,
-          "value": 1.0
-        }
+    "adversarial_summary": {
+      "composer_blocks": 16,
+      "injections_detected": 16,
+      "injections_total": 16,
+      "scope": "fixed corruptions and unapproved drafts; template allowlisting, not general natural-language hallucination detection"
+    },
+    "capabilities": {
+      "ACTIVE": [
+        "summary",
+        "comparison",
+        "aging",
+        "access",
+        "coincidence",
+        "scenario",
+        "source"
+      ],
+      "REQUIRES_DATA": [
+        "mobility",
+        "capacity",
+        "demand",
+        "housing",
+        "environment"
+      ]
+    },
+    "limitations": [
+      "Planner consumes structured intents; natural-language routing accuracy is not measured.",
+      "Numeric grounding compares against the same deterministic core, not an independent numerical oracle.",
+      "Source grounding resolves declared source identifiers; it is not field-level provenance completeness.",
+      "Offline latency and deterministic rendering do not represent portal or LLM behavior.",
+      "Prototype is isolated from the runtime and cannot mutate production."
+    ],
+    "prototype_test_summary": {
+      "command": "python -m pytest tests/next -o addopts= -q",
+      "date": "2026-09-25",
+      "failed": 0,
+      "passed": 77
+    },
+    "quality_kpis": {
+      "composer_block_rate": {
+        "denominator": 16,
+        "numerator": 16,
+        "value": 1.0
       },
-      "scope": "OFFLINE PROTOTYPE: bounded structured intents; no LLM, no portal, no production promotion",
-      "versions": {
-        "BENCHMARK_VERSION": "next-evaluation-0.1",
-        "CAPABILITY_VERSION": "next-registry-0.1",
-        "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
-        "PROMPT_VERSION": "none-deterministic-template-0.1",
-        "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371"
+      "critic_detection_rate": {
+        "denominator": 16,
+        "numerator": 16,
+        "value": 1.0
+      },
+      "determinism_rate": {
+        "denominator": 8,
+        "numerator": 8,
+        "value": 1.0
+      },
+      "followup_recalculation_rate": {
+        "denominator": 1,
+        "numerator": 1,
+        "value": 1.0
+      },
+      "limitation_present_rate": {
+        "denominator": 9,
+        "numerator": 9,
+        "value": 1.0
+      },
+      "numeric_grounding_rate": {
+        "denominator": 9,
+        "numerator": 9,
+        "value": 1.0
+      },
+      "out_of_scope_rejection_rate": {
+        "denominator": 6,
+        "numerator": 6,
+        "value": 1.0
+      },
+      "parameter_accuracy": {
+        "denominator": 9,
+        "numerator": 9,
+        "value": 1.0
+      },
+      "source_grounding_rate": {
+        "denominator": 9,
+        "numerator": 9,
+        "value": 1.0
+      },
+      "tool_selection_accuracy": {
+        "denominator": 9,
+        "numerator": 9,
+        "value": 1.0
       }
     },
-    "scope": "Prototype evidence produced by technical owner; not executed in portal or imported into frozen runtime.",
-    "source_blob_sha256": "435a2a6338a08a95741ef901129b49490f7a9211460e256876fe64a16ab55c8b",
-    "source_commit": "171b6cb2a366f18509d3432d87f46fa21ea4aefa",
-    "source_path": "analisis/next/quality_kpis.json",
-    "status_note": "Prototype snapshot 171b6cb — superseded by later technical work; final reconciliation pending.",
-    "superseded_by_later_technical_work": true
+    "reconciliation_status": "complete",
+    "scope": "OFFLINE PROTOTYPE: structured intents; no LLM routing benchmark, portal execution, production promotion, self-editing or auto-deployment",
+    "self_improvement_policy": {
+      "human_approval_required": true,
+      "no_production_mutation": true,
+      "proposal_only": true
+    },
+    "snapshot_commit": "fddcf05217959ddc347f5d1a1ee9f35245ea9806",
+    "snapshot_path": "analisis/next/product_snapshot.json",
+    "source_commit": "eae3b7026a8608946d31c718fabc10111c3fa16e",
+    "source_evidence_path": "analisis/next/quality_kpis.json",
+    "technical_handoff_commit": "929186fcb2a04429ee5a68b6081948902668b917",
+    "versions": {
+      "BENCHMARK_VERSION": "next-evaluation-0.1",
+      "CAPABILITY_VERSION": "next-registry-0.1",
+      "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+      "PROMPT_VERSION": "none-deterministic-template-0.1",
+      "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371"
+    }
   },
   "runtime_sha": "195b4980fa5998b096c308296a55e452380b0371",
   "sources": [

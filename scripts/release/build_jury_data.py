@@ -95,7 +95,7 @@ def build_product_evidence():
     prototype_path = 'resultados/evidencia/next_prototype.json'
     prototype = json.loads((ROOT / prototype_path).read_text(encoding='utf-8')) if (ROOT / prototype_path).exists() else None
     if prototype:
-        if prototype['report']['versions']['RUNTIME_VERSION'] != report['runtime_sha']:
+        if prototype['versions']['RUNTIME_VERSION'] != report['runtime_sha']:
             raise ValueError('Prototype evidence belongs to a different runtime')
         inputs.append(prototype_path)
     return {'base_sha':'46c1a48f63c307654f45fcb5c18883f264b660ed','runtime_sha':report['runtime_sha'],

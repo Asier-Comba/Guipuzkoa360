@@ -123,11 +123,12 @@ def test_prototype_evidence_is_frozen_and_explicitly_offline():
     prototype=E['next_prototype']
     saved=json.loads((ROOT/'resultados/evidencia/next_prototype.json').read_text(encoding='utf-8'))
     assert prototype==saved
-    assert prototype['report']['versions']['RUNTIME_VERSION']==E['runtime_sha']
-    assert 'OFFLINE PROTOTYPE' in prototype['report']['scope']
-    assert 'no LLM, no portal, no production promotion' in prototype['report']['scope']
-    assert prototype['reconciliation_status']=='pending'
-    assert prototype['superseded_by_later_technical_work'] is True
-    assert 'superseded by later technical work' in prototype['status_note']
+    assert prototype['versions']['RUNTIME_VERSION']==E['runtime_sha']
+    assert 'OFFLINE PROTOTYPE' in prototype['scope']
+    assert 'no LLM routing benchmark' in prototype['scope']
+    assert prototype['reconciliation_status']=='complete'
+    assert prototype['prototype_test_summary']=={'command':'python -m pytest tests/next -o addopts= -q','passed':77,'failed':0,'date':'2026-09-25'}
+    assert prototype['quality_kpis']['tool_selection_accuracy']['denominator']==9
+    assert prototype['quality_kpis']['out_of_scope_rejection_rate']['denominator']==6
     assert len(prototype['source_commit'])==40
-    assert len(prototype['source_blob_sha256'])==64
+    assert len(prototype['snapshot_commit'])==40
