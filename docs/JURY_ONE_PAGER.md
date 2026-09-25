@@ -22,7 +22,7 @@
 
 **Límite principal.** Distancia desde un punto municipal no mide tiempo de viaje, capacidad, citas ni necesidad individual.
 
-**Riesgo conocido.** Escenario extremo: 20.155 caracteres y 66 filas afectadas; sin demostración en portal. Último smoke bloqueado por infraestructura; respaldo guardado siempre identificado.
+**Riesgos conocidos.** M-01: escenario extremo de 20.155 caracteres y 66 filas, sin demostración en portal; el caso Aduna es manejable y no se trunca evidencia. M-02: el último smoke quedó bloqueado y su texto de fallback confundió umbral con cuantil; no hubo output ni evidencia de fallo del core. Respaldo guardado siempre identificado.
 
 **Futuro propuesto.** Actualización supervisada y aprobación humana. Evolución temporal y acceso efectivo requieren nuevas series, movilidad, capacidad y demanda. No hay autoactualización ni autoedición activa.
 

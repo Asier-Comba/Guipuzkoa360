@@ -254,7 +254,7 @@ No se autoedita en producción. La evolución propuesta consiste en observar fal
 
 Existe un prototipo offline con planificación, cálculo, verificación y composición separadas. Son responsabilidades deterministas, no cuatro modelos de IA: recibe intenciones estructuradas y comparte el core. Las siete herramientas actuales no son siete agentes. El prototipo no está activo en el portal.
 
-**EVIDENCE POINTER:** E → `inventory.tools`, `next_prototype`; centro de validación → «PROTOTIPO DE EVOLUCIÓN». `171b6cb` es una instantánea histórica superada por trabajo técnico posterior; la reconciliación final sigue pendiente.
+**EVIDENCE POINTER:** E → `inventory.tools`, `next_prototype`; centro de validación → «PROTOTIPO DE EVOLUCIÓN». Snapshot final publicado en `fddcf05`, con evidencia de `eae3b70`: 77/77 tests del prototipo offline.
 
 ### 41 · EVOLUTION · ¿Qué pasa cuando la cobertura mejora?
 
@@ -276,6 +276,6 @@ Los checks son evaluaciones de sujeto por propiedad dentro de un benchmark defin
 
 ### 44 · LIMITATIONS · ¿Qué riesgo conocido sigue abierto?
 
-Un escenario extremo conserva 66 filas afectadas y genera 20.155 caracteres. Su ejecución en el portal no está demostrada; se mantiene un hallazgo Medium. Además, el último smoke se bloqueó por infraestructura. La demo distingue evidencia local, historia conversacional y ejecución nueva.
+Hay dos riesgos Medium gestionados. M-01: un escenario extremo conserva 66 filas afectadas y genera 20.155 caracteres; no afecta al escenario normal de Aduna y no se trunca para preservar trazabilidad. M-02: en el último smoke, bloqueado por runner ocupado y sin output analítico, el texto de fallback confundió 2 km con el corte de distancia por cuantil. No demuestra un fallo del core. La demo corrige esa lectura y distingue evidencia local, historia conversacional y ejecución nueva.
 
-**EVIDENCE POINTER:** `analisis/final/full_validation.json → issues`; `docs/FINAL_RELEASE_GATE.md`; centro de validación → riesgo conocido.
+**EVIDENCE POINTER:** `analisis/final/full_validation.json → issues`; `docs/internal/PORTAL_SMOKE_REFRESH.md` en el handoff final de Work 1; centro de validación → riesgo conocido.

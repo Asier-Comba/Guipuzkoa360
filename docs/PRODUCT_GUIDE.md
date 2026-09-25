@@ -77,9 +77,9 @@ No hay tiempos de viaje, citas, capacidad, demanda futura, precios de vivienda n
 
 El [centro secundario](../resultados/control_center.html) explica cada KPI con definición, numerador, denominador, origen y límite. «31.545/31.545 trazables» se limita al benchmark; no acredita todas las respuestas posibles. Los tests Python/Node mostrados son los de la base documentada; los tests nuevos de producto se reportan por separado en el handoff.
 
-La salida extrema de 20.155 caracteres sigue sin demostración en portal. El último smoke quedó bloqueado por infraestructura. Las latencias del motor local no representan la conversación completa.
+La salida extrema de 20.155 caracteres sigue sin demostración en portal; se conserva completa para no degradar trazabilidad y no afecta al escenario normal de Aduna. El último smoke quedó bloqueado por infraestructura. Sin output analítico, el texto de fallback confundió 2 km con el corte de distancia por cuantil; no es evidencia de un fallo del core. Las latencias del motor local no representan la conversación completa.
 
-«Cuando la pregunta cambia» separa **HOY** de **EVOLUCIÓN PROPUESTA** y **REQUIERE NUEVOS DATOS**. Actualización supervisada y mejora con aprobación humana son propuestas. No hay autoactualización ni autoedición activa. La instantánea histórica `171b6cb`, superada por trabajo técnico posterior y pendiente de reconciliación final, separa planificación, cálculo, verificación y composición deterministas. Recibe intenciones estructuradas: no interpreta lenguaje natural ni ejecuta cuatro modelos. Se muestra como prototipo offline, no activo en el portal. Las siete herramientas actuales no son siete agentes.
+«Cuando la pregunta cambia» separa **HOY** de **EVOLUCIÓN PROPUESTA** y **REQUIERE NUEVOS DATOS**. Actualización supervisada y mejora con aprobación humana son propuestas. No hay autoactualización ni autoedición activa. El snapshot final publicado en `fddcf05`, con evidencia de `eae3b70`, separa planificación, cálculo, verificación y composición deterministas y pasa 77/77 pruebas acotadas. Recibe intenciones estructuradas: no interpreta lenguaje natural ni ejecuta cuatro modelos. Se muestra como prototipo offline, no activo en el portal. Las siete herramientas actuales no son siete agentes.
 
 ## Teclado y pantalla pequeña
 

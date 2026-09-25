@@ -2,7 +2,7 @@
 
 `BASE_SHA`: `46c1a48f63c307654f45fcb5c18883f264b660ed`
 
-`HEAD_SHA`: `8aad017a1d3aa9302d0c7171519d8f61663ae6bb` — HEAD de producto probado. Este handoff se añade en un commit posterior solo documental; la respuesta final registra el HEAD remoto definitivo.
+`HEAD_SHA`: `fdf74771310935d5e906dd6f359c58faddce26d1` — HEAD de producto probado. Este handoff se añade en un commit posterior solo documental; la respuesta final registra el HEAD remoto definitivo.
 
 `COMMITS`:
 
@@ -12,6 +12,8 @@
 4. `36d1842` — etiquetado explícito del prototipo y mejoras responsive.
 5. `8aad017` — revisión final de navegador y frontera del snapshot NEXT.
 6. Commit de cierre posterior — localización al castellano del aviso NEXT y handoff; sin cambios de cálculo.
+7. `6319711` — frontera NEXT final localizada.
+8. `fdf7477` — reconciliación selectiva del snapshot final de Work 1 y su contrato de producto.
 
 `RUNTIME_CHANGED:NO` — `portal/main.py` y `portal/tools.py` no difieren de la base.
 
@@ -19,13 +21,15 @@
 
 `NODE_TESTS`: PASS · 17/17 · `node --test tests/e2e/contract_flow.test.mjs` ejecutado una vez.
 
+`PRODUCT_TESTS`: PASS · 31/31 · `python -m pytest tests/test_product_jury.py -q`; incluidos también en los 183 tests Python.
+
 `HERO_STATUS`: PASS · primera vista con destinatario, pregunta, 7/88, mapa, fuentes/fechas, límite principal, método y 7 operaciones. Sin rediseño en esta ronda.
 
 `CONTROL_CENTER_STATUS`: PASS · denominadores explícitos: 72.673 checks, 31.545 outputs auditados, 20 inyecciones, 1.000 llamadas sostenidas. Ninguna cifra se presenta como cobertura universal.
 
-`NEXT_SNAPSHOT_SOURCE`: `171b6cb2a366f18509d3432d87f46fa21ea4aefa:analisis/next/quality_kpis.json`, conservado como snapshot histórico. Último commit técnico observado de Work 1: `448009bd97c13f28b85676489ada2a201c362322`.
+`NEXT_SNAPSHOT_SOURCE`: snapshot final `fddcf05217959ddc347f5d1a1ee9f35245ea9806:analisis/next/product_snapshot.json`, con evidencia `eae3b7026a8608946d31c718fabc10111c3fa16e:analisis/next/quality_kpis.json` y handoff `929186fcb2a04429ee5a68b6081948902668b917`.
 
-`NEXT_RECONCILIATION`: `NEXT_RECONCILIATION_REQUIRED=YES`. En `final/work1-engineering-master` no existen todavía `analisis/next/product_snapshot.json`, `docs/internal/WORK1_TECHNICAL_HANDOFF.md` ni `PORTAL_SMOKE_REFRESH.md`. La UI dice que 171b fue superado por trabajo técnico posterior y que la reconciliación final está pendiente.
+`NEXT_RECONCILIATION`: `NEXT_RECONCILIATION_REQUIRED=NO`. Los campos del snapshot final de Work 1 coinciden exactamente; la copia local añade solo commit/ruta de procedencia y estado de reconciliación. El producto declara 77/77 tests acotados y mantiene el prototipo offline, aislado del portal.
 
 `THRESHOLD_QUANTILE_COPY`: PASS · el cuantil determina los cortes de envejecimiento y distancia que seleccionan destacados; el umbral en km controla `within_threshold` como referencia adicional y no decide esa selección.
 
@@ -53,10 +57,10 @@
 
 `HIGH_OPEN`: 0.
 
-`MEDIUM_OPEN`: 1 hallazgo del benchmark: salida extrema de 20.155 caracteres no demostrada en portal. La reconciliación NEXT se registra aparte como dependencia, sin asignarle severidad del benchmark.
+`MEDIUM_OPEN`: 2 gestionados. M-01 técnico: salida extrema de 20.155 caracteres no demostrada en portal; decisión A, documentar y conservarla íntegra. Aduna usa 3.447 caracteres y dos filas afectadas. M-02 conversacional: el fallback del smoke bloqueado confundió umbral y cuantil sin output analítico; no hay evidencia de fallo del core.
 
-`KNOWN_PORTAL_RISK`: último smoke bloqueado por infraestructura/runner ocupado. No existe `PORTAL_SMOKE_REFRESH.md` final. La posible confusión textual entre threshold 2 km y distance quantile cut no se atribuye al core sin tool output; las superficies de producto ya explican ambos conceptos correctamente.
+`KNOWN_PORTAL_RISK`: `PORTAL_SMOKE_REFRESH.md` confirma `INFRASTRUCTURE_BLOCKED`: hubo tool call, runner ocupado y ningún output analítico. El texto de fallback confundió threshold 2 km con distance quantile cut. No se atribuye al core; demo, Q&A, guía y control center explican ambos conceptos correctamente.
 
 `FILES_FOR_WORK1`: `resultados/evidencia/next_prototype.json`, `resultados/evidencia/product_evidence.json`, `resultados/control_center.html`, `docs/PRODUCT_GUIDE.md`, `docs/JURY_QA.md`, `docs/internal/HERO_BROWSER_REVIEW_V2.md` y este handoff.
 
-`PRODUCT_GO:YES` — demo y material de jurado listos. Mantener la etiqueta histórica de NEXT hasta recibir un handoff técnico final y regenerar la evidencia.
+`PRODUCT_GO:YES` — demo y material de jurado listos; NEXT reconciliado con el handoff técnico final. Una persona debe integrar Work 1 y Work 3 en el orden documentado, ejecutar CI Linux/Windows y aprobar merge/publicación por separado.

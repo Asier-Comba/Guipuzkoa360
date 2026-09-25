@@ -89,7 +89,7 @@ Historia: normalmente 26–47 s; un caso mostró output a 28,3 s y terminó ante
 
 Mientras espera: **fuente (15 s) → punto representativo (15 s) → cuantiles (15 s) → límite (15 s)**. No dejar más de 5–10 s de silencio ni inventar porcentaje de avance. A 00:45 abrir la traza guardada si no llegó tool/output; a 60 s sin output mantener el resto de demo en modo guardado.
 
-**Copy exacta para runner ocupado:** «Tenemos la versión probada congelada; el runner está ocupado en este momento. Esta vista muestra el cálculo guardado de la misma herramienta y está contrastada automáticamente con el core. No la presentamos como ejecución live».
+**Copy exacta para runner ocupado:** «Tenemos la versión probada congelada; el runner está ocupado en este momento. Esta vista muestra el cálculo guardado de la misma herramienta y está contrastada automáticamente con el core. No la presentamos como ejecución live. El umbral de 2 km solo marca `within_threshold`; los municipios destacados los determinan los dos cortes por cuantil».
 
 | Incidente | Recuperación |
 |---|---|
