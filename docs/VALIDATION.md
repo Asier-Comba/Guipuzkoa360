@@ -12,8 +12,9 @@ de las tres listas de coincidencia. Los 41 controles QA son de datos, no 41 conv
 
 El benchmark original conserva **72.673/72.673 checks**, **31.545/31.545 outputs numéricos trazables**,
 **20/20 inyecciones controladas** y **1.000 llamadas sin deriva**. El denominador y la cobertura están
-en [Benchmark](BENCHMARKS.md). La ejecución sobre el candidato final se almacena separadamente en
-`analisis/final/` para preservar la evidencia original.
+en [Benchmark](BENCHMARKS.md). La ejecución única sobre el candidato final `84e9516` repitió esos
+resultados: 72.673/72.673, cero fallos y 1 Medium. Se almacena separadamente en
+`analisis/final/`. A–H pasó 8/8, contrastes fijos 4/4 y QA de datos 41/41.
 
 La presentación se compara íntegramente con un recálculo: cada fila, porcentaje, distancia, fuente,
 geometría y escenario. El gate rechaza nueve alteraciones deliberadas: números falsos, corte fijo del
@@ -47,8 +48,8 @@ No constituyen garantía de latencia. El [guion](DEMO.md) incluye recuperación 
 
 ## Riesgo de salida extensa
 
-El escenario extremo 1→10 km devuelve **20.155 caracteres** porque conserva las 88 filas afectadas.
-El escenario de Aduna es menor y tiene evidencia privada histórica, pero eso no demuestra que el extremo
+El escenario extremo 1→10 km devuelve **20.155 caracteres** porque conserva **66 filas afectadas de 88 analizadas**.
+El escenario de Aduna devuelve **2 filas y 3.581 caracteres** y tiene evidencia privada histórica, pero eso no demuestra que el extremo
 funcione en el portal. Se acepta preservar la evidencia municipal y se mantiene **1 Medium abierto**
 por incertidumbre operativa de ese extremo. No se recorta el runtime para ocultarlo.
 

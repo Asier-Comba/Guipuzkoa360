@@ -33,6 +33,7 @@ con referencias de autoría. OIER_RESCUE_FOUND=YES; OIER_COMMITS_INTEGRATED=sele
 
 ## Alcance del Medium
 
-La conservación de 88 filas afectadas es una decisión de diseño aceptada. La incertidumbre del payload
+La conservación de 66 filas afectadas entre 88 analizadas es una decisión de diseño aceptada. La explicación
+histórica que decía 88 afectadas era incorrecta: `analisis/payload_decision.json` la refuta. La incertidumbre del payload
 extremo en el portal sigue siendo Medium, porque un escenario pequeño ejecutado no valida el extremo.
 No se reduce la severidad solo para obtener un marcador cero.

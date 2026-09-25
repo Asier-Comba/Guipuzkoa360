@@ -1354,7 +1354,8 @@ def benchmark_performance(recorder: Recorder) -> dict[str, Any]:
                     "tool": name,
                     "payload_chars": max(payload_sizes),
                     "reason": (
-                        "El cambio de umbral 1→10 km modifica la clasificación de los 88 municipios y la "
+                        f"El cambio de umbral 1→10 km modifica la clasificación de {parsed_sample['summary']['affected_rows']} "
+                        f"de {parsed_sample['summary']['total_result_rows']} municipios analizados y la "
                         "salida compacta conserva cada fila afectada."
                     ),
                     "reduction_tradeoff": (

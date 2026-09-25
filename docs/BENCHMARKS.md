@@ -1,5 +1,25 @@
 # GIPUZKOA 360 · Exhaustive validation and benchmark
 
+## Lectura actual · integración final
+
+La evidencia original de Asier se conserva debajo sin reescribir sus mediciones. La ejecución final
+única sobre `84e95167bfb9718ebb5f26b533f12cd885901e20` está en
+[informe final](../analisis/final/BENCHMARKS.md): **72.673/72.673**, 0 Critical, 0 High, 1 Medium;
+31.545/31.545 trazables, 20/20 inyecciones controladas, soak 1.000 sin deriva.
+Peor tool local warm p50/p95/p99: **7,720/12,373/13,534 ms**. No son latencias del portal.
+
+**Errata:** el extremo de 20.155 caracteres afecta **66 de 88 municipios**, no 88 afectados.
+Aduna devuelve 2 filas y 3.581 caracteres. El Medium sigue abierto: el extremo no pudo probarse
+en portal. La explicación original se conserva como historia, corregida por esta nota.
+
+**ZIP resuelto:** requirements.txt LF/CRLF reproduce exactamente el byte y ambos SHA históricos.
+El builder canónico produce 48.338 bytes, SHA-256
+`2808110d14e0bc30a53018cab1ec39b926e1e6ca1f1be19f0b2c9cf21106680a`, en 3 worktrees
+independientes y 10/10 builds. Misma versión Python/zlib; no se afirma portabilidad universal.
+Runtime/contexto permanecen idénticos. [Gate y evidencias](FINAL_RELEASE_GATE.md).
+
+## Evidencia histórica original
+
 Baseline: `488f46db7047d9393d4d4a489a869ab246c215b9` · Runtime: `195b4980fa5998b096c308296a55e452380b0371` · Branch: `final/asier-benchmark-suite`
 
 ## Scorecard

@@ -1,84 +1,76 @@
-# GIPUZKOA 360 · Final release gate
+# Gate de integración final
 
-Fecha de auditoría: 2026-09-25
+Fecha: 2026-09-25. **FINAL_RELEASE_GO=YES, con advertencias; NO publicación**.
 
-Rama de cierre: `final/work2-release-gate`
+BASE_SHA: `70c0e06e9858a64043088ed6510c68e857869f46`.
+Rama: `final/gipuzkoa360-integration`.
+Candidato ejecutado: `84e95167bfb9718ebb5f26b533f12cd885901e20`.
+Runtime congelado: `195b4980fa5998b096c308296a55e452380b0371`.
+Los commits posteriores registran evidencia/documentación y corrigen el texto del diagnóstico del
+benchmark; no alteran runtime ni cálculos. El benchmark exhaustivo se ejecutó una vez.
 
-Base documental: `488f46db7047d9393d4d4a489a869ab246c215b9`
+## Matriz de decisión
 
-Runtime congelado: `195b4980fa5998b096c308296a55e452380b0371`
-
-## Decisión
-
-**GO WITH WARNINGS para integrar el cierre técnico; NO publicar todavía.**
-
-El runtime y sus cifras pasan las puertas locales y la versión privada correcta continúa activa. La
-publicación sigue bloqueada hasta que (1) el runner permita repetir al menos preparación y un smoke
-privado sobre v4 y (2) Work 1 termine y contraste la experiencia visual. Ninguna de esas dos puertas se
-declara PASS en esta auditoría.
-
-## Puertas
-
-| Componente | Estado | Evidencia |
+| Componente | Estado | Evidencia y ataque realizado |
 |---|---|---|
-| Relación del benchmark con la base | PASS | `488f46d` es ancestro de `bf5c6cc` y `a1b0ecb`; ambos commits están en esta rama. |
-| Alcance de los dos commits de Asier | PASS | Solo añaden README, harness, informes JSON y `docs/BENCHMARKS.md`; diferencia de runtime frente a `488f46d`: cero. |
-| Runtime congelado | PASS | `main.py`, `tools.py`, datos y builder no difieren de la base. Siete tools públicas; ninguna firma expone `detalle`. |
-| Suite Python | PASS | 148/148, incluidos dos controles nuevos del gate de resultados del jurado. |
-| Integración JavaScript | PASS | 17/17. |
-| Benchmark exhaustivo | PASS | 72.673/72.673 checks; 0 Critical, 0 High; trazabilidad 31.545/31.545; 20/20 fallos controlados. |
-| Payload extremo | WARN | `simular_escenario` llega a 20.155 caracteres al cambiar 1→10 km; se conservan las 88 filas y no se trunca. |
-| Coincidencias 7/4/2 | PASS | Recalculadas desde los datos reales; listas y cortes exactos en `analisis/jury_coincidence_results.json`. |
-| Dependencia del cuantil | PASS | q0,75 y q0,85 producen cortes y conjuntos distintos; no se usa un corte fijo del 25 %. |
-| Versión privada | PASS | El selector del portal muestra activa `urban-challenge-rc2-195b498 · v4`, con memoria activa y sin Internet. |
-| Preparación actual del portal | WARN | Dos intentos de esta auditoría terminaron con «El runner está ocupado», incluido el reintento final del 25-09. |
-| Live tests privados actuales | WARN | La pregunta principal eligió `analizar_coincidencia` dos veces, con argumentos correctos y sin `detalle`, pero el runner no produjo output. El resto no se ejecutó para evitar ruido concurrente. |
-| Evidencia histórica de v4 | PASS histórico | `docs/PORTAL_EVIDENCE_RC2.md` registra preparación, G-01…G-06, siete tools, red-team y escenario sobre el mismo runtime. No sustituye el smoke actual pendiente. |
-| Experiencia visual de Work 1 | WARN | `origin/final/hugo-jury-experience` no existía tras `fetch --prune`; no se revisó ni se modificó trabajo visual. |
+| Runtime y contexto | PASS | 12 archivos byte a byte contra el runtime congelado; 7 tools, ninguna con parámetro público detalle. |
+| Manifiesto | PASS | 7 entradas contrastadas con bytes y SHA físicos; STUDIO_CONTEXT_FILES completo. |
+| Python | PASS | 152/152; incluye 18 de datos y 3 del módulo golden contractual. Cuatro tests nuevos: 3 de ZIP y 1 del gate adversarial. |
+| Node | PASS | 17/17 y comprobación sintáctica de jury_view.js. |
+| Contrastes y flujo | PASS | 4/4 contrastes fijos; A–H 8/8; QA de datos 41/41 en worktree limpio. No son conversaciones. |
+| Benchmark | PASS | 72.673/72.673; trazabilidad 31.545/31.545; 20/20 corrupciones controladas; soak 1.000 sin deriva/excepciones. |
+| Hero numérica | PASS | Todas las filas, geometrías, fuentes y escenario comparados con recálculo. Nueve mutaciones rechazadas; listas 7/4/2 exactas. |
+| Hero en navegador | PASS acotado | Clicks, retorno sin contaminación, teclado, 88 contornos y escenario inspeccionados en escritorio. No se afirma QA móvil exhaustiva. |
+| ZIP cross-worktree | PASS acotado | 3 checkouts limpios autocrlf false/true/input, mismo SHA. Misma versión Python/zlib. |
+| Payload extremo | WARN | 20.155 caracteres, 66 filas afectadas de 88 analizadas; sin truncar. Extremo no ejecutado en portal. 1 Medium abierto. |
+| Portal actual | WARN | INFRASTRUCTURE_BLOCKED: dos preparaciones con runner ocupado y un envío con Connection Error. Principal sin output; seguimiento no ejecutado. |
+| Historia de portal | Evidencia acotada | Consultas observadas en v2/v3 y escenario en v4, mismo core. No toda la batería ocurrió en v4. |
+| Docs y demo | PASS | Seis documentos canónicos; guiones 10 s/30 s/3 min/6 min; 24 respuestas de defensa; pack mínimo y autorías. |
+| Integración | READY | main es ancestro de la rama final; nueva PR sin merge. main y default sin modificar. |
 
-## Hashes y paquete
+Critical=0 y High=0 conocidos abiertos. El High visual del corte fijo del 25 % fue reproducido y
+corregido fuera del runtime. La política autorizada admite el smoke bloqueado con historia válida y
+delimitada; no se convierte ese bloqueo en un PASS conversacional.
 
-Hashes del runtime limpio auditado:
+## Identidad
 
-| Archivo | SHA-256 |
+| Artefacto | SHA-256 |
 |---|---|
-| `agentes/gipuzkoa360/portal/main.py` | `c2f4770f234522ac6ccb535d627c1252e19bc8f992e73194dab6e9f6672c585e` |
-| `agentes/gipuzkoa360/portal/tools.py` | `0a5ab214ecf89cef04c85b5055c8ac42047c151c0411b4aa6c470a8de397edd5` |
-| `datos_preparados/runtime_manifest.json` | `866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a` |
+| portal/main.py | `c2f4770f234522ac6ccb535d627c1252e19bc8f992e73194dab6e9f6672c585e` |
+| portal/tools.py | `0a5ab214ecf89cef04c85b5055c8ac42047c151c0411b4aa6c470a8de397edd5` |
+| runtime_manifest.json | `866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a` |
+| ZIP canónico, 48.338 bytes | `2808110d14e0bc30a53018cab1ec39b926e1e6ca1f1be19f0b2c9cf21106680a` |
 
-La evidencia original de Asier conserva 10/10 builds idénticas, 48.339 bytes y SHA-256
-`aea14519f838dda82f3ba317c556a2ffed5e2b2cd44c5cf085c216c8897a418b`. Una reconstrucción desde este
-checkout limpio produjo 48.338 bytes y SHA-256
-`e642ca6b2848eb01a9e79bd260ac6d18d501fc097e8b8fd0ddf6bbba8e7cd00f`. El runtime Git no cambia: la
-diferencia demuestra que el test 10/10 asegura repetibilidad dentro de una misma representación del
-worktree, no portabilidad del ZIP entre representaciones/EOL. Se mantiene como WARN y no se reescribe la
-evidencia de Asier. El paquete históricamente probado en v4 quedó registrado con 48.355 bytes y SHA-256
-`b5b35245aaa08015b2955281b0edb9cc3254fa7fae77966d63d9fa6651b48227`.
+La diferencia histórica de un byte procede exclusivamente de requirements.txt LF (66 bytes) frente a
+CRLF (67). Se reconstruyeron exactamente ambos SHA históricos, con metadatos y CRC por miembro.
+El builder fija plataforma Unix, permisos, orden y fecha; canoniza CRLF solo en el ZIP. No escribe
+runtime/contexto. El nuevo ZIP no se atribuye al portal histórico: son controles distintos.
 
-## Resultados canónicos para el jurado
+## Resultados municipales
 
-- 65+, q0,75, atención primaria, 2 km: Legazpi, Ezkio-Itsaso, Hondarribia, Hernialde,
-  Oñati, Idiazabal y Errenteria; cortes 23,973 % y 2.019,2 m; 88 filas.
-- 75+, q0,80, atención primaria, 3 km: Legazpi, Errenteria, Hondarribia e Idiazabal;
-  cortes 12,9796 % y 2.138,6 m; 88 filas.
-- 65+, q0,85, atención primaria, 2 km: Legazpi y Hondarribia; cortes 25,3557 % y
-  2.308,7 m; 88 filas.
+| Consulta | Municipios destacados, en orden | Cortes |
+|---|---|---|
+| 65+, q0,75, 2 km | Legazpi; Ezkio-Itsaso; Hondarribia; Hernialde; Oñati; Idiazabal; Errenteria | 23,973 %; 2.019,2 m |
+| 75+, q0,80, 3 km | Legazpi; Errenteria; Hondarribia; Idiazabal | 12,9796 %; 2.138,6 m |
+| 65+, q0,85, 2 km | Legazpi; Hondarribia | 25,3557 %; 2.308,7 m |
 
-El verificador reproducible es `scripts/benchmark/verify_jury_results.py`. También puede recibir un JSON
-exportado por la experiencia visual con `--candidate` y comparar orden, recuentos y cortes sin tocar sus
-archivos.
+Siempre 88 filas analizadas. El umbral no sustituye al cuantil. Aduna: 2.756,2→0,0 m, diferencia
+−2.756,2 m, escenario hipotético. El HTML muestra cálculos guardados, no conversación en vivo.
 
-## Qué impediría publicar
+## Evidencia
 
-Son bloqueos de publicación: cualquier diferencia de runtime respecto a `195b498`; una lista visual que
-no coincida con el verificador; una firma pública con `detalle`; una preparación fallida por código o
-archivos; un smoke privado que no complete la cadena usuario → coordinador → tool → output → respuesta;
-o una experiencia visual todavía no contrastada. El WARN de 20.155 caracteres no bloquea por sí solo:
-es evidencia municipal deliberadamente conservada.
+- [Benchmark final](../analisis/final/BENCHMARKS.md) y [nota de ejecución/errata](../analisis/final/README.md).
+- [ZIP raíz](../analisis/zip_root_cause.json), [tres worktrees](../analisis/cross_worktree_reproducibility.json).
+- [Gate adversarial](../analisis/final_artifact_audit.json), [payload](../analisis/payload_decision.json).
+- [Inspección visual](internal/HERO_BROWSER_REVIEW.md), [smoke actual](internal/PORTAL_SMOKE_FINAL.md).
+- [Rescate y commits](internal/FINAL_INTEGRATION_DECISIONS.md).
 
-## Estado de integración
+## Bloqueos y acciones humanas
 
-- Rama publicada: `final/work2-release-gate`.
-- Pull Request abierta y sin fusionar: `https://github.com/Asier-Comba/Guipuzkoa360/pull/8`.
-- Base de la PR: `main`; head: `final/work2-release-gate`.
-- No se modificó `main`, no se hizo merge y no se publicó la entrega.
+FAIL de identidad, corrupción numérica, fuente inventada, manifiesto incompleto o lista visual errónea
+revocarían este GO. No se conoce ninguno tras los ataques. El Medium sigue abierto: conservar evidencia
+es una decisión aceptada, no prueba de capacidad del portal.
+
+Publicar sigue fuera de autorización: aprobar el merge técnico, verificar main resultante, cambiar
+entonces la rama por defecto, revisar/seleccionar los seis materiales y versión privada, autorizar entrega.
+La PR #8 es cierre parcial histórico. La PR final usa esta rama. Nada se fusiona ni publica aquí.

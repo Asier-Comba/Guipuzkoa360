@@ -1,5 +1,11 @@
 # GIPUZKOA 360 · Evidencia final de portal RC2
 
+> Corrección de alcance, 25-09: se conserva el informe original, pero no toda esta batería fue v4.
+> La lista de conversaciones sitúa fuente/resumen/comparación/aliases en v2, coincidencia y red-team
+> en v3, y escenario en v4. El nombre del agente se actualiza en conversaciones antiguas; su etiqueta
+> no demuestra la versión ejecutada. El core se conserva y v4 recoge la aclaración del contador.
+> Smoke actual bloqueado, no PASS: [registro final](internal/PORTAL_SMOKE_FINAL.md).
+
 Fecha: 2026-09-24
 
 Rama: `fix/portal-runtime-rc2`

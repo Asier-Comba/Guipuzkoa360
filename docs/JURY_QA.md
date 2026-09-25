@@ -69,7 +69,7 @@ ninguna respuesta atribuye una ejecución local a una conversación del portal.
 22. **¿Los siete municipios se eligieron a mano?** No. El cuantil 0,75 se calcula sobre las 88 filas y se
     exigen ambos cortes. Elevarlo a 0,85 reduce el conjunto a Legazpi y Hondarribia. Las listas completas
     se verifican automáticamente; no hay una regla fija del 25 %.
-23. **¿Veinte mil caracteres no son demasiados?** El caso extremo de umbral 1→10 km cambia 88 municipios
+23. **¿Veinte mil caracteres no son demasiados?** El caso extremo de umbral 1→10 km cambia 66 de 88 municipios
     y conserva su evidencia. El escenario de Aduna es menor y tiene ejecución privada histórica. La
     latencia del extremo en portal no está demostrada: mantenemos ese riesgo visible sin truncar filas.
 24. **¿Lo habéis hecho sin IA?** No hacemos esa afirmación. El equipo utilizó asistencia de IA para

@@ -1,5 +1,9 @@
 # GIPUZKOA 360 · Jury live tests
 
+Actualización final del 25-09: los intentos más recientes están en
+[smoke final](internal/PORTAL_SMOKE_FINAL.md). Estado INFRASTRUCTURE_BLOCKED tras tres intentos;
+no se ejecutó el seguimiento. Las tablas anteriores de este documento son históricas.
+
 Versión objetivo: `urban-challenge-rc2-195b498 · v4`
 
 Runtime: `195b4980fa5998b096c308296a55e452380b0371`

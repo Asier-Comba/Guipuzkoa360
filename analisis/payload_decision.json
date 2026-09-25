@@ -1,0 +1,53 @@
+{
+  "runtime_changed": false,
+  "cases": [
+    {
+      "case": "extreme_threshold_1_to_10",
+      "arguments": {
+        "accion": "change_threshold",
+        "categoria_servicio": "primary_care",
+        "umbral_km": 1,
+        "periodo": "2025-01-01",
+        "nuevo_umbral_km": 10
+      },
+      "chars": 20155,
+      "data_rows": 66,
+      "summary": {
+        "affected_rows": 66,
+        "improved_distance_rows": 0,
+        "returned_rows": 66,
+        "selection": "Solo municipios con distancia o estado de umbral modificado.",
+        "threshold_status_changes": 66,
+        "total_result_rows": 88,
+        "worsened_distance_rows": 0
+      },
+      "strict_json": true
+    },
+    {
+      "case": "jury_aduna",
+      "arguments": {
+        "accion": "add_service",
+        "categoria_servicio": "primary_care",
+        "umbral_km": 2,
+        "periodo": "2025-01-01",
+        "latitud": 43.2134915,
+        "longitud": -2.0593393,
+        "service_id": "HYPOTHETICAL_ADUNA"
+      },
+      "chars": 3581,
+      "data_rows": 2,
+      "summary": {
+        "affected_rows": 2,
+        "improved_distance_rows": 2,
+        "returned_rows": 2,
+        "selection": "Solo municipios con distancia o estado de umbral modificado.",
+        "threshold_status_changes": 2,
+        "total_result_rows": 88,
+        "worsened_distance_rows": 0
+      },
+      "strict_json": true
+    }
+  ],
+  "decision": "Evidence preservation accepted as design tradeoff; Medium remains open until the extreme is exercised in the portal. A smaller successful scenario does not establish that.",
+  "portal_extreme_test": "NOT_EXECUTED_INFRASTRUCTURE_BLOCKED"
+}
