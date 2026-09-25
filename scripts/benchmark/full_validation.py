@@ -9,6 +9,7 @@ benchmark como si fueran casos funcionales distintos.
 from __future__ import annotations
 
 import csv
+import argparse
 import hashlib
 import itertools
 import json
@@ -1604,6 +1605,13 @@ def render_benchmarks(report: dict[str, Any], performance: dict[str, Any]) -> st
 
 
 def main() -> None:
+    global ANALYSIS_DIR, DOCS_DIR, BRANCH
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output-dir', type=Path, help='Keep original evidence intact; write all new reports here.')
+    args = parser.parse_args()
+    if args.output_dir:
+        ANALYSIS_DIR = DOCS_DIR = args.output_dir.resolve()
+    BRANCH = subprocess.check_output(['git', 'branch', '--show-current'], cwd=ROOT, text=True).strip()
     random.seed(SEED)
     os.environ["GIPUZKOA360_DATA_DIR"] = str(DATA_DIR)
     core.clear_analysis_cache()
@@ -1641,6 +1649,7 @@ def main() -> None:
     )
     report = {
         "generated_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+        "candidate_sha": subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
         "base_sha": BASE_SHA,
         "runtime_sha": RUNTIME_SHA,
         "branch": BRANCH,
