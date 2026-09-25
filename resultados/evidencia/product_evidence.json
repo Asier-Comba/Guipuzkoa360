@@ -1128,7 +1128,7 @@
     "datos_preparados/servicios.csv": "b81c62c637a69c27fdbc2b5e2e76050420517807c44a5cb5248dda23b80c52ea",
     "docs/FINAL_RELEASE_GATE.md": "86e2625dcd529bc095f4c0049ba42c3fc27e2b0748c31678609f09a66d659295",
     "docs/VALIDATION.md": "7fe6038674b17bf4cf22b1a3728a5f76a09ba4b2c6b6df46c0fd55af7a18b23a",
-    "resultados/evidencia/next_prototype.json": "df39246d7171b86b0db306285e8037fac0701b755f07c8be7d4118c752ba4630"
+    "resultados/evidencia/next_prototype.json": "211e5bc0d319db93fc45aa79ec9d1981bef6ea9cb568eedbec6fecb63530f8af"
   },
   "inventory": {
     "health_records": 148,
@@ -1144,6 +1144,8 @@
     ]
   },
   "next_prototype": {
+    "latest_observed_work1_commit": "448009bd97c13f28b85676489ada2a201c362322",
+    "reconciliation_status": "pending",
     "report": {
       "kpis": {
         "composer_block_rate": {
@@ -1219,7 +1221,9 @@
     "scope": "Prototype evidence produced by technical owner; not executed in portal or imported into frozen runtime.",
     "source_blob_sha256": "435a2a6338a08a95741ef901129b49490f7a9211460e256876fe64a16ab55c8b",
     "source_commit": "171b6cb2a366f18509d3432d87f46fa21ea4aefa",
-    "source_path": "analisis/next/quality_kpis.json"
+    "source_path": "analisis/next/quality_kpis.json",
+    "status_note": "Prototype snapshot 171b6cb — superseded by later technical work; final reconciliation pending.",
+    "superseded_by_later_technical_work": true
   },
   "runtime_sha": "195b4980fa5998b096c308296a55e452380b0371",
   "sources": [

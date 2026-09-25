@@ -126,5 +126,8 @@ def test_prototype_evidence_is_frozen_and_explicitly_offline():
     assert prototype['report']['versions']['RUNTIME_VERSION']==E['runtime_sha']
     assert 'OFFLINE PROTOTYPE' in prototype['report']['scope']
     assert 'no LLM, no portal, no production promotion' in prototype['report']['scope']
+    assert prototype['reconciliation_status']=='pending'
+    assert prototype['superseded_by_later_technical_work'] is True
+    assert 'superseded by later technical work' in prototype['status_note']
     assert len(prototype['source_commit'])==40
     assert len(prototype['source_blob_sha256'])==64

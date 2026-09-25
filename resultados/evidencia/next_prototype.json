@@ -72,6 +72,10 @@
     }
   },
   "scope": "Prototype evidence produced by technical owner; not executed in portal or imported into frozen runtime.",
+  "reconciliation_status": "pending",
+  "status_note": "Prototype snapshot 171b6cb — superseded by later technical work; final reconciliation pending.",
+  "superseded_by_later_technical_work": true,
+  "latest_observed_work1_commit": "448009bd97c13f28b85676489ada2a201c362322",
   "source_blob_sha256": "435a2a6338a08a95741ef901129b49490f7a9211460e256876fe64a16ab55c8b",
   "source_commit": "171b6cb2a366f18509d3432d87f46fa21ea4aefa",
   "source_path": "analisis/next/quality_kpis.json"

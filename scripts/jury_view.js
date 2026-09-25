@@ -49,4 +49,4 @@ if(document.body.dataset.mode==='scenario')setMethodFor(scenario);
 if(document.body.dataset.mode==='report')setMethodFor(product.calls.donostia.output);
 
 window.addEventListener('pageshow',search);
-if(product.next_prototype){el('prototype-section').hidden=false;const p=product.next_prototype,a=document.createElement('a');a.href='https://github.com/Asier-Comba/Guipuzkoa360/blob/'+p.source_commit+'/'+p.source_path;a.textContent='Evaluación offline publicada del prototipo';a.target='_blank';a.rel='noopener';el('prototype-source').append(a,document.createTextNode(' · revisión '+p.source_commit.slice(0,7)+'. Evidencia conservada; esta página no ejecuta el prototipo.'));}
+if(product.next_prototype){el('prototype-section').hidden=false;const p=product.next_prototype,a=document.createElement('a');a.href='https://github.com/Asier-Comba/Guipuzkoa360/blob/'+p.source_commit+'/'+p.source_path;a.textContent='Evaluación offline publicada del prototipo';a.target='_blank';a.rel='noopener';el('prototype-source').append(a,document.createTextNode(' · revisión '+p.source_commit.slice(0,7)+'. '+(p.status_note||'Evidencia conservada; esta página no ejecuta el prototipo.')));}

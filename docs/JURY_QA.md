@@ -254,7 +254,7 @@ No se autoedita en producción. La evolución propuesta consiste en observar fal
 
 Existe un prototipo offline con planificación, cálculo, verificación y composición separadas. Son responsabilidades deterministas, no cuatro modelos de IA: recibe intenciones estructuradas y comparte el core. Las siete herramientas actuales no son siete agentes. El prototipo no está activo en el portal.
 
-**EVIDENCE POINTER:** E → `inventory.tools`, `next_prototype`; centro de validación → «PROTOTIPO DE EVOLUCIÓN»; evidencia publicada en `171b6cb`.
+**EVIDENCE POINTER:** E → `inventory.tools`, `next_prototype`; centro de validación → «PROTOTIPO DE EVOLUCIÓN». `171b6cb` es una instantánea histórica superada por trabajo técnico posterior; la reconciliación final sigue pendiente.
 
 ### 41 · EVOLUTION · ¿Qué pasa cuando la cobertura mejora?
 
