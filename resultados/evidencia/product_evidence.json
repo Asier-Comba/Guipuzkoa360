@@ -1,0 +1,1441 @@
+{
+  "base_sha": "46c1a48f63c307654f45fcb5c18883f264b660ed",
+  "calls": {
+    "aduna": {
+      "arguments": {
+        "municipio": "Aduna",
+        "periodo": "2025-01-01"
+      },
+      "execution": "local_saved",
+      "output": {
+        "data": [
+          {
+            "metrics_reference_period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+            "municipality_code": "20002",
+            "municipality_name": "Aduna",
+            "pct_65_plus": 14.793,
+            "pct_75_plus": 7.101,
+            "population_65_plus": 75,
+            "population_75_plus": 36,
+            "population_total": 507,
+            "service_indicators": {
+              "hospital": {
+                "nearest_distance_m": 11485.3,
+                "rate_per_10000_65_plus": 0.0,
+                "rate_per_10000_75_plus": 0.0,
+                "registered_service_count": 0
+              },
+              "mental_health": {
+                "nearest_distance_m": 3137.2,
+                "rate_per_10000_65_plus": 0.0,
+                "rate_per_10000_75_plus": 0.0,
+                "registered_service_count": 0
+              },
+              "other_health": {
+                "nearest_distance_m": 6661.4,
+                "rate_per_10000_65_plus": 0.0,
+                "rate_per_10000_75_plus": 0.0,
+                "registered_service_count": 0
+              },
+              "primary_care": {
+                "nearest_distance_m": 2756.2,
+                "rate_per_10000_65_plus": 0.0,
+                "rate_per_10000_75_plus": 0.0,
+                "registered_service_count": 0
+              }
+            },
+            "services_in_municipality": {}
+          }
+        ],
+        "detail_level": "compact",
+        "filters": {
+          "municipality_code": "20002",
+          "period": "2025-01-01"
+        },
+        "limitations": [
+          "La presencia de un servicio no acredita capacidad, horario, calidad ni acceso real.",
+          "Los periodos de demografía y servicios pueden ser distintos; se muestran en las fuentes."
+        ],
+        "method": "Selección por código municipal; recuento de registros por categoría; tasas por 10.000 personas del grupo de edad y mínima distancia euclídea EPSG:25830 desde el punto representativo municipal.",
+        "metric": "territorial_summary",
+        "period": "2025-01-01",
+        "question": "Resumen territorial de Aduna",
+        "rows_used": 1,
+        "sources": [
+          {
+            "institution": "Eustat - Instituto Vasco de Estadística",
+            "limitations": [
+              "75+ se deriva de año de nacimiento <=1949 a 2025-01-01."
+            ],
+            "reference_period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+            "unit": "personas",
+            "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px"
+          }
+        ],
+        "status": "ok",
+        "summary": {
+          "total_result_rows": 1
+        },
+        "unit": "varias; ver cada campo",
+        "warnings": []
+      },
+      "output_sha256": "d7971bb162865efc52f22e4c870313b7cf3628bacea82d8e0354499205a310df",
+      "question": "Resume Aduna.",
+      "tool": "obtener_resumen_territorial"
+    },
+    "category_error": {
+      "arguments": {
+        "categoria_servicio": "farmacia",
+        "periodo": "2025-01-01",
+        "umbral_km": 2
+      },
+      "execution": "local_saved",
+      "output": {
+        "available_options": [
+          "hospital",
+          "mental_health",
+          "other_health",
+          "primary_care"
+        ],
+        "error_code": "service_category_not_found",
+        "message": "No hay una categoría de servicio inequívoca para 'farmacia'.",
+        "status": "error"
+      },
+      "output_sha256": "0298bfd85722d22cc894481f60d304c70f41ba9fd8f9bf31c9bf57e966e2e3d2",
+      "question": "Distancia a farmacias.",
+      "tool": "analizar_acceso_servicios"
+    },
+    "comparison": {
+      "arguments": {
+        "categoria_servicio": "primary_care",
+        "grupo_edad": "75",
+        "municipios": [
+          "Donostia / San Sebastián",
+          "Eibar",
+          "Tolosa"
+        ],
+        "periodo": "2025-01-01",
+        "umbral_km": 2
+      },
+      "execution": "local_saved",
+      "output": {
+        "data": [
+          {
+            "municipality_code": "20069",
+            "municipality_name": "Donostia / San Sebastián",
+            "nearest_distance_m": 323.1,
+            "nearest_service_id": "entityF8EC1A1C",
+            "pct_75_plus": 13.569,
+            "population_total": 183388,
+            "source_id": "EUSTAT_EMH_2025",
+            "within_threshold": true
+          },
+          {
+            "municipality_code": "20030",
+            "municipality_name": "Eibar",
+            "nearest_distance_m": 1223.6,
+            "nearest_service_id": "entity383A127E",
+            "pct_75_plus": 13.744,
+            "population_total": 27118,
+            "source_id": "EUSTAT_EMH_2025",
+            "within_threshold": true
+          },
+          {
+            "municipality_code": "20071",
+            "municipality_name": "Tolosa",
+            "nearest_distance_m": 1080.5,
+            "nearest_service_id": "entity02D72FD4",
+            "pct_75_plus": 12.131,
+            "population_total": 20048,
+            "source_id": "EUSTAT_EMH_2025",
+            "within_threshold": true
+          }
+        ],
+        "detail_level": "compact",
+        "filters": {
+          "age_group": "75",
+          "municipalities": [
+            "Donostia / San Sebastián",
+            "Eibar",
+            "Tolosa"
+          ],
+          "service_category": "primary_care",
+          "threshold_km": 2
+        },
+        "limitations": [
+          "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+          "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+          "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
+          "La comparación no demuestra causalidad."
+        ],
+        "method": "Selección por código municipal y comparación campo a campo; sin agregación opaca.",
+        "metric": "pct_75_plus + distance_geométrica_aproximada",
+        "period": "2025-01-01",
+        "question": "Comparación municipal",
+        "rows_used": 3,
+        "sources": [
+          {
+            "institution": "Eustat - Instituto Vasco de Estadística",
+            "limitations": [
+              "75+ se deriva de año de nacimiento <=1949 a 2025-01-01."
+            ],
+            "reference_period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+            "unit": "personas",
+            "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px"
+          },
+          {
+            "institution": "Gobierno Vasco - geoEuskadi",
+            "limitations": [
+              "El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007."
+            ],
+            "reference_period": "2025-05-07",
+            "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+            "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+            "unit": "polígono municipal",
+            "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/"
+          },
+          {
+            "institution": "Gobierno Vasco - Departamento de Salud",
+            "limitations": [
+              "La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad."
+            ],
+            "reference_period": "2026-09-20",
+            "source_id": "ODE_HEALTH_CENTRES_2026",
+            "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+            "unit": "registro de centro sanitario público",
+            "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+          }
+        ],
+        "status": "ok",
+        "summary": {
+          "total_result_rows": 3
+        },
+        "unit": "% y m",
+        "warnings": []
+      },
+      "output_sha256": "9a674cae631a3b38b15ff7154d7e61e2d42e625659f7e90703245763f92eb9c1",
+      "question": "Compara Donostia / San Sebastián, Eibar y Tolosa para 75+ y atención primaria.",
+      "tool": "comparar_municipios"
+    },
+    "donostia": {
+      "arguments": {
+        "municipio": "Donostia / San Sebastián",
+        "periodo": "2025-01-01"
+      },
+      "execution": "local_saved",
+      "output": {
+        "data": [
+          {
+            "metrics_reference_period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+            "municipality_code": "20069",
+            "municipality_name": "Donostia / San Sebastián",
+            "pct_65_plus": 26.628,
+            "pct_75_plus": 13.569,
+            "population_65_plus": 48832,
+            "population_75_plus": 24884,
+            "population_total": 183388,
+            "service_indicators": {
+              "hospital": {
+                "nearest_distance_m": 2640.0,
+                "rate_per_10000_65_plus": 0.205,
+                "rate_per_10000_75_plus": 0.402,
+                "registered_service_count": 1
+              },
+              "mental_health": {
+                "nearest_distance_m": 1116.4,
+                "rate_per_10000_65_plus": 1.024,
+                "rate_per_10000_75_plus": 2.009,
+                "registered_service_count": 5
+              },
+              "other_health": {
+                "nearest_distance_m": 323.1,
+                "rate_per_10000_65_plus": 0.614,
+                "rate_per_10000_75_plus": 1.206,
+                "registered_service_count": 3
+              },
+              "primary_care": {
+                "nearest_distance_m": 323.1,
+                "rate_per_10000_65_plus": 3.686,
+                "rate_per_10000_75_plus": 7.234,
+                "registered_service_count": 18
+              }
+            },
+            "services_in_municipality": {
+              "hospital": 1,
+              "mental_health": 5,
+              "other_health": 3,
+              "primary_care": 18
+            }
+          }
+        ],
+        "detail_level": "compact",
+        "filters": {
+          "municipality_code": "20069",
+          "period": "2025-01-01"
+        },
+        "limitations": [
+          "La presencia de un servicio no acredita capacidad, horario, calidad ni acceso real.",
+          "Los periodos de demografía y servicios pueden ser distintos; se muestran en las fuentes."
+        ],
+        "method": "Selección por código municipal; recuento de registros por categoría; tasas por 10.000 personas del grupo de edad y mínima distancia euclídea EPSG:25830 desde el punto representativo municipal.",
+        "metric": "territorial_summary",
+        "period": "2025-01-01",
+        "question": "Resumen territorial de Donostia / San Sebastián",
+        "rows_used": 28,
+        "sources": [
+          {
+            "institution": "Eustat - Instituto Vasco de Estadística",
+            "limitations": [
+              "75+ se deriva de año de nacimiento <=1949 a 2025-01-01."
+            ],
+            "reference_period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+            "unit": "personas",
+            "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px"
+          },
+          {
+            "institution": "Gobierno Vasco - Departamento de Salud",
+            "limitations": [
+              "La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad."
+            ],
+            "reference_period": "2026-09-20",
+            "source_id": "ODE_HEALTH_CENTRES_2026",
+            "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+            "unit": "registro de centro sanitario público",
+            "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+          }
+        ],
+        "status": "ok",
+        "summary": {
+          "total_result_rows": 1
+        },
+        "unit": "varias; ver cada campo",
+        "warnings": []
+      },
+      "output_sha256": "e6569bbe2d93970a74330abf9b7d541b175dad52be2aa5fee09d8fb0a354f495",
+      "question": "Resume Donostia / San Sebastián.",
+      "tool": "obtener_resumen_territorial"
+    },
+    "eibar": {
+      "arguments": {
+        "municipio": "Eibar",
+        "periodo": "2025-01-01"
+      },
+      "execution": "local_saved",
+      "output": {
+        "data": [
+          {
+            "metrics_reference_period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+            "municipality_code": "20030",
+            "municipality_name": "Eibar",
+            "pct_65_plus": 26.186,
+            "pct_75_plus": 13.744,
+            "population_65_plus": 7101,
+            "population_75_plus": 3727,
+            "population_total": 27118,
+            "service_indicators": {
+              "hospital": {
+                "nearest_distance_m": 2162.0,
+                "rate_per_10000_65_plus": 1.408,
+                "rate_per_10000_75_plus": 2.683,
+                "registered_service_count": 1
+              },
+              "mental_health": {
+                "nearest_distance_m": 1859.7,
+                "rate_per_10000_65_plus": 1.408,
+                "rate_per_10000_75_plus": 2.683,
+                "registered_service_count": 1
+              },
+              "other_health": {
+                "nearest_distance_m": 37077.9,
+                "rate_per_10000_65_plus": 0.0,
+                "rate_per_10000_75_plus": 0.0,
+                "registered_service_count": 0
+              },
+              "primary_care": {
+                "nearest_distance_m": 1223.6,
+                "rate_per_10000_65_plus": 5.633,
+                "rate_per_10000_75_plus": 10.732,
+                "registered_service_count": 4
+              }
+            },
+            "services_in_municipality": {
+              "hospital": 1,
+              "mental_health": 1,
+              "primary_care": 4
+            }
+          }
+        ],
+        "detail_level": "compact",
+        "filters": {
+          "municipality_code": "20030",
+          "period": "2025-01-01"
+        },
+        "limitations": [
+          "La presencia de un servicio no acredita capacidad, horario, calidad ni acceso real.",
+          "Los periodos de demografía y servicios pueden ser distintos; se muestran en las fuentes."
+        ],
+        "method": "Selección por código municipal; recuento de registros por categoría; tasas por 10.000 personas del grupo de edad y mínima distancia euclídea EPSG:25830 desde el punto representativo municipal.",
+        "metric": "territorial_summary",
+        "period": "2025-01-01",
+        "question": "Resumen territorial de Eibar",
+        "rows_used": 7,
+        "sources": [
+          {
+            "institution": "Eustat - Instituto Vasco de Estadística",
+            "limitations": [
+              "75+ se deriva de año de nacimiento <=1949 a 2025-01-01."
+            ],
+            "reference_period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+            "unit": "personas",
+            "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px"
+          },
+          {
+            "institution": "Gobierno Vasco - Departamento de Salud",
+            "limitations": [
+              "La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad."
+            ],
+            "reference_period": "2026-09-20",
+            "source_id": "ODE_HEALTH_CENTRES_2026",
+            "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+            "unit": "registro de centro sanitario público",
+            "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+          }
+        ],
+        "status": "ok",
+        "summary": {
+          "total_result_rows": 1
+        },
+        "unit": "varias; ver cada campo",
+        "warnings": []
+      },
+      "output_sha256": "798dd4858903c2eca4406b903131187d3f0379579f7662d140c8bd7ffa10b239",
+      "question": "Resume Eibar.",
+      "tool": "obtener_resumen_territorial"
+    },
+    "followup": {
+      "arguments": {
+        "categoria_servicio": "primary_care",
+        "cuantil": 0.8,
+        "grupo_edad": "75",
+        "periodo": "2025-01-01",
+        "umbral_km": 3
+      },
+      "execution": "local_saved",
+      "output": {
+        "data": [
+          {
+            "age_percentile_rank": 0.9655,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.8966,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20051",
+            "municipality_name": "Legazpi",
+            "nearest_distance_m": 2624.8,
+            "nearest_service_id": "entity94B2E778",
+            "pct_75_plus": 14.206,
+            "within_threshold": true
+          },
+          {
+            "age_percentile_rank": 0.8851,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.977,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20067",
+            "municipality_name": "Errenteria",
+            "nearest_distance_m": 3925.5,
+            "nearest_service_id": "entity84DCE82C",
+            "pct_75_plus": 13.505,
+            "within_threshold": false
+          },
+          {
+            "age_percentile_rank": 0.8621,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.8851,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20036",
+            "municipality_name": "Hondarribia",
+            "nearest_distance_m": 2583.5,
+            "nearest_service_id": "entity8EA5D441",
+            "pct_75_plus": 13.29,
+            "within_threshold": true
+          },
+          {
+            "age_percentile_rank": 0.8161,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.8506,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20043",
+            "municipality_name": "Idiazabal",
+            "nearest_distance_m": 2311.2,
+            "nearest_service_id": "entityBFD365AA",
+            "pct_75_plus": 13.12,
+            "within_threshold": true
+          }
+        ],
+        "detail_level": "compact",
+        "filters": {
+          "age_group": "75",
+          "period": "2025-01-01",
+          "quantile_threshold": 0.8,
+          "service_category": "primary_care",
+          "threshold_km": 3
+        },
+        "limitations": [
+          "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+          "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+          "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
+          "La coincidencia estadística no demuestra causalidad ni identifica necesidades individuales.",
+          "Los resultados dependen del cuantil, grupo de edad, categoría y periodo elegidos."
+        ],
+        "method": "Cruce por código municipal. Se destacan valores >= cuantil 0.80 en ambas métricas (cortes: 12.9796% y 2138.6 m). Se muestran ambos componentes y no se usa una puntuación compuesta.",
+        "metric": "pct_75_plus + distance_geométrica_aproximada",
+        "period": "2025-01-01",
+        "question": "Coincidencia de envejecimiento >= 75 y peor acceso a primary_care",
+        "rows_used": 88,
+        "sources": [
+          {
+            "institution": "Eustat - Instituto Vasco de Estadística",
+            "limitations": [
+              "75+ se deriva de año de nacimiento <=1949 a 2025-01-01."
+            ],
+            "reference_period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+            "unit": "personas",
+            "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px"
+          },
+          {
+            "institution": "Gobierno Vasco - geoEuskadi",
+            "limitations": [
+              "El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007."
+            ],
+            "reference_period": "2025-05-07",
+            "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+            "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+            "unit": "polígono municipal",
+            "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/"
+          },
+          {
+            "institution": "Gobierno Vasco - Departamento de Salud",
+            "limitations": [
+              "La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad."
+            ],
+            "reference_period": "2026-09-20",
+            "source_id": "ODE_HEALTH_CENTRES_2026",
+            "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+            "unit": "registro de centro sanitario público",
+            "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+          }
+        ],
+        "status": "ok",
+        "summary": {
+          "age_cut_percent": 12.9796,
+          "distance_cut_m": 2138.6,
+          "highlighted_count": 4,
+          "joined_rows": 88,
+          "returned_rows": 4,
+          "selection": "Todos los destacados; si no hay ninguno, los 5 primeros por criterio.",
+          "total_result_rows": 88
+        },
+        "unit": "% y m",
+        "warnings": []
+      },
+      "output_sha256": "7f95cf196c87cbf11ab7ac93db0e8c272e53e480435f696f195e83c326a1a00c",
+      "question": "Coincidencia de 75+, atención primaria, cuantil 0.8, umbral 3 km y 2025-01-01.",
+      "tool": "analizar_coincidencia"
+    },
+    "main": {
+      "arguments": {
+        "categoria_servicio": "primary_care",
+        "cuantil": 0.75,
+        "grupo_edad": "65",
+        "periodo": "2025-01-01",
+        "umbral_km": 2
+      },
+      "execution": "local_saved",
+      "output": {
+        "data": [
+          {
+            "age_percentile_rank": 0.9655,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.8966,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20051",
+            "municipality_name": "Legazpi",
+            "nearest_distance_m": 2624.8,
+            "nearest_service_id": "entity94B2E778",
+            "pct_65_plus": 27.17,
+            "within_threshold": false
+          },
+          {
+            "age_percentile_rank": 0.9195,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.7816,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20035",
+            "municipality_name": "Ezkio-Itsaso",
+            "nearest_distance_m": 2110.1,
+            "nearest_service_id": "entity837A9D6A",
+            "pct_65_plus": 25.949,
+            "within_threshold": false
+          },
+          {
+            "age_percentile_rank": 0.8966,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.8851,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20036",
+            "municipality_name": "Hondarribia",
+            "nearest_distance_m": 2583.5,
+            "nearest_service_id": "entity8EA5D441",
+            "pct_65_plus": 25.808,
+            "within_threshold": false
+          },
+          {
+            "age_percentile_rank": 0.8621,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.8276,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20041",
+            "municipality_name": "Hernialde",
+            "nearest_distance_m": 2192.5,
+            "nearest_service_id": "entityC40323E8",
+            "pct_65_plus": 25.387,
+            "within_threshold": false
+          },
+          {
+            "age_percentile_rank": 0.8276,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.8046,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20059",
+            "municipality_name": "Oñati",
+            "nearest_distance_m": 2149.6,
+            "nearest_service_id": "entity10969F0F",
+            "pct_65_plus": 24.806,
+            "within_threshold": false
+          },
+          {
+            "age_percentile_rank": 0.7931,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.8506,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20043",
+            "municipality_name": "Idiazabal",
+            "nearest_distance_m": 2311.2,
+            "nearest_service_id": "entityBFD365AA",
+            "pct_65_plus": 24.528,
+            "within_threshold": false
+          },
+          {
+            "age_percentile_rank": 0.7816,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.977,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20067",
+            "municipality_name": "Errenteria",
+            "nearest_distance_m": 3925.5,
+            "nearest_service_id": "entity84DCE82C",
+            "pct_65_plus": 24.302,
+            "within_threshold": false
+          }
+        ],
+        "detail_level": "compact",
+        "filters": {
+          "age_group": "65",
+          "period": "2025-01-01",
+          "quantile_threshold": 0.75,
+          "service_category": "primary_care",
+          "threshold_km": 2
+        },
+        "limitations": [
+          "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+          "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+          "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
+          "La coincidencia estadística no demuestra causalidad ni identifica necesidades individuales.",
+          "Los resultados dependen del cuantil, grupo de edad, categoría y periodo elegidos."
+        ],
+        "method": "Cruce por código municipal. Se destacan valores >= cuantil 0.75 en ambas métricas (cortes: 23.9730% y 2019.2 m). Se muestran ambos componentes y no se usa una puntuación compuesta.",
+        "metric": "pct_65_plus + distance_geométrica_aproximada",
+        "period": "2025-01-01",
+        "question": "Coincidencia de envejecimiento >= 65 y peor acceso a primary_care",
+        "rows_used": 88,
+        "sources": [
+          {
+            "institution": "Eustat - Instituto Vasco de Estadística",
+            "limitations": [
+              "75+ se deriva de año de nacimiento <=1949 a 2025-01-01."
+            ],
+            "reference_period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+            "unit": "personas",
+            "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px"
+          },
+          {
+            "institution": "Gobierno Vasco - geoEuskadi",
+            "limitations": [
+              "El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007."
+            ],
+            "reference_period": "2025-05-07",
+            "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+            "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+            "unit": "polígono municipal",
+            "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/"
+          },
+          {
+            "institution": "Gobierno Vasco - Departamento de Salud",
+            "limitations": [
+              "La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad."
+            ],
+            "reference_period": "2026-09-20",
+            "source_id": "ODE_HEALTH_CENTRES_2026",
+            "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+            "unit": "registro de centro sanitario público",
+            "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+          }
+        ],
+        "status": "ok",
+        "summary": {
+          "age_cut_percent": 23.973,
+          "distance_cut_m": 2019.2,
+          "highlighted_count": 7,
+          "joined_rows": 88,
+          "returned_rows": 7,
+          "selection": "Todos los destacados; si no hay ninguno, los 5 primeros por criterio.",
+          "total_result_rows": 88
+        },
+        "unit": "% y m",
+        "warnings": []
+      },
+      "output_sha256": "a37f627b9de631291e4ec7d9c4f45b93b6b8131edda77841fe05d74095982e3d",
+      "question": "Coincidencia de 65+, atención primaria, cuantil 0.75, umbral 2 km y 2025-01-01.",
+      "tool": "analizar_coincidencia"
+    },
+    "missing": {
+      "arguments": {
+        "municipio": "Villa GPT",
+        "periodo": "2025-01-01"
+      },
+      "execution": "local_saved",
+      "output": {
+        "available_options": [
+          "Abaltzisketa",
+          "Aduna",
+          "Aia",
+          "Aizarnazabal",
+          "Albiztur",
+          "Alegia",
+          "Alkiza",
+          "Altzaga",
+          "Altzo",
+          "Amezketa",
+          "Andoain",
+          "Anoeta",
+          "Antzuola",
+          "Arama",
+          "Aretxabaleta",
+          "Arrasate/Mondragón",
+          "Asteasu",
+          "Astigarraga",
+          "Ataun",
+          "Azkoitia"
+        ],
+        "error_code": "municipality_not_found",
+        "message": "No se pudo resolver el municipio 'Villa GPT' de forma inequívoca.",
+        "status": "error"
+      },
+      "output_sha256": "6e9e0f8e20bf10f59053e98d485e8370851524e3da01563b7e206e07610efa27",
+      "question": "Resume Villa GPT.",
+      "tool": "obtener_resumen_territorial"
+    },
+    "period_error": {
+      "arguments": {
+        "municipio": "Aduna",
+        "periodo": "2030-01-01"
+      },
+      "execution": "local_saved",
+      "output": {
+        "available_options": [
+          "2025-01-01"
+        ],
+        "error_code": "period_not_found",
+        "message": "No existe el periodo 2030-01-01.",
+        "status": "error"
+      },
+      "output_sha256": "597450e8396490021a2ba158386d3da79c80811d41fd65acb7f18f06f9fa2f51",
+      "question": "Resume Aduna para 2030.",
+      "tool": "obtener_resumen_territorial"
+    },
+    "scenario": {
+      "arguments": {
+        "accion": "add_service",
+        "categoria_servicio": "primary_care",
+        "latitud": 43.2134915,
+        "longitud": -2.0593393,
+        "periodo": "2025-01-01",
+        "umbral_km": 2
+      },
+      "execution": "local_saved",
+      "output": {
+        "data": [
+          {
+            "baseline_distance_m": 2469.6,
+            "baseline_within_threshold": false,
+            "difference_absolute_m": -492.7,
+            "difference_relative_pct": -19.9506,
+            "municipality_code": "20028",
+            "municipality_name": "Zizurkil",
+            "scenario_distance_m": 1976.9,
+            "scenario_within_threshold": true
+          },
+          {
+            "baseline_distance_m": 2756.2,
+            "baseline_within_threshold": false,
+            "difference_absolute_m": -2756.2,
+            "difference_relative_pct": -100.0,
+            "municipality_code": "20002",
+            "municipality_name": "Aduna",
+            "scenario_distance_m": 0.0,
+            "scenario_within_threshold": true
+          }
+        ],
+        "detail_level": "compact",
+        "filters": {
+          "period": "2025-01-01",
+          "service_category": "primary_care"
+        },
+        "limitations": [
+          "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+          "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+          "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
+          "Es un contrafactual analítico, no una predicción de uso, conducta, coste o impacto social.",
+          "No constituye una recomendación de ubicación ni una decisión administrativa."
+        ],
+        "method": "Recalculo determinista del mismo indicador antes y después del cambio hipotético.",
+        "metric": "distance_geométrica_aproximada_desde_punto_representativo_municipal",
+        "period": "2026-09-20; escenario; 2025-05-07",
+        "question": "Escenario add_service para primary_care",
+        "rows_used": 209,
+        "scenario": {
+          "affected_metric": "distance_geométrica_aproximada_desde_punto_representativo_municipal / within_threshold",
+          "assumptions": [
+            "El resto de datos permanece constante.",
+            "Las coordenadas representan puntos válidos."
+          ],
+          "baseline": {
+            "service_count": 148,
+            "threshold_km": 2.0
+          },
+          "changed_parameters": {
+            "action": "add_service",
+            "latitude": 43.2134915,
+            "longitude": -2.0593393,
+            "service_id": "HYPOTHETICAL_SERVICE"
+          },
+          "limitations": [
+            "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+            "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+            "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
+            "Es un contrafactual analítico, no una predicción de uso, conducta, coste o impacto social.",
+            "No constituye una recomendación de ubicación ni una decisión administrativa."
+          ],
+          "scenario": {
+            "service_count": 149,
+            "threshold_km": 2.0
+          }
+        },
+        "sources": [
+          {
+            "institution": "Gobierno Vasco - geoEuskadi",
+            "limitations": [
+              "El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007."
+            ],
+            "reference_period": "2025-05-07",
+            "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+            "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+            "unit": "polígono municipal",
+            "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/"
+          },
+          {
+            "institution": "Gobierno Vasco - Departamento de Salud",
+            "limitations": [
+              "La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad."
+            ],
+            "reference_period": "2026-09-20",
+            "source_id": "ODE_HEALTH_CENTRES_2026",
+            "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+            "unit": "registro de centro sanitario público",
+            "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+          }
+        ],
+        "status": "ok",
+        "summary": {
+          "affected_rows": 2,
+          "improved_distance_rows": 2,
+          "returned_rows": 2,
+          "selection": "Solo municipios con distancia o estado de umbral modificado.",
+          "threshold_status_changes": 2,
+          "total_result_rows": 88,
+          "worsened_distance_rows": 0
+        },
+        "unit": "m",
+        "warnings": []
+      },
+      "output_sha256": "0a9c43e2f9f7f2b6e94053de68319cb8789fbc59874f6721a0b285441b52a518",
+      "question": "Escenario hipotético: añadir atención primaria en el punto representativo de Aduna.",
+      "tool": "simular_escenario"
+    },
+    "source": {
+      "arguments": {
+        "source_id": "EUSTAT_EMH_2025"
+      },
+      "execution": "local_saved",
+      "output": {
+        "data": [
+          {
+            "download_date": "2026-09-24",
+            "institution": "Eustat - Instituto Vasco de Estadística",
+            "license": "Creative Commons (según ficha Eustat de la operación 010154)",
+            "limitations": [
+              "75+ se deriva de año de nacimiento <=1949 a 2025-01-01."
+            ],
+            "method": "Consulta PXWeb por municipio, sexo total y periodo 2025-01-01; pivote de total/65+ y suma de nacidos hasta 1949 para 75+.",
+            "notes": [
+              "Códigos municipales Eustat/INE de cinco caracteres conservados como texto."
+            ],
+            "original_file": "datos_originales/eustat_demografia_2025.csv",
+            "prepared_files": [
+              "datos_preparados/demografia.csv",
+              "datos_preparados/municipios.csv"
+            ],
+            "reference_period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "source_type": "official",
+            "territory": "Gipuzkoa, 88 municipios",
+            "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+            "unit": "personas",
+            "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px"
+          }
+        ],
+        "detail_level": "compact",
+        "filters": {
+          "source_id": "EUSTAT_EMH_2025"
+        },
+        "limitations": [
+          "La ficha de fuente describe procedencia; no valida por sí sola la calidad del dato."
+        ],
+        "method": "Lectura directa de metadata_sources.json.",
+        "metric": "source_metadata",
+        "period": null,
+        "question": "Consulta de procedencia",
+        "rows_used": 1,
+        "sources": [
+          {
+            "source_id": "EUSTAT_EMH_2025"
+          }
+        ],
+        "status": "ok",
+        "summary": {
+          "total_result_rows": 1
+        },
+        "unit": "no aplica",
+        "warnings": []
+      },
+      "output_sha256": "3592bb57e33ee8807d702900f2b6617ad33b2cbda08035566f8ffc139a9e204e",
+      "question": "¿De dónde sale la población?",
+      "tool": "consultar_fuente"
+    },
+    "source_error": {
+      "arguments": {
+        "source_id": "FUENTE_NO_CARGADA"
+      },
+      "execution": "local_saved",
+      "output": {
+        "available_options": [
+          "EUSTAT_EMH_2025",
+          "ODE_HEALTH_CENTRES_2026",
+          "GEOEUSKADI_MUNICIPIOS_2025",
+          "G360_DERIVED_MUNICIPAL_METRICS_V1"
+        ],
+        "error_code": "source_not_found",
+        "message": "No hay metadatos para FUENTE_NO_CARGADA.",
+        "status": "error"
+      },
+      "output_sha256": "8c6b63e6b2726e01389795abff090675f37c8a582650a6a968034e8f038509b2",
+      "question": "Consulta una fuente no cargada.",
+      "tool": "consultar_fuente"
+    },
+    "strict": {
+      "arguments": {
+        "categoria_servicio": "primary_care",
+        "cuantil": 0.85,
+        "grupo_edad": "65",
+        "periodo": "2025-01-01",
+        "umbral_km": 2
+      },
+      "execution": "local_saved",
+      "output": {
+        "data": [
+          {
+            "age_percentile_rank": 0.9655,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.8966,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20051",
+            "municipality_name": "Legazpi",
+            "nearest_distance_m": 2624.8,
+            "nearest_service_id": "entity94B2E778",
+            "pct_65_plus": 27.17,
+            "within_threshold": false
+          },
+          {
+            "age_percentile_rank": 0.8966,
+            "age_source_id": "EUSTAT_EMH_2025",
+            "distance_percentile_rank": 0.8851,
+            "highlighted": true,
+            "meets_access_criterion": true,
+            "meets_age_criterion": true,
+            "municipality_code": "20036",
+            "municipality_name": "Hondarribia",
+            "nearest_distance_m": 2583.5,
+            "nearest_service_id": "entity8EA5D441",
+            "pct_65_plus": 25.808,
+            "within_threshold": false
+          }
+        ],
+        "detail_level": "compact",
+        "filters": {
+          "age_group": "65",
+          "period": "2025-01-01",
+          "quantile_threshold": 0.85,
+          "service_category": "primary_care",
+          "threshold_km": 2
+        },
+        "limitations": [
+          "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+          "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+          "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
+          "La coincidencia estadística no demuestra causalidad ni identifica necesidades individuales.",
+          "Los resultados dependen del cuantil, grupo de edad, categoría y periodo elegidos."
+        ],
+        "method": "Cruce por código municipal. Se destacan valores >= cuantil 0.85 en ambas métricas (cortes: 25.3557% y 2308.7 m). Se muestran ambos componentes y no se usa una puntuación compuesta.",
+        "metric": "pct_65_plus + distance_geométrica_aproximada",
+        "period": "2025-01-01",
+        "question": "Coincidencia de envejecimiento >= 65 y peor acceso a primary_care",
+        "rows_used": 88,
+        "sources": [
+          {
+            "institution": "Eustat - Instituto Vasco de Estadística",
+            "limitations": [
+              "75+ se deriva de año de nacimiento <=1949 a 2025-01-01."
+            ],
+            "reference_period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+            "unit": "personas",
+            "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px"
+          },
+          {
+            "institution": "Gobierno Vasco - geoEuskadi",
+            "limitations": [
+              "El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007."
+            ],
+            "reference_period": "2025-05-07",
+            "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+            "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+            "unit": "polígono municipal",
+            "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/"
+          },
+          {
+            "institution": "Gobierno Vasco - Departamento de Salud",
+            "limitations": [
+              "La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad."
+            ],
+            "reference_period": "2026-09-20",
+            "source_id": "ODE_HEALTH_CENTRES_2026",
+            "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+            "unit": "registro de centro sanitario público",
+            "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+          }
+        ],
+        "status": "ok",
+        "summary": {
+          "age_cut_percent": 25.3557,
+          "distance_cut_m": 2308.7,
+          "highlighted_count": 2,
+          "joined_rows": 88,
+          "returned_rows": 2,
+          "selection": "Todos los destacados; si no hay ninguno, los 5 primeros por criterio.",
+          "total_result_rows": 88
+        },
+        "unit": "% y m",
+        "warnings": []
+      },
+      "output_sha256": "b00a95cafc794e29b8ec795f5ad3950c81c204c57b765ebe06b5bb1c109899e0",
+      "question": "Coincidencia de 65+, atención primaria, cuantil 0.85, umbral 2 km y 2025-01-01.",
+      "tool": "analizar_coincidencia"
+    }
+  },
+  "execution": "Cálculos locales guardados; sin conversación en directo en estos HTML.",
+  "input_sha256": {
+    "agentes/gipuzkoa360/portal/main.py": "c2f4770f234522ac6ccb535d627c1252e19bc8f992e73194dab6e9f6672c585e",
+    "agentes/gipuzkoa360/portal/tools.py": "0a5ab214ecf89cef04c85b5055c8ac42047c151c0411b4aa6c470a8de397edd5",
+    "analisis/final/full_validation.json": "68669c080532485f803ff4e79b56e6bb4990a010244d1ac89fd16ead20483ca8",
+    "datos_originales/eustat_demografia_2025.csv": "8e9c0a1642558f4449208a334666368713dc9801807c65099955e435c126ac8f",
+    "datos_preparados/README.md": "72fb61862f2fb8fb6c5af8af1a398dd38fad8b2ec55ab7acacb00e719c2b04ba",
+    "datos_preparados/data_contract.json": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae",
+    "datos_preparados/demografia.csv": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96",
+    "datos_preparados/metadata_sources.json": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
+    "datos_preparados/municipios.csv": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
+    "datos_preparados/municipios.geojson": "8f3d8171e5ee6836559d4d3f08a2c05c535797c9fd8771a1cea04dc736b3654e",
+    "datos_preparados/runtime_manifest.json": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+    "datos_preparados/runtime_municipality_points.csv": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11",
+    "datos_preparados/runtime_municipios.geojson": "c30ba24034312e2d1f5fab487c0ec78126436311a02ec54fc9bdf6f0b84dad1c",
+    "datos_preparados/runtime_servicios.csv": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece",
+    "datos_preparados/servicios.csv": "b81c62c637a69c27fdbc2b5e2e76050420517807c44a5cb5248dda23b80c52ea",
+    "docs/FINAL_RELEASE_GATE.md": "0e414acdd4720e112775ad56e5519db985ed1c247fa0188d89eee2c1307cddc1",
+    "docs/VALIDATION.md": "fb3af431dfe5de6ce88a5d2e0c096f48d462c81b4d5b341a910113c1415bb803",
+    "resultados/evidencia/next_prototype.json": "cd5a83d3338b96ad0671757c9590415f28d7e45ff91bb8ea12e95f0ace8837de"
+  },
+  "inventory": {
+    "health_records": 148,
+    "municipalities": 88,
+    "tools": [
+      "obtener_resumen_territorial",
+      "comparar_municipios",
+      "analizar_envejecimiento",
+      "analizar_acceso_servicios",
+      "analizar_coincidencia",
+      "simular_escenario",
+      "consultar_fuente"
+    ]
+  },
+  "next_prototype": {
+    "adversarial_summary": {
+      "composer_blocks": 16,
+      "injections_detected": 16,
+      "injections_total": 16,
+      "scope": "fixed corruptions and unapproved drafts; template allowlisting, not general natural-language hallucination detection"
+    },
+    "capabilities": {
+      "ACTIVE": [
+        "summary",
+        "comparison",
+        "aging",
+        "access",
+        "coincidence",
+        "scenario",
+        "source"
+      ],
+      "REQUIRES_DATA": [
+        "mobility",
+        "capacity",
+        "demand",
+        "housing",
+        "environment"
+      ]
+    },
+    "limitations": [
+      "Planner consumes structured intents; natural-language routing accuracy is not measured.",
+      "Numeric grounding compares against the same deterministic core, not an independent numerical oracle.",
+      "Source grounding resolves declared source identifiers; it is not field-level provenance completeness.",
+      "Offline latency and deterministic rendering do not represent portal or LLM behavior.",
+      "Prototype is isolated from the runtime and cannot mutate production."
+    ],
+    "prototype_test_summary": {
+      "command": "python -m pytest tests/next -o addopts= -q",
+      "date": "2026-09-25",
+      "failed": 0,
+      "passed": 77
+    },
+    "quality_kpis": {
+      "composer_block_rate": {
+        "denominator": 16,
+        "numerator": 16,
+        "value": 1.0
+      },
+      "critic_detection_rate": {
+        "denominator": 16,
+        "numerator": 16,
+        "value": 1.0
+      },
+      "determinism_rate": {
+        "denominator": 8,
+        "numerator": 8,
+        "value": 1.0
+      },
+      "followup_recalculation_rate": {
+        "denominator": 1,
+        "numerator": 1,
+        "value": 1.0
+      },
+      "limitation_present_rate": {
+        "denominator": 9,
+        "numerator": 9,
+        "value": 1.0
+      },
+      "numeric_grounding_rate": {
+        "denominator": 9,
+        "numerator": 9,
+        "value": 1.0
+      },
+      "out_of_scope_rejection_rate": {
+        "denominator": 6,
+        "numerator": 6,
+        "value": 1.0
+      },
+      "parameter_accuracy": {
+        "denominator": 9,
+        "numerator": 9,
+        "value": 1.0
+      },
+      "source_grounding_rate": {
+        "denominator": 9,
+        "numerator": 9,
+        "value": 1.0
+      },
+      "tool_selection_accuracy": {
+        "denominator": 9,
+        "numerator": 9,
+        "value": 1.0
+      }
+    },
+    "reconciliation_status": "complete",
+    "scope": "OFFLINE PROTOTYPE: structured intents; no LLM routing benchmark, portal execution, production promotion, self-editing or auto-deployment",
+    "self_improvement_policy": {
+      "human_approval_required": true,
+      "no_production_mutation": true,
+      "proposal_only": true
+    },
+    "snapshot_commit": "fddcf05217959ddc347f5d1a1ee9f35245ea9806",
+    "snapshot_path": "analisis/next/product_snapshot.json",
+    "source_commit": "eae3b7026a8608946d31c718fabc10111c3fa16e",
+    "source_evidence_path": "analisis/next/quality_kpis.json",
+    "technical_handoff_commit": "929186fcb2a04429ee5a68b6081948902668b917",
+    "versions": {
+      "BENCHMARK_VERSION": "next-evaluation-0.1",
+      "CAPABILITY_VERSION": "next-registry-0.1",
+      "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+      "PROMPT_VERSION": "none-deterministic-template-0.1",
+      "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371"
+    }
+  },
+  "runtime_sha": "195b4980fa5998b096c308296a55e452380b0371",
+  "sources": [
+    {
+      "download_date": "2026-09-24",
+      "institution": "Eustat - Instituto Vasco de Estadística",
+      "license": "Creative Commons (según ficha Eustat de la operación 010154)",
+      "limitations": [
+        "75+ se deriva de año de nacimiento <=1949 a 2025-01-01."
+      ],
+      "method": "Consulta PXWeb por municipio, sexo total y periodo 2025-01-01; pivote de total/65+ y suma de nacidos hasta 1949 para 75+.",
+      "notes": [
+        "Códigos municipales Eustat/INE de cinco caracteres conservados como texto."
+      ],
+      "original_file": "datos_originales/eustat_demografia_2025.csv",
+      "prepared_files": [
+        "datos_preparados/demografia.csv",
+        "datos_preparados/municipios.csv"
+      ],
+      "reference_period": "2025-01-01",
+      "source_id": "EUSTAT_EMH_2025",
+      "source_type": "official",
+      "territory": "Gipuzkoa, 88 municipios",
+      "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+      "unit": "personas",
+      "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px"
+    },
+    {
+      "download_date": "2026-09-24",
+      "institution": "Gobierno Vasco - Departamento de Salud",
+      "license": "Licencia abierta indicada por Open Data Euskadi; atribución y fecha obligatorias",
+      "limitations": [
+        "La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad."
+      ],
+      "method": "Filtro Provincia=Gipuzkoa, normalización de tipo y unión espacial within en EPSG:4326.",
+      "notes": [
+        "Asignación municipal por punto dentro de polígono oficial."
+      ],
+      "original_file": "datos_originales/centros-salud.xlsx",
+      "prepared_files": [
+        "datos_preparados/servicios.csv",
+        "datos_preparados/runtime_servicios.csv"
+      ],
+      "reference_period": "2026-09-20",
+      "source_id": "ODE_HEALTH_CENTRES_2026",
+      "source_type": "official",
+      "territory": "Euskadi; filtrado a Gipuzkoa",
+      "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+      "unit": "registro de centro sanitario público",
+      "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+    },
+    {
+      "download_date": "2026-09-24",
+      "institution": "Gobierno Vasco - geoEuskadi",
+      "license": "Uso permitido citando Eusko Jaurlaritza / Gobierno Vasco",
+      "limitations": [
+        "El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007."
+      ],
+      "method": "Filtro por territorio y catálogo Eustat; área y simplificación calculadas en EPSG:25830.",
+      "notes": [
+        "CRS original y de cálculo: EPSG:25830; publicación runtime: EPSG:4326."
+      ],
+      "original_file": "datos_originales/MUNICIPIOS_5000_ETRS89.zip",
+      "prepared_files": [
+        "datos_preparados/municipios.geojson",
+        "datos_preparados/runtime_municipios.geojson",
+        "datos_preparados/runtime_municipality_points.csv"
+      ],
+      "reference_period": "2025-05-07",
+      "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+      "source_type": "official",
+      "territory": "Euskadi; filtrado a Gipuzkoa",
+      "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+      "unit": "polígono municipal",
+      "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/"
+    },
+    {
+      "download_date": null,
+      "input_source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ],
+      "institution": "DeustoAI Labs",
+      "license": "Hereda las condiciones de atribución de las tres fuentes ascendentes",
+      "limitations": [
+        "La distancia no es tiempo de viaje ni accesibilidad individual.",
+        "Los periodos de las fuentes ascendentes no son idénticos."
+      ],
+      "method": "Conteos por municipio, tasas por 10.000 personas de 65+/75+ y distancia euclídea en metros desde el punto representativo municipal al servicio más cercano, calculada en EPSG:25830.",
+      "notes": [
+        "No es una fuente externa; registra el linaje de las transformaciones reproducibles."
+      ],
+      "original_file": null,
+      "prepared_files": [
+        "datos_preparados/municipios.csv",
+        "datos_preparados/runtime_municipios.geojson",
+        "datos_preparados/runtime_municipality_points.csv"
+      ],
+      "producer": "GIPUZKOA 360",
+      "reference_period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+      "source_id": "G360_DERIVED_MUNICIPAL_METRICS_V1",
+      "source_type": "derived",
+      "territory": "Gipuzkoa, 88 municipios",
+      "title": "Métricas municipales derivadas de GIPUZKOA 360",
+      "unit": "indicador municipal",
+      "upstream_source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ],
+      "url": "https://github.com/Asier-Comba/Guipuzkoa360/blob/work/data-foundation/FUENTES.md"
+    }
+  ],
+  "validation": {
+    "baseline_tests": {
+      "node": [
+        17,
+        17
+      ],
+      "python": [
+        263,
+        263
+      ],
+      "source": "docs/VALIDATION.md"
+    },
+    "candidate_sha": "84e95167bfb9718ebb5f26b533f12cd885901e20",
+    "checks": {
+      "by_component": {
+        "aliases": 56,
+        "build_reproducibility": 10,
+        "coincidence_controls": 3,
+        "coincidence_grid": 1600,
+        "demography": 354,
+        "determinism": 8,
+        "fault_injection": 20,
+        "metamorphic": 12,
+        "output_contract": 14,
+        "pairwise": 30625,
+        "performance_json": 840,
+        "scenario_add": 352,
+        "scenario_isolation": 2,
+        "scenario_remove": 148,
+        "scenario_threshold": 80,
+        "service_matrix": 6004,
+        "soak": 1000,
+        "traceability": 31545
+      },
+      "failed": 0,
+      "passed": 72673,
+      "total": 72673
+    },
+    "fault_injection": {
+      "controlled_rejection": 20,
+      "silent_corruption": 0,
+      "total": 20
+    },
+    "generated_at": "2026-09-25T12:36:57+0200",
+    "issues": [
+      {
+        "payload_chars": 20155,
+        "reason": "El cambio de umbral 1→10 km modifica la clasificación de 66 de los 88 municipios analizados y la salida compacta conserva cada fila afectada.",
+        "reduction_tradeoff": "Reducirlo exige truncar o paginar evidencia municipal; no se cambia el runtime porque se perdería evidencia y no existe un fallo numérico o contractual.",
+        "severity": "Medium",
+        "tool": "simular_escenario"
+      }
+    ],
+    "open_by_severity": {
+      "Critical": 0,
+      "High": 0,
+      "Low": 0,
+      "Medium": 1
+    },
+    "soak": {
+      "calls": 1000,
+      "exceptions": [],
+      "result_drift": 0
+    },
+    "source": "analisis/final/full_validation.json",
+    "traceability": {
+      "definition": "successful numeric analytical outputs with resolvable source_id + period + unit + method",
+      "denominator": 31545,
+      "numerator": 31545,
+      "percentage": 100.0
+    }
+  }
+}

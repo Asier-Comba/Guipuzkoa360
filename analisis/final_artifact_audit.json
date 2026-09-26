@@ -1,0 +1,101 @@
+{
+  "status": "PASS",
+  "checks": {
+    "runtime_identity": true,
+    "manifest": true,
+    "visual_data_equals_recalculation": true,
+    "html_equals_recalculation": true,
+    "nine_mutations_rejected": true,
+    "no_fixed_25_cut": true,
+    "saved_calculation_label": true
+  },
+  "frozen_files": {
+    "agentes/gipuzkoa360/portal/main.py": {
+      "matches": true,
+      "sha256": "c2f4770f234522ac6ccb535d627c1252e19bc8f992e73194dab6e9f6672c585e"
+    },
+    "agentes/gipuzkoa360/portal/tools.py": {
+      "matches": true,
+      "sha256": "0a5ab214ecf89cef04c85b5055c8ac42047c151c0411b4aa6c470a8de397edd5"
+    },
+    "FUENTES.md": {
+      "matches": true,
+      "sha256": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de"
+    },
+    "docs/METODOLOGIA.md": {
+      "matches": true,
+      "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7"
+    },
+    "docs/RESULT_SCHEMA.md": {
+      "matches": true,
+      "sha256": "8b1a5e1f5541b41f2e0680dcdc2d2a9a3c6f5a2333088fb98b28fd3b4893c872"
+    },
+    "datos_preparados/municipios.csv": {
+      "matches": true,
+      "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
+    },
+    "datos_preparados/demografia.csv": {
+      "matches": true,
+      "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+    },
+    "datos_preparados/runtime_municipality_points.csv": {
+      "matches": true,
+      "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11"
+    },
+    "datos_preparados/runtime_servicios.csv": {
+      "matches": true,
+      "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
+    },
+    "datos_preparados/metadata_sources.json": {
+      "matches": true,
+      "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+    },
+    "datos_preparados/data_contract.json": {
+      "matches": true,
+      "sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae"
+    },
+    "datos_preparados/runtime_manifest.json": {
+      "matches": true,
+      "sha256": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a"
+    }
+  },
+  "manifest_entries": 7,
+  "visual_mutations": [
+    {
+      "attack": "alter a visible population percentage",
+      "rejected": true
+    },
+    {
+      "attack": "fixed 25 percent cut",
+      "rejected": true
+    },
+    {
+      "attack": "drop a highlighted municipality",
+      "rejected": true
+    },
+    {
+      "attack": "reuse 65+ answer for 75+ follow-up",
+      "rejected": true
+    },
+    {
+      "attack": "invent source",
+      "rejected": true
+    },
+    {
+      "attack": "remove geometry",
+      "rejected": true
+    },
+    {
+      "attack": "reverse scenario difference sign",
+      "rejected": true
+    },
+    {
+      "attack": "claim live execution for saved calculation",
+      "rejected": true
+    },
+    {
+      "attack": "drop non-highlighted row",
+      "rejected": true
+    }
+  ]
+}

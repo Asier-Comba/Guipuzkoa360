@@ -1,0 +1,938 @@
+{
+  "generated_at": "2026-09-25T16:26:41+0200",
+  "candidate_sha": "47362d3422d7d40e191e506e18cdc854cf607ae3",
+  "base_sha": "488f46db7047d9393d4d4a489a869ab246c215b9",
+  "runtime_sha": "195b4980fa5998b096c308296a55e452380b0371",
+  "branch": "final/work1-engineering-master",
+  "runtime_changed": false,
+  "seed": 36020260925,
+  "offline": true,
+  "check_definition": "one independent subject × property evaluation; no code-line/assert inflation",
+  "invariant_matrix": [
+    {
+      "entity": "municipality-demography",
+      "operation": "load/recalculate/join",
+      "input_domain": "88 municipalities",
+      "property": "non-negative ordered counts, ordered percentages, stable key, traceable period/source",
+      "expected": "all rows satisfy the data contract and reproduce rounded percentages",
+      "failure_severity": "Critical"
+    },
+    {
+      "entity": "municipality-service-category-threshold",
+      "operation": "access",
+      "input_domain": "88 × 4 × 5",
+      "property": "valid nearest service, exact threshold classification, monotonicity, stable distance",
+      "expected": "distance is independent of threshold and TRUE never becomes FALSE as threshold grows",
+      "failure_severity": "Critical"
+    },
+    {
+      "entity": "municipality-pair-age-category",
+      "operation": "compare",
+      "input_domain": "C(88,2) × 2 × 4",
+      "property": "A/B symmetry and call isolation",
+      "expected": "values by municipality are invariant to presentation order",
+      "failure_severity": "Critical"
+    },
+    {
+      "entity": "age-category-quantile-threshold",
+      "operation": "coincidence",
+      "input_domain": "2 × 4 × 8 × 5",
+      "property": "reproducible cuts, exact highlighting, valid ranks and byte determinism",
+      "expected": "all and only rows meeting both cuts are highlighted",
+      "failure_severity": "Critical"
+    },
+    {
+      "entity": "scenario",
+      "operation": "add/remove/change threshold",
+      "input_domain": "municipality points, all services, supported thresholds",
+      "property": "counterfactual direction, counts, non-mutation and explicit limitations",
+      "expected": "baseline remains unchanged and transformations obey their mathematical direction",
+      "failure_severity": "Critical"
+    },
+    {
+      "entity": "input alias",
+      "operation": "normalization",
+      "input_domain": "documented Spanish/English and Unicode variants plus invalid strings",
+      "property": "safe equivalence without open fuzzy matching",
+      "expected": "zero false accepts and zero false rejects in the declared matrix",
+      "failure_severity": "High"
+    },
+    {
+      "entity": "temporary corrupted dataset",
+      "operation": "load/integrity validation",
+      "input_domain": "20 isolated fault injections",
+      "property": "controlled rejection or explicit warning",
+      "expected": "no silent corruption",
+      "failure_severity": "Critical"
+    },
+    {
+      "entity": "tool output",
+      "operation": "serialize/audit",
+      "input_domain": "all benchmarked successful outputs",
+      "property": "strict JSON and required envelope/provenance fields",
+      "expected": "no NaN/Infinity and documented traceability denominator",
+      "failure_severity": "Critical"
+    }
+  ],
+  "checks": {
+    "total": 72673,
+    "passed": 72673,
+    "failed": 0,
+    "by_component": {
+      "aliases": 56,
+      "build_reproducibility": 10,
+      "coincidence_controls": 3,
+      "coincidence_grid": 1600,
+      "demography": 354,
+      "determinism": 8,
+      "fault_injection": 20,
+      "metamorphic": 12,
+      "output_contract": 14,
+      "pairwise": 30625,
+      "performance_json": 840,
+      "scenario_add": 352,
+      "scenario_isolation": 2,
+      "scenario_remove": 148,
+      "scenario_threshold": 80,
+      "service_matrix": 6004,
+      "soak": 1000,
+      "traceability": 31545
+    }
+  },
+  "open_by_severity": {
+    "Critical": 0,
+    "High": 0,
+    "Medium": 1,
+    "Low": 0
+  },
+  "failures": [],
+  "issues": [
+    {
+      "severity": "Medium",
+      "tool": "simular_escenario",
+      "payload_chars": 20155,
+      "reason": "El cambio de umbral 1→10 km modifica la clasificación de 66 de 88 municipios analizados y la salida compacta conserva cada fila afectada.",
+      "reduction_tradeoff": "Reducirlo exige truncar o paginar evidencia municipal; no se cambia el runtime porque se perdería evidencia y no existe un fallo numérico o contractual."
+    }
+  ],
+  "notes": [
+    {
+      "component": "pairwise",
+      "subject": "duplicate-input-policy",
+      "detail": "The real contract accepts 2-20 list entries, including repetition; [A,A] returns two identical rows."
+    }
+  ],
+  "demography": {
+    "municipalities": 88,
+    "demographic_rows": 88,
+    "file_sha256": {
+      "municipios.csv": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
+      "demografia.csv": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96",
+      "runtime_municipality_points.csv": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11",
+      "runtime_servicios.csv": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece",
+      "metadata_sources.json": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
+      "data_contract.json": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae",
+      "runtime_manifest.json": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a"
+    }
+  },
+  "service_matrix": {
+    "categories": [
+      "hospital",
+      "mental_health",
+      "other_health",
+      "primary_care"
+    ],
+    "thresholds_km": [
+      1.0,
+      2.0,
+      3.0,
+      5.0,
+      10.0
+    ],
+    "municipality_category_threshold_combinations": 1760,
+    "service_records": 148,
+    "category_counts": {
+      "hospital": 7,
+      "mental_health": 16,
+      "other_health": 5,
+      "primary_care": 120
+    }
+  },
+  "pairwise": {
+    "unique_pairs": 3828,
+    "age_category_comparisons": 30624,
+    "duplicate_behavior": "accepted as two explicit identical rows"
+  },
+  "coincidence_grid": {
+    "combinations": 320,
+    "ages": [
+      "65",
+      "75"
+    ],
+    "categories": [
+      "hospital",
+      "mental_health",
+      "other_health",
+      "primary_care"
+    ],
+    "quantiles": [
+      0.5,
+      0.6,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95
+    ],
+    "thresholds_km": [
+      1.0,
+      2.0,
+      3.0,
+      5.0,
+      10.0
+    ],
+    "highlighted_count_sensitivity": {
+      "65:hospital:1.0km": {
+        "q0.50": 13,
+        "q0.60": 9,
+        "q0.70": 4,
+        "q0.75": 2,
+        "q0.80": 2,
+        "q0.85": 2,
+        "q0.90": 0,
+        "q0.95": 0
+      },
+      "65:hospital:10.0km": {
+        "q0.50": 13,
+        "q0.60": 9,
+        "q0.70": 4,
+        "q0.75": 2,
+        "q0.80": 2,
+        "q0.85": 2,
+        "q0.90": 0,
+        "q0.95": 0
+      },
+      "65:hospital:2.0km": {
+        "q0.50": 13,
+        "q0.60": 9,
+        "q0.70": 4,
+        "q0.75": 2,
+        "q0.80": 2,
+        "q0.85": 2,
+        "q0.90": 0,
+        "q0.95": 0
+      },
+      "65:hospital:3.0km": {
+        "q0.50": 13,
+        "q0.60": 9,
+        "q0.70": 4,
+        "q0.75": 2,
+        "q0.80": 2,
+        "q0.85": 2,
+        "q0.90": 0,
+        "q0.95": 0
+      },
+      "65:hospital:5.0km": {
+        "q0.50": 13,
+        "q0.60": 9,
+        "q0.70": 4,
+        "q0.75": 2,
+        "q0.80": 2,
+        "q0.85": 2,
+        "q0.90": 0,
+        "q0.95": 0
+      },
+      "65:mental_health:1.0km": {
+        "q0.50": 21,
+        "q0.60": 16,
+        "q0.70": 11,
+        "q0.75": 7,
+        "q0.80": 5,
+        "q0.85": 3,
+        "q0.90": 3,
+        "q0.95": 0
+      },
+      "65:mental_health:10.0km": {
+        "q0.50": 21,
+        "q0.60": 16,
+        "q0.70": 11,
+        "q0.75": 7,
+        "q0.80": 5,
+        "q0.85": 3,
+        "q0.90": 3,
+        "q0.95": 0
+      },
+      "65:mental_health:2.0km": {
+        "q0.50": 21,
+        "q0.60": 16,
+        "q0.70": 11,
+        "q0.75": 7,
+        "q0.80": 5,
+        "q0.85": 3,
+        "q0.90": 3,
+        "q0.95": 0
+      },
+      "65:mental_health:3.0km": {
+        "q0.50": 21,
+        "q0.60": 16,
+        "q0.70": 11,
+        "q0.75": 7,
+        "q0.80": 5,
+        "q0.85": 3,
+        "q0.90": 3,
+        "q0.95": 0
+      },
+      "65:mental_health:5.0km": {
+        "q0.50": 21,
+        "q0.60": 16,
+        "q0.70": 11,
+        "q0.75": 7,
+        "q0.80": 5,
+        "q0.85": 3,
+        "q0.90": 3,
+        "q0.95": 0
+      },
+      "65:other_health:1.0km": {
+        "q0.50": 27,
+        "q0.60": 19,
+        "q0.70": 15,
+        "q0.75": 9,
+        "q0.80": 8,
+        "q0.85": 6,
+        "q0.90": 3,
+        "q0.95": 0
+      },
+      "65:other_health:10.0km": {
+        "q0.50": 27,
+        "q0.60": 19,
+        "q0.70": 15,
+        "q0.75": 9,
+        "q0.80": 8,
+        "q0.85": 6,
+        "q0.90": 3,
+        "q0.95": 0
+      },
+      "65:other_health:2.0km": {
+        "q0.50": 27,
+        "q0.60": 19,
+        "q0.70": 15,
+        "q0.75": 9,
+        "q0.80": 8,
+        "q0.85": 6,
+        "q0.90": 3,
+        "q0.95": 0
+      },
+      "65:other_health:3.0km": {
+        "q0.50": 27,
+        "q0.60": 19,
+        "q0.70": 15,
+        "q0.75": 9,
+        "q0.80": 8,
+        "q0.85": 6,
+        "q0.90": 3,
+        "q0.95": 0
+      },
+      "65:other_health:5.0km": {
+        "q0.50": 27,
+        "q0.60": 19,
+        "q0.70": 15,
+        "q0.75": 9,
+        "q0.80": 8,
+        "q0.85": 6,
+        "q0.90": 3,
+        "q0.95": 0
+      },
+      "65:primary_care:1.0km": {
+        "q0.50": 25,
+        "q0.60": 16,
+        "q0.70": 9,
+        "q0.75": 7,
+        "q0.80": 4,
+        "q0.85": 2,
+        "q0.90": 0,
+        "q0.95": 0
+      },
+      "65:primary_care:10.0km": {
+        "q0.50": 25,
+        "q0.60": 16,
+        "q0.70": 9,
+        "q0.75": 7,
+        "q0.80": 4,
+        "q0.85": 2,
+        "q0.90": 0,
+        "q0.95": 0
+      },
+      "65:primary_care:2.0km": {
+        "q0.50": 25,
+        "q0.60": 16,
+        "q0.70": 9,
+        "q0.75": 7,
+        "q0.80": 4,
+        "q0.85": 2,
+        "q0.90": 0,
+        "q0.95": 0
+      },
+      "65:primary_care:3.0km": {
+        "q0.50": 25,
+        "q0.60": 16,
+        "q0.70": 9,
+        "q0.75": 7,
+        "q0.80": 4,
+        "q0.85": 2,
+        "q0.90": 0,
+        "q0.95": 0
+      },
+      "65:primary_care:5.0km": {
+        "q0.50": 25,
+        "q0.60": 16,
+        "q0.70": 9,
+        "q0.75": 7,
+        "q0.80": 4,
+        "q0.85": 2,
+        "q0.90": 0,
+        "q0.95": 0
+      },
+      "75:hospital:1.0km": {
+        "q0.50": 15,
+        "q0.60": 5,
+        "q0.70": 2,
+        "q0.75": 1,
+        "q0.80": 1,
+        "q0.85": 1,
+        "q0.90": 0,
+        "q0.95": 0
+      },
+      "75:hospital:10.0km": {
+        "q0.50": 15,
+        "q0.60": 5,
+        "q0.70": 2,
+        "q0.75": 1,
+        "q0.80": 1,
+        "q0.85": 1,
+        "q0.90": 0,
+        "q0.95": 0
+      },
+      "75:hospital:2.0km": {
+        "q0.50": 15,
+        "q0.60": 5,
+        "q0.70": 2,
+        "q0.75": 1,
+        "q0.80": 1,
+        "q0.85": 1,
+        "q0.90": 0,
+        "q0.95": 0
+      },
+      "75:hospital:3.0km": {
+        "q0.50": 15,
+        "q0.60": 5,
+        "q0.70": 2,
+        "q0.75": 1,
+        "q0.80": 1,
+        "q0.85": 1,
+        "q0.90": 0,
+        "q0.95": 0
+      },
+      "75:hospital:5.0km": {
+        "q0.50": 15,
+        "q0.60": 5,
+        "q0.70": 2,
+        "q0.75": 1,
+        "q0.80": 1,
+        "q0.85": 1,
+        "q0.90": 0,
+        "q0.95": 0
+      },
+      "75:mental_health:1.0km": {
+        "q0.50": 21,
+        "q0.60": 15,
+        "q0.70": 8,
+        "q0.75": 6,
+        "q0.80": 2,
+        "q0.85": 1,
+        "q0.90": 1,
+        "q0.95": 0
+      },
+      "75:mental_health:10.0km": {
+        "q0.50": 21,
+        "q0.60": 15,
+        "q0.70": 8,
+        "q0.75": 6,
+        "q0.80": 2,
+        "q0.85": 1,
+        "q0.90": 1,
+        "q0.95": 0
+      },
+      "75:mental_health:2.0km": {
+        "q0.50": 21,
+        "q0.60": 15,
+        "q0.70": 8,
+        "q0.75": 6,
+        "q0.80": 2,
+        "q0.85": 1,
+        "q0.90": 1,
+        "q0.95": 0
+      },
+      "75:mental_health:3.0km": {
+        "q0.50": 21,
+        "q0.60": 15,
+        "q0.70": 8,
+        "q0.75": 6,
+        "q0.80": 2,
+        "q0.85": 1,
+        "q0.90": 1,
+        "q0.95": 0
+      },
+      "75:mental_health:5.0km": {
+        "q0.50": 21,
+        "q0.60": 15,
+        "q0.70": 8,
+        "q0.75": 6,
+        "q0.80": 2,
+        "q0.85": 1,
+        "q0.90": 1,
+        "q0.95": 0
+      },
+      "75:other_health:1.0km": {
+        "q0.50": 27,
+        "q0.60": 21,
+        "q0.70": 14,
+        "q0.75": 9,
+        "q0.80": 7,
+        "q0.85": 5,
+        "q0.90": 1,
+        "q0.95": 0
+      },
+      "75:other_health:10.0km": {
+        "q0.50": 27,
+        "q0.60": 21,
+        "q0.70": 14,
+        "q0.75": 9,
+        "q0.80": 7,
+        "q0.85": 5,
+        "q0.90": 1,
+        "q0.95": 0
+      },
+      "75:other_health:2.0km": {
+        "q0.50": 27,
+        "q0.60": 21,
+        "q0.70": 14,
+        "q0.75": 9,
+        "q0.80": 7,
+        "q0.85": 5,
+        "q0.90": 1,
+        "q0.95": 0
+      },
+      "75:other_health:3.0km": {
+        "q0.50": 27,
+        "q0.60": 21,
+        "q0.70": 14,
+        "q0.75": 9,
+        "q0.80": 7,
+        "q0.85": 5,
+        "q0.90": 1,
+        "q0.95": 0
+      },
+      "75:other_health:5.0km": {
+        "q0.50": 27,
+        "q0.60": 21,
+        "q0.70": 14,
+        "q0.75": 9,
+        "q0.80": 7,
+        "q0.85": 5,
+        "q0.90": 1,
+        "q0.95": 0
+      },
+      "75:primary_care:1.0km": {
+        "q0.50": 24,
+        "q0.60": 16,
+        "q0.70": 10,
+        "q0.75": 7,
+        "q0.80": 4,
+        "q0.85": 3,
+        "q0.90": 0,
+        "q0.95": 0
+      },
+      "75:primary_care:10.0km": {
+        "q0.50": 24,
+        "q0.60": 16,
+        "q0.70": 10,
+        "q0.75": 7,
+        "q0.80": 4,
+        "q0.85": 3,
+        "q0.90": 0,
+        "q0.95": 0
+      },
+      "75:primary_care:2.0km": {
+        "q0.50": 24,
+        "q0.60": 16,
+        "q0.70": 10,
+        "q0.75": 7,
+        "q0.80": 4,
+        "q0.85": 3,
+        "q0.90": 0,
+        "q0.95": 0
+      },
+      "75:primary_care:3.0km": {
+        "q0.50": 24,
+        "q0.60": 16,
+        "q0.70": 10,
+        "q0.75": 7,
+        "q0.80": 4,
+        "q0.85": 3,
+        "q0.90": 0,
+        "q0.95": 0
+      },
+      "75:primary_care:5.0km": {
+        "q0.50": 24,
+        "q0.60": 16,
+        "q0.70": 10,
+        "q0.75": 7,
+        "q0.80": 4,
+        "q0.85": 3,
+        "q0.90": 0,
+        "q0.95": 0
+      }
+    }
+  },
+  "scenarios": {
+    "add_service_cases": 352,
+    "remove_service_cases": 148,
+    "change_threshold_cases": 80,
+    "base_dataset_unchanged": true
+  },
+  "aliases": {
+    "accepted_valid": 35,
+    "rejected_invalid": 21,
+    "false_accept": 0,
+    "false_reject": 0,
+    "valid_cases": 35,
+    "invalid_cases": 21
+  },
+  "fault_injection": {
+    "total": 20,
+    "controlled_rejection": 20,
+    "explicit_warning": 0,
+    "silent_corruption": 0,
+    "cases": {
+      "missing_file": {
+        "classification": "controlled_rejection",
+        "diagnostic": "DataContractError: No se encuentra el archivo preparado C:/Users/OIER~1.DUN/AppData/Local/Temp/g360-faults-iq442kk6/missing_file/datos_preparados/demografia.csv."
+      },
+      "empty_file": {
+        "classification": "controlled_rejection",
+        "diagnostic": "DataContractError: demografia.csv no contiene columnas requeridas: municipality_code, municipality_name, reference_period, source_id."
+      },
+      "wrong_delimiter": {
+        "classification": "controlled_rejection",
+        "diagnostic": "DataContractError: demografia.csv no contiene columnas requeridas: municipality_code, municipality_name, reference_period, source_id."
+      },
+      "missing_header": {
+        "classification": "controlled_rejection",
+        "diagnostic": "DataContractError: demografia.csv no contiene columnas requeridas: municipality_code, municipality_name, reference_period, source_id."
+      },
+      "missing_column": {
+        "classification": "controlled_rejection",
+        "diagnostic": "DataContractError: demografia.csv no contiene columnas requeridas: source_id."
+      },
+      "duplicate_municipality_code": {
+        "classification": "controlled_rejection",
+        "diagnostic": "DataContractError: Códigos municipales duplicados: 20001"
+      },
+      "duplicate_service_id": {
+        "classification": "controlled_rejection",
+        "diagnostic": "DataContractError: Identificadores de servicio duplicados: entityC5CE8164"
+      },
+      "invalid_crs": {
+        "classification": "controlled_rejection",
+        "diagnostic": "ValueError: invalid_point_crs"
+      },
+      "nan": {
+        "classification": "controlled_rejection",
+        "diagnostic": "DataContractError: population_total no puede ser infinito o NaN."
+      },
+      "inf": {
+        "classification": "controlled_rejection",
+        "diagnostic": "DataContractError: population_total no puede ser infinito o NaN."
+      },
+      "-inf": {
+        "classification": "controlled_rejection",
+        "diagnostic": "DataContractError: population_total no puede ser infinito o NaN."
+      },
+      "negative_population": {
+        "classification": "controlled_rejection",
+        "diagnostic": "DataContractError: population_total no puede ser negativo en la fila 2."
+      },
+      "75_gt_65": {
+        "classification": "controlled_rejection",
+        "diagnostic": "ValueError: population_order"
+      },
+      "65_gt_total": {
+        "classification": "controlled_rejection",
+        "diagnostic": "DataContractError: population_65_plus supera population_total en la fila 2."
+      },
+      "latitude_gt_90": {
+        "classification": "controlled_rejection",
+        "diagnostic": "DataContractError: Coordenadas inválidas para entityC5CE8164."
+      },
+      "longitude_gt_180": {
+        "classification": "controlled_rejection",
+        "diagnostic": "DataContractError: Coordenadas inválidas para entityC5CE8164."
+      },
+      "invalid_source": {
+        "classification": "controlled_rejection",
+        "diagnostic": "ValueError: invalid_source"
+      },
+      "corrupt_json": {
+        "classification": "controlled_rejection",
+        "diagnostic": "DataContractError: No se puede leer C:/Users/OIER~1.DUN/AppData/Local/Temp/g360-faults-iq442kk6/corrupt_json/datos_preparados/metadata_sources.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)."
+      },
+      "wrong_manifest_sha": {
+        "classification": "controlled_rejection",
+        "diagnostic": "ValueError: manifest_mismatch"
+      },
+      "unknown_period": {
+        "classification": "controlled_rejection",
+        "diagnostic": "ValueError: unknown_period"
+      }
+    }
+  },
+  "output_contract": {
+    "tools": 7,
+    "required_fields": [
+      "filters",
+      "limitations",
+      "method",
+      "metric",
+      "rows_used",
+      "sources",
+      "status",
+      "unit",
+      "warnings"
+    ]
+  },
+  "metamorphic": {
+    "count": 12,
+    "properties": [
+      "municipality input order changes presentation only",
+      "equivalent aliases produce byte-identical JSON",
+      "threshold-only changes preserve nearest distance",
+      "quantile-only changes preserve base values",
+      "JSON serialize-deserialize preserves content",
+      "compact summary preserves required evidence",
+      "compact comparison preserves required evidence",
+      "compact aging preserves required evidence",
+      "compact access preserves required evidence",
+      "compact coincidence preserves required evidence",
+      "compact scenario preserves required evidence",
+      "compact source preserves required evidence"
+    ]
+  },
+  "traceability": {
+    "definition": "successful numeric analytical outputs with resolvable source_id + period + unit + method",
+    "numerator": 31545,
+    "denominator": 31545,
+    "percentage": 100.0
+  },
+  "soak": {
+    "calls": 1000,
+    "seed": 36020260925,
+    "result_drift": 0,
+    "exceptions": [],
+    "tracemalloc_current_delta_bytes": 24244,
+    "tracemalloc_peak_bytes": 158102
+  },
+  "build_reproducibility": {
+    "attempted": 10,
+    "completed": 10,
+    "identical": 10,
+    "sha256": "2808110d14e0bc30a53018cab1ec39b926e1e6ca1f1be19f0b2c9cf21106680a",
+    "bytes": 48338,
+    "members": [
+      {
+        "name": "FUENTES.md",
+        "size": 6963,
+        "crc": 1358891989,
+        "timestamp": [
+          2026,
+          9,
+          24,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "datos_preparados/data_contract.json",
+        "size": 5274,
+        "crc": 1158999731,
+        "timestamp": [
+          2026,
+          9,
+          24,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "datos_preparados/demografia.csv",
+        "size": 6161,
+        "crc": 1447618078,
+        "timestamp": [
+          2026,
+          9,
+          24,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "datos_preparados/metadata_sources.json",
+        "size": 4833,
+        "crc": 4283548211,
+        "timestamp": [
+          2026,
+          9,
+          24,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "datos_preparados/municipios.csv",
+        "size": 30075,
+        "crc": 2683818861,
+        "timestamp": [
+          2026,
+          9,
+          24,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "datos_preparados/runtime_manifest.json",
+        "size": 1594,
+        "crc": 161726263,
+        "timestamp": [
+          2026,
+          9,
+          24,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "datos_preparados/runtime_municipality_points.csv",
+        "size": 8689,
+        "crc": 1488351817,
+        "timestamp": [
+          2026,
+          9,
+          24,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "datos_preparados/runtime_servicios.csv",
+        "size": 25258,
+        "crc": 3177508120,
+        "timestamp": [
+          2026,
+          9,
+          24,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "docs/METODOLOGIA.md",
+        "size": 1210,
+        "crc": 2772210193,
+        "timestamp": [
+          2026,
+          9,
+          24,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "docs/PORTAL_DEPLOYMENT.md",
+        "size": 4924,
+        "crc": 2714185624,
+        "timestamp": [
+          2026,
+          9,
+          24,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "docs/RESULT_SCHEMA.md",
+        "size": 2296,
+        "crc": 3339053301,
+        "timestamp": [
+          2026,
+          9,
+          24,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "main.py",
+        "size": 6286,
+        "crc": 3794641676,
+        "timestamp": [
+          2026,
+          9,
+          24,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "requirements.txt",
+        "size": 66,
+        "crc": 844657,
+        "timestamp": [
+          2026,
+          9,
+          24,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "tools.py",
+        "size": 54274,
+        "crc": 2831967987,
+        "timestamp": [
+          2026,
+          9,
+          24,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "duration_seconds": 83.497,
+  "benchmark_go": true
+}
