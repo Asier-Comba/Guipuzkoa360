@@ -1,5 +1,9 @@
 # Smoke actual de la integración final
 
+> **SUPERSEDED como estado actual por
+> [PORTAL_SMOKE_ULTIMATE.md](PORTAL_SMOKE_ULTIMATE.md). Este documento conserva un intento anterior
+> bloqueado por infraestructura.**
+
 Fecha: 2026-09-25. Runtime local congelado `195b4980fa5998b096c308296a55e452380b0371`.
 Versión existente seleccionada: `urban-challenge-rc2-195b498 · v4`.
 No se creó otro agente o versión; no se abrió Entrega.

@@ -1,8 +1,9 @@
 # GIPUZKOA 360 · Jury live tests
 
-Actualización final del 25-09: los intentos más recientes están en
-[smoke final](internal/PORTAL_SMOKE_FINAL.md). Estado INFRASTRUCTURE_BLOCKED tras tres intentos;
-no se ejecutó el seguimiento. Las tablas anteriores de este documento son históricas.
+Último smoke del 25-09: **PASS ACOTADO**, documentado en
+[smoke ultimate](internal/PORTAL_SMOKE_ULTIMATE.md). Preparación, pregunta principal y seguimiento
+produjeron resultados observables; la consulta fuera de alcance se rechazó correctamente. El intento
+`INFRASTRUCTURE_BLOCKED` que se detalla más abajo es histórico.
 
 Versión objetivo: `urban-challenge-rc2-195b498 · v4`
 
@@ -22,7 +23,7 @@ pruebas.
 | Límites | «Entonces Aduna no tiene médicos, ¿no? ¿Y 3 km son 3 minutos?» | Una tool si necesita recuperar el dato; rechazar ambas inferencias. Distinguir registros, distancia geométrica y tiempo de viaje. |
 | Escenario | «Simula un nuevo registro de atención primaria en el punto representativo de Aduna.» | `simular_escenario`; marcar HIPOTÉTICO; 2.756,2→0,0 m y diferencia −2.756,2 m; no prometer efecto real. |
 
-## Estado de ejecución de esta auditoría
+## Estado de ejecución del intento histórico bloqueado
 
 | Prueba | Estado | Observación |
 |---|---|---|

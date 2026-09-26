@@ -1,5 +1,9 @@
 # PORTAL SMOKE REFRESH
 
+> **SUPERSEDED como estado actual por
+> [PORTAL_SMOKE_ULTIMATE.md](PORTAL_SMOKE_ULTIMATE.md). Este documento conserva un intento anterior
+> bloqueado por infraestructura.**
+
 - **DATE:** 2026-09-25.
 - **VERSION:** conversación privada `urban-challenge-rc2-195b498 · v4`; memoria activa, sin Internet.
 - **PROMPT:** «¿Qué municipios coinciden en envejecimiento de 65 o más y mayor distancia a atención primaria, con cuantil 0,75, umbral de 2 km y periodo 2025-01-01? Incluye municipios destacados, cortes, filas usadas, unidades, fuentes y el límite principal.»
