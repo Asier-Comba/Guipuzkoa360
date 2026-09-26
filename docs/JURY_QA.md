@@ -278,4 +278,4 @@ Los checks son evaluaciones de sujeto por propiedad dentro de un benchmark defin
 
 Hay dos riesgos Medium gestionados. M-01: un escenario extremo conserva 66 filas afectadas y genera 20.155 caracteres; no afecta al escenario normal de Aduna y no se trunca para preservar trazabilidad. M-02: en un smoke histórico bloqueado por runner ocupado y sin output analítico, el texto de fallback confundió 2 km con el corte de distancia por cuantil. No demuestra un fallo del core; el smoke final posterior separó ambos conceptos. La demo distingue evidencia local, historia conversacional y ejecución nueva.
 
-**EVIDENCE POINTER:** `analisis/final/full_validation.json → issues`; `docs/internal/PORTAL_SMOKE_REFRESH.md` en el handoff final de Work 1; centro de validación → riesgo conocido.
+**EVIDENCE POINTER:** `analisis/final/full_validation.json → issues`; intento histórico en `docs/internal/PORTAL_SMOKE_REFRESH.md`; smoke posterior en `docs/internal/PORTAL_SMOKE_ULTIMATE.md`; centro de validación → riesgo conocido.

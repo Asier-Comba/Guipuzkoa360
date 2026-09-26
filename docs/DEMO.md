@@ -31,7 +31,7 @@ Narrativa: **problema** de cruzar e interpretar datos → **pregunta** territori
 ## Preparación
 
 1. Abrir la hero y las tres ampliaciones locales. Dejar la inicial en 65+, q0,75, 2 km.
-2. En una sesión autorizada, preparar antes de empezar el portal y la versión probada. Esta rama no toca el portal. El último smoke documentado quedó bloqueado por infraestructura; no prometer disponibilidad.
+2. En una sesión autorizada, preparar antes de empezar el portal y la versión probada. Esta rama no toca el portal. El smoke final de v4 pasó de forma acotada; se conserva el Plan B porque la disponibilidad del runner no está garantizada durante una demo.
 3. Tener preparada evidencia histórica de tool call si se desea mostrarla. Identificar su versión y fecha; las pruebas previas se repartieron entre versiones.
 4. Diferenciar tres etiquetas: **EN DIRECTO**, **CÁLCULO LOCAL GUARDADO**, **EVIDENCIA HISTÓRICA DEL PORTAL**. Un click en el HTML nunca es un recálculo en directo.
 5. Ensayar el cambio entre superficies. No leer JSON completo: mostrar operación, parámetros, cifra, fuente y límite.

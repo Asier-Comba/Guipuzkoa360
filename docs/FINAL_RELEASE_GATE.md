@@ -20,8 +20,8 @@ conjunto.
 | Datos y manifiesto | PASS | 88/88 municipios, 148 registros sanitarios, 0 nulos obligatorios, duplicados, coordenadas inválidas o referencias huérfanas; 7/7 hashes. |
 | Python integrado | PASS | 263/263 en la suite completa del candidato. No se suma al benchmark exhaustivo. |
 | Node | PASS | 17/17 y sintaxis de los tres scripts críticos. |
-| Fast CI | PASS del pre-cierre | Run 36194062246, Ubuntu 24.04 y Windows latest. El commit documental final requiere su propia ejecución verde. |
-| Benchmark exhaustivo | PASS histórico; repetición final requerida | 72.673/72.673; trazabilidad 31.545/31.545; 20/20 corrupciones controladas; soak 1.000 sin deriva ni excepciones. |
+| Fast CI | Gate remoto obligatorio | Ubuntu 24.04 y Windows latest deben pasar sobre el exact candidate SHA; el run autoritativo se registra en PR #10/checks. |
+| Benchmark exhaustivo | Gate remoto obligatorio | 72.673/72.673; trazabilidad 31.545/31.545; 20/20 corrupciones controladas; soak 1.000 sin deriva ni excepciones. `Remote full validation` debe pasar sobre el exact candidate SHA; el run autoritativo se registra en PR #10/checks porque añadirlo aquí cambiaría el SHA. |
 | Hero y artefactos | PASS | Filas, geometrías, fuentes y escenario contrastados; listas 7/4/2; nueve mutaciones rechazadas. |
 | Navegador | PASS acotado | Matriz Chromium 1920, 1366, 1280, 1024 y 390 px; reflow equivalente 125/150 %, teclado y foco. No es certificación WCAG ni prueba con usuarios. |
 | Q&A | PASS documental | 44 preguntas y respuestas con punteros de evidencia. |
@@ -60,7 +60,7 @@ Estas cifras describen hallazgos conocidos y gates definidos; no afirman riesgo 
 
 ## Evidencia y acciones humanas
 
-- [Validación](VALIDATION.md), [benchmark](BENCHMARKS.md), [revisión de navegador](internal/HERO_BROWSER_REVIEW_V2.md) y [smoke de portal](internal/PORTAL_SMOKE_REFRESH.md).
+- [Validación](VALIDATION.md), [benchmark](BENCHMARKS.md), [revisión de navegador](internal/HERO_BROWSER_REVIEW_V2.md) y [smoke de portal](internal/PORTAL_SMOKE_ULTIMATE.md).
 - [Fuentes](../FUENTES.md), [metodología](METODOLOGIA.md), [pack mínimo](SUBMISSION_PACK.md) y [checklist final](internal/FINAL_SUBMISSION_READINESS.md).
 
 Después del commit documental final se registran en la PR, sin cambiar el SHA: fast CI del head,

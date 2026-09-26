@@ -49,6 +49,6 @@ Se usan los datos versionados; reconstruir esta evidencia no requiere descargar 
 
 ## Equipo y contribuciones
 
-**Oier Duñabeitia**: datos, geografía, calidad y reproducibilidad. **Asier Comba**: agente, runtime, benchmark y cierre técnico. **Hugo Fernández Díez**: producto, diseño visual, integración y pruebas conversacionales. [Equipo y contribuciones](docs/TEAM.md), incluida la explicación del uso de asistencia de IA.
+**Oier Duñabeitia**: datos, geografía, calidad y reproducibilidad. **Asier Comba**: agente, runtime, benchmark y cierre técnico. **Hugo Fernández Díez**: producto, diseño visual, integración y pruebas conversacionales. [Equipo y contribuciones](docs/TEAM.md).
 
 El cierre técnico está preparado para revisión. La publicación de la entrega requiere una decisión humana.

@@ -110,6 +110,21 @@ def test_all_views_embed_exact_evidence_without_network_dependencies(filename,mo
     static_copy=re.sub(r'<(?:script|style)\b[^>]*>.*?</(?:script|style)>','',html,flags=re.S)
     assert not re.search(r'\b(?:Work [123]|RC[12]|fixture|synthetic|TODO|pending|LLM)\b',static_copy)
 
+def test_public_surfaces_do_not_present_historical_runner_block_as_current():
+    public_files=[
+        ROOT/'docs/JURY_ONE_PAGER.md',
+        ROOT/'docs/DEMO.md',
+        ROOT/'docs/PRODUCT_GUIDE.md',
+        ROOT/'resultados/demo.html',
+        ROOT/'resultados/informe_principal.html',
+        ROOT/'resultados/scenario_comparison.html',
+        ROOT/'resultados/control_center.html',
+    ]
+    forbidden=('el último smoke quedó bloqueado','la última prueba quedó bloqueada')
+    for path in public_files:
+        copy=path.read_text(encoding='utf-8').lower()
+        assert all(phrase not in copy for phrase in forbidden),path
+
 def test_regeneration_is_byte_reproducible_and_preserves_frozen_inputs():
     outputs=[ROOT/'resultados'/x for x in ['demo.html','informe_principal.html','scenario_comparison.html','control_center.html','evidencia/product_evidence.json','evidencia/jury_visual_data.json']]
     before=[p.read_bytes() for p in outputs]
