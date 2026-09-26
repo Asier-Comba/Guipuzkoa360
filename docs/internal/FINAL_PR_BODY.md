@@ -1,5 +1,8 @@
 ## Decisión: integración preparada, con advertencias
 
+> **HISTÓRICO · borrador anterior a PR #10.** No representa el estado actual; consultar
+> `../FINAL_RELEASE_GATE.md` y el cuerpo vigente de PR #10.
+
 FINAL_RELEASE_GO=YES conforme al gate autorizado. No publicar ni fusionar automáticamente.
 Esta PR sustituye como cierre final a #8, conservada como historia.
 

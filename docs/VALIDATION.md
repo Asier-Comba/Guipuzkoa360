@@ -8,7 +8,7 @@ conversación ni demuestra impacto social.
 
 Sobre `final/gipuzkoa360-ultimate`:
 
-- **263/263 tests Python** de datos, contratos, runtime, integración, artefactos, paquete y NEXT;
+- **264/264 tests Python** de datos, contratos, runtime, integración, artefactos, paquete y NEXT;
 - **17/17 Node** en tests del flujo contractual;
 - sintaxis válida de `jury_view.js`, `build_jury.mjs` y `build_results.mjs`;
 - fast CI en Ubuntu 24.04 y Windows latest: PASS en el pre-cierre; el head documental final se valida

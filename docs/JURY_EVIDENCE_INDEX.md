@@ -46,7 +46,7 @@ Los pesos proceden de la rúbrica conservada en `contexto-principal.md` y `docs/
 
 **HOW TO SHOW IT LIVE:** abrir pregunta→tool→args→output y contrastar respuesta. Si runner falla, usar evidencia guardada rotulada y mostrar error, no afirmar ejecución exitosa.
 
-**LIMIT:** [smoke actual](internal/PORTAL_SMOKE_REFRESH.md) bloqueado. NEXT es prototipo offline con inputs estructurados, no prueba del LLM en portal.
+**LIMIT:** el [smoke actual](internal/PORTAL_SMOKE_ULTIMATE.md) es PASS acotado de tres turnos y no sustituye las suites. El [intento bloqueado anterior](internal/PORTAL_SMOKE_REFRESH.md) se conserva como histórico. NEXT es prototipo offline con inputs estructurados, no prueba del LLM en portal.
 
 ## 4. Claridad de respuestas y artefactos — 15 %
 
@@ -70,4 +70,4 @@ Los pesos proceden de la rúbrica conservada en `contexto-principal.md` y `docs/
 
 **HOW TO SHOW IT LIVE:** «3 km son 3 minutos» y «Aduna no tiene médicos»: explicar límites, no convertir indicadores en afirmaciones clínicas. Mostrar tests negativos, manifiesto y estado de portal.
 
-**LIMIT:** payload extremo pendiente; fallback de error puede confundir criterios; estado INFRASTRUCTURE_BLOCKED. No se publica ni mergea automáticamente. [Gobierno del release](RELEASE_GOVERNANCE.md).
+**LIMIT:** payload extremo pendiente; M-02 conserva como riesgo histórico un fallback bajo fallo de runner que confundió criterios. El smoke posterior pasó de forma acotada; no se publica ni mergea automáticamente. [Gobierno del release](RELEASE_GOVERNANCE.md).

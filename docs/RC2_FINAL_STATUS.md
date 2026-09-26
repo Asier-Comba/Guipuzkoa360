@@ -1,5 +1,8 @@
 # GIPUZKOA 360 · Estado final local de RC2
 
+> **HISTÓRICO · snapshot local del 24/09/2026.** No representa el candidato actual. Estado vigente:
+> [gate final](FINAL_RELEASE_GATE.md) y [validación](VALIDATION.md).
+
 Fecha: 2026-09-24  
 Versión privada: `urban-challenge-rc2-195b498 · v4`
 Rama: `fix/portal-runtime-rc2`  

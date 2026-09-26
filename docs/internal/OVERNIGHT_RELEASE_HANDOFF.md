@@ -1,5 +1,8 @@
 # Overnight release handoff
 
+> **HISTÓRICO · handoff anterior al candidato final.** No usar sus contadores ni estados como evidencia
+> vigente; consultar `../FINAL_RELEASE_GATE.md` y `../VALIDATION.md`.
+
 - **START_SHA:** `c28e3a096676ff2c6a51dbdfdc70a5e9c1728ea4`
 - **FINAL_SHA:** commit que contiene este archivo; hash exacto en la PR final.
 - **COMMITS_NEW:** 1 commit documental de cierre previsto.

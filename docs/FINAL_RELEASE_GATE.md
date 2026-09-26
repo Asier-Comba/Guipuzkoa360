@@ -18,7 +18,7 @@ conjunto.
 |---|---|---|
 | Runtime y contexto | PASS | 14 archivos idénticos al runtime congelado; 7 tools; ningún parámetro público `detalle`. |
 | Datos y manifiesto | PASS | 88/88 municipios, 148 registros sanitarios, 0 nulos obligatorios, duplicados, coordenadas inválidas o referencias huérfanas; 7/7 hashes. |
-| Python integrado | PASS | 263/263 en la suite completa del candidato. No se suma al benchmark exhaustivo. |
+| Python integrado | PASS | 264/264 en la suite completa del candidato. No se suma al benchmark exhaustivo. |
 | Node | PASS | 17/17 y sintaxis de los tres scripts críticos. |
 | Fast CI | Gate remoto obligatorio | Ubuntu 24.04 y Windows latest deben pasar sobre el exact candidate SHA; el run autoritativo se registra en PR #10/checks. |
 | Benchmark exhaustivo | Gate remoto obligatorio | 72.673/72.673; trazabilidad 31.545/31.545; 20/20 corrupciones controladas; soak 1.000 sin deriva ni excepciones. `Remote full validation` debe pasar sobre el exact candidate SHA; el run autoritativo se registra en PR #10/checks porque añadirlo aquí cambiaría el SHA. |

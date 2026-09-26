@@ -1,10 +1,14 @@
 # GIPUZKOA 360 · Evidencia final de portal RC2
 
+> **HISTÓRICO · evolución de RC2.** No representa por sí solo el estado actual. El smoke vigente es
+> [PORTAL_SMOKE_ULTIMATE](internal/PORTAL_SMOKE_ULTIMATE.md); gate actual en
+> [FINAL_RELEASE_GATE](FINAL_RELEASE_GATE.md).
+
 > Corrección de alcance, 25-09: se conserva el informe original, pero no toda esta batería fue v4.
 > La lista de conversaciones sitúa fuente/resumen/comparación/aliases en v2, coincidencia y red-team
 > en v3, y escenario en v4. El nombre del agente se actualiza en conversaciones antiguas; su etiqueta
 > no demuestra la versión ejecutada. El core se conserva y v4 recoge la aclaración del contador.
-> Smoke actual bloqueado, no PASS: [registro final](internal/PORTAL_SMOKE_FINAL.md).
+> Incidente histórico bloqueado, no PASS: [registro del intento](internal/PORTAL_SMOKE_FINAL.md).
 
 Fecha: 2026-09-24
 

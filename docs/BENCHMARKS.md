@@ -1,10 +1,11 @@
 # GIPUZKOA 360 · Exhaustive validation and benchmark
 
-## Lectura actual · integración final
+## Candidato final actual
 
-La evidencia original de Asier se conserva debajo sin reescribir sus mediciones. La ejecución final
-única sobre `84e95167bfb9718ebb5f26b533f12cd885901e20` está en
-[informe final](../analisis/final/BENCHMARKS.md): **72.673/72.673**, 0 Critical, 0 High, 1 Medium;
+El estado actual es la PR #10, rama `final/gipuzkoa360-ultimate`. La validación exhaustiva remota debe
+pasar sobre el SHA final exacto; el run autoritativo se registra en la PR/checks para no cambiar ese SHA.
+La medición almacenada sobre `84e95167bfb9718ebb5f26b533f12cd885901e20` se conserva como evidencia
+reproducible en el [informe final](../analisis/final/BENCHMARKS.md): **72.673/72.673**, 0 Critical, 0 High, 1 Medium;
 31.545/31.545 trazables, 20/20 inyecciones controladas, soak 1.000 sin deriva.
 Peor tool local warm p50/p95/p99: **7,720/12,373/13,534 ms**. No son latencias del portal.
 

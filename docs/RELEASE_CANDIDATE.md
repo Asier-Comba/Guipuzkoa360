@@ -1,6 +1,9 @@
 # GIPUZKOA 360 · Urban Challenge release candidate
 
-Versión candidata actual: `urban-challenge-rc2`.
+> **HISTÓRICO · etapa RC2 previa al candidato final.** Estado vigente: [gate final](FINAL_RELEASE_GATE.md)
+> y [validación](VALIDATION.md).
+
+Versión candidata de este snapshot: `urban-challenge-rc2`.
 
 RC1 queda preservado como histórico mediante el tag `urban-challenge-rc1` sobre `main`; no debe utilizarse para
 las pruebas nuevas del portal. RC2 se construye desde `fix/portal-runtime-rc2`. El SHA exacto validado localmente,

@@ -1,5 +1,8 @@
 # Estado de integración · 2026-09-24
 
+> **HISTÓRICO · snapshot del 24/09/2026.** No representa el candidato actual. Estado vigente:
+> [gate final](FINAL_RELEASE_GATE.md) y [validación](VALIDATION.md).
+
 ## Estado remoto observado
 
 - `main` contiene Work 3 tras la fusión de PR #2 (`1f9fbd9`).

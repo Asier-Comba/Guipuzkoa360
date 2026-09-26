@@ -8,7 +8,7 @@ Fecha de cierre: 2026-09-25. Este documento prepara una decisión humana; no aut
 - **PR_FINAL:** `TO_BE_RECORDED_EXTERNALLY`; base `main`, no draft, no merge.
 - **FAST_CI:** pre-cierre run 36194062246 PASS Linux/Windows; run del final SHA pendiente de registrar en PR.
 - **FULL_VALIDATION:** `TO_BE_RECORDED_IN_PR` sobre el final SHA; esperado 72.673/72.673 según harness publicado.
-- **PYTHON:** 263/263 suite integrada.
+- **PYTHON:** 264/264 suite integrada.
 - **NODE:** 17/17 y tres comprobaciones sintácticas.
 - **TOOLS:** 7 operaciones públicas deterministas.
 - **DATA:** 88/88 municipios; 148 registros sanitarios; 412/412 referencias de fila; manifiesto 7/7.

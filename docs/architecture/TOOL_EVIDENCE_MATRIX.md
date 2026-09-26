@@ -1,5 +1,8 @@
 # Siete tools: contrato, operación, evidencia y límites
 
+> La columna de portal conserva hitos históricos. Estado actual: smoke v4 P1/P2/P3 PASS acotado en
+> [PORTAL_SMOKE_ULTIMATE](../internal/PORTAL_SMOKE_ULTIMATE.md); los bloqueos citados son anteriores.
+
 Autoridad de firmas: `agentes/gipuzkoa360/portal/main.py` en `195b498…`. Siete wrappers físicos; `build_agent(model)` síncrono. Ninguna firma pública de Studio acepta `detalle`. Las pruebas offline del core pueden acceder a detalle completo; no se debe sugerir al usuario del portal.
 
 ## Sobre común

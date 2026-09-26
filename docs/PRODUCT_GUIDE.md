@@ -75,7 +75,7 @@ No hay tiempos de viaje, citas, capacidad, demanda futura, precios de vivienda n
 
 ## Cómo leer validación y futuro
 
-El [centro secundario](../resultados/control_center.html) explica cada KPI con definición, numerador, denominador, origen y límite. «31.545/31.545 trazables» se limita al benchmark; no acredita todas las respuestas posibles. Los 263 tests Python y los 17 tests Node corresponden a la suite integrada actual. El benchmark exhaustivo contiene 72.673 checks con otra definición y no se suma a esas suites.
+El [centro secundario](../resultados/control_center.html) explica cada KPI con definición, numerador, denominador, origen y límite. «31.545/31.545 trazables» se limita al benchmark; no acredita todas las respuestas posibles. Los 264 tests Python y los 17 tests Node corresponden a la suite integrada actual. El benchmark exhaustivo contiene 72.673 checks con otra definición y no se suma a esas suites.
 
 La salida extrema de 20.155 caracteres sigue sin demostración en portal; se conserva completa para no degradar trazabilidad y no afecta al escenario normal de Aduna. Históricamente, un intento quedó bloqueado por el runner y, sin output analítico, el fallback confundió 2 km con el corte de distancia por cuantil; no es evidencia de un fallo del core. El smoke ultimate posterior pasó de forma acotada P1/P2/P3 y separó correctamente umbral y cuantil. M-02 se conserva como riesgo histórico. Las latencias del motor local no representan la conversación completa.
 

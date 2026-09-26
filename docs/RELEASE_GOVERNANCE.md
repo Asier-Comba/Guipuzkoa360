@@ -1,6 +1,10 @@
 # Gobierno del release
 
-Base de esta ingeniería: `46c1a48f63c307654f45fcb5c18883f264b660ed`, rama `final/gipuzkoa360-integration`, PR #9. Rama de trabajo: `final/work1-engineering-master`. No modifica main, PR #9 ni la configuración administrativa.
+**Estado actual:** candidato `final/gipuzkoa360-ultimate`, PR #10 hacia `main`; portal v4 con PASS
+acotado y Entrega no publicada. La rama por defecto continúa `work/data-foundation` hasta una decisión
+humana. El origen histórico fue `46c1a48f63c307654f45fcb5c18883f264b660ed`, PR #9 y las ramas de
+integración previas; PR #9 está sustituida por PR #10. Este documento no autoriza merge, cambio de rama
+por defecto ni publicación.
 
 | Nivel | Qué significa | Qué no autoriza |
 |---|---|---|
@@ -12,12 +16,12 @@ Base de esta ingeniería: `46c1a48f63c307654f45fcb5c18883f264b660ed`, rama `fina
 
 Requisitos mínimos: **0 Critical**, **0 High**, data contract PASS, traceability PASS bajo definición y denominador publicados, regresión relevante PASS y aprobación humana. Nunca hay autopromoción.
 
-1. Fijar SHA y manifiestos. Cuando se reutiliza evidencia v4, comparar **los 12 archivos byte a byte** contra `195b4980fa5998b096c308296a55e452380b0371` (`scripts/ops/verify_runtime_identity.py`). Un byte distinto invalida esa identidad.
+1. Fijar SHA y manifiestos. Cuando se reutiliza evidencia v4, comparar **los 14 archivos byte a byte** contra `195b4980fa5998b096c308296a55e452380b0371` (`scripts/ops/verify_runtime_identity.py`). Un byte distinto invalida esa identidad.
 2. CI rápida verde en Linux y Windows desde checkout limpio: suite Python completa, Node, sintaxis, jury gates, extracción y doble build; sin descarga de fuentes ni caché de instalación.
 3. Integridad de snapshots: cobertura 88, claves, referencias, coordenadas, fuentes y manifiesto. `source_health` es diagnóstico offline, no certificación de actualidad de Internet.
 4. Validación exhaustiva y trazabilidad. 72.673 checks no son 72.673 preguntas del LLM. Preservar denominadores y versión del harness.
 5. Revisar riesgos conocidos: payload extremo sin prueba de portal; errores de infraestructura y comportamiento conversacional en esas condiciones. NEXT no cierra riesgos de v4.
-6. Repetir smoke privado en la versión exacta cuando el runner esté disponible. Si no lo está, etiquetar `INFRASTRUCTURE_BLOCKED`, no PASS.
+6. Conservar el smoke privado de la versión exacta. El actual pasó de forma acotada; los intentos anteriores con runner no disponible permanecen como `INFRASTRUCTURE_BLOCKED` histórico, nunca PASS.
 7. Aprobación humana explícita: qué SHA, qué evidencia, riesgos aceptados, responsable y rollback a artefacto previamente aprobado. Publicar hackathon es una autorización distinta.
 
 Regla shadow: ningún Critical/High nuevo, goldens PASS, beneficio medido y sin deterioro injustificado. El beneficio medido de NEXT es el bloqueo de evidencia/drafts manipulados; su latencia y UX son costes, no mejoras probadas. No se propone promoverlo ahora.
