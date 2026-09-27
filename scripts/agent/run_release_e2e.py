@@ -227,7 +227,7 @@ def build_report() -> dict[str, Any]:
 
     passed = sum(case["status"] == "PASS" for case in cases)
     return {
-        "release": "urban-challenge-rc1",
+        "release": "urban-challenge-rc2",
         "execution": "Deterministic coordinator/tool acceptance; no network and no external LLM.",
         "cases_total": len(cases),
         "cases_passed": passed,

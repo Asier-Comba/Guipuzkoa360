@@ -1,0 +1,281 @@
+{
+  "environment": {
+    "python": "3.12.4",
+    "implementation": "CPython",
+    "os": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 186 Stepping 3, GenuineIntel",
+    "cpu_count": 12,
+    "municipalities": 88,
+    "health_records": 148
+  },
+  "method": {
+    "clock": "time.perf_counter_ns",
+    "cold_n_per_tool": 20,
+    "warm_n_per_tool": 100,
+    "cold_definition": "analysis cache cleared before each measured wrapper call",
+    "warm_definition": "one unmeasured warm-up, then repeated calls with the same in-process cache",
+    "serialization_n_per_tool": 100
+  },
+  "tools": {
+    "consultar_fuente": {
+      "cold_ms": {
+        "n": 20,
+        "min": 0.8456,
+        "mean": 1.19033,
+        "p50": 1.09595,
+        "p90": 1.58462,
+        "p95": 1.743385,
+        "p99": 2.006117,
+        "max": 2.0718,
+        "stddev": 0.289212
+      },
+      "warm_ms": {
+        "n": 100,
+        "min": 0.2213,
+        "mean": 0.3116,
+        "p50": 0.2736,
+        "p90": 0.49186,
+        "p95": 0.534035,
+        "p99": 0.59351,
+        "max": 0.644,
+        "stddev": 0.096845
+      },
+      "serialization_ms": {
+        "p50": 0.0117,
+        "p95": 0.0121
+      },
+      "payload_chars": {
+        "p50": 1413.0,
+        "max": 1413
+      }
+    },
+    "obtener_resumen_territorial": {
+      "cold_ms": {
+        "n": 20,
+        "min": 6.9336,
+        "mean": 7.73628,
+        "p50": 7.493,
+        "p90": 9.1015,
+        "p95": 9.34122,
+        "p99": 10.303684,
+        "max": 10.5443,
+        "stddev": 0.892356
+      },
+      "warm_ms": {
+        "n": 100,
+        "min": 0.5217,
+        "mean": 0.653671,
+        "p50": 0.59915,
+        "p90": 0.82443,
+        "p95": 0.88781,
+        "p99": 1.088161,
+        "max": 1.2328,
+        "stddev": 0.131989
+      },
+      "serialization_ms": {
+        "p50": 0.03235,
+        "p95": 0.036845
+      },
+      "payload_chars": {
+        "p50": 2600.0,
+        "max": 2600
+      }
+    },
+    "comparar_municipios": {
+      "cold_ms": {
+        "n": 20,
+        "min": 7.8896,
+        "mean": 9.37264,
+        "p50": 9.41905,
+        "p90": 10.52057,
+        "p95": 10.637055,
+        "p99": 10.715411,
+        "max": 10.735,
+        "stddev": 0.885559
+      },
+      "warm_ms": {
+        "n": 100,
+        "min": 1.1886,
+        "mean": 1.406016,
+        "p50": 1.3363,
+        "p90": 1.65226,
+        "p95": 1.825595,
+        "p99": 2.130892,
+        "max": 2.239,
+        "stddev": 0.212429
+      },
+      "serialization_ms": {
+        "p50": 0.0261,
+        "p95": 0.039005
+      },
+      "payload_chars": {
+        "p50": 2605.0,
+        "max": 2605
+      }
+    },
+    "analizar_envejecimiento": {
+      "cold_ms": {
+        "n": 20,
+        "min": 1.627,
+        "mean": 1.934595,
+        "p50": 1.9735,
+        "p90": 2.16771,
+        "p95": 2.19869,
+        "p99": 2.353578,
+        "max": 2.3923,
+        "stddev": 0.203895
+      },
+      "warm_ms": {
+        "n": 100,
+        "min": 0.3546,
+        "mean": 0.432504,
+        "p50": 0.39495,
+        "p90": 0.5296,
+        "p95": 0.578235,
+        "p99": 0.776712,
+        "max": 1.4313,
+        "stddev": 0.126884
+      },
+      "serialization_ms": {
+        "p50": 0.0229,
+        "p95": 0.031805
+      },
+      "payload_chars": {
+        "p50": 2181.0,
+        "max": 2181
+      }
+    },
+    "analizar_acceso_servicios": {
+      "cold_ms": {
+        "n": 20,
+        "min": 8.5474,
+        "mean": 9.28005,
+        "p50": 9.24715,
+        "p90": 9.93366,
+        "p95": 10.163715,
+        "p99": 10.259703,
+        "max": 10.2837,
+        "stddev": 0.506254
+      },
+      "warm_ms": {
+        "n": 100,
+        "min": 3.1373,
+        "mean": 3.718931,
+        "p50": 3.59935,
+        "p90": 4.37853,
+        "p95": 4.67745,
+        "p99": 5.210016,
+        "max": 6.3897,
+        "stddev": 0.510899
+      },
+      "serialization_ms": {
+        "p50": 0.0282,
+        "p95": 0.03212
+      },
+      "payload_chars": {
+        "p50": 3632.0,
+        "max": 3632
+      }
+    },
+    "analizar_coincidencia": {
+      "cold_ms": {
+        "n": 20,
+        "min": 11.915,
+        "mean": 12.677385,
+        "p50": 12.5564,
+        "p90": 13.28544,
+        "p95": 13.53797,
+        "p99": 14.812794,
+        "max": 15.1315,
+        "stddev": 0.703764
+      },
+      "warm_ms": {
+        "n": 100,
+        "min": 5.2819,
+        "mean": 5.917731,
+        "p50": 5.7555,
+        "p90": 6.73647,
+        "p95": 7.03465,
+        "p99": 7.562588,
+        "max": 7.8089,
+        "stddev": 0.547692
+      },
+      "serialization_ms": {
+        "p50": 0.0508,
+        "p95": 0.05772
+      },
+      "payload_chars": {
+        "p50": 5216.0,
+        "max": 5216
+      }
+    },
+    "simular_escenario": {
+      "cold_ms": {
+        "n": 20,
+        "min": 12.1101,
+        "mean": 13.40772,
+        "p50": 12.8036,
+        "p90": 16.21163,
+        "p95": 16.27113,
+        "p99": 16.419026,
+        "max": 16.456,
+        "stddev": 1.303872
+      },
+      "warm_ms": {
+        "n": 100,
+        "min": 6.5992,
+        "mean": 7.689261,
+        "p50": 7.30705,
+        "p90": 9.17981,
+        "p95": 9.71482,
+        "p99": 10.698611,
+        "max": 11.4917,
+        "stddev": 1.043549
+      },
+      "serialization_ms": {
+        "p50": 0.1618,
+        "p95": 0.17662
+      },
+      "payload_chars": {
+        "p50": 20155.0,
+        "max": 20155
+      }
+    }
+  },
+  "payload_findings": [
+    {
+      "severity": "Medium",
+      "tool": "simular_escenario",
+      "payload_chars": 20155,
+      "reason": "El cambio de umbral 1→10 km modifica la clasificación de 66 de 88 municipios analizados y la salida compacta conserva cada fila afectada.",
+      "reduction_tradeoff": "Reducirlo exige truncar o paginar evidencia municipal; no se cambia el runtime porque se perdería evidencia y no existe un fallo numérico o contractual."
+    }
+  ],
+  "portal_observed_seconds": {
+    "normal_range": [
+      26,
+      47
+    ],
+    "g04_tool_and_output_by": 28.3,
+    "g04_final_by": 74.3,
+    "scope": "model + orchestration + sandbox; not comparable to local engine latency"
+  },
+  "aggregate_warm_ms": {
+    "n": 700,
+    "min": 0.2213,
+    "mean": 2.875673,
+    "p50": 1.3449,
+    "p90": 7.04871,
+    "p95": 7.778065,
+    "p99": 9.348936,
+    "max": 11.4917,
+    "stddev": 2.790662
+  },
+  "max_payload_chars": 20155,
+  "worst_tool_percentiles_ms": {
+    "p50": 7.30705,
+    "p95": 9.71482,
+    "p99": 10.698611
+  }
+}

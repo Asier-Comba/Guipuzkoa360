@@ -25,3 +25,5 @@ def test_build_agent_uses_platform_model_and_seven_tools(monkeypatch):
     assert captured["model"] is model
     assert len(captured["tools"]) == 7
     assert captured["system_prompt"] == main.SYSTEM_PROMPT
+    assert "service_count cuenta" in main.SYSTEM_PROMPT
+    assert "todos los registros sanitarios" in main.SYSTEM_PROMPT

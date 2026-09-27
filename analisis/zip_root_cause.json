@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "base_sha": "488f46db7047d9393d4d4a489a869ab246c215b9",
+  "root_cause": "requirements.txt: LF (66 bytes) versus CRLF (67 bytes). All other members and original ZIP metadata unchanged.",
+  "variants": [
+    {
+      "requirements_eol": "LF",
+      "bytes": 48338,
+      "sha256": "e642ca6b2848eb01a9e79bd260ac6d18d501fc097e8b8fd0ddf6bbba8e7cd00f",
+      "member_differences_from_asier": [
+        {
+          "name": "requirements.txt",
+          "actual_bytes": 66,
+          "expected_bytes": 67,
+          "actual_crc": 844657,
+          "expected_crc": 1519705373
+        }
+      ],
+      "exact_historical_archive": false
+    },
+    {
+      "requirements_eol": "CRLF",
+      "bytes": 48339,
+      "sha256": "aea14519f838dda82f3ba317c556a2ffed5e2b2cd44c5cf085c216c8897a418b",
+      "member_differences_from_asier": [],
+      "exact_historical_archive": true
+    }
+  ]
+}

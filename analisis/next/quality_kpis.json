@@ -1,0 +1,72 @@
+{
+  "scope": "OFFLINE PROTOTYPE: bounded structured intents; no LLM, no portal, no production promotion",
+  "versions": {
+    "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+    "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371",
+    "CAPABILITY_VERSION": "next-registry-0.1",
+    "PROMPT_VERSION": "none-deterministic-template-0.1",
+    "BENCHMARK_VERSION": "next-evaluation-0.1"
+  },
+  "kpis": {
+    "tool_selection_accuracy": {
+      "numerator": 9,
+      "denominator": 9,
+      "value": 1.0,
+      "definition": "Correct deterministic routing / supported structured-intent cases; not natural-language accuracy."
+    },
+    "parameter_accuracy": {
+      "numerator": 9,
+      "denominator": 9,
+      "value": 1.0,
+      "definition": "Exact requested/merged parameters / supported cases."
+    },
+    "numeric_grounding_rate": {
+      "numerator": 9,
+      "denominator": 9,
+      "value": 1.0,
+      "definition": "Whole result equals existing core / supported cases; shared algorithm, not independent validation."
+    },
+    "source_grounding_rate": {
+      "numerator": 9,
+      "denominator": 9,
+      "value": 1.0,
+      "definition": "Declared source identifiers resolve in catalog / supported cases; not completeness of every field provenance."
+    },
+    "limitation_present_rate": {
+      "numerator": 9,
+      "denominator": 9,
+      "value": 1.0,
+      "definition": "Nonempty limitations / supported cases."
+    },
+    "followup_recalculation_rate": {
+      "numerator": 1,
+      "denominator": 1,
+      "value": 1.0,
+      "definition": "Follow-ups triggering execution and critic recalculation / follow-up cases."
+    },
+    "out_of_scope_rejection_rate": {
+      "numerator": 6,
+      "denominator": 6,
+      "value": 1.0,
+      "definition": "Unsupported explicit intents with no tool / unsupported cases."
+    },
+    "critic_detection_rate": {
+      "numerator": 16,
+      "denominator": 16,
+      "value": 1.0,
+      "definition": "Injected corruptions/unapproved free-text drafts rejected / injections. This is template allowlisting, not general semantic detection."
+    },
+    "composer_block_rate": {
+      "numerator": 16,
+      "denominator": 16,
+      "value": 1.0,
+      "definition": "Corruptions blocked by composer / injections."
+    },
+    "determinism_rate": {
+      "numerator": 8,
+      "denominator": 8,
+      "value": 1.0,
+      "definition": "Byte-equivalent canonical complete session results / repeated identical structured requests."
+    }
+  }
+}

@@ -1,0 +1,281 @@
+{
+  "environment": {
+    "python": "3.12.10",
+    "implementation": "CPython",
+    "os": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 186 Stepping 3, GenuineIntel",
+    "cpu_count": 12,
+    "municipalities": 88,
+    "health_records": 148
+  },
+  "method": {
+    "clock": "time.perf_counter_ns",
+    "cold_n_per_tool": 20,
+    "warm_n_per_tool": 100,
+    "cold_definition": "analysis cache cleared before each measured wrapper call",
+    "warm_definition": "one unmeasured warm-up, then repeated calls with the same in-process cache",
+    "serialization_n_per_tool": 100
+  },
+  "tools": {
+    "consultar_fuente": {
+      "cold_ms": {
+        "n": 20,
+        "min": 2.7793,
+        "mean": 3.191565,
+        "p50": 3.07315,
+        "p90": 3.60675,
+        "p95": 3.83532,
+        "p99": 4.115304,
+        "max": 4.1853,
+        "stddev": 0.341423
+      },
+      "warm_ms": {
+        "n": 100,
+        "min": 1.4119,
+        "mean": 1.691559,
+        "p50": 1.63445,
+        "p90": 1.97231,
+        "p95": 2.145275,
+        "p99": 2.307343,
+        "max": 2.5195,
+        "stddev": 0.203528
+      },
+      "serialization_ms": {
+        "p50": 0.0536,
+        "p95": 0.07186
+      },
+      "payload_chars": {
+        "p50": 1413.0,
+        "max": 1413
+      }
+    },
+    "obtener_resumen_territorial": {
+      "cold_ms": {
+        "n": 20,
+        "min": 34.3554,
+        "mean": 37.476365,
+        "p50": 37.50715,
+        "p90": 38.53031,
+        "p95": 38.733205,
+        "p99": 39.955361,
+        "max": 40.2609,
+        "stddev": 1.134401
+      },
+      "warm_ms": {
+        "n": 100,
+        "min": 2.3859,
+        "mean": 2.909578,
+        "p50": 2.7769,
+        "p90": 3.29438,
+        "p95": 3.375045,
+        "p99": 5.72389,
+        "max": 6.1387,
+        "stddev": 0.492806
+      },
+      "serialization_ms": {
+        "p50": 0.10255,
+        "p95": 0.14579
+      },
+      "payload_chars": {
+        "p50": 2600.0,
+        "max": 2600
+      }
+    },
+    "comparar_municipios": {
+      "cold_ms": {
+        "n": 20,
+        "min": 36.1959,
+        "mean": 38.635095,
+        "p50": 38.6023,
+        "p90": 40.20662,
+        "p95": 41.320295,
+        "p99": 41.815739,
+        "max": 41.9396,
+        "stddev": 1.442153
+      },
+      "warm_ms": {
+        "n": 100,
+        "min": 5.2128,
+        "mean": 5.981713,
+        "p50": 5.97045,
+        "p90": 6.32711,
+        "p95": 6.520675,
+        "p99": 6.952193,
+        "max": 6.9614,
+        "stddev": 0.30594
+      },
+      "serialization_ms": {
+        "p50": 0.0895,
+        "p95": 0.112775
+      },
+      "payload_chars": {
+        "p50": 2605.0,
+        "max": 2605
+      }
+    },
+    "analizar_envejecimiento": {
+      "cold_ms": {
+        "n": 20,
+        "min": 8.5119,
+        "mean": 9.19104,
+        "p50": 9.23835,
+        "p90": 9.53921,
+        "p95": 9.67931,
+        "p99": 10.576262,
+        "max": 10.8005,
+        "stddev": 0.516201
+      },
+      "warm_ms": {
+        "n": 100,
+        "min": 1.8033,
+        "mean": 2.108898,
+        "p50": 2.05815,
+        "p90": 2.4165,
+        "p95": 2.50226,
+        "p99": 2.82469,
+        "max": 3.3187,
+        "stddev": 0.236526
+      },
+      "serialization_ms": {
+        "p50": 0.0986,
+        "p95": 0.15161
+      },
+      "payload_chars": {
+        "p50": 2181.0,
+        "max": 2181
+      }
+    },
+    "analizar_acceso_servicios": {
+      "cold_ms": {
+        "n": 20,
+        "min": 43.3675,
+        "mean": 45.387405,
+        "p50": 45.50635,
+        "p90": 46.34409,
+        "p95": 46.82258,
+        "p99": 48.009396,
+        "max": 48.3061,
+        "stddev": 1.115763
+      },
+      "warm_ms": {
+        "n": 100,
+        "min": 16.0766,
+        "mean": 17.608658,
+        "p50": 17.5474,
+        "p90": 18.29919,
+        "p95": 18.43646,
+        "p99": 19.638526,
+        "max": 21.0667,
+        "stddev": 0.642514
+      },
+      "serialization_ms": {
+        "p50": 0.1243,
+        "p95": 0.164945
+      },
+      "payload_chars": {
+        "p50": 3632.0,
+        "max": 3632
+      }
+    },
+    "analizar_coincidencia": {
+      "cold_ms": {
+        "n": 20,
+        "min": 59.3087,
+        "mean": 61.65559,
+        "p50": 61.27265,
+        "p90": 62.96868,
+        "p95": 67.574035,
+        "p99": 68.247927,
+        "max": 68.4164,
+        "stddev": 2.268746
+      },
+      "warm_ms": {
+        "n": 100,
+        "min": 13.1298,
+        "mean": 27.998748,
+        "p50": 28.68375,
+        "p90": 31.08379,
+        "p95": 31.99599,
+        "p99": 32.711404,
+        "max": 33.0682,
+        "stddev": 3.274405
+      },
+      "serialization_ms": {
+        "p50": 0.18395,
+        "p95": 0.207465
+      },
+      "payload_chars": {
+        "p50": 5216.0,
+        "max": 5216
+      }
+    },
+    "simular_escenario": {
+      "cold_ms": {
+        "n": 20,
+        "min": 60.7116,
+        "mean": 65.90556,
+        "p50": 64.7008,
+        "p90": 68.84821,
+        "p95": 70.504665,
+        "p99": 81.700453,
+        "max": 84.4994,
+        "stddev": 4.896146
+      },
+      "warm_ms": {
+        "n": 100,
+        "min": 25.4639,
+        "mean": 35.41399,
+        "p50": 35.10765,
+        "p90": 38.22373,
+        "p95": 39.183605,
+        "p99": 45.573433,
+        "max": 45.6955,
+        "stddev": 2.861938
+      },
+      "serialization_ms": {
+        "p50": 0.7115,
+        "p95": 0.866615
+      },
+      "payload_chars": {
+        "p50": 20155.0,
+        "max": 20155
+      }
+    }
+  },
+  "payload_findings": [
+    {
+      "severity": "Medium",
+      "tool": "simular_escenario",
+      "payload_chars": 20155,
+      "reason": "El cambio de umbral 1→10 km modifica la clasificación de los 88 municipios y la salida compacta conserva cada fila afectada.",
+      "reduction_tradeoff": "Reducirlo exige truncar o paginar evidencia municipal; no se cambia el runtime porque se perdería evidencia y no existe un fallo numérico o contractual."
+    }
+  ],
+  "portal_observed_seconds": {
+    "normal_range": [
+      26,
+      47
+    ],
+    "g04_tool_and_output_by": 28.3,
+    "g04_final_by": 74.3,
+    "scope": "model + orchestration + sandbox; not comparable to local engine latency"
+  },
+  "aggregate_warm_ms": {
+    "n": 700,
+    "min": 1.4119,
+    "mean": 13.387592,
+    "p50": 5.97795,
+    "p90": 34.44002,
+    "p95": 35.622225,
+    "p99": 38.81853,
+    "max": 45.6955,
+    "stddev": 12.899981
+  },
+  "max_payload_chars": 20155,
+  "worst_tool_percentiles_ms": {
+    "p50": 35.10765,
+    "p95": 39.183605,
+    "p99": 45.573433
+  }
+}

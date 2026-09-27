@@ -19,6 +19,6 @@ python scripts/agent/build_portal_sources.py
 python scripts/agent/build_portal_package.py
 ```
 
-El paquete no necesita `municipios.geojson`; Work 3 lo consume fuera del runtime conversacional. El ZIP RC1
-ocupa aproximadamente 45 KB frente al límite de 24 MB. El constructor fija orden y fecha ZIP para que dos
-builds del mismo contenido produzcan el mismo SHA-256.
+El paquete no necesita `municipios.geojson`; Work 3 lo consume fuera del runtime conversacional. El ZIP RC2
+queda muy por debajo del límite de 24 MB. El constructor fija orden y fecha ZIP para que dos builds del mismo
+contenido produzcan el mismo SHA-256. Los valores exactos vigentes se publican en `docs/RC2_FINAL_STATUS.md`.

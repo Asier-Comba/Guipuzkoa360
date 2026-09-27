@@ -9,7 +9,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-RELEASE_VERSION = "urban-challenge-rc1"
+RELEASE_VERSION = "urban-challenge-rc2"
 OUTPUT = ROOT / "dist" / f"gipuzkoa360-{RELEASE_VERSION}.zip"
 MAX_BYTES = 24 * 1024 * 1024
 FIXED_ZIP_TIME = (2026, 9, 24, 0, 0, 0)
@@ -32,6 +32,13 @@ FILES = {
 }
 
 
+def canonical_bytes(path: Path) -> bytes:
+    """UTF-8/LF packaging only; never rewrite the source or portal deployment."""
+    data = path.read_bytes()
+    data.decode('utf-8')  # Reject unknown encodings rather than silently transcoding.
+    return data.replace(b'\r\n', b'\n')
+
+
 def main() -> None:
     missing = [name for name in FILES if not (ROOT / name).is_file()]
     if missing:
@@ -40,10 +47,11 @@ def main() -> None:
     with zipfile.ZipFile(OUTPUT, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
         for source_name, archive_name in sorted(FILES.items(), key=lambda item: item[1]):
             info = zipfile.ZipInfo(archive_name, FIXED_ZIP_TIME)
+            info.create_system = 3
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = 0o100644 << 16
             archive.writestr(
-                info, (ROOT / source_name).read_bytes(), compress_type=zipfile.ZIP_DEFLATED, compresslevel=9
+                info, canonical_bytes(ROOT / source_name), compress_type=zipfile.ZIP_DEFLATED, compresslevel=9
             )
     size = OUTPUT.stat().st_size
     if size > MAX_BYTES:
@@ -57,6 +65,13 @@ def main() -> None:
         "limit_bytes": MAX_BYTES,
         "sha256": digest,
         "files": sorted(FILES.values()),
+        "canonicalization": "UTF-8 validated; CRLF to LF; no other whitespace or source changes",
+        "zip_metadata": "sorted names; 2026-09-24 00:00:00; Unix create_system=3; regular file 0644; deflate level 9",
+        "members": {
+            destination: {"bytes": len(canonical_bytes(ROOT / source)),
+                          "sha256": hashlib.sha256(canonical_bytes(ROOT / source)).hexdigest()}
+            for source, destination in sorted(FILES.items(), key=lambda pair: pair[1])
+        },
     }
     (OUTPUT.parent / f"gipuzkoa360-{RELEASE_VERSION}-manifest.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"

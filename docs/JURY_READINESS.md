@@ -1,5 +1,8 @@
 # Auditoría cualitativa para jurado · 24/09/2026
 
+> **HISTÓRICO · snapshot del 24/09/2026.** No representa el candidato actual. Estado vigente:
+> [gate final](FINAL_RELEASE_GATE.md) y [validación](VALIDATION.md).
+
 No se asigna una nota. La evidencia actual es una interfaz y contrato con datos sintéticos; aún no acredita un agente real ni conclusiones territoriales.
 
 | Criterio | Evidencia existente | Evidencia ausente | Riesgo | Acción |

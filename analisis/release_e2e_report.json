@@ -1,5 +1,5 @@
 {
-  "release": "urban-challenge-rc1",
+  "release": "urban-challenge-rc2",
   "execution": "Deterministic coordinator/tool acceptance; no network and no external LLM.",
   "cases_total": 8,
   "cases_passed": 8,
@@ -1350,7 +1350,13 @@
               "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
               "La coincidencia estadística no demuestra causalidad ni identifica necesidades individuales.",
               "Los resultados dependen del cuantil, grupo de edad, categoría y periodo elegidos."
-            ]
+            ],
+            "summary": {
+              "age_cut_percent": 23.973,
+              "distance_cut_m": 2019.2,
+              "joined_rows": 88,
+              "highlighted_count": 7
+            }
           }
         }
       ],
@@ -2722,7 +2728,13 @@
           "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
           "La coincidencia estadística no demuestra causalidad ni identifica necesidades individuales.",
           "Los resultados dependen del cuantil, grupo de edad, categoría y periodo elegidos."
-        ]
+        ],
+        "summary": {
+          "age_cut_percent": 23.973,
+          "distance_cut_m": 2019.2,
+          "joined_rows": 88,
+          "highlighted_count": 7
+        }
       },
       "final_answer": "Hallazgo: 7 municipios superan simultáneamente los cortes del cuantil 0,75. Es una coincidencia territorial entre porcentaje de 65+ y distancia geométrica; no demuestra causalidad ni accesibilidad real. Evidencia: resultado de analizar_coincidencia, en % y metros.",
       "unit": "% y m",
@@ -4079,7 +4091,13 @@
               "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
               "La coincidencia estadística no demuestra causalidad ni identifica necesidades individuales.",
               "Los resultados dependen del cuantil, grupo de edad, categoría y periodo elegidos."
-            ]
+            ],
+            "summary": {
+              "age_cut_percent": 12.9796,
+              "distance_cut_m": 2138.6,
+              "joined_rows": 88,
+              "highlighted_count": 4
+            }
           }
         }
       ],
@@ -5436,7 +5454,13 @@
           "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
           "La coincidencia estadística no demuestra causalidad ni identifica necesidades individuales.",
           "Los resultados dependen del cuantil, grupo de edad, categoría y periodo elegidos."
-        ]
+        ],
+        "summary": {
+          "age_cut_percent": 12.9796,
+          "distance_cut_m": 2138.6,
+          "joined_rows": 88,
+          "highlighted_count": 4
+        }
       },
       "final_answer": "Hallazgo: al cambiar el seguimiento a 75+ y cuantil 0,80 quedan 4 municipios destacados. El umbral de 3 km se conserva como criterio solicitado; los cortes estadísticos y sus componentes se muestran por separado.",
       "unit": "% y m",

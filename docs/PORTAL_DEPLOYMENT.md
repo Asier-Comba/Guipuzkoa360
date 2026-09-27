@@ -1,6 +1,6 @@
 # Despliegue del release candidate en el portal
 
-Release: `urban-challenge-rc1`. Esta guía prepara una versión; no autoriza ni describe la publicación de la entrega final.
+Release: `urban-challenge-rc2`. RC1 es histórico. Esta guía prepara una versión privada; no autoriza ni describe la publicación de la entrega final.
 
 ## 1. Construir y verificar
 
@@ -12,10 +12,11 @@ python scripts/agent/build_portal_sources.py
 python scripts/agent/run_release_e2e.py
 python -m pytest -q
 node --test tests/e2e/contract_flow.test.mjs
+python scripts/agent/benchmark_tools.py
 python scripts/agent/build_portal_package.py
 ```
 
-El último comando crea `dist/gipuzkoa360-urban-challenge-rc1.zip` y su manifiesto SHA-256. El ZIP reproduce la estructura que debe existir en la raíz del workspace del portal.
+El último comando crea `dist/gipuzkoa360-urban-challenge-rc2.zip` y su manifiesto SHA-256. El ZIP reproduce la estructura que debe existir en la raíz del workspace del portal. Construirlo dos veces sin cambios debe producir exactamente el mismo tamaño y SHA-256.
 
 ## 2. Archivos exactos
 
@@ -50,6 +51,7 @@ En **Agentes → Python → Agente principal**, reemplazar el contenido de los d
 - `STUDIO_MEMORY_ENABLED = True` para seguimientos.
 - `STUDIO_INTERNET_ENABLED = False`.
 - Siete tools deterministas, sin tool de ejecución arbitraria.
+- Ninguna firma pública de Studio expone `detalle`; las respuestas del coordinador son compactas por diseño.
 - Sin secretos, tokens, llamadas HTTP ni rutas locales.
 
 `STUDIO_CONTEXT_FILES` debe ser exactamente:
@@ -74,10 +76,14 @@ Dependencias del agente: ninguna adicional. El portal aporta `langchain` y `stud
 1. Abrir `main.py` y pulsar **Comprobar preparación**.
 2. Abrir `tools.py` y repetir la comprobación si el portal lo permite.
 3. Corregir únicamente errores de importación o archivos ausentes; no cambiar cifras ni relajar validaciones.
-4. Pulsar **Crear versión del agente**. Nombrarla `urban-challenge-rc1` e identificar el commit indicado en `docs/RELEASE_CANDIDATE.md`.
+4. Pulsar **Crear versión del agente**. Nombrarla `urban-challenge-rc2` e identificar el SHA exacto indicado por Work 1.
 5. Ir a **Pruebas**, seleccionar esa versión y ejecutar, en orden, `docs/JURY_TEST_PLAN.md` y los casos A–H de `analisis/release_e2e_report.json`.
 6. Confirmar que cada respuesta muestra tool, argumentos, periodo, unidad, fuente y límite; revisar especialmente Aduna, Eibar y el caso fuera de alcance.
 7. Si todas pasan, conservar la versión como candidata. **No abrir Entrega ni publicar** hasta la autorización del equipo.
+
+Work 3 es el único operador del portal durante esta puerta. No editar el agente ni lanzar pruebas en paralelo. Si
+falla una prueba, registrar versión, SHA, pregunta, tool, argumentos, salida y tiempo; Work 1 aplicará únicamente
+el parche mínimo y entregará un SHA nuevo que invalida cualquier evidencia anterior.
 
 ## 5. Tools definitivas
 

@@ -1,0 +1,748 @@
+{
+  "status": "PASS",
+  "candidate_sha": "84e95167bfb9718ebb5f26b533f12cd885901e20",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "scope": "Three clean Windows worktrees, differing core.autocrlf; same Python/zlib toolchain. No claim of all zlib versions.",
+  "attempted": 3,
+  "identical": 3,
+  "builds": [
+    {
+      "checkout_autocrlf": "false",
+      "clean_before_build": true,
+      "bytes": 48338,
+      "sha256": "2808110d14e0bc30a53018cab1ec39b926e1e6ca1f1be19f0b2c9cf21106680a",
+      "members": [
+        {
+          "name": "FUENTES.md",
+          "bytes": 6963,
+          "sha256": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/data_contract.json",
+          "bytes": 5274,
+          "sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/demografia.csv",
+          "bytes": 6161,
+          "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/metadata_sources.json",
+          "bytes": 4833,
+          "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/municipios.csv",
+          "bytes": 30075,
+          "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/runtime_manifest.json",
+          "bytes": 1594,
+          "sha256": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/runtime_municipality_points.csv",
+          "bytes": 8689,
+          "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/runtime_servicios.csv",
+          "bytes": 25258,
+          "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "docs/METODOLOGIA.md",
+          "bytes": 1210,
+          "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "docs/PORTAL_DEPLOYMENT.md",
+          "bytes": 4924,
+          "sha256": "49e5437b1451118866d8696f2ebc36987b4f30e759834965725eaefc6752b6ed",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "docs/RESULT_SCHEMA.md",
+          "bytes": 2296,
+          "sha256": "8b1a5e1f5541b41f2e0680dcdc2d2a9a3c6f5a2333088fb98b28fd3b4893c872",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "main.py",
+          "bytes": 6286,
+          "sha256": "c2f4770f234522ac6ccb535d627c1252e19bc8f992e73194dab6e9f6672c585e",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "requirements.txt",
+          "bytes": 66,
+          "sha256": "4e13eca924322e0609075845d1bf03031061b7a0a46530bd00f106c7996e9519",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "tools.py",
+          "bytes": 54274,
+          "sha256": "0a5ab214ecf89cef04c85b5055c8ac42047c151c0411b4aa6c470a8de397edd5",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        }
+      ]
+    },
+    {
+      "checkout_autocrlf": "true",
+      "clean_before_build": true,
+      "bytes": 48338,
+      "sha256": "2808110d14e0bc30a53018cab1ec39b926e1e6ca1f1be19f0b2c9cf21106680a",
+      "members": [
+        {
+          "name": "FUENTES.md",
+          "bytes": 6963,
+          "sha256": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/data_contract.json",
+          "bytes": 5274,
+          "sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/demografia.csv",
+          "bytes": 6161,
+          "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/metadata_sources.json",
+          "bytes": 4833,
+          "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/municipios.csv",
+          "bytes": 30075,
+          "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/runtime_manifest.json",
+          "bytes": 1594,
+          "sha256": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/runtime_municipality_points.csv",
+          "bytes": 8689,
+          "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/runtime_servicios.csv",
+          "bytes": 25258,
+          "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "docs/METODOLOGIA.md",
+          "bytes": 1210,
+          "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "docs/PORTAL_DEPLOYMENT.md",
+          "bytes": 4924,
+          "sha256": "49e5437b1451118866d8696f2ebc36987b4f30e759834965725eaefc6752b6ed",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "docs/RESULT_SCHEMA.md",
+          "bytes": 2296,
+          "sha256": "8b1a5e1f5541b41f2e0680dcdc2d2a9a3c6f5a2333088fb98b28fd3b4893c872",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "main.py",
+          "bytes": 6286,
+          "sha256": "c2f4770f234522ac6ccb535d627c1252e19bc8f992e73194dab6e9f6672c585e",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "requirements.txt",
+          "bytes": 66,
+          "sha256": "4e13eca924322e0609075845d1bf03031061b7a0a46530bd00f106c7996e9519",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "tools.py",
+          "bytes": 54274,
+          "sha256": "0a5ab214ecf89cef04c85b5055c8ac42047c151c0411b4aa6c470a8de397edd5",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        }
+      ]
+    },
+    {
+      "checkout_autocrlf": "input",
+      "clean_before_build": true,
+      "bytes": 48338,
+      "sha256": "2808110d14e0bc30a53018cab1ec39b926e1e6ca1f1be19f0b2c9cf21106680a",
+      "members": [
+        {
+          "name": "FUENTES.md",
+          "bytes": 6963,
+          "sha256": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/data_contract.json",
+          "bytes": 5274,
+          "sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/demografia.csv",
+          "bytes": 6161,
+          "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/metadata_sources.json",
+          "bytes": 4833,
+          "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/municipios.csv",
+          "bytes": 30075,
+          "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/runtime_manifest.json",
+          "bytes": 1594,
+          "sha256": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/runtime_municipality_points.csv",
+          "bytes": 8689,
+          "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "datos_preparados/runtime_servicios.csv",
+          "bytes": 25258,
+          "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "docs/METODOLOGIA.md",
+          "bytes": 1210,
+          "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "docs/PORTAL_DEPLOYMENT.md",
+          "bytes": 4924,
+          "sha256": "49e5437b1451118866d8696f2ebc36987b4f30e759834965725eaefc6752b6ed",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "docs/RESULT_SCHEMA.md",
+          "bytes": 2296,
+          "sha256": "8b1a5e1f5541b41f2e0680dcdc2d2a9a3c6f5a2333088fb98b28fd3b4893c872",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "main.py",
+          "bytes": 6286,
+          "sha256": "c2f4770f234522ac6ccb535d627c1252e19bc8f992e73194dab6e9f6672c585e",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "requirements.txt",
+          "bytes": 66,
+          "sha256": "4e13eca924322e0609075845d1bf03031061b7a0a46530bd00f106c7996e9519",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        },
+        {
+          "name": "tools.py",
+          "bytes": 54274,
+          "sha256": "0a5ab214ecf89cef04c85b5055c8ac42047c151c0411b4aa6c470a8de397edd5",
+          "date_time": [
+            2026,
+            9,
+            24,
+            0,
+            0,
+            0
+          ],
+          "create_system": 3,
+          "external_attr": 2175008768,
+          "compress_type": 8,
+          "flag_bits": 0
+        }
+      ]
+    }
+  ]
+}

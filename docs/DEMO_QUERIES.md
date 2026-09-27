@@ -1,5 +1,8 @@
 # Consultas de demostración y guion de 3 minutos
 
+> **HISTÓRICO · guion anterior a la integración real.** No describe los artefactos actuales. Recorrido
+> vigente: [DEMO](DEMO.md) y [gate final](FINAL_RELEASE_GATE.md).
+
 Estas consultas se ejecutarán sobre una versión fija del agente con datos reales. En los HTML actuales las respuestas son sintéticas y están señaladas como tales.
 
 | Consulta | Qué debe mostrar | Evidencia mínima |

@@ -1,0 +1,83 @@
+{
+  "data_dir": "datos_preparados",
+  "warm_repetitions": 11,
+  "tools": [
+    {
+      "tool": "consultar_fuente",
+      "cold_ms": 0.988,
+      "warm_median_ms": 0.333,
+      "serialization_ms": 0.184,
+      "full_chars": 8975,
+      "compact_chars": 4896,
+      "reduction_percent": 45.4,
+      "rows_used": 4,
+      "result_rows": 4
+    },
+    {
+      "tool": "obtener_resumen_territorial",
+      "cold_ms": 10.311,
+      "warm_median_ms": 0.566,
+      "serialization_ms": 0.075,
+      "full_chars": 3571,
+      "compact_chars": 2537,
+      "reduction_percent": 29.0,
+      "rows_used": 7,
+      "result_rows": 1
+    },
+    {
+      "tool": "comparar_municipios",
+      "cold_ms": 10.359,
+      "warm_median_ms": 2.331,
+      "serialization_ms": 0.094,
+      "full_chars": 4484,
+      "compact_chars": 2867,
+      "reduction_percent": 36.1,
+      "rows_used": 3,
+      "result_rows": 3
+    },
+    {
+      "tool": "analizar_envejecimiento",
+      "cold_ms": 2.519,
+      "warm_median_ms": 0.389,
+      "serialization_ms": 0.085,
+      "full_chars": 2691,
+      "compact_chars": 2181,
+      "reduction_percent": 19.0,
+      "rows_used": 88,
+      "result_rows": 10
+    },
+    {
+      "tool": "analizar_acceso_servicios",
+      "cold_ms": 13.153,
+      "warm_median_ms": 4.11,
+      "serialization_ms": 0.224,
+      "full_chars": 17059,
+      "compact_chars": 3614,
+      "reduction_percent": 78.8,
+      "rows_used": 208,
+      "result_rows": 88
+    },
+    {
+      "tool": "analizar_coincidencia",
+      "cold_ms": 15.469,
+      "warm_median_ms": 6.828,
+      "serialization_ms": 0.477,
+      "full_chars": 36838,
+      "compact_chars": 5216,
+      "reduction_percent": 85.8,
+      "rows_used": 88,
+      "result_rows": 88
+    },
+    {
+      "tool": "simular_escenario",
+      "cold_ms": 15.358,
+      "warm_median_ms": 8.265,
+      "serialization_ms": 0.398,
+      "full_chars": 26719,
+      "compact_chars": 13664,
+      "reduction_percent": 48.9,
+      "rows_used": 208,
+      "result_rows": 88
+    }
+  ]
+}

@@ -1,0 +1,276 @@
+{
+  "scope": "local release regression; not portal or remote Actions",
+  "git_head": "d6a60b7d51e3c632349c65972ab65b10efeacc9a",
+  "python": "3.12.4",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "-o",
+        "addopts=",
+        "-q"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 21.801,
+      "stdout_tail": "........................................................................ [ 31%]\n........................................................................ [ 62%]\n........................................................................ [ 94%]\n.............                                                            [100%]\n229 passed in 20.77s\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/e2e/contract_flow.test.mjs"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 3.489,
+      "stdout_tail": "✔ pregunta → herramienta → dato → resultado → visualización → fuente (191.1445ms)\n✔ falla si una fuente no se puede rastrear (154.2256ms)\n✔ falla si el resultado no enlaza con una salida de herramienta (142.2218ms)\n✔ falla si un dato real carece de origen (157.2587ms)\n✔ geometría de Work 1 se enlaza por código sin cambiar las cifras (318.9237ms)\n✔ rechaza umbral negativo (149.1072ms)\n✔ rechaza grupo de edad inesperado (210.0491ms)\n✔ rechaza tipo de población incorrecto (209.0616ms)\n✔ rechaza denominador cero (197.793ms)\n✔ rechaza municipio duplicado (178.4394ms)\n✔ rechaza edad 75 mayor que 65 (188.3836ms)\n✔ rechaza distancia NaN convertida a null (161.8673ms)\n✔ rechaza source_id desconocido (149.7858ms)\n✔ rechaza escenario con unidad inexistente (158.807ms)\n✔ rechaza traza que finge agente con fixture (155.806ms)\n✔ rechaza fecha inválida (152.1809ms)\n✔ acepta umbral extremo y escenario ausente sin fabricar cifras (150.7393ms)\nℹ tests 17\nℹ suites 0\nℹ pass 17\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 3246.7031\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "scripts/jury_view.js"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.185,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "scripts/build_jury.mjs"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.164,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "scripts/build_results.mjs"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.185,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/benchmark/verify_jury_results.py",
+        "--output",
+        "work/jury-gate.json"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.468,
+      "stdout_tail": "{\n  \"status\": \"PASS\",\n  \"period\": \"2025-01-01\",\n  \"service_category\": \"primary_care\",\n  \"cases\": [\n    {\n      \"id\": \"Q75_65_PRIMARY_2KM\",\n      \"age_group\": \"65\",\n      \"quantile\": 0.75,\n      \"threshold_km\": 2.0,\n      \"age_cut_percent\": 23.973,\n      \"distance_cut_m\": 2019.2,\n      \"joined_rows\": 88,\n      \"highlighted_count\": 7,\n      \"municipalities\": [\n        \"Legazpi\",\n        \"Ezkio-Itsaso\",\n        \"Hondarribia\",\n        \"Hernialde\",\n        \"O�ati\",\n        \"Idiazabal\",\n        \"Errenteria\"\n      ],\n      \"checks\": {\n        \"joined_rows_88\": true,\n        \"cut_recomputed_from_requested_quantile\": true,\n        \"exact_expected_cuts\": true,\n        \"exact_expected_municipalities\": true,\n        \"highlighted_count_matches\": true,\n        \"every_highlighted_meets_both_cuts\": true,\n        \"no_non_highlighted_meets_both_cuts\": true\n      },\n      \"status\": \"PASS\"\n    },\n    {\n      \"id\": \"Q80_75_PRIMARY_3KM\",\n      \"age_group\": \"75\",\n      \"quantile\": 0.8,\n      \"threshold_km\": 3.0,\n      \"age_cut_percent\": 12.9796,\n      \"distance_cut_m\": 2138.6,\n      \"joined_rows\": 88,\n      \"highlighted_count\": 4,\n      \"municipalities\": [\n        \"Legazpi\",\n        \"Errenteria\",\n        \"Hondarribia\",\n        \"Idiazabal\"\n      ],\n      \"checks\": {\n        \"joined_rows_88\": true,\n        \"cut_recomputed_from_requested_quantile\": true,\n        \"exact_expected_cuts\": true,\n        \"exact_expected_municipalities\": true,\n        \"highlighted_count_matches\": true,\n        \"every_highlighted_meets_both_cuts\": true,\n        \"no_non_highlighted_meets_both_cuts\": true\n      },\n      \"status\": \"PASS\"\n    },\n    {\n      \"id\": \"Q85_65_PRIMARY_2KM\",\n      \"age_group\": \"65\",\n      \"quantile\": 0.85,\n      \"threshold_km\": 2.0,\n      \"age_cut_percent\": 25.3557,\n      \"distance_cut_m\": 2308.7,\n      \"joined_rows\": 88,\n      \"highlighted_count\": 2,\n      \"municipalities\": [\n        \"Legazpi\",\n        \"Hondarribia\"\n      ],\n      \"checks\": {\n        \"joined_rows_88\": true,\n        \"cut_recomputed_from_requested_quantile\": true,\n        \"exact_expected_cuts\": true,\n        \"exact_expected_municipalities\": true,\n        \"highlighted_count_matches\": true,\n        \"every_highlighted_meets_both_cuts\": true,\n        \"no_non_highlighted_meets_both_cuts\": true\n      },\n      \"status\": \"PASS\"\n    }\n  ],\n  \"quantile_sensitivity\": {\n    \"checks\": {\n      \"q75_and_q85_have_different_age_cuts\": true,\n      \"q75_and_q85_have_different_distance_cuts\": true,\n      \"q75_and_q85_have_different_highlighted_sets\": true,\n      \"implemented_quantiles_are_not_a_fixed_top_quartile\": true\n    },\n    \"status\": \"PASS\"\n  },\n  \"candidate_comparison\": null\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/release/verify_final_artifacts.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 2.726,
+      "stdout_tail": "{\n  \"status\": \"PASS\",\n  \"checks\": {\n    \"runtime_identity\": true,\n    \"manifest\": true,\n    \"visual_data_equals_recalculation\": true,\n    \"html_equals_recalculation\": true,\n    \"nine_mutations_rejected\": true,\n    \"no_fixed_25_cut\": true,\n    \"saved_calculation_label\": true\n  }\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/ops/verify_package.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 2.484,
+      "stdout_tail": "{\"status\": \"PASS\", \"scope\": \"same toolchain, two builds; not all zlib versions\", \"bytes\": 48338, \"sha256\": \"2808110d14e0bc30a53018cab1ec39b926e1e6ca1f1be19f0b2c9cf21106680a\", \"members\": [\"FUENTES.md\", \"datos_preparados/data_contract.json\", \"datos_preparados/demografia.csv\", \"datos_preparados/metadata_sources.json\", \"datos_preparados/municipios.csv\", \"datos_preparados/runtime_manifest.json\", \"datos_preparados/runtime_municipality_points.csv\", \"datos_preparados/runtime_servicios.csv\", \"docs/METODOLOGIA.md\", \"docs/PORTAL_DEPLOYMENT.md\", \"docs/RESULT_SCHEMA.md\", \"main.py\", \"requirements.txt\", \"tools.py\"]}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/ops/compute_source_health.py",
+        "--output",
+        "work/source-health.json"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.219,
+      "stdout_tail": "{\"status\": \"PASS\", \"offline\": true, \"source_count\": 3, \"catalog_entries\": 4, \"municipality_coverage\": {\"present\": 88, \"expected\": 88, \"keys_equal\": true}, \"service_record_count\": 148, \"missing_required_fields\": 0, \"duplicate_keys\": 0, \"invalid_coordinates\": 0, \"orphan_service_municipalities\": 0, \"traceability_coverage\": {\"numerator\": 412, \"denominator\": 412, \"value\": 1.0, \"definition\": \"CSV rows whose declared source identifiers resolve in the versioned catalog\"}, \"manifest_integrity\": {\"status\": \"PASS\", \"files\": [{\"path\": \"datos_preparados/municipios.csv\", \"matches\": true}, {\"path\": \"datos_preparados/demografia.csv\", \"matches\": true}, {\"path\": \"datos_preparados/runtime_municipality_points.csv\", \"matches\": true}, {\"path\": \"datos_preparados/runtime_servicios.csv\", \"matches\": true}, {\"path\": \"datos_preparados/runtime_municipios.geojson\", \"matches\": true}, {\"path\": \"datos_preparados/metadata_sources.json\", \"matches\": true}, {\"path\": \"datos_preparados/data_contract.json\", \"matches\": true}]}, \"reference_periods\": [\"2025-01-01\", \"2025-05-07\", \"2026-09-20\"], \"cross_source_reference_spread_days\": 627, \"tables\": {\"municipios.csv\": {\"rows\": 88, \"missing_required_cells\": 0, \"duplicate_keys\": 0}, \"demografia.csv\": {\"rows\": 88, \"missing_required_cells\": 0, \"duplicate_keys\": 0}, \"runtime_servicios.csv\": {\"rows\": 148, \"missing_required_cells\": 0, \"duplicate_keys\": 0}, \"runtime_municipality_points.csv\": {\"rows\": 88, \"missing_required_cells\": 0, \"duplicate_keys\": 0}}}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/evaluation/evaluate_next.py",
+        "--output-dir",
+        "work/next"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.742,
+      "stdout_tail": "{\"status\": \"PASS\", \"records\": 15, \"attacks\": 16, \"goldens\": {\"aduna_population\": true, \"aduna_65\": true, \"aduna_registered_primary\": true, \"q75_count\": true, \"q75_rows\": true, \"q75_age_cut\": true, \"q75_distance_cut\": true, \"followup_count\": true}, \"kpis\": {\"tool_selection_accuracy\": {\"numerator\": 9, \"denominator\": 9, \"value\": 1.0, \"definition\": \"Correct deterministic routing / supported structured-intent cases; not natural-language accuracy.\"}, \"parameter_accuracy\": {\"numerator\": 9, \"denominator\": 9, \"value\": 1.0, \"definition\": \"Exact requested/merged parameters / supported cases.\"}, \"numeric_grounding_rate\": {\"numerator\": 9, \"denominator\": 9, \"value\": 1.0, \"definition\": \"Whole result equals existing core / supported cases; shared algorithm, not independent validation.\"}, \"source_grounding_rate\": {\"numerator\": 9, \"denominator\": 9, \"value\": 1.0, \"definition\": \"Declared source identifiers resolve in catalog / supported cases; not completeness of every field provenance.\"}, \"limitation_present_rate\": {\"numerator\": 9, \"denominator\": 9, \"value\": 1.0, \"definition\": \"Nonempty limitations / supported cases.\"}, \"followup_recalculation_rate\": {\"numerator\": 1, \"denominator\": 1, \"value\": 1.0, \"definition\": \"Follow-ups triggering execution and critic recalculation / follow-up cases.\"}, \"out_of_scope_rejection_rate\": {\"numerator\": 6, \"denominator\": 6, \"value\": 1.0, \"definition\": \"Unsupported explicit intents with no tool / unsupported cases.\"}, \"critic_detection_rate\": {\"numerator\": 16, \"denominator\": 16, \"value\": 1.0, \"definition\": \"Injected corruptions/unapproved free-text drafts rejected / injections. This is template allowlisting, not general semantic detection.\"}, \"composer_block_rate\": {\"numerator\": 16, \"denominator\": 16, \"value\": 1.0, \"definition\": \"Corruptions blocked by composer / injections.\"}, \"determinism_rate\": {\"numerator\": 8, \"denominator\": 8, \"value\": 1.0, \"definition\": \"Byte-equivalent canonical complete session results / repeated identical structured requests.\"}}}\n",
+      "stderr_tail": ""
+    }
+  ],
+  "runtime_before": {
+    "runtime": "195b4980fa5998b096c308296a55e452380b0371",
+    "status": "PASS",
+    "files": [
+      {
+        "path": "agentes/gipuzkoa360/portal/main.py",
+        "matches": true,
+        "sha256": "c2f4770f234522ac6ccb535d627c1252e19bc8f992e73194dab6e9f6672c585e"
+      },
+      {
+        "path": "agentes/gipuzkoa360/portal/tools.py",
+        "matches": true,
+        "sha256": "0a5ab214ecf89cef04c85b5055c8ac42047c151c0411b4aa6c470a8de397edd5"
+      },
+      {
+        "path": "FUENTES.md",
+        "matches": true,
+        "sha256": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de"
+      },
+      {
+        "path": "docs/METODOLOGIA.md",
+        "matches": true,
+        "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7"
+      },
+      {
+        "path": "docs/RESULT_SCHEMA.md",
+        "matches": true,
+        "sha256": "8b1a5e1f5541b41f2e0680dcdc2d2a9a3c6f5a2333088fb98b28fd3b4893c872"
+      },
+      {
+        "path": "datos_preparados/municipios.csv",
+        "matches": true,
+        "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
+      },
+      {
+        "path": "datos_preparados/demografia.csv",
+        "matches": true,
+        "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+      },
+      {
+        "path": "datos_preparados/runtime_municipality_points.csv",
+        "matches": true,
+        "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11"
+      },
+      {
+        "path": "datos_preparados/runtime_servicios.csv",
+        "matches": true,
+        "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
+      },
+      {
+        "path": "datos_preparados/metadata_sources.json",
+        "matches": true,
+        "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+      },
+      {
+        "path": "datos_preparados/data_contract.json",
+        "matches": true,
+        "sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae"
+      },
+      {
+        "path": "datos_preparados/runtime_manifest.json",
+        "matches": true,
+        "sha256": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a"
+      }
+    ]
+  },
+  "runtime_after": {
+    "runtime": "195b4980fa5998b096c308296a55e452380b0371",
+    "status": "PASS",
+    "files": [
+      {
+        "path": "agentes/gipuzkoa360/portal/main.py",
+        "matches": true,
+        "sha256": "c2f4770f234522ac6ccb535d627c1252e19bc8f992e73194dab6e9f6672c585e"
+      },
+      {
+        "path": "agentes/gipuzkoa360/portal/tools.py",
+        "matches": true,
+        "sha256": "0a5ab214ecf89cef04c85b5055c8ac42047c151c0411b4aa6c470a8de397edd5"
+      },
+      {
+        "path": "FUENTES.md",
+        "matches": true,
+        "sha256": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de"
+      },
+      {
+        "path": "docs/METODOLOGIA.md",
+        "matches": true,
+        "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7"
+      },
+      {
+        "path": "docs/RESULT_SCHEMA.md",
+        "matches": true,
+        "sha256": "8b1a5e1f5541b41f2e0680dcdc2d2a9a3c6f5a2333088fb98b28fd3b4893c872"
+      },
+      {
+        "path": "datos_preparados/municipios.csv",
+        "matches": true,
+        "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
+      },
+      {
+        "path": "datos_preparados/demografia.csv",
+        "matches": true,
+        "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+      },
+      {
+        "path": "datos_preparados/runtime_municipality_points.csv",
+        "matches": true,
+        "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11"
+      },
+      {
+        "path": "datos_preparados/runtime_servicios.csv",
+        "matches": true,
+        "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
+      },
+      {
+        "path": "datos_preparados/metadata_sources.json",
+        "matches": true,
+        "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+      },
+      {
+        "path": "datos_preparados/data_contract.json",
+        "matches": true,
+        "sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae"
+      },
+      {
+        "path": "datos_preparados/runtime_manifest.json",
+        "matches": true,
+        "sha256": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a"
+      }
+    ]
+  },
+  "package": {
+    "status": "PASS",
+    "scope": "same toolchain, two builds; not all zlib versions",
+    "bytes": 48338,
+    "sha256": "2808110d14e0bc30a53018cab1ec39b926e1e6ca1f1be19f0b2c9cf21106680a",
+    "members": [
+      "FUENTES.md",
+      "datos_preparados/data_contract.json",
+      "datos_preparados/demografia.csv",
+      "datos_preparados/metadata_sources.json",
+      "datos_preparados/municipios.csv",
+      "datos_preparados/runtime_manifest.json",
+      "datos_preparados/runtime_municipality_points.csv",
+      "datos_preparados/runtime_servicios.csv",
+      "docs/METODOLOGIA.md",
+      "docs/PORTAL_DEPLOYMENT.md",
+      "docs/RESULT_SCHEMA.md",
+      "main.py",
+      "requirements.txt",
+      "tools.py"
+    ]
+  },
+  "status": "PASS"
+}
