@@ -1,0 +1,70 @@
+{
+  "denominators": {
+    "baseline_node_tests": 17,
+    "baseline_python_tests": 264,
+    "extended_soak_calls": 10000,
+    "field_level_traceability_assertions": 259072,
+    "fuzz_cases": 100000,
+    "metamorphic_cases": 30,
+    "mutations": 66,
+    "natural_language_gold_prompts": 1000,
+    "offline_multiturn_sessions": 100,
+    "oracle_comparisons": 3595648,
+    "original_benchmark_checks": 72673,
+    "original_fault_injections": 20,
+    "original_soak_calls": 1000,
+    "original_traceability_outputs": 31545,
+    "portal_natural_language_executions": 0,
+    "property_subject_property_evaluations": 2539976
+  },
+  "families": {
+    "fuzz": "PASS",
+    "geospatial": "PASS",
+    "metamorphic": "PASS",
+    "multiturn": "PASS",
+    "mutation": "PASS",
+    "nl_corpus": "PASS",
+    "oracle": "PASS",
+    "performance": "PASS",
+    "property_grid": "PASS",
+    "reproducibility": "PASS",
+    "security": "PASS",
+    "soak": "PASS",
+    "static_product": "PASS",
+    "traceability_v2": "PASS"
+  },
+  "known_mediums": [
+    {
+      "description": "Extreme threshold scenario returns 20,155 characters for 66 affected of 88 evaluated municipalities.",
+      "id": "M-01",
+      "severity": "Medium"
+    },
+    {
+      "description": "Historical portal fallback under a busy runner confused threshold and quantile; no tool output or core numeric defect was observed.",
+      "id": "M-02",
+      "severity": "Medium"
+    }
+  ],
+  "new_findings": [
+    {
+      "description": "Reordering service rows can select a different service_id among records with exactly identical coordinates. Distances, threshold states, highlighted sets and all numeric conclusions remain unchanged; the tied identities are recorded in metamorphic_summary.json.",
+      "id": "M-03",
+      "release_decision": "Documented; no frozen-runtime change because the ambiguity is limited to equivalent co-located nearest records and does not change analytical truth.",
+      "severity": "Medium"
+    }
+  ],
+  "portal_language_sample": {
+    "cases": 0,
+    "executed": false,
+    "reason": "No authenticated, safely automatable portal execution was available to this offline benchmark run; no accuracy metric is fabricated."
+  },
+  "release_identity": {
+    "agent_changed": false,
+    "data_changed": false,
+    "runtime_changed": false,
+    "runtime_sha": "195b4980fa5998b096c308296a55e452380b0371",
+    "source_main_sha": "6991c6c20d2de467d7cf25236f2e4b1274c17067"
+  },
+  "status": "PASS",
+  "strict_research_technical_pass": true
+}

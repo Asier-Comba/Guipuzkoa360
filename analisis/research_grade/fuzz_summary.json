@@ -1,0 +1,10 @@
+{
+  "controlled_rejection": 98000,
+  "failure_examples": [],
+  "fuzz_cases": 100000,
+  "seed": 20260927,
+  "silent_corruption": 0,
+  "status": "PASS",
+  "unexpected_exception": 0,
+  "valid_normalization": 2000
+}

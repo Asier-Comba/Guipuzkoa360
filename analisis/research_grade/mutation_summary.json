@@ -1,0 +1,472 @@
+{
+  "killed_non_equivalent": 66,
+  "mutation_score": 1.0,
+  "mutations": [
+    {
+      "classification": "non-equivalent",
+      "description": ">= changed to > at age cut",
+      "family": "boundary_operator",
+      "id": "MUT-001",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "wrong percentile index",
+      "family": "quantile",
+      "id": "MUT-002",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "65 boundary shifted",
+      "family": "age_boundary",
+      "id": "MUT-003",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "75 cutoff shifted one year",
+      "family": "age_boundary",
+      "id": "MUT-004",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "meters interpreted as kilometres",
+      "family": "units",
+      "id": "MUT-005",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "source identifier swapped",
+      "family": "traceability",
+      "id": "MUT-006",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "threshold used instead of quantile",
+      "family": "parameter_semantics",
+      "id": "MUT-007",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "quantile ignored",
+      "family": "parameter_semantics",
+      "id": "MUT-008",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "distance sign corruption",
+      "family": "numeric",
+      "id": "MUT-009",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "distance rounding corruption",
+      "family": "numeric",
+      "id": "MUT-010",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "first service instead of nearest",
+      "family": "nearest",
+      "id": "MUT-011",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "wrong service category",
+      "family": "filtering",
+      "id": "MUT-012",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "scenario state leaks",
+      "family": "state",
+      "id": "MUT-013",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "scenario add/remove reversed",
+      "family": "scenario",
+      "id": "MUT-014",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "municipality join shifted",
+      "family": "join",
+      "id": "MUT-015",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "period dropped",
+      "family": "contract",
+      "id": "MUT-016",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "unit dropped",
+      "family": "contract",
+      "id": "MUT-017",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "limitations dropped",
+      "family": "contract",
+      "id": "MUT-018",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "silent NaN",
+      "family": "serialization",
+      "id": "MUT-019",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "silent Infinity",
+      "family": "serialization",
+      "id": "MUT-020",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "wrong highlighted count",
+      "family": "summary",
+      "id": "MUT-021",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "affected rows truncated",
+      "family": "completeness",
+      "id": "MUT-022",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "distance offset on municipality 0",
+      "family": "numeric_distance",
+      "id": "MUT-023",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "distance offset on municipality 1",
+      "family": "numeric_distance",
+      "id": "MUT-024",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "distance offset on municipality 2",
+      "family": "numeric_distance",
+      "id": "MUT-025",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "distance offset on municipality 3",
+      "family": "numeric_distance",
+      "id": "MUT-026",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "distance offset on municipality 4",
+      "family": "numeric_distance",
+      "id": "MUT-027",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "distance offset on municipality 5",
+      "family": "numeric_distance",
+      "id": "MUT-028",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "distance offset on municipality 6",
+      "family": "numeric_distance",
+      "id": "MUT-029",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "distance offset on municipality 7",
+      "family": "numeric_distance",
+      "id": "MUT-030",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "distance offset on municipality 8",
+      "family": "numeric_distance",
+      "id": "MUT-031",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "distance offset on municipality 9",
+      "family": "numeric_distance",
+      "id": "MUT-032",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "distance offset on municipality 10",
+      "family": "numeric_distance",
+      "id": "MUT-033",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "distance offset on municipality 11",
+      "family": "numeric_distance",
+      "id": "MUT-034",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "age percentage offset on municipality 0",
+      "family": "numeric_age",
+      "id": "MUT-035",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "age percentage offset on municipality 1",
+      "family": "numeric_age",
+      "id": "MUT-036",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "age percentage offset on municipality 2",
+      "family": "numeric_age",
+      "id": "MUT-037",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "age percentage offset on municipality 3",
+      "family": "numeric_age",
+      "id": "MUT-038",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "age percentage offset on municipality 4",
+      "family": "numeric_age",
+      "id": "MUT-039",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "age percentage offset on municipality 5",
+      "family": "numeric_age",
+      "id": "MUT-040",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "age percentage offset on municipality 6",
+      "family": "numeric_age",
+      "id": "MUT-041",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "age percentage offset on municipality 7",
+      "family": "numeric_age",
+      "id": "MUT-042",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "age percentage offset on municipality 8",
+      "family": "numeric_age",
+      "id": "MUT-043",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "age percentage offset on municipality 9",
+      "family": "numeric_age",
+      "id": "MUT-044",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "highlight flag flipped on municipality 0",
+      "family": "selection",
+      "id": "MUT-045",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "highlight flag flipped on municipality 1",
+      "family": "selection",
+      "id": "MUT-046",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "highlight flag flipped on municipality 2",
+      "family": "selection",
+      "id": "MUT-047",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "highlight flag flipped on municipality 3",
+      "family": "selection",
+      "id": "MUT-048",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "highlight flag flipped on municipality 4",
+      "family": "selection",
+      "id": "MUT-049",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "highlight flag flipped on municipality 5",
+      "family": "selection",
+      "id": "MUT-050",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "highlight flag flipped on municipality 6",
+      "family": "selection",
+      "id": "MUT-051",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "highlight flag flipped on municipality 7",
+      "family": "selection",
+      "id": "MUT-052",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "nearest service swapped on municipality 0",
+      "family": "nearest_identity",
+      "id": "MUT-053",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "nearest service swapped on municipality 1",
+      "family": "nearest_identity",
+      "id": "MUT-054",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "nearest service swapped on municipality 2",
+      "family": "nearest_identity",
+      "id": "MUT-055",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "nearest service swapped on municipality 3",
+      "family": "nearest_identity",
+      "id": "MUT-056",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "nearest service swapped on municipality 4",
+      "family": "nearest_identity",
+      "id": "MUT-057",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "nearest service swapped on municipality 5",
+      "family": "nearest_identity",
+      "id": "MUT-058",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "nearest service swapped on municipality 6",
+      "family": "nearest_identity",
+      "id": "MUT-059",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "nearest service swapped on municipality 7",
+      "family": "nearest_identity",
+      "id": "MUT-060",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "row removed at position 0",
+      "family": "completeness",
+      "id": "MUT-061",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "row removed at position 1",
+      "family": "completeness",
+      "id": "MUT-062",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "row removed at position 2",
+      "family": "completeness",
+      "id": "MUT-063",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "row removed at position 3",
+      "family": "completeness",
+      "id": "MUT-064",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "row removed at position 4",
+      "family": "completeness",
+      "id": "MUT-065",
+      "killed": true
+    },
+    {
+      "classification": "non-equivalent",
+      "description": "row removed at position 5",
+      "family": "completeness",
+      "id": "MUT-066",
+      "killed": true
+    }
+  ],
+  "mutations_total": 66,
+  "non_equivalent_mutations": 66,
+  "status": "PASS",
+  "survivors": []
+}

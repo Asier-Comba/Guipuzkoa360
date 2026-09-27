@@ -1,0 +1,219 @@
+{
+  "cases": [
+    {
+      "name": "service_order:primary_care",
+      "passed": true
+    },
+    {
+      "name": "service_order:hospital",
+      "passed": true
+    },
+    {
+      "name": "service_order:mental_health",
+      "passed": true
+    },
+    {
+      "name": "service_order:other_health",
+      "passed": true
+    },
+    {
+      "name": "repeat:65:primary_care",
+      "passed": true
+    },
+    {
+      "name": "threshold_membership:65:primary_care",
+      "passed": true
+    },
+    {
+      "name": "quantile_monotonic:65:primary_care",
+      "passed": true
+    },
+    {
+      "name": "repeat:65:hospital",
+      "passed": true
+    },
+    {
+      "name": "threshold_membership:65:hospital",
+      "passed": true
+    },
+    {
+      "name": "quantile_monotonic:65:hospital",
+      "passed": true
+    },
+    {
+      "name": "repeat:65:mental_health",
+      "passed": true
+    },
+    {
+      "name": "threshold_membership:65:mental_health",
+      "passed": true
+    },
+    {
+      "name": "quantile_monotonic:65:mental_health",
+      "passed": true
+    },
+    {
+      "name": "repeat:65:other_health",
+      "passed": true
+    },
+    {
+      "name": "threshold_membership:65:other_health",
+      "passed": true
+    },
+    {
+      "name": "quantile_monotonic:65:other_health",
+      "passed": true
+    },
+    {
+      "name": "repeat:75:primary_care",
+      "passed": true
+    },
+    {
+      "name": "threshold_membership:75:primary_care",
+      "passed": true
+    },
+    {
+      "name": "quantile_monotonic:75:primary_care",
+      "passed": true
+    },
+    {
+      "name": "repeat:75:hospital",
+      "passed": true
+    },
+    {
+      "name": "threshold_membership:75:hospital",
+      "passed": true
+    },
+    {
+      "name": "quantile_monotonic:75:hospital",
+      "passed": true
+    },
+    {
+      "name": "repeat:75:mental_health",
+      "passed": true
+    },
+    {
+      "name": "threshold_membership:75:mental_health",
+      "passed": true
+    },
+    {
+      "name": "quantile_monotonic:75:mental_health",
+      "passed": true
+    },
+    {
+      "name": "repeat:75:other_health",
+      "passed": true
+    },
+    {
+      "name": "threshold_membership:75:other_health",
+      "passed": true
+    },
+    {
+      "name": "quantile_monotonic:75:other_health",
+      "passed": true
+    },
+    {
+      "name": "scenario_does_not_contaminate_baseline",
+      "passed": true
+    },
+    {
+      "name": "compact_preserves_summary",
+      "passed": true
+    }
+  ],
+  "failed": 0,
+  "finding": "M-03: input row order can choose a different stable service_id among records with exactly identical coordinates; distances, threshold state and highlighted membership are unchanged.",
+  "metamorphic_cases": 30,
+  "passed": 30,
+  "status": "PASS",
+  "tie_equivalent_rows": [
+    {
+      "category": "primary_care",
+      "classification": "equivalent co-located nearest-service tie; numeric and membership output unchanged",
+      "distance_m": 3617.3,
+      "municipality_code": "20019",
+      "municipality_name": "Beasain",
+      "service_ids": [
+        "entityBC631DA5",
+        "entity38D83782"
+      ]
+    },
+    {
+      "category": "primary_care",
+      "classification": "equivalent co-located nearest-service tie; numeric and membership output unchanged",
+      "distance_m": 1870.8,
+      "municipality_code": "20080",
+      "municipality_name": "Zumarraga",
+      "service_ids": [
+        "entityCF7A2788",
+        "entityC2BE5ED0"
+      ]
+    },
+    {
+      "category": "primary_care",
+      "classification": "equivalent co-located nearest-service tie; numeric and membership output unchanged",
+      "distance_m": 1866.2,
+      "municipality_code": "20079",
+      "municipality_name": "Zarautz",
+      "service_ids": [
+        "entityFFC358CB",
+        "entityDC8FB110"
+      ]
+    },
+    {
+      "category": "primary_care",
+      "classification": "equivalent co-located nearest-service tie; numeric and membership output unchanged",
+      "distance_m": 1862.8,
+      "municipality_code": "20045",
+      "municipality_name": "Irun",
+      "service_ids": [
+        "entityDCF0E44B",
+        "entity86D41A67"
+      ]
+    },
+    {
+      "category": "primary_care",
+      "classification": "equivalent co-located nearest-service tie; numeric and membership output unchanged",
+      "distance_m": 1295.0,
+      "municipality_code": "20077",
+      "municipality_name": "Urretxu",
+      "service_ids": [
+        "entityCF7A2788",
+        "entityC2BE5ED0"
+      ]
+    },
+    {
+      "category": "primary_care",
+      "classification": "equivalent co-located nearest-service tie; numeric and membership output unchanged",
+      "distance_m": 1223.6,
+      "municipality_code": "20030",
+      "municipality_name": "Eibar",
+      "service_ids": [
+        "entity383A127E",
+        "entity64796EFF"
+      ]
+    },
+    {
+      "category": "primary_care",
+      "classification": "equivalent co-located nearest-service tie; numeric and membership output unchanged",
+      "distance_m": 1107.9,
+      "municipality_code": "20074",
+      "municipality_name": "Bergara",
+      "service_ids": [
+        "entity4ECBA8FE",
+        "entity824911B8"
+      ]
+    },
+    {
+      "category": "other_health",
+      "classification": "equivalent co-located nearest-service tie; numeric and membership output unchanged",
+      "distance_m": 323.1,
+      "municipality_code": "20069",
+      "municipality_name": "Donostia / San Sebastián",
+      "service_ids": [
+        "entityD32FC8AF",
+        "entity0D8E319C"
+      ]
+    }
+  ]
+}

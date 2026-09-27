@@ -1,0 +1,17 @@
+{
+  "corpus_created": true,
+  "gold_prompts": 1000,
+  "portal_cases_executed": 0,
+  "portal_execution_note": "No portal executions are claimed by this offline corpus.",
+  "schema_failures": [],
+  "status": "PASS",
+  "strata": {
+    "ambiguous": 100,
+    "out_of_scope": 200,
+    "scenario": 150,
+    "short_followup": 150,
+    "source_query": 100,
+    "supported_direct": 300
+  },
+  "unique_ids": 1000
+}

@@ -1,0 +1,1214 @@
+{
+  "critical_invariant": "scenario state does not contaminate later baseline analysis",
+  "failed": 0,
+  "offline_structured_sessions": 100,
+  "passed": 100,
+  "portal_live_sessions": 0,
+  "session_lengths": {
+    "max": 5,
+    "min": 5
+  },
+  "sessions": [
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-001",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-002",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-003",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-004",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-005",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-006",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-007",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-008",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-009",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-010",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-011",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-012",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-013",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-014",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-015",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-016",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-017",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-018",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-019",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-020",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-021",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-022",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-023",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-024",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-025",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-026",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-027",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-028",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-029",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-030",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-031",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-032",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-033",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-034",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-035",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-036",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-037",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-038",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-039",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-040",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-041",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-042",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-043",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-044",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-045",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-046",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-047",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-048",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-049",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-050",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-051",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-052",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-053",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-054",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-055",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-056",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-057",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-058",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-059",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-060",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-061",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-062",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-063",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-064",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-065",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-066",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-067",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-068",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-069",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-070",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-071",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-072",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-073",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-074",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-075",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-076",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-077",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-078",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-079",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-080",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-081",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-082",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-083",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-084",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-085",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-086",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-087",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-088",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-089",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-090",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-091",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-092",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-093",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-094",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-095",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-096",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-097",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-098",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-099",
+      "passed": true,
+      "turns": 5
+    },
+    {
+      "checks": {
+        "initial_parameters": true,
+        "quantile_only_change": true,
+        "scenario_then_baseline_isolated": true,
+        "source_switch": true,
+        "unsupported_then_valid": true
+      },
+      "id": "session-100",
+      "passed": true,
+      "turns": 5
+    }
+  ],
+  "status": "PASS"
+}
