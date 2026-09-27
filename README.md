@@ -16,7 +16,7 @@ La entrada es única: pregunta, hallazgo y mapa. Después se puede abrir «Cómo
 - **[Guía para empezar](docs/PRODUCT_GUIDE.md):** qué preguntar, cómo leer los criterios y cómo comprobar una cifra.
 - **[44 preguntas del jurado](docs/JURY_QA.md):** respuestas breves con punteros de evidencia.
 
-Con 65+, cuantil 0,75 y atención primaria, **7 de 88 municipios** cumplen ambos cortes: **23,973 %** y **2.019,2 m**. El seguimiento a 75+ y cuantil 0,80 produce **4**; elevar el cuantil de 65+ a 0,85 produce **2**. El umbral en km se informa por separado y no sustituye al cuantil.
+El **caso principal** identifica 7 municipios al combinar población de 65 o más años y mayor distancia geométrica a atención primaria. Una consulta distinta para mayores de 75 años, con otro criterio, identifica 4 municipios. Una tercera consulta para 65 o más años, con un nivel de exigencia mayor, identifica 2. Son tres preguntas diferentes: juntas demuestran que el agente recalcula cuando cambian la edad y los criterios.
 
 ## Datos y límites
 
@@ -30,7 +30,7 @@ Distancia geométrica no es tiempo de viaje. Registro no es capacidad ni cita di
 
 ## Entender y reproducir
 
-La lectura principal se limita a seis documentos: este README, [Fuentes](FUENTES.md), [Metodología](docs/METODOLOGIA.md), [Validación](docs/VALIDATION.md), [Benchmark](docs/BENCHMARKS.md) y [Demo](docs/DEMO.md). La evidencia histórica y los informes de ingeniería son material de apoyo.
+La lectura principal se limita a seis documentos: este README, [Fuentes](FUENTES.md), [Metodología](docs/METODOLOGIA.md), [Validación](docs/VALIDATION.md), [Pruebas automatizadas](docs/BENCHMARKS.md) y [Demo](docs/DEMO.md). La evidencia histórica y los informes de ingeniería son material de apoyo.
 
 Con Python 3.12 y Node, desde este repositorio:
 
@@ -49,6 +49,6 @@ Se usan los datos versionados; reconstruir esta evidencia no requiere descargar 
 
 ## Equipo y contribuciones
 
-**Oier Duñabeitia**: datos, geografía, calidad y reproducibilidad. **Asier Comba**: agente, runtime, benchmark y cierre técnico. **Hugo Fernández Díez**: producto, diseño visual, integración y pruebas conversacionales. [Equipo y contribuciones](docs/TEAM.md).
+**Oier Duñabeitia**: datos, geografía, calidad y reproducibilidad. **Asier Comba**: agente, validación y cierre técnico. **Hugo Fernández Díez**: producto, diseño visual, integración y pruebas conversacionales. [Equipo y contribuciones](docs/TEAM.md).
 
 El cierre técnico está preparado para revisión. La publicación de la entrega requiere una decisión humana.
