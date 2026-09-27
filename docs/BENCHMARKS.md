@@ -109,7 +109,7 @@ Coverage: **31,545/31,545 = 100.000%**.
 This report states measured coverage only; it does not claim prediction quality, causal validity or
 real-world accessibility beyond the documented geometric indicators.
 
-## Work 2 integration audit · 2026-09-25
+## Historical integration audit · 2026-09-25
 
 - Integrated unchanged commits: `bf5c6ccd3e43573a4daf98f39d29e83ee644545a` and
   `a1b0ecb4ba8d2108d673fbb03c5b6abf4cf2ae34`.
