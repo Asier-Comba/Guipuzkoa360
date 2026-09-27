@@ -1,5 +1,10 @@
 # Gate del candidato final
 
+> Registro histórico del cierre del 25/09/2026. PR #10 se integró el 27/09/2026 en
+> `main` (`66540b23b54c22571a2e2236badd92898f04b02a`). Fast CI y validación exhaustiva
+> de ese main: PASS; enlaces en [Validación](VALIDATION.md). Las instrucciones de merge
+> que siguen describen el estado previo. La publicación de Entrega sigue sin autorizar.
+
 Fecha: 2026-09-25. **FINAL_CANDIDATE_READY sujeto a CI final y decisión humana; entrega no publicada.**
 
 - `CANDIDATE_BRANCH`: `final/gipuzkoa360-ultimate`

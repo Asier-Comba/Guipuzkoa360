@@ -1,9 +1,9 @@
 # GIPUZKOA 360 · Exhaustive validation and benchmark
 
-## Candidato final actual
+## Release integrado
 
-El estado actual es la PR #10, rama `final/gipuzkoa360-ultimate`. La validación exhaustiva remota debe
-pasar sobre el SHA final exacto; el run autoritativo se registra en la PR/checks para no cambiar ese SHA.
+PR #10 integrada en `main` (`66540b23b54c22571a2e2236badd92898f04b02a`, 27/09/2026).
+La [validación exhaustiva de ese main pasó](https://github.com/Asier-Comba/Guipuzkoa360/actions/runs/36307881707).
 La medición almacenada sobre `84e95167bfb9718ebb5f26b533f12cd885901e20` se conserva como evidencia
 reproducible en el [informe final](../analisis/final/BENCHMARKS.md): **72.673/72.673**, 0 Critical, 0 High, 1 Medium;
 31.545/31.545 trazables, 20/20 inyecciones controladas, soak 1.000 sin deriva.
@@ -109,7 +109,7 @@ Coverage: **31,545/31,545 = 100.000%**.
 This report states measured coverage only; it does not claim prediction quality, causal validity or
 real-world accessibility beyond the documented geometric indicators.
 
-## Work 2 integration audit · 2026-09-25
+## Historical integration audit · 2026-09-25
 
 - Integrated unchanged commits: `bf5c6ccd3e43573a4daf98f39d29e83ee644545a` and
   `a1b0ecb4ba8d2108d673fbb03c5b6abf4cf2ae34`.
