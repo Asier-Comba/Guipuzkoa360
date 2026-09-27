@@ -1,0 +1,15 @@
+{
+  "counting_rule": "Each loop cell/property pair is counted once. Source/period/unit/rows/finite checks are counted once per age-category-quantile-municipality, not repeated for thresholds.",
+  "failed_deterministic_invariants": 0,
+  "failure_examples": [],
+  "grid": {
+    "age_groups": 2,
+    "municipalities": 88,
+    "quantiles": 50,
+    "service_categories": 4,
+    "subject_rows": 387200,
+    "thresholds": 11
+  },
+  "status": "PASS",
+  "subject_property_evaluations": 2539976
+}

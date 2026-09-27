@@ -1,0 +1,10 @@
+{
+  "definition": "Field assertions linking each age-category-quantile-municipality result to municipality code, demographic row/source/period, service record/source, unit and independent method.",
+  "failed": 0,
+  "failure_examples": [],
+  "field_assertions": 259072,
+  "name": "FIELD_LEVEL_TRACEABILITY_V2",
+  "not_comparable_to_original": "The original 31,545 denominator is output-level and remains unchanged.",
+  "passed": 259072,
+  "status": "PASS"
+}

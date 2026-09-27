@@ -1,0 +1,39 @@
+{
+  "analytics_cookies_tracking": 0,
+  "controlled_normalizations": [
+    {
+      "input": "NaN",
+      "resolved": {
+        "municipality_code": "20040",
+        "period": "2025-01-01"
+      }
+    }
+  ],
+  "html_external_runtime_dependencies": 0,
+  "injection_cases": 12,
+  "injection_failures": [],
+  "pip_check": {
+    "output": "No broken requirements found.",
+    "status": "PASS"
+  },
+  "scans": {
+    "authorization_bearer": {
+      "examples": [],
+      "matches": 0
+    },
+    "credential_patterns": {
+      "examples": [],
+      "matches": 0
+    },
+    "local_windows_path": {
+      "examples": [],
+      "matches": 0
+    },
+    "private_cookie_session": {
+      "examples": [],
+      "matches": 0
+    }
+  },
+  "scope": "tracked files, installed Python environment, public JSON tool boundaries and generated static product",
+  "status": "PASS"
+}

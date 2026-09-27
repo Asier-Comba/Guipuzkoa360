@@ -1,0 +1,18 @@
+{
+  "codes_equal": true,
+  "crs_geometry": "OGC:CRS84 / EPSG:4326",
+  "crs_metric": "EPSG:25830",
+  "invalid_geometry_codes": [],
+  "limitation": "Euclidean projected distance from a representative municipal point; not travel-network accessibility.",
+  "municipality_codes_expected": 88,
+  "municipality_codes_found": 88,
+  "municipality_projection_max_error_m": 0.006072452705206336,
+  "nearest_distance_comparisons": 352,
+  "nearest_distance_failures": 0,
+  "nearest_distance_max_abs_error_m": 0.0,
+  "representative_point_failures": [],
+  "representative_points_inside_or_boundary": 88,
+  "service_projection_max_error_m": 0.0,
+  "status": "PASS",
+  "valid_geometries": 88
+}
