@@ -4,15 +4,14 @@ Esta síntesis separa la suite integrada, el benchmark exhaustivo del core, la e
 conversación privada. Sus denominadores no se suman: un test o check de propiedad no equivale a una
 conversación ni demuestra impacto social.
 
-## Suite integrada del candidato
+## Suite integrada en main
 
-Sobre `final/gipuzkoa360-ultimate`:
+PR #10 integrada en `main` (`66540b23b54c22571a2e2236badd92898f04b02a`, 27/09/2026):
 
 - **264/264 tests Python** de datos, contratos, runtime, integración, artefactos, paquete y NEXT;
 - **17/17 Node** en tests del flujo contractual;
 - sintaxis válida de `jury_view.js`, `build_jury.mjs` y `build_results.mjs`;
-- fast CI en Ubuntu 24.04 y Windows latest: PASS en el pre-cierre; el head documental final se valida
-  otra vez antes de abrir la PR;
+- fast CI en Ubuntu 24.04 y Windows latest: [PASS sobre ese main](https://github.com/Asier-Comba/Guipuzkoa360/actions/runs/36307881685);
 - runtime congelado comprobado antes y después de regeneraciones;
 - source health: 88/88 municipios, 148 registros sanitarios, 412/412 filas con `source_id` resoluble,
   0 nulos obligatorios, duplicados, coordenadas inválidas o referencias huérfanas, y 7/7 archivos de
@@ -24,8 +23,8 @@ Sobre `final/gipuzkoa360-ultimate`:
 El harness publicado conserva **72.673/72.673 checks**, **31.545/31.545 outputs numéricos trazables**,
 **20/20 inyecciones controladas** y **1.000 llamadas sin deriva ni excepciones**. La trazabilidad se
 define como output analítico numérico correcto con periodo, unidad, método y `source_id` resoluble.
-No cubre todas las preguntas posibles. El benchmark se vuelve a ejecutar por GitHub Actions sobre el
-SHA final exacto; su run se registra en la PR para no cambiar ese SHA.
+No cubre todas las preguntas posibles. [La ejecución exhaustiva de main](https://github.com/Asier-Comba/Guipuzkoa360/actions/runs/36307881707)
+pasó sobre el mismo SHA; sus artefactos conservan la evidencia de esa ejecución.
 
 Severidad propia del benchmark: 0 Critical, 0 High, **1 Medium**, 0 Low. M-01 es un escenario extremo
 de 20.155 caracteres que conserva 66 filas afectadas de 88; no se ha probado en portal. El release

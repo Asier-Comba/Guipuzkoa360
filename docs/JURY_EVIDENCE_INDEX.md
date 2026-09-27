@@ -54,7 +54,7 @@ Los pesos proceden de la rúbrica conservada en `contexto-principal.md` y `docs/
 
 **WHY IT MATTERS:** el jurado puede revisar qué criterio cambió y por qué cambian 7→4→2.
 
-**EVIDENCE:** `resultados/demo.html`, `analisis/jury_visual_data.json`, 9 corrupciones deliberadas rechazadas por el gate visual. El producto nuevo de Work 3 tiene auditoría e integración separadas.
+**EVIDENCE:** `resultados/demo.html`, `analisis/jury_visual_data.json`, 9 corrupciones deliberadas rechazadas por el gate visual. Producto e ingeniería están integrados en main desde PR #10; [validación actual](VALIDATION.md).
 
 **HOW TO SHOW IT LIVE:** cambiar criterio, seleccionar un municipio y abrir fuente; mostrar Aduna 2.756,2→0,0 m con rótulo hipotético.
 
