@@ -10,7 +10,7 @@ Pensado para **personal técnico municipal y territorial** que necesita detectar
 
 Abra **[la demo territorial](resultados/demo.html)** descargando el HTML: funciona sin servidor ni Internet. Sus tres consultas y el escenario son cálculos reales guardados; la conversación en vivo se realiza en el portal privado. [Guion de demostración](docs/DEMO.md).
 
-La entrada es única: pregunta, hallazgo y mapa. Después se puede abrir «Cómo se obtuvo», comparar municipios o explorar Aduna. El [centro de validación y evolución](resultados/control_center.html) es apoyo secundario: define cada KPI y diferencia capacidades actuales de propuestas futuras.
+La entrada es única: pregunta, hallazgo y mapa. Después se puede cambiar el criterio, abrir «Cómo se calcula», comparar municipios o explorar Aduna. La página [Cómo se comprueba](resultados/control_center.html) explica la fiabilidad en lenguaje sencillo y conserva la validación técnica completa en un desplegable secundario.
 
 - **[Una página para el jurado](docs/JURY_ONE_PAGER.md):** problema, destinatario, evidencia y límite.
 - **[Guía para empezar](docs/PRODUCT_GUIDE.md):** qué preguntar, cómo leer los criterios y cómo comprobar una cifra.

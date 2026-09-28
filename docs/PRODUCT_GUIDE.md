@@ -4,7 +4,7 @@
 
 Para personal técnico municipal y territorial que explora patrones y contrasta municipios antes de profundizar con información sectorial. No hay una implantación administrativa o validación de usuarios acreditada.
 
-Abra **[la hero](../resultados/demo.html)** localmente. Verá pregunta, 7/88, mapa, criterios, fuentes y límite. Los resultados están guardados: funcionan sin red, con JavaScript permitido. Una nueva pregunta en lenguaje natural requiere el portal. Los enlaces externos a fuentes sí necesitan Internet.
+Abra **[la demo](../resultados/demo.html)** localmente. Verá la pregunta, el resultado principal de 7 municipios, el mapa, las fuentes y el límite principal. Los resultados están guardados: funcionan sin red, con JavaScript permitido. Una nueva pregunta en lenguaje natural requiere el portal. Los enlaces externos a fuentes sí necesitan Internet.
 
 ### Tres niveles, una experiencia
 
@@ -28,7 +28,7 @@ En una conversación nueva, especifique grupo de edad, categoría, periodo y cri
 
 ## Cambiar edad y criterio
 
-Los tres botones del HTML seleccionan ejecuciones guardadas, no vuelven a calcular. Permiten contrastar 7 → 4 → 2. Para otro criterio, use el agente y revise el nuevo output; esta vista no lo incorporará automáticamente.
+Los tres botones del HTML muestran tres consultas guardadas diferentes: el caso principal de 65+ identifica 7 municipios; otra pregunta para 75+ identifica 4; y un criterio más exigente aplicado de nuevo a 65+ identifica 2. Sirven para demostrar que el agente recalcula cuando cambia la pregunta. Para otro criterio, use el agente y revise el nuevo resultado; esta vista no lo incorporará automáticamente.
 
 **65+ / 75+:** proporción del grupo sobre el total municipal. El 75+ se deriva de nacidos hasta 1949 para 01/01/2025; la transformación se explica en la ficha.
 
@@ -71,15 +71,11 @@ No hay tiempos de viaje, citas, capacidad, demanda futura, precios de vivienda n
 | Fuente no cargada | Consultar fichas; no inventar referencias. |
 | Periodo no soportado | Usar la fecha disponible o explicar que hace falta otra instantánea. |
 | Capacidad / previsión solicitada | Explicar que esos datos o modelos no están disponibles. |
-| Runner ocupado | Pasar a evidencia guardada, identificarla y conservar la traza del intento. |
+| Servicio temporalmente no disponible | Pasar a evidencia guardada, identificarla y conservar la traza del intento. |
 
-## Cómo leer validación y futuro
+## Cómo leer la validación
 
-El [centro secundario](../resultados/control_center.html) explica cada KPI con definición, numerador, denominador, origen y límite. «31.545/31.545 trazables» se limita al benchmark; no acredita todas las respuestas posibles. Los 264 tests Python y los 17 tests Node corresponden a la suite integrada actual. El benchmark exhaustivo contiene 72.673 checks con otra definición y no se suma a esas suites.
-
-La salida extrema de 20.155 caracteres sigue sin demostración en portal; se conserva completa para no degradar trazabilidad y no afecta al escenario normal de Aduna. Históricamente, un intento quedó bloqueado por el runner y, sin output analítico, el fallback confundió 2 km con el corte de distancia por cuantil; no es evidencia de un fallo del core. El smoke ultimate posterior pasó de forma acotada P1/P2/P3 y separó correctamente umbral y cuantil. M-02 se conserva como riesgo histórico. Las latencias del motor local no representan la conversación completa.
-
-«Cuando la pregunta cambia» separa **HOY** de **EVOLUCIÓN PROPUESTA** y **REQUIERE NUEVOS DATOS**. Actualización supervisada y mejora con aprobación humana son propuestas. No hay autoactualización ni autoedición activa. El snapshot final publicado en `fddcf05`, con evidencia de `eae3b70`, separa planificación, cálculo, verificación y composición deterministas y pasa 77/77 pruebas acotadas. Recibe intenciones estructuradas: no interpreta lenguaje natural ni ejecuta cuatro modelos. Se muestra como prototipo offline, no activo en el portal. Las siete herramientas actuales no son siete agentes.
+El [centro «Cómo se comprueba»](../resultados/control_center.html) resume primero cuatro ideas: cálculos contrastados, fuentes trazables, resultados repetibles y entradas incorrectas controladas. Las cifras completas, sus denominadores y los tres hallazgos técnicos documentados quedan dentro del desplegable de detalle. No hay errores críticos conocidos que impidan utilizar la versión presentada.
 
 ## Teclado y pantalla pequeña
 
