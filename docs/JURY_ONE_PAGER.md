@@ -6,7 +6,7 @@
 
 **Solución.** Pregunta → elige la operación adecuada → cálculo repetible → evidencia → respuesta revisable. El agente admite nuevas preguntas y criterios; la demo web conserva resultados comprobados y el portal permite conversar con el agente.
 
-**7 operaciones:** resumen, comparación, envejecimiento, distancia a registros, coincidencia, escenario y fuentes.
+**8 operaciones:** capacidades disponibles, resumen, comparación, envejecimiento, distancia a registros, coincidencia, escenario y fuentes.
 
 **3 fuentes:** Eustat (01/01/2025), geoEuskadi (07/05/2025), Open Data Euskadi (20/09/2026). Fechas distintas.
 

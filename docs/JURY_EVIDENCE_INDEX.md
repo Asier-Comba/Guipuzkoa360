@@ -28,7 +28,7 @@ Los pesos proceden de la rúbrica conservada en `contexto-principal.md` y `docs/
 
 ## 3. Funcionamiento y herramientas — 25 %
 
-**WHAT WE CLAIM:** siete operaciones deterministas, registradas en el agente; no siete agentes autónomos.
+**WHAT WE CLAIM:** ocho operaciones deterministas, incluida la consulta de capacidades; no son ocho agentes autónomos.
 
 **WHY IT MATTERS:** el modelo selecciona una operación comprobable en lugar de inventar cálculos.
 
@@ -41,6 +41,7 @@ Los pesos proceden de la rúbrica conservada en `contexto-principal.md` y `docs/
 | Coincidencia | ¿Dónde se cumplen ambos cortes? | Cruce de 88 filas, cuantiles, destacados y límites | Umbral no sustituye cuantil; no causalidad |
 | Escenario | ¿Qué cambia si añadimos/retiramos registro? | Baseline, escenario y diferencias con supuestos | Hipótesis, no predicción ni recomendación |
 | Consultar fuente | ¿De dónde sale el dato? | Catálogo, institución, URL, periodo, unidad y límites | No descarga nuevas versiones ni inventa fuentes |
+| Consultar capacidades | ¿Qué puede responder exactamente? | Registro generado de datasets, granularidad, periodos, operaciones y derivaciones | No sustituye datos ausentes ni habilita Internet |
 
 **EVIDENCE:** [matrix técnica completa](architecture/TOOL_EVIDENCE_MATRIX.md), CI remota Linux/Windows, suites actuales y benchmark; historial de plataforma delimitado por versión.
 

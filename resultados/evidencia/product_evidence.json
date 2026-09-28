@@ -85,6 +85,302 @@
       "question": "Resume Aduna.",
       "tool": "obtener_resumen_territorial"
     },
+    "capabilities": {
+      "arguments": {
+        "pregunta_o_dimension": "edades, categorías y periodos"
+      },
+      "execution": "local_saved",
+      "output": {
+        "constraints": {
+          "arbitrary_age_thresholds": false,
+          "capacity_appointments_staff": false,
+          "external_live_lookup": false,
+          "internet_required": false,
+          "prediction_models": false,
+          "travel_time_or_routes": false,
+          "valid_transformations": [
+            "share_of_population",
+            "service_rate_per_10000",
+            "nearest_service_distance",
+            "quantile_coincidence"
+          ]
+        },
+        "data": [
+          {
+            "cannot_exactly_derive": "any age threshold lacking its own cumulative count or finer-grained source rows",
+            "dimension": "demography",
+            "direct_fields": [
+              "population_total",
+              "population_65_plus",
+              "population_75_plus",
+              "pct_65_plus",
+              "pct_75_plus"
+            ],
+            "exact_derivations": [
+              {
+                "exact_when": "the requested cumulative age group has both population_<age>_plus and population_total",
+                "formula": "population_<age>_plus / population_total * 100",
+                "id": "share_of_population"
+              },
+              {
+                "exact_when": "the selected service count and requested supported age denominator are present",
+                "formula": "services_<category> / population_<age>_plus * 10000",
+                "id": "service_rate_per_10000"
+              }
+            ],
+            "granularity": "one row per municipality and reference period",
+            "search_terms": [
+              "edad",
+              "años",
+              "población",
+              "envejecimiento",
+              "age",
+              "population"
+            ],
+            "supported_age_groups": [
+              "65+",
+              "75+"
+            ]
+          },
+          {
+            "calculation_crs": "EPSG:25830",
+            "coverage": 88,
+            "dimension": "geography",
+            "granularity": "municipality",
+            "key": {
+              "expected_unique_values": 88,
+              "field": "municipality_code",
+              "pattern": "^20[0-9]{3}$",
+              "type": "string"
+            },
+            "publication_crs": "EPSG:4326",
+            "search_terms": [
+              "municipio",
+              "territorio",
+              "coordenada",
+              "mapa",
+              "geografía",
+              "location"
+            ]
+          },
+          {
+            "available_metrics": [
+              "distance_to_nearest_hospital_m",
+              "distance_to_nearest_mental_health_m",
+              "distance_to_nearest_other_health_m",
+              "distance_to_nearest_primary_care_m",
+              "services_hospital",
+              "services_mental_health",
+              "services_other_health",
+              "services_primary_care",
+              "services_total"
+            ],
+            "categories": [
+              "hospital",
+              "mental_health",
+              "other_health",
+              "primary_care"
+            ],
+            "dimension": "services",
+            "exact_derivations": [
+              {
+                "exact_when": "the selected service count and requested supported age denominator are present",
+                "formula": "services_<category> / population_<age>_plus * 10000",
+                "id": "service_rate_per_10000"
+              },
+              {
+                "exact_when": "municipality representative point and service coordinates exist in EPSG:25830",
+                "formula": "euclidean distance in metres",
+                "id": "nearest_service_distance"
+              }
+            ],
+            "granularity": "one row per public health-service record",
+            "search_terms": [
+              "servicio",
+              "salud",
+              "centro",
+              "hospital",
+              "distancia",
+              "access",
+              "health"
+            ]
+          },
+          {
+            "dimension": "sources",
+            "search_terms": [
+              "fuente",
+              "origen",
+              "licencia",
+              "procedencia",
+              "source"
+            ],
+            "source_ids": [
+              "EUSTAT_EMH_2025",
+              "G360_DERIVED_MUNICIPAL_METRICS_V1",
+              "GEOEUSKADI_MUNICIPIOS_2025",
+              "ODE_HEALTH_CENTRES_2026"
+            ]
+          },
+          {
+            "available_demographic_periods": [
+              "2025-01-01"
+            ],
+            "available_service_periods": [
+              "2026-09-20"
+            ],
+            "dimension": "time",
+            "periods": {
+              "demography": "2025-01-01",
+              "geography": "2025-05-07",
+              "maximum_separation_days": 627,
+              "services": "2026-09-20"
+            },
+            "search_terms": [
+              "periodo",
+              "fecha",
+              "año",
+              "evolución",
+              "futuro",
+              "time",
+              "year"
+            ]
+          }
+        ],
+        "datasets": [],
+        "detail_level": "compact",
+        "filters": {
+          "pregunta_o_dimension": "edades, categorías y periodos"
+        },
+        "limitations": [
+          "75+ se deriva de año de nacimiento <=1949 a 2025-01-01.",
+          "El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007.",
+          "La distancia no es tiempo de viaje ni accesibilidad individual.",
+          "La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad.",
+          "Los grupos agregados no permiten reconstruir exactamente umbrales de edad distintos de los campos acumulados disponibles.",
+          "Los periodos de demografía, geografía y servicios no forman una fotografía temporal homogénea.",
+          "Los periodos de las fuentes ascendentes no son idénticos.",
+          "Una comparación o coincidencia territorial no demuestra causalidad ni constituye una recomendación."
+        ],
+        "method": "Lectura del registro generado y validado contra contratos, cabeceras y valores reales.",
+        "metric": "capability_registry",
+        "operations": [
+          {
+            "inputs": [
+              "municipio",
+              "periodo"
+            ],
+            "name": "obtener_resumen_territorial",
+            "purpose": "Resume demografía y servicios de un municipio; no interpreta ausencia como cero."
+          },
+          {
+            "inputs": [
+              "municipios",
+              "grupo_edad",
+              "categoria_servicio",
+              "umbral_km",
+              "periodo"
+            ],
+            "name": "comparar_municipios",
+            "purpose": "Compara 2-20 municipios y opcionalmente su distancia geométrica a servicios."
+          },
+          {
+            "inputs": [
+              "grupo_edad",
+              "medida",
+              "periodo",
+              "top_n"
+            ],
+            "name": "analizar_envejecimiento",
+            "purpose": "Calcula ranking de población >=65 o >=75 por porcentaje o recuento."
+          },
+          {
+            "inputs": [
+              "categoria_servicio",
+              "umbral_km",
+              "periodo",
+              "municipios"
+            ],
+            "name": "analizar_acceso_servicios",
+            "purpose": "Calcula distancia euclídea EPSG:25830; no representa acceso real."
+          },
+          {
+            "inputs": [
+              "categoria_servicio",
+              "grupo_edad",
+              "umbral_km",
+              "periodo",
+              "cuantil"
+            ],
+            "name": "analizar_coincidencia",
+            "purpose": "Cruza envejecimiento y distancia con cortes explícitos y sin inferir causalidad."
+          },
+          {
+            "inputs": [
+              "accion",
+              "categoria_servicio",
+              "umbral_km",
+              "periodo",
+              "latitud",
+              "longitud",
+              "service_id",
+              "nuevo_umbral_km"
+            ],
+            "name": "simular_escenario",
+            "purpose": "Recalcula un contrafactual soportado; no es una predicción ni recomendación."
+          },
+          {
+            "inputs": [
+              "source_id"
+            ],
+            "name": "consultar_fuente",
+            "purpose": "Devuelve procedencia, periodo, unidad, licencia y limitaciones documentadas."
+          },
+          {
+            "inputs": [
+              "pregunta_o_dimension"
+            ],
+            "name": "consultar_capacidades",
+            "purpose": "Describe variables, granularidad, periodos, operaciones, derivaciones exactas y límites disponibles."
+          }
+        ],
+        "period": null,
+        "question": "Consulta de capacidades disponibles",
+        "registry_version": "1.0.0",
+        "rows_used": 5,
+        "sources": [
+          {
+            "institution": "Eustat - Instituto Vasco de Estadística",
+            "reference_period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo"
+          },
+          {
+            "institution": "Gobierno Vasco - Departamento de Salud",
+            "reference_period": "2026-09-20",
+            "source_id": "ODE_HEALTH_CENTRES_2026",
+            "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi"
+          },
+          {
+            "institution": "Gobierno Vasco - geoEuskadi",
+            "reference_period": "2025-05-07",
+            "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+            "title": "Límites Administrativos del País Vasco - Municipios 1:5.000"
+          },
+          {
+            "institution": "DeustoAI Labs",
+            "reference_period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+            "source_id": "G360_DERIVED_MUNICIPAL_METRICS_V1",
+            "title": "Métricas municipales derivadas de GIPUZKOA 360"
+          }
+        ],
+        "status": "ok",
+        "unit": "no aplica",
+        "warnings": []
+      },
+      "output_sha256": "e648728dc3d68ece56227bfacdb858a90ce2a5cbaf66fdb19573a71c96f13c14",
+      "question": "¿Qué variables, periodos y cálculos están disponibles?",
+      "tool": "consultar_capacidades"
+    },
     "category_error": {
       "arguments": {
         "categoria_servicio": "farmacia",
@@ -1111,24 +1407,24 @@
   },
   "execution": "Cálculos locales guardados; sin conversación en directo en estos HTML.",
   "input_sha256": {
-    "agentes/gipuzkoa360/portal/main.py": "c2f4770f234522ac6ccb535d627c1252e19bc8f992e73194dab6e9f6672c585e",
-    "agentes/gipuzkoa360/portal/tools.py": "0a5ab214ecf89cef04c85b5055c8ac42047c151c0411b4aa6c470a8de397edd5",
-    "analisis/final/full_validation.json": "68669c080532485f803ff4e79b56e6bb4990a010244d1ac89fd16ead20483ca8",
+    "agentes/gipuzkoa360/portal/main.py": "7769f30c1f1031db59e71260fbc185c47a907627c6e64dd21b49f54ced9504b4",
+    "agentes/gipuzkoa360/portal/tools.py": "75fe7670fd4b36d91ed248674b93b4956c752910979c05404911e1d2cb868748",
+    "analisis/final/full_validation.json": "31f61fc0c5c13f2a7ea915cc4c41c881008c2757ecbeb21d2d3d54c224dcc3ae",
     "datos_originales/eustat_demografia_2025.csv": "8e9c0a1642558f4449208a334666368713dc9801807c65099955e435c126ac8f",
     "datos_preparados/README.md": "72fb61862f2fb8fb6c5af8af1a398dd38fad8b2ec55ab7acacb00e719c2b04ba",
+    "datos_preparados/capabilities.json": "dc279afdbeb8aa13e83d964599e871bf97109352c0f6880ac1f605f457686b27",
     "datos_preparados/data_contract.json": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae",
     "datos_preparados/demografia.csv": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96",
     "datos_preparados/metadata_sources.json": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
     "datos_preparados/municipios.csv": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
     "datos_preparados/municipios.geojson": "8f3d8171e5ee6836559d4d3f08a2c05c535797c9fd8771a1cea04dc736b3654e",
-    "datos_preparados/runtime_manifest.json": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
+    "datos_preparados/runtime_manifest.json": "e6421d7aa039a08166ba779a6f052b10c74f885da03c1e9db9c3ea7d2f02ca84",
     "datos_preparados/runtime_municipality_points.csv": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11",
     "datos_preparados/runtime_municipios.geojson": "c30ba24034312e2d1f5fab487c0ec78126436311a02ec54fc9bdf6f0b84dad1c",
     "datos_preparados/runtime_servicios.csv": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece",
     "datos_preparados/servicios.csv": "b81c62c637a69c27fdbc2b5e2e76050420517807c44a5cb5248dda23b80c52ea",
     "docs/FINAL_RELEASE_GATE.md": "280b061a6a08e09339fea522ab3b84375a3a64bcfab08ec0d57b80b77d55cff1",
-    "docs/VALIDATION.md": "67d1ade2c08c011ab8703b4a597ca90a7519408d3433117644f5062203727f71",
-    "resultados/evidencia/next_prototype.json": "cd5a83d3338b96ad0671757c9590415f28d7e45ff91bb8ea12e95f0ace8837de"
+    "docs/VALIDATION.md": "1b43604be0cb52576ee02730ddad392b6c67561fab17afa24812e6e94704dc1e"
   },
   "inventory": {
     "health_records": 148,
@@ -1140,120 +1436,12 @@
       "analizar_acceso_servicios",
       "analizar_coincidencia",
       "simular_escenario",
-      "consultar_fuente"
+      "consultar_fuente",
+      "consultar_capacidades"
     ]
   },
-  "next_prototype": {
-    "adversarial_summary": {
-      "composer_blocks": 16,
-      "injections_detected": 16,
-      "injections_total": 16,
-      "scope": "fixed corruptions and unapproved drafts; template allowlisting, not general natural-language hallucination detection"
-    },
-    "capabilities": {
-      "ACTIVE": [
-        "summary",
-        "comparison",
-        "aging",
-        "access",
-        "coincidence",
-        "scenario",
-        "source"
-      ],
-      "REQUIRES_DATA": [
-        "mobility",
-        "capacity",
-        "demand",
-        "housing",
-        "environment"
-      ]
-    },
-    "limitations": [
-      "Planner consumes structured intents; natural-language routing accuracy is not measured.",
-      "Numeric grounding compares against the same deterministic core, not an independent numerical oracle.",
-      "Source grounding resolves declared source identifiers; it is not field-level provenance completeness.",
-      "Offline latency and deterministic rendering do not represent portal or LLM behavior.",
-      "Prototype is isolated from the runtime and cannot mutate production."
-    ],
-    "prototype_test_summary": {
-      "command": "python -m pytest tests/next -o addopts= -q",
-      "date": "2026-09-25",
-      "failed": 0,
-      "passed": 77
-    },
-    "quality_kpis": {
-      "composer_block_rate": {
-        "denominator": 16,
-        "numerator": 16,
-        "value": 1.0
-      },
-      "critic_detection_rate": {
-        "denominator": 16,
-        "numerator": 16,
-        "value": 1.0
-      },
-      "determinism_rate": {
-        "denominator": 8,
-        "numerator": 8,
-        "value": 1.0
-      },
-      "followup_recalculation_rate": {
-        "denominator": 1,
-        "numerator": 1,
-        "value": 1.0
-      },
-      "limitation_present_rate": {
-        "denominator": 9,
-        "numerator": 9,
-        "value": 1.0
-      },
-      "numeric_grounding_rate": {
-        "denominator": 9,
-        "numerator": 9,
-        "value": 1.0
-      },
-      "out_of_scope_rejection_rate": {
-        "denominator": 6,
-        "numerator": 6,
-        "value": 1.0
-      },
-      "parameter_accuracy": {
-        "denominator": 9,
-        "numerator": 9,
-        "value": 1.0
-      },
-      "source_grounding_rate": {
-        "denominator": 9,
-        "numerator": 9,
-        "value": 1.0
-      },
-      "tool_selection_accuracy": {
-        "denominator": 9,
-        "numerator": 9,
-        "value": 1.0
-      }
-    },
-    "reconciliation_status": "complete",
-    "scope": "OFFLINE PROTOTYPE: structured intents; no LLM routing benchmark, portal execution, production promotion, self-editing or auto-deployment",
-    "self_improvement_policy": {
-      "human_approval_required": true,
-      "no_production_mutation": true,
-      "proposal_only": true
-    },
-    "snapshot_commit": "fddcf05217959ddc347f5d1a1ee9f35245ea9806",
-    "snapshot_path": "analisis/next/product_snapshot.json",
-    "source_commit": "eae3b7026a8608946d31c718fabc10111c3fa16e",
-    "source_evidence_path": "analisis/next/quality_kpis.json",
-    "technical_handoff_commit": "929186fcb2a04429ee5a68b6081948902668b917",
-    "versions": {
-      "BENCHMARK_VERSION": "next-evaluation-0.1",
-      "CAPABILITY_VERSION": "next-registry-0.1",
-      "DATA_VERSION": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a",
-      "PROMPT_VERSION": "none-deterministic-template-0.1",
-      "RUNTIME_VERSION": "195b4980fa5998b096c308296a55e452380b0371"
-    }
-  },
-  "runtime_sha": "195b4980fa5998b096c308296a55e452380b0371",
+  "next_prototype": null,
+  "runtime_sha": "441409ca68e3c5708eb9a1f66eef34c47bbfe558e3e801ab53e1605cf028528b",
   "sources": [
     {
       "download_date": "2026-09-24",
@@ -1373,12 +1561,12 @@
         17
       ],
       "python": [
-        264,
-        264
+        271,
+        271
       ],
       "source": "docs/VALIDATION.md"
     },
-    "candidate_sha": "84e95167bfb9718ebb5f26b533f12cd885901e20",
+    "candidate_sha": "e213eaa9b73b0f8a4d1893e0269fe92fe6756955",
     "checks": {
       "by_component": {
         "aliases": 56,
@@ -1386,12 +1574,12 @@
         "coincidence_controls": 3,
         "coincidence_grid": 1600,
         "demography": 354,
-        "determinism": 8,
+        "determinism": 9,
         "fault_injection": 20,
-        "metamorphic": 12,
-        "output_contract": 14,
+        "metamorphic": 13,
+        "output_contract": 16,
         "pairwise": 30625,
-        "performance_json": 840,
+        "performance_json": 960,
         "scenario_add": 352,
         "scenario_isolation": 2,
         "scenario_remove": 148,
@@ -1401,19 +1589,19 @@
         "traceability": 31545
       },
       "failed": 0,
-      "passed": 72673,
-      "total": 72673
+      "passed": 72797,
+      "total": 72797
     },
     "fault_injection": {
       "controlled_rejection": 20,
       "silent_corruption": 0,
       "total": 20
     },
-    "generated_at": "2026-09-25T12:36:57+0200",
+    "generated_at": "2026-09-28T13:35:54+0200",
     "issues": [
       {
         "payload_chars": 20155,
-        "reason": "El cambio de umbral 1→10 km modifica la clasificación de 66 de los 88 municipios analizados y la salida compacta conserva cada fila afectada.",
+        "reason": "El cambio de umbral 1→10 km modifica la clasificación de 66 de 88 municipios analizados y la salida compacta conserva cada fila afectada.",
         "reduction_tradeoff": "Reducirlo exige truncar o paginar evidencia municipal; no se cambia el runtime porque se perdería evidencia y no existe un fallo numérico o contractual.",
         "severity": "Medium",
         "tool": "simular_escenario"

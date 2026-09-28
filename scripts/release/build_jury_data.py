@@ -10,10 +10,12 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / 'agentes/gipuzkoa360'))
 from data_access import DataRepository
 from tools import TerritorialAnalysis
 import tools as core
+from scripts.ops.runtime_identity import compute_runtime_sha
 
 spec = importlib.util.spec_from_file_location('jury_gate', ROOT / 'scripts/benchmark/verify_jury_results.py')
 gate = importlib.util.module_from_spec(spec)
@@ -33,7 +35,7 @@ def build():
     aduna = analysis.repo.municipality_lookup('Aduna')
     scenario = analysis.escenario('add_service', 'primary_care', 2, gate.PERIOD,
                                  aduna['latitude'], aduna['longitude'], 'HYPOTHETICAL_ADUNA')
-    return {'execution_mode': 'recorded_local_calculation', 'runtime_sha': '195b4980fa5998b096c308296a55e452380b0371',
+    return {'execution_mode': 'recorded_local_calculation', 'runtime_sha': compute_runtime_sha(ROOT),
             'period': gate.PERIOD, 'cases': cases, 'geometry': geometry,
             'control_comparison': analysis.comparar(['Donostia', 'Eibar', 'Tolosa'], '75', 'primary_care', 2, gate.PERIOD),
             'aduna_scenario': scenario, 'sources': analysis.repo.metadata()['sources']}
@@ -64,6 +66,8 @@ def build_product_evidence():
              'umbral_km':2,'periodo':gate.PERIOD,'latitud':aduna['latitude'],'longitud':aduna['longitude']},
              'Escenario hipotético: añadir atención primaria en el punto representativo de Aduna.')
         call('source','consultar_fuente',{'source_id':'EUSTAT_EMH_2025'},'¿De dónde sale la población?')
+        call('capabilities','consultar_capacidades',{'pregunta_o_dimension':'edades, categorías y periodos'},
+             '¿Qué variables, periodos y cálculos están disponibles?')
         call('missing','obtener_resumen_territorial',{'municipio':'Villa GPT','periodo':gate.PERIOD},'Resume Villa GPT.')
         call('category_error','analizar_acceso_servicios',{'categoria_servicio':'farmacia','umbral_km':2,'periodo':gate.PERIOD},'Distancia a farmacias.')
         call('source_error','consultar_fuente',{'source_id':'FUENTE_NO_CARGADA'},'Consulta una fuente no cargada.')
@@ -94,10 +98,12 @@ def build_product_evidence():
     inputs += [p.as_posix() for p in (Path('datos_preparados') / p.name for p in sorted((ROOT / 'datos_preparados').glob('*'))) if (ROOT / p).is_file()]
     prototype_path = 'resultados/evidencia/next_prototype.json'
     prototype = json.loads((ROOT / prototype_path).read_text(encoding='utf-8')) if (ROOT / prototype_path).exists() else None
-    if prototype:
-        if prototype['versions']['RUNTIME_VERSION'] != report['runtime_sha']:
-            raise ValueError('Prototype evidence belongs to a different runtime')
+    if prototype and prototype['versions']['RUNTIME_VERSION'] == report['runtime_sha']:
         inputs.append(prototype_path)
+    else:
+        # La evidencia NEXT pertenece a un runtime histórico y no se presenta como
+        # validación del candidato actual. El archivo original se conserva intacto.
+        prototype = None
     return {'base_sha':'46c1a48f63c307654f45fcb5c18883f264b660ed','runtime_sha':report['runtime_sha'],
             'next_prototype':prototype,
             'execution':'Cálculos locales guardados; sin conversación en directo en estos HTML.',

@@ -61,7 +61,7 @@ def test_portal_main_build_agent_is_synchronous_and_has_no_local_path():
     assert "STUDIO_INTERNET_ENABLED = False" in source
 
 
-def test_portal_main_physically_declares_seven_unique_tools():
+def test_portal_main_physically_declares_eight_unique_tools():
     source = (PORTAL / "main.py").read_text(encoding="utf-8")
     tree = ast.parse(source)
     decorated = [
@@ -78,9 +78,10 @@ def test_portal_main_physically_declares_seven_unique_tools():
         "analizar_coincidencia",
         "simular_escenario",
         "consultar_fuente",
+        "consultar_capacidades",
     }
     assert {node.name for node in decorated} == expected
-    assert len(decorated) == len(expected) == 7
+    assert len(decorated) == len(expected) == 8
 
 
 def test_rc2_zip_extracts_and_executes_a_real_smoke_case(tmp_path):
@@ -97,6 +98,7 @@ def test_rc2_zip_extracts_and_executes_a_real_smoke_case(tmp_path):
             "requirements.txt",
             "tools.py",
             "datos_preparados/data_contract.json",
+            "datos_preparados/capabilities.json",
             "datos_preparados/demografia.csv",
             "datos_preparados/metadata_sources.json",
             "datos_preparados/municipios.csv",

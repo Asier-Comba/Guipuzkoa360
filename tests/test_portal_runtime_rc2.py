@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 EXPECTED = {
     "obtener_resumen_territorial", "comparar_municipios", "analizar_envejecimiento",
     "analizar_acceso_servicios", "analizar_coincidencia", "simular_escenario", "consultar_fuente",
+    "consultar_capacidades",
 }
 
 
@@ -21,7 +22,7 @@ def _tool_name(item):
     return getattr(item, "name", getattr(item, "__name__", None))
 
 
-def test_seven_decorated_wrappers_are_physical_and_unique_in_main():
+def test_eight_decorated_wrappers_are_physical_and_unique_in_main():
     tree = ast.parse((ROOT / "agentes/gipuzkoa360/main.py").read_text(encoding="utf-8"))
     decorated = {
         node.name for node in tree.body
@@ -30,7 +31,7 @@ def test_seven_decorated_wrappers_are_physical_and_unique_in_main():
     }
     assert decorated == EXPECTED
     names = [_tool_name(item) for item in main.TOOLS]
-    assert len(names) == len(set(names)) == 7
+    assert len(names) == len(set(names)) == 8
     assert set(names) == EXPECTED
 
 
@@ -55,6 +56,7 @@ def test_core_keeps_explicit_offline_full_detail_capability():
             tools.analizar_coincidencia,
             tools.simular_escenario,
             tools.consultar_fuente,
+            tools.consultar_capacidades,
         )
     )
 

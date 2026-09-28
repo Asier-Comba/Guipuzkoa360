@@ -33,6 +33,7 @@ datos_preparados/runtime_municipality_points.csv
 datos_preparados/runtime_servicios.csv
 datos_preparados/metadata_sources.json
 datos_preparados/data_contract.json
+datos_preparados/capabilities.json
 datos_preparados/runtime_manifest.json
 ```
 
@@ -50,7 +51,7 @@ En **Agentes → Python → Agente principal**, reemplazar el contenido de los d
 - `STUDIO_MAX_ITERATIONS = 8`.
 - `STUDIO_MEMORY_ENABLED = True` para seguimientos.
 - `STUDIO_INTERNET_ENABLED = False`.
-- Siete tools deterministas, sin tool de ejecución arbitraria.
+- Ocho tools deterministas, incluida `consultar_capacidades` y sin ejecución arbitraria.
 - Ninguna firma pública de Studio expone `detalle`; las respuestas del coordinador son compactas por diseño.
 - Sin secretos, tokens, llamadas HTTP ni rutas locales.
 
@@ -66,6 +67,7 @@ datos_preparados/runtime_municipality_points.csv
 datos_preparados/runtime_servicios.csv
 datos_preparados/metadata_sources.json
 datos_preparados/data_contract.json
+datos_preparados/capabilities.json
 datos_preparados/runtime_manifest.json
 ```
 
@@ -76,14 +78,14 @@ Dependencias del agente: ninguna adicional. El portal aporta `langchain` y `stud
 1. Abrir `main.py` y pulsar **Comprobar preparación**.
 2. Abrir `tools.py` y repetir la comprobación si el portal lo permite.
 3. Corregir únicamente errores de importación o archivos ausentes; no cambiar cifras ni relajar validaciones.
-4. Pulsar **Crear versión del agente**. Nombrarla `urban-challenge-rc2` e identificar el SHA exacto indicado por Work 1.
-5. Ir a **Pruebas**, seleccionar esa versión y ejecutar, en orden, `docs/JURY_TEST_PLAN.md` y los casos A–H de `analisis/release_e2e_report.json`.
+4. Pulsar **Crear versión del agente**. Nombrarla `GIPUZKOA 360 · General` e identificar la huella exacta del runtime.
+5. Ir a **Pruebas**, seleccionar esa versión y ejecutar los casos de `tests/portal_generalization_cases.json`.
 6. Confirmar que cada respuesta muestra tool, argumentos, periodo, unidad, fuente y límite; revisar especialmente Aduna, Eibar y el caso fuera de alcance.
 7. Si todas pasan, conservar la versión como candidata. **No abrir Entrega ni publicar** hasta la autorización del equipo.
 
-Work 3 es el único operador del portal durante esta puerta. No editar el agente ni lanzar pruebas en paralelo. Si
-falla una prueba, registrar versión, SHA, pregunta, tool, argumentos, salida y tiempo; Work 1 aplicará únicamente
-el parche mínimo y entregará un SHA nuevo que invalida cualquier evidencia anterior.
+Debe existir un único operador del portal durante esta puerta. No editar el agente ni lanzar pruebas en paralelo.
+Si falla una prueba, registrar versión, huella, pregunta, tool, argumentos, salida y tiempo; cualquier parche
+genera un runtime nuevo e invalida la evidencia anterior.
 
 ## 5. Tools definitivas
 
@@ -96,7 +98,8 @@ el parche mínimo y entregará un SHA nuevo que invalida cualquier evidencia ant
 | `analizar_coincidencia` | Cruce explícito de envejecimiento y distancia. |
 | `simular_escenario` | Alta/baja hipotética o cambio de umbral. |
 | `consultar_fuente` | Ficha oficial de procedencia y limitaciones. |
+| `consultar_capacidades` | Variables, granularidad, periodos, derivaciones exactas y límites disponibles. |
 
 ## 6. Criterio de aceptación en plataforma
 
-Una versión es válida solo si `build_agent(model)` termina, las siete tools aparecen, no hay archivo ausente y las ocho pruebas A–H son correctas. El caso H no debe invocar una tool irrelevante. Una respuesta que confunda cero registros con ausencia de atención, distancia con accesibilidad, registro con capacidad o coincidencia con causalidad invalida la versión.
+Una versión es válida solo si `build_agent(model)` termina, las ocho tools aparecen, no hay archivo ausente y las pruebas de aceptación son correctas. Una respuesta que confunda cero registros con ausencia de atención, distancia con accesibilidad, registro con capacidad o coincidencia con causalidad invalida la versión. También invalida la versión inventar una causa de error o derivar una dimensión que el registro de capacidades no declara exacta.

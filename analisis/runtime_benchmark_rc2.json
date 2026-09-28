@@ -1,51 +1,57 @@
 {
   "release": "urban-challenge-rc2",
   "repeats": 5,
-  "cold_data_load_ms": 11.58,
+  "cold_data_load_ms": 11.513,
   "tools": [
     {
       "tool": "obtener_resumen_territorial",
-      "calculation_ms_median": 0.377,
-      "serialization_ms_median": 0.071,
-      "wrapper_ms_median": 1.026
+      "calculation_ms_median": 0.349,
+      "serialization_ms_median": 0.077,
+      "wrapper_ms_median": 1.006
     },
     {
       "tool": "comparar_municipios",
-      "calculation_ms_median": 1.551,
-      "serialization_ms_median": 0.078,
-      "wrapper_ms_median": 1.964
+      "calculation_ms_median": 1.399,
+      "serialization_ms_median": 0.071,
+      "wrapper_ms_median": 2.078
     },
     {
       "tool": "analizar_envejecimiento",
-      "calculation_ms_median": 0.146,
-      "serialization_ms_median": 0.049,
-      "wrapper_ms_median": 0.619
+      "calculation_ms_median": 0.249,
+      "serialization_ms_median": 0.076,
+      "wrapper_ms_median": 1.207
     },
     {
       "tool": "analizar_acceso_servicios",
-      "calculation_ms_median": 0.335,
-      "serialization_ms_median": 0.044,
-      "wrapper_ms_median": 0.745
+      "calculation_ms_median": 0.665,
+      "serialization_ms_median": 0.076,
+      "wrapper_ms_median": 1.579
     },
     {
       "tool": "analizar_coincidencia",
-      "calculation_ms_median": 6.413,
-      "serialization_ms_median": 0.491,
-      "wrapper_ms_median": 7.145
+      "calculation_ms_median": 6.292,
+      "serialization_ms_median": 0.461,
+      "wrapper_ms_median": 7.219
     },
     {
       "tool": "simular_escenario",
-      "calculation_ms_median": 7.485,
-      "serialization_ms_median": 0.366,
-      "wrapper_ms_median": 8.701
+      "calculation_ms_median": 7.969,
+      "serialization_ms_median": 0.353,
+      "wrapper_ms_median": 9.817
     },
     {
       "tool": "consultar_fuente",
-      "calculation_ms_median": 0.033,
-      "serialization_ms_median": 0.033,
-      "wrapper_ms_median": 0.387
+      "calculation_ms_median": 0.038,
+      "serialization_ms_median": 0.036,
+      "wrapper_ms_median": 0.546
+    },
+    {
+      "tool": "consultar_capacidades",
+      "calculation_ms_median": 0.879,
+      "serialization_ms_median": 0.098,
+      "wrapper_ms_median": 0.891
     }
   ],
-  "max_wrapper_ms_median": 8.701,
+  "max_wrapper_ms_median": 9.817,
   "status": "PASS"
 }

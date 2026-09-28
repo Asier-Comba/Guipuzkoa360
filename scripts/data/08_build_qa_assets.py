@@ -22,6 +22,7 @@ RUNTIME_FILES = (
     "datos_preparados/runtime_municipios.geojson",
     "datos_preparados/metadata_sources.json",
     "datos_preparados/data_contract.json",
+    "datos_preparados/capabilities.json",
 )
 
 

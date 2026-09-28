@@ -36,7 +36,6 @@ DATA_DIR = ROOT / "datos_preparados"
 ANALYSIS_DIR = ROOT / "analisis"
 DOCS_DIR = ROOT / "docs"
 BASE_SHA = "488f46db7047d9393d4d4a489a869ab246c215b9"
-RUNTIME_SHA = "195b4980fa5998b096c308296a55e452380b0371"
 BRANCH = "final/asier-benchmark-suite"
 PERIOD = "2025-01-01"
 SEED = 36020260925
@@ -46,10 +45,14 @@ QUANTILES = (0.50, 0.60, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95)
 AGE_GROUPS = ("65", "75")
 
 sys.path.insert(0, str(AGENT_DIR))
+sys.path.insert(0, str(ROOT))
+from scripts.ops.runtime_identity import compute_runtime_sha  # noqa: E402
 import tools as core  # noqa: E402
 from data_access import DataRepository  # noqa: E402
 from metrics import quantile as metric_quantile  # noqa: E402
 from schemas import DataContractError  # noqa: E402
+
+RUNTIME_SHA = compute_runtime_sha(ROOT)
 
 
 INVARIANT_MATRIX = [
@@ -337,6 +340,7 @@ def validate_demography(
         "metadata_sources.json",
         "data_contract.json",
         "runtime_manifest.json",
+        "capabilities.json",
     ):
         reads = [(DATA_DIR / filename).read_bytes() for _ in range(5)]
         digest = hashlib.sha256(reads[0]).hexdigest()
@@ -1090,6 +1094,7 @@ def validate_fault_injection(recorder: Recorder) -> dict[str, Any]:
 
 def public_tool_specs() -> dict[str, Callable[[], str]]:
     return {
+        "consultar_capacidades": lambda: core.consultar_capacidades("edades, categorías y periodos"),
         "consultar_fuente": lambda: core.consultar_fuente("EUSTAT_EMH_2025"),
         "obtener_resumen_territorial": lambda: core.obtener_resumen_territorial("Donostia / San Sebastián", PERIOD),
         "comparar_municipios": lambda: core.comparar_municipios(
@@ -1231,6 +1236,10 @@ def validate_metamorphic(
             lambda: core.consultar_fuente("EUSTAT_EMH_2025", False),
             lambda: core.consultar_fuente("EUSTAT_EMH_2025", True),
         ),
+        "capability": (
+            lambda: core.consultar_capacidades("edades, categorías y periodos", False),
+            lambda: core.consultar_capacidades("edades, categorías y periodos", True),
+        ),
     }
     for kind, (compact_call, full_call) in specs_full_compact.items():
         compact = strict_loads(compact_call())
@@ -1238,6 +1247,14 @@ def validate_metamorphic(
         shared = all(compact.get(field) == full.get(field) for field in ("status", "filters", "period", "metric", "unit", "rows_used", "method", "warnings", "limitations"))
         if kind in {"summary", "comparison", "aging", "source"}:
             evidence = compact["data"] == full["data"]
+        elif kind == "capability":
+            evidence = (
+                compact["data"] == full["data"]
+                and compact["operations"] == full["operations"]
+                and compact["constraints"] == full["constraints"]
+                and compact["datasets"] == []
+                and len(full["datasets"]) == 4
+            )
         elif kind == "access":
             full_distances = [row["nearest_distance_m"] for row in full["data"]]
             evidence = (
@@ -1654,7 +1671,7 @@ def main() -> None:
         "base_sha": BASE_SHA,
         "runtime_sha": RUNTIME_SHA,
         "branch": BRANCH,
-        "runtime_changed": False,
+        "runtime_changed": True,
         "seed": SEED,
         "offline": True,
         "check_definition": "one independent subject × property evaluation; no code-line/assert inflation",

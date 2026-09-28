@@ -63,7 +63,8 @@ def compute(root=ROOT):
         blob = path.read_bytes() if safe and path.is_file() else b""
         checks.append({"path": entry["path"], "matches": safe and len(blob) == entry["bytes"] and hashlib.sha256(blob).hexdigest() == entry["sha256"]})
     expected_paths = {"datos_preparados/"+name for name in FILES} | {
-        "datos_preparados/runtime_municipios.geojson", "datos_preparados/metadata_sources.json", "datos_preparados/data_contract.json"}
+        "datos_preparados/runtime_municipios.geojson", "datos_preparados/metadata_sources.json",
+        "datos_preparados/data_contract.json", "datos_preparados/capabilities.json"}
     manifest_paths = [e['path'] for e in manifest['files']]
     integrity = (set(manifest_paths) == expected_paths and len(manifest_paths) == len(expected_paths)
                  and all(c["matches"] for c in checks)

@@ -1,6 +1,7 @@
 {
   "status": "PASS",
   "checks": {
+    "runtime_inventory": true,
     "runtime_identity": true,
     "manifest": true,
     "visual_data_equals_recalculation": true,
@@ -9,57 +10,66 @@
     "no_fixed_25_cut": true,
     "saved_calculation_label": true
   },
-  "frozen_files": {
+  "runtime_sha256": "441409ca68e3c5708eb9a1f66eef34c47bbfe558e3e801ab53e1605cf028528b",
+  "runtime_files": {
     "agentes/gipuzkoa360/portal/main.py": {
-      "matches": true,
-      "sha256": "c2f4770f234522ac6ccb535d627c1252e19bc8f992e73194dab6e9f6672c585e"
+      "exists": true,
+      "sha256": "7769f30c1f1031db59e71260fbc185c47a907627c6e64dd21b49f54ced9504b4"
     },
     "agentes/gipuzkoa360/portal/tools.py": {
-      "matches": true,
-      "sha256": "0a5ab214ecf89cef04c85b5055c8ac42047c151c0411b4aa6c470a8de397edd5"
+      "exists": true,
+      "sha256": "75fe7670fd4b36d91ed248674b93b4956c752910979c05404911e1d2cb868748"
+    },
+    "agentes/gipuzkoa360/requirements.txt": {
+      "exists": true,
+      "sha256": "1690fee4f978ffb8989fa4499f4dc3a30047b16807909e2e7a0dc9456d5782bc"
     },
     "FUENTES.md": {
-      "matches": true,
+      "exists": true,
       "sha256": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de"
     },
     "docs/METODOLOGIA.md": {
-      "matches": true,
+      "exists": true,
       "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7"
     },
     "docs/RESULT_SCHEMA.md": {
-      "matches": true,
+      "exists": true,
       "sha256": "8b1a5e1f5541b41f2e0680dcdc2d2a9a3c6f5a2333088fb98b28fd3b4893c872"
     },
     "datos_preparados/municipios.csv": {
-      "matches": true,
+      "exists": true,
       "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
     },
     "datos_preparados/demografia.csv": {
-      "matches": true,
+      "exists": true,
       "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
     },
     "datos_preparados/runtime_municipality_points.csv": {
-      "matches": true,
+      "exists": true,
       "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11"
     },
     "datos_preparados/runtime_servicios.csv": {
-      "matches": true,
+      "exists": true,
       "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
     },
     "datos_preparados/metadata_sources.json": {
-      "matches": true,
+      "exists": true,
       "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
     },
     "datos_preparados/data_contract.json": {
-      "matches": true,
+      "exists": true,
       "sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae"
     },
+    "datos_preparados/capabilities.json": {
+      "exists": true,
+      "sha256": "dc279afdbeb8aa13e83d964599e871bf97109352c0f6880ac1f605f457686b27"
+    },
     "datos_preparados/runtime_manifest.json": {
-      "matches": true,
-      "sha256": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a"
+      "exists": true,
+      "sha256": "e6421d7aa039a08166ba779a6f052b10c74f885da03c1e9db9c3ea7d2f02ca84"
     }
   },
-  "manifest_entries": 7,
+  "manifest_entries": 8,
   "visual_mutations": [
     {
       "attack": "alter a visible population percentage",

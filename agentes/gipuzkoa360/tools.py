@@ -1,4 +1,4 @@
-"""Siete herramientas deterministas para el coordinador GIPUZKOA 360."""
+"""Ocho herramientas deterministas para el coordinador GIPUZKOA 360."""
 
 from __future__ import annotations
 
@@ -744,6 +744,49 @@ def _analysis() -> TerritorialAnalysis:
 def clear_analysis_cache() -> None:
     """Gancho explícito para tests o recargas controladas de datasets."""
     _analysis_for_data_dir.cache_clear()
+    _capability_registry.cache_clear()
+
+
+@lru_cache(maxsize=8)
+def _capability_registry(data_dir: str) -> dict[str, Any]:
+    path = Path(data_dir) / "capabilities.json"
+    if not path.is_file():
+        raise DataContractError(
+            "missing_capability_registry",
+            f"No se encuentra el registro de capacidades {path.as_posix()}.",
+        )
+    try:
+        registry = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise DataContractError(
+            "invalid_capability_registry",
+            f"No se puede leer {path.as_posix()}: {exc}.",
+        ) from exc
+    required = {"registry_version", "datasets", "dimensions", "operations", "constraints", "provenance"}
+    if not isinstance(registry, dict) or not required <= set(registry):
+        raise DataContractError(
+            "invalid_capability_registry",
+            "El registro de capacidades no cumple el contrato mínimo.",
+            sorted(required),
+        )
+    return registry
+
+
+def _capability_matches(registry: dict[str, Any], query: str | None) -> list[str]:
+    if not query:
+        return sorted(registry["dimensions"])
+    normalized = _normalized_key(query)
+    tokens = {item for item in re.findall(r"[a-z0-9]+", normalized) if len(item) > 1}
+    matches: list[str] = []
+    for name, payload in registry["dimensions"].items():
+        searchable = _normalized_key(" ".join([name, *payload.get("search_terms", [])]))
+        searchable_tokens = set(re.findall(r"[a-z0-9]+", searchable))
+        if tokens & searchable_tokens:
+            matches.append(name)
+    asks_age = bool(re.search(r"\b\d{1,3}\s*(?:\+|anos?|years?)\b", normalized))
+    if asks_age and "demography" in registry["dimensions"] and "demography" not in matches:
+        matches.append("demography")
+    return sorted(matches or registry["dimensions"])
 
 
 def obtener_resumen_territorial(
@@ -846,3 +889,32 @@ def simular_escenario(
 def consultar_fuente(source_id: str | None = None, detalle: bool = False) -> str:
     """Devuelve procedencia, periodo, institución, unidad, licencia y limitaciones disponibles."""
     return _safe(lambda: _analysis().fuente(source_id), result_kind="source", detail=detalle)
+
+
+def consultar_capacidades(pregunta_o_dimension: str | None = None, detalle: bool = False) -> str:
+    """Consulta el registro generado de variables, operaciones, derivabilidad y límites."""
+    def operation() -> dict[str, Any]:
+        registry = _capability_registry(str(_default_data_dir().resolve()))
+        matched = _capability_matches(registry, pregunta_o_dimension)
+        result = {
+            "status": "ok",
+            "question": "Consulta de capacidades disponibles",
+            "filters": {"pregunta_o_dimension": pregunta_o_dimension},
+            "period": None,
+            "metric": "capability_registry",
+            "unit": "no aplica",
+            "rows_used": len(matched),
+            "data": [{"dimension": name, **registry["dimensions"][name]} for name in matched],
+            "operations": registry["operations"],
+            "datasets": registry["datasets"] if detalle or pregunta_o_dimension is None else [],
+            "constraints": registry["constraints"],
+            "method": "Lectura del registro generado y validado contra contratos, cabeceras y valores reales.",
+            "sources": registry["provenance"],
+            "warnings": [],
+            "limitations": registry["semantic_limits"],
+            "registry_version": registry["registry_version"],
+            "detail_level": "full" if detalle else "compact",
+        }
+        return result
+
+    return _safe(operation, detail=detalle)

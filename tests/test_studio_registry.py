@@ -17,6 +17,7 @@ EXPECTED = [
     "analizar_coincidencia",
     "simular_escenario",
     "consultar_fuente",
+    "consultar_capacidades",
 ]
 
 
@@ -46,7 +47,7 @@ def test_studio_safe_registry_uses_exact_local_objects(monkeypatch):
     portal_main = _load("portal_main_registry_test", PORTAL / "main.py")
 
     assert [item.name for item in portal_main.TOOLS] == EXPECTED
-    assert len({id(item) for item in portal_main.TOOLS}) == 7
+    assert len({id(item) for item in portal_main.TOOLS}) == 8
     assert all(item.function.__module__ == "portal_main_registry_test" for item in portal_main.TOOLS)
 
     captured = {}
@@ -59,7 +60,7 @@ def test_studio_safe_registry_uses_exact_local_objects(monkeypatch):
     model = object()
     assert portal_main.build_agent(model) == "AGENT"
     assert captured["tools"] is portal_main.TOOLS
-    assert all(captured["tools"][index] is portal_main.TOOLS[index] for index in range(7))
+    assert all(captured["tools"][index] is portal_main.TOOLS[index] for index in range(8))
 
     monkeypatch.setenv("GIPUZKOA360_DATA_DIR", str(ROOT / "datos_preparados"))
     calls = [
@@ -75,7 +76,9 @@ def test_studio_safe_registry_uses_exact_local_objects(monkeypatch):
             "nuevo_umbral_km": 2.0,
         },
         {"source_id": "EUSTAT_EMH_2025"},
+        {"pregunta_o_dimension": "¿Puedo calcular población de 50 o más?"},
     ]
     results = [json.loads(item.invoke(arguments)) for item, arguments in zip(portal_main.TOOLS, calls)]
     assert all(result["status"] == "ok" for result in results)
     assert results[4]["filters"]["service_category"] == "primary_care"
+    assert results[7]["data"][0]["dimension"] == "demography"

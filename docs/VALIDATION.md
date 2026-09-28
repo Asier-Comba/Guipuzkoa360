@@ -4,27 +4,27 @@ Esta síntesis separa la suite integrada, el benchmark exhaustivo del core, la e
 conversación privada. Sus denominadores no se suman: un test o check de propiedad no equivale a una
 conversación ni demuestra impacto social.
 
-## Suite integrada en main
+## Suite integrada del candidato generalizado
 
-PR #10 integrada en `main` (`66540b23b54c22571a2e2236badd92898f04b02a`, 27/09/2026):
+Validación local reproducible sobre `feature/generalized-capabilities` (28/09/2026):
 
-- **264/264 tests Python** de datos, contratos, runtime, integración, artefactos, paquete y NEXT;
+- **271/271 tests Python** de datos, contratos, runtime, integración, artefactos, paquete y NEXT;
 - **17/17 Node** en tests del flujo contractual;
 - sintaxis válida de `jury_view.js`, `build_jury.mjs` y `build_results.mjs`;
-- fast CI en Ubuntu 24.04 y Windows latest: [PASS sobre ese main](https://github.com/Asier-Comba/Guipuzkoa360/actions/runs/36307881685);
-- runtime congelado comprobado antes y después de regeneraciones;
+- CI remota pendiente del commit del candidato; el resultado local no se presenta como ejecución remota;
+- runtime identificado y comprobado antes y después de regeneraciones;
 - source health: 88/88 municipios, 148 registros sanitarios, 412/412 filas con `source_id` resoluble,
-  0 nulos obligatorios, duplicados, coordenadas inválidas o referencias huérfanas, y 7/7 archivos de
-  manifiesto íntegros;
+  0 nulos obligatorios, duplicados, coordenadas inválidas o referencias huérfanas, y 8/8 archivos de
+  manifiesto íntegros, incluido el registro de capacidades;
 - NEXT: 77/77 dentro de su alcance de prototipo offline con intents estructurados.
 
 ## Benchmark exhaustivo del core
 
-El harness publicado conserva **72.673/72.673 checks**, **31.545/31.545 outputs numéricos trazables**,
+El harness publicado conserva **72.797/72.797 checks**, **31.545/31.545 outputs numéricos trazables**,
 **20/20 inyecciones controladas** y **1.000 llamadas sin deriva ni excepciones**. La trazabilidad se
 define como output analítico numérico correcto con periodo, unidad, método y `source_id` resoluble.
-No cubre todas las preguntas posibles. [La ejecución exhaustiva de main](https://github.com/Asier-Comba/Guipuzkoa360/actions/runs/36307881707)
-pasó sobre el mismo SHA; sus artefactos conservan la evidencia de esa ejecución.
+No cubre todas las preguntas posibles. La ejecución exhaustiva actual es local; la prueba conversacional
+del portal se registra aparte y no se sustituye por este benchmark determinista.
 
 Severidad propia del benchmark: 0 Critical, 0 High, **1 Medium**, 0 Low. M-01 es un escenario extremo
 de 20.155 caracteres que conserva 66 filas afectadas de 88; no se ha probado en portal. El release
@@ -37,9 +37,9 @@ El gate de artefactos recalcula cada fila, porcentaje, distancia, fuente, geomet
 rechaza nueve mutaciones deliberadas. La revisión Chromium comprobó 7/4/2, mapa, trazabilidad, Aduna,
 teclado y reflow hasta 390 px; no es una certificación WCAG.
 
-El runtime congelado es `195b4980fa5998b096c308296a55e452380b0371`. El paquete canónico contiene
-14 archivos, ocupa **48.338 bytes** y tiene SHA-256
-`2808110d14e0bc30a53018cab1ec39b926e1e6ca1f1be19f0b2c9cf21106680a`. Dos builds consecutivos
+La identidad SHA-256 del runtime es `441409ca68e3c5708eb9a1f66eef34c47bbfe558e3e801ab53e1605cf028528b`.
+El paquete canónico contiene 15 archivos, ocupa **53.661 bytes** y tiene SHA-256
+`fbca22e677f8b9b67967c4e103c9cc0a8fa4acab83abb2549fb5021a7111cf4b`. Dos builds consecutivos
 producen el mismo hash bajo la misma toolchain. La identidad del paquete reproducible y la versión
 privada del portal son controles distintos.
 

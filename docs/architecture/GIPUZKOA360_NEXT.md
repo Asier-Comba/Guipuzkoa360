@@ -2,8 +2,8 @@
 
 | Etiqueta | Estado |
 |---|---|
-| **LIVE TODAY** | Runtime congelado `195b498…`, 7 tools deterministas, datos versionados de 88 municipios/148 registros y evidencia histórica de la familia de versiones del portal. El smoke más reciente está bloqueado por infraestructura. |
-| **OFFLINE PROTOTYPE** | Planner, CapabilityRegistry, Executor, EvidenceCritic, Composer, Evaluation, ImprovementProposal y source watcher. Solo intents estructurados; no está en el portal ni en producción. |
+| **CANDIDATE LOCAL** | Ocho tools deterministas, incluido un registro de capacidades generado desde contratos y datos; 88 municipios/148 registros. La aceptación conversacional del portal se documenta por separado. |
+| **HISTORICAL OFFLINE PROTOTYPE** | Planner, CapabilityRegistry, Executor, EvidenceCritic, Composer, Evaluation, ImprovementProposal y source watcher del runtime anterior. Solo intents estructurados; no se atribuye al candidato actual. |
 | **PROPOSED** | Evaluar patrones de uso agregados, generar propuestas, shadow/benchmark y promoción humana. No hay autoedición ni autodespliegue. |
 | **REQUIRES NEW DATA** | Movilidad, capacidad, demanda, vivienda, ambiente y seguimiento longitudinal comparable. No están implementados. |
 
@@ -38,7 +38,7 @@ El Planner consume `intent`, no una frase libre: sus aliases incluyen resumen/co
 
 Plan: `intent`, `candidate_capability`, `parameters`, `ambiguities`, `missing_inputs`, `out_of_scope`, `expected_evidence`, `followup`. No incluye ningún resultado numérico calculado. Parámetros desconocidos, booleanos donde se espera número, no finitos y contratos de tipo incorrecto bloquean. Los campos de escenario específicos se validan además en el core, devolviendo error controlado; no se inventan coordenadas.
 
-Capability: `id`, `description`, `status`, `required_data`, `tool`, `parameters`, `evidence_requirements`, `limitations`. Estados de diseño: ACTIVE (implementación determinista utilizable), PROTOTYPE (experimento no habilitado), REQUIRES_DATA (falta fuente/contrato) y DISABLED (bloqueo explícito). Actualmente solo 7 entradas ACTIVE y 5 REQUIRES_DATA; no se inventan entradas para rellenar cada estado. Resolver/Executor solo aceptan ACTIVE.
+Capability del prototipo histórico: `id`, `description`, `status`, `required_data`, `tool`, `parameters`, `evidence_requirements`, `limitations`. Sus estados de diseño no sustituyen el registro generado `datos_preparados/capabilities.json` del candidato actual.
 
 Providers actuales: DemographyProvider (resumen/comparación/envejecimiento) y HealthcareProximityProvider (acceso/coincidencia/escenario). Solo delegan al mismo Executor. MobilityProvider, CapacityProvider, DemandProvider, HousingProvider y EnvironmentProvider rechazan ejecución: REQUIRES_DATA. Consultar fuentes sigue una capacidad de catálogo, no un proveedor de métricas ficticio.
 
@@ -72,5 +72,13 @@ Cada respuesta validada lleva DATA_VERSION, RUNTIME_VERSION, CAPABILITY_VERSION,
 - **REQUIRES NEW DATA:** movilidad, capacidad y demanda para estudiar acceso efectivo. Vivienda y ambiente requieren fuentes y contratos propios.
 
 Uso y mejora siguen una política privacy-first: `QueryPatternRecord` conserva intención normalizada, capacidad, éxito/fallo y bucket de latencia, no conversaciones completas. Una frecuencia solo produce `CapabilityGapProposal`; nunca implementa o promueve una capacidad. Promotion requiere cero Critical/High nuevos, goldens, beneficio medido, revisión de latencia/payload/UX, aprobación humana y rollback.
+
+## RAG e Internet: únicamente una opción futura
+
+El candidato no incorpora RAG ni acceso a Internet. Los cálculos estructurados deben seguir en las tools
+deterministas. Un RAG futuro solo tendría valor para memorias, normativa, planes o informes oficiales no
+estructurados, con citas por fragmento y una evaluación específica de recuperación. Una actualización externa
+controlada debería seguir `fuente oficial → descarga fuera del runtime → normalización → validación → snapshot
+versionado → cálculo`; nunca una búsqueda web improvisada durante la respuesta.
 
 Véase [matrix de tools](TOOL_EVIDENCE_MATRIX.md), [pipeline de datos](../operations/DATA_UPDATE_PIPELINE.md) y [gobierno](../RELEASE_GOVERNANCE.md).

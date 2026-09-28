@@ -1,9 +1,9 @@
-# Siete tools: contrato, operación, evidencia y límites
+# Ocho tools: contrato, operación, evidencia y límites
 
 > La columna de portal conserva hitos históricos. Estado actual: smoke v4 P1/P2/P3 PASS acotado en
 > [PORTAL_SMOKE_ULTIMATE](../internal/PORTAL_SMOKE_ULTIMATE.md); los bloqueos citados son anteriores.
 
-Autoridad de firmas: `agentes/gipuzkoa360/portal/main.py` en `195b498…`. Siete wrappers físicos; `build_agent(model)` síncrono. Ninguna firma pública de Studio acepta `detalle`. Las pruebas offline del core pueden acceder a detalle completo; no se debe sugerir al usuario del portal.
+Autoridad de firmas: `agentes/gipuzkoa360/portal/main.py` del candidato actual. Ocho wrappers físicos; `build_agent(model)` síncrono. Ninguna firma pública de Studio acepta `detalle`. Las pruebas offline del core pueden acceder a detalle completo; no se debe sugerir al usuario del portal.
 
 ## Sobre común
 
@@ -20,6 +20,7 @@ Datasets: municipios.csv y demografia.csv por municipality_code (5 caracteres); 
 | `analizar_coincidencia` | ¿Dónde se alcanzan ambos cortes? | categoría, edad, km, periodo, cuantil | cortes, 88 unidas, count y destacados | q0,75: 7; 23,973 %; 2.019,2 m | las tres oficiales + derivada | argumentos, filas, cortes, sources | 320 configuraciones + jury/NEXT | G-04/G-06 históricos v3; refresh v4 con call pero runner ocupado | umbral solo within_threshold; coincidencia ≠ causalidad |
 | `simular_escenario` | ¿Qué cambia al añadir/retirar un registro? | acción, categoría, umbrales, coords/id, periodo | baseline, scenario, differences, supuestos | Aduna: 2.756,2→0,0 m; −2.756,2 m | baseline oficial + SCENARIO_INPUT | parámetros cambiados, filas, sources y etiqueta hipotética | 352 add/148 remove/80 threshold + NEXT | regresión histórica v4 | hipótesis, no predicción/recomendación; payload extremo pendiente |
 | `consultar_fuente` | ¿De dónde sale la cifra? | source_id opcional | institución, URL, licencia, periodo, unidad y límites | EUSTAT_EMH_2025 | metadata_sources.json | source_id y ficha versionada | data access/release/NEXT/fake-source | G-01 histórico v2 | no comprueba disponibilidad o actualización actual |
+| `consultar_capacidades` | ¿Qué variables, periodos y cálculos existen? | pregunta o dimensión opcional | datasets, dimensiones, derivaciones exactas, operaciones y límites | 65+/75+; cuatro categorías; periodos declarados | contratos, cabeceras, valores y metadata versionada | hashes de entradas y versión de registro | registry/reproducibilidad/portal plan | pendiente del benchmark conversacional nuevo | no calcula dimensiones ausentes ni consulta Internet |
 
 **Separación obligatoria:** “TEST EVIDENCE” es cálculo determinista local/versionado; “PORTAL EVIDENCE” es observación histórica por versión. Un error de runner no se convierte en PASS de portal.
 

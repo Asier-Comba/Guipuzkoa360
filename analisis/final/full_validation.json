@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-25T12:36:57+0200",
-  "candidate_sha": "84e95167bfb9718ebb5f26b533f12cd885901e20",
+  "generated_at": "2026-09-28T13:35:54+0200",
+  "candidate_sha": "e213eaa9b73b0f8a4d1893e0269fe92fe6756955",
   "base_sha": "488f46db7047d9393d4d4a489a869ab246c215b9",
-  "runtime_sha": "195b4980fa5998b096c308296a55e452380b0371",
-  "branch": "final/gipuzkoa360-integration",
-  "runtime_changed": false,
+  "runtime_sha": "441409ca68e3c5708eb9a1f66eef34c47bbfe558e3e801ab53e1605cf028528b",
+  "branch": "feature/generalized-capabilities",
+  "runtime_changed": true,
   "seed": 36020260925,
   "offline": true,
   "check_definition": "one independent subject × property evaluation; no code-line/assert inflation",
@@ -75,8 +75,8 @@
     }
   ],
   "checks": {
-    "total": 72673,
-    "passed": 72673,
+    "total": 72797,
+    "passed": 72797,
     "failed": 0,
     "by_component": {
       "aliases": 56,
@@ -84,12 +84,12 @@
       "coincidence_controls": 3,
       "coincidence_grid": 1600,
       "demography": 354,
-      "determinism": 8,
+      "determinism": 9,
       "fault_injection": 20,
-      "metamorphic": 12,
-      "output_contract": 14,
+      "metamorphic": 13,
+      "output_contract": 16,
       "pairwise": 30625,
-      "performance_json": 840,
+      "performance_json": 960,
       "scenario_add": 352,
       "scenario_isolation": 2,
       "scenario_remove": 148,
@@ -111,7 +111,7 @@
       "severity": "Medium",
       "tool": "simular_escenario",
       "payload_chars": 20155,
-      "reason": "El cambio de umbral 1→10 km modifica la clasificación de 66 de los 88 municipios analizados y la salida compacta conserva cada fila afectada.",
+      "reason": "El cambio de umbral 1→10 km modifica la clasificación de 66 de 88 municipios analizados y la salida compacta conserva cada fila afectada.",
       "reduction_tradeoff": "Reducirlo exige truncar o paginar evidencia municipal; no se cambia el runtime porque se perdería evidencia y no existe un fallo numérico o contractual."
     }
   ],
@@ -132,7 +132,8 @@
       "runtime_servicios.csv": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece",
       "metadata_sources.json": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
       "data_contract.json": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae",
-      "runtime_manifest.json": "866be215720e3b58fbfc502ffceaa51ac6635266b609d112eb9460712a95642a"
+      "runtime_manifest.json": "e6421d7aa039a08166ba779a6f052b10c74f885da03c1e9db9c3ea7d2f02ca84",
+      "capabilities.json": "dc279afdbeb8aa13e83d964599e871bf97109352c0f6880ac1f605f457686b27"
     }
   },
   "service_matrix": {
@@ -617,7 +618,7 @@
     "cases": {
       "missing_file": {
         "classification": "controlled_rejection",
-        "diagnostic": "DataContractError: No se encuentra el archivo preparado C:/Users/ASIER~1.COM/AppData/Local/Temp/g360-faults-5n8vubuf/missing_file/datos_preparados/demografia.csv."
+        "diagnostic": "DataContractError: No se encuentra el archivo preparado C:/Users/OIER~1.DUN/AppData/Local/Temp/g360-faults-h2im8gm5/missing_file/datos_preparados/demografia.csv."
       },
       "empty_file": {
         "classification": "controlled_rejection",
@@ -685,7 +686,7 @@
       },
       "corrupt_json": {
         "classification": "controlled_rejection",
-        "diagnostic": "DataContractError: No se puede leer C:/Users/ASIER~1.COM/AppData/Local/Temp/g360-faults-5n8vubuf/corrupt_json/datos_preparados/metadata_sources.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)."
+        "diagnostic": "DataContractError: No se puede leer C:/Users/OIER~1.DUN/AppData/Local/Temp/g360-faults-h2im8gm5/corrupt_json/datos_preparados/metadata_sources.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)."
       },
       "wrong_manifest_sha": {
         "classification": "controlled_rejection",
@@ -698,7 +699,7 @@
     }
   },
   "output_contract": {
-    "tools": 7,
+    "tools": 8,
     "required_fields": [
       "filters",
       "limitations",
@@ -712,7 +713,7 @@
     ]
   },
   "metamorphic": {
-    "count": 12,
+    "count": 13,
     "properties": [
       "municipality input order changes presentation only",
       "equivalent aliases produce byte-identical JSON",
@@ -725,7 +726,8 @@
       "compact access preserves required evidence",
       "compact coincidence preserves required evidence",
       "compact scenario preserves required evidence",
-      "compact source preserves required evidence"
+      "compact source preserves required evidence",
+      "compact capability preserves required evidence"
     ]
   },
   "traceability": {
@@ -739,20 +741,33 @@
     "seed": 36020260925,
     "result_drift": 0,
     "exceptions": [],
-    "tracemalloc_current_delta_bytes": 29123,
-    "tracemalloc_peak_bytes": 162971
+    "tracemalloc_current_delta_bytes": 28385,
+    "tracemalloc_peak_bytes": 161187
   },
   "build_reproducibility": {
     "attempted": 10,
     "completed": 10,
     "identical": 10,
-    "sha256": "2808110d14e0bc30a53018cab1ec39b926e1e6ca1f1be19f0b2c9cf21106680a",
-    "bytes": 48338,
+    "sha256": "8e5cf760698af01e15b98316593b83bd0bee65af9fc46ed20336785a7aaf3356",
+    "bytes": 53669,
     "members": [
       {
         "name": "FUENTES.md",
         "size": 6963,
         "crc": 1358891989,
+        "timestamp": [
+          2026,
+          9,
+          24,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "datos_preparados/capabilities.json",
+        "size": 13235,
+        "crc": 3752641670,
         "timestamp": [
           2026,
           9,
@@ -816,8 +831,8 @@
       },
       {
         "name": "datos_preparados/runtime_manifest.json",
-        "size": 1594,
-        "crc": 161726263,
+        "size": 1764,
+        "crc": 1163309117,
         "timestamp": [
           2026,
           9,
@@ -868,8 +883,8 @@
       },
       {
         "name": "docs/PORTAL_DEPLOYMENT.md",
-        "size": 4924,
-        "crc": 2714185624,
+        "size": 5122,
+        "crc": 2908355674,
         "timestamp": [
           2026,
           9,
@@ -894,8 +909,8 @@
       },
       {
         "name": "main.py",
-        "size": 6286,
-        "crc": 3794641676,
+        "size": 8694,
+        "crc": 2675599232,
         "timestamp": [
           2026,
           9,
@@ -920,8 +935,8 @@
       },
       {
         "name": "tools.py",
-        "size": 54274,
-        "crc": 2831967987,
+        "size": 57260,
+        "crc": 3326964538,
         "timestamp": [
           2026,
           9,
@@ -933,6 +948,6 @@
       }
     ]
   },
-  "duration_seconds": 136.949,
+  "duration_seconds": 323.79,
   "benchmark_go": true
 }

@@ -6,7 +6,7 @@ import types
 import main
 
 
-def test_build_agent_uses_platform_model_and_seven_tools(monkeypatch):
+def test_build_agent_uses_platform_model_and_eight_tools(monkeypatch):
     captured = {}
 
     def create_agent(**kwargs):
@@ -23,7 +23,9 @@ def test_build_agent_uses_platform_model_and_seven_tools(monkeypatch):
     model = object()
     assert main.build_agent(model) == "AGENT"
     assert captured["model"] is model
-    assert len(captured["tools"]) == 7
+    assert len(captured["tools"]) == 8
     assert captured["system_prompt"] == main.SYSTEM_PROMPT
     assert "service_count cuenta" in main.SYSTEM_PROMPT
     assert "todos los registros sanitarios" in main.SYSTEM_PROMPT
+    assert "consultar_capacidades" in main.SYSTEM_PROMPT
+    assert "available_options" in main.SYSTEM_PROMPT

@@ -24,6 +24,7 @@ Case = tuple[str, str, Callable[[Any], dict[str, Any]]]
 
 
 CASES: list[Case] = [
+    ("consultar_capacidades", "capability", lambda analysis: json.loads(tools.consultar_capacidades("edades y periodos", detalle=True))),
     ("consultar_fuente", "source", lambda analysis: analysis.fuente()),
     ("obtener_resumen_territorial", "summary", lambda analysis: analysis.resumen("Eibar", "2025-01-01")),
     (

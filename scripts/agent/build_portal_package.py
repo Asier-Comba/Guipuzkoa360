@@ -28,6 +28,7 @@ FILES = {
     "datos_preparados/runtime_servicios.csv": "datos_preparados/runtime_servicios.csv",
     "datos_preparados/metadata_sources.json": "datos_preparados/metadata_sources.json",
     "datos_preparados/data_contract.json": "datos_preparados/data_contract.json",
+    "datos_preparados/capabilities.json": "datos_preparados/capabilities.json",
     "datos_preparados/runtime_manifest.json": "datos_preparados/runtime_manifest.json",
 }
 

@@ -1,4 +1,4 @@
-"""Benchmark reproducible de carga, cálculo y serialización de las siete tools."""
+"""Benchmark reproducible de carga, cálculo y serialización de las ocho tools."""
 
 from __future__ import annotations
 
@@ -44,6 +44,7 @@ def build_report(repeats: int = 5) -> dict[str, Any]:
         "analizar_coincidencia": lambda: analysis.coincidencia("primary care", "65+", 2, "2025-01-01", 0.75),
         "simular_escenario": lambda: analysis.escenario("cambiar umbral", "atención primaria", 2, "2025-01-01", new_threshold_km=3),
         "consultar_fuente": lambda: analysis.fuente("EUSTAT_EMH_2025"),
+        "consultar_capacidades": lambda: json.loads(core.consultar_capacidades("edades y periodos")),
     }
     wrappers = {
         "obtener_resumen_territorial": lambda: _invoke(agent_main.obtener_resumen_territorial, "Eibar", "2025-01-01"),
@@ -53,6 +54,7 @@ def build_report(repeats: int = 5) -> dict[str, Any]:
         "analizar_coincidencia": lambda: _invoke(agent_main.analizar_coincidencia, "primary care", "65+", 2, "2025-01-01", 0.75),
         "simular_escenario": lambda: _invoke(agent_main.simular_escenario, "cambiar umbral", "atención primaria", 2, "2025-01-01", None, None, None, 3),
         "consultar_fuente": lambda: _invoke(agent_main.consultar_fuente, "EUSTAT_EMH_2025"),
+        "consultar_capacidades": lambda: _invoke(agent_main.consultar_capacidades, "edades y periodos"),
     }
     rows = []
     for name in calculations:
