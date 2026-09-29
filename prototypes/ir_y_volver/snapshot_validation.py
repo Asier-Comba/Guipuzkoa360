@@ -23,7 +23,20 @@ def strict_loads(raw):
         return result
     def invalid(value):
         raise SnapshotError('nonfinite JSON: ' + value)
-    return json.loads(raw, object_pairs_hook=pairs, parse_constant=invalid)
+    def floating(value):
+        number = float(value)
+        require(math.isfinite(number), 'nonfinite JSON number')
+        return number
+    return json.loads(raw, object_pairs_hook=pairs, parse_constant=invalid, parse_float=floating)
+
+
+def finite_tree(value):
+    if isinstance(value, float):
+        require(math.isfinite(value), 'nonfinite snapshot value')
+    elif isinstance(value, dict):
+        for child in value.values(): finite_tree(child)
+    elif isinstance(value, list):
+        for child in value: finite_tree(child)
 
 
 def enum(value, allowed, default=None):
@@ -58,6 +71,7 @@ def text(value):
 
 
 def validate(s):
+    finite_tree(s)
     require(type(s) is dict, 'snapshot root must be object')
     required = {'schema_version','snapshot_id','timezone','coverage','defaults','walking_profiles',
                 'origins','destinations','stops','calendar','calendar_dates','trips','sources','limitations','scenario_kind'}

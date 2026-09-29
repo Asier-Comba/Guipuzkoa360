@@ -74,7 +74,7 @@ def test_corrupt_snapshot_never_yields_itinerary(monkeypatch,kind):
     assert result['itinerary'] is result['components_s'] is result['components'] is None
 
 
-@pytest.mark.parametrize('raw',['{"x":1,"x":2}','{"x":NaN}','{"x":Infinity}','{"x":-Infinity}'])
+@pytest.mark.parametrize('raw',['{"x":1,"x":2}','{"x":NaN}','{"x":Infinity}','{"x":-Infinity}','{"x":1e999}'])
 def test_strict_json(raw):
     with pytest.raises((ValueError,SnapshotError)):
         strict_loads(raw)
@@ -153,6 +153,12 @@ def test_comparison_changes_all_parameters_and_preserves_outcomes(snapshot):
 def test_determinism_and_finite_output():
     a=p.plan_visit(real_request()); b=p.plan_visit(real_request())
     assert json.dumps(a,allow_nan=False,sort_keys=True)==json.dumps(b,allow_nan=False,sort_keys=True)
+
+
+def test_nested_source_nonfinite_is_unknown(snapshot):
+    snapshot['sources'][0]['extra']={'value':float('inf')}
+    result=p.plan_visit(request())
+    assert result['status']=='unknown' and result['itinerary'] is None
 
 
 def test_snapshot_malformed_manifest(monkeypatch,tmp_path):

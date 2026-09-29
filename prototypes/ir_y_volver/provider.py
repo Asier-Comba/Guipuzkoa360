@@ -67,14 +67,14 @@ def _load_snapshot(snapshot_id: str) -> dict[str, Any]:
         if exc.filename is None:
             raise
         raise SnapshotError("missing allowlisted file") from exc
-    except (OSError, ValueError, TypeError, KeyError, AttributeError) as exc:
+    except (OSError, ValueError, TypeError, KeyError, AttributeError, RecursionError) as exc:
         raise SnapshotError(str(exc)) from exc
 
 
 def _validate_snapshot(snapshot: dict[str, Any]) -> None:
     try:
         validate(snapshot)
-    except (ValueError, TypeError, KeyError, AttributeError, OverflowError) as exc:
+    except (ValueError, TypeError, KeyError, AttributeError, OverflowError, RecursionError) as exc:
         raise SnapshotError(str(exc)) from exc
 
 
@@ -396,7 +396,7 @@ def get_capabilities() -> dict[str, Any]:
         entries = strict_loads(MANIFEST_PATH.read_text(encoding="utf-8"))["snapshots"]
         if type(entries) is not dict:
             raise SnapshotError("invalid manifest")
-    except (OSError, ValueError, KeyError, TypeError):
+    except (OSError, ValueError, KeyError, TypeError, RecursionError):
         entries = {}
     for snapshot_id in entries:
         try:
