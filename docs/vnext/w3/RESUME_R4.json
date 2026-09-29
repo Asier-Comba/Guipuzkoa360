@@ -1,0 +1,18 @@
+{
+  "stage": "R4_HANDOFF_PARTIAL",
+  "start_sha": "cf9cd0afadc97b255c021a4ff867dab7ae6dabbc",
+  "tested_head_before_handoff": "688e68b",
+  "published_head": "see PR #14 comment after push",
+  "consumed_heads": {"w1_r2": "c68eb5c55dec72a267b7435b4c364049f6eab408", "w1_r4": "725a7b73ae0381092cd80edc41b8a25432d75fcd", "w2_r2": "f4615b36d0af93966e6ca0f2044288841e6574b8", "v4_runtime": "195b4980fa5998b096c308296a55e452380b0371"},
+  "contracts": {"w1_current_reviewed": "0.2.0", "w2_current_reviewed": "R2 adapter for W1 0.1.0", "w3_trace": "2.1.0", "scoring": "2.1.0", "html_display": "W1 0.1.0 historical offline"},
+  "test_results": {"python_pass": 296, "node_pass": 24, "w1_r4_offline_properties_pass": 4, "r2_independent_pass": 4, "r2_independent_known_fail": 5, "conversation_not_run": 9},
+  "critical_open": ["W2 municipality output substitution accepted under test transport"],
+  "high_open": ["W2 service-rate numerator provenance absent"],
+  "product_health_go": false,
+  "source_access_gap": true,
+  "portal_mutations": 0,
+  "llm_executed": 0,
+  "v4_vs_vnext": "NOT_RUN",
+  "next_exact_action": "On W2 0.2.0 adapter publication, pin package and repeat C-R3-01..09; require Critical/High fixes before UI or portal acceptance.",
+  "merged_or_published_release": false
+}

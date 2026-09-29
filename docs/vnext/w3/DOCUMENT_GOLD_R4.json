@@ -17,7 +17,7 @@
     {"id":"D11","class":"answerable","question":"¿Qué familias GTFS ofrece descargar la ficha Moveuskadi?","expected":"GTFS estático y GTFS-RT.","fragments":["S2:Descargar"]},
     {"id":"D12","class":"answerable","question":"En GTFS, ¿qué implica pickup_type=1 en una parada?","expected":"Que no se permite subir pasajeros allí en ese viaje.","fragments":["S3:stop_times"]},
     {"id":"D13","class":"answerable","question":"En GTFS, ¿qué implica drop_off_type=1?","expected":"Que no se permite bajar pasajeros allí en ese viaje.","fragments":["S3:stop_times"]},
-    {"id":"D14","class":"answerable","question":"¿Qué distinguen pickup_type=2 y 3 frente al embarque ordinario?","expected":"Representan modalidades de recogida condicionada o coordinada; requieren leer su definición específica antes de asumir embarque libre.","fragments":["S3:stop_times"]},
+    {"id":"D14","class":"answerable","question":"¿Qué distinguen pickup_type=2 y 3 frente al embarque ordinario?","expected":"2 requiere llamar a la agencia y 3 requiere coordinar la recogida con el conductor; ninguno acredita embarque ordinario sin condición.","fragments":["S3:stop_times"]},
     {"id":"D15","class":"answerable","question":"¿Es exacta una hora con timepoint=0 en GTFS?","expected":"No; timepoint=0 identifica horario aproximado o interpolado, mientras 1 indica tiempo exacto.","fragments":["S3:stop_times"]},
     {"id":"D16","class":"answerable","question":"¿Cómo ordena GTFS las paradas de un viaje?","expected":"Mediante stop_sequence creciente.","fragments":["S3:stop_times"]},
     {"id":"D17","class":"answerable","question":"¿Qué significan exception_type=1 y 2 en calendar_dates?","expected":"1 añade servicio y 2 lo elimina en la fecha indicada.","fragments":["S3:calendar_dates"]},
