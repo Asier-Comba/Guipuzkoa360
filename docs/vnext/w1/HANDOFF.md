@@ -1,3 +1,25 @@
+# Índice actual W1
+
+Ronda vigente: **G360-R4**, contrato **0.2.0**.
+
+- [Handoff R4](HANDOFF_R4.md)
+- [Checkpoint R4](RESUME_R4.json)
+- [Consumo y regeneración](CONSUMER_R4.md)
+- [Manifiesto runtime R4](RUNTIME_MANIFEST_R4.json)
+- [Casos reales R4](REAL_CASES_R4.json)
+- [Matriz contrastada con CSV bruto](MATRIX_R4.json)
+- [Destino sanitario: bloqueo documentado](HEALTH_DESTINATION_R4.json)
+
+El proveedor corregido es consumible **entre paradas**. No acredita visita al
+ambulatorio. El pin publicado y CI final se registran en PR #15 tras el commit.
+
+---
+
+## Histórico R2 — no representa el estado de aceptación R4
+
+Los registros siguientes y los JSON sin sufijo R4 preservan resultados 0.1.0.
+El total 0.2.0 tiene otra semántica; no reutilizar sus cifras como equivalentes.
+
 WORK_ID: W1
 
 ROUND: G360-R2

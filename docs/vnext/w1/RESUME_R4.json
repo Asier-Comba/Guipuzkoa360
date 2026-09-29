@@ -1,0 +1,22 @@
+{
+  "round": "G360-R4",
+  "stage": "F_STOP_ONLY_PIN_READY_HEALTH_BLOCKED",
+  "branch": "work/vnext-w1-mobility",
+  "tested_code_head": "1b52a892efea3206f8b39b6e0ad7ccaf952f979b",
+  "published_head_location": "PR #15 and Issue #16 comments after this commit",
+  "contract_version": "0.2.0",
+  "contract_candidate_head": "43e0c85d7906b4305d1a377f29f8a4b33a95138b",
+  "consumed_w2": "f4615b36d0af93966e6ca0f2044288841e6574b8",
+  "consumed_w3": "cf9cd0afadc97b255c021a4ff867dab7ae6dabbc",
+  "snapshot": "official-goierrialdea-go01-r4-20260929",
+  "snapshot_sha256": "62e00c04edb96ccde0a5ce4fe81574452ddcacdb4c173b030ca49b000f5a084b",
+  "package_sha256": "fa2ae468c4197259c5a7cce562ad21f3fa41c2c11c678a84f5faa5958c624e45",
+  "dirty_at_checkpoint": ["docs/vnext/w1/PERFORMANCE_R4.json", "docs/vnext/w1/HANDOFF.md", "docs/vnext/w1/HANDOFF_R4.md", "docs/vnext/w1/RESUME_R4.json"],
+  "publication_plan": "Commit only evidence/handoff, push W1, verify same-head CI; record SHA in PR/comment without self-referential commit.",
+  "commands": ["python -m pytest -o addopts= -q", "python scripts/mobility/verify_r4.py", "python scripts/mobility/package_r4.py --output <temporary>/w1.zip", "node --test tests/e2e/contract_flow.test.mjs"],
+  "results": {"python": 399, "python_fail": 0, "mobility_tests": 135, "node": 17, "matrix_pass": 135, "real_cases": 11, "runtime_identity": "PASS", "jury_gate": "PASS", "artifact_gate": "PASS", "health_destination": "BLOCKED"},
+  "next_action": "W2/W3 adapt strict contract/pins for stop-only; obtain evidenced health entrance and walking connectors before new health snapshot.",
+  "resume_condition": "Read current PR #15/Issue #16 and branch status. Preserve unpublished edits. Health work resumes when entrance/connectors or original PoC data are available. Do not restart R2 or infer health GO.",
+  "portal_mutations": 0,
+  "merged_or_published_release": false
+}
