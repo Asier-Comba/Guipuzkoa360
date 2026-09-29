@@ -66,4 +66,3 @@ literal, correos, PoC original y 73 páginas formativas siguen pendientes de
 lectura. Por tanto estos criterios son **provisionales** respecto de esas
 fuentes; si aportan un conflicto material, se versionará un corpus nuevo sin
 reescribir el congelado ni ocultar el cambio.
-

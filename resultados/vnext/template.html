@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GIPUZKOA 360 · revisión vNext</title>
+  <style>
+    :root{font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#163a3c;background:#f3f5f0;--green:#146457;--ink:#173b43;--line:#becfc7;--muted:#456168}
+    *{box-sizing:border-box}body{margin:0}a{color:#125d53;text-underline-offset:3px}button{font:inherit}header{background:var(--ink);color:white;padding:18px max(22px,calc((100vw - 1160px)/2))}header strong{font-size:1.15rem}header small{display:block;color:#d6e5df}.wrap{max-width:1204px;margin:auto;padding:24px 22px 48px}h1{font-size:clamp(1.9rem,4vw,3.1rem);line-height:1.12;letter-spacing:-.035em;max-width:900px;margin:7px 0 12px}h2{font-size:1.35rem;margin:0 0 12px}h3{font-size:1rem;margin:0 0 8px}p{margin:0 0 12px}.eyebrow{text-transform:uppercase;font-size:.73rem;font-weight:800;letter-spacing:.09em;color:var(--green)}.lead{font-size:1.08rem;color:var(--muted);max-width:880px}.notice{background:#fff0d1;border-left:4px solid #9d6817;padding:12px 15px;margin:20px 0;border-radius:3px}.grid{display:grid;grid-template-columns:1.3fr .7fr;gap:20px}.card{background:white;border:1px solid var(--line);border-radius:10px;padding:22px;min-width:0;margin:17px 0}.switches{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}.switches button{cursor:pointer;background:white;color:var(--ink);border:1px solid #6e8d84;border-radius:7px;padding:11px 14px;min-height:44px}.switches button[aria-pressed=true]{background:var(--ink);color:white;border-color:var(--ink)}.switches button[aria-pressed=true]:before{content:'✓ ';font-weight:800}.status{border-radius:7px;background:#e9f2e9;padding:15px;margin:14px 0}.status.warn{background:#fbefdb}.status.neutral{background:#e8eef2}.status strong{display:block;font-size:1.2rem}.total{font-size:2.7rem;line-height:1.1;font-weight:800;color:var(--green);margin:8px 0}.muted,small{color:var(--muted)}.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.fact{background:#eef4ed;border-radius:6px;padding:11px;font-size:.86rem;overflow-wrap:anywhere}.fact strong{display:block;font-size:.93rem;color:var(--ink)}.legs{display:grid;grid-template-columns:1fr 1fr;gap:12px}.leg{border:1px solid var(--line);border-radius:7px;padding:15px}.leg .clock{font-size:1.35rem;font-weight:750;color:var(--green)}.table-wrap{overflow-x:auto;max-width:100%}table{border-collapse:collapse;width:100%;font-size:.88rem}th,td{padding:9px 8px;border-bottom:1px solid #dbe6e0;text-align:left}th{background:#edf3eb}td:last-child{text-align:right;white-space:nowrap}caption{text-align:left;font-size:.81rem;color:var(--muted);padding-bottom:8px}details{border-top:1px solid var(--line);padding:11px 0}summary{cursor:pointer;font-weight:700}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#edf3ed;border-radius:6px;padding:12px;font:.79rem/1.5 Consolas,monospace;max-height:350px;overflow:auto}ul{padding-left:22px}li{margin:5px 0}.source{overflow-wrap:anywhere;font-size:.84rem}.boundary{border-left:3px solid var(--green);padding-left:13px}.hidden{display:none!important}footer{border-top:1px solid var(--line);font-size:.8rem;color:var(--muted);padding-top:20px;margin-top:28px}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #ae6b17;outline-offset:3px}
+    @media(max-width:780px){.grid,.legs{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}.wrap{padding:18px 16px 36px}.card{padding:17px}}
+    @media(max-width:430px){.facts{grid-template-columns:1fr}.switches button{width:100%;text-align:left}.total{font-size:2.2rem}}
+  </style>
+</head>
+<body>
+<header><strong>GIPUZKOA 360</strong><small>Exploración de visitas programadas · revisión de producto vNext</small></header>
+<main class="wrap">
+  <div class="eyebrow">Pregunta → cálculo → evidencia → límite</div>
+  <h1>¿Permite el horario programado ir a la visita y volver?</h1>
+  <p class="lead">Exploración acotada del corredor GO01 entre paradas catalogadas y el centro de Beasain. Cambia la hora de la cita o su duración para ver qué devuelve el proveedor determinista.</p>
+  <p class="notice"><strong>Evidencia offline guardada.</strong> Esta página muestra resultados de un proveedor determinista fijado por commit. No ejecuta una conversación con el agente, no consulta horarios en vivo y no representa una reserva sanitaria.</p>
+  <nav class="switches" aria-label="Ejemplos de consulta" id="case-buttons"></nav>
+  <div class="grid">
+    <section class="card">
+      <div class="eyebrow">Resultado del ejemplo</div>
+      <h2 id="case-title"></h2>
+      <p id="case-question" class="muted"></p>
+      <div id="status" class="status" aria-live="polite" aria-atomic="true"></div>
+      <div id="success" class="hidden">
+        <p class="muted">Tiempo total modelado, cita incluida</p>
+        <div id="total" class="total"></div>
+        <p class="muted">El total procede del proveedor. Se muestra en horas, minutos y segundos sin recalcularlo en esta interfaz.</p>
+        <div class="legs">
+          <article class="leg"><h3>Ida programada</h3><p id="out-clock" class="clock"></p><p id="out-trace" class="muted"></p></article>
+          <article class="leg"><h3>Vuelta programada</h3><p id="return-clock" class="clock"></p><p id="return-trace" class="muted"></p></article>
+        </div>
+      </div>
+      <div id="no-result" class="hidden"><p id="no-result-copy" class="boundary"></p></div>
+    </section>
+    <aside class="card"><div class="eyebrow">Ámbito de la consulta</div><h2>Qué se ha pedido</h2><div class="facts" id="facts"></div><p class="boundary" style="margin-top:18px">La comprobación termina en paradas catalogadas. Un componente de paseo modelado de 0 s no demuestra que una persona no tenga que caminar.</p></aside>
+  </div>
+  <section class="card" id="detail-card"><h2>Cómo se compone el tiempo</h2><div class="table-wrap"><table><caption>Componentes en segundos del output original; los márgenes de embarque y llegada son restricciones, no tiempo sumado de nuevo.</caption><thead><tr><th>Componente</th><th>Tiempo</th></tr></thead><tbody id="components"></tbody></table></div></section>
+  <section class="card"><div class="eyebrow">Cambio de criterio</div><h2>Hora y duración no son la misma pregunta</h2><p id="comparison"></p><p>El ejemplo de Segura muestra por separado una cita de 30 minutos y otra de 180 minutos. Si el proveedor no encuentra ida y vuelta dentro del alcance, la vista conserva ese estado; no convierte una ida aislada en viaje completo.</p></section>
+  <section class="card"><div class="eyebrow">Trazabilidad</div><h2>Fuente, método y límites</h2><p id="method" class="boundary"></p><details><summary>Fuente oficial y huellas</summary><div id="sources" class="source"></div></details><details><summary>Supuestos y límites del cálculo</summary><h3>Supuestos</h3><ul id="assumptions"></ul><h3>Límites</h3><ul id="limitations"></ul></details><details><summary>Solicitud y respuesta estructurada</summary><pre id="raw"></pre></details></section>
+  <footer>Prototipo de producto basado en un proveedor determinista offline. Solo horarios programados GO01 para la fecha validada; sin realtime, citas, capacidad, rutas peatonales verificadas, puerta a puerta ni garantía de llegada. No hay geometría de recorrido en este contrato, por eso no se dibuja un itinerario en un mapa.</footer>
+</main>
+<script id="evidence" type="application/json">__EMBEDDED_EVIDENCE__</script>
+<script>
+(() => {
+  'use strict';
+  const evidence=JSON.parse(document.getElementById('evidence').textContent);
+  const $=id=>document.getElementById(id);
+  const labels={origin_access_outbound_s:'Acceso modelado a parada de ida',outbound_vehicle_s:'Vehículo de ida',destination_walk_outbound_s:'Paseo modelado al destino',pre_appointment_wait_s:'Espera antes de la cita',appointment_s:'Duración de cita indicada',destination_walk_return_s:'Paseo modelado a parada de vuelta',return_wait_s:'Espera de regreso',return_vehicle_s:'Vehículo de vuelta',origin_access_return_s:'Salida modelada desde parada de retorno'};
+  const placeNames={zegama_center_stops:'Paradas del centro de Zegama',segura_herriko_plaza_stops:'Paradas de Herriko Plaza (Segura)',idiazabal_center_stops:'Paradas del centro de Idiazabal',beasain_center_stop_pair:'Paradas del centro de Beasain'};
+  const statusLabels={ok:'Ida y vuelta programadas dentro del piloto',no_feasible_journey:'Sin ida y vuelta viable bajo estas condiciones',unsupported:'Solicitud fuera del contrato',unknown:'Cobertura o fecha no validada',error:'Error controlado sin resultado'};
+  const fmt=s=>{if(!Number.isInteger(s)||s<0) return 'No disponible';const h=Math.floor(s/3600),m=Math.floor(s%3600/60),sec=s%60;return (h?h+' h ':'')+(m||h?m+' min ':'')+sec+' s';};
+  const add=(parent,tag,value,cls)=>{const el=document.createElement(tag);if(cls)el.className=cls;el.textContent=value;parent.append(el);return el;};
+  const list=(id,values)=>{const box=$(id);box.replaceChildren();(values||[]).forEach(v=>add(box,'li',v));};
+  const facts=(request)=>{const box=$('facts');box.replaceChildren();const entries=[['Origen',placeNames[request.origin_id]||request.origin_id],['Destino',placeNames[request.destination_id]||request.destination_id],['Fecha',request.date],['Cita',request.appointment_time],['Duración',request.duration_minutes+' min'],['Perfil',request.walking_profile_id||'No indicado']];entries.forEach(([name,value])=>{const div=document.createElement('div');div.className='fact';add(div,'strong',name);add(div,'span',String(value));box.append(div);});};
+  const buttons=$('case-buttons');
+  evidence.outputs.forEach((item,index)=>{const b=document.createElement('button');b.type='button';b.textContent=item.title;b.setAttribute('aria-pressed',String(index===0));b.addEventListener('click',()=>render(index));buttons.append(b);});
+  function render(index){
+    const item=evidence.outputs[index],r=item.result,q=r.normalized_request||item.request;
+    [...buttons.children].forEach((b,i)=>b.setAttribute('aria-pressed',String(i===index)));
+    $('case-title').textContent=item.title;
+    $('case-question').textContent=`${placeNames[q.origin_id]||q.origin_id} → ${placeNames[q.destination_id]||q.destination_id}; ${q.date}, cita ${q.appointment_time}, duración ${q.duration_minutes} min.`;
+    const s=$('status');s.className='status'+(r.status==='ok'?'':r.status==='unknown'?' neutral':' warn');s.replaceChildren();add(s,'strong',statusLabels[r.status]||'Estado no reconocido');add(s,'span',r.status==='ok'?'Cálculo de horarios programados, no confirmación de viaje.':r.status==='no_feasible_journey'?'Búsqueda completa solo para viajes directos, fecha y paradas del piloto. No concluye ausencia universal de transporte.':r.status==='unknown'?'Sin dato validado para afirmar que hay o que no hay servicio.':'No hay cifra válida para mostrar.');
+    facts(q);
+    const ok=r.status==='ok'&&r.itinerary&&r.components_s;
+    $('success').classList.toggle('hidden',!ok);$('no-result').classList.toggle('hidden',!!ok);$('detail-card').classList.toggle('hidden',!ok);
+    if(ok){
+      $('total').textContent=fmt(r.itinerary.total_s)+' ('+r.itinerary.total_s+' s)';
+      for(const [part,prefix] of [['outbound','out'],['return','return']]){const leg=r.itinerary[part];$(prefix+'-clock').textContent=leg.departure_time+' → '+leg.arrival_time;$(prefix+'-trace').textContent=`GO01 · viaje ${leg.trip_id} · paradas ${leg.from_stop_id} → ${leg.to_stop_id}`;}
+      const body=$('components');body.replaceChildren();Object.entries(r.components_s).forEach(([name,seconds])=>{const tr=document.createElement('tr');add(tr,'td',labels[name]||name);add(tr,'td',seconds===0?'0 s':fmt(seconds)+' ('+seconds+' s)');body.append(tr);});
+    }else{$('no-result-copy').textContent=r.status==='unknown'?'La fecha solo tiene cobertura nominal del feed; se validó de forma específica el 29/09/2026. El resultado se deja desconocido.':'No se muestra tiempo total ni tramos inventados. Consulte el estado y el alcance de la búsqueda.';}
+    const source=r.sources&&r.sources[0];$('sources').replaceChildren();if(source){add($('sources'),'p',source.publisher+' · '+source.operator_feed+' · versión '+source.feed_version);const a=document.createElement('a');a.href=source.url;a.textContent='Ficha del GTFS original';a.rel='noopener noreferrer';$('sources').append(a);add($('sources'),'p','SHA-256 fuente: '+source.source_sha256);}
+    add($('sources'),'p','Snapshot: '+evidence.snapshot_sha256+' · proveedor: '+evidence.provider_head+' · contrato '+evidence.provider_contract_version);
+    $('method').textContent='Salida offline del proveedor de horarios directos programados; origen y destino son grupos de paradas del catálogo. Estado '+r.status+'; snapshot '+String(r.snapshot_id||'no aplicable')+'.';
+    list('assumptions',r.assumptions);list('limitations',r.limitations);
+    $('raw').textContent=JSON.stringify({request:item.request,result:r},null,2);
+  }
+  const diff=evidence.appointment_comparison?.differences_s?.[0];
+  $('comparison').textContent=diff&&Number.isInteger(diff.total_difference_s)?`Según la comparación calculada por el proveedor, la cita de 10:00 da un total ${Math.abs(diff.total_difference_s)} s ${diff.total_difference_s<0?'menor':diff.total_difference_s>0?'mayor':'igual'} que la de 09:30 (diferencia exacta: ${diff.total_difference_s} s). Solo describe el horario programado del corredor piloto.`:'La comparación no produjo una diferencia numérica válida.';
+  render(0);
+})();
+</script>
+</body>
+</html>
