@@ -1,7 +1,7 @@
 # W1 · R6 · estabilización sanitaria y procedencia
 
 START_SHA: `f4efe1bccd7f33a66fe0598f64787e7b425c020a`  
-TESTED_HEAD: `cb061a97e78d6b5c967104fef6b935132fdc450f`; el cierre documental posterior no altera runtime.  
+TESTED_HEAD: `cb061a97e78d6b5c967104fef6b935132fdc450f`; el cierre documental posterior no altera runtime.
 CONSUMED_W2_HEAD: `8272988566f5bca2d65d3119732bf831d11382dc`  
 CONSUMED_W3_HEAD: `e821341ba1ffd8ed7947cdb97802348919ef502a`  
 STABLE_R4_PIN: `725a7b73ae0381092cd80edc41b8a25432d75fcd`, contrato 0.2.0.  
