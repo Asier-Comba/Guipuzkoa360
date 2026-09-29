@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "request_id": "TEST_REQUEST_001",
-  "capability_id": "TEST_CAPABILITY",
+  "capability_id": "TEST_TOOL",
   "normalized_input": {"tool": "TEST_TOOL", "arguments": {"municipio": "TEST_MUNICIPALITY"}},
   "execution": {
     "request_id": "TEST_REQUEST_001",

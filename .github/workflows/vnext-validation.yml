@@ -1,0 +1,43 @@
+name: vNext W2 candidate validation
+on:
+  pull_request:
+    branches: [integration/vnext-2026-10-04]
+    paths:
+      - 'agentes/gipuzkoa360_vnext/**'
+      - 'scripts/vnext_agent/**'
+      - 'datos_preparados/vnext/**'
+      - 'tests/vnext_agent/**'
+      - 'contracts/vnext/**'
+      - '.github/workflows/vnext-validation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  candidate-and-fallback:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12.10'
+      - name: Install existing locked project dependencies
+        run: python -m pip install --no-cache-dir -r requirements.txt
+      - name: Protect v4 before candidate tests
+        run: python scripts/ops/verify_runtime_identity.py
+      - name: Candidate contract, W1 binding and offline package tests
+        run: python -m pytest tests/vnext_agent -q -o addopts=
+      - name: Rebuild isolated candidate twice
+        run: |
+          python scripts/vnext_agent/build_registry.py
+          python -m scripts.vnext_agent.build_package
+          sha256sum scripts/vnext_agent/dist/gipuzkoa360-vnext-w2.zip > /tmp/vnext-first.sha256
+          python -m scripts.vnext_agent.build_package
+          sha256sum --check /tmp/vnext-first.sha256
+          git diff --exit-code -- agentes/gipuzkoa360_vnext/portal datos_preparados/vnext/capabilities.json scripts/vnext_agent/dist
+      - name: Protect v4 after candidate regeneration
+        if: always()
+        run: python scripts/ops/verify_runtime_identity.py

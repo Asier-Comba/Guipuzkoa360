@@ -1,0 +1,718 @@
+{
+  "capabilities": [
+    {
+      "allowed_transformations": [
+        "lookup"
+      ],
+      "coverage": {
+        "entities": 88,
+        "periods": [
+          "2025-01-01",
+          "2025-05-07",
+          "2026-09-20"
+        ],
+        "scope": "88 municipios; 148 registros sanitarios",
+        "territory": "Gipuzkoa"
+      },
+      "derivation": "direct",
+      "description": "Resumen municipal observado",
+      "enabled": true,
+      "handler": "obtener_resumen_territorial",
+      "id": "obtener_resumen_territorial",
+      "input_fields": [
+        {
+          "allowed_values": [],
+          "name": "municipio",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "periodo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "preconditions": [
+        "Los archivos requeridos coinciden con SHA-256 versionados.",
+        "El handler existe y ha superado pruebas locales."
+      ],
+      "required_data": [
+        {
+          "path": "datos_preparados/demografia.csv",
+          "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+        },
+        {
+          "path": "datos_preparados/municipios.csv",
+          "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
+        },
+        {
+          "path": "datos_preparados/runtime_servicios.csv",
+          "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
+        },
+        {
+          "path": "datos_preparados/metadata_sources.json",
+          "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+        }
+      ],
+      "restrictions": [
+        "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
+      ],
+      "schema_version": "1.0.0",
+      "semantic_limits": [
+        "Los periodos no forman una fotografía temporal homogénea.",
+        "Distancia geométrica no mide acceso real; coincidencia no demuestra causa."
+      ],
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ],
+      "validation_status": "tested"
+    },
+    {
+      "allowed_transformations": [
+        "lookup",
+        "recount",
+        "ratio",
+        "quantile",
+        "euclidean_distance"
+      ],
+      "coverage": {
+        "entities": 88,
+        "periods": [
+          "2025-01-01",
+          "2025-05-07",
+          "2026-09-20"
+        ],
+        "scope": "88 municipios; 148 registros sanitarios",
+        "territory": "Gipuzkoa"
+      },
+      "derivation": "derived_exact",
+      "description": "Comparación municipal con criterios explícitos",
+      "enabled": true,
+      "handler": "comparar_municipios",
+      "id": "comparar_municipios",
+      "input_fields": [
+        {
+          "allowed_values": [],
+          "name": "municipios",
+          "required": true,
+          "type": "string_array"
+        },
+        {
+          "allowed_values": [
+            "65",
+            "75"
+          ],
+          "name": "grupo_edad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [
+            "primary_care",
+            "hospital",
+            "mental_health",
+            "other_health"
+          ],
+          "name": "categoria_servicio",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "umbral_km",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "allowed_values": [],
+          "name": "periodo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "preconditions": [
+        "Los archivos requeridos coinciden con SHA-256 versionados.",
+        "El handler existe y ha superado pruebas locales."
+      ],
+      "required_data": [
+        {
+          "path": "datos_preparados/demografia.csv",
+          "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+        },
+        {
+          "path": "datos_preparados/municipios.csv",
+          "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
+        },
+        {
+          "path": "datos_preparados/runtime_servicios.csv",
+          "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
+        },
+        {
+          "path": "datos_preparados/runtime_municipality_points.csv",
+          "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11"
+        },
+        {
+          "path": "datos_preparados/metadata_sources.json",
+          "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+        }
+      ],
+      "restrictions": [
+        "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
+      ],
+      "schema_version": "1.0.0",
+      "semantic_limits": [
+        "Los periodos no forman una fotografía temporal homogénea.",
+        "Distancia geométrica no mide acceso real; coincidencia no demuestra causa."
+      ],
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ],
+      "validation_status": "tested"
+    },
+    {
+      "allowed_transformations": [
+        "lookup",
+        "recount",
+        "ratio",
+        "quantile",
+        "euclidean_distance"
+      ],
+      "coverage": {
+        "entities": 88,
+        "periods": [
+          "2025-01-01",
+          "2025-05-07",
+          "2026-09-20"
+        ],
+        "scope": "88 municipios; 148 registros sanitarios",
+        "territory": "Gipuzkoa"
+      },
+      "derivation": "derived_exact",
+      "description": "Ranking demográfico 65+ o 75+",
+      "enabled": true,
+      "handler": "analizar_envejecimiento",
+      "id": "analizar_envejecimiento",
+      "input_fields": [
+        {
+          "allowed_values": [
+            "65",
+            "75"
+          ],
+          "name": "grupo_edad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [
+            "percentage",
+            "count"
+          ],
+          "name": "medida",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "periodo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "top_n",
+          "required": false,
+          "type": "integer"
+        }
+      ],
+      "preconditions": [
+        "Los archivos requeridos coinciden con SHA-256 versionados.",
+        "El handler existe y ha superado pruebas locales."
+      ],
+      "required_data": [
+        {
+          "path": "datos_preparados/demografia.csv",
+          "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+        },
+        {
+          "path": "datos_preparados/metadata_sources.json",
+          "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+        }
+      ],
+      "restrictions": [
+        "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
+      ],
+      "schema_version": "1.0.0",
+      "semantic_limits": [
+        "Los periodos no forman una fotografía temporal homogénea.",
+        "Distancia geométrica no mide acceso real; coincidencia no demuestra causa."
+      ],
+      "source_ids": [
+        "EUSTAT_EMH_2025"
+      ],
+      "validation_status": "tested"
+    },
+    {
+      "allowed_transformations": [
+        "lookup",
+        "recount",
+        "ratio",
+        "quantile",
+        "euclidean_distance"
+      ],
+      "coverage": {
+        "entities": 88,
+        "periods": [
+          "2025-01-01",
+          "2025-05-07",
+          "2026-09-20"
+        ],
+        "scope": "88 municipios; 148 registros sanitarios",
+        "territory": "Gipuzkoa"
+      },
+      "derivation": "derived_exact",
+      "description": "Distancia geométrica desde punto representativo",
+      "enabled": true,
+      "handler": "analizar_acceso_servicios",
+      "id": "analizar_acceso_servicios",
+      "input_fields": [
+        {
+          "allowed_values": [
+            "primary_care",
+            "hospital",
+            "mental_health",
+            "other_health"
+          ],
+          "name": "categoria_servicio",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "umbral_km",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "allowed_values": [],
+          "name": "periodo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "municipios",
+          "required": false,
+          "type": "string_array"
+        }
+      ],
+      "preconditions": [
+        "Los archivos requeridos coinciden con SHA-256 versionados.",
+        "El handler existe y ha superado pruebas locales."
+      ],
+      "required_data": [
+        {
+          "path": "datos_preparados/demografia.csv",
+          "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+        },
+        {
+          "path": "datos_preparados/municipios.csv",
+          "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
+        },
+        {
+          "path": "datos_preparados/runtime_servicios.csv",
+          "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
+        },
+        {
+          "path": "datos_preparados/runtime_municipality_points.csv",
+          "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11"
+        },
+        {
+          "path": "datos_preparados/metadata_sources.json",
+          "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+        }
+      ],
+      "restrictions": [
+        "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
+      ],
+      "schema_version": "1.0.0",
+      "semantic_limits": [
+        "Los periodos no forman una fotografía temporal homogénea.",
+        "Distancia geométrica no mide acceso real; coincidencia no demuestra causa."
+      ],
+      "source_ids": [
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ],
+      "validation_status": "tested"
+    },
+    {
+      "allowed_transformations": [
+        "lookup",
+        "recount",
+        "ratio",
+        "quantile",
+        "euclidean_distance"
+      ],
+      "coverage": {
+        "entities": 88,
+        "periods": [
+          "2025-01-01",
+          "2025-05-07",
+          "2026-09-20"
+        ],
+        "scope": "88 municipios; 148 registros sanitarios",
+        "territory": "Gipuzkoa"
+      },
+      "derivation": "derived_exact",
+      "description": "Cruce descriptivo de envejecimiento y distancia",
+      "enabled": true,
+      "handler": "analizar_coincidencia",
+      "id": "analizar_coincidencia",
+      "input_fields": [
+        {
+          "allowed_values": [
+            "primary_care",
+            "hospital",
+            "mental_health",
+            "other_health"
+          ],
+          "name": "categoria_servicio",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "allowed_values": [
+            "65",
+            "75"
+          ],
+          "name": "grupo_edad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "umbral_km",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "allowed_values": [],
+          "name": "periodo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "cuantil",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "preconditions": [
+        "Los archivos requeridos coinciden con SHA-256 versionados.",
+        "El handler existe y ha superado pruebas locales."
+      ],
+      "required_data": [
+        {
+          "path": "datos_preparados/demografia.csv",
+          "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+        },
+        {
+          "path": "datos_preparados/municipios.csv",
+          "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
+        },
+        {
+          "path": "datos_preparados/runtime_servicios.csv",
+          "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
+        },
+        {
+          "path": "datos_preparados/runtime_municipality_points.csv",
+          "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11"
+        },
+        {
+          "path": "datos_preparados/metadata_sources.json",
+          "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+        }
+      ],
+      "restrictions": [
+        "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
+      ],
+      "schema_version": "1.0.0",
+      "semantic_limits": [
+        "Los periodos no forman una fotografía temporal homogénea.",
+        "Distancia geométrica no mide acceso real; coincidencia no demuestra causa."
+      ],
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ],
+      "validation_status": "tested"
+    },
+    {
+      "allowed_transformations": [
+        "lookup",
+        "recount",
+        "ratio",
+        "quantile",
+        "euclidean_distance"
+      ],
+      "coverage": {
+        "entities": 88,
+        "periods": [
+          "2025-01-01",
+          "2025-05-07",
+          "2026-09-20"
+        ],
+        "scope": "88 municipios; 148 registros sanitarios",
+        "territory": "Gipuzkoa"
+      },
+      "derivation": "estimated_with_assumptions",
+      "description": "Contrafactual geométrico hipotético",
+      "enabled": true,
+      "handler": "simular_escenario",
+      "id": "simular_escenario",
+      "input_fields": [
+        {
+          "allowed_values": [
+            "add_service",
+            "remove_service",
+            "change_threshold"
+          ],
+          "name": "accion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "allowed_values": [
+            "primary_care",
+            "hospital",
+            "mental_health",
+            "other_health"
+          ],
+          "name": "categoria_servicio",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "umbral_km",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "allowed_values": [],
+          "name": "periodo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "latitud",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "allowed_values": [],
+          "name": "longitud",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "allowed_values": [],
+          "name": "service_id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "nuevo_umbral_km",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "preconditions": [
+        "Los archivos requeridos coinciden con SHA-256 versionados.",
+        "El handler existe y ha superado pruebas locales."
+      ],
+      "required_data": [
+        {
+          "path": "datos_preparados/demografia.csv",
+          "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+        },
+        {
+          "path": "datos_preparados/municipios.csv",
+          "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
+        },
+        {
+          "path": "datos_preparados/runtime_servicios.csv",
+          "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
+        },
+        {
+          "path": "datos_preparados/runtime_municipality_points.csv",
+          "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11"
+        },
+        {
+          "path": "datos_preparados/metadata_sources.json",
+          "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+        }
+      ],
+      "restrictions": [
+        "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
+      ],
+      "schema_version": "1.0.0",
+      "semantic_limits": [
+        "Los periodos no forman una fotografía temporal homogénea.",
+        "Distancia geométrica no mide acceso real; coincidencia no demuestra causa."
+      ],
+      "source_ids": [
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ],
+      "validation_status": "tested"
+    },
+    {
+      "allowed_transformations": [
+        "lookup"
+      ],
+      "coverage": {
+        "entities": 88,
+        "periods": [
+          "2025-01-01",
+          "2025-05-07",
+          "2026-09-20"
+        ],
+        "scope": "88 municipios; 148 registros sanitarios",
+        "territory": "Gipuzkoa"
+      },
+      "derivation": "direct",
+      "description": "Ficha de procedencia versionada",
+      "enabled": true,
+      "handler": "consultar_fuente",
+      "id": "consultar_fuente",
+      "input_fields": [
+        {
+          "allowed_values": [],
+          "name": "source_id",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "preconditions": [
+        "Los archivos requeridos coinciden con SHA-256 versionados.",
+        "El handler existe y ha superado pruebas locales."
+      ],
+      "required_data": [
+        {
+          "path": "datos_preparados/metadata_sources.json",
+          "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+        }
+      ],
+      "restrictions": [
+        "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
+      ],
+      "schema_version": "1.0.0",
+      "semantic_limits": [
+        "Los periodos no forman una fotografía temporal homogénea.",
+        "Distancia geométrica no mide acceso real; coincidencia no demuestra causa."
+      ],
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025",
+        "G360_DERIVED_MUNICIPAL_METRICS_V1"
+      ],
+      "validation_status": "tested"
+    },
+    {
+      "allowed_transformations": [
+        "lookup"
+      ],
+      "coverage": {
+        "entities": 88,
+        "periods": [
+          "2025-01-01",
+          "2025-05-07",
+          "2026-09-20"
+        ],
+        "scope": "88 municipios; 148 registros sanitarios",
+        "territory": "Gipuzkoa"
+      },
+      "derivation": "direct",
+      "description": "Inspección de operaciones habilitadas y límites",
+      "enabled": true,
+      "handler": "consultar_capacidades",
+      "id": "consultar_capacidades",
+      "input_fields": [
+        {
+          "allowed_values": [],
+          "name": "pregunta_o_dimension",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "preconditions": [
+        "Los archivos requeridos coinciden con SHA-256 versionados.",
+        "El handler existe y ha superado pruebas locales."
+      ],
+      "required_data": [
+        {
+          "path": "datos_preparados/metadata_sources.json",
+          "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+        }
+      ],
+      "restrictions": [
+        "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
+      ],
+      "schema_version": "1.0.0",
+      "semantic_limits": [
+        "Los periodos no forman una fotografía temporal homogénea.",
+        "Distancia geométrica no mide acceso real; coincidencia no demuestra causa."
+      ],
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025",
+        "G360_DERIVED_MUNICIPAL_METRICS_V1"
+      ],
+      "validation_status": "tested"
+    },
+    {
+      "allowed_transformations": [],
+      "coverage": {
+        "entities": 0,
+        "periods": [
+          "2026-09-29"
+        ],
+        "scope": "scheduled; stop_to_stop_with_destination_walk",
+        "territory": "Goierrialdea"
+      },
+      "derivation": "estimated_with_assumptions",
+      "description": "Piloto W1 GO01, vinculación pendiente en W2",
+      "enabled": false,
+      "handler": null,
+      "id": "plan_visit",
+      "input_fields": [],
+      "preconditions": [
+        "Integración por SHA del proveedor W1 y pruebas conjuntas pendientes."
+      ],
+      "required_data": [],
+      "restrictions": [
+        "Solo GO01 y destinos catalogados; realtime y puerta a puerta deshabilitados."
+      ],
+      "schema_version": "1.0.0",
+      "semantic_limits": [
+        "Un horario programado no es una llegada observada.",
+        "unknown no significa ausencia de servicio."
+      ],
+      "source_ids": [],
+      "validation_status": "pending"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

@@ -1,0 +1,63 @@
+{
+  "bytes": 55455,
+  "canonicalization": "UTF-8 and LF; sorted names; fixed ZIP metadata",
+  "entrypoint": "main.py:build_agent",
+  "limit_bytes": 25165824,
+  "members": {
+    "FUENTES.md": {
+      "bytes": 6963,
+      "sha256": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de"
+    },
+    "contracts/vnext/capability-v1.schema.json": {
+      "bytes": 3396,
+      "sha256": "1ad14eb4a825d426958d29fde54104f6d4b45e60f2e25ccc5920af23df435d4c"
+    },
+    "contracts/vnext/evidence-v1.schema.json": {
+      "bytes": 4726,
+      "sha256": "81f1162cb90a65394d96e8735f6403050094eea29a9c17648426282dfc3dc191"
+    },
+    "datos_preparados/data_contract.json": {
+      "bytes": 5274,
+      "sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae"
+    },
+    "datos_preparados/demografia.csv": {
+      "bytes": 6161,
+      "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+    },
+    "datos_preparados/metadata_sources.json": {
+      "bytes": 4833,
+      "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+    },
+    "datos_preparados/municipios.csv": {
+      "bytes": 30075,
+      "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
+    },
+    "datos_preparados/runtime_municipality_points.csv": {
+      "bytes": 8689,
+      "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11"
+    },
+    "datos_preparados/runtime_servicios.csv": {
+      "bytes": 25258,
+      "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
+    },
+    "datos_preparados/vnext/capabilities.json": {
+      "bytes": 21091,
+      "sha256": "aa26492b3cf01d46672dc7688a0ca7825df164616d26fda02a0242c89e0006ee"
+    },
+    "docs/METODOLOGIA.md": {
+      "bytes": 1210,
+      "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7"
+    },
+    "main.py": {
+      "bytes": 5606,
+      "sha256": "a469999659c1b6c9bd190891b340aeff384a70acf2b7eae1334a006956368419"
+    },
+    "tools.py": {
+      "bytes": 85233,
+      "sha256": "eef50df90199d478232a667f3596e714cb21dd3decf86b5eb4febcff04bd7ee4"
+    }
+  },
+  "mobility_binding": "PENDING; no mock or W1 snapshot bundled",
+  "package": "GIPUZKOA360_vNext_W2_candidate",
+  "sha256": "1992cc739e8e89cd4512ad45919d1ebc102a6385628f82689a23de49de6f2661"
+}
