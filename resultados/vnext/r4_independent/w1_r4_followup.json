@@ -1,0 +1,562 @@
+{
+  "classification": "OFFLINE_W1_R4_PROPERTY_REVIEW_NOT_W2_OR_PORTAL",
+  "w1_head": "725a7b73ae0381092cd80edc41b8a25432d75fcd",
+  "provider_sha256": "c97842617f3077c2eec1892653361b4471a18e1c64f8127b808b9968401cb834",
+  "snapshot_sha256": "62e00c04edb96ccde0a5ce4fe81574452ddcacdb4c173b030ca49b000f5a084b",
+  "w2_adapter": "NOT_RUN_INCOMPATIBLE_0.1.0",
+  "llm_executed": 0,
+  "portal_executed": 0,
+  "checks": {
+    "C-R3-05": "PASS",
+    "C-R3-06": "PASS",
+    "C-R3-07": "PASS",
+    "C-R3-08": "PASS"
+  },
+  "requests": {
+    "base": {
+      "origin_id": "zegama_center_stops",
+      "destination_id": "beasain_center_stop_pair",
+      "date": "2026-09-29",
+      "appointment_time": "09:30",
+      "duration_minutes": 30,
+      "snapshot_id": "official-goierrialdea-go01-r4-20260929"
+    },
+    "duration90": {
+      "origin_id": "zegama_center_stops",
+      "destination_id": "beasain_center_stop_pair",
+      "date": "2026-09-29",
+      "appointment_time": "09:30",
+      "duration_minutes": 90,
+      "snapshot_id": "official-goierrialdea-go01-r4-20260929"
+    },
+    "margin": {
+      "origin_id": "zegama_center_stops",
+      "destination_id": "beasain_center_stop_pair",
+      "date": "2026-09-29",
+      "appointment_time": "09:30",
+      "duration_minutes": 30,
+      "snapshot_id": "official-goierrialdea-go01-r4-20260929",
+      "arrival_margin_minutes": 15,
+      "boarding_margin_minutes": 8
+    }
+  },
+  "results": {
+    "base": {
+      "schema_version": "0.2.0",
+      "normalized_request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_center_stop_pair",
+        "date": "2026-09-29",
+        "appointment_time": "09:30:00",
+        "duration_minutes": 30,
+        "arrival_margin_minutes": 10,
+        "boarding_margin_minutes": 3,
+        "walking_profile_id": "stop_only",
+        "snapshot_id": "official-goierrialdea-go01-r4-20260929",
+        "timezone": "Europe/Madrid",
+        "return_deadline": null
+      },
+      "status": "ok",
+      "scenario_kind": "stop_only",
+      "time_basis": "scheduled",
+      "scope": "origin_stop_presence_to_return_stop_arrival",
+      "snapshot_id": "official-goierrialdea-go01-r4-20260929",
+      "itinerary": {
+        "outbound": {
+          "trip_id": "1_101_LJ_31500",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "8305",
+          "to_stop_id": "7214",
+          "from_stop_sequence": 2,
+          "to_stop_sequence": 28,
+          "departure_time": "08:47:37",
+          "arrival_time": "09:17:50",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        },
+        "return": {
+          "trip_id": "1_106_LJ_37200",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "7218",
+          "to_stop_id": "8309",
+          "from_stop_sequence": 8,
+          "to_stop_sequence": 35,
+          "departure_time": "10:29:50",
+          "arrival_time": "11:07:48",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        },
+        "total_s": 8591,
+        "start_s": 31477,
+        "end_s": 40068,
+        "vehicle_span_s": 8411,
+        "origin_stop_id": "8305",
+        "return_stop_id": "8309",
+        "return_slack_s": 1610,
+        "alternatives_evaluated": 95
+      },
+      "components_s": {
+        "initial_wait_s": 180,
+        "outbound_vehicle_s": 1813,
+        "destination_walk_outbound_s": 0,
+        "pre_appointment_wait_s": 730,
+        "appointment_s": 1800,
+        "destination_walk_return_s": 0,
+        "return_wait_s": 1790,
+        "return_vehicle_s": 2278
+      },
+      "components": [
+        {
+          "kind": "initial_wait",
+          "start_s": 31477,
+          "end_s": 31657,
+          "seconds": 180,
+          "basis": "parameter:boarding_margin_minutes",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "outbound_vehicle",
+          "start_s": 31657,
+          "end_s": 33470,
+          "seconds": 1813,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "destination_walk_outbound",
+          "start_s": 33470,
+          "end_s": 33470,
+          "seconds": 0,
+          "basis": "assumption:stop_only_explicit_zero",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "pre_appointment_wait",
+          "start_s": 33470,
+          "end_s": 34200,
+          "seconds": 730,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "appointment",
+          "start_s": 34200,
+          "end_s": 36000,
+          "seconds": 1800,
+          "basis": "parameter:duration_minutes",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "destination_walk_return",
+          "start_s": 36000,
+          "end_s": 36000,
+          "seconds": 0,
+          "basis": "assumption:stop_only_explicit_zero",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "return_wait",
+          "start_s": 36000,
+          "end_s": 37790,
+          "seconds": 1790,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "return_vehicle",
+          "start_s": 37790,
+          "end_s": 40068,
+          "seconds": 2278,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        }
+      ],
+      "sources": [
+        {
+          "classification": "OFFICIAL",
+          "feed_version": "20260928054818",
+          "index_last_update": "2026-09-29 07:01:13",
+          "index_url": "https://opendata.euskadi.eus/transport/moveuskadi/data-index-gtfs.json",
+          "operator_feed": "Lurraldebus Goierrialdea",
+          "publisher": "Gobierno Vasco / Moveuskadi",
+          "retrieved_date": "2026-09-29",
+          "source_id": "MOVEUSKADI_GOIERRIALDEA_3276fcae7bfa",
+          "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+          "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+        }
+      ],
+      "assumptions": [
+        "Horarios programados; no incorpora incidencias ni retrasos en tiempo real.",
+        "La búsqueda solo contempla viajes directos y paradas declaradas en el catálogo.",
+        "Solo embarque y desembarque ordinarios; no se presume reserva ni acuerdo con conductor.",
+        "Inicio en parada con margen de embarque; no incluye acceso desde domicilio."
+      ],
+      "limitations": [
+        "Solo GO01 y viajes directos entre los pares de paradas catalogados.",
+        "Los tiempos tienen timepoint=0; son tiempos aproximados/interpolados del feed.",
+        "No demuestra un desplazamiento real, puntualidad, accesibilidad universal ni cobertura desde viviendas.",
+        "La ausencia de calendar_dates no se interpreta por sí sola como corrupción del GTFS.",
+        "Destino piloto en paradas del centro de Beasain; no reproduce el paseo al ambulatorio de la PoC histórica."
+      ],
+      "error": null
+    },
+    "duration90": {
+      "schema_version": "0.2.0",
+      "normalized_request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_center_stop_pair",
+        "date": "2026-09-29",
+        "appointment_time": "09:30:00",
+        "duration_minutes": 90,
+        "arrival_margin_minutes": 10,
+        "boarding_margin_minutes": 3,
+        "walking_profile_id": "stop_only",
+        "snapshot_id": "official-goierrialdea-go01-r4-20260929",
+        "timezone": "Europe/Madrid",
+        "return_deadline": null
+      },
+      "status": "ok",
+      "scenario_kind": "stop_only",
+      "time_basis": "scheduled",
+      "scope": "origin_stop_presence_to_return_stop_arrival",
+      "snapshot_id": "official-goierrialdea-go01-r4-20260929",
+      "itinerary": {
+        "outbound": {
+          "trip_id": "1_101_LJ_31500",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "8305",
+          "to_stop_id": "7214",
+          "from_stop_sequence": 2,
+          "to_stop_sequence": 28,
+          "departure_time": "08:47:37",
+          "arrival_time": "09:17:50",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        },
+        "return": {
+          "trip_id": "1_102_LJ_42300",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "7218",
+          "to_stop_id": "8309",
+          "from_stop_sequence": 13,
+          "to_stop_sequence": 40,
+          "departure_time": "11:59:31",
+          "arrival_time": "12:37:29",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        },
+        "total_s": 13972,
+        "start_s": 31477,
+        "end_s": 45449,
+        "vehicle_span_s": 13792,
+        "origin_stop_id": "8305",
+        "return_stop_id": "8309",
+        "return_slack_s": 3391,
+        "alternatives_evaluated": 85
+      },
+      "components_s": {
+        "initial_wait_s": 180,
+        "outbound_vehicle_s": 1813,
+        "destination_walk_outbound_s": 0,
+        "pre_appointment_wait_s": 730,
+        "appointment_s": 5400,
+        "destination_walk_return_s": 0,
+        "return_wait_s": 3571,
+        "return_vehicle_s": 2278
+      },
+      "components": [
+        {
+          "kind": "initial_wait",
+          "start_s": 31477,
+          "end_s": 31657,
+          "seconds": 180,
+          "basis": "parameter:boarding_margin_minutes",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "outbound_vehicle",
+          "start_s": 31657,
+          "end_s": 33470,
+          "seconds": 1813,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "destination_walk_outbound",
+          "start_s": 33470,
+          "end_s": 33470,
+          "seconds": 0,
+          "basis": "assumption:stop_only_explicit_zero",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "pre_appointment_wait",
+          "start_s": 33470,
+          "end_s": 34200,
+          "seconds": 730,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "appointment",
+          "start_s": 34200,
+          "end_s": 39600,
+          "seconds": 5400,
+          "basis": "parameter:duration_minutes",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "destination_walk_return",
+          "start_s": 39600,
+          "end_s": 39600,
+          "seconds": 0,
+          "basis": "assumption:stop_only_explicit_zero",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "return_wait",
+          "start_s": 39600,
+          "end_s": 43171,
+          "seconds": 3571,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "return_vehicle",
+          "start_s": 43171,
+          "end_s": 45449,
+          "seconds": 2278,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        }
+      ],
+      "sources": [
+        {
+          "classification": "OFFICIAL",
+          "feed_version": "20260928054818",
+          "index_last_update": "2026-09-29 07:01:13",
+          "index_url": "https://opendata.euskadi.eus/transport/moveuskadi/data-index-gtfs.json",
+          "operator_feed": "Lurraldebus Goierrialdea",
+          "publisher": "Gobierno Vasco / Moveuskadi",
+          "retrieved_date": "2026-09-29",
+          "source_id": "MOVEUSKADI_GOIERRIALDEA_3276fcae7bfa",
+          "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+          "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+        }
+      ],
+      "assumptions": [
+        "Horarios programados; no incorpora incidencias ni retrasos en tiempo real.",
+        "La búsqueda solo contempla viajes directos y paradas declaradas en el catálogo.",
+        "Solo embarque y desembarque ordinarios; no se presume reserva ni acuerdo con conductor.",
+        "Inicio en parada con margen de embarque; no incluye acceso desde domicilio."
+      ],
+      "limitations": [
+        "Solo GO01 y viajes directos entre los pares de paradas catalogados.",
+        "Los tiempos tienen timepoint=0; son tiempos aproximados/interpolados del feed.",
+        "No demuestra un desplazamiento real, puntualidad, accesibilidad universal ni cobertura desde viviendas.",
+        "La ausencia de calendar_dates no se interpreta por sí sola como corrupción del GTFS.",
+        "Destino piloto en paradas del centro de Beasain; no reproduce el paseo al ambulatorio de la PoC histórica."
+      ],
+      "error": null
+    },
+    "margin": {
+      "schema_version": "0.2.0",
+      "normalized_request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_center_stop_pair",
+        "date": "2026-09-29",
+        "appointment_time": "09:30:00",
+        "duration_minutes": 30,
+        "arrival_margin_minutes": 15,
+        "boarding_margin_minutes": 8,
+        "walking_profile_id": "stop_only",
+        "snapshot_id": "official-goierrialdea-go01-r4-20260929",
+        "timezone": "Europe/Madrid",
+        "return_deadline": null
+      },
+      "status": "ok",
+      "scenario_kind": "stop_only",
+      "time_basis": "scheduled",
+      "scope": "origin_stop_presence_to_return_stop_arrival",
+      "snapshot_id": "official-goierrialdea-go01-r4-20260929",
+      "itinerary": {
+        "outbound": {
+          "trip_id": "1_103_LJ_29400",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "8305",
+          "to_stop_id": "7214",
+          "from_stop_sequence": 2,
+          "to_stop_sequence": 26,
+          "departure_time": "08:12:37",
+          "arrival_time": "08:40:52",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        },
+        "return": {
+          "trip_id": "1_106_LJ_37200",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "7218",
+          "to_stop_id": "8309",
+          "from_stop_sequence": 8,
+          "to_stop_sequence": 35,
+          "departure_time": "10:29:50",
+          "arrival_time": "11:07:48",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        },
+        "total_s": 10991,
+        "start_s": 29077,
+        "end_s": 40068,
+        "vehicle_span_s": 10511,
+        "origin_stop_id": "8305",
+        "return_stop_id": "8309",
+        "return_slack_s": 1310,
+        "alternatives_evaluated": 76
+      },
+      "components_s": {
+        "initial_wait_s": 480,
+        "outbound_vehicle_s": 1695,
+        "destination_walk_outbound_s": 0,
+        "pre_appointment_wait_s": 2948,
+        "appointment_s": 1800,
+        "destination_walk_return_s": 0,
+        "return_wait_s": 1790,
+        "return_vehicle_s": 2278
+      },
+      "components": [
+        {
+          "kind": "initial_wait",
+          "start_s": 29077,
+          "end_s": 29557,
+          "seconds": 480,
+          "basis": "parameter:boarding_margin_minutes",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "outbound_vehicle",
+          "start_s": 29557,
+          "end_s": 31252,
+          "seconds": 1695,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "destination_walk_outbound",
+          "start_s": 31252,
+          "end_s": 31252,
+          "seconds": 0,
+          "basis": "assumption:stop_only_explicit_zero",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "pre_appointment_wait",
+          "start_s": 31252,
+          "end_s": 34200,
+          "seconds": 2948,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "appointment",
+          "start_s": 34200,
+          "end_s": 36000,
+          "seconds": 1800,
+          "basis": "parameter:duration_minutes",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "destination_walk_return",
+          "start_s": 36000,
+          "end_s": 36000,
+          "seconds": 0,
+          "basis": "assumption:stop_only_explicit_zero",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "return_wait",
+          "start_s": 36000,
+          "end_s": 37790,
+          "seconds": 1790,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "return_vehicle",
+          "start_s": 37790,
+          "end_s": 40068,
+          "seconds": 2278,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        }
+      ],
+      "sources": [
+        {
+          "classification": "OFFICIAL",
+          "feed_version": "20260928054818",
+          "index_last_update": "2026-09-29 07:01:13",
+          "index_url": "https://opendata.euskadi.eus/transport/moveuskadi/data-index-gtfs.json",
+          "operator_feed": "Lurraldebus Goierrialdea",
+          "publisher": "Gobierno Vasco / Moveuskadi",
+          "retrieved_date": "2026-09-29",
+          "source_id": "MOVEUSKADI_GOIERRIALDEA_3276fcae7bfa",
+          "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+          "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+        }
+      ],
+      "assumptions": [
+        "Horarios programados; no incorpora incidencias ni retrasos en tiempo real.",
+        "La búsqueda solo contempla viajes directos y paradas declaradas en el catálogo.",
+        "Solo embarque y desembarque ordinarios; no se presume reserva ni acuerdo con conductor.",
+        "Inicio en parada con margen de embarque; no incluye acceso desde domicilio."
+      ],
+      "limitations": [
+        "Solo GO01 y viajes directos entre los pares de paradas catalogados.",
+        "Los tiempos tienen timepoint=0; son tiempos aproximados/interpolados del feed.",
+        "No demuestra un desplazamiento real, puntualidad, accesibilidad universal ni cobertura desde viviendas.",
+        "La ausencia de calendar_dates no se interpreta por sí sola como corrupción del GTFS.",
+        "Destino piloto en paradas del centro de Beasain; no reproduce el paseo al ambulatorio de la PoC histórica."
+      ],
+      "error": null
+    }
+  },
+  "observed": {
+    "base_status": "ok",
+    "base_total_s": 8591,
+    "duration90_appointment_s": 5400,
+    "margin_total_s": 10991,
+    "return_slack_s": 1610,
+    "leg_permissions": [
+      {
+        "pickup_type": 0,
+        "drop_off_type": 0
+      },
+      {
+        "pickup_type": 0,
+        "drop_off_type": 0
+      }
+    ]
+  },
+  "limitations": [
+    "Permissions of selected legs only; W1 raw oracle covers broader GTFS rows.",
+    "Stop-only destination; no validated healthcare walking route.",
+    "R2 W2 adapter does not consume W1 contract 0.2.0."
+  ]
+}

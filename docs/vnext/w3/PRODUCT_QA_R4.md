@@ -18,8 +18,10 @@ parámetros efectivos, estado y estructura de legs/componentes. La
 comprobación de ancho es geométrica; no certifica lectura, contraste ni WCAG.
 No se probó aquí una sesión completa con lector de pantalla, navegación
 Shift+Tab/Space, tráfico de red ni todos los tamaños/zooms. La interfaz
-actual presenta `departure_time` y `arrival_time` del proveedor para ida y
-vuelta, cita/duración solicitadas, desglose y fuentes. El proveedor no expone
-un campo de holgura de vuelta verificable ni rutas puerta a puerta; la vista
-no inventa ese margen. El estado de error/unknown se explica desde el error
+actual, fijada a W1 0.1.0, presenta `departure_time` y `arrival_time` para ida y
+vuelta, cita/duración solicitadas, desglose y fuentes. Esa versión no expone
+holgura de vuelta. W1 0.2.0 sí expone `return_slack_s`, preparado aparte en
+`w1_r4_product_components.json`; todavía no se muestra en este HTML, que
+conserva su etiqueta y pin histórico. Ninguna versión acredita rutas puerta a
+puerta. El estado de error/unknown se explica desde el error
 observado, sin convertir ausencia de datos en cero.
