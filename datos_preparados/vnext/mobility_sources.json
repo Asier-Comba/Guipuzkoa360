@@ -1,0 +1,6 @@
+[
+  {"source_id": "W1_GTFS@2026-09-29", "reference_period": "2026-09-29", "role": "official_schedule", "publisher": "Gobierno Vasco / Moveuskadi", "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4"},
+  {"source_id": "W2_USER@2026-09-29", "reference_period": "2026-09-29", "role": "user_parameter", "publisher": "Persona que formula el escenario", "source_sha256": null},
+  {"source_id": "W1_MODEL@2026-09-29", "reference_period": "2026-09-29", "role": "modelling_assumption", "publisher": "W1 stop_only 0.2.0", "source_sha256": "62e00c04edb96ccde0a5ce4fe81574452ddcacdb4c173b030ca49b000f5a084b"},
+  {"source_id": "W1_DERIVED@2026-09-29", "reference_period": "2026-09-29", "role": "derived_network", "publisher": "W1 deterministic provider 0.2.0", "source_sha256": "c97842617f3077c2eec1892653361b4471a18e1c64f8127b808b9968401cb834"}
+]

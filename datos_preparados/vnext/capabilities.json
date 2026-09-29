@@ -8,10 +8,10 @@
         "entities": 88,
         "periods": [
           "2025-01-01",
-          "2025-05-07",
-          "2026-09-20"
+          "2026-09-20",
+          "2025-05-07"
         ],
-        "scope": "88 municipios; 148 registros sanitarios",
+        "scope": "Un municipio; demografía y cifras de servicio solo cuando tienen fuente ejecutada",
         "territory": "Gipuzkoa"
       },
       "derivation": "direct",
@@ -32,6 +32,12 @@
           "required": false,
           "type": "string"
         }
+      ],
+      "precondition_checks": [
+        "required_data_sha256",
+        "handler_signature",
+        "source_catalog",
+        "coverage_count"
       ],
       "preconditions": [
         "Los archivos requeridos coinciden con SHA-256 versionados.",
@@ -58,34 +64,39 @@
       "restrictions": [
         "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
       ],
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "semantic_limits": [
-        "Los periodos no forman una fotografía temporal homogénea.",
-        "Distancia geométrica no mide acceso real; coincidencia no demuestra causa."
+        "La ficha puede contener indicadores de servicios sin todas sus fuentes en la salida; esos valores no se promueven a claims.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
       ],
       "source_ids": [
         "EUSTAT_EMH_2025",
         "ODE_HEALTH_CENTRES_2026",
         "GEOEUSKADI_MUNICIPIOS_2025"
       ],
+      "validation_evidence": [
+        {
+          "sha256": "8182f101056b37a9d9356bb05b81cb0b209571e0b5a4f57c7551a1760f0c76f0",
+          "test_file": "tests/vnext_agent/test_contracts.py",
+          "test_name": "test_every_enabled_handler_executes"
+        }
+      ],
       "validation_status": "tested"
     },
     {
       "allowed_transformations": [
         "lookup",
-        "recount",
         "ratio",
-        "quantile",
         "euclidean_distance"
       ],
       "coverage": {
         "entities": 88,
         "periods": [
           "2025-01-01",
-          "2025-05-07",
-          "2026-09-20"
+          "2026-09-20",
+          "2025-05-07"
         ],
-        "scope": "88 municipios; 148 registros sanitarios",
+        "scope": "2–20 municipios explícitos; orden indiferente, identidad por código",
         "territory": "Gipuzkoa"
       },
       "derivation": "derived_exact",
@@ -133,6 +144,12 @@
           "type": "string"
         }
       ],
+      "precondition_checks": [
+        "required_data_sha256",
+        "handler_signature",
+        "source_catalog",
+        "coverage_count"
+      ],
       "preconditions": [
         "Los archivos requeridos coinciden con SHA-256 versionados.",
         "El handler existe y ha superado pruebas locales."
@@ -162,34 +179,36 @@
       "restrictions": [
         "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
       ],
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "semantic_limits": [
-        "Los periodos no forman una fotografía temporal homogénea.",
-        "Distancia geométrica no mide acceso real; coincidencia no demuestra causa."
+        "Los registros sanitarios y la distancia geométrica no acreditan capacidad o recorrido real.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
       ],
       "source_ids": [
         "EUSTAT_EMH_2025",
         "ODE_HEALTH_CENTRES_2026",
         "GEOEUSKADI_MUNICIPIOS_2025"
       ],
+      "validation_evidence": [
+        {
+          "sha256": "8182f101056b37a9d9356bb05b81cb0b209571e0b5a4f57c7551a1760f0c76f0",
+          "test_file": "tests/vnext_agent/test_contracts.py",
+          "test_name": "test_every_enabled_handler_executes"
+        }
+      ],
       "validation_status": "tested"
     },
     {
       "allowed_transformations": [
         "lookup",
-        "recount",
-        "ratio",
-        "quantile",
-        "euclidean_distance"
+        "sort"
       ],
       "coverage": {
         "entities": 88,
         "periods": [
-          "2025-01-01",
-          "2025-05-07",
-          "2026-09-20"
+          "2025-01-01"
         ],
-        "scope": "88 municipios; 148 registros sanitarios",
+        "scope": "Ranking municipal 65+ o 75+",
         "territory": "Gipuzkoa"
       },
       "derivation": "derived_exact",
@@ -229,6 +248,12 @@
           "type": "integer"
         }
       ],
+      "precondition_checks": [
+        "required_data_sha256",
+        "handler_signature",
+        "source_catalog",
+        "coverage_count"
+      ],
       "preconditions": [
         "Los archivos requeridos coinciden con SHA-256 versionados.",
         "El handler existe y ha superado pruebas locales."
@@ -246,32 +271,35 @@
       "restrictions": [
         "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
       ],
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "semantic_limits": [
-        "Los periodos no forman una fotografía temporal homogénea.",
-        "Distancia geométrica no mide acceso real; coincidencia no demuestra causa."
+        "75+ se deriva de año de nacimiento; el resultado no identifica individuos.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
       ],
       "source_ids": [
         "EUSTAT_EMH_2025"
+      ],
+      "validation_evidence": [
+        {
+          "sha256": "8182f101056b37a9d9356bb05b81cb0b209571e0b5a4f57c7551a1760f0c76f0",
+          "test_file": "tests/vnext_agent/test_contracts.py",
+          "test_name": "test_every_enabled_handler_executes"
+        }
       ],
       "validation_status": "tested"
     },
     {
       "allowed_transformations": [
-        "lookup",
-        "recount",
-        "ratio",
-        "quantile",
-        "euclidean_distance"
+        "euclidean_distance",
+        "sort"
       ],
       "coverage": {
         "entities": 88,
         "periods": [
-          "2025-01-01",
-          "2025-05-07",
-          "2026-09-20"
+          "2026-09-20",
+          "2025-05-07"
         ],
-        "scope": "88 municipios; 148 registros sanitarios",
+        "scope": "88 municipios o subconjunto explícito; distancia geométrica",
         "territory": "Gipuzkoa"
       },
       "derivation": "derived_exact",
@@ -310,6 +338,12 @@
           "type": "string_array"
         }
       ],
+      "precondition_checks": [
+        "required_data_sha256",
+        "handler_signature",
+        "source_catalog",
+        "coverage_count"
+      ],
       "preconditions": [
         "Los archivos requeridos coinciden con SHA-256 versionados.",
         "El handler existe y ha superado pruebas locales."
@@ -339,33 +373,38 @@
       "restrictions": [
         "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
       ],
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "semantic_limits": [
-        "Los periodos no forman una fotografía temporal homogénea.",
-        "Distancia geométrica no mide acceso real; coincidencia no demuestra causa."
+        "La distancia no es tiempo ni ruta; registro no implica apertura.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
       ],
       "source_ids": [
         "ODE_HEALTH_CENTRES_2026",
         "GEOEUSKADI_MUNICIPIOS_2025"
       ],
+      "validation_evidence": [
+        {
+          "sha256": "8182f101056b37a9d9356bb05b81cb0b209571e0b5a4f57c7551a1760f0c76f0",
+          "test_file": "tests/vnext_agent/test_contracts.py",
+          "test_name": "test_every_enabled_handler_executes"
+        }
+      ],
       "validation_status": "tested"
     },
     {
       "allowed_transformations": [
-        "lookup",
-        "recount",
-        "ratio",
+        "join_by_municipality_code",
         "quantile",
-        "euclidean_distance"
+        "recount"
       ],
       "coverage": {
         "entities": 88,
         "periods": [
           "2025-01-01",
-          "2025-05-07",
-          "2026-09-20"
+          "2026-09-20",
+          "2025-05-07"
         ],
-        "scope": "88 municipios; 148 registros sanitarios",
+        "scope": "Cruce municipal de edad y distancia; cuantiles explícitos",
         "territory": "Gipuzkoa"
       },
       "derivation": "derived_exact",
@@ -413,6 +452,12 @@
           "type": "number"
         }
       ],
+      "precondition_checks": [
+        "required_data_sha256",
+        "handler_signature",
+        "source_catalog",
+        "coverage_count"
+      ],
       "preconditions": [
         "Los archivos requeridos coinciden con SHA-256 versionados.",
         "El handler existe y ha superado pruebas locales."
@@ -442,34 +487,38 @@
       "restrictions": [
         "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
       ],
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "semantic_limits": [
-        "Los periodos no forman una fotografía temporal homogénea.",
-        "Distancia geométrica no mide acceso real; coincidencia no demuestra causa."
+        "Coincidencia descriptiva no demuestra causalidad.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
       ],
       "source_ids": [
         "EUSTAT_EMH_2025",
         "ODE_HEALTH_CENTRES_2026",
         "GEOEUSKADI_MUNICIPIOS_2025"
       ],
+      "validation_evidence": [
+        {
+          "sha256": "8182f101056b37a9d9356bb05b81cb0b209571e0b5a4f57c7551a1760f0c76f0",
+          "test_file": "tests/vnext_agent/test_contracts.py",
+          "test_name": "test_canonical_coincidence_recomputes_7_4_2"
+        }
+      ],
       "validation_status": "tested"
     },
     {
       "allowed_transformations": [
-        "lookup",
-        "recount",
-        "ratio",
-        "quantile",
-        "euclidean_distance"
+        "euclidean_distance",
+        "difference",
+        "hypothetical_parameter_change"
       ],
       "coverage": {
         "entities": 88,
         "periods": [
-          "2025-01-01",
-          "2025-05-07",
-          "2026-09-20"
+          "2026-09-20",
+          "2025-05-07"
         ],
-        "scope": "88 municipios; 148 registros sanitarios",
+        "scope": "Contrafactual geométrico; no es pronóstico",
         "territory": "Gipuzkoa"
       },
       "derivation": "estimated_with_assumptions",
@@ -536,6 +585,12 @@
           "type": "number"
         }
       ],
+      "precondition_checks": [
+        "required_data_sha256",
+        "handler_signature",
+        "source_catalog",
+        "coverage_count"
+      ],
       "preconditions": [
         "Los archivos requeridos coinciden con SHA-256 versionados.",
         "El handler existe y ha superado pruebas locales."
@@ -565,14 +620,21 @@
       "restrictions": [
         "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
       ],
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "semantic_limits": [
-        "Los periodos no forman una fotografía temporal homogénea.",
-        "Distancia geométrica no mide acceso real; coincidencia no demuestra causa."
+        "Parámetros hipotéticos no son observaciones oficiales.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
       ],
       "source_ids": [
         "ODE_HEALTH_CENTRES_2026",
         "GEOEUSKADI_MUNICIPIOS_2025"
+      ],
+      "validation_evidence": [
+        {
+          "sha256": "8182f101056b37a9d9356bb05b81cb0b209571e0b5a4f57c7551a1760f0c76f0",
+          "test_file": "tests/vnext_agent/test_contracts.py",
+          "test_name": "test_every_enabled_handler_executes"
+        }
       ],
       "validation_status": "tested"
     },
@@ -581,14 +643,15 @@
         "lookup"
       ],
       "coverage": {
-        "entities": 88,
+        "entities": 4,
         "periods": [
           "2025-01-01",
+          "2026-09-20",
           "2025-05-07",
-          "2026-09-20"
+          "demography=2025-01-01;services=2026-09-20;geography=2025-05-07"
         ],
-        "scope": "88 municipios; 148 registros sanitarios",
-        "territory": "Gipuzkoa"
+        "scope": "Fichas de fuente del catálogo local",
+        "territory": "source_catalog"
       },
       "derivation": "direct",
       "description": "Ficha de procedencia versionada",
@@ -603,6 +666,12 @@
           "type": "string"
         }
       ],
+      "precondition_checks": [
+        "required_data_sha256",
+        "handler_signature",
+        "source_catalog",
+        "coverage_count"
+      ],
       "preconditions": [
         "Los archivos requeridos coinciden con SHA-256 versionados.",
         "El handler existe y ha superado pruebas locales."
@@ -616,16 +685,23 @@
       "restrictions": [
         "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
       ],
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "semantic_limits": [
-        "Los periodos no forman una fotografía temporal homogénea.",
-        "Distancia geométrica no mide acceso real; coincidencia no demuestra causa."
+        "Metadatos de fuente no validan por sí solos cada cifra.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
       ],
       "source_ids": [
         "EUSTAT_EMH_2025",
         "ODE_HEALTH_CENTRES_2026",
         "GEOEUSKADI_MUNICIPIOS_2025",
         "G360_DERIVED_MUNICIPAL_METRICS_V1"
+      ],
+      "validation_evidence": [
+        {
+          "sha256": "8182f101056b37a9d9356bb05b81cb0b209571e0b5a4f57c7551a1760f0c76f0",
+          "test_file": "tests/vnext_agent/test_contracts.py",
+          "test_name": "test_every_enabled_handler_executes"
+        }
       ],
       "validation_status": "tested"
     },
@@ -634,14 +710,10 @@
         "lookup"
       ],
       "coverage": {
-        "entities": 88,
-        "periods": [
-          "2025-01-01",
-          "2025-05-07",
-          "2026-09-20"
-        ],
-        "scope": "88 municipios; 148 registros sanitarios",
-        "territory": "Gipuzkoa"
+        "entities": 9,
+        "periods": [],
+        "scope": "Registro de operaciones W2 habilitadas y pendientes",
+        "territory": "capability_registry"
       },
       "derivation": "direct",
       "description": "Inspección de operaciones habilitadas y límites",
@@ -656,6 +728,12 @@
           "type": "string"
         }
       ],
+      "precondition_checks": [
+        "required_data_sha256",
+        "handler_signature",
+        "source_catalog",
+        "coverage_count"
+      ],
       "preconditions": [
         "Los archivos requeridos coinciden con SHA-256 versionados.",
         "El handler existe y ha superado pruebas locales."
@@ -669,16 +747,23 @@
       "restrictions": [
         "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
       ],
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "semantic_limits": [
-        "Los periodos no forman una fotografía temporal homogénea.",
-        "Distancia geométrica no mide acceso real; coincidencia no demuestra causa."
+        "La ficha no demuestra calidad conversacional del modelo.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
       ],
       "source_ids": [
         "EUSTAT_EMH_2025",
         "ODE_HEALTH_CENTRES_2026",
         "GEOEUSKADI_MUNICIPIOS_2025",
         "G360_DERIVED_MUNICIPAL_METRICS_V1"
+      ],
+      "validation_evidence": [
+        {
+          "sha256": "8182f101056b37a9d9356bb05b81cb0b209571e0b5a4f57c7551a1760f0c76f0",
+          "test_file": "tests/vnext_agent/test_contracts.py",
+          "test_name": "test_every_enabled_handler_executes"
+        }
       ],
       "validation_status": "tested"
     },
@@ -693,11 +778,12 @@
         "territory": "Goierrialdea"
       },
       "derivation": "estimated_with_assumptions",
-      "description": "Piloto W1 GO01, vinculación pendiente en W2",
+      "description": "Piloto W1 GO01, vinculación pendiente en paquete W2",
       "enabled": false,
       "handler": null,
       "id": "plan_visit",
       "input_fields": [],
+      "precondition_checks": [],
       "preconditions": [
         "Integración por SHA del proveedor W1 y pruebas conjuntas pendientes."
       ],
@@ -705,14 +791,15 @@
       "restrictions": [
         "Solo GO01 y destinos catalogados; realtime y puerta a puerta deshabilitados."
       ],
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "semantic_limits": [
         "Un horario programado no es una llegada observada.",
         "unknown no significa ausencia de servicio."
       ],
       "source_ids": [],
+      "validation_evidence": [],
       "validation_status": "pending"
     }
   ],
-  "schema_version": "1.0.0"
+  "schema_version": "1.1.0"
 }

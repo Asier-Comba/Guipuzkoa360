@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Asier-Comba/Guipuzkoa360/blob/work/vnext-w2-agent-evidence/contracts/vnext/evidence-v1.1.schema.json",
+  "title": "GIPUZKOA 360 W2 Evidence 1.1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "request_id", "capability_id", "normalized_input", "effective_request", "execution", "status", "outcomes", "claims", "method", "assumptions", "limitations", "error", "versions", "raw_result_json", "raw_result_sha256"],
+  "properties": {
+    "schema_version": {"const": "1.1.0"},
+    "request_id": {"type": "string", "minLength": 1},
+    "capability_id": {"type": "string", "minLength": 1},
+    "normalized_input": {"type": "object", "additionalProperties": false, "required": ["tool", "arguments"], "properties": {"tool": {"type": "string", "minLength": 1}, "arguments": {"type": "object"}}},
+    "effective_request": {"oneOf": [{"type": "null"}, {"type": "object", "additionalProperties": false, "required": ["operation", "municipality_codes", "municipality_labels", "effective_period", "parameters", "defaults_applied", "snapshot_id", "contracts"], "properties": {"operation": {"type": "string", "minLength": 1}, "municipality_codes": {"type": "array", "items": {"type": "string"}}, "municipality_labels": {"type": "array", "items": {"type": "string"}}, "effective_period": {"type": ["string", "null"]}, "parameters": {"type": "object"}, "defaults_applied": {"type": "array", "items": {"type": "string"}}, "snapshot_id": {"type": ["string", "null"]}, "contracts": {"type": "object", "additionalProperties": false, "required": ["evidence", "capability"], "properties": {"evidence": {"type": "string"}, "capability": {"type": "string"}, "mobility": {"type": "string"}}}}}]},
+    "execution": {"type": "object", "additionalProperties": false, "required": ["request_id", "tool", "arguments_sha256", "snapshot_id", "state"], "properties": {"request_id": {"type": "string", "minLength": 1}, "tool": {"type": "string", "minLength": 1}, "arguments_sha256": {"$ref": "#/$defs/sha256"}, "snapshot_id": {"type": ["string", "null"]}, "state": {"enum": ["not_started", "completed", "failed"]}}},
+    "status": {"enum": ["valid", "no_data", "unsupported", "error"]},
+    "outcomes": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["index", "status", "error"], "properties": {"index": {"type": "integer", "minimum": 0}, "status": {"enum": ["ok", "no_feasible_journey", "unknown", "unsupported", "error"]}, "error": {"type": ["object", "null"]}}}},
+    "claims": {"type": "array", "items": {"$ref": "#/$defs/claim"}},
+    "method": {"type": "string"},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "error": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/error"}]},
+    "versions": {"type": "object", "additionalProperties": false, "required": ["data_sha256", "code_sha256", "contract_sha256"], "properties": {"data_sha256": {"$ref": "#/$defs/sha256"}, "code_sha256": {"$ref": "#/$defs/sha256"}, "contract_sha256": {"$ref": "#/$defs/sha256"}}},
+    "raw_result_json": {"type": ["string", "null"]},
+    "raw_result_sha256": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/sha256"}]}
+  },
+  "allOf": [
+    {"if": {"properties": {"status": {"const": "valid"}}}, "then": {"properties": {"error": {"type": "null"}, "raw_result_json": {"type": "string"}, "raw_result_sha256": {"$ref": "#/$defs/sha256"}}}},
+    {"if": {"properties": {"status": {"enum": ["no_data", "unsupported", "error"]}}}, "then": {"properties": {"claims": {"maxItems": 0}, "error": {"$ref": "#/$defs/error"}}}}
+  ],
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "operand": {"type": "object", "additionalProperties": false, "required": ["value", "unit", "period", "source_id", "evidence_path", "data_ref"], "properties": {"value": {"type": "number"}, "unit": {"type": "string", "minLength": 1}, "period": {"type": "string", "minLength": 1}, "source_id": {"type": "string", "minLength": 1}, "evidence_path": {"type": ["string", "null"], "pattern": "^/"}, "data_ref": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/data_ref"}]}}, "oneOf": [{"properties": {"evidence_path": {"type": "string"}, "data_ref": {"type": "null"}}}, {"properties": {"evidence_path": {"type": "null"}, "data_ref": {"$ref": "#/$defs/data_ref"}}}]},
+    "data_ref": {"type": "object", "additionalProperties": false, "required": ["path", "sha256", "municipality_code", "reference_period", "field"], "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/sha256"}, "municipality_code": {"type": "string", "minLength": 1}, "reference_period": {"type": "string", "minLength": 1}, "field": {"type": "string", "minLength": 1}}},
+    "source_ref": {"type": "object", "additionalProperties": false, "required": ["source_id", "role"], "properties": {"source_id": {"type": "string", "minLength": 1}, "role": {"type": "string", "minLength": 1}}},
+    "reference_period": {"type": "object", "additionalProperties": false, "required": ["source_id", "period"], "properties": {"source_id": {"type": "string", "minLength": 1}, "period": {"type": "string", "minLength": 1}}},
+    "claim": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "label", "value", "unit", "period", "numerator", "denominator", "source_ids", "evidence_path", "entity_type", "entity_id", "entity_label", "metric_id", "reference_periods", "source_refs", "derivation", "assumptions"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1}, "label": {"type": "string", "minLength": 1},
+        "value": {"type": ["number", "string", "boolean", "null"]}, "unit": {"type": "string", "minLength": 1}, "period": {"type": "string", "minLength": 1},
+        "numerator": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/operand"}]},
+        "denominator": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/operand"}]},
+        "source_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "evidence_path": {"type": "string", "pattern": "^/"},
+        "entity_type": {"enum": ["municipality", "municipality_set", "result", "journey", "comparison"]},
+        "entity_id": {"type": "string", "minLength": 1}, "entity_label": {"type": "string", "minLength": 1},
+        "metric_id": {"type": "string", "minLength": 1},
+        "reference_periods": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/reference_period"}},
+        "source_refs": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/source_ref"}},
+        "derivation": {"enum": ["direct", "derived_exact", "estimated_with_assumptions"]},
+        "assumptions": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "error": {"type": "object", "additionalProperties": false, "required": ["origin", "code", "message", "available_options", "safe_next_action"], "properties": {"origin": {"enum": ["domain", "data", "execution", "transport", "unknown"]}, "code": {"type": "string", "minLength": 1}, "message": {"type": "string", "minLength": 1}, "available_options": {"type": "array", "items": {"type": "string"}}, "safe_next_action": {"type": "string", "minLength": 1}}}
+  }
+}

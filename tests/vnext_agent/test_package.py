@@ -3,6 +3,7 @@ from __future__ import annotations
 import ast
 import hashlib
 import json
+import os
 import subprocess
 import sys
 import zipfile
@@ -35,5 +36,8 @@ def test_double_build_manifest_context_and_offline_execution(tmp_path):
         prompt = next(ast.literal_eval(node.value) for node in tree.body if isinstance(node, ast.Assign) and any(isinstance(target, ast.Name) and target.id == "SYSTEM_PROMPT" for target in node.targets))
         assert 10 <= len(prompt) <= 8000
         archive.extractall(tmp_path)
-    check = "import json,main; r=json.loads(main.analizar_coincidencia('primary_care', umbral_km=2.0, cuantil=0.75)); assert r['status']=='valid',r; raw=json.loads(r['raw_result_json']); assert raw['summary']['highlighted_count']==7"
-    subprocess.run([sys.executable, "-c", check], cwd=tmp_path, check=True, capture_output=True, text=True)
+    check = "import json,main; r=json.loads(main.analizar_coincidencia('primary_care', umbral_km=2.0, cuantil=0.75)); assert r['status']=='valid',r; assert 'raw_result_json' not in r; assert next(c for c in r['claims'] if c['metric_id']=='highlighted_count')['value']==7"
+    isolated_env = {**os.environ, "PYTHONPATH": "", "PYTHONNOUSERSITE": "1", "GIPUZKOA360_VNEXT_ROOT": str(tmp_path)}
+    subprocess.run([sys.executable, "-c", check], cwd=tmp_path, env=isolated_env, check=True, capture_output=True, text=True)
+    mobility = "import json,main,socket; socket.socket=lambda *a,**k: (_ for _ in ()).throw(RuntimeError('network forbidden')); assert len(main.TOOLS)==9; r=json.loads(main.plan_visit({'origin_id':'zegama_center_stops','destination_id':'beasain_center_stop_pair','date':'2026-09-29','appointment_time':'09:30','duration_minutes':30})); assert r['status']=='valid',r; assert r['outcomes'][0]['status']=='ok'; assert 'raw_result_json' not in r; c=json.loads(main.consultar_capacidades('plan_visit')); assert any(x['id']=='plan_visit' and x['enabled'] for x in c['capabilities'])"
+    subprocess.run([sys.executable, "-c", mobility], cwd=tmp_path, env=isolated_env, check=True, capture_output=True, text=True)

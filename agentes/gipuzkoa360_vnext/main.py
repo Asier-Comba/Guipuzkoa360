@@ -24,8 +24,8 @@ STUDIO_INTERNET_ENABLED = False
 STUDIO_CONTEXT_FILES = [
     "FUENTES.md",
     "docs/METODOLOGIA.md",
-    "contracts/vnext/evidence-v1.schema.json",
-    "contracts/vnext/capability-v1.schema.json",
+    "contracts/vnext/evidence-v1.1.schema.json",
+    "contracts/vnext/capability-v1.1.schema.json",
     "datos_preparados/municipios.csv",
     "datos_preparados/demografia.csv",
     "datos_preparados/runtime_municipality_points.csv",
@@ -40,8 +40,9 @@ de Gipuzkoa con las herramientas deterministas disponibles. Interpreta la intenc
 periodo, grupo de edad, categoría y criterio; elige el plan mínimo. Si la capacidad es incierta,
 consulta primero el registro. Una segunda herramienta solo se justifica si aporta evidencia distinta.
 
-Cada herramienta devuelve un sobre de evidencia. Comprueba status y error antes de responder.
-Usa únicamente cifras de claims verificados; conserva por afirmación unidad, periodo, source_ids,
+Cada herramienta devuelve una vista acotada de evidencia verificada, sin filas brutas. Comprueba
+status, error y selection antes de responder; no conviertas una selección en cobertura total.
+Usa únicamente cifras de claims verificados; conserva por afirmación sujeto, unidad, periodo, source_ids,
 denominador cuando corresponda y el límite que cambia la interpretación. No cites el hash como
 prueba de verdad o autenticidad. Si el resultado falla, no des cifras: informa el mensaje observado
 sin atribuir HTTP, timeout o red salvo que error.origin=transport lo indique.
@@ -49,8 +50,9 @@ sin atribuir HTTP, timeout o red salvo que error.origin=transport lo indique.
 En un seguimiento conserva intención y parámetros que sigan vigentes, aplica los cambios pedidos
 y vuelve a llamar la herramienta. Nunca reciclas un resultado anterior como evidencia nueva.
 Corrige a lo sumo un alias inequívoco. No cambies la intención para obtener un resultado.
-Si 50+, 70+, farmacia, citas, médicos, rutas o tiempos reales no están habilitados, explica el dato
-o contrato faltante. El piloto de movilidad W1 no está expuesto en este paquete.
+Si 50+, 70+, farmacia, citas o médicos no están habilitados, explica el dato o contrato faltante.
+La visita W1 solo calcula un viaje programado entre paradas con retorno, nunca acceso al centro
+sanitario, puerta a puerta ni tiempos reales. Conserva resultados no viables y unknown sin mezclarlos.
 
 Responde de forma natural y breve. Distingue una observación de un escenario hipotético. Distancia
 geométrica desde punto representativo no es viaje ni acceso real; un registro no acredita capacidad
@@ -112,10 +114,16 @@ def consultar_capacidades(pregunta_o_dimension: str | None = None) -> str:
     return _run("consultar_capacidades", {"pregunta_o_dimension": pregunta_o_dimension})
 
 
+@tool
+def plan_visit(request: dict[str, Any] | list[dict[str, Any]]) -> str:
+    """Plan W1 GO01 stop_only, or compare 2–32 explicit scenarios. No health-centre access."""
+    return _run("plan_visit", {"request": request})
+
+
 TOOLS = [
     obtener_resumen_territorial, comparar_municipios, analizar_envejecimiento,
     analizar_acceso_servicios, analizar_coincidencia, simular_escenario,
-    consultar_fuente, consultar_capacidades,
+    consultar_fuente, consultar_capacidades, plan_visit,
 ]
 
 

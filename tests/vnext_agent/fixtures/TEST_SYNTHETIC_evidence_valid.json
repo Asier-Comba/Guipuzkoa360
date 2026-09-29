@@ -1,15 +1,18 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "request_id": "TEST_REQUEST_001",
   "capability_id": "TEST_TOOL",
   "normalized_input": {"tool": "TEST_TOOL", "arguments": {"municipio": "TEST_MUNICIPALITY"}},
+  "effective_request": {"operation": "TEST_TOOL", "municipality_codes": [], "municipality_labels": [], "effective_period": "TEST_PERIOD", "parameters": {"municipio": "TEST_MUNICIPALITY"}, "defaults_applied": [], "snapshot_id": "TEST_SNAPSHOT", "contracts": {"evidence": "1.1.0", "capability": "1.0.0"}},
   "execution": {
     "request_id": "TEST_REQUEST_001",
     "tool": "TEST_TOOL",
     "arguments_sha256": "ea589c962969bc86cbb6afc027b987fc98f538fd83f40c0170cb253f10f7b408",
-    "snapshot_id": "TEST_SNAPSHOT"
+    "snapshot_id": "TEST_SNAPSHOT",
+    "state": "completed"
   },
   "status": "valid",
+  "outcomes": [],
   "claims": [
     {
       "id": "TEST_CLAIM_001",
@@ -17,9 +20,18 @@
       "value": 0,
       "unit": "records",
       "period": "TEST_PERIOD",
+      "numerator": null,
       "denominator": null,
       "source_ids": ["TEST_SOURCE"],
-      "evidence_path": "/data/0/count"
+      "evidence_path": "/data/0/count",
+      "entity_type": "result",
+      "entity_id": "RESULT_SCOPE",
+      "entity_label": "Resultado sintético",
+      "metric_id": "count",
+      "reference_periods": [{"source_id": "TEST_SOURCE", "period": "TEST_PERIOD"}],
+      "source_refs": [{"source_id": "TEST_SOURCE", "role": "observed_input"}],
+      "derivation": "direct",
+      "assumptions": []
     }
   ],
   "method": "TEST_SYNTHETIC direct lookup",

@@ -1,16 +1,43 @@
 {
-  "bytes": 55455,
+  "agent_name_chars": 38,
+  "bytes": 153456,
   "canonicalization": "UTF-8 and LF; sorted names; fixed ZIP metadata",
+  "context_bytes": 126577,
+  "context_file_count": 11,
+  "context_paths": [
+    "FUENTES.md",
+    "docs/METODOLOGIA.md",
+    "contracts/vnext/evidence-v1.1.schema.json",
+    "contracts/vnext/capability-v1.1.schema.json",
+    "datos_preparados/municipios.csv",
+    "datos_preparados/demografia.csv",
+    "datos_preparados/runtime_municipality_points.csv",
+    "datos_preparados/runtime_servicios.csv",
+    "datos_preparados/metadata_sources.json",
+    "datos_preparados/data_contract.json",
+    "datos_preparados/vnext/capabilities.json"
+  ],
   "entrypoint": "main.py:build_agent",
+  "health_destination_go": false,
+  "instruction_chars": 1961,
   "limit_bytes": 25165824,
+  "limit_provenance": "local_safety_limit_not_portal_rule",
   "members": {
     "FUENTES.md": {
       "bytes": 6963,
       "sha256": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de"
     },
+    "contracts/vnext/capability-v1.1.schema.json": {
+      "bytes": 3527,
+      "sha256": "66ab0036ce3a529dad3d51d193fa05970fd795bbefcab477281e5df055ff2f0b"
+    },
     "contracts/vnext/capability-v1.schema.json": {
       "bytes": 3396,
       "sha256": "1ad14eb4a825d426958d29fde54104f6d4b45e60f2e25ccc5920af23df435d4c"
+    },
+    "contracts/vnext/evidence-v1.1.schema.json": {
+      "bytes": 7357,
+      "sha256": "6fbd22a567cc5a8d8ce17fd1968c52fc92448526bf81103e2768486d724d9ad0"
     },
     "contracts/vnext/evidence-v1.schema.json": {
       "bytes": 4726,
@@ -41,23 +68,92 @@
       "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
     },
     "datos_preparados/vnext/capabilities.json": {
-      "bytes": 21091,
-      "sha256": "aa26492b3cf01d46672dc7688a0ca7825df164616d26fda02a0242c89e0006ee"
+      "bytes": 27230,
+      "sha256": "0a475647d1dd79d4597c3002ba608e2507c4b5e1d3bdee4289a4a9a7380b8832"
+    },
+    "datos_preparados/vnext/mobility_sources.json": {
+      "bytes": 867,
+      "sha256": "5f7c9aba55c1d2bc1db48ec8efaeb4be4510bdeb27010047b0a0102ffc52ad66"
     },
     "docs/METODOLOGIA.md": {
       "bytes": 1210,
       "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7"
     },
     "main.py": {
-      "bytes": 5606,
-      "sha256": "a469999659c1b6c9bd190891b340aeff384a70acf2b7eae1334a006956368419"
+      "bytes": 6071,
+      "sha256": "bb4b29f39f281668a15fdc06c470330ba89f83bab1e51dc72e5bca4790395145"
+    },
+    "mobility_adapter.py": {
+      "bytes": 19122,
+      "sha256": "5e81f223a30e231e812cc35fa3510b957b8177c577f55bbf67e165c359bf3ea8"
+    },
+    "prototypes/__init__.py": {
+      "bytes": 73,
+      "sha256": "da32847820b8ce0bc5963eb3aa2c0e5a71946243dbc92b7546b19431d18bb8eb"
+    },
+    "prototypes/ir_y_volver/__init__.py": {
+      "bytes": 210,
+      "sha256": "4173adabd908dcca574d4cd3aebefb5017fb6cd23c92f40cf3d0c1db142bce21"
+    },
+    "prototypes/ir_y_volver/contracts/v0.2.0/capabilities.schema.json": {
+      "bytes": 782,
+      "sha256": "b28ce4ef94a266ccdad5e4cb9603d486cba0d2259826a0a5bf5ecce362297d46"
+    },
+    "prototypes/ir_y_volver/contracts/v0.2.0/comparison.schema.json": {
+      "bytes": 5457,
+      "sha256": "6368ff668ce46bd7cc97447e05d4d2036c1321c63c47e91e5db9cfb141f2f942"
+    },
+    "prototypes/ir_y_volver/contracts/v0.2.0/request.schema.json": {
+      "bytes": 1345,
+      "sha256": "16f65e95dd26e09e65829331739bea4ebb59c9a2ffd12434910663365ba36f0b"
+    },
+    "prototypes/ir_y_volver/contracts/v0.2.0/result.schema.json": {
+      "bytes": 3525,
+      "sha256": "8fde2a90c42e0cf20c950bb81902d797f26a8a7a3ff1b9cb5704cf7baf48141e"
+    },
+    "prototypes/ir_y_volver/provider.py": {
+      "bytes": 21982,
+      "sha256": "c97842617f3077c2eec1892653361b4471a18e1c64f8127b808b9968401cb834"
+    },
+    "prototypes/ir_y_volver/snapshot_validation.py": {
+      "bytes": 7846,
+      "sha256": "0773a1a612b366f59ea01f80ea1dc4fc0a4650ebbd339f6b99869c4061a16d42"
+    },
+    "prototypes/ir_y_volver/snapshots/allowlist.json": {
+      "bytes": 1435,
+      "sha256": "80d67a0a10da8f4aa6f7d3a30629a35dd861da9e419ede2e7fd5c907b8217cff"
+    },
+    "prototypes/ir_y_volver/snapshots/official-goierrialdea-go01-r4-20260929.json": {
+      "bytes": 812758,
+      "sha256": "62e00c04edb96ccde0a5ce4fe81574452ddcacdb4c173b030ca49b000f5a084b"
+    },
+    "scripts/vnext_agent/w1_pin.json": {
+      "bytes": 1869,
+      "sha256": "51d75ca9a8b06afab0ee53ba960d914fdc63ef5e8c7d77be33e3a47b479059c3"
+    },
+    "tests/vnext_agent/test_contracts.py": {
+      "bytes": 10615,
+      "sha256": "8182f101056b37a9d9356bb05b81cb0b209571e0b5a4f57c7551a1760f0c76f0"
+    },
+    "tests/vnext_agent/test_mobility_binding.py": {
+      "bytes": 6784,
+      "sha256": "c1dfaccca55db59815c87b385a66cc51a9611cc820f49bef6c2f1d649f252311"
     },
     "tools.py": {
-      "bytes": 85233,
-      "sha256": "eef50df90199d478232a667f3596e714cb21dd3decf86b5eb4febcff04bd7ee4"
+      "bytes": 113504,
+      "sha256": "6223c9f1a8ccf9e812d5b253e5e11b7b95aa2d6acb2091cc4bd6dd88d656b5b1"
     }
   },
-  "mobility_binding": "PENDING; no mock or W1 snapshot bundled",
+  "mobility_binding": "PINNED_STOP_ONLY_0.2.0; W1 source and snapshot bytes verified at build time",
   "package": "GIPUZKOA360_vNext_W2_candidate",
-  "sha256": "1992cc739e8e89cd4512ad45919d1ebc102a6385628f82689a23de49de6f2661"
+  "runtime_dependencies": [
+    "Python 3.12 standard library",
+    "portal-provided studio.tool",
+    "portal-provided langchain.agents.create_agent"
+  ],
+  "sha256": "366cdc7d160ee6743cb125c6709f57e48f6ddfb91ead812a92eb881570233357",
+  "tool_count": 9,
+  "uncompressed_bytes": 1148944,
+  "w1_contract": "0.2.0",
+  "w1_pin": "725a7b73ae0381092cd80edc41b8a25432d75fcd"
 }
