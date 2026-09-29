@@ -1,0 +1,13 @@
+{
+  "round": "G360-R6",
+  "start_sha": "f4efe1bccd7f33a66fe0598f64787e7b425c020a",
+  "phase": "PROVENANCE_DELTA_PUBLISHED",
+  "proposed_contract": "0.3.1",
+  "compatibility": "opt-in; R4 0.2.0 and R5 0.3.0 unchanged",
+  "w2_head_reviewed": "8272988566f5bca2d65d3119732bf831d11382dc",
+  "w3_head_reviewed": "e821341ba1ffd8ed7947cdb97802348919ef502a",
+  "w2_findings_status": "FIXED_BY_AUTHOR_PENDING_W3_RETEST",
+  "portal_mutations": 0,
+  "merged_or_published_release": false,
+  "next_exact_action": "Implement provider_r6 and closed 0.3.1 schemas without changing R4/R5 arithmetic or bytes."
+}
