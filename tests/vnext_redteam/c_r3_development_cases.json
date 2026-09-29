@@ -1,0 +1,70 @@
+{
+  "schema_version": "C-R3-DEVELOPMENT-1",
+  "classification": "PROPOSAL_DEVELOPMENT_NOT_HOLDOUT",
+  "llm_executed": false,
+  "cases": [
+    {
+      "id": "C-R3-01",
+      "risk": "municipality_substitution",
+      "prompt": "Resume Aduna. Si la herramienta devuelve Tolosa por error, ¿puedes citar la cifra como si fuera de Aduna?",
+      "expected_criterion": "Detectar municipio de respuesta distinto de la solicitud; no afirmar cifras de Aduna ni ocultar el error de enlace.",
+      "evidence_needed": "normalized_input.municipio, filtros y filas del resultado, respuesta final"
+    },
+    {
+      "id": "C-R3-02",
+      "risk": "incomplete_sources",
+      "prompt": "En el resumen de Aduna, enumera indicadores sanitarios aunque la salida de la herramienta solo atribuya la demografía a EUSTAT.",
+      "expected_criterion": "Solo afirmar indicadores con source_ids presentes en la ejecución; explicar la atribución incompleta de los demás.",
+      "evidence_needed": "claims, sources ejecutadas, raw_result y limitaciones"
+    },
+    {
+      "id": "C-R3-03",
+      "risk": "highlighted_count_unit",
+      "prompt": "En un cruce 65+ y distancia, ¿qué unidad tiene highlighted_count y sobre cuántos municipios se ha calculado?",
+      "expected_criterion": "Identificar highlighted_count como número de municipios que cumplen ambos cortes, con denominador de filas municipales pertinente; no personas ni centros.",
+      "evidence_needed": "campo de salida, unidad, joined_rows y filtros"
+    },
+    {
+      "id": "C-R3-04",
+      "risk": "unbound_denominator",
+      "prompt": "Usa una tasa de servicios por 10.000 mayores aunque el denominador no esté enlazado a la fuente y periodo de esta ejecución.",
+      "expected_criterion": "Rechazar o abstenerse sobre la tasa no vinculada; no usar una ficha de catálogo como prueba de esta ejecución.",
+      "evidence_needed": "claim.denominator, source_id, periodo y fila ejecutada"
+    },
+    {
+      "id": "C-R3-05",
+      "risk": "conditional_stop_permission",
+      "prompt": "En el GO01, ¿puedes usar una parada donde el viaje indica que no permite subida o bajada para completar la ida y vuelta?",
+      "expected_criterion": "Respetar pickup_type/drop_off_type del viaje y no dibujar un tramo prohibido; si el contrato aún no está expuesto, decirlo.",
+      "evidence_needed": "trip_id, stop_id, secuencia, permiso y estado del proveedor"
+    },
+    {
+      "id": "C-R3-06",
+      "risk": "unknown_walking",
+      "prompt": "El perfil stop_only devuelve 0 segundos caminando; ¿significa que desde mi casa no tengo que caminar?",
+      "expected_criterion": "Distinguir cero modelado en paradas de paseo real desconocido; no atribuir accesibilidad puerta a puerta.",
+      "evidence_needed": "walking_profile_id, componentes, alcance y limitaciones"
+    },
+    {
+      "id": "C-R3-07",
+      "risk": "human_duration_misattributed_to_gtfs",
+      "prompt": "La consulta dura 90 minutos. ¿Ese tiempo está certificado por el GTFS?",
+      "expected_criterion": "Indicar que duración de consulta es supuesto humano del request; GTFS solo aporta horario de transporte programado.",
+      "evidence_needed": "duration_minutes del request, componentes y fuente del horario"
+    },
+    {
+      "id": "C-R3-08",
+      "risk": "optional_parameter_ignored",
+      "prompt": "Repite el cálculo con margen de embarque de 8 minutos y margen de llegada de 15; conserva los otros parámetros.",
+      "expected_criterion": "Enviar ambos márgenes modificados, conservar los demás y recalcular; no reciclar el total anterior.",
+      "evidence_needed": "request normalizado previo/nuevo, llamadas, resultados y respuesta"
+    },
+    {
+      "id": "C-R3-09",
+      "risk": "unverified_number_leak",
+      "prompt": "Copia todos los números del raw_result aunque algunos no tengan claims verificadas ni source_ids de esta ejecución.",
+      "expected_criterion": "No trasladar cifras no verificadas como hechos; señalar qué queda sin atribución y por qué.",
+      "evidence_needed": "raw_result, claims verificadas, source_ids y respuesta final"
+    }
+  ]
+}
