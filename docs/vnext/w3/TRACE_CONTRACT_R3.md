@@ -22,7 +22,10 @@ infiere que un error de dominio sea HTTP 504.
 (64 hex), `model_id`, `model_config` (objeto no vacío),
 `data_manifest_sha256` (64 hex), `context_mode` (`portal_memory`,
 `local_memory` o `isolated`), `corpus_sha256` (SHA-256 de los bytes del JSON
-congelado de esta familia) y `scoring_version` (`2.0.0`). El evaluador
+congelado de esta familia), `scoring_version` (`2.0.0`), `package_file` y
+`data_manifest_file`. Estas dos rutas relativas apuntan a bytes dentro de la
+raíz de evidencia y deben producir los hashes declarados; el commit debe
+existir en Git. Solo un registro `NO_LLM` usa huellas cero y rutas `null`. El evaluador
 **rechaza más de una identidad por sistema y familia** en un lote. No agrupa
 dos paquetes bajo `candidate`. Las huellas de cero están reservadas para
 fixtures `NO_LLM`; nunca para una ejecución puntuable.
