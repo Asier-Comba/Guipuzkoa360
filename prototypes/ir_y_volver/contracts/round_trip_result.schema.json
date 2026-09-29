@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gipuzkoa360.local/contracts/round_trip_result.schema.json",
+  "title": "RoundTripResult",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "normalized_request", "status", "time_basis", "scope", "snapshot_id", "itinerary", "components_s", "sources", "assumptions", "limitations", "error"],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "normalized_request": {"type": ["object", "null"]},
+    "status": {"enum": ["ok", "no_feasible_journey", "unsupported", "unknown", "error"]},
+    "time_basis": {"const": "scheduled"},
+    "scope": {"const": "stop_to_stop_with_destination_walk"},
+    "snapshot_id": {"type": ["string", "null"]},
+    "itinerary": {"type": ["object", "null"]},
+    "components_s": {"type": ["object", "null"]},
+    "sources": {"type": "array", "items": {"type": "object"}},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "error": {"type": ["object", "null"]}
+  }
+}

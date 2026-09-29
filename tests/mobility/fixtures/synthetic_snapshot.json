@@ -1,0 +1,24 @@
+{
+  "schema_version": "0.1.0",
+  "snapshot_id": "synthetic-contract-v1",
+  "fixture_kind": "SYNTHETIC_TEST_ONLY",
+  "timezone": "Europe/Madrid",
+  "coverage": {"start_date": "2026-09-28", "end_date": "2026-10-04", "validated_dates": ["2026-09-29", "2026-10-03", "2026-10-04"]},
+  "defaults": {"arrival_margin_minutes": 10, "boarding_margin_minutes": 3, "walking_profile_id": "stop_only"},
+  "walking_profiles": {"stop_only": {"description": "Fixture sin inferencia peatonal", "source": "SYNTHETIC_TEST_ONLY"}},
+  "origins": {"origin_a": {"name": "Origen sintético", "stop_ids": ["A"], "access_s_by_stop": {"A": 0}}},
+  "destinations": {"destination_b": {"name": "Destino sintético", "stop_id": "B", "walk_s": 0}},
+  "calendar": [
+    {"service_id": "WD", "monday": 1, "tuesday": 1, "wednesday": 1, "thursday": 1, "friday": 1, "saturday": 0, "sunday": 0, "start_date": "2026-09-28", "end_date": "2026-10-04"},
+    {"service_id": "WE", "monday": 0, "tuesday": 0, "wednesday": 0, "thursday": 0, "friday": 0, "saturday": 1, "sunday": 1, "start_date": "2026-09-28", "end_date": "2026-10-04"}
+  ],
+  "calendar_dates": [],
+  "trips": [
+    {"trip_id": "OUT_WD_1", "service_id": "WD", "route_id": "SYN", "stops": [{"stop_id": "A", "sequence": 1, "arrival": "08:55:00", "departure": "09:00:00", "pickup_type": 0, "drop_off_type": 1, "timepoint": 0}, {"stop_id": "B", "sequence": 2, "arrival": "09:40:00", "departure": "09:40:00", "pickup_type": 1, "drop_off_type": 0, "timepoint": 0}]},
+    {"trip_id": "BACK_WD_1", "service_id": "WD", "route_id": "SYN", "stops": [{"stop_id": "B", "sequence": 1, "arrival": "10:35:00", "departure": "10:40:00", "pickup_type": 0, "drop_off_type": 1, "timepoint": 0}, {"stop_id": "A", "sequence": 2, "arrival": "11:20:00", "departure": "11:20:00", "pickup_type": 1, "drop_off_type": 0, "timepoint": 0}]},
+    {"trip_id": "OUT_WE_1", "service_id": "WE", "route_id": "SYN", "stops": [{"stop_id": "A", "sequence": 1, "arrival": "08:50:00", "departure": "09:00:00", "pickup_type": 0, "drop_off_type": 1, "timepoint": 0}, {"stop_id": "B", "sequence": 2, "arrival": "09:35:00", "departure": "09:35:00", "pickup_type": 1, "drop_off_type": 0, "timepoint": 0}]},
+    {"trip_id": "BACK_WE_1", "service_id": "WE", "route_id": "SYN", "stops": [{"stop_id": "B", "sequence": 1, "arrival": "10:35:00", "departure": "10:45:00", "pickup_type": 0, "drop_off_type": 1, "timepoint": 0}, {"stop_id": "A", "sequence": 2, "arrival": "11:25:00", "departure": "11:25:00", "pickup_type": 1, "drop_off_type": 0, "timepoint": 0}]}
+  ],
+  "sources": [{"classification": "SYNTHETIC", "id": "synthetic-contract-v1", "purpose": "tests only"}],
+  "limitations": ["Fixture sintético; nunca debe alimentar una demo real."]
+}
