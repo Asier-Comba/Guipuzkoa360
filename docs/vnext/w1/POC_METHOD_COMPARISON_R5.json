@@ -1,0 +1,26 @@
+{
+  "classification": "METHOD_RECONSTRUCTED_ON_NEW_OSM_NOT_EXACT_POC_REPRODUCTION",
+  "GTFS_IDENTICAL": true,
+  "OSM_IDENTICAL": false,
+  "components": {
+    "GTFS": {"status": "REPRODUCED", "sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4"},
+    "OSM": {"status": "DIFFERENT_SNAPSHOT", "historical_sha256": "ac10607065653baf0a707e669f3c4f44a3631055bc7697876298b608174b66af", "historical_bytes_available": false, "new_acquisition_sha256": "d70452469ac23b81839417aabda5289f4148d428d2c2b5762347c4f90320a652"},
+    "CENTRE_SOURCE": {"status": "METHOD_EQUIVALENT", "detail": "Same official registry entity/coordinates; current page reacquired, PADI address conflict now explicit. No entrance claim."},
+    "ALGORITHM": {"status": "METHOD_EQUIVALENT", "detail": "Minimum total over feasible pairs equals independent latest outbound + earliest return for a fixed appointment. Deterministic remaining ties."},
+    "WALK_MODEL": {"status": "METHOD_EQUIVALENT", "detail": "ceil(raw metres/50)*60+120 per complete directed stop-anchor link"},
+    "CONNECTORS": {"status": "METHOD_EQUIVALENT", "detail": "Nearest admissible node, each <=100 m, explicit geometry, no disconnected resnap"},
+    "DESTINATION_STOPS": {"status": "DIFFERENT_SNAPSHOT", "historical": ["7200", "7215", "7218", "7219"], "r5": ["7215", "7218", "7219"], "detail": "7200 outside preserved R4 bbox. 7214 remains disconnected in new acquisition."},
+    "ORIGIN_STOPS": {"status": "DIFFERENT_METHOD", "detail": "R4 catalogue retained: Idiazabal 7903/7906 vs historical 7900/7900; Zegama and Segura keep origin pairs, ordinary pickup/dropoff controls eligible direction."},
+    "DIRECTION_POLICY": {"status": "DIFFERENT_METHOD", "detail": "R5 honours explicit oneway:foot and foot:forward/backward. No such tags occur in preserved acquisition; historical model was undirected."},
+    "HISTORICAL_BINARY_ARCHIVE": {"status": "NOT_AVAILABLE", "detail": "Private pack provides textual source transcriptions, not original OSM binary archive."}
+  },
+  "observed_not_hardcoded": {
+    "zegama_0930_20_total_s": 10691,
+    "zegama_0945_20_total_s": 8591,
+    "difference_s": 2100,
+    "zegama_0930_40_total_s": 10691,
+    "zegama_0945_40_total_s": 10372,
+    "difference_40_s": 319,
+    "note": "These are new calculations, not acceptance assertions against historical 35 minutes. Full matrix independently checked from CSV. Do not generalize to all municipalities or guaranteed savings."
+  }
+}

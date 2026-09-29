@@ -1,6 +1,16 @@
 # Índice actual W1
 
-Ronda vigente: **G360-R4**, contrato **0.2.0**.
+Ronda vigente: **G360-R5**, contrato opt-in **0.3.0**. Referencia canónica: [CURRENT.json](CURRENT.json).
+
+- [Handoff sanitario R5](HANDOFF_R5.md)
+- [Consumo y regeneración R5](CONSUMER_R5.md)
+- [Paquete R5 exacto](RUNTIME_MANIFEST_R5.json)
+- [Capacidades R5](CAPABILITY_DESCRIPTOR_R5.json)
+- [Matriz sanitaria R5](HEALTH_MATRIX_R5.json)
+
+Acceso **modelado al punto oficial**, no puerta verificada. R4 0.2.0 sigue congelado y utilizable por separado. El bloqueo R4 de entrada física no se borra ni se convierte retroactivamente en una prueba sanitaria; R5 distingue explícitamente ambos gates.
+
+## Histórico R4
 
 - [Handoff R4](HANDOFF_R4.md)
 - [Checkpoint R4](RESUME_R4.json)

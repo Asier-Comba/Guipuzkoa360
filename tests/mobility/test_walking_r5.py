@@ -20,6 +20,8 @@ def test_unrounded_duration(m,s):
 def test_nonfinite(value):
     with pytest.raises(ValueError): duration(value)
     with pytest.raises(ValueError): connector_allowed(value)
+    if value != -1:
+        with pytest.raises(ValueError): Network({'a':[value,0]},[],[-1,-1,1,1],'a'*64)
 
 
 @pytest.mark.parametrize('tags',[

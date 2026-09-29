@@ -1,15 +1,15 @@
 {
-  "stage": "LINUX_REBUILD_EOL_REGRESSION_FIXED_PENDING_FULL_RECHECK",
-  "tested_head": "f8dc08adac9f1a25e6c5ddd2f588bbde94a7891d local 458 PASS; Ubuntu rebuild failed XML EOL source hash, patch in working tree",
-  "working_tree_status": "New R5 files; frozen R4 files unchanged",
+  "stage": "HEALTH_PIN_READY_FINAL_EVIDENCE_COMMIT_PENDING",
+  "tested_head": "fa95fbf3e1bc273ae736f9dad36a675d50f0b5d0",
+  "working_tree_status": "Only handoff/evidence and extra nonfinite-coordinate assertion pending; runtime frozen",
   "consumed_w2": "f4615b36d0af93966e6ca0f2044288841e6574b8",
-  "consumed_w3": "cf9cd0afadc97b255c021a4ff867dab7ae6dabbc",
+  "consumed_w3": "e821341ba1ffd8ed7947cdb97802348919ef502a",
   "stable_r4_pin": "725a7b73ae0381092cd80edc41b8a25432d75fcd",
-  "health_candidate_pin": null,
-  "contract_version": "0.3.0 candidate; full suite and package gate pending",
+  "health_candidate_pin": "fa95fbf3e1bc273ae736f9dad36a675d50f0b5d0",
+  "contract_version": "0.3.0 opt-in READY; R4 0.2.0 unchanged",
   "sources": ["R4 GTFS unchanged", "R4 OSM public derivative unchanged", "Official centre page and PADI retrieved 2026-09-29", "Private ZIP 00-12 verified 12/12 manifest entries"],
-  "tests": {"walking_directed": "33 PASS", "health_directed": "27 PASS after EOL patch", "matrix": "135/135 raw CSV oracle PASS before provenance-only EOL patch", "schema": "4 standard Draft202012 validations PASS", "full_suite": "458 PASS before EOL patch; repeat new pin"},
+  "tests": {"walking_directed": "33 PASS including nonfinite-coordinate assertion", "health_directed": "27 PASS", "matrix": "135/135 raw CSV oracle PASS", "schema": "4 standard Draft202012 validations PASS", "full_suite": "459 PASS", "node": "17 PASS", "runtime_v4": "14/14 PASS", "jury_artifact": "PASS", "ci": "36630925794 Ubuntu and Windows PASS", "r4_results": "135/135 identical", "package": "109882 bytes; double build same SHA; isolated offline PASS"},
   "findings": ["Linux CI 36630418307 reproduced R5 source fingerprint changing with Git CRLF/LF; fixed canonical LF in derived identity without touching original", "7214 disconnected", "7200 outside bbox", "7215/7218/7219 modelled links available", "Official addresses conflict retained", "W2 CRITICAL binding and HIGH numerator provenance owned by W2"],
   "blocked": [],
-  "next_exact_action": "Freeze executable pin; full suite/gates, double package, fresh checkout, final consumer handoff; no portal/merge"
+  "next_exact_action": "Commit evidence, push W1, verify same-HEAD CI, publish W1_HEALTH_PIN_READY in PR15/Issue16 with exact final SHA; no portal/merge"
 }
