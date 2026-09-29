@@ -2,7 +2,7 @@
 
 - Base inmutable autorizada: `e213eaa9b73b0f8a4d1893e0269fe92fe6756955`.
 - Rama W1: `work/vnext-w1-mobility`.
-- Integración prevista: `integration/vnext-2026-10-04` (ausente al arrancar W1).
+- Integración prevista: `integration/vnext-2026-10-04`; creada después del arranque como referencia exacta a la base autorizada, sin commits propios.
 - Contrato W1: `prototypes/ir_y_volver/contracts/`, versión `0.1.0`.
 - Propiedad: únicamente las rutas autorizadas por R2.
 - G0 R2: sustituye el bootstrap anterior inexistente; no autoriza merge, portal ni cambios de v4.

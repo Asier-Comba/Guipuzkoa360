@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1.0",
+  "provider_id": "ir_y_volver",
+  "entrypoints": [
+    "get_capabilities",
+    "plan_visit",
+    "compare_visits"
+  ],
+  "time_basis": "scheduled",
+  "scope": "stop_to_stop_with_destination_walk",
+  "request_fields": {
+    "required": ["origin_id", "destination_id", "date", "appointment_time", "duration_minutes"],
+    "optional": ["arrival_margin_minutes", "boarding_margin_minutes", "walking_profile_id", "snapshot_id"]
+  },
+  "statuses": ["ok", "no_feasible_journey", "unsupported", "unknown", "error"],
+  "catalog": {
+    "default_snapshot_id": "official-goierrialdea-go01-20260928",
+    "snapshot_id": "official-goierrialdea-go01-20260928",
+    "validated_dates": ["2026-09-29"],
+    "origins": ["zegama_center_stops", "segura_herriko_plaza_stops", "idiazabal_center_stops"],
+    "destinations": ["beasain_center_stop_pair"]
+  },
+  "available": [
+    "direct scheduled round-trip feasibility",
+    "disjoint duration components in seconds",
+    "trip/service/stop/sequence traceability",
+    "pairwise total differences for comparable ok results"
+  ],
+  "derivable": [
+    "presentation minutes from exact seconds",
+    "selected-trip waiting and vehicle durations"
+  ],
+  "estimable": [],
+  "not_available": [
+    "door-to-door travel",
+    "realtime delays",
+    "transfers or multioperator routing",
+    "wheelchair accessibility certification",
+    "capacity, seats or appointments",
+    "Eustat 50+/70+ or exact attained age",
+    "clinical outcomes or causal effects"
+  ],
+  "consumer_rules": [
+    "Only status=ok authorizes an itinerary or total.",
+    "unknown is not equivalent to no service.",
+    "origin_id denotes catalogued stops, not every dwelling in a municipality.",
+    "Do not relabel scheduled as realtime or accessibility.",
+    "Preserve sources, assumptions, limitations, units and snapshot_id in user-facing answers."
+  ]
+}

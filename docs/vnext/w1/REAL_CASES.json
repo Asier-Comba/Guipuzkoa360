@@ -1,0 +1,639 @@
+{
+  "schema_version": "0.1.0",
+  "snapshot_id": "official-goierrialdea-go01-20260928",
+  "snapshot_sha256": "30fc9d638f3576ae0e1084ee1e0c7b0268469bffc8af1dd15fd12430019d968b",
+  "source_gtfs_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+  "date": "2026-09-29",
+  "cases": [
+    {
+      "case_id": "W1-RC-01",
+      "classification": "VERIFIED_LIVE_SOURCE_SNAPSHOT",
+      "question": "¿Puedo ir y volver desde zegama_center_stops para una cita a las 09:30 de 30 minutos?",
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_center_stop_pair",
+        "date": "2026-09-29",
+        "appointment_time": "09:30",
+        "duration_minutes": 30,
+        "snapshot_id": "official-goierrialdea-go01-20260928"
+      },
+      "expected": {
+        "status": "ok",
+        "total_s": 8411,
+        "outbound_trip_id": "1_101_LJ_31500",
+        "return_trip_id": "1_106_LJ_37200"
+      },
+      "source_rows": {
+        "outbound": {
+          "trip_id": "1_101_LJ_31500",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "8305",
+          "to_stop_id": "7214",
+          "from_stop_sequence": 2,
+          "to_stop_sequence": 28,
+          "departure_time": "08:47:37",
+          "arrival_time": "09:17:50",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        },
+        "return": {
+          "trip_id": "1_106_LJ_37200",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "7218",
+          "to_stop_id": "8309",
+          "from_stop_sequence": 8,
+          "to_stop_sequence": 35,
+          "departure_time": "10:29:50",
+          "arrival_time": "11:07:48",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        }
+      },
+      "components_s": {
+        "origin_access_outbound_s": 0,
+        "outbound_vehicle_s": 1813,
+        "destination_walk_outbound_s": 0,
+        "pre_appointment_wait_s": 730,
+        "appointment_s": 1800,
+        "destination_walk_return_s": 0,
+        "return_wait_s": 1790,
+        "return_vehicle_s": 2278,
+        "origin_access_return_s": 0
+      },
+      "oracle": "Enumeración independiente de parejas sobre stop_times; ver test_ten_official_rows_against_independent_oracle."
+    },
+    {
+      "case_id": "W1-RC-02",
+      "classification": "VERIFIED_LIVE_SOURCE_SNAPSHOT",
+      "question": "¿Puedo ir y volver desde zegama_center_stops para una cita a las 10:00 de 30 minutos?",
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_center_stop_pair",
+        "date": "2026-09-29",
+        "appointment_time": "10:00",
+        "duration_minutes": 30,
+        "snapshot_id": "official-goierrialdea-go01-20260928"
+      },
+      "expected": {
+        "status": "ok",
+        "total_s": 8392,
+        "outbound_trip_id": "1_105_LJ_33300",
+        "return_trip_id": "1_102_LJ_38700"
+      },
+      "source_rows": {
+        "outbound": {
+          "trip_id": "1_105_LJ_33300",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "8305",
+          "to_stop_id": "7214",
+          "from_stop_sequence": 2,
+          "to_stop_sequence": 28,
+          "departure_time": "09:17:37",
+          "arrival_time": "09:47:50",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        },
+        "return": {
+          "trip_id": "1_102_LJ_38700",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "7218",
+          "to_stop_id": "8309",
+          "from_stop_sequence": 13,
+          "to_stop_sequence": 40,
+          "departure_time": "10:59:31",
+          "arrival_time": "11:37:29",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        }
+      },
+      "components_s": {
+        "origin_access_outbound_s": 0,
+        "outbound_vehicle_s": 1813,
+        "destination_walk_outbound_s": 0,
+        "pre_appointment_wait_s": 730,
+        "appointment_s": 1800,
+        "destination_walk_return_s": 0,
+        "return_wait_s": 1771,
+        "return_vehicle_s": 2278,
+        "origin_access_return_s": 0
+      },
+      "oracle": "Enumeración independiente de parejas sobre stop_times; ver test_ten_official_rows_against_independent_oracle."
+    },
+    {
+      "case_id": "W1-RC-03",
+      "classification": "VERIFIED_LIVE_SOURCE_SNAPSHOT",
+      "question": "¿Puedo ir y volver desde zegama_center_stops para una cita a las 15:00 de 30 minutos?",
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_center_stop_pair",
+        "date": "2026-09-29",
+        "appointment_time": "15:00",
+        "duration_minutes": 30,
+        "snapshot_id": "official-goierrialdea-go01-20260928"
+      },
+      "expected": {
+        "status": "ok",
+        "total_s": 8692,
+        "outbound_trip_id": "1_101_LJ_51000",
+        "return_trip_id": "1_102_LJ_56700"
+      },
+      "source_rows": {
+        "outbound": {
+          "trip_id": "1_101_LJ_51000",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "8305",
+          "to_stop_id": "7214",
+          "from_stop_sequence": 2,
+          "to_stop_sequence": 28,
+          "departure_time": "14:12:37",
+          "arrival_time": "14:42:50",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        },
+        "return": {
+          "trip_id": "1_102_LJ_56700",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "7218",
+          "to_stop_id": "8309",
+          "from_stop_sequence": 13,
+          "to_stop_sequence": 40,
+          "departure_time": "15:59:31",
+          "arrival_time": "16:37:29",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        }
+      },
+      "components_s": {
+        "origin_access_outbound_s": 0,
+        "outbound_vehicle_s": 1813,
+        "destination_walk_outbound_s": 0,
+        "pre_appointment_wait_s": 1030,
+        "appointment_s": 1800,
+        "destination_walk_return_s": 0,
+        "return_wait_s": 1771,
+        "return_vehicle_s": 2278,
+        "origin_access_return_s": 0
+      },
+      "oracle": "Enumeración independiente de parejas sobre stop_times; ver test_ten_official_rows_against_independent_oracle."
+    },
+    {
+      "case_id": "W1-RC-04",
+      "classification": "VERIFIED_LIVE_SOURCE_SNAPSHOT",
+      "question": "¿Puedo ir y volver desde zegama_center_stops para una cita a las 17:00 de 30 minutos?",
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_center_stop_pair",
+        "date": "2026-09-29",
+        "appointment_time": "17:00",
+        "duration_minutes": 30,
+        "snapshot_id": "official-goierrialdea-go01-20260928"
+      },
+      "expected": {
+        "status": "ok",
+        "total_s": 8392,
+        "outbound_trip_id": "1_101_LJ_58500",
+        "return_trip_id": "1_102_LJ_63900"
+      },
+      "source_rows": {
+        "outbound": {
+          "trip_id": "1_101_LJ_58500",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "8305",
+          "to_stop_id": "7214",
+          "from_stop_sequence": 2,
+          "to_stop_sequence": 28,
+          "departure_time": "16:17:37",
+          "arrival_time": "16:47:50",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        },
+        "return": {
+          "trip_id": "1_102_LJ_63900",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "7218",
+          "to_stop_id": "8309",
+          "from_stop_sequence": 13,
+          "to_stop_sequence": 40,
+          "departure_time": "17:59:31",
+          "arrival_time": "18:37:29",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        }
+      },
+      "components_s": {
+        "origin_access_outbound_s": 0,
+        "outbound_vehicle_s": 1813,
+        "destination_walk_outbound_s": 0,
+        "pre_appointment_wait_s": 730,
+        "appointment_s": 1800,
+        "destination_walk_return_s": 0,
+        "return_wait_s": 1771,
+        "return_vehicle_s": 2278,
+        "origin_access_return_s": 0
+      },
+      "oracle": "Enumeración independiente de parejas sobre stop_times; ver test_ten_official_rows_against_independent_oracle."
+    },
+    {
+      "case_id": "W1-RC-05",
+      "classification": "VERIFIED_LIVE_SOURCE_SNAPSHOT",
+      "question": "¿Puedo ir y volver desde segura_herriko_plaza_stops para una cita a las 09:30 de 30 minutos?",
+      "request": {
+        "origin_id": "segura_herriko_plaza_stops",
+        "destination_id": "beasain_center_stop_pair",
+        "date": "2026-09-29",
+        "appointment_time": "09:30",
+        "duration_minutes": 30,
+        "snapshot_id": "official-goierrialdea-go01-20260928"
+      },
+      "expected": {
+        "status": "ok",
+        "total_s": 7362,
+        "outbound_trip_id": "1_101_LJ_31500",
+        "return_trip_id": "1_106_LJ_37200"
+      },
+      "source_rows": {
+        "outbound": {
+          "trip_id": "1_101_LJ_31500",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "7801",
+          "to_stop_id": "7214",
+          "from_stop_sequence": 10,
+          "to_stop_sequence": 28,
+          "departure_time": "08:55:33",
+          "arrival_time": "09:17:50",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        },
+        "return": {
+          "trip_id": "1_106_LJ_37200",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "7218",
+          "to_stop_id": "7813",
+          "from_stop_sequence": 8,
+          "to_stop_sequence": 27,
+          "departure_time": "10:29:50",
+          "arrival_time": "10:58:15",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        }
+      },
+      "components_s": {
+        "origin_access_outbound_s": 0,
+        "outbound_vehicle_s": 1337,
+        "destination_walk_outbound_s": 0,
+        "pre_appointment_wait_s": 730,
+        "appointment_s": 1800,
+        "destination_walk_return_s": 0,
+        "return_wait_s": 1790,
+        "return_vehicle_s": 1705,
+        "origin_access_return_s": 0
+      },
+      "oracle": "Enumeración independiente de parejas sobre stop_times; ver test_ten_official_rows_against_independent_oracle."
+    },
+    {
+      "case_id": "W1-RC-06",
+      "classification": "VERIFIED_LIVE_SOURCE_SNAPSHOT",
+      "question": "¿Puedo ir y volver desde segura_herriko_plaza_stops para una cita a las 13:00 de 30 minutos?",
+      "request": {
+        "origin_id": "segura_herriko_plaza_stops",
+        "destination_id": "beasain_center_stop_pair",
+        "date": "2026-09-29",
+        "appointment_time": "13:00",
+        "duration_minutes": 30,
+        "snapshot_id": "official-goierrialdea-go01-20260928"
+      },
+      "expected": {
+        "status": "ok",
+        "total_s": 9292,
+        "outbound_trip_id": "1_101_LJ_43800",
+        "return_trip_id": "1_110_LJ_50400"
+      },
+      "source_rows": {
+        "outbound": {
+          "trip_id": "1_101_LJ_43800",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "7801",
+          "to_stop_id": "7214",
+          "from_stop_sequence": 10,
+          "to_stop_sequence": 28,
+          "departure_time": "12:20:33",
+          "arrival_time": "12:42:50",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        },
+        "return": {
+          "trip_id": "1_110_LJ_50400",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "7218",
+          "to_stop_id": "7813",
+          "from_stop_sequence": 14,
+          "to_stop_sequence": 33,
+          "departure_time": "14:27:00",
+          "arrival_time": "14:55:25",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        }
+      },
+      "components_s": {
+        "origin_access_outbound_s": 0,
+        "outbound_vehicle_s": 1337,
+        "destination_walk_outbound_s": 0,
+        "pre_appointment_wait_s": 1030,
+        "appointment_s": 1800,
+        "destination_walk_return_s": 0,
+        "return_wait_s": 3420,
+        "return_vehicle_s": 1705,
+        "origin_access_return_s": 0
+      },
+      "oracle": "Enumeración independiente de parejas sobre stop_times; ver test_ten_official_rows_against_independent_oracle."
+    },
+    {
+      "case_id": "W1-RC-07",
+      "classification": "VERIFIED_LIVE_SOURCE_SNAPSHOT",
+      "question": "¿Puedo ir y volver desde segura_herriko_plaza_stops para una cita a las 19:00 de 30 minutos?",
+      "request": {
+        "origin_id": "segura_herriko_plaza_stops",
+        "destination_id": "beasain_center_stop_pair",
+        "date": "2026-09-29",
+        "appointment_time": "19:00",
+        "duration_minutes": 30,
+        "snapshot_id": "official-goierrialdea-go01-20260928"
+      },
+      "expected": {
+        "status": "ok",
+        "total_s": 9143,
+        "outbound_trip_id": "1_101_LJ_63900",
+        "return_trip_id": "1_102_LJ_71100"
+      },
+      "source_rows": {
+        "outbound": {
+          "trip_id": "1_101_LJ_63900",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "7801",
+          "to_stop_id": "7214",
+          "from_stop_sequence": 10,
+          "to_stop_sequence": 28,
+          "departure_time": "17:55:33",
+          "arrival_time": "18:17:50",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        },
+        "return": {
+          "trip_id": "1_102_LJ_71100",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "7218",
+          "to_stop_id": "7813",
+          "from_stop_sequence": 13,
+          "to_stop_sequence": 32,
+          "departure_time": "19:59:31",
+          "arrival_time": "20:27:56",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        }
+      },
+      "components_s": {
+        "origin_access_outbound_s": 0,
+        "outbound_vehicle_s": 1337,
+        "destination_walk_outbound_s": 0,
+        "pre_appointment_wait_s": 2530,
+        "appointment_s": 1800,
+        "destination_walk_return_s": 0,
+        "return_wait_s": 1771,
+        "return_vehicle_s": 1705,
+        "origin_access_return_s": 0
+      },
+      "oracle": "Enumeración independiente de parejas sobre stop_times; ver test_ten_official_rows_against_independent_oracle."
+    },
+    {
+      "case_id": "W1-RC-08",
+      "classification": "VERIFIED_LIVE_SOURCE_SNAPSHOT",
+      "question": "¿Puedo ir y volver desde idiazabal_center_stops para una cita a las 10:00 de 30 minutos?",
+      "request": {
+        "origin_id": "idiazabal_center_stops",
+        "destination_id": "beasain_center_stop_pair",
+        "date": "2026-09-29",
+        "appointment_time": "10:00",
+        "duration_minutes": 30,
+        "snapshot_id": "official-goierrialdea-go01-20260928"
+      },
+      "expected": {
+        "status": "ok",
+        "total_s": 6210,
+        "outbound_trip_id": "1_105_LJ_33300",
+        "return_trip_id": "1_102_LJ_38700"
+      },
+      "source_rows": {
+        "outbound": {
+          "trip_id": "1_105_LJ_33300",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "7903",
+          "to_stop_id": "7214",
+          "from_stop_sequence": 16,
+          "to_stop_sequence": 28,
+          "departure_time": "09:34:46",
+          "arrival_time": "09:47:50",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        },
+        "return": {
+          "trip_id": "1_102_LJ_38700",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "7218",
+          "to_stop_id": "7906",
+          "from_stop_sequence": 13,
+          "to_stop_sequence": 23,
+          "departure_time": "10:59:31",
+          "arrival_time": "11:18:16",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        }
+      },
+      "components_s": {
+        "origin_access_outbound_s": 0,
+        "outbound_vehicle_s": 784,
+        "destination_walk_outbound_s": 0,
+        "pre_appointment_wait_s": 730,
+        "appointment_s": 1800,
+        "destination_walk_return_s": 0,
+        "return_wait_s": 1771,
+        "return_vehicle_s": 1125,
+        "origin_access_return_s": 0
+      },
+      "oracle": "Enumeración independiente de parejas sobre stop_times; ver test_ten_official_rows_against_independent_oracle."
+    },
+    {
+      "case_id": "W1-RC-09",
+      "classification": "VERIFIED_LIVE_SOURCE_SNAPSHOT",
+      "question": "¿Puedo ir y volver desde idiazabal_center_stops para una cita a las 12:00 de 30 minutos?",
+      "request": {
+        "origin_id": "idiazabal_center_stops",
+        "destination_id": "beasain_center_stop_pair",
+        "date": "2026-09-29",
+        "appointment_time": "12:00",
+        "duration_minutes": 30,
+        "snapshot_id": "official-goierrialdea-go01-20260928"
+      },
+      "expected": {
+        "status": "ok",
+        "total_s": 8010,
+        "outbound_trip_id": "1_101_LJ_38700",
+        "return_trip_id": "1_102_LJ_45900"
+      },
+      "source_rows": {
+        "outbound": {
+          "trip_id": "1_101_LJ_38700",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "7903",
+          "to_stop_id": "7214",
+          "from_stop_sequence": 16,
+          "to_stop_sequence": 28,
+          "departure_time": "11:04:46",
+          "arrival_time": "11:17:50",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        },
+        "return": {
+          "trip_id": "1_102_LJ_45900",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "7218",
+          "to_stop_id": "7906",
+          "from_stop_sequence": 13,
+          "to_stop_sequence": 23,
+          "departure_time": "12:59:31",
+          "arrival_time": "13:18:16",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        }
+      },
+      "components_s": {
+        "origin_access_outbound_s": 0,
+        "outbound_vehicle_s": 784,
+        "destination_walk_outbound_s": 0,
+        "pre_appointment_wait_s": 2530,
+        "appointment_s": 1800,
+        "destination_walk_return_s": 0,
+        "return_wait_s": 1771,
+        "return_vehicle_s": 1125,
+        "origin_access_return_s": 0
+      },
+      "oracle": "Enumeración independiente de parejas sobre stop_times; ver test_ten_official_rows_against_independent_oracle."
+    },
+    {
+      "case_id": "W1-RC-10",
+      "classification": "VERIFIED_LIVE_SOURCE_SNAPSHOT",
+      "question": "¿Puedo ir y volver desde idiazabal_center_stops para una cita a las 17:00 de 30 minutos?",
+      "request": {
+        "origin_id": "idiazabal_center_stops",
+        "destination_id": "beasain_center_stop_pair",
+        "date": "2026-09-29",
+        "appointment_time": "17:00",
+        "duration_minutes": 30,
+        "snapshot_id": "official-goierrialdea-go01-20260928"
+      },
+      "expected": {
+        "status": "ok",
+        "total_s": 6210,
+        "outbound_trip_id": "1_101_LJ_58500",
+        "return_trip_id": "1_102_LJ_63900"
+      },
+      "source_rows": {
+        "outbound": {
+          "trip_id": "1_101_LJ_58500",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "7903",
+          "to_stop_id": "7214",
+          "from_stop_sequence": 16,
+          "to_stop_sequence": 28,
+          "departure_time": "16:34:46",
+          "arrival_time": "16:47:50",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        },
+        "return": {
+          "trip_id": "1_102_LJ_63900",
+          "route_id": "1",
+          "service_id": "LJ",
+          "from_stop_id": "7218",
+          "to_stop_id": "7906",
+          "from_stop_sequence": 13,
+          "to_stop_sequence": 23,
+          "departure_time": "17:59:31",
+          "arrival_time": "18:18:16",
+          "pickup_type": 0,
+          "drop_off_type": 0,
+          "from_timepoint": 0,
+          "to_timepoint": 0
+        }
+      },
+      "components_s": {
+        "origin_access_outbound_s": 0,
+        "outbound_vehicle_s": 784,
+        "destination_walk_outbound_s": 0,
+        "pre_appointment_wait_s": 730,
+        "appointment_s": 1800,
+        "destination_walk_return_s": 0,
+        "return_wait_s": 1771,
+        "return_vehicle_s": 1125,
+        "origin_access_return_s": 0
+      },
+      "oracle": "Enumeración independiente de parejas sobre stop_times; ver test_ten_official_rows_against_independent_oracle."
+    }
+  ]
+}
