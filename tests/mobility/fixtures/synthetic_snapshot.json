@@ -7,7 +7,7 @@
   "defaults": {"arrival_margin_minutes": 10, "boarding_margin_minutes": 3, "walking_profile_id": "stop_only"},
   "walking_profiles": {"stop_only": {"description": "Fixture sin inferencia peatonal", "source": "SYNTHETIC_TEST_ONLY"}},
   "origins": {"origin_a": {"name": "Origen sintético", "stop_ids": ["A"], "access_s_by_stop": {"A": 0}}},
-  "destinations": {"destination_b": {"name": "Destino sintético", "stop_id": "B", "walk_s": 0}},
+  "destinations": {"destination_b": {"name": "Destino sintético", "stop_ids": ["B"], "walk_s_by_stop": {"B": 0}}},
   "calendar": [
     {"service_id": "WD", "monday": 1, "tuesday": 1, "wednesday": 1, "thursday": 1, "friday": 1, "saturday": 0, "sunday": 0, "start_date": "2026-09-28", "end_date": "2026-10-04"},
     {"service_id": "WE", "monday": 0, "tuesday": 0, "wednesday": 0, "thursday": 0, "friday": 0, "saturday": 1, "sunday": 1, "start_date": "2026-09-28", "end_date": "2026-10-04"}
