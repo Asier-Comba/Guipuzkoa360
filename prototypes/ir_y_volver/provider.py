@@ -5,18 +5,21 @@ from __future__ import annotations
 import json
 import math
 import re
+import hashlib
 from datetime import date
 from pathlib import Path
 from typing import Any
 
 
-SCHEMA_VERSION = "0.1.0"
+from prototypes.ir_y_volver.snapshot_validation import SnapshotError, strict_loads, validate, enum
+
+SCHEMA_VERSION = "0.2.0"
 TIME_BASIS = "scheduled"
-SCOPE = "stop_to_stop_with_destination_walk"
-DEFAULT_SNAPSHOT_ID = "official-goierrialdea-go01-20260928"
+SCOPE = "origin_stop_presence_to_return_stop_arrival"
+DEFAULT_SNAPSHOT_ID = "official-goierrialdea-go01-r4-20260929"
 STATUSES = ["ok", "no_feasible_journey", "unsupported", "unknown", "error"]
 ROOT = Path(__file__).resolve().parents[2]
-SNAPSHOT_DIRS = [Path(__file__).with_name("snapshots"), ROOT / "tests" / "mobility" / "fixtures"]
+MANIFEST_PATH = Path(__file__).with_name("snapshots") / "allowlist.json"
 ALLOWED_FIELDS = {
     "origin_id",
     "destination_id",
@@ -27,48 +30,52 @@ ALLOWED_FIELDS = {
     "boarding_margin_minutes",
     "walking_profile_id",
     "snapshot_id",
+    "return_deadline",
 }
 
 
-class SnapshotError(ValueError):
-    """Snapshot ausente o internamente incoherente."""
-
-
-def _snapshot_paths() -> list[Path]:
-    return sorted(path for directory in SNAPSHOT_DIRS if directory.exists() for path in directory.glob("*.json"))
-
-
 def _load_snapshot(snapshot_id: str) -> dict[str, Any]:
-    for path in _snapshot_paths():
-        try:
-            payload = json.loads(path.read_text(encoding="utf-8"))
-        except (OSError, json.JSONDecodeError) as exc:
-            raise SnapshotError(f"No se pudo leer {path.name}: {exc}") from exc
-        if payload.get("snapshot_id") == snapshot_id:
-            _validate_snapshot(payload)
-            return payload
-    raise FileNotFoundError(snapshot_id)
+    if snapshot_id.startswith("TEST_") or snapshot_id.startswith("synthetic"):
+        raise FileNotFoundError(snapshot_id)
+    try:
+        manifest = strict_loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+        if type(manifest) is not dict or manifest.get("schema_version") != SCHEMA_VERSION:
+            raise SnapshotError("invalid allowlist")
+        records = manifest["snapshots"]
+        if type(records) is not dict:
+            raise SnapshotError("invalid allowlist entries")
+        if snapshot_id not in records:
+            raise FileNotFoundError(snapshot_id)
+        entry = records[snapshot_id]
+        if entry["validation_status"] != "VALIDATED_STOP_ONLY" or entry["schema_version"] != SCHEMA_VERSION:
+            raise SnapshotError("snapshot not validated")
+        filename = entry["file"]
+        if type(filename) is not str or not re.fullmatch(r"[a-zA-Z0-9_-]+\.json", filename):
+            raise SnapshotError("invalid allowlist path")
+        raw = (MANIFEST_PATH.parent / filename).read_bytes()
+        if hashlib.sha256(raw).hexdigest() != entry["sha256"]:
+            raise SnapshotError("snapshot hash mismatch")
+        payload = strict_loads(raw)
+        _validate_snapshot(payload)
+        if payload["snapshot_id"] != snapshot_id or payload.get("fixture_kind") != "OFFICIAL_DERIVED":
+            raise SnapshotError("snapshot identity/classification mismatch")
+        for key in ("coverage", "sources", "walking_profiles"):
+            if payload[key] != entry[key]:
+                raise SnapshotError("manifest metadata mismatch: " + key)
+        return payload
+    except FileNotFoundError as exc:
+        if exc.filename is None:
+            raise
+        raise SnapshotError("missing allowlisted file") from exc
+    except (OSError, ValueError, TypeError, KeyError, AttributeError) as exc:
+        raise SnapshotError(str(exc)) from exc
 
 
 def _validate_snapshot(snapshot: dict[str, Any]) -> None:
-    required = {"snapshot_id", "timezone", "coverage", "defaults", "origins", "destinations", "calendar", "trips"}
-    missing = sorted(required - snapshot.keys())
-    if missing:
-        raise SnapshotError(f"Faltan claves del snapshot: {missing}")
-    if snapshot["timezone"] != "Europe/Madrid":
-        raise SnapshotError("La zona horaria debe ser Europe/Madrid")
-    seen: set[str] = set()
-    for trip in snapshot["trips"]:
-        trip_id = str(trip.get("trip_id", ""))
-        if not trip_id or trip_id in seen:
-            raise SnapshotError("trip_id ausente o duplicado")
-        seen.add(trip_id)
-        sequences = [int(item["sequence"]) for item in trip.get("stops", [])]
-        if len(sequences) != len(set(sequences)) or sequences != sorted(sequences):
-            raise SnapshotError(f"Secuencia inválida en {trip_id}")
-        for item in trip.get("stops", []):
-            _seconds(item["arrival"])
-            _seconds(item["departure"])
+    try:
+        validate(snapshot)
+    except (ValueError, TypeError, KeyError, AttributeError, OverflowError) as exc:
+        raise SnapshotError(str(exc)) from exc
 
 
 def _seconds(value: str) -> int:
@@ -116,15 +123,19 @@ def _base(status: str, snapshot_id: str | None, normalized: dict[str, Any] | Non
         "schema_version": SCHEMA_VERSION,
         "normalized_request": normalized,
         "status": status,
+        "scenario_kind": (snapshot or {}).get("scenario_kind"),
         "time_basis": TIME_BASIS,
         "scope": SCOPE,
         "snapshot_id": snapshot_id,
         "itinerary": None,
         "components_s": None,
+        "components": None,
         "sources": list((snapshot or {}).get("sources", [])),
         "assumptions": [
             "Horarios programados; no incorpora incidencias ni retrasos en tiempo real.",
             "La búsqueda solo contempla viajes directos y paradas declaradas en el catálogo.",
+            "Solo embarque y desembarque ordinarios; no se presume reserva ni acuerdo con conductor.",
+            "Inicio en parada con margen de embarque; no incluye acceso desde domicilio.",
         ],
         "limitations": list((snapshot or {}).get("limitations", [])),
         "error": error,
@@ -158,7 +169,13 @@ def _normalize(request: dict[str, Any], snapshot: dict[str, Any]) -> dict[str, A
         "walking_profile_id": request.get("walking_profile_id", defaults["walking_profile_id"]),
         "snapshot_id": snapshot["snapshot_id"],
         "timezone": "Europe/Madrid",
+        "return_deadline": request.get("return_deadline"),
     }
+    if normalized["return_deadline"] is not None:
+        if not isinstance(normalized["return_deadline"], str):
+            raise ValueError("return_deadline debe ser hora o null")
+        value = _clock_seconds(normalized["return_deadline"])
+        normalized["return_deadline"] = f"{value // 3600:02d}:{value % 3600 // 60:02d}:{value % 60:02d}"
     if not isinstance(normalized["walking_profile_id"], str) or normalized["walking_profile_id"] not in snapshot.get("walking_profiles", {}):
         raise ValueError("walking_profile_id no soportado")
     return normalized
@@ -196,10 +213,10 @@ def _legs(snapshot: dict[str, Any], active: set[str], from_stops: set[str], to_s
             continue
         items = trip["stops"]
         for start_index, start in enumerate(items):
-            if str(start["stop_id"]) not in from_stops or int(start.get("pickup_type", 0)) == 1:
+            if str(start["stop_id"]) not in from_stops or enum(start.get("pickup_type", 0), (0,1,2,3), 0) != 0:
                 continue
             for end in items[start_index + 1 :]:
-                if str(end["stop_id"]) not in to_stops or int(end.get("drop_off_type", 0)) == 1:
+                if str(end["stop_id"]) not in to_stops or enum(end.get("drop_off_type", 0), (0,1,2,3), 0) != 0:
                     continue
                 departure = _seconds(start["departure"])
                 arrival = _seconds(end["arrival"])
@@ -217,10 +234,10 @@ def _legs(snapshot: dict[str, Any], active: set[str], from_stops: set[str], to_s
                     "arrival_time": end["arrival"],
                     "departure_s": departure,
                     "arrival_s": arrival,
-                    "pickup_type": int(start.get("pickup_type", 0)),
-                    "drop_off_type": int(end.get("drop_off_type", 0)),
-                    "from_timepoint": int(start.get("timepoint", 0)),
-                    "to_timepoint": int(end.get("timepoint", 0)),
+                    "pickup_type": enum(start.get("pickup_type", 0), (0,1,2,3), 0),
+                    "drop_off_type": enum(end.get("drop_off_type", 0), (0,1,2,3), 0),
+                    "from_timepoint": enum(start.get("timepoint", 1), (0,1), 1),
+                    "to_timepoint": enum(end.get("timepoint", 1), (0,1), 1),
                 })
     return legs
 
@@ -231,6 +248,7 @@ def plan_visit(request: dict[str, Any]) -> dict[str, Any]:
         return _base("error", None, None, None, error={"code": "invalid_request", "message": "snapshot_id debe ser texto no vacío cuando se proporciona"})
     try:
         snapshot = _load_snapshot(requested_snapshot)
+        _validate_snapshot(snapshot)
     except FileNotFoundError:
         return _base("unknown", requested_snapshot, None, None, error={"code": "snapshot_not_found", "message": "El snapshot solicitado no está disponible"})
     except SnapshotError as exc:
@@ -270,20 +288,30 @@ def plan_visit(request: dict[str, Any]) -> dict[str, Any]:
     duration_s = normalized["duration_minutes"] * 60
     arrival_margin_s = normalized["arrival_margin_minutes"] * 60
     boarding_margin_s = normalized["boarding_margin_minutes"] * 60
+    deadline = _clock_seconds(normalized["return_deadline"]) if normalized["return_deadline"] else 86399
+    if appointment_s + duration_s >= 86400:
+        return _base("unsupported", requested_snapshot, normalized, snapshot, error={"code":"cross_day_appointment", "message":"Consulta fuera del mismo día civil"})
+    # No timezone database dependency: transition Sundays in Europe/Madrid are excluded.
+    if target.month in (3, 10) and target.weekday() == 6 and target.day >= 25:
+        return _base("unsupported", requested_snapshot, normalized, snapshot, error={"code":"dst_transition", "message":"Día de transición horaria no soportado"})
+    if any(leg["arrival_s"] >= 86400 or leg["departure_s"] >= 86400 for leg in outbound + inbound):
+        return _base("unsupported", requested_snapshot, normalized, snapshot, error={"code":"multiday_service", "message":"El corredor contiene viajes que cruzan el día civil"})
     pairs: list[tuple[int, str, str, dict[str, Any], dict[str, Any], dict[str, int]]] = []
     for out in outbound:
         out_walk = destination_walk_by_stop[out["to_stop_id"]]
-        origin_access = origin_access_by_stop[out["from_stop_id"]]
+        if out["departure_s"] - boarding_margin_s < 0:
+            continue
         if out["arrival_s"] + out_walk > appointment_s - arrival_margin_s:
             continue
         ready_return_s = appointment_s + duration_s
         for back in inbound:
             back_walk = destination_walk_by_stop[back["from_stop_id"]]
-            return_access = origin_access_by_stop[back["to_stop_id"]]
+            if back["arrival_s"] > deadline:
+                continue
             if back["departure_s"] < ready_return_s + back_walk + boarding_margin_s:
                 continue
             components = {
-                "origin_access_outbound_s": origin_access,
+                "initial_wait_s": boarding_margin_s,
                 "outbound_vehicle_s": out["arrival_s"] - out["departure_s"],
                 "destination_walk_outbound_s": out_walk,
                 "pre_appointment_wait_s": appointment_s - out["arrival_s"] - out_walk,
@@ -291,7 +319,6 @@ def plan_visit(request: dict[str, Any]) -> dict[str, Any]:
                 "destination_walk_return_s": back_walk,
                 "return_wait_s": back["departure_s"] - ready_return_s - back_walk,
                 "return_vehicle_s": back["arrival_s"] - back["departure_s"],
-                "origin_access_return_s": return_access,
             }
             if any(value < 0 or not math.isfinite(value) for value in components.values()):
                 continue
@@ -302,15 +329,33 @@ def plan_visit(request: dict[str, Any]) -> dict[str, Any]:
         result["error"] = {"code": "no_pair_in_complete_direct_search", "message": "No hay pareja directa viable en el alcance completo del snapshot"}
         return result
     total, _, _, out, back, components = min(pairs, key=lambda item: (item[0], item[1], item[2]))
+    cursor = out["departure_s"] - boarding_margin_s
+    timeline = []
+    for kind, duration in components.items():
+        basis = ("parameter:boarding_margin_minutes" if kind == "initial_wait_s" else
+                 "parameter:duration_minutes" if kind == "appointment_s" else
+                 "assumption:stop_only_explicit_zero" if "walk" in kind else
+                 "source:GTFS stop_times + effective appointment parameters")
+        timeline.append({"kind":kind[:-2], "start_s":cursor, "end_s":cursor+duration,
+                         "seconds":duration, "basis":basis, "derivation":"end_s - start_s"})
+        cursor += duration
+    assert cursor == back["arrival_s"]
     result.update({
         "status": "ok",
         "itinerary": {
             "outbound": {key: value for key, value in out.items() if not key.endswith("_s")},
             "return": {key: value for key, value in back.items() if not key.endswith("_s")},
             "total_s": total,
+            "start_s": out["departure_s"] - boarding_margin_s,
+            "end_s": back["arrival_s"],
+            "vehicle_span_s": back["arrival_s"] - out["departure_s"],
+            "origin_stop_id": out["from_stop_id"],
+            "return_stop_id": back["to_stop_id"],
+            "return_slack_s": back["departure_s"] - appointment_s - duration_s - destination_walk_by_stop[back["from_stop_id"]] - boarding_margin_s,
             "alternatives_evaluated": len(pairs),
         },
         "components_s": components,
+        "components": timeline,
         "error": None,
     })
     return result
@@ -318,24 +363,45 @@ def plan_visit(request: dict[str, Any]) -> dict[str, Any]:
 
 def compare_visits(requests: list[dict[str, Any]]) -> dict[str, Any]:
     if not isinstance(requests, list) or not 2 <= len(requests) <= 32:
-        return {"schema_version": SCHEMA_VERSION, "status": "error", "results": [], "differences_s": [], "error": {"code": "invalid_request_count", "message": "Se requieren entre 2 y 32 peticiones"}}
+        return {"schema_version": SCHEMA_VERSION, "status": "error", "results": [], "comparisons": [], "differences_s": [], "error": {"code": "invalid_request_count", "message": "Se requieren entre 2 y 32 peticiones"}}
     results = [plan_visit(request) for request in requests]
     differences = []
-    ok = [(index, item) for index, item in enumerate(results) if item["status"] == "ok"]
-    for left_pos, (left_index, left) in enumerate(ok):
-        for right_index, right in ok[left_pos + 1 :]:
-            if left["snapshot_id"] == right["snapshot_id"] and left["normalized_request"]["date"] == right["normalized_request"]["date"]:
-                differences.append({"left_index": left_index, "right_index": right_index, "total_difference_s": right["itinerary"]["total_s"] - left["itinerary"]["total_s"]})
-    return {"schema_version": SCHEMA_VERSION, "status": "ok", "results": results, "differences_s": differences, "error": None}
+    comparisons = []
+    for left_index, left in enumerate(results):
+        for right_index in range(left_index + 1, len(results)):
+            right = results[right_index]
+            a, b = left["normalized_request"], right["normalized_request"]
+            changes, held = {}, {}
+            if a is not None and b is not None:
+                for key in sorted(a.keys() | b.keys()):
+                    if a.get(key) == b.get(key):
+                        held[key] = a.get(key)
+                    else:
+                        changes[key] = {"left":a.get(key), "right":b.get(key)}
+            compatible = left["status"] == right["status"] == "ok" and all(
+                a.get(key) == b.get(key) for key in ("snapshot_id","date","timezone","origin_id","destination_id","walking_profile_id"))
+            comparisons.append({"left_index":left_index,"right_index":right_index,
+                "requested_changes":changes, "held_constant":held,
+                "comparability":"comparable" if compatible else "not_comparable",
+                "limitations":["Delta de escenarios programados; no atribución causal ni ahorro real."]})
+            if compatible:
+                differences.append({"left_index":left_index,"right_index":right_index,
+                    "total_difference_s":right["itinerary"]["total_s"]-left["itinerary"]["total_s"]})
+    return {"schema_version": SCHEMA_VERSION, "status": "ok", "results": results, "comparisons":comparisons, "differences_s": differences, "error": None}
 
 
 def get_capabilities() -> dict[str, Any]:
     snapshots = []
-    for path in _snapshot_paths():
+    try:
+        entries = strict_loads(MANIFEST_PATH.read_text(encoding="utf-8"))["snapshots"]
+        if type(entries) is not dict:
+            raise SnapshotError("invalid manifest")
+    except (OSError, ValueError, KeyError, TypeError):
+        entries = {}
+    for snapshot_id in entries:
         try:
-            payload = json.loads(path.read_text(encoding="utf-8"))
-            _validate_snapshot(payload)
-        except (OSError, json.JSONDecodeError, SnapshotError):
+            payload = _load_snapshot(snapshot_id)
+        except (OSError, ValueError, TypeError):
             continue
         if payload.get("fixture_kind") == "SYNTHETIC_TEST_ONLY":
             continue
@@ -345,5 +411,8 @@ def get_capabilities() -> dict[str, Any]:
             "coverage": payload["coverage"],
             "origins": sorted(payload["origins"]),
             "destinations": sorted(payload["destinations"]),
+            "defaults":payload["defaults"],
+            "walking_profiles":payload["walking_profiles"],
+            "scenario_kind":payload["scenario_kind"],
         })
     return {"schema_version": SCHEMA_VERSION, "provider_id": "ir_y_volver", "time_basis": TIME_BASIS, "scope": SCOPE, "statuses": STATUSES, "snapshots": snapshots}

@@ -65,10 +65,16 @@ def build():
     good = {**base,'status':'ok','scenario_kind':'stop_only','normalized_request':req,'error':None,
         'components':comps,'components_s':{c['kind']+'_s':c['seconds'] for c in comps},
         'itinerary':dict(start_s=32220,end_s=40800,total_s=8580,vehicle_span_s=8400,return_slack_s=420,
-                        origin_stop_id='TEST_A',return_stop_id='TEST_A',outbound={},return_leg={})}
+                        origin_stop_id='TEST_A',return_stop_id='TEST_A',outbound={},**{'return':{}})}
     bad = {**base,'status':'no_feasible_journey','scenario_kind':'stop_only','normalized_request':{**req,'duration_minutes':500},'error':{'code':'no_pair_in_complete_direct_search','message':'No ordinary direct pair in synthetic coverage'}}
     examples = {'classification':'SYNTHETIC_CONTRACT_ONLY','viable':good,'no_viable':bad,'unknown':base,
                 'mixed_comparison':dict(schema_version='0.2.0',status='ok',results=[good,bad,base],comparisons=[],differences_s=[],error=None)}
+    for left,right in ((0,1),(0,2),(1,2)):
+        examples['mixed_comparison']['comparisons'].append({
+            'left_index':left,'right_index':right,'comparability':'not_comparable',
+            'requested_changes':{'duration_minutes':{'left':30,'right':500}} if (left,right)==(0,1) else {},
+            'held_constant':{k:v for k,v in req.items() if k!='duration_minutes'} if (left,right)==(0,1) else {},
+            'limitations':['At least one outcome is not ok; no delta or favourable averaging.']})
     (OUT / 'examples.json').write_text(json.dumps(examples,indent=2)+'\n',encoding='utf-8',newline='\n')
 
 

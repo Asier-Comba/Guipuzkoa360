@@ -29,7 +29,7 @@
       "origin_stop_id": "TEST_A",
       "return_stop_id": "TEST_A",
       "outbound": {},
-      "return_leg": {}
+      "return": {}
     },
     "components_s": {
       "initial_wait_s": 180,
@@ -219,7 +219,7 @@
           "origin_stop_id": "TEST_A",
           "return_stop_id": "TEST_A",
           "outbound": {},
-          "return_leg": {}
+          "return": {}
         },
         "components_s": {
           "initial_wait_s": 180,
@@ -377,7 +377,54 @@
         }
       }
     ],
-    "comparisons": [],
+    "comparisons": [
+      {
+        "left_index": 0,
+        "right_index": 1,
+        "comparability": "not_comparable",
+        "requested_changes": {
+          "duration_minutes": {
+            "left": 30,
+            "right": 500
+          }
+        },
+        "held_constant": {
+          "origin_id": "TEST_A",
+          "destination_id": "TEST_B",
+          "date": "2026-09-29",
+          "appointment_time": "10:00:00",
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "stop_only",
+          "snapshot_id": "TEST_CONTRACT",
+          "timezone": "Europe/Madrid",
+          "return_deadline": null
+        },
+        "limitations": [
+          "At least one outcome is not ok; no delta or favourable averaging."
+        ]
+      },
+      {
+        "left_index": 0,
+        "right_index": 2,
+        "comparability": "not_comparable",
+        "requested_changes": {},
+        "held_constant": {},
+        "limitations": [
+          "At least one outcome is not ok; no delta or favourable averaging."
+        ]
+      },
+      {
+        "left_index": 1,
+        "right_index": 2,
+        "comparability": "not_comparable",
+        "requested_changes": {},
+        "held_constant": {},
+        "limitations": [
+          "At least one outcome is not ok; no delta or favourable averaging."
+        ]
+      }
+    ],
     "differences_s": [],
     "error": null
   }

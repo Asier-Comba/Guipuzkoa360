@@ -20,14 +20,26 @@ def rows(archive: zipfile.ZipFile, name: str) -> list[dict[str, str]]:
 
 def integer_fields(item: dict[str, str]) -> dict[str, object]:
     result: dict[str, object] = dict(item)
-    for field in ("stop_sequence", "pickup_type", "drop_off_type", "timepoint"):
-        if field in result:
-            result[field] = int(str(result[field] or "0"))
+    for field, default in (("stop_sequence",None), ("pickup_type",0), ("drop_off_type",0), ("timepoint",1)):
+        raw = result.get(field)
+        if raw in (None, ""):
+            if default is None:
+                raise ValueError("missing stop_sequence")
+            result[field] = default
+        else:
+            result[field] = int(str(raw))
     return result
 
 
-def build(source: Path, output: Path) -> dict[str, object]:
+def build(source: Path, output: Path, metadata: dict[str, object]) -> dict[str, object]:
+    for field in ("snapshot_id", "retrieved_date", "url", "validated_dates"):
+        if not metadata.get(field):
+            raise ValueError("download metadata required: " + field)
+    if output.exists():
+        raise ValueError("Refusing to overwrite a historical snapshot; use a new output identity")
     source_hash = hashlib.sha256(source.read_bytes()).hexdigest()
+    if metadata.get('source_sha256') and metadata['source_sha256'] != source_hash:
+        raise ValueError('source bytes do not match download metadata')
     with zipfile.ZipFile(source) as archive:
         routes = rows(archive, "routes.txt")
         route = next(item for item in routes if item["route_short_name"].upper() == "GO01")
@@ -54,12 +66,17 @@ def build(source: Path, output: Path) -> dict[str, object]:
         for row in calendar_dates:
             row["exception_type"] = int(row["exception_type"])
         feed_info = rows(archive, "feed_info.txt")[0]
+        stop_ids = {row['stop_id'] for items in times_by_trip.values() for row in items}
+        stops = {row['stop_id']: {'name':row['stop_name'], 'lat':float(row['stop_lat']), 'lon':float(row['stop_lon'])}
+                 for row in rows(archive, 'stops.txt') if row['stop_id'] in stop_ids}
     payload: dict[str, object] = {
-        "schema_version": "0.1.0",
-        "snapshot_id": "official-goierrialdea-go01-20260928",
+        "schema_version": "0.2.0",
+        "snapshot_id": metadata['snapshot_id'],
+        "scenario_kind": "stop_only",
         "fixture_kind": "OFFICIAL_DERIVED",
         "timezone": "Europe/Madrid",
-        "coverage": {"start_date": feed_info["feed_start_date"], "end_date": feed_info["feed_end_date"], "validated_dates": ["2026-09-29"]},
+        "coverage": {"start_date": feed_info["feed_start_date"], "end_date": feed_info["feed_end_date"], "validated_dates": metadata['validated_dates'], "direct_search_complete":True},
+        "stops":stops,
         "defaults": {"arrival_margin_minutes": 10, "boarding_margin_minutes": 3, "walking_profile_id": "stop_only"},
         "walking_profiles": {"stop_only": {"description": "Análisis entre pares de paradas; no infiere velocidad peatonal", "source": "GTFS stops"}},
         "origins": {
@@ -77,12 +94,13 @@ def build(source: Path, output: Path) -> dict[str, object]:
             "classification": "OFFICIAL",
             "publisher": "Gobierno Vasco / Moveuskadi",
             "operator_feed": "Lurraldebus Goierrialdea",
-            "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip",
+            "url": metadata['url'],
+            "source_id": "MOVEUSKADI_GOIERRIALDEA_" + source_hash[:12],
             "index_url": "https://opendata.euskadi.eus/transport/moveuskadi/data-index-gtfs.json",
-            "index_last_update": "2026-09-29 07:01:13",
+            "index_last_update": metadata.get('index_last_update'),
             "source_sha256": source_hash,
             "feed_version": feed_info.get("feed_version"),
-            "retrieved_date": "2026-09-29"
+            "retrieved_date": metadata['retrieved_date']
         }],
         "limitations": [
             "Solo GO01 y viajes directos entre los pares de paradas catalogados.",
@@ -94,7 +112,7 @@ def build(source: Path, output: Path) -> dict[str, object]:
     }
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(
-        json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n",
+        json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":"), allow_nan=False) + "\n",
         encoding="utf-8",
         newline="\n",
     )
@@ -105,8 +123,9 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("source_zip", type=Path)
     parser.add_argument("output_json", type=Path)
+    parser.add_argument("--metadata", required=True, type=Path)
     args = parser.parse_args()
-    payload = build(args.source_zip, args.output_json)
+    payload = build(args.source_zip, args.output_json, json.loads(args.metadata.read_text(encoding='utf-8')))
     print(json.dumps({"snapshot_id": payload["snapshot_id"], "trips": len(payload["trips"]), "output": str(args.output_json)}, ensure_ascii=False))
 
 

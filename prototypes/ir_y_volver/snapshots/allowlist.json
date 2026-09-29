@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.2.0",
+  "snapshots": {
+    "official-goierrialdea-go01-r4-20260929": {
+      "file": "official-goierrialdea-go01-r4-20260929.json",
+      "sha256": "62e00c04edb96ccde0a5ce4fe81574452ddcacdb4c173b030ca49b000f5a084b",
+      "schema_version": "0.2.0",
+      "validation_status": "VALIDATED_STOP_ONLY",
+      "coverage": {
+        "direct_search_complete": true,
+        "end_date": "20261227",
+        "start_date": "20260928",
+        "validated_dates": [
+          "2026-09-29"
+        ]
+      },
+      "sources": [
+        {
+          "classification": "OFFICIAL",
+          "feed_version": "20260928054818",
+          "index_last_update": "2026-09-29 07:01:13",
+          "index_url": "https://opendata.euskadi.eus/transport/moveuskadi/data-index-gtfs.json",
+          "operator_feed": "Lurraldebus Goierrialdea",
+          "publisher": "Gobierno Vasco / Moveuskadi",
+          "retrieved_date": "2026-09-29",
+          "source_id": "MOVEUSKADI_GOIERRIALDEA_3276fcae7bfa",
+          "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+          "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+        }
+      ],
+      "walking_profiles": {
+        "stop_only": {
+          "description": "Análisis entre pares de paradas; no infiere velocidad peatonal",
+          "source": "GTFS stops"
+        }
+      }
+    }
+  }
+}

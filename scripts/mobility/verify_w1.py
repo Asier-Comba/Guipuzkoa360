@@ -52,6 +52,8 @@ def request(origin_id: str, appointment_time: str) -> dict[str, object]:
 
 
 def main() -> None:
+    if provider.SCHEMA_VERSION != "0.1.0":
+        raise SystemExit("Historical R2 evidence is frozen. Run scripts/mobility/verify_r4.py for 0.2.0.")
     parser = argparse.ArgumentParser()
     parser.add_argument("--iterations", type=int, default=100)
     args = parser.parse_args()

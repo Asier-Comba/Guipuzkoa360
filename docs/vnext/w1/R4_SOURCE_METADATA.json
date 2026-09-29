@@ -1,0 +1,9 @@
+{
+  "snapshot_id": "official-goierrialdea-go01-r4-20260929",
+  "retrieved_date": "2026-09-29",
+  "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip",
+  "index_last_update": "2026-09-29 07:01:13",
+  "validated_dates": ["2026-09-29"],
+  "acquisition_basis": "Bytes retained from R2 acquisition, rehashed R4; not a new download.",
+  "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4"
+}

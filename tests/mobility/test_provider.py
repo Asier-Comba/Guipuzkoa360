@@ -28,13 +28,28 @@ def request(**updates):
 
 
 def load_fixture():
-    return json.loads(FIXTURE.read_text(encoding="utf-8"))
+    s = json.loads(FIXTURE.read_text(encoding="utf-8"))
+    s['schema_version']='0.2.0'
+    s['scenario_kind']='stop_only'
+    s['coverage']['direct_search_complete']=True
+    s['stops']={key:{'name':key,'lat':43.0,'lon':-2.0} for key in ('A','B')}
+    s['sources']=[{'source_id':'TEST_SOURCE','publisher':'SYNTHETIC','url':'https://example.invalid/test',
+                   'source_sha256':'0'*64,'retrieved_date':'2026-09-29'}]
+    return s
+
+
+@pytest.fixture(autouse=True)
+def explicit_test_injection(monkeypatch):
+    original = provider._load_snapshot
+    def loader(snapshot_id):
+        if snapshot_id == 'synthetic-contract-v1':
+            return load_fixture()
+        return original(snapshot_id)
+    monkeypatch.setattr(provider, '_load_snapshot', loader)
 
 
 def install_snapshot(monkeypatch, tmp_path, payload):
-    path = tmp_path / "snapshot.json"
-    path.write_text(json.dumps(payload), encoding="utf-8")
-    monkeypatch.setattr(provider, "SNAPSHOT_DIRS", [tmp_path])
+    monkeypatch.setattr(provider, "_load_snapshot", lambda _: payload)
 
 
 def test_valid_weekday_uses_defaults_and_disjoint_components():
@@ -42,7 +57,7 @@ def test_valid_weekday_uses_defaults_and_disjoint_components():
     assert result["status"] == "ok"
     assert result["normalized_request"]["arrival_margin_minutes"] == 10
     assert result["normalized_request"]["boarding_margin_minutes"] == 3
-    assert result["itinerary"]["total_s"] == sum(result["components_s"].values()) == 8400
+    assert result["itinerary"]["total_s"] == sum(result["components_s"].values()) == 8580
 
 
 @pytest.mark.parametrize("day", ["2026-10-03", "2026-10-04"])
@@ -191,11 +206,13 @@ def test_duration_change_can_remove_return():
 def test_gtfs_time_over_24_hours(monkeypatch, tmp_path):
     snapshot = load_fixture()
     snapshot["trips"][1]["stops"][0]["departure"] = "25:00:00"
+    snapshot["trips"][1]["stops"][0]["arrival"] = "25:00:00"
     snapshot["trips"][1]["stops"][1]["arrival"] = "25:40:00"
+    snapshot["trips"][1]["stops"][1]["departure"] = "25:40:00"
     install_snapshot(monkeypatch, tmp_path, snapshot)
     result = provider.plan_visit(request(duration_minutes=500))
-    assert result["status"] == "ok"
-    assert result["itinerary"]["return"]["arrival_time"] == "25:40:00"
+    assert result["status"] == "unsupported"
+    assert result["error"]["code"] == "multiday_service"
 
 
 def test_disconnected_walk_is_not_hidden(monkeypatch, tmp_path):
@@ -205,7 +222,7 @@ def test_disconnected_walk_is_not_hidden(monkeypatch, tmp_path):
     install_snapshot(monkeypatch, tmp_path, snapshot)
     result = provider.plan_visit(request())
     assert result["status"] == "unknown"
-    assert result["error"]["code"] == "data_integrity"
+    assert result["error"]["code"] == "invalid_snapshot"
     assert "walk_s_by_stop" in result["error"]["message"]
 
 
@@ -215,7 +232,7 @@ def test_missing_origin_access_is_not_hidden(monkeypatch, tmp_path):
     install_snapshot(monkeypatch, tmp_path, snapshot)
     result = provider.plan_visit(request())
     assert result["status"] == "unknown"
-    assert result["error"]["code"] == "data_integrity"
+    assert result["error"]["code"] == "invalid_snapshot"
     assert "access_s_by_stop" in result["error"]["message"]
 
 
@@ -249,7 +266,7 @@ def _independent_oracle(snapshot, origin_id, appointment):
             continue
         for i, start in enumerate(trip["stops"]):
             for end in trip["stops"][i + 1 :]:
-                if start["pickup_type"] == 1 or end["drop_off_type"] == 1:
+                if start["pickup_type"] != 0 or end["drop_off_type"] != 0:
                     continue
                 leg = (trip, start, end)
                 if start["stop_id"] in origin_stops and end["stop_id"] in destination_stops:
@@ -266,7 +283,7 @@ def _independent_oracle(snapshot, origin_id, appointment):
             back_arrival = _to_seconds(back_end["arrival"])
             if back_departure < appointment_s + 1800 + 180:
                 continue
-            candidates.append((back_arrival - out_departure, out_trip["trip_id"], back_trip["trip_id"]))
+            candidates.append((back_arrival - out_departure + 180, out_trip["trip_id"], back_trip["trip_id"]))
     return min(candidates) if candidates else None
 
 
@@ -294,7 +311,7 @@ def test_ten_official_rows_against_independent_oracle(origin_id, appointment):
         "date": "2026-09-29",
         "appointment_time": appointment,
         "duration_minutes": 30,
-        "snapshot_id": "official-goierrialdea-go01-20260928",
+        "snapshot_id": provider.DEFAULT_SNAPSHOT_ID,
     })
     assert expected is not None
     assert result["status"] == "ok"
@@ -304,5 +321,5 @@ def test_ten_official_rows_against_independent_oracle(origin_id, appointment):
 def test_capabilities_only_advertise_runtime_snapshots():
     capabilities = provider.get_capabilities()
     kinds = {item["snapshot_id"]: item["fixture_kind"] for item in capabilities["snapshots"]}
-    assert kinds["official-goierrialdea-go01-20260928"] == "OFFICIAL_DERIVED"
+    assert kinds[provider.DEFAULT_SNAPSHOT_ID] == "OFFICIAL_DERIVED"
     assert "synthetic-contract-v1" not in kinds
