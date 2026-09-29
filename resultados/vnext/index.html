@@ -7,6 +7,7 @@
   <style>
     :root{font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#163a3c;background:#f3f5f0;--green:#146457;--ink:#173b43;--line:#becfc7;--muted:#456168}
     *{box-sizing:border-box}body{margin:0}a{color:#125d53;text-underline-offset:3px}button{font:inherit}header{background:var(--ink);color:white;padding:18px max(22px,calc((100vw - 1160px)/2))}header strong{font-size:1.15rem}header small{display:block;color:#d6e5df}.wrap{max-width:1204px;margin:auto;padding:24px 22px 48px}h1{font-size:clamp(1.9rem,4vw,3.1rem);line-height:1.12;letter-spacing:-.035em;max-width:900px;margin:7px 0 12px}h2{font-size:1.35rem;margin:0 0 12px}h3{font-size:1rem;margin:0 0 8px}p{margin:0 0 12px}.eyebrow{text-transform:uppercase;font-size:.73rem;font-weight:800;letter-spacing:.09em;color:var(--green)}.lead{font-size:1.08rem;color:var(--muted);max-width:880px}.notice{background:#fff0d1;border-left:4px solid #9d6817;padding:12px 15px;margin:20px 0;border-radius:3px}.grid{display:grid;grid-template-columns:1.3fr .7fr;gap:20px}.card{background:white;border:1px solid var(--line);border-radius:10px;padding:22px;min-width:0;margin:17px 0}.switches{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}.switches button{cursor:pointer;background:white;color:var(--ink);border:1px solid #6e8d84;border-radius:7px;padding:11px 14px;min-height:44px}.switches button[aria-pressed=true]{background:var(--ink);color:white;border-color:var(--ink)}.switches button[aria-pressed=true]:before{content:'✓ ';font-weight:800}.status{border-radius:7px;background:#e9f2e9;padding:15px;margin:14px 0}.status.warn{background:#fbefdb}.status.neutral{background:#e8eef2}.status strong{display:block;font-size:1.2rem}.total{font-size:2.7rem;line-height:1.1;font-weight:800;color:var(--green);margin:8px 0}.muted,small{color:var(--muted)}.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.fact{background:#eef4ed;border-radius:6px;padding:11px;font-size:.86rem;overflow-wrap:anywhere}.fact strong{display:block;font-size:.93rem;color:var(--ink)}.legs{display:grid;grid-template-columns:1fr 1fr;gap:12px}.leg{border:1px solid var(--line);border-radius:7px;padding:15px}.leg .clock{font-size:1.35rem;font-weight:750;color:var(--green)}.table-wrap{overflow-x:auto;max-width:100%}table{border-collapse:collapse;width:100%;font-size:.88rem}th,td{padding:9px 8px;border-bottom:1px solid #dbe6e0;text-align:left}th{background:#edf3eb}td:last-child{text-align:right;white-space:nowrap}caption{text-align:left;font-size:.81rem;color:var(--muted);padding-bottom:8px}details{border-top:1px solid var(--line);padding:11px 0}summary{cursor:pointer;font-weight:700}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#edf3ed;border-radius:6px;padding:12px;font:.79rem/1.5 Consolas,monospace;max-height:350px;overflow:auto}ul{padding-left:22px}li{margin:5px 0}.source{overflow-wrap:anywhere;font-size:.84rem}.boundary{border-left:3px solid var(--green);padding-left:13px}.hidden{display:none!important}footer{border-top:1px solid var(--line);font-size:.8rem;color:var(--muted);padding-top:20px;margin-top:28px}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #ae6b17;outline-offset:3px}
+    code{overflow-wrap:anywhere}input[type=file]{max-width:100%}
     @media(max-width:780px){.grid,.legs{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}.wrap{padding:18px 16px 36px}.card{padding:17px}}
     @media(max-width:430px){.facts{grid-template-columns:1fr}.switches button{width:100%;text-align:left}.total{font-size:2.2rem}}
   </style>
@@ -16,9 +17,10 @@
 <main class="wrap">
   <div class="eyebrow">Pregunta → cálculo → evidencia → límite</div>
   <h1>¿Permite el horario programado ir a la visita y volver?</h1>
-  <p class="lead">Exploración acotada del corredor GO01 entre paradas catalogadas y el centro de Beasain. Cambia la hora de la cita o su duración para ver qué devuelve el proveedor determinista.</p>
+  <p class="lead">Exploración acotada del corredor GO01 entre paradas catalogadas del centro urbano de Beasain. Cambia la hora de la cita o su duración para ver qué devuelve el proveedor determinista.</p>
   <p class="notice"><strong>Evidencia offline guardada.</strong> Esta página muestra resultados de un proveedor determinista fijado por commit. No ejecuta una conversación con el agente, no consulta horarios en vivo y no representa una reserva sanitaria.</p>
   <nav class="switches" aria-label="Ejemplos de consulta" id="case-buttons"></nav>
+  <section class="card" aria-labelledby="import-title"><h2 id="import-title">Explorar otros valores permitidos</h2><p>Genera un resultado con <code>scripts/vnext_product/query_w1_offline.py</code> y el proveedor W1 fijado. Después importa el JSON local para verlo con la misma interfaz. Es un cálculo determinista <strong>offline</strong>; el archivo importado no es una conversación de IA ni demuestra identidad criptográfica por sí solo.</p><label for="query-file"><strong>Importar respuesta local del proveedor</strong></label><br><input id="query-file" type="file" accept=".json,application/json"><p id="import-status" role="status" aria-live="polite" class="muted"></p></section>
   <div class="grid">
     <section class="card">
       <div class="eyebrow">Resultado del ejemplo</div>
@@ -55,9 +57,30 @@
   const fmt=s=>{if(!Number.isInteger(s)||s<0) return 'No disponible';const h=Math.floor(s/3600),m=Math.floor(s%3600/60),sec=s%60;return (h?h+' h ':'')+(m||h?m+' min ':'')+sec+' s';};
   const add=(parent,tag,value,cls)=>{const el=document.createElement(tag);if(cls)el.className=cls;el.textContent=value;parent.append(el);return el;};
   const list=(id,values)=>{const box=$(id);box.replaceChildren();(values||[]).forEach(v=>add(box,'li',v));};
-  const facts=(request)=>{const box=$('facts');box.replaceChildren();const entries=[['Origen',placeNames[request.origin_id]||request.origin_id],['Destino',placeNames[request.destination_id]||request.destination_id],['Fecha',request.date],['Cita',request.appointment_time],['Duración',request.duration_minutes+' min'],['Perfil',request.walking_profile_id||'No indicado']];entries.forEach(([name,value])=>{const div=document.createElement('div');div.className='fact';add(div,'strong',name);add(div,'span',String(value));box.append(div);});};
+  const facts=(request)=>{const box=$('facts');box.replaceChildren();const entries=[['Origen',placeNames[request.origin_id]||request.origin_id],['Destino',placeNames[request.destination_id]||request.destination_id],['Fecha',request.date],['Cita',request.appointment_time],['Duración',request.duration_minutes+' min'],['Margen de llegada',request.arrival_margin_minutes+' min · restricción'],['Margen de embarque',request.boarding_margin_minutes+' min · restricción'],['Perfil',request.walking_profile_id||'No indicado']];entries.forEach(([name,value])=>{const div=document.createElement('div');div.className='fact';add(div,'strong',name);add(div,'span',String(value));box.append(div);});};
   const buttons=$('case-buttons');
   evidence.outputs.forEach((item,index)=>{const b=document.createElement('button');b.type='button';b.textContent=item.title;b.setAttribute('aria-pressed',String(index===0));b.addEventListener('click',()=>render(index));buttons.append(b);});
+  let importedIndex=null;
+  function importedOutput(payload){
+    if(!payload||payload.schema_version!=='W3-PROVIDER-QUERY-1'||payload.classification!=='OFFLINE_DETERMINISTIC_PROVIDER_OUTPUT'||payload.provider_head!==evidence.provider_head||payload.snapshot_sha256!==evidence.snapshot_sha256)throw Error('El archivo no corresponde al proveedor y snapshot fijados.');
+    const item=payload.output,r=item?.result,q=item?.request;
+    if(!q||!r||r.schema_version!=='0.1.0'||!['ok','no_feasible_journey','unsupported','unknown','error'].includes(r.status)||r.snapshot_id!==evidence.outputs[0].result.snapshot_id)throw Error('Contrato o solicitud no válidos.');
+    const n=r.normalized_request;
+    if(!n||!['origin_id','destination_id','date','duration_minutes'].every(k=>n[k]===q[k])||!String(n.appointment_time).startsWith(q.appointment_time))throw Error('La respuesta no está enlazada a la solicitud.');
+    if(r.status==='ok'){
+      if(!r.itinerary||!r.components_s||!Number.isInteger(r.itinerary.total_s)||r.itinerary.total_s<0||!Object.values(r.components_s).every(v=>Number.isInteger(v)&&v>=0)||Object.values(r.components_s).reduce((a,b)=>a+b,0)!==r.itinerary.total_s)throw Error('Componentes o total incoherentes.');
+      if(!r.sources?.some(s=>s.source_sha256===evidence.outputs[0].result.sources[0].source_sha256&&s.url===evidence.outputs[0].result.sources[0].url))throw Error('La fuente no coincide con la evidencia fijada.');
+    }else if(r.itinerary!==null||r.components_s!==null)throw Error('Un estado sin resultado contiene cifras de viaje.');
+    return item;
+  }
+  $('query-file').addEventListener('change',async event=>{
+    const file=event.target.files?.[0];if(!file)return;
+    try{const item=importedOutput(JSON.parse(await file.text()));item.title='Consulta local importada';
+      if(importedIndex===null){importedIndex=evidence.outputs.length;evidence.outputs.push(item);const b=document.createElement('button');b.type='button';b.textContent=item.title;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>render(importedIndex));buttons.append(b);}
+      else evidence.outputs[importedIndex]=item;
+      $('import-status').textContent='Archivo local cargado; comprueba sus supuestos y la solicitud estructurada.';render(importedIndex);
+    }catch(error){$('import-status').textContent='No se cargó el archivo: '+error.message;}
+  });
   function render(index){
     const item=evidence.outputs[index],r=item.result,q=r.normalized_request||item.request;
     [...buttons.children].forEach((b,i)=>b.setAttribute('aria-pressed',String(i===index)));
@@ -79,7 +102,7 @@
     $('raw').textContent=JSON.stringify({request:item.request,result:r},null,2);
   }
   const diff=evidence.appointment_comparison?.differences_s?.[0];
-  $('comparison').textContent=diff&&Number.isInteger(diff.total_difference_s)?`Según la comparación calculada por el proveedor, la cita de 10:00 da un total ${Math.abs(diff.total_difference_s)} s ${diff.total_difference_s<0?'menor':diff.total_difference_s>0?'mayor':'igual'} que la de 09:30 (diferencia exacta: ${diff.total_difference_s} s). Solo describe el horario programado del corredor piloto.`:'La comparación no produjo una diferencia numérica válida.';
+  $('comparison').textContent=diff&&Number.isInteger(diff.total_difference_s)?`Según la comparación calculada por el proveedor, la cita de 10:00 da un total ${Math.abs(diff.total_difference_s)} s ${diff.total_difference_s<0?'menor':diff.total_difference_s>0?'mayor':'igual'} que la de 09:30 (diferencia exacta: ${diff.total_difference_s} s). Son escenarios muy próximos bajo este horario programado: no es un ahorro empírico relevante ni una precisión garantizada.`:'La comparación no produjo una diferencia numérica válida.';
   render(0);
 })();
 </script>

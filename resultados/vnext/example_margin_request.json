@@ -1,0 +1,9 @@
+{
+  "origin_id": "zegama_center_stops",
+  "destination_id": "beasain_center_stop_pair",
+  "date": "2026-09-29",
+  "appointment_time": "09:30",
+  "duration_minutes": 30,
+  "arrival_margin_minutes": 15,
+  "boarding_margin_minutes": 8
+}

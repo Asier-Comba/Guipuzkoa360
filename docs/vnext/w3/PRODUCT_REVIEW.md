@@ -7,6 +7,21 @@ v4. Abrir [`resultados/vnext/index.html`](../../../resultados/vnext/index.html)
 localmente; los cinco botones seleccionan respuestas guardadas y no hacen una
 consulta nueva.
 
+Para explorar **otros parámetros permitidos** con el proveedor W1 R2 fijado,
+por ejemplo los márgenes de
+[`example_margin_request.json`](../../../resultados/vnext/example_margin_request.json):
+
+```text
+python scripts/vnext_product/query_w1_offline.py --w1-root <checkout_W1_c68eb5c> --request resultados/vnext/example_margin_request.json --output <ruta_local>/consulta.json
+```
+
+Importar `consulta.json` en la página. La prueba local R3 de ese request
+devolvió `ok`, total **10.511 s**, con márgenes de llegada 15 min y embarque
+8 min; el resultado se generó de nuevo por el proveedor y se inspeccionó en
+navegador. No equivale a una conversación W2. El JSON importado y sus hashes
+no acreditan por sí mismos que un tercero lo haya ejecutado; el CLI y el
+checkout fijado permiten reproducirlo.
+
 ## Recorrido de 2–3 minutos
 
 1. **Pregunta y alcance (0:00–0:35).** Mostrar «¿Permite el horario programado ir
