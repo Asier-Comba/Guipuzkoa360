@@ -20,8 +20,12 @@ def main() -> None:
     marker = "__EMBEDDED_EVIDENCE__"
     if template.count(marker) != 1:
         raise SystemExit("Template marker missing or duplicated")
+    contract_marker = "__IMPORT_CONTRACT__"
+    if template.count(contract_marker) != 1:
+        raise SystemExit("Import contract marker missing or duplicated")
+    contract = (ROOT / "scripts/vnext_product/import_contract.js").read_text(encoding="utf-8")
     embedded = json.dumps(evidence, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
-    output = template.replace(marker, embedded).encode("utf-8")
+    output = template.replace(marker, embedded).replace(contract_marker, contract).encode("utf-8")
     path = BASE / "index.html"
     path.write_bytes(output)
     print(json.dumps({"path": str(path), "bytes": len(output),

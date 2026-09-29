@@ -41,11 +41,12 @@
     <aside class="card"><div class="eyebrow">Ámbito de la consulta</div><h2>Qué se ha pedido</h2><div class="facts" id="facts"></div><p class="boundary" style="margin-top:18px">La comprobación termina en paradas catalogadas. Un componente de paseo modelado de 0 s no demuestra que una persona no tenga que caminar.</p></aside>
   </div>
   <section class="card" id="detail-card"><h2>Cómo se compone el tiempo</h2><div class="table-wrap"><table><caption>Componentes en segundos del output original; los márgenes de embarque y llegada son restricciones, no tiempo sumado de nuevo.</caption><thead><tr><th>Componente</th><th>Tiempo</th></tr></thead><tbody id="components"></tbody></table></div></section>
-  <section class="card"><div class="eyebrow">Cambio de criterio</div><h2>Hora y duración no son la misma pregunta</h2><p id="comparison"></p><p>El ejemplo de Segura muestra por separado una cita de 30 minutos y otra de 180 minutos. Si el proveedor no encuentra ida y vuelta dentro del alcance, la vista conserva ese estado; no convierte una ida aislada en viaje completo.</p></section>
+  <section class="card" id="comparison-card"><div class="eyebrow">Cambio de criterio</div><h2>Hora y duración no son la misma pregunta</h2><p id="comparison"></p><p>El ejemplo de Segura muestra por separado una cita de 30 minutos y otra de 180 minutos. Si el proveedor no encuentra ida y vuelta dentro del alcance, la vista conserva ese estado; no convierte una ida aislada en viaje completo.</p></section>
   <section class="card"><div class="eyebrow">Trazabilidad</div><h2>Fuente, método y límites</h2><p id="method" class="boundary"></p><details><summary>Fuente oficial y huellas</summary><div id="sources" class="source"></div></details><details><summary>Supuestos y límites del cálculo</summary><h3>Supuestos</h3><ul id="assumptions"></ul><h3>Límites</h3><ul id="limitations"></ul></details><details><summary>Solicitud y respuesta estructurada</summary><pre id="raw"></pre></details></section>
   <footer>Prototipo de producto basado en un proveedor determinista offline. Solo horarios programados GO01 para la fecha validada; sin realtime, citas, capacidad, rutas peatonales verificadas, puerta a puerta ni garantía de llegada. No hay geometría de recorrido en este contrato, por eso no se dibuja un itinerario en un mapa.</footer>
 </main>
 <script id="evidence" type="application/json">__EMBEDDED_EVIDENCE__</script>
+<script>__IMPORT_CONTRACT__</script>
 <script>
 (() => {
   'use strict';
@@ -57,36 +58,27 @@
   const fmt=s=>{if(!Number.isInteger(s)||s<0) return 'No disponible';const h=Math.floor(s/3600),m=Math.floor(s%3600/60),sec=s%60;return (h?h+' h ':'')+(m||h?m+' min ':'')+sec+' s';};
   const add=(parent,tag,value,cls)=>{const el=document.createElement(tag);if(cls)el.className=cls;el.textContent=value;parent.append(el);return el;};
   const list=(id,values)=>{const box=$(id);box.replaceChildren();(values||[]).forEach(v=>add(box,'li',v));};
-  const facts=(request)=>{const box=$('facts');box.replaceChildren();const entries=[['Origen',placeNames[request.origin_id]||request.origin_id],['Destino',placeNames[request.destination_id]||request.destination_id],['Fecha',request.date],['Cita',request.appointment_time],['Duración',request.duration_minutes+' min'],['Margen de llegada',request.arrival_margin_minutes+' min · restricción'],['Margen de embarque',request.boarding_margin_minutes+' min · restricción'],['Perfil',request.walking_profile_id||'No indicado']];entries.forEach(([name,value])=>{const div=document.createElement('div');div.className='fact';add(div,'strong',name);add(div,'span',String(value));box.append(div);});};
+  const facts=(request)=>{const box=$('facts');box.replaceChildren();const entries=[['Origen',placeNames[request.origin_id]||request.origin_id],['Destino',placeNames[request.destination_id]||request.destination_id],['Fecha',request.date],['Cita',request.appointment_time],['Duración',request.duration_minutes+' min'],['Margen de llegada',request.arrival_margin_minutes===undefined?'No verificado':request.arrival_margin_minutes+' min · restricción'],['Margen de embarque',request.boarding_margin_minutes===undefined?'No verificado':request.boarding_margin_minutes+' min · restricción'],['Perfil',request.walking_profile_id||'No verificado']];entries.forEach(([name,value])=>{const div=document.createElement('div');div.className='fact';add(div,'strong',name);add(div,'span',String(value));box.append(div);});};
   const buttons=$('case-buttons');
   evidence.outputs.forEach((item,index)=>{const b=document.createElement('button');b.type='button';b.textContent=item.title;b.setAttribute('aria-pressed',String(index===0));b.addEventListener('click',()=>render(index));buttons.append(b);});
   let importedIndex=null;
-  function importedOutput(payload){
-    if(!payload||payload.schema_version!=='W3-PROVIDER-QUERY-1'||payload.classification!=='OFFLINE_DETERMINISTIC_PROVIDER_OUTPUT'||payload.provider_head!==evidence.provider_head||payload.snapshot_sha256!==evidence.snapshot_sha256)throw Error('El archivo no corresponde al proveedor y snapshot fijados.');
-    const item=payload.output,r=item?.result,q=item?.request;
-    if(!q||!r||r.schema_version!=='0.1.0'||!['ok','no_feasible_journey','unsupported','unknown','error'].includes(r.status)||r.snapshot_id!==evidence.outputs[0].result.snapshot_id)throw Error('Contrato o solicitud no válidos.');
-    const n=r.normalized_request;
-    if(!n||!['origin_id','destination_id','date','duration_minutes'].every(k=>n[k]===q[k])||!String(n.appointment_time).startsWith(q.appointment_time))throw Error('La respuesta no está enlazada a la solicitud.');
-    if(r.status==='ok'){
-      if(!r.itinerary||!r.components_s||!Number.isInteger(r.itinerary.total_s)||r.itinerary.total_s<0||!Object.values(r.components_s).every(v=>Number.isInteger(v)&&v>=0)||Object.values(r.components_s).reduce((a,b)=>a+b,0)!==r.itinerary.total_s)throw Error('Componentes o total incoherentes.');
-      if(!r.sources?.some(s=>s.source_sha256===evidence.outputs[0].result.sources[0].source_sha256&&s.url===evidence.outputs[0].result.sources[0].url))throw Error('La fuente no coincide con la evidencia fijada.');
-    }else if(r.itinerary!==null||r.components_s!==null)throw Error('Un estado sin resultado contiene cifras de viaje.');
-    return item;
-  }
   $('query-file').addEventListener('change',async event=>{
     const file=event.target.files?.[0];if(!file)return;
-    try{const item=importedOutput(JSON.parse(await file.text()));item.title='Consulta local importada';
+    try{if(file.size>ImportContract.MAX_FILE_BYTES)throw Error('Archivo demasiado grande (máximo 256 KiB).');
+      const item=ImportContract.validate(JSON.parse(await file.text()),evidence);item.title='Archivo local · procedencia no verificada';
       if(importedIndex===null){importedIndex=evidence.outputs.length;evidence.outputs.push(item);const b=document.createElement('button');b.type='button';b.textContent=item.title;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>render(importedIndex));buttons.append(b);}
       else evidence.outputs[importedIndex]=item;
-      $('import-status').textContent='Archivo local cargado; comprueba sus supuestos y la solicitud estructurada.';render(importedIndex);
+      $('import-status').textContent='Archivo compatible cargado. Su procedencia no está comprobada; contrasta el cálculo con el proveedor fijado.';render(importedIndex);
     }catch(error){$('import-status').textContent='No se cargó el archivo: '+error.message;}
   });
   function render(index){
     const item=evidence.outputs[index],r=item.result,q=r.normalized_request||item.request;
+    const imported=index===importedIndex;
+    $('comparison-card').classList.toggle('hidden',index>1);
     [...buttons.children].forEach((b,i)=>b.setAttribute('aria-pressed',String(i===index)));
     $('case-title').textContent=item.title;
     $('case-question').textContent=`${placeNames[q.origin_id]||q.origin_id} → ${placeNames[q.destination_id]||q.destination_id}; ${q.date}, cita ${q.appointment_time}, duración ${q.duration_minutes} min.`;
-    const s=$('status');s.className='status'+(r.status==='ok'?'':r.status==='unknown'?' neutral':' warn');s.replaceChildren();add(s,'strong',statusLabels[r.status]||'Estado no reconocido');add(s,'span',r.status==='ok'?'Cálculo de horarios programados, no confirmación de viaje.':r.status==='no_feasible_journey'?'Búsqueda completa solo para viajes directos, fecha y paradas del piloto. No concluye ausencia universal de transporte.':r.status==='unknown'?'Sin dato validado para afirmar que hay o que no hay servicio.':'No hay cifra válida para mostrar.');
+    const s=$('status');s.className='status'+(r.status==='ok'?'':r.status==='unknown'?' neutral':' warn');s.replaceChildren();add(s,'strong',statusLabels[r.status]||'Estado no reconocido');add(s,'span',r.status==='ok'?'Cálculo de horarios programados, no confirmación de viaje.':r.status==='no_feasible_journey'?'Búsqueda completa solo para viajes directos, fecha y paradas del piloto. No concluye ausencia universal de transporte.':r.status==='unknown'?'Sin dato validado para afirmar que hay o que no hay servicio.':'No hay cifra válida para mostrar.');if(imported)add(s,'span',' Archivo local compatible; procedencia del cálculo no verificada.');
     facts(q);
     const ok=r.status==='ok'&&r.itinerary&&r.components_s;
     $('success').classList.toggle('hidden',!ok);$('no-result').classList.toggle('hidden',!!ok);$('detail-card').classList.toggle('hidden',!ok);
@@ -94,10 +86,10 @@
       $('total').textContent=fmt(r.itinerary.total_s)+' ('+r.itinerary.total_s+' s)';
       for(const [part,prefix] of [['outbound','out'],['return','return']]){const leg=r.itinerary[part];$(prefix+'-clock').textContent=leg.departure_time+' → '+leg.arrival_time;$(prefix+'-trace').textContent=`GO01 · viaje ${leg.trip_id} · paradas ${leg.from_stop_id} → ${leg.to_stop_id}`;}
       const body=$('components');body.replaceChildren();Object.entries(r.components_s).forEach(([name,seconds])=>{const tr=document.createElement('tr');add(tr,'td',labels[name]||name);add(tr,'td',seconds===0?'0 s':fmt(seconds)+' ('+seconds+' s)');body.append(tr);});
-    }else{$('no-result-copy').textContent=r.status==='unknown'?'La fecha solo tiene cobertura nominal del feed; se validó de forma específica el 29/09/2026. El resultado se deja desconocido.':'No se muestra tiempo total ni tramos inventados. Consulte el estado y el alcance de la búsqueda.';}
+    }else{$('no-result-copy').textContent=r.status==='unknown'?'Motivo observado: '+(r.error?.code||'sin código')+' · '+(r.error?.message||'sin detalle')+'. No se concluye ausencia de transporte.':'No se muestra tiempo total ni tramos inventados. Motivo: '+(r.error?.code||'sin código')+' · '+(r.error?.message||'sin detalle')+'.';}
     const source=r.sources&&r.sources[0];$('sources').replaceChildren();if(source){add($('sources'),'p',source.publisher+' · '+source.operator_feed+' · versión '+source.feed_version);const a=document.createElement('a');a.href=source.url;a.textContent='Ficha del GTFS original';a.rel='noopener noreferrer';$('sources').append(a);add($('sources'),'p','SHA-256 fuente: '+source.source_sha256);}
     add($('sources'),'p','Snapshot: '+evidence.snapshot_sha256+' · proveedor: '+evidence.provider_head+' · contrato '+evidence.provider_contract_version);
-    $('method').textContent='Salida offline del proveedor de horarios directos programados; origen y destino son grupos de paradas del catálogo. Estado '+r.status+'; snapshot '+String(r.snapshot_id||'no aplicable')+'.';
+    $('method').textContent=(imported?'Archivo local compatible, origen del cálculo no comprobado. ':'Salida offline regenerada desde evidencia W1 fijada. ')+'Horarios directos programados entre grupos de paradas. Estado '+r.status+'; snapshot '+String(r.snapshot_id||'no aplicable')+'.';
     list('assumptions',r.assumptions);list('limitations',r.limitations);
     $('raw').textContent=JSON.stringify({request:item.request,result:r},null,2);
   }
