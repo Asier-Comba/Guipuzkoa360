@@ -33,7 +33,7 @@ def test_empty_evaluation_is_not_a_pass():
     assert report["llm_executed"] == 0
     assert report["single_cases"]["target"] == 48
     assert report["conversations"]["planned"] == 20
-    assert report["conversations"]["executed"] == 0
+    assert report["conversations"]["executed_by_system"] == {}
 
 
 def test_offline_provider_evidence_preserves_non_ok_states():

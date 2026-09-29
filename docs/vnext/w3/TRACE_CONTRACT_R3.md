@@ -92,7 +92,7 @@ a `PASS` de producto o release.
 
 ## Fixture y ejecución
 
-`tests/vnext_redteam/fixtures/NO_LLM_single_case.jsonl` y su evidencia
+`tests/vnext_redteam/fixtures/NO_LLM_single_case_v2_0.jsonl` y su evidencia
 prueban únicamente el formato. El resultado esperado es `NOT_RUN` en
 capacidad conversacional, `llm_executed=0`. Un ejecutor real deberá guardar
 JSONL y evidencia privada y llamar a `score_runs.py --runs ...
