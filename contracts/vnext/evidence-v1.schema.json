@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Asier-Comba/Guipuzkoa360/blob/work/vnext-w2-agent-evidence/contracts/vnext/evidence-v1.schema.json",
+  "title": "GIPUZKOA 360 vNext evidence envelope",
+  "description": "Version 1.0.0. All communicated claims must point to one observed result field and carry their own provenance.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "request_id", "capability_id", "normalized_input", "execution",
+    "status", "claims", "method", "assumptions", "limitations", "error", "versions",
+    "raw_result_json", "raw_result_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "request_id": {"type": "string", "minLength": 1},
+    "capability_id": {"type": "string", "minLength": 1},
+    "normalized_input": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tool", "arguments"],
+      "properties": {
+        "tool": {"type": "string", "minLength": 1},
+        "arguments": {"type": "object"}
+      }
+    },
+    "execution": {
+      "type": "object", "additionalProperties": false,
+      "required": ["request_id", "tool", "arguments_sha256", "snapshot_id"],
+      "properties": {
+        "request_id": {"type": "string", "minLength": 1},
+        "tool": {"type": "string", "minLength": 1},
+        "arguments_sha256": {"$ref": "#/$defs/sha256"},
+        "snapshot_id": {"type": ["string", "null"]}
+      }
+    },
+    "status": {"enum": ["valid", "no_data", "unsupported", "error"]},
+    "claims": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/claim"}
+    },
+    "method": {"type": "string"},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "error": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/error"}]},
+    "versions": {
+      "type": "object", "additionalProperties": false,
+      "required": ["data_sha256", "code_sha256", "contract_sha256"],
+      "properties": {
+        "data_sha256": {"$ref": "#/$defs/sha256"},
+        "code_sha256": {"$ref": "#/$defs/sha256"},
+        "contract_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "raw_result_json": {"type": ["string", "null"]},
+    "raw_result_sha256": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/sha256"}]}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "valid"}}},
+      "then": {
+        "properties": {
+          "error": {"type": "null"},
+          "raw_result_json": {"type": "string"},
+          "raw_result_sha256": {"$ref": "#/$defs/sha256"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"status": {"enum": ["no_data", "unsupported", "error"]}}},
+      "then": {
+        "properties": {
+          "claims": {"maxItems": 0},
+          "error": {"$ref": "#/$defs/error"}
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "claim": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "label", "value", "unit", "period", "denominator", "source_ids", "evidence_path"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "label": {"type": "string", "minLength": 1},
+        "value": {"type": ["number", "integer", "string", "boolean", "null"]},
+        "unit": {"type": "string", "minLength": 1},
+        "period": {"type": "string", "minLength": 1},
+        "denominator": {
+          "oneOf": [
+            {"type": "null"},
+            {
+              "type": "object", "additionalProperties": false,
+              "required": ["value", "unit", "period", "source_id"],
+              "properties": {
+                "value": {"type": "number"},
+                "unit": {"type": "string", "minLength": 1},
+                "period": {"type": "string", "minLength": 1},
+                "source_id": {"type": "string", "minLength": 1}
+              }
+            }
+          ]
+        },
+        "source_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "evidence_path": {"type": "string", "pattern": "^/"}
+      }
+    },
+    "error": {
+      "type": "object", "additionalProperties": false,
+      "required": ["origin", "code", "message", "available_options", "safe_next_action"],
+      "properties": {
+        "origin": {"enum": ["domain", "data", "execution", "transport", "unknown"]},
+        "code": {"type": "string", "minLength": 1},
+        "message": {"type": "string", "minLength": 1},
+        "available_options": {"type": "array", "items": {"type": "string"}},
+        "safe_next_action": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "id": "TEST_CAPABILITY",
+  "description": "TEST_SYNTHETIC direct record count",
+  "derivation": "direct",
+  "enabled": true,
+  "validation_status": "tested",
+  "handler": "TEST_TOOL",
+  "input_fields": [
+    {"name": "municipio", "type": "string", "required": true, "allowed_values": []}
+  ],
+  "required_data": [
+    {"path": "TEST_SYNTHETIC.csv", "sha256": "0000000000000000000000000000000000000000000000000000000000000000"}
+  ],
+  "coverage": {"territory": "TEST_TERRITORY", "periods": ["TEST_PERIOD"], "entities": 1, "scope": "TEST_SYNTHETIC only"},
+  "source_ids": ["TEST_SOURCE"],
+  "allowed_transformations": [],
+  "preconditions": ["TEST_SYNTHETIC.csv exists"],
+  "restrictions": [],
+  "semantic_limits": ["TEST_SYNTHETIC data; not a fact about Gipuzkoa"]
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "TEST_REQUEST_001",
+  "capability_id": "TEST_CAPABILITY",
+  "normalized_input": {"tool": "TEST_TOOL", "arguments": {"municipio": "TEST_MUNICIPALITY"}},
+  "execution": {
+    "request_id": "TEST_REQUEST_001",
+    "tool": "TEST_TOOL",
+    "arguments_sha256": "ea589c962969bc86cbb6afc027b987fc98f538fd83f40c0170cb253f10f7b408",
+    "snapshot_id": "TEST_SNAPSHOT"
+  },
+  "status": "valid",
+  "claims": [
+    {
+      "id": "TEST_CLAIM_001",
+      "label": "TEST_SYNTHETIC count",
+      "value": 0,
+      "unit": "records",
+      "period": "TEST_PERIOD",
+      "denominator": null,
+      "source_ids": ["TEST_SOURCE"],
+      "evidence_path": "/data/0/count"
+    }
+  ],
+  "method": "TEST_SYNTHETIC direct lookup",
+  "assumptions": [],
+  "limitations": ["TEST_SYNTHETIC data; not a fact about Gipuzkoa"],
+  "error": null,
+  "versions": {
+    "data_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "code_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "contract_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "raw_result_json": "{\"data\":[{\"count\":0}]}",
+  "raw_result_sha256": "a8c32ed9240b891bc99b480c3b132d55470d66865a73ab5462e3809b1b1675cf"
+}
