@@ -1,6 +1,8 @@
 """Derive R5 health links from preserved R4 sources. No downloads, no R4 writes."""
 import hashlib
 import json
+import xml.etree.ElementTree as ET
+from collections import Counter
 from pathlib import Path
 
 from prototypes.ir_y_volver.walking_r5 import Network, PROFILE
@@ -104,8 +106,16 @@ def build(output=None):
     target=output or BASE/f'snapshots/{ID}.json';dump(target,payload)
     if output is None:
         dump(BASE/'snapshots/allowlist_r5.json',{'schema_version':'0.3.0','snapshot_id':ID,'file':target.name,'sha256':sha(target)})
+        node_counts=Counter(); corridor=[]
+        used_nodes={node for links_by_direction in links.values() for link in links_by_direction.values() for node in link['node_ids']}
+        for node in ET.fromstring(public.read_bytes()).findall('node'):
+            tags={t.get('k'):t.get('v') for t in node.findall('tag')}
+            relevant={k:v for k,v in tags.items() if k in ('access','barrier','crossing','foot','highway','incline','entrance')}
+            for k,v in relevant.items():node_counts[k+'='+v]+=1
+            if node.get('id') in used_nodes and relevant:corridor.append({'node_id':node.get('id'),'tags':relevant})
         dump(DOC/'NETWORK_AUDIT_R5.json',{'source_sha256':sha(public),'acquisition_sha256':expected_original,
             'bbox':n.bbox,'nodes':len(n.nodes),'admitted_ways':len(n.ways),'tags':n.audit,'candidates':candidates,
+            'node_tag_counts':node_counts,'corridor_node_tags':corridor,
             'policy':'Vehicle oneway does not restrict pedestrians. Explicit foot directions supported. No indoor/steps. Bridge/layer topology retained, no artificial crossings. Incline is not a speed/accessibility model.'})
     return payload
 

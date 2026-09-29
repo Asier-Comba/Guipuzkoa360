@@ -2362,5 +2362,56 @@
       }
     }
   ],
+  "node_tag_counts": {
+    "highway=motorway_junction": 5,
+    "crossing=uncontrolled": 73,
+    "highway=crossing": 83,
+    "highway=bus_stop": 4,
+    "access=yes": 5,
+    "highway=give_way": 11,
+    "highway=stop": 4,
+    "barrier=gate": 3,
+    "foot=yes": 1,
+    "crossing=traffic_signals": 1,
+    "highway=elevator": 2,
+    "entrance=main": 1,
+    "barrier=jersey_barrier": 3
+  },
+  "corridor_node_tags": [
+    {
+      "node_id": "11987784843",
+      "tags": {
+        "highway": "give_way"
+      }
+    },
+    {
+      "node_id": "12388562316",
+      "tags": {
+        "crossing": "uncontrolled",
+        "highway": "crossing"
+      }
+    },
+    {
+      "node_id": "13278517867",
+      "tags": {
+        "crossing": "uncontrolled",
+        "highway": "crossing"
+      }
+    },
+    {
+      "node_id": "13282166515",
+      "tags": {
+        "crossing": "uncontrolled",
+        "highway": "crossing"
+      }
+    },
+    {
+      "node_id": "13282166540",
+      "tags": {
+        "crossing": "uncontrolled",
+        "highway": "crossing"
+      }
+    }
+  ],
   "policy": "Vehicle oneway does not restrict pedestrians. Explicit foot directions supported. No indoor/steps. Bridge/layer topology retained, no artificial crossings. Incline is not a speed/accessibility model."
 }

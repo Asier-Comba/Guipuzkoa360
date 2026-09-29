@@ -1,15 +1,15 @@
 {
-  "stage": "WALKING_MODEL_TESTED_HEALTH_PROVIDER_CANDIDATE",
-  "tested_head": "1a568df (proposal only; 33 directed tests on working tree)",
+  "stage": "HEALTH_PROVIDER_AND_CLOSED_CONTRACT_DIRECTED_GREEN",
+  "tested_head": "33dd407 plus current provider/schema/tests; executable pin pending",
   "working_tree_status": "New R5 files; frozen R4 files unchanged",
   "consumed_w2": "f4615b36d0af93966e6ca0f2044288841e6574b8",
   "consumed_w3": "cf9cd0afadc97b255c021a4ff867dab7ae6dabbc",
   "stable_r4_pin": "725a7b73ae0381092cd80edc41b8a25432d75fcd",
   "health_candidate_pin": null,
-  "contract_version": "0.3.0 proposed; not ready for consumers",
+  "contract_version": "0.3.0 candidate; full suite and package gate pending",
   "sources": ["R4 GTFS unchanged", "R4 OSM public derivative unchanged", "Official centre page and PADI retrieved 2026-09-29", "Private ZIP 00-12 verified 12/12 manifest entries"],
-  "tests": {"walking_directed": "33 PASS", "full_suite": "NOT_RUN_R5"},
+  "tests": {"walking_directed": "33 PASS", "health_directed": "26 PASS", "matrix": "135/135 raw CSV oracle PASS", "schema": "4 standard Draft202012 validations PASS", "full_suite": "NOT_RUN_R5"},
   "findings": ["7214 disconnected", "7200 outside bbox", "7215/7218/7219 modelled links available", "Official addresses conflict retained", "W2 CRITICAL binding and HIGH numerator provenance owned by W2"],
   "blocked": [],
-  "next_exact_action": "Close R5 schemas, validate provider, independent raw-GTFS health matrix, reproducible package; no portal/merge"
+  "next_exact_action": "Freeze executable pin; full suite/gates, double package, fresh checkout, final consumer handoff; no portal/merge"
 }

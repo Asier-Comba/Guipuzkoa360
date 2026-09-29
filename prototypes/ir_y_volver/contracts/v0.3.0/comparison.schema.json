@@ -1,0 +1,1352 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.3.0"
+    },
+    "status": {
+      "enum": [
+        "ok",
+        "error"
+      ]
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/HealthResult"
+          },
+          {
+            "$ref": "#/$defs/LegacyR4Result"
+          }
+        ]
+      }
+    },
+    "comparisons": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ComparisonPair"
+      }
+    },
+    "error": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ErrorEnvelope"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "status",
+    "results",
+    "comparisons",
+    "error"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "NormalizedRequest": {
+      "type": "object",
+      "properties": {
+        "origin_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "destination_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "date": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "appointment_time": {
+          "type": "string",
+          "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$"
+        },
+        "duration_minutes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 720
+        },
+        "arrival_margin_minutes": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 240
+        },
+        "boarding_margin_minutes": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 120
+        },
+        "walking_profile_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "snapshot_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "return_deadline": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "timezone": {
+          "const": "Europe/Madrid"
+        }
+      },
+      "required": [
+        "origin_id",
+        "destination_id",
+        "date",
+        "appointment_time",
+        "duration_minutes",
+        "arrival_margin_minutes",
+        "boarding_margin_minutes",
+        "walking_profile_id",
+        "snapshot_id",
+        "return_deadline",
+        "timezone"
+      ],
+      "additionalProperties": false
+    },
+    "ErrorEnvelope": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "additionalProperties": false
+    },
+    "SourceReference": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_role": {
+          "enum": [
+            "official_schedule",
+            "official_health_registry",
+            "official_health_page",
+            "open_network",
+            "model_parameter",
+            "user_input",
+            "derived_metric"
+          ]
+        },
+        "publisher": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^https://"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "retrieved_date": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reference_period": {
+          "type": "string",
+          "minLength": 1
+        },
+        "transformation": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "source_id",
+        "source_role",
+        "publisher",
+        "url",
+        "source_sha256",
+        "retrieved_date",
+        "reference_period",
+        "transformation"
+      ],
+      "additionalProperties": false
+    },
+    "Leg": {
+      "type": "object",
+      "properties": {
+        "trip_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "route_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "service_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "from_stop_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "to_stop_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "from_stop_sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "to_stop_sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "departure_time": {
+          "type": "string",
+          "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$"
+        },
+        "arrival_time": {
+          "type": "string",
+          "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$"
+        },
+        "pickup_type": {
+          "const": 0
+        },
+        "drop_off_type": {
+          "const": 0
+        },
+        "from_timepoint": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "to_timepoint": {
+          "enum": [
+            0,
+            1
+          ]
+        }
+      },
+      "required": [
+        "trip_id",
+        "route_id",
+        "service_id",
+        "from_stop_id",
+        "to_stop_id",
+        "from_stop_sequence",
+        "to_stop_sequence",
+        "departure_time",
+        "arrival_time",
+        "pickup_type",
+        "drop_off_type",
+        "from_timepoint",
+        "to_timepoint"
+      ],
+      "additionalProperties": false
+    },
+    "Itinerary": {
+      "type": "object",
+      "properties": {
+        "outbound": {
+          "$ref": "#/$defs/Leg"
+        },
+        "return": {
+          "$ref": "#/$defs/Leg"
+        },
+        "total_s": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "start_s": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end_s": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "vehicle_span_s": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "return_slack_s": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "alternatives_evaluated": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "origin_stop_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "return_stop_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "outbound",
+        "return",
+        "total_s",
+        "start_s",
+        "end_s",
+        "vehicle_span_s",
+        "return_slack_s",
+        "alternatives_evaluated",
+        "origin_stop_id",
+        "return_stop_id"
+      ],
+      "additionalProperties": false
+    },
+    "TimelineComponent": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "initial_wait",
+            "outbound_vehicle",
+            "destination_walk_outbound",
+            "pre_appointment_wait",
+            "appointment",
+            "destination_walk_return",
+            "return_wait",
+            "return_vehicle"
+          ]
+        },
+        "start_s": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end_s": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "seconds": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "basis": {
+          "enum": [
+            "user_input",
+            "official_schedule",
+            "modelled_derived"
+          ]
+        },
+        "derivation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "kind",
+        "start_s",
+        "end_s",
+        "seconds",
+        "basis",
+        "derivation",
+        "source_refs"
+      ],
+      "additionalProperties": false
+    },
+    "WalkingLinkEvidence": {
+      "type": "object",
+      "properties": {
+        "start_coordinates": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number",
+              "minimum": -90,
+              "maximum": 90
+            },
+            {
+              "type": "number",
+              "minimum": -180,
+              "maximum": 180
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "end_coordinates": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number",
+              "minimum": -90,
+              "maximum": 90
+            },
+            {
+              "type": "number",
+              "minimum": -180,
+              "maximum": 180
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "start_node_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "end_node_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "connector_metres": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "connector_threshold_m": {
+          "const": 100
+        },
+        "network_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "builder_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "walking_profile_id": {
+          "const": "poc_reference_50m_min_plus_120s"
+        },
+        "entrance_verified": {
+          "const": false
+        },
+        "modelled_access": {
+          "const": true
+        },
+        "status": {
+          "const": "ok"
+        },
+        "reason": {
+          "type": "null"
+        },
+        "node_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "way_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "network_metres": {
+          "type": "number",
+          "minimum": 0
+        },
+        "total_metres": {
+          "type": "number",
+          "minimum": 0
+        },
+        "seconds": {
+          "type": "integer",
+          "minimum": 120
+        },
+        "geometry": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "number",
+                "minimum": -90,
+                "maximum": 90
+              },
+              {
+                "type": "number",
+                "minimum": -180,
+                "maximum": 180
+              }
+            ],
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "way_tags": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "highway": {
+                "type": "string",
+                "minLength": 1
+              },
+              "area": {
+                "type": "string",
+                "minLength": 1
+              },
+              "foot": {
+                "type": "string",
+                "minLength": 1
+              },
+              "access": {
+                "type": "string",
+                "minLength": 1
+              },
+              "oneway": {
+                "type": "string",
+                "minLength": 1
+              },
+              "oneway:foot": {
+                "type": "string",
+                "minLength": 1
+              },
+              "foot:forward": {
+                "type": "string",
+                "minLength": 1
+              },
+              "foot:backward": {
+                "type": "string",
+                "minLength": 1
+              },
+              "tunnel": {
+                "type": "string",
+                "minLength": 1
+              },
+              "bridge": {
+                "type": "string",
+                "minLength": 1
+              },
+              "layer": {
+                "type": "string",
+                "minLength": 1
+              },
+              "indoor": {
+                "type": "string",
+                "minLength": 1
+              },
+              "crossing": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sidewalk": {
+                "type": "string",
+                "minLength": 1
+              },
+              "incline": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "start_coordinates",
+        "end_coordinates",
+        "start_node_id",
+        "end_node_id",
+        "connector_metres",
+        "connector_threshold_m",
+        "network_sha256",
+        "builder_version",
+        "walking_profile_id",
+        "entrance_verified",
+        "modelled_access",
+        "status",
+        "reason",
+        "node_ids",
+        "way_ids",
+        "network_metres",
+        "total_metres",
+        "seconds",
+        "geometry",
+        "way_tags",
+        "source_refs"
+      ],
+      "additionalProperties": false
+    },
+    "HealthDestinationEvidence": {
+      "type": "object",
+      "properties": {
+        "centre_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "centre_identity": {
+          "enum": [
+            "CONFIRMED",
+            "CONFLICTED",
+            "UNKNOWN"
+          ]
+        },
+        "centre_anchor": {
+          "enum": [
+            "CONFIRMED_OFFICIAL_POINT",
+            "DERIVED_BUILDING_POINT",
+            "UNKNOWN"
+          ]
+        },
+        "anchor_kind": {
+          "enum": [
+            "official_centre_point",
+            "derived_building_reference_point"
+          ]
+        },
+        "anchor_coordinates": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number",
+              "minimum": -90,
+              "maximum": 90
+            },
+            {
+              "type": "number",
+              "minimum": -180,
+              "maximum": 180
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "crs": {
+          "const": "EPSG:4326"
+        },
+        "address": {
+          "type": "string",
+          "minLength": 1
+        },
+        "address_conflict": {
+          "enum": [
+            "same_entity_same_site",
+            "same_entity_different_service_address",
+            "historical_address",
+            "conflicting_current_sources",
+            "unresolved"
+          ]
+        },
+        "human_review_required": {
+          "type": "boolean"
+        },
+        "modelled_network_access": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "UNKNOWN"
+          ]
+        },
+        "entrance_verification": {
+          "const": "NOT_VERIFIED"
+        },
+        "entrance_verified": {
+          "const": false
+        },
+        "modelled_access": {
+          "const": true
+        },
+        "door_to_door": {
+          "const": "UNAVAILABLE"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "wording": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "centre_id",
+        "name",
+        "centre_identity",
+        "centre_anchor",
+        "anchor_kind",
+        "anchor_coordinates",
+        "crs",
+        "address",
+        "address_conflict",
+        "human_review_required",
+        "modelled_network_access",
+        "entrance_verification",
+        "entrance_verified",
+        "modelled_access",
+        "door_to_door",
+        "source_refs",
+        "wording"
+      ],
+      "additionalProperties": false
+    },
+    "SnapshotCapability": {
+      "type": "object",
+      "properties": {
+        "snapshot_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contract_version": {
+          "enum": [
+            "0.2.0",
+            "0.3.0"
+          ]
+        },
+        "scenario_kind": {
+          "enum": [
+            "stop_only",
+            "health_visit"
+          ]
+        },
+        "scope": {
+          "const": "origin_stop_presence_to_return_stop_arrival"
+        },
+        "destination_semantics": {
+          "enum": [
+            "stop_only",
+            "official_centre_point_not_verified_entrance"
+          ]
+        },
+        "modelled_access": {
+          "type": "boolean"
+        },
+        "entrance_verified": {
+          "const": false
+        },
+        "origins": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "destinations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "validated_dates": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "walking_profile_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "snapshot_id",
+        "contract_version",
+        "scenario_kind",
+        "scope",
+        "destination_semantics",
+        "modelled_access",
+        "entrance_verified",
+        "origins",
+        "destinations",
+        "validated_dates",
+        "walking_profile_id"
+      ],
+      "additionalProperties": false
+    },
+    "ComparisonPair": {
+      "type": "object",
+      "properties": {
+        "left_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "right_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "comparability": {
+          "enum": [
+            "comparable",
+            "not_comparable"
+          ]
+        },
+        "requested_changes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "field": {
+                "enum": [
+                  "origin_id",
+                  "destination_id",
+                  "date",
+                  "appointment_time",
+                  "duration_minutes",
+                  "arrival_margin_minutes",
+                  "boarding_margin_minutes",
+                  "walking_profile_id",
+                  "snapshot_id",
+                  "return_deadline",
+                  "timezone"
+                ]
+              },
+              "left": {
+                "type": [
+                  "string",
+                  "integer",
+                  "null"
+                ]
+              },
+              "right": {
+                "type": [
+                  "string",
+                  "integer",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "field",
+              "left",
+              "right"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "held_constant": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "origin_id",
+              "destination_id",
+              "date",
+              "appointment_time",
+              "duration_minutes",
+              "arrival_margin_minutes",
+              "boarding_margin_minutes",
+              "walking_profile_id",
+              "snapshot_id",
+              "return_deadline",
+              "timezone"
+            ]
+          }
+        },
+        "total_difference_s": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "left_index",
+        "right_index",
+        "comparability",
+        "requested_changes",
+        "held_constant",
+        "total_difference_s",
+        "limitations"
+      ],
+      "additionalProperties": false
+    },
+    "HealthResult": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "0.3.0"
+        },
+        "normalized_request": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/NormalizedRequest"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "status": {
+          "enum": [
+            "ok",
+            "no_feasible_journey",
+            "unknown",
+            "unsupported",
+            "error"
+          ]
+        },
+        "scenario_kind": {
+          "const": "health_visit"
+        },
+        "time_basis": {
+          "const": "scheduled"
+        },
+        "scope": {
+          "const": "origin_stop_presence_to_return_stop_arrival"
+        },
+        "snapshot_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "itinerary": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Itinerary"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "components_s": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "initial_wait_s": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "outbound_vehicle_s": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "destination_walk_outbound_s": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "pre_appointment_wait_s": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "appointment_s": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "destination_walk_return_s": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "return_wait_s": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "return_vehicle_s": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "initial_wait_s",
+                "outbound_vehicle_s",
+                "destination_walk_outbound_s",
+                "pre_appointment_wait_s",
+                "appointment_s",
+                "destination_walk_return_s",
+                "return_wait_s",
+                "return_vehicle_s"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "components": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/TimelineComponent"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "walking": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "outbound": {
+                  "$ref": "#/$defs/WalkingLinkEvidence"
+                },
+                "return": {
+                  "$ref": "#/$defs/WalkingLinkEvidence"
+                }
+              },
+              "required": [
+                "outbound",
+                "return"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "health_destination": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/HealthDestinationEvidence"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SourceReference"
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "error": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ErrorEnvelope"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "schema_version",
+        "normalized_request",
+        "status",
+        "scenario_kind",
+        "time_basis",
+        "scope",
+        "snapshot_id",
+        "itinerary",
+        "components_s",
+        "components",
+        "walking",
+        "health_destination",
+        "sources",
+        "limitations",
+        "assumptions",
+        "error"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "ok"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "itinerary": {
+                "type": "object"
+              },
+              "components_s": {
+                "type": "object"
+              },
+              "components": {
+                "type": "array"
+              },
+              "walking": {
+                "type": "object"
+              },
+              "health_destination": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "LegacyR4Result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "normalized_request",
+        "status",
+        "scenario_kind",
+        "time_basis",
+        "scope",
+        "snapshot_id",
+        "itinerary",
+        "components_s",
+        "components",
+        "sources",
+        "assumptions",
+        "limitations",
+        "error"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "0.2.0"
+        },
+        "normalized_request": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "status": {
+          "enum": [
+            "ok",
+            "no_feasible_journey",
+            "unknown",
+            "unsupported",
+            "error"
+          ]
+        },
+        "scenario_kind": {
+          "enum": [
+            "stop_only",
+            "health_visit",
+            null
+          ]
+        },
+        "time_basis": {
+          "const": "scheduled"
+        },
+        "scope": {
+          "const": "origin_stop_presence_to_return_stop_arrival"
+        },
+        "snapshot_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "itinerary": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "components_s": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "components": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "start_s",
+              "end_s",
+              "seconds",
+              "basis",
+              "derivation"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string",
+                "minLength": 1
+              },
+              "start_s": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end_s": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "seconds": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "basis": {
+                "type": "string",
+                "minLength": 1
+              },
+              "derivation": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "error": {
+          "type": [
+            "object",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "ok"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "itinerary": {
+                "type": "object"
+              },
+              "components_s": {
+                "type": "object"
+              },
+              "components": {
+                "type": "array",
+                "minItems": 8,
+                "maxItems": 8
+              },
+              "error": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "itinerary": {
+                "type": "null"
+              },
+              "components_s": {
+                "type": "null"
+              },
+              "components": {
+                "type": "null"
+              },
+              "error": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
