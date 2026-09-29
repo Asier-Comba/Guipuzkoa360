@@ -1,0 +1,26 @@
+{
+  "classification": "OFFLINE_REBUILT_PACKAGE_REVIEW_NOT_AGENT_ACCEPTANCE",
+  "status": "PASS_STATIC_INTEGRITY_ONLY",
+  "w2_head": "f4615b36d0af93966e6ca0f2044288841e6574b8",
+  "python_builder": "CPython 3.12",
+  "package_sha256": "1992cc739e8e89cd4512ad45919d1ebc102a6385628f82689a23de49de6f2661",
+  "package_bytes": 55455,
+  "w2_manifest_sha256": "bdbdb0cf0b5ff88eb6619390c53dab11f451d7ef4494068feceaac76475cc9cb",
+  "w3_temporary_assembly_sha256": "7111e7b3aa9c6895931bde0d6707ae249e3301cd790246e05ef8358ab0a70bfa",
+  "members": 13,
+  "expanded_bytes": 208515,
+  "imports_checked": [
+    "studio",
+    "langchain"
+  ],
+  "extracted_import": "PASS main + tools with Python 3.12",
+  "portal_executions": 0,
+  "llm_executions": 0,
+  "limitations": [
+    "Source archive obtained from pinned W2 git HEAD; regenerated in isolated temporary checkout.",
+    "W3 assembly review verifies member hashes, captured source bytes, path safety and declared imports, not portal identity or authorship.",
+    "A Python 3.14 rebuild produced a different ZIP; the W2 R2 identity reproduced exactly with Python 3.12.",
+    "Mobility W1 is not included in this W2 R2 ZIP.",
+    "Static PASS does not override C-R3 critical/high evidence defects."
+  ]
+}
