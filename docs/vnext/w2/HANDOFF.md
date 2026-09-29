@@ -1,4 +1,8 @@
-# GIPUZKOA 360 vNext — W2 R2 handoff
+# GIPUZKOA 360 vNext — W2 handoff index
+
+Current candidate: [G360-R4 handoff](HANDOFF_R4.md). Earlier R2 handoff follows unchanged as historical evidence; it does not describe the current package or enabled capabilities.
+
+## Historical R2 handoff
 
 WORK_ID: W2
 

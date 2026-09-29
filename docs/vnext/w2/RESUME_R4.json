@@ -1,17 +1,14 @@
 {
-  "stage": "A_TO_F_IMPLEMENTED_GATES_PENDING_REMOTE_CI_AND_REAL_LLM",
-  "last_code_tested": "uncommitted working tree after f4615b36d0af93966e6ca0f2044288841e6574b8",
+  "stage": "A_TO_F_CODE_COMMITTED_HANDOFF_PENDING_PUSH_AND_REMOTE_CI",
+  "last_code_tested": "ab3ae58ea10645e1a3448a3c4cc8f729f519364c",
   "dirty_files": [
-    "agentes/gipuzkoa360_vnext/**",
-    "contracts/vnext/evidence-v1.1.schema.json",
-    "contracts/vnext/capability-v1.1.schema.json",
-    "datos_preparados/vnext/**",
-    "scripts/vnext_agent/**",
-    "tests/vnext_agent/**",
+    "docs/vnext/w2/HANDOFF.md",
+    "docs/vnext/w2/HANDOFF_R4.md",
     "docs/vnext/w2/RESUME_R4.json"
   ],
   "pins": {
-    "W1_STABLE_STOP_ONLY": "725a7b73ae0381092cd80edc41b8a25432d75fcd",
+    "W1_STABLE_STOP_ONLY_CONSUMED": "725a7b73ae0381092cd80edc41b8a25432d75fcd",
+    "W1_R5_OPT_IN_REVIEWED_NOT_CONSUMED": "f4efe1bccd7f33a66fe0598f64787e7b425c020a",
     "W3_R4_CONSUMED": "e821341ba1ffd8ed7947cdb97802348919ef502a",
     "W2_START": "f4615b36d0af93966e6ca0f2044288841e6574b8"
   },
@@ -30,6 +27,6 @@
     "py -3.12 -m scripts.vnext_agent.build_package twice => byte-identical SHA-256 366cdc7d160ee6743cb125c6709f57e48f6ddfb91ead812a92eb881570233357",
     "py -3.12 -m scripts.vnext_agent.record_offline => 8 OFFLINE_TOOL records, LLM executed 0"
   ],
-  "next_task": "Commit/push W2-owned changes, update PR #17 description, inspect merge-ref CI and give W3 the pinned candidate; arrange authorized real model evaluation and missing private source access separately.",
-  "pending_dependency": "Private 00–12 TXT/ZIP unavailable in this chat; W1 health-destination pin pending; real LLM/portal execution not authorized; W3 independent acceptance not run."
+  "next_task": "Commit this handoff, push W2 branch, update PR #17 description, inspect merge-ref CI and give W3 the pinned candidate.",
+  "pending_dependency": "Private 00–12 TXT/ZIP unavailable in this chat; W1 0.3.0 health pin now available but needs distinct adapter/provenance review; real LLM/portal execution not authorized; W3 independent acceptance not run."
 }
