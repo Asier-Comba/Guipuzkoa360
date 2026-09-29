@@ -1,6 +1,17 @@
 # Índice actual W1
 
-Ronda vigente: **G360-R5**, contrato opt-in **0.3.0**. Referencia canónica: [CURRENT.json](CURRENT.json).
+Ronda vigente: **G360-R6**, contrato opt-in **0.3.1**. Referencia canónica: [CURRENT.json](CURRENT.json).
+
+- [Handoff R6](HANDOFF_R6.md)
+- [Consumo R6](CONSUMER_R6.md)
+- [Paquete R6 exacto](RUNTIME_MANIFEST_R6.json)
+- [Catálogo operativo derivado](../../../datos_preparados/movilidad/operational_catalog_r6.json)
+- [Casos frontera](BOUNDARY_CASES_R6.json)
+- [Escenarios por origen](CROSS_ORIGIN_SCENARIOS_R6.json)
+
+R6 corrige solo procedencia y añade artefactos de consumo/QA. No cambia la aritmética ni reemplaza silenciosamente R5.
+
+## Histórico R5
 
 - [Handoff sanitario R5](HANDOFF_R5.md)
 - [Consumo y regeneración R5](CONSUMER_R5.md)

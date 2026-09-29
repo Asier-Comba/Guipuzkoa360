@@ -1,0 +1,34 @@
+{
+  "local_python_not_portal": true,
+  "samples_per_size": 3,
+  "measurements": {
+    "1": {
+      "operation": "plan_visit",
+      "p50_ms": 60.701399999743444,
+      "max_ms": 69.56340000033379,
+      "python_peak_bytes": 5554006,
+      "payload_bytes": 16561
+    },
+    "2": {
+      "operation": "compare_visits",
+      "p50_ms": 230.58499999933701,
+      "max_ms": 238.01249999996799,
+      "python_peak_bytes": 5744079,
+      "payload_bytes": 33708
+    },
+    "8": {
+      "operation": "compare_visits",
+      "p50_ms": 971.2185999997018,
+      "max_ms": 1005.0049000001309,
+      "python_peak_bytes": 6489093,
+      "payload_bytes": 146016
+    },
+    "32": {
+      "operation": "compare_visits",
+      "p50_ms": 4016.6919000002963,
+      "max_ms": 4022.107499999038,
+      "python_peak_bytes": 9500940,
+      "payload_bytes": 767650
+    }
+  }
+}

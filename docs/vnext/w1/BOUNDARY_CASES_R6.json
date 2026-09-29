@@ -1,0 +1,1918 @@
+{
+  "oracle": "raw GTFS CSV selection independent of provider plan_visit",
+  "summary": {
+    "cases": 14,
+    "pass": 14,
+    "fail": 0
+  },
+  "cases": [
+    {
+      "case_id": "outbound_one_second_before",
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_official_centre_anchor",
+        "date": "2026-09-29",
+        "duration_minutes": 20,
+        "appointment_time": "09:34:05"
+      },
+      "independent_expected": {
+        "status": "ok",
+        "total_s": 10691,
+        "rows": [
+          {
+            "trip_id": "1_103_LJ_29400",
+            "arrival_time": "08:12:32",
+            "departure_time": "08:12:37",
+            "stop_id": "8305",
+            "stop_sequence": "2",
+            "stop_headsign": "Zegama - Elizalde 6 - Plaza",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 2729
+          },
+          {
+            "trip_id": "1_103_LJ_29400",
+            "arrival_time": "08:40:08",
+            "departure_time": "08:40:13",
+            "stop_id": "7219",
+            "stop_sequence": "25",
+            "stop_headsign": "Beasain - Lokomotora Biribilgunea",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 2752
+          },
+          {
+            "trip_id": "1_106_LJ_37200",
+            "arrival_time": "10:29:45",
+            "departure_time": "10:29:50",
+            "stop_id": "7218",
+            "stop_sequence": "8",
+            "stop_headsign": "Beasain - San Inazio 10",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 314
+          },
+          {
+            "trip_id": "1_106_LJ_37200",
+            "arrival_time": "11:07:48",
+            "departure_time": "11:07:53",
+            "stop_id": "8309",
+            "stop_sequence": "35",
+            "stop_headsign": "Zegama - Elizalde Kalea 4",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 341
+          }
+        ],
+        "outbound_trip_id": "1_103_LJ_29400",
+        "return_trip_id": "1_106_LJ_37200",
+        "return_slack_s": 1005
+      },
+      "provider_result": {
+        "status": "ok",
+        "error": null,
+        "normalized_request": {
+          "origin_id": "zegama_center_stops",
+          "destination_id": "beasain_official_centre_anchor",
+          "date": "2026-09-29",
+          "appointment_time": "09:34:05",
+          "duration_minutes": 20,
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+          "timezone": "Europe/Madrid",
+          "return_deadline": null
+        },
+        "itinerary": {
+          "outbound": {
+            "trip_id": "1_103_LJ_29400",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "8305",
+            "to_stop_id": "7219",
+            "from_stop_sequence": 2,
+            "to_stop_sequence": 25,
+            "departure_time": "08:12:37",
+            "arrival_time": "08:40:08",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "return": {
+            "trip_id": "1_106_LJ_37200",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "7218",
+            "to_stop_id": "8309",
+            "from_stop_sequence": 8,
+            "to_stop_sequence": 35,
+            "departure_time": "10:29:50",
+            "arrival_time": "11:07:48",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "total_s": 10691,
+          "start_s": 29377,
+          "end_s": 40068,
+          "vehicle_span_s": 10511,
+          "origin_stop_id": "8305",
+          "return_stop_id": "8309",
+          "return_slack_s": 1005,
+          "alternatives_evaluated": 190
+        },
+        "components_s": {
+          "initial_wait_s": 180,
+          "outbound_vehicle_s": 1651,
+          "destination_walk_outbound_s": 420,
+          "pre_appointment_wait_s": 2817,
+          "appointment_s": 1200,
+          "destination_walk_return_s": 960,
+          "return_wait_s": 1185,
+          "return_vehicle_s": 2278
+        },
+        "parameter_provenance": [
+          {
+            "field": "origin_id",
+            "value": "zegama_center_stops",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "destination_id",
+            "value": "beasain_official_centre_anchor",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "date",
+            "value": "2026-09-29",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "appointment_time",
+            "value": "09:34:05",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "duration_minutes",
+            "value": 20,
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "arrival_margin_minutes",
+            "value": 10,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "boarding_margin_minutes",
+            "value": 3,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "walking_profile_id",
+            "value": "poc_reference_50m_min_plus_120s",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "snapshot_id",
+            "value": "official-goierrialdea-go01-health-r5-20260929",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "timezone",
+            "value": "Europe/Madrid",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "return_deadline",
+            "value": null,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case_id": "outbound_exact_margin",
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_official_centre_anchor",
+        "date": "2026-09-29",
+        "duration_minutes": 20,
+        "appointment_time": "09:34:06"
+      },
+      "independent_expected": {
+        "status": "ok",
+        "total_s": 8591,
+        "rows": [
+          {
+            "trip_id": "1_101_LJ_31500",
+            "arrival_time": "08:47:32",
+            "departure_time": "08:47:37",
+            "stop_id": "8305",
+            "stop_sequence": "2",
+            "stop_headsign": "Zegama - Elizalde 6 - Plaza",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 7654
+          },
+          {
+            "trip_id": "1_101_LJ_31500",
+            "arrival_time": "09:17:06",
+            "departure_time": "09:17:11",
+            "stop_id": "7219",
+            "stop_sequence": "27",
+            "stop_headsign": "Beasain - Lokomotora Biribilgunea",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 7679
+          },
+          {
+            "trip_id": "1_106_LJ_37200",
+            "arrival_time": "10:29:45",
+            "departure_time": "10:29:50",
+            "stop_id": "7218",
+            "stop_sequence": "8",
+            "stop_headsign": "Beasain - San Inazio 10",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 314
+          },
+          {
+            "trip_id": "1_106_LJ_37200",
+            "arrival_time": "11:07:48",
+            "departure_time": "11:07:53",
+            "stop_id": "8309",
+            "stop_sequence": "35",
+            "stop_headsign": "Zegama - Elizalde Kalea 4",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 341
+          }
+        ],
+        "outbound_trip_id": "1_101_LJ_31500",
+        "return_trip_id": "1_106_LJ_37200",
+        "return_slack_s": 1004
+      },
+      "provider_result": {
+        "status": "ok",
+        "error": null,
+        "normalized_request": {
+          "origin_id": "zegama_center_stops",
+          "destination_id": "beasain_official_centre_anchor",
+          "date": "2026-09-29",
+          "appointment_time": "09:34:06",
+          "duration_minutes": 20,
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+          "timezone": "Europe/Madrid",
+          "return_deadline": null
+        },
+        "itinerary": {
+          "outbound": {
+            "trip_id": "1_101_LJ_31500",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "8305",
+            "to_stop_id": "7219",
+            "from_stop_sequence": 2,
+            "to_stop_sequence": 27,
+            "departure_time": "08:47:37",
+            "arrival_time": "09:17:06",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "return": {
+            "trip_id": "1_106_LJ_37200",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "7218",
+            "to_stop_id": "8309",
+            "from_stop_sequence": 8,
+            "to_stop_sequence": 35,
+            "departure_time": "10:29:50",
+            "arrival_time": "11:07:48",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "total_s": 8591,
+          "start_s": 31477,
+          "end_s": 40068,
+          "vehicle_span_s": 8411,
+          "origin_stop_id": "8305",
+          "return_stop_id": "8309",
+          "return_slack_s": 1004,
+          "alternatives_evaluated": 209
+        },
+        "components_s": {
+          "initial_wait_s": 180,
+          "outbound_vehicle_s": 1769,
+          "destination_walk_outbound_s": 420,
+          "pre_appointment_wait_s": 600,
+          "appointment_s": 1200,
+          "destination_walk_return_s": 960,
+          "return_wait_s": 1184,
+          "return_vehicle_s": 2278
+        },
+        "parameter_provenance": [
+          {
+            "field": "origin_id",
+            "value": "zegama_center_stops",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "destination_id",
+            "value": "beasain_official_centre_anchor",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "date",
+            "value": "2026-09-29",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "appointment_time",
+            "value": "09:34:06",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "duration_minutes",
+            "value": 20,
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "arrival_margin_minutes",
+            "value": 10,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "boarding_margin_minutes",
+            "value": 3,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "walking_profile_id",
+            "value": "poc_reference_50m_min_plus_120s",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "snapshot_id",
+            "value": "official-goierrialdea-go01-health-r5-20260929",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "timezone",
+            "value": "Europe/Madrid",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "return_deadline",
+            "value": null,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case_id": "outbound_one_second_after",
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_official_centre_anchor",
+        "date": "2026-09-29",
+        "duration_minutes": 20,
+        "appointment_time": "09:34:07"
+      },
+      "independent_expected": {
+        "status": "ok",
+        "total_s": 8591,
+        "rows": [
+          {
+            "trip_id": "1_101_LJ_31500",
+            "arrival_time": "08:47:32",
+            "departure_time": "08:47:37",
+            "stop_id": "8305",
+            "stop_sequence": "2",
+            "stop_headsign": "Zegama - Elizalde 6 - Plaza",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 7654
+          },
+          {
+            "trip_id": "1_101_LJ_31500",
+            "arrival_time": "09:17:06",
+            "departure_time": "09:17:11",
+            "stop_id": "7219",
+            "stop_sequence": "27",
+            "stop_headsign": "Beasain - Lokomotora Biribilgunea",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 7679
+          },
+          {
+            "trip_id": "1_106_LJ_37200",
+            "arrival_time": "10:29:45",
+            "departure_time": "10:29:50",
+            "stop_id": "7218",
+            "stop_sequence": "8",
+            "stop_headsign": "Beasain - San Inazio 10",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 314
+          },
+          {
+            "trip_id": "1_106_LJ_37200",
+            "arrival_time": "11:07:48",
+            "departure_time": "11:07:53",
+            "stop_id": "8309",
+            "stop_sequence": "35",
+            "stop_headsign": "Zegama - Elizalde Kalea 4",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 341
+          }
+        ],
+        "outbound_trip_id": "1_101_LJ_31500",
+        "return_trip_id": "1_106_LJ_37200",
+        "return_slack_s": 1003
+      },
+      "provider_result": {
+        "status": "ok",
+        "error": null,
+        "normalized_request": {
+          "origin_id": "zegama_center_stops",
+          "destination_id": "beasain_official_centre_anchor",
+          "date": "2026-09-29",
+          "appointment_time": "09:34:07",
+          "duration_minutes": 20,
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+          "timezone": "Europe/Madrid",
+          "return_deadline": null
+        },
+        "itinerary": {
+          "outbound": {
+            "trip_id": "1_101_LJ_31500",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "8305",
+            "to_stop_id": "7219",
+            "from_stop_sequence": 2,
+            "to_stop_sequence": 27,
+            "departure_time": "08:47:37",
+            "arrival_time": "09:17:06",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "return": {
+            "trip_id": "1_106_LJ_37200",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "7218",
+            "to_stop_id": "8309",
+            "from_stop_sequence": 8,
+            "to_stop_sequence": 35,
+            "departure_time": "10:29:50",
+            "arrival_time": "11:07:48",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "total_s": 8591,
+          "start_s": 31477,
+          "end_s": 40068,
+          "vehicle_span_s": 8411,
+          "origin_stop_id": "8305",
+          "return_stop_id": "8309",
+          "return_slack_s": 1003,
+          "alternatives_evaluated": 209
+        },
+        "components_s": {
+          "initial_wait_s": 180,
+          "outbound_vehicle_s": 1769,
+          "destination_walk_outbound_s": 420,
+          "pre_appointment_wait_s": 601,
+          "appointment_s": 1200,
+          "destination_walk_return_s": 960,
+          "return_wait_s": 1183,
+          "return_vehicle_s": 2278
+        },
+        "parameter_provenance": [
+          {
+            "field": "origin_id",
+            "value": "zegama_center_stops",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "destination_id",
+            "value": "beasain_official_centre_anchor",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "date",
+            "value": "2026-09-29",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "appointment_time",
+            "value": "09:34:07",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "duration_minutes",
+            "value": 20,
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "arrival_margin_minutes",
+            "value": 10,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "boarding_margin_minutes",
+            "value": 3,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "walking_profile_id",
+            "value": "poc_reference_50m_min_plus_120s",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "snapshot_id",
+            "value": "official-goierrialdea-go01-health-r5-20260929",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "timezone",
+            "value": "Europe/Madrid",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "return_deadline",
+            "value": null,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case_id": "duration_last_departure",
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_official_centre_anchor",
+        "date": "2026-09-29",
+        "duration_minutes": 25,
+        "appointment_time": "09:45"
+      },
+      "independent_expected": {
+        "status": "ok",
+        "total_s": 8591,
+        "rows": [
+          {
+            "trip_id": "1_101_LJ_31500",
+            "arrival_time": "08:47:32",
+            "departure_time": "08:47:37",
+            "stop_id": "8305",
+            "stop_sequence": "2",
+            "stop_headsign": "Zegama - Elizalde 6 - Plaza",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 7654
+          },
+          {
+            "trip_id": "1_101_LJ_31500",
+            "arrival_time": "09:17:06",
+            "departure_time": "09:17:11",
+            "stop_id": "7219",
+            "stop_sequence": "27",
+            "stop_headsign": "Beasain - Lokomotora Biribilgunea",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 7679
+          },
+          {
+            "trip_id": "1_106_LJ_37200",
+            "arrival_time": "10:29:45",
+            "departure_time": "10:29:50",
+            "stop_id": "7218",
+            "stop_sequence": "8",
+            "stop_headsign": "Beasain - San Inazio 10",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 314
+          },
+          {
+            "trip_id": "1_106_LJ_37200",
+            "arrival_time": "11:07:48",
+            "departure_time": "11:07:53",
+            "stop_id": "8309",
+            "stop_sequence": "35",
+            "stop_headsign": "Zegama - Elizalde Kalea 4",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 341
+          }
+        ],
+        "outbound_trip_id": "1_101_LJ_31500",
+        "return_trip_id": "1_106_LJ_37200",
+        "return_slack_s": 50
+      },
+      "provider_result": {
+        "status": "ok",
+        "error": null,
+        "normalized_request": {
+          "origin_id": "zegama_center_stops",
+          "destination_id": "beasain_official_centre_anchor",
+          "date": "2026-09-29",
+          "appointment_time": "09:45:00",
+          "duration_minutes": 25,
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+          "timezone": "Europe/Madrid",
+          "return_deadline": null
+        },
+        "itinerary": {
+          "outbound": {
+            "trip_id": "1_101_LJ_31500",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "8305",
+            "to_stop_id": "7219",
+            "from_stop_sequence": 2,
+            "to_stop_sequence": 27,
+            "departure_time": "08:47:37",
+            "arrival_time": "09:17:06",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "return": {
+            "trip_id": "1_106_LJ_37200",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "7218",
+            "to_stop_id": "8309",
+            "from_stop_sequence": 8,
+            "to_stop_sequence": 35,
+            "departure_time": "10:29:50",
+            "arrival_time": "11:07:48",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "total_s": 8591,
+          "start_s": 31477,
+          "end_s": 40068,
+          "vehicle_span_s": 8411,
+          "origin_stop_id": "8305",
+          "return_stop_id": "8309",
+          "return_slack_s": 50,
+          "alternatives_evaluated": 228
+        },
+        "components_s": {
+          "initial_wait_s": 180,
+          "outbound_vehicle_s": 1769,
+          "destination_walk_outbound_s": 420,
+          "pre_appointment_wait_s": 1254,
+          "appointment_s": 1500,
+          "destination_walk_return_s": 960,
+          "return_wait_s": 230,
+          "return_vehicle_s": 2278
+        },
+        "parameter_provenance": [
+          {
+            "field": "origin_id",
+            "value": "zegama_center_stops",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "destination_id",
+            "value": "beasain_official_centre_anchor",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "date",
+            "value": "2026-09-29",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "appointment_time",
+            "value": "09:45:00",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "duration_minutes",
+            "value": 25,
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "arrival_margin_minutes",
+            "value": 10,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "boarding_margin_minutes",
+            "value": 3,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "walking_profile_id",
+            "value": "poc_reference_50m_min_plus_120s",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "snapshot_id",
+            "value": "official-goierrialdea-go01-health-r5-20260929",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "timezone",
+            "value": "Europe/Madrid",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "return_deadline",
+            "value": null,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case_id": "duration_loses_departure",
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_official_centre_anchor",
+        "date": "2026-09-29",
+        "duration_minutes": 26,
+        "appointment_time": "09:45"
+      },
+      "independent_expected": {
+        "status": "ok",
+        "total_s": 10372,
+        "rows": [
+          {
+            "trip_id": "1_101_LJ_31500",
+            "arrival_time": "08:47:32",
+            "departure_time": "08:47:37",
+            "stop_id": "8305",
+            "stop_sequence": "2",
+            "stop_headsign": "Zegama - Elizalde 6 - Plaza",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 7654
+          },
+          {
+            "trip_id": "1_101_LJ_31500",
+            "arrival_time": "09:17:06",
+            "departure_time": "09:17:11",
+            "stop_id": "7219",
+            "stop_sequence": "27",
+            "stop_headsign": "Beasain - Lokomotora Biribilgunea",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 7679
+          },
+          {
+            "trip_id": "1_102_LJ_38700",
+            "arrival_time": "10:59:26",
+            "departure_time": "10:59:31",
+            "stop_id": "7218",
+            "stop_sequence": "13",
+            "stop_headsign": "Beasain - San Inazio 10",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 1342
+          },
+          {
+            "trip_id": "1_102_LJ_38700",
+            "arrival_time": "11:37:29",
+            "departure_time": "11:37:34",
+            "stop_id": "8309",
+            "stop_sequence": "40",
+            "stop_headsign": "Zegama - Elizalde Kalea 4",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 1369
+          }
+        ],
+        "outbound_trip_id": "1_101_LJ_31500",
+        "return_trip_id": "1_102_LJ_38700",
+        "return_slack_s": 1771
+      },
+      "provider_result": {
+        "status": "ok",
+        "error": null,
+        "normalized_request": {
+          "origin_id": "zegama_center_stops",
+          "destination_id": "beasain_official_centre_anchor",
+          "date": "2026-09-29",
+          "appointment_time": "09:45:00",
+          "duration_minutes": 26,
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+          "timezone": "Europe/Madrid",
+          "return_deadline": null
+        },
+        "itinerary": {
+          "outbound": {
+            "trip_id": "1_101_LJ_31500",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "8305",
+            "to_stop_id": "7219",
+            "from_stop_sequence": 2,
+            "to_stop_sequence": 27,
+            "departure_time": "08:47:37",
+            "arrival_time": "09:17:06",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "return": {
+            "trip_id": "1_102_LJ_38700",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "7218",
+            "to_stop_id": "8309",
+            "from_stop_sequence": 13,
+            "to_stop_sequence": 40,
+            "departure_time": "10:59:31",
+            "arrival_time": "11:37:29",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "total_s": 10372,
+          "start_s": 31477,
+          "end_s": 41849,
+          "vehicle_span_s": 10192,
+          "origin_stop_id": "8305",
+          "return_stop_id": "8309",
+          "return_slack_s": 1771,
+          "alternatives_evaluated": 216
+        },
+        "components_s": {
+          "initial_wait_s": 180,
+          "outbound_vehicle_s": 1769,
+          "destination_walk_outbound_s": 420,
+          "pre_appointment_wait_s": 1254,
+          "appointment_s": 1560,
+          "destination_walk_return_s": 960,
+          "return_wait_s": 1951,
+          "return_vehicle_s": 2278
+        },
+        "parameter_provenance": [
+          {
+            "field": "origin_id",
+            "value": "zegama_center_stops",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "destination_id",
+            "value": "beasain_official_centre_anchor",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "date",
+            "value": "2026-09-29",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "appointment_time",
+            "value": "09:45:00",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "duration_minutes",
+            "value": 26,
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "arrival_margin_minutes",
+            "value": 10,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "boarding_margin_minutes",
+            "value": 3,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "walking_profile_id",
+            "value": "poc_reference_50m_min_plus_120s",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "snapshot_id",
+            "value": "official-goierrialdea-go01-health-r5-20260929",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "timezone",
+            "value": "Europe/Madrid",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "return_deadline",
+            "value": null,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case_id": "deadline_one_second_before",
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_official_centre_anchor",
+        "date": "2026-09-29",
+        "duration_minutes": 20,
+        "appointment_time": "09:45",
+        "return_deadline": "11:07:47"
+      },
+      "independent_expected": {
+        "status": "no_feasible_journey",
+        "total_s": null,
+        "rows": []
+      },
+      "provider_result": {
+        "status": "no_feasible_journey",
+        "error": {
+          "code": "no_pair_in_complete_direct_search",
+          "message": "Sin pareja viable en paradas/red admitidas"
+        },
+        "normalized_request": {
+          "origin_id": "zegama_center_stops",
+          "destination_id": "beasain_official_centre_anchor",
+          "date": "2026-09-29",
+          "appointment_time": "09:45:00",
+          "duration_minutes": 20,
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+          "timezone": "Europe/Madrid",
+          "return_deadline": "11:07:47"
+        },
+        "itinerary": null,
+        "components_s": null,
+        "parameter_provenance": [
+          {
+            "field": "origin_id",
+            "value": "zegama_center_stops",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "destination_id",
+            "value": "beasain_official_centre_anchor",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "date",
+            "value": "2026-09-29",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "appointment_time",
+            "value": "09:45:00",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "duration_minutes",
+            "value": 20,
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "arrival_margin_minutes",
+            "value": 10,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "boarding_margin_minutes",
+            "value": 3,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "walking_profile_id",
+            "value": "poc_reference_50m_min_plus_120s",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "snapshot_id",
+            "value": "official-goierrialdea-go01-health-r5-20260929",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "timezone",
+            "value": "Europe/Madrid",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "return_deadline",
+            "value": "11:07:47",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case_id": "deadline_exact",
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_official_centre_anchor",
+        "date": "2026-09-29",
+        "duration_minutes": 20,
+        "appointment_time": "09:45",
+        "return_deadline": "11:07:48"
+      },
+      "independent_expected": {
+        "status": "ok",
+        "total_s": 8591,
+        "rows": [
+          {
+            "trip_id": "1_101_LJ_31500",
+            "arrival_time": "08:47:32",
+            "departure_time": "08:47:37",
+            "stop_id": "8305",
+            "stop_sequence": "2",
+            "stop_headsign": "Zegama - Elizalde 6 - Plaza",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 7654
+          },
+          {
+            "trip_id": "1_101_LJ_31500",
+            "arrival_time": "09:17:06",
+            "departure_time": "09:17:11",
+            "stop_id": "7219",
+            "stop_sequence": "27",
+            "stop_headsign": "Beasain - Lokomotora Biribilgunea",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 7679
+          },
+          {
+            "trip_id": "1_106_LJ_37200",
+            "arrival_time": "10:29:45",
+            "departure_time": "10:29:50",
+            "stop_id": "7218",
+            "stop_sequence": "8",
+            "stop_headsign": "Beasain - San Inazio 10",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 314
+          },
+          {
+            "trip_id": "1_106_LJ_37200",
+            "arrival_time": "11:07:48",
+            "departure_time": "11:07:53",
+            "stop_id": "8309",
+            "stop_sequence": "35",
+            "stop_headsign": "Zegama - Elizalde Kalea 4",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 341
+          }
+        ],
+        "outbound_trip_id": "1_101_LJ_31500",
+        "return_trip_id": "1_106_LJ_37200",
+        "return_slack_s": 350
+      },
+      "provider_result": {
+        "status": "ok",
+        "error": null,
+        "normalized_request": {
+          "origin_id": "zegama_center_stops",
+          "destination_id": "beasain_official_centre_anchor",
+          "date": "2026-09-29",
+          "appointment_time": "09:45:00",
+          "duration_minutes": 20,
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+          "timezone": "Europe/Madrid",
+          "return_deadline": "11:07:48"
+        },
+        "itinerary": {
+          "outbound": {
+            "trip_id": "1_101_LJ_31500",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "8305",
+            "to_stop_id": "7219",
+            "from_stop_sequence": 2,
+            "to_stop_sequence": 27,
+            "departure_time": "08:47:37",
+            "arrival_time": "09:17:06",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "return": {
+            "trip_id": "1_106_LJ_37200",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "7218",
+            "to_stop_id": "8309",
+            "from_stop_sequence": 8,
+            "to_stop_sequence": 35,
+            "departure_time": "10:29:50",
+            "arrival_time": "11:07:48",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "total_s": 8591,
+          "start_s": 31477,
+          "end_s": 40068,
+          "vehicle_span_s": 8411,
+          "origin_stop_id": "8305",
+          "return_stop_id": "8309",
+          "return_slack_s": 350,
+          "alternatives_evaluated": 12
+        },
+        "components_s": {
+          "initial_wait_s": 180,
+          "outbound_vehicle_s": 1769,
+          "destination_walk_outbound_s": 420,
+          "pre_appointment_wait_s": 1254,
+          "appointment_s": 1200,
+          "destination_walk_return_s": 960,
+          "return_wait_s": 530,
+          "return_vehicle_s": 2278
+        },
+        "parameter_provenance": [
+          {
+            "field": "origin_id",
+            "value": "zegama_center_stops",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "destination_id",
+            "value": "beasain_official_centre_anchor",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "date",
+            "value": "2026-09-29",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "appointment_time",
+            "value": "09:45:00",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "duration_minutes",
+            "value": 20,
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "arrival_margin_minutes",
+            "value": 10,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "boarding_margin_minutes",
+            "value": 3,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "walking_profile_id",
+            "value": "poc_reference_50m_min_plus_120s",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "snapshot_id",
+            "value": "official-goierrialdea-go01-health-r5-20260929",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "timezone",
+            "value": "Europe/Madrid",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "return_deadline",
+            "value": "11:07:48",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case_id": "deadline_one_second_after",
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_official_centre_anchor",
+        "date": "2026-09-29",
+        "duration_minutes": 20,
+        "appointment_time": "09:45",
+        "return_deadline": "11:07:49"
+      },
+      "independent_expected": {
+        "status": "ok",
+        "total_s": 8591,
+        "rows": [
+          {
+            "trip_id": "1_101_LJ_31500",
+            "arrival_time": "08:47:32",
+            "departure_time": "08:47:37",
+            "stop_id": "8305",
+            "stop_sequence": "2",
+            "stop_headsign": "Zegama - Elizalde 6 - Plaza",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 7654
+          },
+          {
+            "trip_id": "1_101_LJ_31500",
+            "arrival_time": "09:17:06",
+            "departure_time": "09:17:11",
+            "stop_id": "7219",
+            "stop_sequence": "27",
+            "stop_headsign": "Beasain - Lokomotora Biribilgunea",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 7679
+          },
+          {
+            "trip_id": "1_106_LJ_37200",
+            "arrival_time": "10:29:45",
+            "departure_time": "10:29:50",
+            "stop_id": "7218",
+            "stop_sequence": "8",
+            "stop_headsign": "Beasain - San Inazio 10",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 314
+          },
+          {
+            "trip_id": "1_106_LJ_37200",
+            "arrival_time": "11:07:48",
+            "departure_time": "11:07:53",
+            "stop_id": "8309",
+            "stop_sequence": "35",
+            "stop_headsign": "Zegama - Elizalde Kalea 4",
+            "pickup_type": "0",
+            "drop_off_type": "0",
+            "timepoint": "0",
+            "csv_line": 341
+          }
+        ],
+        "outbound_trip_id": "1_101_LJ_31500",
+        "return_trip_id": "1_106_LJ_37200",
+        "return_slack_s": 350
+      },
+      "provider_result": {
+        "status": "ok",
+        "error": null,
+        "normalized_request": {
+          "origin_id": "zegama_center_stops",
+          "destination_id": "beasain_official_centre_anchor",
+          "date": "2026-09-29",
+          "appointment_time": "09:45:00",
+          "duration_minutes": 20,
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+          "timezone": "Europe/Madrid",
+          "return_deadline": "11:07:49"
+        },
+        "itinerary": {
+          "outbound": {
+            "trip_id": "1_101_LJ_31500",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "8305",
+            "to_stop_id": "7219",
+            "from_stop_sequence": 2,
+            "to_stop_sequence": 27,
+            "departure_time": "08:47:37",
+            "arrival_time": "09:17:06",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "return": {
+            "trip_id": "1_106_LJ_37200",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "7218",
+            "to_stop_id": "8309",
+            "from_stop_sequence": 8,
+            "to_stop_sequence": 35,
+            "departure_time": "10:29:50",
+            "arrival_time": "11:07:48",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "total_s": 8591,
+          "start_s": 31477,
+          "end_s": 40068,
+          "vehicle_span_s": 8411,
+          "origin_stop_id": "8305",
+          "return_stop_id": "8309",
+          "return_slack_s": 350,
+          "alternatives_evaluated": 12
+        },
+        "components_s": {
+          "initial_wait_s": 180,
+          "outbound_vehicle_s": 1769,
+          "destination_walk_outbound_s": 420,
+          "pre_appointment_wait_s": 1254,
+          "appointment_s": 1200,
+          "destination_walk_return_s": 960,
+          "return_wait_s": 530,
+          "return_vehicle_s": 2278
+        },
+        "parameter_provenance": [
+          {
+            "field": "origin_id",
+            "value": "zegama_center_stops",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "destination_id",
+            "value": "beasain_official_centre_anchor",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "date",
+            "value": "2026-09-29",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "appointment_time",
+            "value": "09:45:00",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "duration_minutes",
+            "value": 20,
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "arrival_margin_minutes",
+            "value": 10,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "boarding_margin_minutes",
+            "value": 3,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "walking_profile_id",
+            "value": "poc_reference_50m_min_plus_120s",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "snapshot_id",
+            "value": "official-goierrialdea-go01-health-r5-20260929",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "timezone",
+            "value": "Europe/Madrid",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "return_deadline",
+            "value": "11:07:49",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case_id": "outside_day",
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_official_centre_anchor",
+        "date": "2026-09-29",
+        "duration_minutes": 20,
+        "appointment_time": "23:50"
+      },
+      "expected_status": "unsupported",
+      "provider_result": {
+        "status": "unsupported",
+        "error": {
+          "code": "cross_day_appointment",
+          "message": "Fuera del mismo día"
+        },
+        "normalized_request": {
+          "origin_id": "zegama_center_stops",
+          "destination_id": "beasain_official_centre_anchor",
+          "date": "2026-09-29",
+          "appointment_time": "23:50:00",
+          "duration_minutes": 20,
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+          "timezone": "Europe/Madrid",
+          "return_deadline": null
+        },
+        "itinerary": null,
+        "components_s": null,
+        "parameter_provenance": [
+          {
+            "field": "origin_id",
+            "value": "zegama_center_stops",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "destination_id",
+            "value": "beasain_official_centre_anchor",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "date",
+            "value": "2026-09-29",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "appointment_time",
+            "value": "23:50:00",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "duration_minutes",
+            "value": 20,
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "arrival_margin_minutes",
+            "value": 10,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "boarding_margin_minutes",
+            "value": 3,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "walking_profile_id",
+            "value": "poc_reference_50m_min_plus_120s",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "snapshot_id",
+            "value": "official-goierrialdea-go01-health-r5-20260929",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "timezone",
+            "value": "Europe/Madrid",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "return_deadline",
+            "value": null,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case_id": "date_not_validated",
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_official_centre_anchor",
+        "date": "2026-09-30",
+        "duration_minutes": 20,
+        "appointment_time": "09:45"
+      },
+      "expected_status": "unknown",
+      "provider_result": {
+        "status": "unknown",
+        "error": {
+          "code": "date_not_validated",
+          "message": "Fecha no validada"
+        },
+        "normalized_request": {
+          "origin_id": "zegama_center_stops",
+          "destination_id": "beasain_official_centre_anchor",
+          "date": "2026-09-30",
+          "appointment_time": "09:45:00",
+          "duration_minutes": 20,
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+          "timezone": "Europe/Madrid",
+          "return_deadline": null
+        },
+        "itinerary": null,
+        "components_s": null,
+        "parameter_provenance": [
+          {
+            "field": "origin_id",
+            "value": "zegama_center_stops",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "destination_id",
+            "value": "beasain_official_centre_anchor",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "date",
+            "value": "2026-09-30",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "appointment_time",
+            "value": "09:45:00",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "duration_minutes",
+            "value": 20,
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "arrival_margin_minutes",
+            "value": 10,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "boarding_margin_minutes",
+            "value": 3,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "walking_profile_id",
+            "value": "poc_reference_50m_min_plus_120s",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "snapshot_id",
+            "value": "official-goierrialdea-go01-health-r5-20260929",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "timezone",
+            "value": "Europe/Madrid",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "return_deadline",
+            "value": null,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case_id": "destination_unknown",
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "unknown",
+        "date": "2026-09-29",
+        "duration_minutes": 20,
+        "appointment_time": "09:45"
+      },
+      "expected_status": "unsupported",
+      "provider_result": {
+        "status": "unsupported",
+        "error": {
+          "code": "catalog_scope",
+          "message": "Origen o destino fuera del catálogo sanitario"
+        },
+        "normalized_request": {
+          "origin_id": "zegama_center_stops",
+          "destination_id": "unknown",
+          "date": "2026-09-29",
+          "appointment_time": "09:45:00",
+          "duration_minutes": 20,
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+          "timezone": "Europe/Madrid",
+          "return_deadline": null
+        },
+        "itinerary": null,
+        "components_s": null,
+        "parameter_provenance": [
+          {
+            "field": "origin_id",
+            "value": "zegama_center_stops",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "destination_id",
+            "value": "unknown",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "date",
+            "value": "2026-09-29",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "appointment_time",
+            "value": "09:45:00",
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "duration_minutes",
+            "value": 20,
+            "origin": "human_explicit",
+            "source_ref": "USER"
+          },
+          {
+            "field": "arrival_margin_minutes",
+            "value": 10,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "boarding_margin_minutes",
+            "value": 3,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "walking_profile_id",
+            "value": "poc_reference_50m_min_plus_120s",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "snapshot_id",
+            "value": "official-goierrialdea-go01-health-r5-20260929",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "timezone",
+            "value": "Europe/Madrid",
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          },
+          {
+            "field": "return_deadline",
+            "value": null,
+            "origin": "model_default",
+            "source_ref": "MODEL_DEFAULTS"
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case_id": "profile_unknown",
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_official_centre_anchor",
+        "date": "2026-09-29",
+        "duration_minutes": 20,
+        "appointment_time": "09:45",
+        "walking_profile_id": "unknown"
+      },
+      "expected_status": "error",
+      "provider_result": {
+        "status": "error",
+        "error": {
+          "code": "invalid_request",
+          "message": "walking_profile_id no soportado"
+        },
+        "normalized_request": null,
+        "itinerary": null,
+        "components_s": null,
+        "parameter_provenance": []
+      },
+      "pass": true
+    },
+    {
+      "case_id": "snapshot_unknown",
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_official_centre_anchor",
+        "date": "2026-09-29",
+        "duration_minutes": 20,
+        "appointment_time": "09:45",
+        "snapshot_id": "unknown"
+      },
+      "expected_status": "unknown",
+      "provider_result": {
+        "status": "unknown",
+        "error": {
+          "code": "snapshot_not_found",
+          "message": "El snapshot solicitado no está disponible"
+        },
+        "normalized_request": null,
+        "itinerary": null,
+        "components_s": null,
+        "parameter_provenance": null
+      },
+      "pass": true
+    },
+    {
+      "case_id": "corrupted_walking_link",
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_official_centre_anchor",
+        "date": "2026-09-29",
+        "duration_minutes": 20,
+        "appointment_time": "09:45"
+      },
+      "corruption": "7219 outbound seconds +1 with valid manifest hash",
+      "expected_status": "unknown",
+      "provider_result": {
+        "status": "unknown",
+        "error": {
+          "code": "invalid_health_snapshot",
+          "message": "walking seconds"
+        },
+        "normalized_request": null,
+        "itinerary": null,
+        "components_s": null,
+        "parameter_provenance": []
+      },
+      "pass": true
+    }
+  ]
+}

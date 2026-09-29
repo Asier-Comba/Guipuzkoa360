@@ -1,22 +1,17 @@
 {
-  "round": "G360-R5",
-  "head": "fa95fbf3e1bc273ae736f9dad36a675d50f0b5d0",
-  "head_semantics": "Tested executable pin; final evidence-only publication SHA recorded in PR15/Issue16 to avoid self-reference",
-  "contract_version": "0.3.0",
-  "scenario_kind": "health_visit",
-  "runtime_manifest": "docs/vnext/w1/RUNTIME_MANIFEST_R5.json",
-  "capability_descriptor": "docs/vnext/w1/CAPABILITY_DESCRIPTOR_R5.json",
-  "consumer_guide": "docs/vnext/w1/CONSUMER_R5.md",
-  "health_status": "YES_WITH_MODELLED_ACCESS_LIMIT",
+  "round": "G360-R6",
+  "head": "WORKTREE_TESTED_PENDING_PUBLISH",
+  "head_semantics": "R6 executable state; published SHA is recorded after push without self-reference",
+  "contract_version": "0.3.1",
+  "entrypoint": "prototypes.ir_y_volver.provider_r6",
+  "runtime_manifest": "docs/vnext/w1/RUNTIME_MANIFEST_R6.json",
+  "capability_descriptor": "docs/vnext/w1/CAPABILITY_DESCRIPTOR_R6.json",
+  "operational_catalog": "datos_preparados/movilidad/operational_catalog_r6.json",
+  "boundary_cases": "docs/vnext/w1/BOUNDARY_CASES_R6.json",
+  "package_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+  "package_bytes": 129365,
+  "stable_r4_head": "725a7b73ae0381092cd80edc41b8a25432d75fcd",
+  "baseline_r5_head": "f4efe1bccd7f33a66fe0598f64787e7b425c020a",
   "entrance_verified": false,
-  "package_sha256": "ab7b7ac4f7c426bcf5aaf8c1e0b67ad18fadb1e2d94a876ce9a9ea0a74220120",
-  "package_bytes": 109882,
-  "stable_stop_only": {
-    "head": "725a7b73ae0381092cd80edc41b8a25432d75fcd",
-    "contract_version": "0.2.0",
-    "runtime_manifest": "docs/vnext/w1/RUNTIME_MANIFEST_R4.json",
-    "capability_descriptor": "docs/vnext/w1/CAPABILITY_DESCRIPTOR_R4.json",
-    "consumer_guide": "docs/vnext/w1/CONSUMER_R4.md",
-    "package_sha256": "fa2ae468c4197259c5a7cce562ad21f3fa41c2c11c678a84f5faa5958c624e45"
-  }
+  "merged_or_published_release": false
 }
