@@ -16,6 +16,15 @@ ID='official-goierrialdea-go01-health-r5-20260929'
 def sha(path): return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def canonical_network(raw):
+    """R4 public XML is a Git text file: canonicalize EOL only for R5 identity.
+
+    Do not rewrite the preserved acquisition or the historical working copy.
+    Node/way IDs, tags, and coordinates are byte-identical apart from CRLF/LF.
+    """
+    return raw.replace(b'\r\n',b'\n').replace(b'\r',b'\n')
+
+
 def dump(path,value):
     path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(json.dumps(value,ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf-8',newline='\n')
@@ -39,7 +48,7 @@ def build(output=None):
     public=ROOT/'datos_originales/movilidad/beasain-network-r4-public.osm'
     expected_original='d70452469ac23b81839417aabda5289f4148d428d2c2b5762347c4f90320a652'
     if original.exists() and sha(original)!=expected_original: raise ValueError('R4 acquisition changed')
-    n=Network.from_xml(public.read_bytes())
+    n=Network.from_xml(canonical_network(public.read_bytes()))
     health=json.loads((DOC/'HEALTH_DESTINATION_R4.json').read_bytes())
     anchor=[float(health['centre']['latitude']),float(health['centre']['longitude'])]
     records=[{'source_id':'HEALTH_PAGE','priority':1,'address':'Bernedo Enea 1','phone':'943027700'},
@@ -47,9 +56,9 @@ def build(output=None):
              {'source_id':'PADI_2026','priority':3,'address':'Zaldizurreta 2','phone':'943027700'}]
     conflict=select_centre(records)
     sources=[]
-    def source(id,role,publisher,url,path,period,transformation,retrieved='2026-09-29'):
+    def source(id,role,publisher,url,path,period,transformation,retrieved='2026-09-29',hash_override=None):
         sources.append(dict(source_id=id,source_role=role,publisher=publisher,url=url,
-            source_sha256=sha(path),retrieved_date=retrieved,reference_period=period,transformation=transformation))
+            source_sha256=hash_override or sha(path),retrieved_date=retrieved,reference_period=period,transformation=transformation))
     source('GTFS','official_schedule','Moveuskadi / Goierrialdea',s['sources'][0]['url'],
            ROOT/'datos_originales/movilidad/goierrialdea-3276fcae.zip','2026-09-28/2026-12-27',
            'R4 normalized GO01 rows, unchanged; approximate stop times, no realtime')
@@ -65,7 +74,7 @@ def build(output=None):
            ROOT/'datos_originales/movilidad/r5/padi-2026.pdf','2026-01','Page 4 dental consultation listing; address conflict retained')
     source('OSM','open_network','OpenStreetMap contributors',
            'https://api.openstreetmap.org/api/0.6/map?bbox=-2.203,43.041,-2.190,43.052',
-           public,'Acquired 2026-09-29','R4 public derivative removes editor/contact metadata only; ODbL 1.0')
+           public,'Acquired 2026-09-29','R4 public derivative removes editor/contact metadata; R5 canonicalizes XML line endings to LF for hashing, no geometry change; ODbL 1.0',hash_override=n.source_sha256)
     source('MODEL','model_parameter','GIPUZKOA360',None,BASE/'walking_r5.py','R5.1',
            'ceil(raw total metres/50)*60+120 per complete directed link; each connector <=100 m')
     links={}; candidates=[]
@@ -100,7 +109,7 @@ def build(output=None):
              'base_snapshot_id':s['snapshot_id'],'base_snapshot_sha256':sha(r4),
              'validated_date':'2026-09-29','destination_id':'beasain_official_centre_anchor',
              'origins':s['origins'],'health_destination':evidence,'walking_links':links,
-             'walking_profile_id':PROFILE,'network_sha256':sha(public),
+             'walking_profile_id':PROFILE,'network_sha256':n.source_sha256,
              'osm_acquisition_sha256':expected_original,'sources':sources,'limitations':limits,
              'source_conflict':conflict,'candidates':candidates}
     target=output or BASE/f'snapshots/{ID}.json';dump(target,payload)
@@ -113,7 +122,8 @@ def build(output=None):
             relevant={k:v for k,v in tags.items() if k in ('access','barrier','crossing','foot','highway','incline','entrance')}
             for k,v in relevant.items():node_counts[k+'='+v]+=1
             if node.get('id') in used_nodes and relevant:corridor.append({'node_id':node.get('id'),'tags':relevant})
-        dump(DOC/'NETWORK_AUDIT_R5.json',{'source_sha256':sha(public),'acquisition_sha256':expected_original,
+        dump(DOC/'NETWORK_AUDIT_R5.json',{'source_sha256':n.source_sha256,'acquisition_sha256':expected_original,
+            'identity_transformation':'R4 public XML canonical LF bytes; original acquisition and working copy unmodified',
             'bbox':n.bbox,'nodes':len(n.nodes),'admitted_ways':len(n.ways),'tags':n.audit,'candidates':candidates,
             'node_tag_counts':node_counts,'corridor_node_tags':corridor,
             'policy':'Vehicle oneway does not restrict pedestrians. Explicit foot directions supported. No indoor/steps. Bridge/layer topology retained, no artificial crossings. Incline is not a speed/accessibility model.'})

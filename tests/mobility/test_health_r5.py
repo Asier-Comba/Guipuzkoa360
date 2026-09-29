@@ -11,7 +11,7 @@ import pytest
 from prototypes.ir_y_volver import provider as r4
 from prototypes.ir_y_volver import provider_r5 as p
 from prototypes.ir_y_volver.schema_r5 import validate
-from scripts.mobility.build_health_r5 import build, select_centre
+from scripts.mobility.build_health_r5 import build, select_centre, canonical_network
 from scripts.mobility.package_r5 import build as package
 
 ROOT=Path(__file__).resolve().parents[2]
@@ -84,6 +84,14 @@ def test_source_conflict_and_snapshot_rebuild(tmp_path):
     with pytest.raises(ValueError):select_centre([records[0],records[0]])
     dest=tmp_path/'health.json';build(dest)
     assert dest.read_bytes()==(p.HERE/f'snapshots/{p.ID}.json').read_bytes()
+
+
+def test_network_identity_independent_of_git_checkout_line_endings():
+    raw=(ROOT/'datos_originales/movilidad/beasain-network-r4-public.osm').read_bytes()
+    lf=raw.replace(b'\r\n',b'\n')
+    assert canonical_network(lf)==canonical_network(lf.replace(b'\n',b'\r\n'))
+    h,_=p._load()
+    assert hashlib.sha256(canonical_network(raw)).hexdigest()==h['network_sha256']
 
 
 def test_tampered_snapshot_fails_closed(tmp_path,monkeypatch):

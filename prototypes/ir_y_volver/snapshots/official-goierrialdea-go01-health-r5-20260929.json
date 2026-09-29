@@ -85,7 +85,7 @@
           13.232397049117077
         ],
         "connector_threshold_m": 100,
-        "network_sha256": "fe7c955c972694f9e590d7cde6374cd8e6b11f972145afe2ebb43579ecb0f720",
+        "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
         "builder_version": "r5.1",
         "walking_profile_id": "poc_reference_50m_min_plus_120s",
         "entrance_verified": false,
@@ -461,7 +461,7 @@
           11.031046771956861
         ],
         "connector_threshold_m": 100,
-        "network_sha256": "fe7c955c972694f9e590d7cde6374cd8e6b11f972145afe2ebb43579ecb0f720",
+        "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
         "builder_version": "r5.1",
         "walking_profile_id": "poc_reference_50m_min_plus_120s",
         "entrance_verified": false,
@@ -839,7 +839,7 @@
           13.232397049117077
         ],
         "connector_threshold_m": 100,
-        "network_sha256": "fe7c955c972694f9e590d7cde6374cd8e6b11f972145afe2ebb43579ecb0f720",
+        "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
         "builder_version": "r5.1",
         "walking_profile_id": "poc_reference_50m_min_plus_120s",
         "entrance_verified": false,
@@ -1291,7 +1291,7 @@
           4.4204180797501005
         ],
         "connector_threshold_m": 100,
-        "network_sha256": "fe7c955c972694f9e590d7cde6374cd8e6b11f972145afe2ebb43579ecb0f720",
+        "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
         "builder_version": "r5.1",
         "walking_profile_id": "poc_reference_50m_min_plus_120s",
         "entrance_verified": false,
@@ -1745,7 +1745,7 @@
           13.232397049117077
         ],
         "connector_threshold_m": 100,
-        "network_sha256": "fe7c955c972694f9e590d7cde6374cd8e6b11f972145afe2ebb43579ecb0f720",
+        "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
         "builder_version": "r5.1",
         "walking_profile_id": "poc_reference_50m_min_plus_120s",
         "entrance_verified": false,
@@ -1948,7 +1948,7 @@
           3.8689597780987146
         ],
         "connector_threshold_m": 100,
-        "network_sha256": "fe7c955c972694f9e590d7cde6374cd8e6b11f972145afe2ebb43579ecb0f720",
+        "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
         "builder_version": "r5.1",
         "walking_profile_id": "poc_reference_50m_min_plus_120s",
         "entrance_verified": false,
@@ -2138,7 +2138,7 @@
     }
   },
   "walking_profile_id": "poc_reference_50m_min_plus_120s",
-  "network_sha256": "fe7c955c972694f9e590d7cde6374cd8e6b11f972145afe2ebb43579ecb0f720",
+  "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
   "osm_acquisition_sha256": "d70452469ac23b81839417aabda5289f4148d428d2c2b5762347c4f90320a652",
   "sources": [
     {
@@ -2186,10 +2186,10 @@
       "source_role": "open_network",
       "publisher": "OpenStreetMap contributors",
       "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-2.203,43.041,-2.190,43.052",
-      "source_sha256": "fe7c955c972694f9e590d7cde6374cd8e6b11f972145afe2ebb43579ecb0f720",
+      "source_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
       "retrieved_date": "2026-09-29",
       "reference_period": "Acquired 2026-09-29",
-      "transformation": "R4 public derivative removes editor/contact metadata only; ODbL 1.0"
+      "transformation": "R4 public derivative removes editor/contact metadata; R5 canonicalizes XML line endings to LF for hashing, no geometry change; ODbL 1.0"
     },
     {
       "source_id": "MODEL",
@@ -2396,7 +2396,7 @@
             13.232397049117077
           ],
           "connector_threshold_m": 100,
-          "network_sha256": "fe7c955c972694f9e590d7cde6374cd8e6b11f972145afe2ebb43579ecb0f720",
+          "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
           "builder_version": "r5.1",
           "walking_profile_id": "poc_reference_50m_min_plus_120s",
           "entrance_verified": false,
@@ -2420,7 +2420,7 @@
             8.448411082890416
           ],
           "connector_threshold_m": 100,
-          "network_sha256": "fe7c955c972694f9e590d7cde6374cd8e6b11f972145afe2ebb43579ecb0f720",
+          "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
           "builder_version": "r5.1",
           "walking_profile_id": "poc_reference_50m_min_plus_120s",
           "entrance_verified": false,
@@ -2455,7 +2455,7 @@
             13.232397049117077
           ],
           "connector_threshold_m": 100,
-          "network_sha256": "fe7c955c972694f9e590d7cde6374cd8e6b11f972145afe2ebb43579ecb0f720",
+          "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
           "builder_version": "r5.1",
           "walking_profile_id": "poc_reference_50m_min_plus_120s",
           "entrance_verified": false,
@@ -2831,7 +2831,7 @@
             11.031046771956861
           ],
           "connector_threshold_m": 100,
-          "network_sha256": "fe7c955c972694f9e590d7cde6374cd8e6b11f972145afe2ebb43579ecb0f720",
+          "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
           "builder_version": "r5.1",
           "walking_profile_id": "poc_reference_50m_min_plus_120s",
           "entrance_verified": false,
@@ -3218,7 +3218,7 @@
             13.232397049117077
           ],
           "connector_threshold_m": 100,
-          "network_sha256": "fe7c955c972694f9e590d7cde6374cd8e6b11f972145afe2ebb43579ecb0f720",
+          "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
           "builder_version": "r5.1",
           "walking_profile_id": "poc_reference_50m_min_plus_120s",
           "entrance_verified": false,
@@ -3670,7 +3670,7 @@
             4.4204180797501005
           ],
           "connector_threshold_m": 100,
-          "network_sha256": "fe7c955c972694f9e590d7cde6374cd8e6b11f972145afe2ebb43579ecb0f720",
+          "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
           "builder_version": "r5.1",
           "walking_profile_id": "poc_reference_50m_min_plus_120s",
           "entrance_verified": false,
@@ -4133,7 +4133,7 @@
             13.232397049117077
           ],
           "connector_threshold_m": 100,
-          "network_sha256": "fe7c955c972694f9e590d7cde6374cd8e6b11f972145afe2ebb43579ecb0f720",
+          "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
           "builder_version": "r5.1",
           "walking_profile_id": "poc_reference_50m_min_plus_120s",
           "entrance_verified": false,
@@ -4336,7 +4336,7 @@
             3.8689597780987146
           ],
           "connector_threshold_m": 100,
-          "network_sha256": "fe7c955c972694f9e590d7cde6374cd8e6b11f972145afe2ebb43579ecb0f720",
+          "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
           "builder_version": "r5.1",
           "walking_profile_id": "poc_reference_50m_min_plus_120s",
           "entrance_verified": false,
