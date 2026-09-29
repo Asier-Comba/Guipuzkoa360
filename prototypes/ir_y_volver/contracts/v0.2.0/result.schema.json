@@ -1,0 +1,192 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "normalized_request",
+    "status",
+    "scenario_kind",
+    "time_basis",
+    "scope",
+    "snapshot_id",
+    "itinerary",
+    "components_s",
+    "components",
+    "sources",
+    "assumptions",
+    "limitations",
+    "error"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.2.0"
+    },
+    "normalized_request": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "status": {
+      "enum": [
+        "ok",
+        "no_feasible_journey",
+        "unknown",
+        "unsupported",
+        "error"
+      ]
+    },
+    "scenario_kind": {
+      "enum": [
+        "stop_only",
+        "health_visit",
+        null
+      ]
+    },
+    "time_basis": {
+      "const": "scheduled"
+    },
+    "scope": {
+      "const": "origin_stop_presence_to_return_stop_arrival"
+    },
+    "snapshot_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "itinerary": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "components_s": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "components": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "kind",
+          "start_s",
+          "end_s",
+          "seconds",
+          "basis",
+          "derivation"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "start_s": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end_s": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "seconds": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "basis": {
+            "type": "string",
+            "minLength": 1
+          },
+          "derivation": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "error": {
+      "type": [
+        "object",
+        "null"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "ok"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "itinerary": {
+            "type": "object"
+          },
+          "components_s": {
+            "type": "object"
+          },
+          "components": {
+            "type": "array",
+            "minItems": 8,
+            "maxItems": 8
+          },
+          "error": {
+            "type": "null"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "itinerary": {
+            "type": "null"
+          },
+          "components_s": {
+            "type": "null"
+          },
+          "components": {
+            "type": "null"
+          },
+          "error": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:g360:mobility:0.2.0:result"
+}

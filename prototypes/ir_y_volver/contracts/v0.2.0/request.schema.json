@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:g360:mobility:0.2.0:request",
+  "title": "RoundTripRequest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "origin_id",
+    "destination_id",
+    "date",
+    "appointment_time",
+    "duration_minutes"
+  ],
+  "properties": {
+    "origin_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "destination_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "appointment_time": {
+      "type": "string",
+      "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d)?$"
+    },
+    "duration_minutes": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 720
+    },
+    "arrival_margin_minutes": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 240
+    },
+    "boarding_margin_minutes": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 120
+    },
+    "walking_profile_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "snapshot_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "return_deadline": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}
