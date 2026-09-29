@@ -1,7 +1,7 @@
 # W1 · R6 · estabilización sanitaria y procedencia
 
 START_SHA: `f4efe1bccd7f33a66fe0598f64787e7b425c020a`  
-TESTED_HEAD: se fijará al publicar el commit ejecutable; el cierre documental posterior no altera runtime.  
+TESTED_HEAD: `cb061a97e78d6b5c967104fef6b935132fdc450f`; el cierre documental posterior no altera runtime.  
 CONSUMED_W2_HEAD: `8272988566f5bca2d65d3119732bf831d11382dc`  
 CONSUMED_W3_HEAD: `e821341ba1ffd8ed7947cdb97802348919ef502a`  
 STABLE_R4_PIN: `725a7b73ae0381092cd80edc41b8a25432d75fcd`, contrato 0.2.0.  
@@ -23,7 +23,7 @@ Schemas: request `911bbbb6…`; result `5408f086…`; comparison `4e03b03f…`; 
 
 Medición local, tres muestras, no portal: 1 escenario p50 60,70 ms; 2: 230,58 ms; 8: 971,22 ms; 32: 4.016,69 ms. Pico de asignaciones Python 9.500.940 bytes; payload máximo 767.650 bytes. No se añadió caché.
 
-Extracción limpia sin `.git`, repo padre, fixtures ni red: PASS. Dos builds idénticos. Tests R6: 10/10 PASS; suite completa, Node y gates se registran tras la ejecución final. R4 explícito es byte-equivalente al proveedor histórico; el manifiesto R5 verifica sus hashes.
+Extracción limpia sin `.git`, repo padre, fixtures ni red: PASS. Dos builds idénticos. Tests R6: 10/10 PASS; suite completa 469/469; Node 17/17; runtime identity PASS antes/después; jury gate PASS; artifact gate PASS; `git diff --check` PASS. R4 explícito es byte-equivalente al proveedor histórico; el manifiesto R5 verifica sus hashes.
 
 ## Límites y acciones
 

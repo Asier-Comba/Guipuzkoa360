@@ -1,7 +1,7 @@
 {
   "round": "G360-R6",
-  "head": "WORKTREE_TESTED_PENDING_PUBLISH",
-  "head_semantics": "R6 executable state; published SHA is recorded after push without self-reference",
+  "head": "cb061a97e78d6b5c967104fef6b935132fdc450f",
+  "head_semantics": "Tested R6 executable pin; subsequent closure is documentation only",
   "contract_version": "0.3.1",
   "entrypoint": "prototypes.ir_y_volver.provider_r6",
   "runtime_manifest": "docs/vnext/w1/RUNTIME_MANIFEST_R6.json",

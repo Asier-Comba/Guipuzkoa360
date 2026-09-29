@@ -1,13 +1,20 @@
 {
   "round": "G360-R6",
   "start_sha": "f4efe1bccd7f33a66fe0598f64787e7b425c020a",
-  "phase": "PROVENANCE_DELTA_PUBLISHED",
-  "proposed_contract": "0.3.1",
+  "phase": "W1_INTEGRATION_PIN_READY",
+  "tested_head": "cb061a97e78d6b5c967104fef6b935132fdc450f",
+  "contract": "0.3.1",
   "compatibility": "opt-in; R4 0.2.0 and R5 0.3.0 unchanged",
   "w2_head_reviewed": "8272988566f5bca2d65d3119732bf831d11382dc",
   "w3_head_reviewed": "e821341ba1ffd8ed7947cdb97802348919ef502a",
   "w2_findings_status": "FIXED_BY_AUTHOR_PENDING_W3_RETEST",
+  "package_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+  "package_bytes": 129365,
+  "tests": {"python": "469/469 PASS", "node": "17/17 PASS", "boundary": "14/14 PASS"},
+  "runtime_identity": "PASS",
+  "jury_gate": "PASS",
+  "artifact_gate": "PASS",
   "portal_mutations": 0,
   "merged_or_published_release": false,
-  "next_exact_action": "Implement provider_r6 and closed 0.3.1 schemas without changing R4/R5 arithmetic or bytes."
+  "next_exact_action": "W2/W3 review the opt-in R6 pin; no automatic merge."
 }
