@@ -1,0 +1,51 @@
+{
+  "W1_independent_acceptance": "7f434a469d7f94fdff8ae7d2665644426a217250: patch3 raw32/view32/comparisons5, zero findings; not territorial/model/portal certification",
+  "batched_sequence_reference_equals_single_operation_cold_process": true,
+  "checks": {
+    "address_conflict": true,
+    "destination": true,
+    "entrance_unverified": true,
+    "limits": true,
+    "modelled": true,
+    "provenance": true,
+    "raw_not_exposed": true,
+    "route_trip": true,
+    "sources_periods": true,
+    "stop_labels": true,
+    "territorial_rate_lineage": true,
+    "times": true,
+    "total_slack": true,
+    "waiting_appointment": true,
+    "walking": true
+  },
+  "cold_view_sha256": {
+    "analizar_acceso_servicios": "6a4d766c8ffe557f75027999ba7f1efdc5a61e4aad0f1ea9fceda063df45b86c",
+    "analizar_coincidencia": "a374d231d4e93bf9e6802cb4f80a4de073a4f72a84cd1029d82299f727042ad0",
+    "analizar_envejecimiento": "bde72537c24950d39409591e4aa197d5f9a378819039869c96c690e858c0659f",
+    "comparar_municipios": "237d752ad88d8bc4eddacdc84c0d92cf964906e603c118f0473f76fb90756a32",
+    "compare": "d889b68562fc4324d5df5f78411229f5027115788ee41466fe34069a2c53ad5c",
+    "consultar_capacidades": "d007799c083a73a65c2918fc5c85c9472a320b9fae029544d621b12d8cd1837d",
+    "consultar_fuente": "c1f2fda7c76273d6623b1f18d60e61cdf7aac80b4a2d0ce377ec03b57b4893c8",
+    "health": "4bbec936744a3c9db6864762072a50d1d224f1d3aafa944f1a666a1b17a559b1",
+    "idiazabal_center_stops": "13db9ef3f9097247c5676cd5ca8801c92e68f9b23ebfc42162911fdcf1d97bb5",
+    "invalid": "3777b0f88827df679e793a36fa01d5d4e45ec8eb8c0ca6199b4bd53fcb41913c",
+    "legacy": "18af2c2a7cd8d9907b0bd000f070b1b47ce1403f546dc933b815f76fadd03387",
+    "obtener_resumen_territorial": "b7e7045372e131e846decb2e7f4701928e9b5170de3cc0488bb1dc17778e1bce",
+    "plan_visit": "4bbec936744a3c9db6864762072a50d1d224f1d3aafa944f1a666a1b17a559b1",
+    "segura_herriko_plaza_stops": "7202b7e9ac20f54379c3a7a4c7c741202115f44bd88ced096529368190fb09f8",
+    "simular_escenario": "cb561adc780183529d4e9822f373fd039b9dce4d1e5d1a9caf3ce72cd259898b",
+    "zegama_center_stops": "4bbec936744a3c9db6864762072a50d1d224f1d3aafa944f1a666a1b17a559b1"
+  },
+  "independent_cold_operations": 16,
+  "not_llm_benchmark": true,
+  "runtime_sha": "8c94f8c3cf9d732c4ce94af7b4bef8f6e154c243",
+  "sequence_equivalence_basis": "Every sequence operation matches the batched reference; that entire reference independently equals one fresh process per operation. Normalization removes only random request IDs.",
+  "source_resolution_gate": "Every distinct source emitted in schema fuzz is queried via consultar_fuente; references counted in SCHEMA_FUZZ_R13.json.",
+  "status": "PASS_BOUNDED_DETERMINISTIC_VIEWS",
+  "two_verified_roots": {
+    "mobility_other_verified_root": "CONTROLLED_REJECTION",
+    "recovery_original_root": "PASS",
+    "territorial_root_switch": "PASS"
+  },
+  "zip_sha256": "3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616"
+}

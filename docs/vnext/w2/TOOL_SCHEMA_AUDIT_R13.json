@@ -1,0 +1,1660 @@
+{
+  "discovery_from_real_generated_capability_view": {
+    "comparison_size": {
+      "maximum": 4,
+      "minimum": 2
+    },
+    "contract_version": "0.3.1",
+    "defaults": {
+      "arrival_margin_minutes": 10,
+      "boarding_margin_minutes": 3,
+      "return_deadline": null,
+      "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+      "timezone": "Europe/Madrid",
+      "walking_profile_id": "poc_reference_50m_min_plus_120s"
+    },
+    "destination": {
+      "centre_id": "entityBC631DA5",
+      "destination_id": "beasain_official_centre_anchor",
+      "name": "Ambulatorio de Beasain",
+      "reference_point_meaning": "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+      "verification": {
+        "centre_anchor": "CONFIRMED_OFFICIAL_POINT",
+        "centre_identity": "CONFIRMED",
+        "entrance_verified": false,
+        "modelled_access": true
+      }
+    },
+    "legacy_stop_only": {
+      "contract_version": "0.2.0",
+      "must_be_explicit": true,
+      "snapshot_id": "official-goierrialdea-go01-r4-20260929"
+    },
+    "origin_options": [
+      {
+        "municipality_name": "Idiazabal",
+        "name": "Paradas centrales de Idiazabal",
+        "origin_id": "idiazabal_center_stops"
+      },
+      {
+        "municipality_name": "Segura",
+        "name": "Paradas Herriko Plaza de Segura",
+        "origin_id": "segura_herriko_plaza_stops"
+      },
+      {
+        "municipality_name": "Zegama",
+        "name": "Paradas centrales de Zegama",
+        "origin_id": "zegama_center_stops"
+      }
+    ],
+    "ranges": {
+      "arrival_margin_minutes": {
+        "maximum": 240,
+        "minimum": 0
+      },
+      "boarding_margin_minutes": {
+        "maximum": 120,
+        "minimum": 0
+      },
+      "duration_minutes": {
+        "maximum": 720,
+        "minimum": 1
+      }
+    },
+    "request_fields": [
+      "origin_id",
+      "destination_id",
+      "date",
+      "appointment_time",
+      "duration_minutes",
+      "arrival_margin_minutes",
+      "boarding_margin_minutes",
+      "walking_profile_id",
+      "snapshot_id",
+      "return_deadline"
+    ],
+    "required_fields": [
+      "origin_id",
+      "destination_id",
+      "date",
+      "appointment_time",
+      "duration_minutes"
+    ],
+    "restrictions": [
+      "GO01 direct only",
+      "static schedule; not realtime",
+      "same civil day",
+      "origin stop presence to return stop arrival",
+      "validated date only",
+      "not assigned centre, appointment availability, universal accessibility or verified entrance"
+    ],
+    "scenario_kind": "health_visit",
+    "validated_date": "2026-09-29",
+    "walking_profile": {
+      "id": "poc_reference_50m_min_plus_120s",
+      "label": "Paseo modelado de referencia: 50 m/min más 120 s por enlace completo"
+    }
+  },
+  "medium_findings": [
+    "Enum/range/default semantics are discovered in validated tool output rather than all encoded in annotation schema; actual schema must be compared, not assumed."
+  ],
+  "model_visibility_limit": "Potential exposure only; actual served schema/model input is a W3 gate.",
+  "not_llm_benchmark": true,
+  "runtime_sha": "8c94f8c3cf9d732c4ce94af7b4bef8f6e154c243",
+  "schema_provider": "get_type_hints(include_extras=True) on frozen generated Python",
+  "status": "PASS_STATIC_NOT_SERVED",
+  "tools": [
+    {
+      "annotation_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "municipio": {
+            "type": "string"
+          },
+          "periodo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "municipio"
+        ],
+        "type": "object"
+      },
+      "docstring": "Resumen municipal observado; admite solo un municipio identificable.",
+      "error_behavior": "Invalid arguments produce domain/contract error with no claims; invalid evidence/projection fails closed; Python invocation binding (missing/extra top-level kwargs) is a schema/dispatcher gate, not a successfully dispatched tool.",
+      "expected_parameter_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "municipio": {
+            "type": "string"
+          },
+          "periodo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "municipio"
+        ],
+        "type": "object"
+      },
+      "name": "obtener_resumen_territorial",
+      "parameters": [
+        {
+          "annotation": "<class 'str'>",
+          "default": null,
+          "name": "municipio",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "annotation": "str | None",
+          "default": null,
+          "name": "periodo",
+          "required": false,
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      ],
+      "return_type": "<class 'str'>",
+      "runtime_input_contract": [
+        {
+          "allowed_values": [],
+          "name": "municipio",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "periodo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "runtime_semantic_limits": [
+        "La ficha puede contener indicadores de servicios sin todas sus fuentes en la salida; esos valores no se promueven a claims.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
+      ],
+      "semantic_description": "Resumen municipal observado"
+    },
+    {
+      "annotation_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "categoria_servicio": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "grupo_edad": {
+            "type": "string"
+          },
+          "municipios": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "periodo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "umbral_km": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "municipios"
+        ],
+        "type": "object"
+      },
+      "docstring": "Compara municipios con grupo de edad y categoría sanitaria explícitos.",
+      "error_behavior": "Invalid arguments produce domain/contract error with no claims; invalid evidence/projection fails closed; Python invocation binding (missing/extra top-level kwargs) is a schema/dispatcher gate, not a successfully dispatched tool.",
+      "expected_parameter_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "categoria_servicio": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "grupo_edad": {
+            "type": "string"
+          },
+          "municipios": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "periodo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "umbral_km": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "municipios"
+        ],
+        "type": "object"
+      },
+      "name": "comparar_municipios",
+      "parameters": [
+        {
+          "annotation": "list[str]",
+          "default": null,
+          "name": "municipios",
+          "required": true,
+          "schema": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        {
+          "annotation": "<class 'str'>",
+          "default": "65",
+          "name": "grupo_edad",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "annotation": "str | None",
+          "default": null,
+          "name": "categoria_servicio",
+          "required": false,
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        {
+          "annotation": "<class 'float'>",
+          "default": 1.0,
+          "name": "umbral_km",
+          "required": false,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "annotation": "str | None",
+          "default": null,
+          "name": "periodo",
+          "required": false,
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      ],
+      "return_type": "<class 'str'>",
+      "runtime_input_contract": [
+        {
+          "allowed_values": [],
+          "name": "municipios",
+          "required": true,
+          "type": "string_array"
+        },
+        {
+          "allowed_values": [
+            "65",
+            "75"
+          ],
+          "name": "grupo_edad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [
+            "primary_care",
+            "hospital",
+            "mental_health",
+            "other_health"
+          ],
+          "name": "categoria_servicio",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "umbral_km",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "allowed_values": [],
+          "name": "periodo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "runtime_semantic_limits": [
+        "Los registros sanitarios y la distancia geométrica no acreditan capacidad o recorrido real.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
+      ],
+      "semantic_description": "Comparación municipal con criterios explícitos"
+    },
+    {
+      "annotation_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "grupo_edad": {
+            "type": "string"
+          },
+          "medida": {
+            "type": "string"
+          },
+          "periodo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "top_n": {
+            "type": "integer"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "docstring": "Ranking 65+ o 75+ observado; no deriva edades arbitrarias.",
+      "error_behavior": "Invalid arguments produce domain/contract error with no claims; invalid evidence/projection fails closed; Python invocation binding (missing/extra top-level kwargs) is a schema/dispatcher gate, not a successfully dispatched tool.",
+      "expected_parameter_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "grupo_edad": {
+            "type": "string"
+          },
+          "medida": {
+            "type": "string"
+          },
+          "periodo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "top_n": {
+            "type": "integer"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "name": "analizar_envejecimiento",
+      "parameters": [
+        {
+          "annotation": "<class 'str'>",
+          "default": "65",
+          "name": "grupo_edad",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "annotation": "<class 'str'>",
+          "default": "percentage",
+          "name": "medida",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "annotation": "str | None",
+          "default": null,
+          "name": "periodo",
+          "required": false,
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        {
+          "annotation": "<class 'int'>",
+          "default": 10,
+          "name": "top_n",
+          "required": false,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "return_type": "<class 'str'>",
+      "runtime_input_contract": [
+        {
+          "allowed_values": [
+            "65",
+            "75"
+          ],
+          "name": "grupo_edad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [
+            "percentage",
+            "count"
+          ],
+          "name": "medida",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "periodo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "top_n",
+          "required": false,
+          "type": "integer"
+        }
+      ],
+      "runtime_semantic_limits": [
+        "75+ se deriva de año de nacimiento; el resultado no identifica individuos.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
+      ],
+      "semantic_description": "Ranking demográfico 65+ o 75+"
+    },
+    {
+      "annotation_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "categoria_servicio": {
+            "type": "string"
+          },
+          "municipios": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "periodo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "umbral_km": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "categoria_servicio"
+        ],
+        "type": "object"
+      },
+      "docstring": "Distancia geométrica a registros; no mide viaje o disponibilidad.",
+      "error_behavior": "Invalid arguments produce domain/contract error with no claims; invalid evidence/projection fails closed; Python invocation binding (missing/extra top-level kwargs) is a schema/dispatcher gate, not a successfully dispatched tool.",
+      "expected_parameter_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "categoria_servicio": {
+            "type": "string"
+          },
+          "municipios": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "periodo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "umbral_km": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "categoria_servicio"
+        ],
+        "type": "object"
+      },
+      "name": "analizar_acceso_servicios",
+      "parameters": [
+        {
+          "annotation": "<class 'str'>",
+          "default": null,
+          "name": "categoria_servicio",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "annotation": "<class 'float'>",
+          "default": 1.0,
+          "name": "umbral_km",
+          "required": false,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "annotation": "str | None",
+          "default": null,
+          "name": "periodo",
+          "required": false,
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        {
+          "annotation": "list[str] | None",
+          "default": null,
+          "name": "municipios",
+          "required": false,
+          "schema": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      ],
+      "return_type": "<class 'str'>",
+      "runtime_input_contract": [
+        {
+          "allowed_values": [
+            "primary_care",
+            "hospital",
+            "mental_health",
+            "other_health"
+          ],
+          "name": "categoria_servicio",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "umbral_km",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "allowed_values": [],
+          "name": "periodo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "municipios",
+          "required": false,
+          "type": "string_array"
+        }
+      ],
+      "runtime_semantic_limits": [
+        "La distancia no es tiempo ni ruta; registro no implica apertura.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
+      ],
+      "semantic_description": "Distancia geométrica desde punto representativo"
+    },
+    {
+      "annotation_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "categoria_servicio": {
+            "type": "string"
+          },
+          "cuantil": {
+            "type": "number"
+          },
+          "grupo_edad": {
+            "type": "string"
+          },
+          "periodo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "umbral_km": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "categoria_servicio"
+        ],
+        "type": "object"
+      },
+      "docstring": "Cruce descriptivo de dos criterios; no establece causalidad.",
+      "error_behavior": "Invalid arguments produce domain/contract error with no claims; invalid evidence/projection fails closed; Python invocation binding (missing/extra top-level kwargs) is a schema/dispatcher gate, not a successfully dispatched tool.",
+      "expected_parameter_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "categoria_servicio": {
+            "type": "string"
+          },
+          "cuantil": {
+            "type": "number"
+          },
+          "grupo_edad": {
+            "type": "string"
+          },
+          "periodo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "umbral_km": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "categoria_servicio"
+        ],
+        "type": "object"
+      },
+      "name": "analizar_coincidencia",
+      "parameters": [
+        {
+          "annotation": "<class 'str'>",
+          "default": null,
+          "name": "categoria_servicio",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "annotation": "<class 'str'>",
+          "default": "65",
+          "name": "grupo_edad",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "annotation": "<class 'float'>",
+          "default": 1.0,
+          "name": "umbral_km",
+          "required": false,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "annotation": "str | None",
+          "default": null,
+          "name": "periodo",
+          "required": false,
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        {
+          "annotation": "<class 'float'>",
+          "default": 0.75,
+          "name": "cuantil",
+          "required": false,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "return_type": "<class 'str'>",
+      "runtime_input_contract": [
+        {
+          "allowed_values": [
+            "primary_care",
+            "hospital",
+            "mental_health",
+            "other_health"
+          ],
+          "name": "categoria_servicio",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "allowed_values": [
+            "65",
+            "75"
+          ],
+          "name": "grupo_edad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "umbral_km",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "allowed_values": [],
+          "name": "periodo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "cuantil",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "runtime_semantic_limits": [
+        "Coincidencia descriptiva no demuestra causalidad.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
+      ],
+      "semantic_description": "Cruce descriptivo de envejecimiento y distancia"
+    },
+    {
+      "annotation_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "accion": {
+            "type": "string"
+          },
+          "categoria_servicio": {
+            "type": "string"
+          },
+          "latitud": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "longitud": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "nuevo_umbral_km": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "periodo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "service_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "umbral_km": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "accion",
+          "categoria_servicio"
+        ],
+        "type": "object"
+      },
+      "docstring": "Contrafactual hipotético con parámetros y límites explícitos.",
+      "error_behavior": "Invalid arguments produce domain/contract error with no claims; invalid evidence/projection fails closed; Python invocation binding (missing/extra top-level kwargs) is a schema/dispatcher gate, not a successfully dispatched tool.",
+      "expected_parameter_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "accion": {
+            "type": "string"
+          },
+          "categoria_servicio": {
+            "type": "string"
+          },
+          "latitud": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "longitud": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "nuevo_umbral_km": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "periodo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "service_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "umbral_km": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "accion",
+          "categoria_servicio"
+        ],
+        "type": "object"
+      },
+      "name": "simular_escenario",
+      "parameters": [
+        {
+          "annotation": "<class 'str'>",
+          "default": null,
+          "name": "accion",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "annotation": "<class 'str'>",
+          "default": null,
+          "name": "categoria_servicio",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "annotation": "<class 'float'>",
+          "default": 1.0,
+          "name": "umbral_km",
+          "required": false,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "annotation": "str | None",
+          "default": null,
+          "name": "periodo",
+          "required": false,
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        {
+          "annotation": "float | None",
+          "default": null,
+          "name": "latitud",
+          "required": false,
+          "schema": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        {
+          "annotation": "float | None",
+          "default": null,
+          "name": "longitud",
+          "required": false,
+          "schema": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        {
+          "annotation": "str | None",
+          "default": null,
+          "name": "service_id",
+          "required": false,
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        {
+          "annotation": "float | None",
+          "default": null,
+          "name": "nuevo_umbral_km",
+          "required": false,
+          "schema": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      ],
+      "return_type": "<class 'str'>",
+      "runtime_input_contract": [
+        {
+          "allowed_values": [
+            "add_service",
+            "remove_service",
+            "change_threshold"
+          ],
+          "name": "accion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "allowed_values": [
+            "primary_care",
+            "hospital",
+            "mental_health",
+            "other_health"
+          ],
+          "name": "categoria_servicio",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "umbral_km",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "allowed_values": [],
+          "name": "periodo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "latitud",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "allowed_values": [],
+          "name": "longitud",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "allowed_values": [],
+          "name": "service_id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "nuevo_umbral_km",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "runtime_semantic_limits": [
+        "Parámetros hipotéticos no son observaciones oficiales.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
+      ],
+      "semantic_description": "Contrafactual geométrico hipotético"
+    },
+    {
+      "annotation_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "source_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "docstring": "Consulta una ficha de procedencia sin inventar fuentes.",
+      "error_behavior": "Invalid arguments produce domain/contract error with no claims; invalid evidence/projection fails closed; Python invocation binding (missing/extra top-level kwargs) is a schema/dispatcher gate, not a successfully dispatched tool.",
+      "expected_parameter_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "source_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "name": "consultar_fuente",
+      "parameters": [
+        {
+          "annotation": "str | None",
+          "default": null,
+          "name": "source_id",
+          "required": false,
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      ],
+      "return_type": "<class 'str'>",
+      "runtime_input_contract": [
+        {
+          "allowed_values": [],
+          "name": "source_id",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "runtime_semantic_limits": [
+        "Metadatos de fuente no validan por sí solos cada cifra.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
+      ],
+      "semantic_description": "Ficha de procedencia versionada"
+    },
+    {
+      "annotation_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "pregunta_o_dimension": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "docstring": "Lista operaciones, cobertura, edades, categorías y límites validados.",
+      "error_behavior": "Invalid arguments produce domain/contract error with no claims; invalid evidence/projection fails closed; Python invocation binding (missing/extra top-level kwargs) is a schema/dispatcher gate, not a successfully dispatched tool.",
+      "expected_parameter_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "pregunta_o_dimension": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "name": "consultar_capacidades",
+      "parameters": [
+        {
+          "annotation": "str | None",
+          "default": null,
+          "name": "pregunta_o_dimension",
+          "required": false,
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      ],
+      "return_type": "<class 'str'>",
+      "runtime_input_contract": [
+        {
+          "allowed_values": [],
+          "name": "pregunta_o_dimension",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "runtime_semantic_limits": [
+        "La ficha no demuestra calidad conversacional del modelo.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
+      ],
+      "semantic_description": "Inspección de operaciones habilitadas y límites"
+    },
+    {
+      "annotation_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "request": {
+            "anyOf": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "appointment_time": {
+                    "type": "string"
+                  },
+                  "arrival_margin_minutes": {
+                    "type": "integer"
+                  },
+                  "boarding_margin_minutes": {
+                    "type": "integer"
+                  },
+                  "date": {
+                    "type": "string"
+                  },
+                  "destination_id": {
+                    "type": "string"
+                  },
+                  "duration_minutes": {
+                    "type": "integer"
+                  },
+                  "origin_id": {
+                    "type": "string"
+                  },
+                  "return_deadline": {
+                    "type": "string"
+                  },
+                  "snapshot_id": {
+                    "type": "string"
+                  },
+                  "walking_profile_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "origin_id",
+                  "destination_id",
+                  "date",
+                  "appointment_time",
+                  "duration_minutes"
+                ],
+                "type": "object"
+              },
+              {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "appointment_time": {
+                      "type": "string"
+                    },
+                    "arrival_margin_minutes": {
+                      "type": "integer"
+                    },
+                    "boarding_margin_minutes": {
+                      "type": "integer"
+                    },
+                    "date": {
+                      "type": "string"
+                    },
+                    "destination_id": {
+                      "type": "string"
+                    },
+                    "duration_minutes": {
+                      "type": "integer"
+                    },
+                    "origin_id": {
+                      "type": "string"
+                    },
+                    "return_deadline": {
+                      "type": "string"
+                    },
+                    "snapshot_id": {
+                      "type": "string"
+                    },
+                    "walking_profile_id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "origin_id",
+                    "destination_id",
+                    "date",
+                    "appointment_time",
+                    "duration_minutes"
+                  ],
+                  "type": "object"
+                },
+                "type": "array"
+              }
+            ]
+          }
+        },
+        "required": [
+          "request"
+        ],
+        "type": "object"
+      },
+      "docstring": "Plan a health visit or compare 2–4 scenarios. First call consultar_capacidades('plan_visit') for valid origin and destination IDs, date, defaults and restrictions. The destination is a modelled official point, not a verified entrance or appointment. Stop-only requires explicit legacy snapshot_id.",
+      "error_behavior": "Invalid arguments produce domain/contract error with no claims; invalid evidence/projection fails closed; Python invocation binding (missing/extra top-level kwargs) is a schema/dispatcher gate, not a successfully dispatched tool.",
+      "expected_parameter_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "request": {
+            "anyOf": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "appointment_time": {
+                    "type": "string"
+                  },
+                  "arrival_margin_minutes": {
+                    "type": "integer"
+                  },
+                  "boarding_margin_minutes": {
+                    "type": "integer"
+                  },
+                  "date": {
+                    "type": "string"
+                  },
+                  "destination_id": {
+                    "type": "string"
+                  },
+                  "duration_minutes": {
+                    "type": "integer"
+                  },
+                  "origin_id": {
+                    "type": "string"
+                  },
+                  "return_deadline": {
+                    "type": "string"
+                  },
+                  "snapshot_id": {
+                    "type": "string"
+                  },
+                  "walking_profile_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "origin_id",
+                  "destination_id",
+                  "date",
+                  "appointment_time",
+                  "duration_minutes"
+                ],
+                "type": "object"
+              },
+              {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "appointment_time": {
+                      "type": "string"
+                    },
+                    "arrival_margin_minutes": {
+                      "type": "integer"
+                    },
+                    "boarding_margin_minutes": {
+                      "type": "integer"
+                    },
+                    "date": {
+                      "type": "string"
+                    },
+                    "destination_id": {
+                      "type": "string"
+                    },
+                    "duration_minutes": {
+                      "type": "integer"
+                    },
+                    "origin_id": {
+                      "type": "string"
+                    },
+                    "return_deadline": {
+                      "type": "string"
+                    },
+                    "snapshot_id": {
+                      "type": "string"
+                    },
+                    "walking_profile_id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "origin_id",
+                    "destination_id",
+                    "date",
+                    "appointment_time",
+                    "duration_minutes"
+                  ],
+                  "type": "object"
+                },
+                "maxItems": 4,
+                "minItems": 2,
+                "type": "array"
+              }
+            ]
+          }
+        },
+        "required": [
+          "request"
+        ],
+        "type": "object"
+      },
+      "name": "plan_visit",
+      "parameters": [
+        {
+          "annotation": "main.VisitRequest | list[main.VisitRequest]",
+          "default": null,
+          "name": "request",
+          "required": true,
+          "schema": {
+            "anyOf": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "appointment_time": {
+                    "type": "string"
+                  },
+                  "arrival_margin_minutes": {
+                    "type": "integer"
+                  },
+                  "boarding_margin_minutes": {
+                    "type": "integer"
+                  },
+                  "date": {
+                    "type": "string"
+                  },
+                  "destination_id": {
+                    "type": "string"
+                  },
+                  "duration_minutes": {
+                    "type": "integer"
+                  },
+                  "origin_id": {
+                    "type": "string"
+                  },
+                  "return_deadline": {
+                    "type": "string"
+                  },
+                  "snapshot_id": {
+                    "type": "string"
+                  },
+                  "walking_profile_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "origin_id",
+                  "destination_id",
+                  "date",
+                  "appointment_time",
+                  "duration_minutes"
+                ],
+                "type": "object"
+              },
+              {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "appointment_time": {
+                      "type": "string"
+                    },
+                    "arrival_margin_minutes": {
+                      "type": "integer"
+                    },
+                    "boarding_margin_minutes": {
+                      "type": "integer"
+                    },
+                    "date": {
+                      "type": "string"
+                    },
+                    "destination_id": {
+                      "type": "string"
+                    },
+                    "duration_minutes": {
+                      "type": "integer"
+                    },
+                    "origin_id": {
+                      "type": "string"
+                    },
+                    "return_deadline": {
+                      "type": "string"
+                    },
+                    "snapshot_id": {
+                      "type": "string"
+                    },
+                    "walking_profile_id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "origin_id",
+                    "destination_id",
+                    "date",
+                    "appointment_time",
+                    "duration_minutes"
+                  ],
+                  "type": "object"
+                },
+                "type": "array"
+              }
+            ]
+          }
+        }
+      ],
+      "return_type": "<class 'str'>",
+      "runtime_input_contract": [],
+      "runtime_semantic_limits": [
+        "Un horario programado no es una llegada observada.",
+        "unknown no significa ausencia de servicio."
+      ],
+      "semantic_description": "Piloto W1 GO01, vinculación pendiente en paquete W2"
+    }
+  ],
+  "zip_sha256": "3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616"
+}

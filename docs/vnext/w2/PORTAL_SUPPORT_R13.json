@@ -1,0 +1,564 @@
+{
+  "annotation_vs_semantic_schema": "Array minItems/maxItems are runtime/documentary constraints; annotations alone do not serve these bounds. Compare actual Studio schema before smoke.",
+  "assets": [
+    {
+      "bytes": 6963,
+      "path": "FUENTES.md",
+      "sha256": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de"
+    },
+    {
+      "bytes": 1210,
+      "path": "docs/METODOLOGIA.md",
+      "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7"
+    },
+    {
+      "bytes": 7357,
+      "path": "contracts/vnext/evidence-v1.1.schema.json",
+      "sha256": "6fbd22a567cc5a8d8ce17fd1968c52fc92448526bf81103e2768486d724d9ad0"
+    },
+    {
+      "bytes": 3527,
+      "path": "contracts/vnext/capability-v1.1.schema.json",
+      "sha256": "66ab0036ce3a529dad3d51d193fa05970fd795bbefcab477281e5df055ff2f0b"
+    },
+    {
+      "bytes": 30075,
+      "path": "datos_preparados/municipios.csv",
+      "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
+    },
+    {
+      "bytes": 6161,
+      "path": "datos_preparados/demografia.csv",
+      "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+    },
+    {
+      "bytes": 8689,
+      "path": "datos_preparados/runtime_municipality_points.csv",
+      "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11"
+    },
+    {
+      "bytes": 25258,
+      "path": "datos_preparados/runtime_servicios.csv",
+      "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
+    },
+    {
+      "bytes": 4833,
+      "path": "datos_preparados/metadata_sources.json",
+      "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+    },
+    {
+      "bytes": 5274,
+      "path": "datos_preparados/data_contract.json",
+      "sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae"
+    },
+    {
+      "bytes": 26605,
+      "path": "datos_preparados/vnext/capabilities.json",
+      "sha256": "d51c17a5ab9b2902382991abe215b77c879eb73a63df0a1ae5affb317c8e5b89"
+    },
+    {
+      "bytes": 2651,
+      "path": "datos_preparados/vnext/operational_catalog_r6.json",
+      "sha256": "c7bd3cc8ffe50956ce839bec0ef90a13578160a4d5b4053b09673d2dc4c4ec17"
+    },
+    {
+      "bytes": 3152,
+      "path": "datos_preparados/vnext/consumer_labels_r7.json",
+      "sha256": "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799"
+    },
+    {
+      "bytes": 5622,
+      "path": "datos_preparados/vnext/mobility_sources.json",
+      "sha256": "a5ba0b7a9ee0ad85366e89ee888de2635013c148d005dcf9ecb94d24215bc445"
+    },
+    {
+      "bytes": 129365,
+      "path": "datos_preparados/vnext/w1_r6_runtime.zip",
+      "sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910"
+    }
+  ],
+  "candidate_changes": false,
+  "config": {
+    "internet": false,
+    "max_iterations": 8,
+    "memory": true
+  },
+  "context_bytes": 266742,
+  "dependencies": [
+    "Python 3.12 standard library",
+    "portal-provided studio.tool",
+    "portal-provided langchain.agents.create_agent"
+  ],
+  "expanded_candidate_bytes": 782621,
+  "expanded_w1_bytes": 1252907,
+  "expected_import_root": {
+    "flat": "workspace root containing main.py/tools.py and relative assets",
+    "nested": "workspace/agentes/<candidate>/ for Python imports; data root exactly workspace"
+  },
+  "expected_parameter_schemas": {
+    "analizar_acceso_servicios": {
+      "additionalProperties": false,
+      "properties": {
+        "categoria_servicio": {
+          "type": "string"
+        },
+        "municipios": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "periodo": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "umbral_km": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "categoria_servicio"
+      ],
+      "type": "object"
+    },
+    "analizar_coincidencia": {
+      "additionalProperties": false,
+      "properties": {
+        "categoria_servicio": {
+          "type": "string"
+        },
+        "cuantil": {
+          "type": "number"
+        },
+        "grupo_edad": {
+          "type": "string"
+        },
+        "periodo": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "umbral_km": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "categoria_servicio"
+      ],
+      "type": "object"
+    },
+    "analizar_envejecimiento": {
+      "additionalProperties": false,
+      "properties": {
+        "grupo_edad": {
+          "type": "string"
+        },
+        "medida": {
+          "type": "string"
+        },
+        "periodo": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "top_n": {
+          "type": "integer"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "comparar_municipios": {
+      "additionalProperties": false,
+      "properties": {
+        "categoria_servicio": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "grupo_edad": {
+          "type": "string"
+        },
+        "municipios": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "periodo": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "umbral_km": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "municipios"
+      ],
+      "type": "object"
+    },
+    "consultar_capacidades": {
+      "additionalProperties": false,
+      "properties": {
+        "pregunta_o_dimension": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "consultar_fuente": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "obtener_resumen_territorial": {
+      "additionalProperties": false,
+      "properties": {
+        "municipio": {
+          "type": "string"
+        },
+        "periodo": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "municipio"
+      ],
+      "type": "object"
+    },
+    "plan_visit": {
+      "additionalProperties": false,
+      "properties": {
+        "request": {
+          "anyOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "appointment_time": {
+                  "type": "string"
+                },
+                "arrival_margin_minutes": {
+                  "type": "integer"
+                },
+                "boarding_margin_minutes": {
+                  "type": "integer"
+                },
+                "date": {
+                  "type": "string"
+                },
+                "destination_id": {
+                  "type": "string"
+                },
+                "duration_minutes": {
+                  "type": "integer"
+                },
+                "origin_id": {
+                  "type": "string"
+                },
+                "return_deadline": {
+                  "type": "string"
+                },
+                "snapshot_id": {
+                  "type": "string"
+                },
+                "walking_profile_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "origin_id",
+                "destination_id",
+                "date",
+                "appointment_time",
+                "duration_minutes"
+              ],
+              "type": "object"
+            },
+            {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "appointment_time": {
+                    "type": "string"
+                  },
+                  "arrival_margin_minutes": {
+                    "type": "integer"
+                  },
+                  "boarding_margin_minutes": {
+                    "type": "integer"
+                  },
+                  "date": {
+                    "type": "string"
+                  },
+                  "destination_id": {
+                    "type": "string"
+                  },
+                  "duration_minutes": {
+                    "type": "integer"
+                  },
+                  "origin_id": {
+                    "type": "string"
+                  },
+                  "return_deadline": {
+                    "type": "string"
+                  },
+                  "snapshot_id": {
+                    "type": "string"
+                  },
+                  "walking_profile_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "origin_id",
+                  "destination_id",
+                  "date",
+                  "appointment_time",
+                  "duration_minutes"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "minItems": 2,
+              "type": "array"
+            }
+          ]
+        }
+      },
+      "required": [
+        "request"
+      ],
+      "type": "object"
+    },
+    "simular_escenario": {
+      "additionalProperties": false,
+      "properties": {
+        "accion": {
+          "type": "string"
+        },
+        "categoria_servicio": {
+          "type": "string"
+        },
+        "latitud": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "longitud": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "nuevo_umbral_km": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "periodo": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "service_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "umbral_km": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "accion",
+        "categoria_servicio"
+      ],
+      "type": "object"
+    }
+  },
+  "flat_nested_behavior": "explicit root, else GIPUZKOA360_VNEXT_ROOT if present, else module-anchored layout: flat tools.py directory or workspace root for agentes/<candidate>/tools.py; invalid root rejects without search; cwd and GIPUZKOA360_DATA_DIR do not select data",
+  "foreign_cwd": "not a data root selector",
+  "instruction_chars": 2968,
+  "known_platform_unknowns": [
+    "actual binary asset freeze/inclusion",
+    "served TypedDict/NotRequired/union schema and docstrings",
+    "Python import/module layout",
+    "writable tempfile and extraction",
+    "portal dependency versions",
+    "real model tool routing/follow-up/memory/language"
+  ],
+  "load_order": [
+    "verify immutable package+manifest hashes",
+    "explicitly extract locally; do not assume portal ZIP extraction",
+    "verify common v4 assets are byte-identical before reuse",
+    "mount exactly freeze_paths under their relative paths beside generated tools.py; test sources and gold are audit-only",
+    "load tools.py then main.py in the two editors",
+    "set name/instructions/configuration from main.py; no new model",
+    "W3 verifies the declared assets including binary W1 ZIP are really frozen and accessible, then captures served schema/import closure and real conversation trace before acceptance"
+  ],
+  "local_dependency_versions": {
+    "langchain": "NOT_INSTALLED_LOCALLY",
+    "langchain-core": "NOT_INSTALLED_LOCALLY",
+    "studio": "NOT_INSTALLED_LOCALLY"
+  },
+  "local_llm": 0,
+  "main_py": {
+    "bytes": 8175,
+    "sha256": "512fb03f260c5c2ce0543ab41df18c1d4751e4915ee8bda71a032fc413fc3870"
+  },
+  "manifest": {
+    "path": "scripts/vnext_agent/dist/gipuzkoa360-vnext-w2-manifest.json",
+    "sha256": "a672bf9a2afece58c468a1f762c860f0217536a2a4fa18737ba768cab755c70a"
+  },
+  "not_llm_benchmark": true,
+  "portal_llm_by_w2": 0,
+  "runtime_commit": "8c94f8c3cf9d732c4ce94af7b4bef8f6e154c243",
+  "runtime_sha": "8c94f8c3cf9d732c4ce94af7b4bef8f6e154c243",
+  "served_schema_proven": false,
+  "studio_mount_proven": false,
+  "tool_count": 9,
+  "tool_defaults": {
+    "analizar_acceso_servicios": {
+      "municipios": null,
+      "periodo": null,
+      "umbral_km": 1.0
+    },
+    "analizar_coincidencia": {
+      "cuantil": 0.75,
+      "grupo_edad": "65",
+      "periodo": null,
+      "umbral_km": 1.0
+    },
+    "analizar_envejecimiento": {
+      "grupo_edad": "65",
+      "medida": "percentage",
+      "periodo": null,
+      "top_n": 10
+    },
+    "comparar_municipios": {
+      "categoria_servicio": null,
+      "grupo_edad": "65",
+      "periodo": null,
+      "umbral_km": 1.0
+    },
+    "consultar_capacidades": {
+      "pregunta_o_dimension": null
+    },
+    "consultar_fuente": {
+      "source_id": null
+    },
+    "obtener_resumen_territorial": {
+      "periodo": null
+    },
+    "plan_visit": {},
+    "simular_escenario": {
+      "latitud": null,
+      "longitud": null,
+      "nuevo_umbral_km": null,
+      "periodo": null,
+      "service_id": null,
+      "umbral_km": 1.0
+    }
+  },
+  "tools_py": {
+    "bytes": 174755,
+    "sha256": "46498d6be4f65642784e3a721e408b7d22a0910f937f91660d095b7e57de807c"
+  },
+  "w1_zip": {
+    "bytes": 129365,
+    "path": "datos_preparados/vnext/w1_r6_runtime.zip",
+    "sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910"
+  },
+  "zip": {
+    "bytes": 226010,
+    "path": "scripts/vnext_agent/dist/gipuzkoa360-vnext-w2.zip",
+    "sha256": "3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616"
+  },
+  "zip_sha256": "3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616"
+}
