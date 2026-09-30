@@ -30,6 +30,9 @@ def test_canonical_evidence_rebuilds_from_frozen_provider_and_raw_oracle():
     assert claim["signed_delta_s"] == -2100
     assert claim["absolute_delta_s"] == 2100
     assert claim["oracle_result"]["status"] == "PASS"
+    for side in ("left", "right"):
+        for walk in claim["walking_evidence"][side].values():
+            assert walk["metres"] == round(walk["metres"], 6)
 
 
 def test_claim_ledger_values_are_bound_to_canonical_evidence():
@@ -151,6 +154,8 @@ def test_integration_manifest_hashes_every_referenced_file():
         assert path.is_file()
         assert digest(path) == item["sha256"]
         assert path.stat().st_size == item["bytes"]
+        if path.suffix == ".json" and "R8" in path.name:
+            assert b"\r\n" not in path.read_bytes()
 
 
 def test_r6_runtime_and_r7_evidence_remain_byte_identical():

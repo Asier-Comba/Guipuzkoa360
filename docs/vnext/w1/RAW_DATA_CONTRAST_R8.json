@@ -70,7 +70,7 @@
     "left": {
       "outbound": {
         "verification_method": "independent atan2 geometry length + published walking formula",
-        "metres": 205.07964741014632,
+        "metres": 205.079647,
         "seconds": 420,
         "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
         "way_ids_sha256": "78e4660861a8c2b193d5ff8e7f24f44e75c6b0caf418e05b5094885548880293",
@@ -95,7 +95,7 @@
       },
       "return": {
         "verification_method": "independent atan2 geometry length + published walking formula",
-        "metres": 686.1157628506438,
+        "metres": 686.115763,
         "seconds": 960,
         "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
         "way_ids_sha256": "5f2be752c2df1749fb672287c27b288c6b3f679e96c7c44ceb93cd9dd3e176dc",
@@ -148,7 +148,7 @@
     "right": {
       "outbound": {
         "verification_method": "independent atan2 geometry length + published walking formula",
-        "metres": 205.07964741014632,
+        "metres": 205.079647,
         "seconds": 420,
         "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
         "way_ids_sha256": "78e4660861a8c2b193d5ff8e7f24f44e75c6b0caf418e05b5094885548880293",
@@ -173,7 +173,7 @@
       },
       "return": {
         "verification_method": "independent atan2 geometry length + published walking formula",
-        "metres": 686.1157628506438,
+        "metres": 686.115763,
         "seconds": 960,
         "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
         "way_ids_sha256": "5f2be752c2df1749fb672287c27b288c6b3f679e96c7c44ceb93cd9dd3e176dc",

@@ -5,12 +5,18 @@ import math
 from pathlib import Path
 
 from prototypes.ir_y_volver import provider_r6 as p
-from scripts.mobility.build_health_r5 import ROOT, DOC, dump
+from scripts.mobility.build_health_r5 import ROOT, DOC
 from scripts.mobility.verify_health_r5 import oracle, read_raw
 
 DATA=ROOT/'datos_preparados/movilidad'; OUT=DOC/'integration_r8'
 GTFS=ROOT/'datos_originales/movilidad/goierrialdea-3276fcae.zip'
 PACKAGE_SHA='c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910'
+
+
+def dump(path,value):
+    """Write portable evidence bytes so manifest hashes agree on Windows/Linux."""
+    path.parent.mkdir(parents=True,exist_ok=True)
+    path.write_text(json.dumps(value,ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf-8',newline='\n')
 
 
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -28,7 +34,7 @@ def walk_oracle(link):
     metres=sum(angular(a,b) for a,b in zip(link['geometry'],link['geometry'][1:]));seconds=math.ceil(metres/50)*60+120
     assert abs(metres-link['total_metres'])<0.0001 and seconds==link['seconds']
     return {'verification_method':'independent atan2 geometry length + published walking formula',
-      'metres':metres,'seconds':seconds,'network_sha256':link['network_sha256'],
+      'metres':round(metres,6),'seconds':seconds,'network_sha256':link['network_sha256'],
       'way_ids_sha256':value_hash(link['way_ids']),'way_ids':link['way_ids']}
 
 

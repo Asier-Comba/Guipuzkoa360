@@ -41,8 +41,8 @@
     },
     {
       "path": "docs/vnext/w1/DELIVERY_EVIDENCE_R8.json",
-      "sha256": "3b4813557b5738a676b256ea76ba39c545e26617121aebb56020e6dc3678b5f8",
-      "bytes": 259876,
+      "sha256": "578fbd5140185fde07771f3adc9f61353cce1c83074fe574862300eff1d8b87b",
+      "bytes": 259756,
       "role": "canonical_evidence"
     },
     {
@@ -83,8 +83,8 @@
     },
     {
       "path": "docs/vnext/w1/RAW_DATA_CONTRAST_R8.json",
-      "sha256": "cb2bae5eb4512fb940f7c0527985f4b48cf0f05624159426237b8ca158a42b09",
-      "bytes": 6473,
+      "sha256": "6a6a0c547dcc1aae1d045c93d6fd144b4ea08e31d527fe20d98bccc28abc9b04",
+      "bytes": 6443,
       "role": "raw_contrast"
     },
     {
