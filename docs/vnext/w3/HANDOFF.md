@@ -1,6 +1,8 @@
 # W3 · handoff actual
 
-- [R13 actual](HANDOFF_R13.md): patch3 independiente PASS offline; Studio privado,
+- [R14 actual](HANDOFF_R14.md): hotfix plano en rama separada, 5.000 casos offline;
+  espera PASS independiente W1 sobre SHA/ZIP exactos antes de Studio. 4/12 consumidos.
+- [R13 histórico](HANDOFF_R13.md): patch3 independiente PASS offline; Studio privado,
   lote detenido en 4/12 por High de argumentos sanitarios, reproducción para W2.
 - [R12 histórico](HANDOFF_R12.md): aceptación del ZIP sanitario en modo offline,
   montaje privado comprobado, bloqueo de archivos congelados y lote 0/12.
@@ -10,5 +12,5 @@
 - [R3 histórico](HANDOFF_R3.md): scorer 2.0.0, producto offline y gates pendientes.
 - [R2 histórico](HANDOFF_R2.md): estado previo a publicación W2, preservado.
 
-[Estado único R13](RELEASE_READINESS_R13.json). Comparación conversacional
+[Estado único R14](RELEASE_READINESS_R14.json). Comparación conversacional
 v4↔vNext NOT_RUN. PR14 es revisión de producto/evidencia, no aprobación de release.

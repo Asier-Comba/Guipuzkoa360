@@ -1,0 +1,175 @@
+{
+  "aggregation": "no averaging across failed gates",
+  "historical_m04_severity": "HIGH",
+  "status": "NOT_RUN_R14",
+  "turns": [
+    {
+      "dimensions": {
+        "ARGS": "NOT_RUN",
+        "BINDING": "NOT_RUN",
+        "CLARITY": "NOT_RUN",
+        "ERROR": "NOT_RUN",
+        "FOLLOWUP": "NOT_RUN",
+        "GROUNDING": "NOT_RUN",
+        "HALLUCINATION": "NOT_RUN",
+        "INTENT": "NOT_RUN",
+        "LIMITS": "NOT_RUN",
+        "NUMERIC": "NOT_RUN",
+        "RECALC": "NOT_RUN",
+        "RESULT": "NOT_RUN",
+        "SOURCE": "NOT_RUN",
+        "TOOL": "NOT_RUN"
+      },
+      "id": "M05",
+      "reason": "W1 exact SHA/ZIP independent acceptance not yet published",
+      "status": "NOT_RUN"
+    },
+    {
+      "dimensions": {
+        "ARGS": "NOT_RUN",
+        "BINDING": "NOT_RUN",
+        "CLARITY": "NOT_RUN",
+        "ERROR": "NOT_RUN",
+        "FOLLOWUP": "NOT_RUN",
+        "GROUNDING": "NOT_RUN",
+        "HALLUCINATION": "NOT_RUN",
+        "INTENT": "NOT_RUN",
+        "LIMITS": "NOT_RUN",
+        "NUMERIC": "NOT_RUN",
+        "RECALC": "NOT_RUN",
+        "RESULT": "NOT_RUN",
+        "SOURCE": "NOT_RUN",
+        "TOOL": "NOT_RUN"
+      },
+      "id": "M06",
+      "reason": "W1 exact SHA/ZIP independent acceptance not yet published",
+      "status": "NOT_RUN"
+    },
+    {
+      "dimensions": {
+        "ARGS": "NOT_RUN",
+        "BINDING": "NOT_RUN",
+        "CLARITY": "NOT_RUN",
+        "ERROR": "NOT_RUN",
+        "FOLLOWUP": "NOT_RUN",
+        "GROUNDING": "NOT_RUN",
+        "HALLUCINATION": "NOT_RUN",
+        "INTENT": "NOT_RUN",
+        "LIMITS": "NOT_RUN",
+        "NUMERIC": "NOT_RUN",
+        "RECALC": "NOT_RUN",
+        "RESULT": "NOT_RUN",
+        "SOURCE": "NOT_RUN",
+        "TOOL": "NOT_RUN"
+      },
+      "id": "M07",
+      "reason": "W1 exact SHA/ZIP independent acceptance not yet published",
+      "status": "NOT_RUN"
+    },
+    {
+      "dimensions": {
+        "ARGS": "NOT_RUN",
+        "BINDING": "NOT_RUN",
+        "CLARITY": "NOT_RUN",
+        "ERROR": "NOT_RUN",
+        "FOLLOWUP": "NOT_RUN",
+        "GROUNDING": "NOT_RUN",
+        "HALLUCINATION": "NOT_RUN",
+        "INTENT": "NOT_RUN",
+        "LIMITS": "NOT_RUN",
+        "NUMERIC": "NOT_RUN",
+        "RECALC": "NOT_RUN",
+        "RESULT": "NOT_RUN",
+        "SOURCE": "NOT_RUN",
+        "TOOL": "NOT_RUN"
+      },
+      "id": "M08",
+      "reason": "W1 exact SHA/ZIP independent acceptance not yet published",
+      "status": "NOT_RUN"
+    },
+    {
+      "dimensions": {
+        "ARGS": "NOT_RUN",
+        "BINDING": "NOT_RUN",
+        "CLARITY": "NOT_RUN",
+        "ERROR": "NOT_RUN",
+        "FOLLOWUP": "NOT_RUN",
+        "GROUNDING": "NOT_RUN",
+        "HALLUCINATION": "NOT_RUN",
+        "INTENT": "NOT_RUN",
+        "LIMITS": "NOT_RUN",
+        "NUMERIC": "NOT_RUN",
+        "RECALC": "NOT_RUN",
+        "RESULT": "NOT_RUN",
+        "SOURCE": "NOT_RUN",
+        "TOOL": "NOT_RUN"
+      },
+      "id": "M09",
+      "reason": "W1 exact SHA/ZIP independent acceptance not yet published",
+      "status": "NOT_RUN"
+    },
+    {
+      "dimensions": {
+        "ARGS": "NOT_RUN",
+        "BINDING": "NOT_RUN",
+        "CLARITY": "NOT_RUN",
+        "ERROR": "NOT_RUN",
+        "FOLLOWUP": "NOT_RUN",
+        "GROUNDING": "NOT_RUN",
+        "HALLUCINATION": "NOT_RUN",
+        "INTENT": "NOT_RUN",
+        "LIMITS": "NOT_RUN",
+        "NUMERIC": "NOT_RUN",
+        "RECALC": "NOT_RUN",
+        "RESULT": "NOT_RUN",
+        "SOURCE": "NOT_RUN",
+        "TOOL": "NOT_RUN"
+      },
+      "id": "M10",
+      "reason": "W1 exact SHA/ZIP independent acceptance not yet published",
+      "status": "NOT_RUN"
+    },
+    {
+      "dimensions": {
+        "ARGS": "NOT_RUN",
+        "BINDING": "NOT_RUN",
+        "CLARITY": "NOT_RUN",
+        "ERROR": "NOT_RUN",
+        "FOLLOWUP": "NOT_RUN",
+        "GROUNDING": "NOT_RUN",
+        "HALLUCINATION": "NOT_RUN",
+        "INTENT": "NOT_RUN",
+        "LIMITS": "NOT_RUN",
+        "NUMERIC": "NOT_RUN",
+        "RECALC": "NOT_RUN",
+        "RESULT": "NOT_RUN",
+        "SOURCE": "NOT_RUN",
+        "TOOL": "NOT_RUN"
+      },
+      "id": "M11",
+      "reason": "W1 exact SHA/ZIP independent acceptance not yet published",
+      "status": "NOT_RUN"
+    },
+    {
+      "dimensions": {
+        "ARGS": "NOT_RUN",
+        "BINDING": "NOT_RUN",
+        "CLARITY": "NOT_RUN",
+        "ERROR": "NOT_RUN",
+        "FOLLOWUP": "NOT_RUN",
+        "GROUNDING": "NOT_RUN",
+        "HALLUCINATION": "NOT_RUN",
+        "INTENT": "NOT_RUN",
+        "LIMITS": "NOT_RUN",
+        "NUMERIC": "NOT_RUN",
+        "RECALC": "NOT_RUN",
+        "RESULT": "NOT_RUN",
+        "SOURCE": "NOT_RUN",
+        "TOOL": "NOT_RUN"
+      },
+      "id": "M12",
+      "reason": "W1 exact SHA/ZIP independent acceptance not yet published",
+      "status": "NOT_RUN"
+    }
+  ]
+}
