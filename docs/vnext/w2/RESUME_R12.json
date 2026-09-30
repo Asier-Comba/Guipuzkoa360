@@ -1,0 +1,238 @@
+{
+  "WORK_ID": "W2",
+  "COORDINATION_ROUND": "R12",
+  "STATUS": "PATCH_CANDIDATE_READY_PENDING_INDEPENDENT_ACCEPTANCE",
+  "START_SHA": "2321e03e3d994b488db9723560383d9defedcac7",
+  "TESTED_HEAD": "8c94f8c3cf9d732c4ce94af7b4bef8f6e154c243",
+  "PUBLISHED_HEAD": "8c94f8c3cf9d732c4ce94af7b4bef8f6e154c243",
+  "HEAD_SCOPE": "Immutable published candidate runtime. A handoff-only successor contains this checkpoint; its SHA is reported in the final PR17/Issue16 comment, not inferred as a runtime patch.",
+  "W1_RUNTIME_GIT_SHA": "cb061a9e00a6496c40488a596bd94834bc2c49b2",
+  "W1_PACKAGE_SHA": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+  "W1_SUPPORT_SHA": "c9cb37f6c65e77149e18cd883eeaff40d1c1bb8e",
+  "W3_CONSUMED_SHA": "1d60cdf81d3eb7661bc1d97c12425b9bdcf69b8d",
+  "PREFLIGHT": {
+    "origin": "https://github.com/Asier-Comba/Guipuzkoa360.git",
+    "branch": "work/vnext-w2-agent-evidence",
+    "clean_start": true,
+    "local_remote_start_match": true,
+    "W3_start": "281f92a25170c5082c5772c0130d2275e57edaaf",
+    "W3_delta_read": true,
+    "shared_base": "e213eaa9b73b0f8a4d1893e0269fe92fe6756955",
+    "W3_code_delta_read": "0601367e11ce0e869d3042e55623409d20aac203",
+    "W3_closure_delta_read": true
+  },
+  "BASELINE_R10": {
+    "commit": "2321e03e3d994b488db9723560383d9defedcac7",
+    "zip_sha256": "b4feb978b625b34f9d7331ce8d376a34a29e84e4783868f83ce48a0c0d1011be",
+    "bytes": 219354,
+    "preserved": true
+  },
+  "HISTORICAL_RUNTIME_SHA_ERRATA": {
+    "text": "cb061a97e78d6b5c967104fef6b935132fdc450f",
+    "role": "Historical W1 textual gate constant, not a Git runtime identity; never used as a Git-existence requirement. Exact runtime blobs and frozen ZIP bind the executable real SHA above."
+  },
+  "REPRODUCED_FINDINGS": [
+    {
+      "id": "R12-ROOT",
+      "owner": "W2",
+      "baseline_A": "health labels and legacy execution work in package cwd",
+      "baseline_B": "cwd observer selected wrong labels/contracts despite execute(root=candidate)",
+      "status": "FIXED_BY_AUTHOR_PENDING_INDEPENDENT_RETEST"
+    },
+    {
+      "id": "R12-LEGACY-LABEL",
+      "owner": "W2",
+      "before": "GTFS stop 7214 became an ID-valued label",
+      "after": "complete pinned GTFS snapshot lookup, preserving W1 nine health labels",
+      "status": "FIXED_BY_AUTHOR_PENDING_INDEPENDENT_RETEST"
+    },
+    {
+      "id": "R12-TRANSFORMATION",
+      "owner": "W1 evaluator",
+      "stage": "validate_model_view -> expected_value -> pointer(/sources/0/transformation)",
+      "before": "R11 applies health source requirement to successful 0.2.0 raw in both controls",
+      "status": "W1_RECONCILED_BASELINE; CORRECTED_GATE_ON_NEW_CANDIDATE_PENDING"
+    },
+    {
+      "id": "STUDIO_FREEZE_OMITS_RUNTIME_ASSETS",
+      "owner": "W2 preparation / W3 actual mount",
+      "W3_evidence_commit": "0601367e11ce0e869d3042e55623409d20aac203",
+      "before": "13 declared files omit ZIP/mobility sources and runtime proof files",
+      "after": "15 declared data files plus two modules; embedded exact proof index, no tests/gold mounted",
+      "status": "LOCAL_DECLARED_FREEZE_PASS; STUDIO_RETEST_PENDING"
+    }
+  ],
+  "ENVIRONMENT_VS_PRODUCT_FINDINGS": {
+    "confirmed_product": [
+      "root split in foreign cwd",
+      "legacy ID substituted for a human stop name",
+      "declared freeze missing runtime closure"
+    ],
+    "evaluator": [
+      "KeyError transformation is from version-inapplicable W1 R11 assertion, not tools.public_result"
+    ],
+    "environment": [
+      "Studio/langchain absent locally",
+      "real Studio binary asset freeze, filesystem layout, tempfile and served schema not yet proven"
+    ],
+    "independent_baseline": "W1 R12 reconciliation and W3 R12 baseline review read; neither constitutes acceptance of this new ZIP"
+  },
+  "PATCHES": [
+    {
+      "commit": "6693cbce605484dc48eca9ed7de867e32c5f3aa7",
+      "zip_sha256": "9dbb2d7421e2468e44949f94ad1ef5b9011430601d34dd76057fb1720e0bfb1b",
+      "bytes": 224576,
+      "scope": "root propagation, root-bound core wrapper, versioned source projection, complete GTFS legacy labels, concrete claim provenance, safe errors/payload and prompt"
+    },
+    {
+      "commit": "7dc4d807d4ac159b508ef383b9ec950b4dce3e41",
+      "zip_sha256": "c5bedc0c2fbc028258135d3f8b2a94d5fc37aa3a9808417fee3165a9915e98d4",
+      "bytes": 225894,
+      "scope": "declare required data assets and embed only AST/hash proof index; tested declared freeze without test/gold context"
+    },
+    {
+      "commit": "8c94f8c3cf9d732c4ce94af7b4bef8f6e154c243",
+      "zip_sha256": "3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616",
+      "bytes": 226010,
+      "scope": "module-anchored root for both flat and agentes/<candidate> nested layout; exact declared-only end-to-end test in foreign cwd"
+    }
+  ],
+  "TEST_COMMANDS_AND_RESULTS": [
+    {
+      "command": "py -3.12 -m pytest tests/vnext_agent/test_r12_generated.py -q -o addopts= --maxfail=1 -s",
+      "head": "8c94f8c3cf9d732c4ce94af7b4bef8f6e154c243",
+      "result": "6 PASS (344.79 seconds)",
+      "coverage": "A/B each 14 raw parity cases, cold legacy, sequences, all comparisons, all 3 origins/9 health labels, 5 territorial probes, provenance/sources/limits/errors, declared freeze, identical double build; nested declared freeze in exact observed Studio folder layout"
+    },
+    {
+      "command": "py -3.12 -m pytest -q -o addopts=",
+      "head": "6693cbce605484dc48eca9ed7de867e32c5f3aa7",
+      "result": "365 PASS (includes 101 W2 tests, not additive)"
+    },
+    {
+      "command": "py -3.12 -m pytest -q -o addopts=",
+      "head": "7dc4d807d4ac159b508ef383b9ec950b4dce3e41",
+      "result": "366 PASS (102 W2 tests included, not additive)"
+    },
+    {
+      "command": "node --test tests/e2e/contract_flow.test.mjs",
+      "head": "8c94f8c3cf9d732c4ce94af7b4bef8f6e154c243",
+      "result": "17 PASS"
+    },
+    {
+      "command": "py -3.12 scripts/ops/verify_runtime_identity.py",
+      "result": "14 frozen files PASS before and after"
+    },
+    {
+      "command": "py -3.12 -m scripts.vnext_agent.prepare_studio_r12",
+      "result": "closure hashes, get_type_hints TypedDict/NotRequired and collision audit PASS; only intentional consultar_fuente collision"
+    },
+    {
+      "command": "py -3.12 -m scripts.vnext_agent.diagnose_candidate_r12 --package <ZIP> --manifest <MANIFEST>",
+      "result": "baseline A/B and all 3 patch A/B captured privately; final ZIP3951 controls PASS, applicable health W1 R11 requirements no findings; legacy evaluator KeyError isolated separately"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    },
+    {
+      "command": "py -3.12 -m pytest -q -o addopts=",
+      "head": "8c94f8c3cf9d732c4ce94af7b4bef8f6e154c243",
+      "result": "367 PASS (442.98 seconds; 103 W2 tests included, not additive)"
+    }
+  ],
+  "PACKAGE_SHA_AND_SIZE": {
+    "path": "scripts/vnext_agent/dist/gipuzkoa360-vnext-w2.zip",
+    "sha256": "3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616",
+    "bytes": 226010,
+    "expanded_workspace_bytes": 782621,
+    "nested_w1_expanded_bytes": 1252907,
+    "manifest_sha256": "a672bf9a2afece58c468a1f762c860f0217536a2a4fa18737ba768cab755c70a",
+    "deployment_report_sha256": "d57f1d0c9ff1cc9d5820de0cd11dbb21fea00443ed5b367a79dfce17aa014831",
+    "max_four_scenario_model_view_bytes_observed": 98137,
+    "public_limit_bytes": 120000
+  },
+  "DEPLOYMENT_MODE": {
+    "mode": "two generated Python editors + 15 declared static data assets + verified W1 ZIP extracted temporarily",
+    "root": "explicit, else present environment variable, else flat tools.py directory or fixed workspace root for agentes/<candidate>/tools.py; no root search/fallback; main binds once",
+    "static_closure": "STUDIO_DEPLOYMENT_R12.json freeze_paths with exact hashes/bytes; STUDIO_LOAD_R12.md",
+    "audit_only": [
+      "test source files",
+      "W1 conformance gold",
+      "historical w1_pin.json"
+    ],
+    "proof_mode": "exact test-byte SHA and actual AST function-name index embedded in generated code; no test acceptance logic or expected values",
+    "assumptions_not_made": [
+      "automatic candidate ZIP extraction",
+      "context declarations prove filesystem mounting",
+      "actual binary asset freeze or Studio schema is locally validated"
+    ]
+  },
+  "SERVED_SCHEMA_STATUS": {
+    "status": "NOT_RUN",
+    "expected_schema": "docs/vnext/w2/STUDIO_DEPLOYMENT_R12.json",
+    "typing": "actual installed Python resolves TypedDict/NotRequired using get_type_hints(include_extras=True)",
+    "local_studio": "NOT_INSTALLED",
+    "local_langchain": "NOT_INSTALLED",
+    "owner": "W3"
+  },
+  "LOCAL_LLM_COUNT": 0,
+  "PORTAL_LLM_COUNT": 0,
+  "PORTAL_WRITES_BY_W2": 0,
+  "OPEN_CRITICAL_HIGH": {
+    "known_W2_runtime_failures": [],
+    "fixed_by_author_pending_retest": [
+      "R12 root propagation",
+      "legacy human label",
+      "declared runtime freeze closure"
+    ],
+    "unverified_acceptance_gates": [
+      "W1 version-applicable R12 gate on exact new ZIP",
+      "W3 independent exact-candidate review",
+      "W3 actual Studio assets/import/schema/conversation"
+    ]
+  },
+  "NOT_RUN": [
+    "real Studio served schema and binary asset mount",
+    "real LLM routing/memory/language acceptance",
+    "W3 independent scorer/holdout on new ZIP",
+    "full corrected W1 R12 intake (not yet published when read)",
+    "entrance/address human resolution",
+    "RAG model experiment; RAG_NO_GO unchanged",
+    "release/merge/Entrega/track (not authorized)"
+  ],
+  "V4_PRESERVATION": {
+    "runtime": "195b4980fa5998b096c308296a55e452380b0371",
+    "status": "PASS_14_FILES",
+    "common_assets_byte_identical": true,
+    "W1_W3_v4_edits": false
+  },
+  "CI": {
+    "candidate_head": "8c94f8c3cf9d732c4ce94af7b4bef8f6e154c243",
+    "status": "PASS",
+    "runs": [
+      {
+        "id": 36744447987,
+        "name": "vNext W2 candidate validation",
+        "conclusion": "success"
+      },
+      {
+        "id": 36744447389,
+        "name": "Release fast CI",
+        "conclusion": "success"
+      }
+    ],
+    "previous_patch2_success": [
+      36742033336,
+      36742033364
+    ],
+    "previous_patch1_success": [
+      36739418186,
+      36739418502
+    ]
+  },
+  "NEXT_EXACT_ACTION": "W1 and W3 consume this immutable final 8c94f8c / ZIP3951b290 candidate SHA+ZIP+manifest, retest their version-applicable gates; W3 alone verifies actual Studio binary freeze/root/imports/served schema and performs the authorized bounded conversation test, preserving actual traces. Stop on open critical/high; no release.",
+  "MERGED_OR_PUBLISHED_RELEASE": "NO",
+  "REPRODUCTION_SUMMARY": "docs/vnext/w2/REPRODUCTION_R12.json",
+  "PRIVATE_DIAGNOSTIC_LOCATOR": "g360-w2-r12-diagnostics-ji2e53rx/baseline under host temporary directory; full paths/stacks/input/output not published"
+}

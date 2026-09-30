@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Asier-Comba/Guipuzkoa360/blob/work/vnext-w2-agent-evidence/contracts/vnext/capability-v1.schema.json",
+  "title": "GIPUZKOA 360 vNext capability descriptor",
+  "description": "Version 1.0.0. A capability is executable only when its handler, data, validation and preconditions are verified.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "id", "description", "derivation", "enabled", "validation_status",
+    "handler", "input_fields", "required_data", "coverage", "source_ids",
+    "allowed_transformations", "preconditions", "restrictions", "semantic_limits"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "id": {"type": "string", "minLength": 1},
+    "description": {"type": "string", "minLength": 1},
+    "derivation": {"enum": ["direct", "derived_exact", "estimated_with_assumptions", "unavailable"]},
+    "enabled": {"type": "boolean"},
+    "validation_status": {"enum": ["tested", "pending", "failed"]},
+    "handler": {"type": ["string", "null"]},
+    "input_fields": {
+      "type": "array", "uniqueItems": true,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["name", "type", "required", "allowed_values"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "type": {"enum": ["string", "number", "integer", "boolean", "string_array"]},
+          "required": {"type": "boolean"},
+          "allowed_values": {"type": "array", "items": {"type": ["string", "number", "integer", "boolean"]}}
+        }
+      }
+    },
+    "required_data": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        }
+      }
+    },
+    "coverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["territory", "periods", "entities", "scope"],
+      "properties": {
+        "territory": {"type": "string", "minLength": 1},
+        "periods": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "entities": {"type": "integer", "minimum": 0},
+        "scope": {"type": "string", "minLength": 1}
+      }
+    },
+    "source_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "allowed_transformations": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "preconditions": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "restrictions": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "semantic_limits": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"enabled": {"const": true}}},
+      "then": {
+        "properties": {
+          "validation_status": {"const": "tested"},
+          "handler": {"type": "string", "minLength": 1},
+          "required_data": {"minItems": 1},
+          "source_ids": {"minItems": 1}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"derivation": {"const": "unavailable"}}},
+      "then": {"properties": {"enabled": {"const": false}}}
+    }
+  ]
+}

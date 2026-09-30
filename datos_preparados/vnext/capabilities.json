@@ -1,0 +1,805 @@
+{
+  "capabilities": [
+    {
+      "allowed_transformations": [
+        "lookup"
+      ],
+      "coverage": {
+        "entities": 88,
+        "periods": [
+          "2025-01-01",
+          "2026-09-20",
+          "2025-05-07"
+        ],
+        "scope": "Un municipio; demografía y cifras de servicio solo cuando tienen fuente ejecutada",
+        "territory": "Gipuzkoa"
+      },
+      "derivation": "direct",
+      "description": "Resumen municipal observado",
+      "enabled": true,
+      "handler": "obtener_resumen_territorial",
+      "id": "obtener_resumen_territorial",
+      "input_fields": [
+        {
+          "allowed_values": [],
+          "name": "municipio",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "periodo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "precondition_checks": [
+        "required_data_sha256",
+        "handler_signature",
+        "source_catalog",
+        "coverage_count"
+      ],
+      "preconditions": [
+        "Los archivos requeridos coinciden con SHA-256 versionados.",
+        "El handler existe y ha superado pruebas locales."
+      ],
+      "required_data": [
+        {
+          "path": "datos_preparados/demografia.csv",
+          "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+        },
+        {
+          "path": "datos_preparados/municipios.csv",
+          "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
+        },
+        {
+          "path": "datos_preparados/runtime_servicios.csv",
+          "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
+        },
+        {
+          "path": "datos_preparados/metadata_sources.json",
+          "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+        }
+      ],
+      "restrictions": [
+        "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
+      ],
+      "schema_version": "1.1.0",
+      "semantic_limits": [
+        "La ficha puede contener indicadores de servicios sin todas sus fuentes en la salida; esos valores no se promueven a claims.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
+      ],
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ],
+      "validation_evidence": [
+        {
+          "sha256": "8182f101056b37a9d9356bb05b81cb0b209571e0b5a4f57c7551a1760f0c76f0",
+          "test_file": "tests/vnext_agent/test_contracts.py",
+          "test_name": "test_every_enabled_handler_executes"
+        }
+      ],
+      "validation_status": "tested"
+    },
+    {
+      "allowed_transformations": [
+        "lookup",
+        "ratio",
+        "euclidean_distance"
+      ],
+      "coverage": {
+        "entities": 88,
+        "periods": [
+          "2025-01-01",
+          "2026-09-20",
+          "2025-05-07"
+        ],
+        "scope": "2–20 municipios explícitos; orden indiferente, identidad por código",
+        "territory": "Gipuzkoa"
+      },
+      "derivation": "derived_exact",
+      "description": "Comparación municipal con criterios explícitos",
+      "enabled": true,
+      "handler": "comparar_municipios",
+      "id": "comparar_municipios",
+      "input_fields": [
+        {
+          "allowed_values": [],
+          "name": "municipios",
+          "required": true,
+          "type": "string_array"
+        },
+        {
+          "allowed_values": [
+            "65",
+            "75"
+          ],
+          "name": "grupo_edad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [
+            "primary_care",
+            "hospital",
+            "mental_health",
+            "other_health"
+          ],
+          "name": "categoria_servicio",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "umbral_km",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "allowed_values": [],
+          "name": "periodo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "precondition_checks": [
+        "required_data_sha256",
+        "handler_signature",
+        "source_catalog",
+        "coverage_count"
+      ],
+      "preconditions": [
+        "Los archivos requeridos coinciden con SHA-256 versionados.",
+        "El handler existe y ha superado pruebas locales."
+      ],
+      "required_data": [
+        {
+          "path": "datos_preparados/demografia.csv",
+          "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+        },
+        {
+          "path": "datos_preparados/municipios.csv",
+          "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
+        },
+        {
+          "path": "datos_preparados/runtime_servicios.csv",
+          "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
+        },
+        {
+          "path": "datos_preparados/runtime_municipality_points.csv",
+          "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11"
+        },
+        {
+          "path": "datos_preparados/metadata_sources.json",
+          "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+        }
+      ],
+      "restrictions": [
+        "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
+      ],
+      "schema_version": "1.1.0",
+      "semantic_limits": [
+        "Los registros sanitarios y la distancia geométrica no acreditan capacidad o recorrido real.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
+      ],
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ],
+      "validation_evidence": [
+        {
+          "sha256": "8182f101056b37a9d9356bb05b81cb0b209571e0b5a4f57c7551a1760f0c76f0",
+          "test_file": "tests/vnext_agent/test_contracts.py",
+          "test_name": "test_every_enabled_handler_executes"
+        }
+      ],
+      "validation_status": "tested"
+    },
+    {
+      "allowed_transformations": [
+        "lookup",
+        "sort"
+      ],
+      "coverage": {
+        "entities": 88,
+        "periods": [
+          "2025-01-01"
+        ],
+        "scope": "Ranking municipal 65+ o 75+",
+        "territory": "Gipuzkoa"
+      },
+      "derivation": "derived_exact",
+      "description": "Ranking demográfico 65+ o 75+",
+      "enabled": true,
+      "handler": "analizar_envejecimiento",
+      "id": "analizar_envejecimiento",
+      "input_fields": [
+        {
+          "allowed_values": [
+            "65",
+            "75"
+          ],
+          "name": "grupo_edad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [
+            "percentage",
+            "count"
+          ],
+          "name": "medida",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "periodo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "top_n",
+          "required": false,
+          "type": "integer"
+        }
+      ],
+      "precondition_checks": [
+        "required_data_sha256",
+        "handler_signature",
+        "source_catalog",
+        "coverage_count"
+      ],
+      "preconditions": [
+        "Los archivos requeridos coinciden con SHA-256 versionados.",
+        "El handler existe y ha superado pruebas locales."
+      ],
+      "required_data": [
+        {
+          "path": "datos_preparados/demografia.csv",
+          "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+        },
+        {
+          "path": "datos_preparados/metadata_sources.json",
+          "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+        }
+      ],
+      "restrictions": [
+        "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
+      ],
+      "schema_version": "1.1.0",
+      "semantic_limits": [
+        "75+ se deriva de año de nacimiento; el resultado no identifica individuos.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
+      ],
+      "source_ids": [
+        "EUSTAT_EMH_2025"
+      ],
+      "validation_evidence": [
+        {
+          "sha256": "8182f101056b37a9d9356bb05b81cb0b209571e0b5a4f57c7551a1760f0c76f0",
+          "test_file": "tests/vnext_agent/test_contracts.py",
+          "test_name": "test_every_enabled_handler_executes"
+        }
+      ],
+      "validation_status": "tested"
+    },
+    {
+      "allowed_transformations": [
+        "euclidean_distance",
+        "sort"
+      ],
+      "coverage": {
+        "entities": 88,
+        "periods": [
+          "2026-09-20",
+          "2025-05-07"
+        ],
+        "scope": "88 municipios o subconjunto explícito; distancia geométrica",
+        "territory": "Gipuzkoa"
+      },
+      "derivation": "derived_exact",
+      "description": "Distancia geométrica desde punto representativo",
+      "enabled": true,
+      "handler": "analizar_acceso_servicios",
+      "id": "analizar_acceso_servicios",
+      "input_fields": [
+        {
+          "allowed_values": [
+            "primary_care",
+            "hospital",
+            "mental_health",
+            "other_health"
+          ],
+          "name": "categoria_servicio",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "umbral_km",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "allowed_values": [],
+          "name": "periodo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "municipios",
+          "required": false,
+          "type": "string_array"
+        }
+      ],
+      "precondition_checks": [
+        "required_data_sha256",
+        "handler_signature",
+        "source_catalog",
+        "coverage_count"
+      ],
+      "preconditions": [
+        "Los archivos requeridos coinciden con SHA-256 versionados.",
+        "El handler existe y ha superado pruebas locales."
+      ],
+      "required_data": [
+        {
+          "path": "datos_preparados/demografia.csv",
+          "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+        },
+        {
+          "path": "datos_preparados/municipios.csv",
+          "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
+        },
+        {
+          "path": "datos_preparados/runtime_servicios.csv",
+          "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
+        },
+        {
+          "path": "datos_preparados/runtime_municipality_points.csv",
+          "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11"
+        },
+        {
+          "path": "datos_preparados/metadata_sources.json",
+          "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+        }
+      ],
+      "restrictions": [
+        "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
+      ],
+      "schema_version": "1.1.0",
+      "semantic_limits": [
+        "La distancia no es tiempo ni ruta; registro no implica apertura.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
+      ],
+      "source_ids": [
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ],
+      "validation_evidence": [
+        {
+          "sha256": "8182f101056b37a9d9356bb05b81cb0b209571e0b5a4f57c7551a1760f0c76f0",
+          "test_file": "tests/vnext_agent/test_contracts.py",
+          "test_name": "test_every_enabled_handler_executes"
+        }
+      ],
+      "validation_status": "tested"
+    },
+    {
+      "allowed_transformations": [
+        "join_by_municipality_code",
+        "quantile",
+        "recount"
+      ],
+      "coverage": {
+        "entities": 88,
+        "periods": [
+          "2025-01-01",
+          "2026-09-20",
+          "2025-05-07"
+        ],
+        "scope": "Cruce municipal de edad y distancia; cuantiles explícitos",
+        "territory": "Gipuzkoa"
+      },
+      "derivation": "derived_exact",
+      "description": "Cruce descriptivo de envejecimiento y distancia",
+      "enabled": true,
+      "handler": "analizar_coincidencia",
+      "id": "analizar_coincidencia",
+      "input_fields": [
+        {
+          "allowed_values": [
+            "primary_care",
+            "hospital",
+            "mental_health",
+            "other_health"
+          ],
+          "name": "categoria_servicio",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "allowed_values": [
+            "65",
+            "75"
+          ],
+          "name": "grupo_edad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "umbral_km",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "allowed_values": [],
+          "name": "periodo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "cuantil",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "precondition_checks": [
+        "required_data_sha256",
+        "handler_signature",
+        "source_catalog",
+        "coverage_count"
+      ],
+      "preconditions": [
+        "Los archivos requeridos coinciden con SHA-256 versionados.",
+        "El handler existe y ha superado pruebas locales."
+      ],
+      "required_data": [
+        {
+          "path": "datos_preparados/demografia.csv",
+          "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+        },
+        {
+          "path": "datos_preparados/municipios.csv",
+          "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
+        },
+        {
+          "path": "datos_preparados/runtime_servicios.csv",
+          "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
+        },
+        {
+          "path": "datos_preparados/runtime_municipality_points.csv",
+          "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11"
+        },
+        {
+          "path": "datos_preparados/metadata_sources.json",
+          "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+        }
+      ],
+      "restrictions": [
+        "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
+      ],
+      "schema_version": "1.1.0",
+      "semantic_limits": [
+        "Coincidencia descriptiva no demuestra causalidad.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
+      ],
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ],
+      "validation_evidence": [
+        {
+          "sha256": "8182f101056b37a9d9356bb05b81cb0b209571e0b5a4f57c7551a1760f0c76f0",
+          "test_file": "tests/vnext_agent/test_contracts.py",
+          "test_name": "test_canonical_coincidence_recomputes_7_4_2"
+        }
+      ],
+      "validation_status": "tested"
+    },
+    {
+      "allowed_transformations": [
+        "euclidean_distance",
+        "difference",
+        "hypothetical_parameter_change"
+      ],
+      "coverage": {
+        "entities": 88,
+        "periods": [
+          "2026-09-20",
+          "2025-05-07"
+        ],
+        "scope": "Contrafactual geométrico; no es pronóstico",
+        "territory": "Gipuzkoa"
+      },
+      "derivation": "estimated_with_assumptions",
+      "description": "Contrafactual geométrico hipotético",
+      "enabled": true,
+      "handler": "simular_escenario",
+      "id": "simular_escenario",
+      "input_fields": [
+        {
+          "allowed_values": [
+            "add_service",
+            "remove_service",
+            "change_threshold"
+          ],
+          "name": "accion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "allowed_values": [
+            "primary_care",
+            "hospital",
+            "mental_health",
+            "other_health"
+          ],
+          "name": "categoria_servicio",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "umbral_km",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "allowed_values": [],
+          "name": "periodo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "latitud",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "allowed_values": [],
+          "name": "longitud",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "allowed_values": [],
+          "name": "service_id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "allowed_values": [],
+          "name": "nuevo_umbral_km",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "precondition_checks": [
+        "required_data_sha256",
+        "handler_signature",
+        "source_catalog",
+        "coverage_count"
+      ],
+      "preconditions": [
+        "Los archivos requeridos coinciden con SHA-256 versionados.",
+        "El handler existe y ha superado pruebas locales."
+      ],
+      "required_data": [
+        {
+          "path": "datos_preparados/demografia.csv",
+          "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+        },
+        {
+          "path": "datos_preparados/municipios.csv",
+          "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
+        },
+        {
+          "path": "datos_preparados/runtime_servicios.csv",
+          "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
+        },
+        {
+          "path": "datos_preparados/runtime_municipality_points.csv",
+          "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11"
+        },
+        {
+          "path": "datos_preparados/metadata_sources.json",
+          "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+        }
+      ],
+      "restrictions": [
+        "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
+      ],
+      "schema_version": "1.1.0",
+      "semantic_limits": [
+        "Parámetros hipotéticos no son observaciones oficiales.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
+      ],
+      "source_ids": [
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025"
+      ],
+      "validation_evidence": [
+        {
+          "sha256": "8182f101056b37a9d9356bb05b81cb0b209571e0b5a4f57c7551a1760f0c76f0",
+          "test_file": "tests/vnext_agent/test_contracts.py",
+          "test_name": "test_every_enabled_handler_executes"
+        }
+      ],
+      "validation_status": "tested"
+    },
+    {
+      "allowed_transformations": [
+        "lookup"
+      ],
+      "coverage": {
+        "entities": 17,
+        "periods": [
+          "2025-01-01",
+          "2026-09-20",
+          "2025-05-07",
+          "demography=2025-01-01;services=2026-09-20;geography=2025-05-07"
+        ],
+        "scope": "Fichas de fuente del catálogo local",
+        "territory": "source_catalog"
+      },
+      "derivation": "direct",
+      "description": "Ficha de procedencia versionada",
+      "enabled": true,
+      "handler": "consultar_fuente",
+      "id": "consultar_fuente",
+      "input_fields": [
+        {
+          "allowed_values": [],
+          "name": "source_id",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "precondition_checks": [
+        "required_data_sha256",
+        "handler_signature",
+        "source_catalog",
+        "coverage_count"
+      ],
+      "preconditions": [
+        "Los archivos requeridos coinciden con SHA-256 versionados.",
+        "El handler existe y ha superado pruebas locales."
+      ],
+      "required_data": [
+        {
+          "path": "datos_preparados/metadata_sources.json",
+          "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+        }
+      ],
+      "restrictions": [
+        "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
+      ],
+      "schema_version": "1.1.0",
+      "semantic_limits": [
+        "Metadatos de fuente no validan por sí solos cada cifra.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
+      ],
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025",
+        "G360_DERIVED_MUNICIPAL_METRICS_V1"
+      ],
+      "validation_evidence": [
+        {
+          "sha256": "8182f101056b37a9d9356bb05b81cb0b209571e0b5a4f57c7551a1760f0c76f0",
+          "test_file": "tests/vnext_agent/test_contracts.py",
+          "test_name": "test_every_enabled_handler_executes"
+        }
+      ],
+      "validation_status": "tested"
+    },
+    {
+      "allowed_transformations": [
+        "lookup"
+      ],
+      "coverage": {
+        "entities": 9,
+        "periods": [],
+        "scope": "Registro de operaciones W2 habilitadas y pendientes",
+        "territory": "capability_registry"
+      },
+      "derivation": "direct",
+      "description": "Inspección de operaciones habilitadas y límites",
+      "enabled": true,
+      "handler": "consultar_capacidades",
+      "id": "consultar_capacidades",
+      "input_fields": [
+        {
+          "allowed_values": [],
+          "name": "pregunta_o_dimension",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "precondition_checks": [
+        "required_data_sha256",
+        "handler_signature",
+        "source_catalog",
+        "coverage_count"
+      ],
+      "preconditions": [
+        "Los archivos requeridos coinciden con SHA-256 versionados.",
+        "El handler existe y ha superado pruebas locales."
+      ],
+      "required_data": [
+        {
+          "path": "datos_preparados/metadata_sources.json",
+          "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+        }
+      ],
+      "restrictions": [
+        "Solo 65+ y 75+; sin rutas, citas, capacidad ni predicción."
+      ],
+      "schema_version": "1.1.0",
+      "semantic_limits": [
+        "La ficha no demuestra calidad conversacional del modelo.",
+        "Los periodos de fuente no forman una fotografía temporal homogénea."
+      ],
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "ODE_HEALTH_CENTRES_2026",
+        "GEOEUSKADI_MUNICIPIOS_2025",
+        "G360_DERIVED_MUNICIPAL_METRICS_V1"
+      ],
+      "validation_evidence": [
+        {
+          "sha256": "8182f101056b37a9d9356bb05b81cb0b209571e0b5a4f57c7551a1760f0c76f0",
+          "test_file": "tests/vnext_agent/test_contracts.py",
+          "test_name": "test_every_enabled_handler_executes"
+        }
+      ],
+      "validation_status": "tested"
+    },
+    {
+      "allowed_transformations": [],
+      "coverage": {
+        "entities": 0,
+        "periods": [
+          "2026-09-29"
+        ],
+        "scope": "scheduled; stop_to_stop_with_destination_walk",
+        "territory": "Goierrialdea"
+      },
+      "derivation": "estimated_with_assumptions",
+      "description": "Piloto W1 GO01, vinculación pendiente en paquete W2",
+      "enabled": false,
+      "handler": null,
+      "id": "plan_visit",
+      "input_fields": [],
+      "precondition_checks": [],
+      "preconditions": [
+        "Integración por SHA del proveedor W1 y pruebas conjuntas pendientes."
+      ],
+      "required_data": [],
+      "restrictions": [
+        "Solo GO01 y destinos catalogados; realtime y puerta a puerta deshabilitados."
+      ],
+      "schema_version": "1.1.0",
+      "semantic_limits": [
+        "Un horario programado no es una llegada observada.",
+        "unknown no significa ausencia de servicio."
+      ],
+      "source_ids": [],
+      "validation_evidence": [],
+      "validation_status": "pending"
+    }
+  ],
+  "schema_version": "1.1.0"
+}

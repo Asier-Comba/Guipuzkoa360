@@ -1,0 +1,706 @@
+{
+  "A_definition": "Browsable existing pinned full documents: generic document lexical selection, expose its existing sections without generating an answer.",
+  "B_definition": "Existing stdlib lexical section retriever, k=3 and 500-character excerpts; minimal retrieval-RAG arm, no embeddings/vector DB/LLM.",
+  "arms": {
+    "A_NAVIGABLE_FULL_DOCUMENT_LOOKUP": {
+      "citation_correctness": 18,
+      "local_latency_median_ms": 1.583,
+      "mean_context_bytes": 5267.17,
+      "retrieval_hit": 14,
+      "rows": [
+        {
+          "citation_correctness": true,
+          "context_bytes": 4704,
+          "expected_sections": [
+            "G360_REPO_GEOSPATIAL:section-1"
+          ],
+          "question": "¿Qué unidad de análisis usamos y por qué no sección censal?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_GEOSPATIAL:section-1",
+            "G360_REPO_GEOSPATIAL:section-2",
+            "G360_REPO_GEOSPATIAL:section-3",
+            "G360_REPO_GEOSPATIAL:section-4",
+            "G360_REPO_GEOSPATIAL:section-5",
+            "G360_REPO_GEOSPATIAL:section-6"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 4704,
+          "expected_sections": [
+            "G360_REPO_GEOSPATIAL:section-2"
+          ],
+          "question": "¿Qué significa distancia geométrica aproximada desde punto representativo municipal?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_GEOSPATIAL:section-1",
+            "G360_REPO_GEOSPATIAL:section-2",
+            "G360_REPO_GEOSPATIAL:section-3",
+            "G360_REPO_GEOSPATIAL:section-4",
+            "G360_REPO_GEOSPATIAL:section-5",
+            "G360_REPO_GEOSPATIAL:section-6"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 9100,
+          "expected_sections": [
+            "G360_REPO_GEOSPATIAL:section-3"
+          ],
+          "question": "¿Cuál es el CRS de cálculo métrico y el de intercambio GeoJSON?",
+          "retrieval_hit": false,
+          "retrieved_sections": [
+            "G360_REPO_FUENTES:section-1",
+            "G360_REPO_FUENTES:section-2",
+            "G360_REPO_FUENTES:section-3",
+            "G360_REPO_FUENTES:section-4",
+            "G360_REPO_FUENTES:section-5",
+            "G360_REPO_FUENTES:section-6",
+            "G360_REPO_FUENTES:section-7",
+            "G360_REPO_FUENTES:section-8"
+          ],
+          "support_completeness": false,
+          "unsupported_abstention": null,
+          "wrong_source": true
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 4704,
+          "expected_sections": [
+            "G360_REPO_GEOSPATIAL:section-5"
+          ],
+          "question": "¿Qué limitaciones tienen los periodos y la simultaneidad de datos?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_GEOSPATIAL:section-1",
+            "G360_REPO_GEOSPATIAL:section-2",
+            "G360_REPO_GEOSPATIAL:section-3",
+            "G360_REPO_GEOSPATIAL:section-4",
+            "G360_REPO_GEOSPATIAL:section-5",
+            "G360_REPO_GEOSPATIAL:section-6"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 4704,
+          "expected_sections": [
+            "G360_REPO_GEOSPATIAL:section-6"
+          ],
+          "question": "¿Por qué no sumar porcentajes municipales o reemplazar un nulo por cero?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_GEOSPATIAL:section-1",
+            "G360_REPO_GEOSPATIAL:section-2",
+            "G360_REPO_GEOSPATIAL:section-3",
+            "G360_REPO_GEOSPATIAL:section-4",
+            "G360_REPO_GEOSPATIAL:section-5",
+            "G360_REPO_GEOSPATIAL:section-6"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 9100,
+          "expected_sections": [
+            "G360_REPO_FUENTES:section-2"
+          ],
+          "question": "¿Qué origen y limitación tiene la población de 75+ en EUSTAT_EMH_2025?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_FUENTES:section-1",
+            "G360_REPO_FUENTES:section-2",
+            "G360_REPO_FUENTES:section-3",
+            "G360_REPO_FUENTES:section-4",
+            "G360_REPO_FUENTES:section-5",
+            "G360_REPO_FUENTES:section-6",
+            "G360_REPO_FUENTES:section-7",
+            "G360_REPO_FUENTES:section-8"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 9100,
+          "expected_sections": [
+            "G360_REPO_FUENTES:section-3"
+          ],
+          "question": "¿Un registro de ODE_HEALTH_CENTRES_2026 demuestra citas o capacidad?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_FUENTES:section-1",
+            "G360_REPO_FUENTES:section-2",
+            "G360_REPO_FUENTES:section-3",
+            "G360_REPO_FUENTES:section-4",
+            "G360_REPO_FUENTES:section-5",
+            "G360_REPO_FUENTES:section-6",
+            "G360_REPO_FUENTES:section-7",
+            "G360_REPO_FUENTES:section-8"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 9100,
+          "expected_sections": [
+            "G360_REPO_FUENTES:section-4"
+          ],
+          "question": "¿Qué limitación oficial tiene la cartografía GEOEUSKADI_MUNICIPIOS_2025?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_FUENTES:section-1",
+            "G360_REPO_FUENTES:section-2",
+            "G360_REPO_FUENTES:section-3",
+            "G360_REPO_FUENTES:section-4",
+            "G360_REPO_FUENTES:section-5",
+            "G360_REPO_FUENTES:section-6",
+            "G360_REPO_FUENTES:section-7",
+            "G360_REPO_FUENTES:section-8"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 9100,
+          "expected_sections": [
+            "G360_REPO_FUENTES:section-6"
+          ],
+          "question": "¿Qué significa la derivación G360_DERIVED_MUNICIPAL_METRICS_V1 y conteo cero?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_FUENTES:section-1",
+            "G360_REPO_FUENTES:section-2",
+            "G360_REPO_FUENTES:section-3",
+            "G360_REPO_FUENTES:section-4",
+            "G360_REPO_FUENTES:section-5",
+            "G360_REPO_FUENTES:section-6",
+            "G360_REPO_FUENTES:section-7",
+            "G360_REPO_FUENTES:section-8"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 9100,
+          "expected_sections": [
+            "G360_REPO_FUENTES:section-7"
+          ],
+          "question": "¿Cómo se preserva la cadena de evidencia de fuentes y periodo?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_FUENTES:section-1",
+            "G360_REPO_FUENTES:section-2",
+            "G360_REPO_FUENTES:section-3",
+            "G360_REPO_FUENTES:section-4",
+            "G360_REPO_FUENTES:section-5",
+            "G360_REPO_FUENTES:section-6",
+            "G360_REPO_FUENTES:section-7",
+            "G360_REPO_FUENTES:section-8"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 9100,
+          "expected_sections": [
+            "G360_REPO_FUENTES:section-8"
+          ],
+          "question": "¿Por qué se mantienen separados registros sanitarios con las mismas coordenadas?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_FUENTES:section-1",
+            "G360_REPO_FUENTES:section-2",
+            "G360_REPO_FUENTES:section-3",
+            "G360_REPO_FUENTES:section-4",
+            "G360_REPO_FUENTES:section-5",
+            "G360_REPO_FUENTES:section-6",
+            "G360_REPO_FUENTES:section-7",
+            "G360_REPO_FUENTES:section-8"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 3596,
+          "expected_sections": [
+            "G360_REPO_RESULT_SCHEMA:section-1"
+          ],
+          "question": "¿Qué informa el contrato JSON cuando una herramienta da error?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_RESULT_SCHEMA:section-1",
+            "G360_REPO_RESULT_SCHEMA:section-2",
+            "G360_REPO_RESULT_SCHEMA:section-3",
+            "G360_REPO_RESULT_SCHEMA:section-4"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 3596,
+          "expected_sections": [
+            "G360_REPO_RESULT_SCHEMA:section-2"
+          ],
+          "question": "¿Qué adaptación estable evita reinterpretar cálculos en la interfaz?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_RESULT_SCHEMA:section-1",
+            "G360_REPO_RESULT_SCHEMA:section-2",
+            "G360_REPO_RESULT_SCHEMA:section-3",
+            "G360_REPO_RESULT_SCHEMA:section-4"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 3596,
+          "expected_sections": [
+            "G360_REPO_RESULT_SCHEMA:section-3"
+          ],
+          "question": "¿Qué archivos de visualización son polígonos y puntos de cálculo?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_RESULT_SCHEMA:section-1",
+            "G360_REPO_RESULT_SCHEMA:section-2",
+            "G360_REPO_RESULT_SCHEMA:section-3",
+            "G360_REPO_RESULT_SCHEMA:section-4"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 1499,
+          "expected_sections": [
+            "G360_REPO_METHOD:section-1"
+          ],
+          "question": "¿Qué significa la coincidencia y demuestra causalidad?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_METHOD:section-1"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 2,
+          "expected_sections": [],
+          "question": "¿Cuántos dragones violetas hay en Marte?",
+          "retrieval_hit": null,
+          "retrieved_sections": [],
+          "support_completeness": null,
+          "unsupported_abstention": true,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 2,
+          "expected_sections": [],
+          "question": "¿Qué significa la resonancia cuántica de elefantes invisibles?",
+          "retrieval_hit": null,
+          "retrieved_sections": [],
+          "support_completeness": null,
+          "unsupported_abstention": true,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 2,
+          "expected_sections": [],
+          "question": "¿Qué fuente documenta la recursión de unicornio galáctico?",
+          "retrieval_hit": null,
+          "retrieved_sections": [],
+          "support_completeness": null,
+          "unsupported_abstention": true,
+          "wrong_source": false
+        }
+      ],
+      "support_completeness": 14,
+      "supported_count": 15,
+      "unsupported_abstention": 3,
+      "unsupported_count": 3,
+      "wrong_source_rate": 0.06666666666666667
+    },
+    "B_EXISTING_LEXICAL_SECTION_RETRIEVAL": {
+      "citation_correctness": 18,
+      "local_latency_median_ms": 6.475,
+      "mean_context_bytes": 1626.44,
+      "retrieval_hit": 15,
+      "rows": [
+        {
+          "citation_correctness": true,
+          "context_bytes": 1793,
+          "expected_sections": [
+            "G360_REPO_GEOSPATIAL:section-1"
+          ],
+          "question": "¿Qué unidad de análisis usamos y por qué no sección censal?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_GEOSPATIAL:section-1",
+            "G360_REPO_METHOD:section-1"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 3163,
+          "expected_sections": [
+            "G360_REPO_GEOSPATIAL:section-2"
+          ],
+          "question": "¿Qué significa distancia geométrica aproximada desde punto representativo municipal?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_FUENTES:section-6",
+            "G360_REPO_GEOSPATIAL:section-2",
+            "G360_REPO_RESULT_SCHEMA:section-2"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 2590,
+          "expected_sections": [
+            "G360_REPO_GEOSPATIAL:section-3"
+          ],
+          "question": "¿Cuál es el CRS de cálculo métrico y el de intercambio GeoJSON?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_FUENTES:section-4",
+            "G360_REPO_GEOSPATIAL:section-3",
+            "G360_REPO_RESULT_SCHEMA:section-3"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 1592,
+          "expected_sections": [
+            "G360_REPO_GEOSPATIAL:section-5"
+          ],
+          "question": "¿Qué limitaciones tienen los periodos y la simultaneidad de datos?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_GEOSPATIAL:section-5",
+            "G360_REPO_RESULT_SCHEMA:section-4"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 1033,
+          "expected_sections": [
+            "G360_REPO_GEOSPATIAL:section-6"
+          ],
+          "question": "¿Por qué no sumar porcentajes municipales o reemplazar un nulo por cero?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_GEOSPATIAL:section-6"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 3030,
+          "expected_sections": [
+            "G360_REPO_FUENTES:section-2"
+          ],
+          "question": "¿Qué origen y limitación tiene la población de 75+ en EUSTAT_EMH_2025?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_FUENTES:section-2",
+            "G360_REPO_FUENTES:section-4",
+            "G360_REPO_METHOD:section-1"
+          ],
+          "support_completeness": false,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 2025,
+          "expected_sections": [
+            "G360_REPO_FUENTES:section-3"
+          ],
+          "question": "¿Un registro de ODE_HEALTH_CENTRES_2026 demuestra citas o capacidad?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_FUENTES:section-3",
+            "G360_REPO_FUENTES:section-6"
+          ],
+          "support_completeness": false,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 3030,
+          "expected_sections": [
+            "G360_REPO_FUENTES:section-4"
+          ],
+          "question": "¿Qué limitación oficial tiene la cartografía GEOEUSKADI_MUNICIPIOS_2025?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_FUENTES:section-2",
+            "G360_REPO_FUENTES:section-4",
+            "G360_REPO_METHOD:section-1"
+          ],
+          "support_completeness": false,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 3124,
+          "expected_sections": [
+            "G360_REPO_FUENTES:section-6"
+          ],
+          "question": "¿Qué significa la derivación G360_DERIVED_MUNICIPAL_METRICS_V1 y conteo cero?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_FUENTES:section-3",
+            "G360_REPO_FUENTES:section-6",
+            "G360_REPO_RESULT_SCHEMA:section-2"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 905,
+          "expected_sections": [
+            "G360_REPO_FUENTES:section-7"
+          ],
+          "question": "¿Cómo se preserva la cadena de evidencia de fuentes y periodo?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_FUENTES:section-7"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 2038,
+          "expected_sections": [
+            "G360_REPO_FUENTES:section-8"
+          ],
+          "question": "¿Por qué se mantienen separados registros sanitarios con las mismas coordenadas?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_FUENTES:section-3",
+            "G360_REPO_FUENTES:section-8"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 1005,
+          "expected_sections": [
+            "G360_REPO_RESULT_SCHEMA:section-1"
+          ],
+          "question": "¿Qué informa el contrato JSON cuando una herramienta da error?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_RESULT_SCHEMA:section-1"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 1100,
+          "expected_sections": [
+            "G360_REPO_RESULT_SCHEMA:section-2"
+          ],
+          "question": "¿Qué adaptación estable evita reinterpretar cálculos en la interfaz?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_RESULT_SCHEMA:section-2"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 1833,
+          "expected_sections": [
+            "G360_REPO_RESULT_SCHEMA:section-3"
+          ],
+          "question": "¿Qué archivos de visualización son polígonos y puntos de cálculo?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_GEOSPATIAL:section-4",
+            "G360_REPO_RESULT_SCHEMA:section-3"
+          ],
+          "support_completeness": true,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 1009,
+          "expected_sections": [
+            "G360_REPO_METHOD:section-1"
+          ],
+          "question": "¿Qué significa la coincidencia y demuestra causalidad?",
+          "retrieval_hit": true,
+          "retrieved_sections": [
+            "G360_REPO_METHOD:section-1"
+          ],
+          "support_completeness": false,
+          "unsupported_abstention": null,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 2,
+          "expected_sections": [],
+          "question": "¿Cuántos dragones violetas hay en Marte?",
+          "retrieval_hit": null,
+          "retrieved_sections": [],
+          "support_completeness": null,
+          "unsupported_abstention": true,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 2,
+          "expected_sections": [],
+          "question": "¿Qué significa la resonancia cuántica de elefantes invisibles?",
+          "retrieval_hit": null,
+          "retrieved_sections": [],
+          "support_completeness": null,
+          "unsupported_abstention": true,
+          "wrong_source": false
+        },
+        {
+          "citation_correctness": true,
+          "context_bytes": 2,
+          "expected_sections": [],
+          "question": "¿Qué fuente documenta la recursión de unicornio galáctico?",
+          "retrieval_hit": null,
+          "retrieved_sections": [],
+          "support_completeness": null,
+          "unsupported_abstention": true,
+          "wrong_source": false
+        }
+      ],
+      "support_completeness": 11,
+      "supported_count": 15,
+      "unsupported_abstention": 3,
+      "unsupported_count": 3,
+      "wrong_source_rate": 0.0
+    }
+  },
+  "candidate_changed": false,
+  "corpus_manifest_sha256": "b6b619e575f7c549afd0bec8ebe0d42b9901069bc0940bccdc4827075c2253c9",
+  "criterion": "B must not worsen hit, support, abstention or wrong-source; must strictly improve support or abstention. Bytes/latency secondary.",
+  "decision": "RAG_NO_GO",
+  "identical_corpus_both_arms": [
+    {
+      "date": "2026-09-29",
+      "issuer": "DeustoAI Labs / GIPUZKOA 360",
+      "path": "FUENTES.md",
+      "permission": "Public repository reference; do not republish externally without review",
+      "sha256": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de",
+      "source_id": "G360_REPO_FUENTES",
+      "title": "Fuentes del prototipo",
+      "url": "https://github.com/Asier-Comba/Guipuzkoa360/blob/e213eaa9b73b0f8a4d1893e0269fe92fe6756955/FUENTES.md",
+      "version": "e213eaa9b73b0f8a4d1893e0269fe92fe6756955"
+    },
+    {
+      "date": "2026-09-29",
+      "issuer": "DeustoAI Labs / GIPUZKOA 360",
+      "path": "docs/METODOLOGIA.md",
+      "permission": "Public repository reference; do not republish externally without review",
+      "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7",
+      "source_id": "G360_REPO_METHOD",
+      "title": "Metodología",
+      "url": "https://github.com/Asier-Comba/Guipuzkoa360/blob/e213eaa9b73b0f8a4d1893e0269fe92fe6756955/docs/METODOLOGIA.md",
+      "version": "e213eaa9b73b0f8a4d1893e0269fe92fe6756955"
+    },
+    {
+      "date": "2026-09-29",
+      "issuer": "DeustoAI Labs / GIPUZKOA 360",
+      "path": "docs/METODOLOGIA_GEOESPACIAL.md",
+      "permission": "Public repository reference; do not republish externally without review",
+      "sha256": "68a5463ac83db03e1f6ca9e46e2e8add92a93e9379530d438118fa9b6b1ae5f4",
+      "source_id": "G360_REPO_GEOSPATIAL",
+      "title": "Metodología geoespacial",
+      "url": "https://github.com/Asier-Comba/Guipuzkoa360/blob/e213eaa9b73b0f8a4d1893e0269fe92fe6756955/docs/METODOLOGIA_GEOESPACIAL.md",
+      "version": "e213eaa9b73b0f8a4d1893e0269fe92fe6756955"
+    },
+    {
+      "date": "2026-09-29",
+      "issuer": "DeustoAI Labs / GIPUZKOA 360",
+      "path": "docs/RESULT_SCHEMA.md",
+      "permission": "Public repository reference; do not republish externally without review",
+      "sha256": "8b1a5e1f5541b41f2e0680dcdc2d2a9a3c6f5a2333088fb98b28fd3b4893c872",
+      "source_id": "G360_REPO_RESULT_SCHEMA",
+      "title": "Esquema de resultados",
+      "url": "https://github.com/Asier-Comba/Guipuzkoa360/blob/e213eaa9b73b0f8a4d1893e0269fe92fe6756955/docs/RESULT_SCHEMA.md",
+      "version": "e213eaa9b73b0f8a4d1893e0269fe92fe6756955"
+    }
+  ],
+  "internet_used": false,
+  "limits": [
+    "Small authored documentary set, not independent holdout",
+    "Citation identity and literal support completeness only, not generated-answer truth",
+    "Corpus contains territorial methodology, not a complete health corpus",
+    "A/B latency includes different document-loading costs; not optimized production latency",
+    "Unsupported questions contain some generic source tokens; false retrieval is explicitly counted"
+  ],
+  "llm_calls": 0,
+  "not_llm_benchmark": true,
+  "question_count": 18,
+  "rag_in_candidate": false,
+  "runtime_sha": "8c94f8c3cf9d732c4ce94af7b4bef8f6e154c243",
+  "status": "OFF_CANDIDATE_OFFLINE_RETRIEVAL_ONLY",
+  "zip_sha256": "3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616"
+}

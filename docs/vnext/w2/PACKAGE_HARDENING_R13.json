@@ -1,0 +1,28 @@
+{
+  "context_count": 15,
+  "double_build_gate": "test_r12_double_build_identical; expected existing ZIP_SHA, no new candidate identity",
+  "flat_nested_foreign_valid_invalid_root_gate": "tests/vnext_agent/test_r12_generated.py (reexecuted in R13 focused/full suite)",
+  "freeze_count": 17,
+  "manifest_closed": true,
+  "nested_w1": {
+    "case_collisions": 0,
+    "duplicates": 0,
+    "expanded_bytes": 1252907,
+    "members": 26,
+    "safe_paths": true,
+    "symlinks": 0
+  },
+  "not_llm_benchmark": true,
+  "outer": {
+    "case_collisions": 0,
+    "duplicates": 0,
+    "expanded_bytes": 782621,
+    "members": 25,
+    "safe_paths": true,
+    "symlinks": 0
+  },
+  "real_studio_mount": "NOT_RUN",
+  "runtime_sha": "8c94f8c3cf9d732c4ce94af7b4bef8f6e154c243",
+  "status": "PASS_INVENTORY_LAYOUT_GATES_SEPARATE",
+  "zip_sha256": "3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616"
+}

@@ -1,0 +1,255 @@
+{
+  "ROUND": "R13",
+  "START_SHA": "fa679248a6239604f56368f384e708a022c09e95",
+  "STATUS": "W2_FINAL_CANDIDATE_FROZEN_STOP",
+  "CANDIDATE_FROZEN": true,
+  "W2_FINAL_CANDIDATE_FROZEN": "YES",
+  "PATCH4": false,
+  "RUNTIME_SHA": "8c94f8c3cf9d732c4ce94af7b4bef8f6e154c243",
+  "ZIP_SHA": "3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616",
+  "MANIFEST_SHA": "a672bf9a2afece58c468a1f762c860f0217536a2a4fa18737ba768cab755c70a",
+  "TESTED_AUDIT_HEAD": "f7a376b3cee79078cbc8b3f878f6eea3a53fcebb",
+  "PUBLISHED_HEAD_SCOPE": "Runtime pin is immutable. Final successor publishes evidence/checkpoint only; its SHA is reported in PR17/Issue16, avoiding a self-referential file hash.",
+  "W1_ACCEPTANCE_PIN": {
+    "commit": "7f434a469d7f94fdff8ae7d2665644426a217250",
+    "path": "docs/vnext/w1/candidate_r12/patch3_intake_r12.json",
+    "bytes": 4321325,
+    "sha256": "a55a237f1189c3f51bdf0dc7bc484477f28593822de8a9fb28df75a6fca33328",
+    "status": "PASS",
+    "raw": 32,
+    "model_view": 32,
+    "comparisons": 5,
+    "scenarios": 37,
+    "assertions": 1811,
+    "findings": 0,
+    "scope": "30 exact raw objects plus two controlled rejections; mobility deterministic acceptance, not territorial/LLM/portal"
+  },
+  "W1_RUNTIME_SHA": "cb061a9e00a6496c40488a596bd94834bc2c49b2",
+  "W1_ZIP_SHA": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+  "W1_EMBEDDED_SUPPORT_PIN": "c9cb37f6c65e77149e18cd883eeaff40d1c1bb8e",
+  "W3_CONSUMED_PIN": "111aff0d9af6fe38255425bfcc8c40eb6b1dc647",
+  "W3_PREFLIGHT_PIN": "1d60cdf81d3eb7661bc1d97c12425b9bdcf69b8d",
+  "W3_PATCH3_ACCEPTANCE": "PASS_INDEPENDENT_OFFLINE_4_MODES_NOT_LLM_OR_STUDIO",
+  "W3_DELTA_READ": ["resultados/vnext/r13/offline_review.json", "scripts/vnext_product/intake_candidate_r13.py", "docs/vnext/w3/SMOKE_PLAN_R13.json"],
+  "W3_ACCEPTANCE": {
+    "path": "resultados/vnext/r13/offline_review.json",
+    "bytes": 7150,
+    "sha256": "889b616acd1b4f810fa5094e8fb3c1e6457a8f2fc8013252c8e58d214533fe37",
+    "cases_per_mode": 36,
+    "modes": ["flat_full", "flat_declared", "flat_foreign_cwd", "nested_declared_foreign_cwd"],
+    "findings": 0,
+    "model_calls": 0,
+    "scope": "Independent generated tools and selected raw-GTFS/geometry/arithmetic contrast; not exhaustive optimality, physical entrance, model language or real platform inclusion"
+  },
+  "TOOL_SCHEMA_AUDIT": {
+    "status": "PASS_STATIC_NOT_SERVED",
+    "count": 9,
+    "report": "docs/vnext/w2/TOOL_SCHEMA_AUDIT_R13.json",
+    "discovery": "Actual generated consultar_capacidades('plan_visit') returns Zegama/Segura/Idiazabal, destination/date/defaults/ranges/comparison size; no hidden-human-ID requirement",
+    "served_schema": "NOT_RUN"
+  },
+  "SCHEMA_FUZZ_COUNT": 10000,
+  "FUZZ_SEED": 360013,
+  "UNCAUGHT_EXCEPTIONS": 0,
+  "SCHEMA_FUZZ": {
+    "report": "docs/vnext/w2/SCHEMA_FUZZ_R13.json",
+    "status": "PASS",
+    "runtime_invocations": 20000,
+    "distinct_invocation_payloads": 3864,
+    "seconds": 1867.182,
+    "uncaught_or_invariant_findings": 0,
+    "max_public_bytes_observed": 98315,
+    "public_limit_bytes": 120000,
+    "distinct_resolved_source_ids": 16,
+    "determinism": "Every indexed case is executed twice and its normalized full model view compared",
+    "source_resolution": "Every distinct emitted source is resolved with consultar_fuente"
+  },
+  "STATE_SEQUENCE_COUNT": 500,
+  "STATE_LEAK_FINDINGS": 0,
+  "STATE_SEQUENCES": {
+    "report": "docs/vnext/w2/STATE_SEQUENCES_R13.json",
+    "status": "PASS",
+    "tool_calls": 3213,
+    "seconds": 1448.557,
+    "length_range": [6, 8],
+    "reference_validation": "All 16 batched references independently match one fresh process per operation, reported in SOURCE_COMPLETENESS_R13.json"
+  },
+  "FUZZ_SCOPE": "Indexed generated cases with deliberate repeats: 3864 distinct invocation payloads in 10000-case corpus, two executions per case. No claim of exhaustive schemas or universal reliability. Top-level invocation envelope is always an object; array/object/nonfinite fuzz targets tool fields.",
+  "PACKAGE_HARDENING": {
+    "status": "PASS",
+    "report": "docs/vnext/w2/PACKAGE_HARDENING_R13.json",
+    "focused_result": "15 PASS in 163.29s: nine R13 audit regressions plus six R12 generated package tests",
+    "zip_bytes": 226010,
+    "expanded_bytes": 782621,
+    "nested_w1_expanded_bytes": 1252907,
+    "context_paths": 15,
+    "freeze_paths": 17,
+    "context_bytes": 266742,
+    "double_build": "Byte-identical, existing ZIP unchanged",
+    "modes": [
+      "flat",
+      "declared-only flat",
+      "declared-only nested agents/<candidate>",
+      "foreign cwd",
+      "explicit valid root",
+      "invalid root controlled rejection"
+    ],
+    "safety": [
+      "safe paths",
+      "no duplicates",
+      "no case collisions",
+      "no symlinks",
+      "closed outer and nested manifests"
+    ],
+    "real_mount": "NOT_RUN"
+  },
+  "SOURCE_COMPLETENESS": {
+    "status": "PASS_BOUNDED_DETERMINISTIC_VIEWS",
+    "report": "docs/vnext/w2/SOURCE_COMPLETENESS_R13.json",
+    "independent_cold_operations": 16,
+    "root_switch": "territorial supported; cross-root W1 intentionally rejected and original-root recovery PASS",
+    "checks": [
+      "route/trip",
+      "stop labels",
+      "times",
+      "walking",
+      "waiting",
+      "appointment",
+      "return",
+      "total/slack",
+      "destination",
+      "modelled",
+      "entrance false",
+      "address conflict",
+      "sources/periods",
+      "argument origin unverified",
+      "limits",
+      "territorial rate lineage"
+    ]
+  },
+  "SYSTEM_PROMPT_AUDIT": {
+    "status": "STATIC_NOT_REAL_MODEL_ACCEPTANCE",
+    "report": "docs/vnext/w2/SYSTEM_PROMPT_AUDIT_R13.json",
+    "cases": 11,
+    "prompt_changed": false,
+    "gold_results_added": false
+  },
+  "RAG_AB_STATUS": "OFF_CANDIDATE_OFFLINE_RETRIEVAL_ONLY",
+  "RAG_RESULT": "RAG_NO_GO",
+  "RAG_IN_CANDIDATE": false,
+  "RAG_AB": {
+    "report": "docs/vnext/w2/RAG_AB_R13.json",
+    "identical_corpus_documents": 4,
+    "identical_questions": 18,
+    "supported_questions": 15,
+    "unsupported_questions": 3,
+    "A": {
+      "hit": 14,
+      "support_complete": 14,
+      "citation_identity": 18,
+      "abstention": 3,
+      "wrong_source_rate": 0.06666666666666667,
+      "mean_context_bytes": 5267.17,
+      "median_local_latency_ms": 1.583
+    },
+    "B": {
+      "hit": 15,
+      "support_complete": 11,
+      "citation_identity": 18,
+      "abstention": 3,
+      "wrong_source_rate": 0,
+      "mean_context_bytes": 1626.44,
+      "median_local_latency_ms": 6.475
+    },
+    "decision_reason": "B improves hit/bytes but loses literal support completeness; no clear non-regressing gain. Not generated-answer evaluation or independent holdout.",
+    "new_infrastructure": false,
+    "internet": false,
+    "llm": 0
+  },
+  "CRITICAL": 0,
+  "HIGH": 0,
+  "MEDIUM": 2,
+  "MEDIUM_FINDINGS": [
+    {
+      "id": "R13-SCHEMA-SEMANTICS",
+      "scope": "Static interface risk, not reproduced platform incompatibility",
+      "detail": "Range/enum and comparison constraints are discoverable in catalog/runtime but not all encoded by Python annotations. Actual served schema requires W3 comparison."
+    },
+    {
+      "id": "R13-PROMPT-ABSTENTION",
+      "scope": "Static language risk, not demonstrated deterministic calculation defect",
+      "detail": "No explicit individual-elderly-behavior or patient-assignment refusal sentence. No enabled data/tool feature supports either; real final-language refusal remains W3 gate."
+    }
+  ],
+  "PYTHON": {
+    "command": "py -3.12 -m pytest -q -o addopts=",
+    "status": "PASS",
+    "passed": 376,
+    "seconds": 277.04,
+    "full_suite_runs_in_R13": 1,
+    "focused": {
+      "passed": 15,
+      "seconds": 163.29,
+      "includes_generated_package_tests": 6
+    }
+  },
+  "NODE": {
+    "command": "node --test tests/e2e/contract_flow.test.mjs",
+    "status": "PASS",
+    "passed": 17
+  },
+  "CI": {
+    "head": "f7a376b3cee79078cbc8b3f878f6eea3a53fcebb",
+    "status": "PASS",
+    "runs": [
+      {
+        "id": 36752411375,
+        "name": "vNext W2 candidate validation",
+        "conclusion": "success"
+      },
+      {
+        "id": 36752411504,
+        "name": "Release fast CI",
+        "conclusion": "success"
+      }
+    ],
+    "scope": "New off-candidate tests plus inherited suite/package validation; 10000-case stress and 500 sequences executed locally, not automatically in CI."
+  },
+  "LOCAL_LLM": 0,
+  "PORTAL_LLM": 0,
+  "PORTAL_WRITES_BY_W2": 0,
+  "PORTAL_SUPPORT_READY": true,
+  "PORTAL_SUPPORT": "docs/vnext/w2/PORTAL_SUPPORT_R13.json",
+  "STUDIO_DIAGNOSTIC_PLAYBOOK": "docs/vnext/w2/STUDIO_DIAGNOSTIC_PLAYBOOK_R13.md",
+  "V4_PRESERVED": {
+    "runtime": "195b4980fa5998b096c308296a55e452380b0371",
+    "status": "PASS_14_FILES_BEFORE_AFTER",
+    "runtime_candidate_changed": false,
+    "common_assets_changed": false
+  },
+  "HARNESS_ATTEMPTS_RECONCILED": [
+    {
+      "attempt": "21-case pilot",
+      "outcome": "Three false partial_mobility assertions: unknown domain views contain scope/source metadata but no numeric itinerary. Corrected auditor invariant; no runtime patch."
+    },
+    {
+      "attempt": "cold-reference pilot",
+      "outcome": "Rate assertion mistakenly covered statistical age_cut_percent; narrowed to actual pct_/per_10000 population/service ratios. No runtime patch."
+    },
+    {
+      "attempt": "zip separator synthetic regression",
+      "outcome": "Windows zipfile normalizes decoded names. Auditor now checks orig_filename; synthetic headers inject backslash. No actual candidate unsafe entry."
+    }
+  ],
+  "NOT_RUN": [
+    "actual Studio frozen binary assets/root/imports",
+    "actual served schema and dependency versions",
+    "real model routing/memory/language/autonomy",
+    "independent W3 model/holdout acceptance (offline patch3 now PASS at 111aff0)",
+    "generated-answer RAG fidelity",
+    "merge/release/Entrega/track"
+  ],
+  "NEXT_EXACT_ACTION": "W3_REAL_PORTAL",
+  "NEXT_ACTION_DETAIL": "W3 consumes exact unchanged patch3, verifies real binary freeze/root/import/schema and performs its bounded already-authorized private smoke. W2 stops when local hardening is green; no new improvements without reproduced W3 failure.",
+  "MERGED_OR_PUBLISHED_RELEASE": "NO"
+}
