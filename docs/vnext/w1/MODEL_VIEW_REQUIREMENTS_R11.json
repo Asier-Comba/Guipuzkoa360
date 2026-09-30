@@ -1,0 +1,620 @@
+{
+  "case_request": {
+    "appointment_time": "09:45",
+    "date": "2026-09-29",
+    "destination_id": "beasain_official_centre_anchor",
+    "duration_minutes": 20,
+    "origin_id": "zegama_center_stops"
+  },
+  "derived_from": "provider_r6 canonical case plus frozen R4/R5 snapshots",
+  "requirements": [
+    {
+      "allowed_projection": [
+        "status",
+        "outcomes.status"
+      ],
+      "applicability": "all",
+      "expected_value": "ok",
+      "forbidden_omission": "status absent",
+      "requirement_id": "MV-STATUS",
+      "semantic_fact": "producer status",
+      "severity": "critical",
+      "source_path": "/status"
+    },
+    {
+      "allowed_projection": [
+        "effective_request",
+        "normalized_request"
+      ],
+      "applicability": "all",
+      "expected_value": {
+        "appointment_time": "09:45:00",
+        "arrival_margin_minutes": 10,
+        "boarding_margin_minutes": 3,
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops",
+        "return_deadline": null,
+        "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+        "timezone": "Europe/Madrid",
+        "walking_profile_id": "poc_reference_50m_min_plus_120s"
+      },
+      "forbidden_omission": "effective request absent",
+      "requirement_id": "MV-EFFECTIVE",
+      "semantic_fact": "effective request and defaults",
+      "severity": "critical",
+      "source_path": "/normalized_request"
+    },
+    {
+      "allowed_projection": [
+        "outbound.trip_id",
+        "claims.value"
+      ],
+      "applicability": "ok",
+      "expected_value": "1_101_LJ_31500",
+      "forbidden_omission": "trip identity absent",
+      "requirement_id": "MV-OUT-TRIP",
+      "semantic_fact": "outbound trip identity",
+      "severity": "critical",
+      "source_path": "/itinerary/outbound/trip_id"
+    },
+    {
+      "allowed_projection": [
+        "outbound.route_id",
+        "route_id",
+        "route_label"
+      ],
+      "applicability": "ok",
+      "expected_value": "1",
+      "forbidden_omission": "route identity absent",
+      "requirement_id": "MV-OUT-ROUTE",
+      "semantic_fact": "outbound route identity and public GO01 label",
+      "severity": "critical",
+      "source_path": "/itinerary/outbound/route_id"
+    },
+    {
+      "allowed_projection": [
+        "route_label",
+        "method",
+        "sources.transformation"
+      ],
+      "applicability": "ok",
+      "expected_value": "GO01",
+      "forbidden_omission": "route label absent",
+      "requirement_id": "MV-OUT-ROUTE-LABEL",
+      "semantic_fact": "public route label GO01",
+      "severity": "high",
+      "source_path": "/sources/0/transformation"
+    },
+    {
+      "allowed_projection": [
+        "outbound.from_stop_id",
+        "claims.value"
+      ],
+      "applicability": "ok",
+      "expected_value": "8305",
+      "forbidden_omission": "boarding stop id absent",
+      "requirement_id": "MV-OUT-FROM-ID",
+      "semantic_fact": "outbound boarding stop id",
+      "severity": "critical",
+      "source_path": "/itinerary/outbound/from_stop_id"
+    },
+    {
+      "allowed_projection": [
+        "outbound.from_stop_label",
+        "stop_label",
+        "claims.entity_label"
+      ],
+      "applicability": "ok",
+      "expected_value": "Zegama - Elizalde 6 - Plaza",
+      "forbidden_omission": "boarding stop label absent",
+      "requirement_id": "MV-OUT-FROM-LABEL",
+      "semantic_fact": "outbound boarding stop label",
+      "severity": "high",
+      "source_path": "snapshot:/stops/8305/name"
+    },
+    {
+      "allowed_projection": [
+        "outbound.to_stop_id",
+        "claims.value"
+      ],
+      "applicability": "ok",
+      "expected_value": "7219",
+      "forbidden_omission": "arrival stop id absent",
+      "requirement_id": "MV-OUT-TO-ID",
+      "semantic_fact": "outbound arrival stop id",
+      "severity": "critical",
+      "source_path": "/itinerary/outbound/to_stop_id"
+    },
+    {
+      "allowed_projection": [
+        "outbound.to_stop_label",
+        "stop_label",
+        "claims.entity_label"
+      ],
+      "applicability": "ok",
+      "expected_value": "Beasain - Lokomotora Biribilgunea",
+      "forbidden_omission": "arrival stop label absent",
+      "requirement_id": "MV-OUT-TO-LABEL",
+      "semantic_fact": "outbound arrival stop label",
+      "severity": "high",
+      "source_path": "snapshot:/stops/7219/name"
+    },
+    {
+      "allowed_projection": [
+        "outbound.departure_time",
+        "claims.value"
+      ],
+      "applicability": "ok",
+      "expected_value": "08:47:37",
+      "forbidden_omission": "departure absent",
+      "requirement_id": "MV-OUT-DEP",
+      "semantic_fact": "scheduled outbound departure",
+      "severity": "critical",
+      "source_path": "/itinerary/outbound/departure_time"
+    },
+    {
+      "allowed_projection": [
+        "outbound.arrival_time",
+        "claims.value"
+      ],
+      "applicability": "ok",
+      "expected_value": "09:17:06",
+      "forbidden_omission": "arrival absent",
+      "requirement_id": "MV-OUT-ARR",
+      "semantic_fact": "scheduled outbound arrival",
+      "severity": "critical",
+      "source_path": "/itinerary/outbound/arrival_time"
+    },
+    {
+      "allowed_projection": [
+        "walking.outbound.total_metres",
+        "claims.value"
+      ],
+      "applicability": "ok",
+      "expected_value": 205.07964741035417,
+      "forbidden_omission": "walking distance absent",
+      "requirement_id": "MV-WALK-OUT-M",
+      "semantic_fact": "outbound walking metres",
+      "severity": "high",
+      "source_path": "/walking/outbound/total_metres"
+    },
+    {
+      "allowed_projection": [
+        "walking.outbound.seconds",
+        "claims.value"
+      ],
+      "applicability": "ok",
+      "expected_value": 420,
+      "forbidden_omission": "walking time absent",
+      "requirement_id": "MV-WALK-OUT-S",
+      "semantic_fact": "outbound walking seconds",
+      "severity": "high",
+      "source_path": "/walking/outbound/seconds"
+    },
+    {
+      "allowed_projection": [
+        "walking_profile_id",
+        "method",
+        "assumptions"
+      ],
+      "applicability": "ok",
+      "expected_value": "poc_reference_50m_min_plus_120s",
+      "forbidden_omission": "walking model absent",
+      "requirement_id": "MV-WALK-PROFILE",
+      "semantic_fact": "walking profile/model",
+      "severity": "high",
+      "source_path": "/normalized_request/walking_profile_id"
+    },
+    {
+      "allowed_projection": [
+        "appointment_time",
+        "claims.value"
+      ],
+      "applicability": "ok",
+      "expected_value": "09:45:00",
+      "forbidden_omission": "appointment time absent",
+      "requirement_id": "MV-APPT-TIME",
+      "semantic_fact": "appointment time",
+      "severity": "high",
+      "source_path": "/normalized_request/appointment_time"
+    },
+    {
+      "allowed_projection": [
+        "appointment_s",
+        "claims.value"
+      ],
+      "applicability": "ok",
+      "expected_value": 1200,
+      "forbidden_omission": "appointment duration absent",
+      "requirement_id": "MV-APPT-DURATION",
+      "semantic_fact": "appointment duration seconds",
+      "severity": "high",
+      "source_path": "/components_s/appointment_s"
+    },
+    {
+      "allowed_projection": [
+        "pre_appointment_wait_s",
+        "claims.value"
+      ],
+      "applicability": "ok",
+      "expected_value": 1254,
+      "forbidden_omission": "pre-wait absent",
+      "requirement_id": "MV-PRE-WAIT",
+      "semantic_fact": "pre-appointment wait seconds",
+      "severity": "high",
+      "source_path": "/components_s/pre_appointment_wait_s"
+    },
+    {
+      "allowed_projection": [
+        "return.trip_id",
+        "claims.value"
+      ],
+      "applicability": "ok",
+      "expected_value": "1_106_LJ_37200",
+      "forbidden_omission": "return trip absent",
+      "requirement_id": "MV-RET-TRIP",
+      "semantic_fact": "return trip identity",
+      "severity": "critical",
+      "source_path": "/itinerary/return/trip_id"
+    },
+    {
+      "allowed_projection": [
+        "return.from_stop_id",
+        "claims.value"
+      ],
+      "applicability": "ok",
+      "expected_value": "7218",
+      "forbidden_omission": "return boarding id absent",
+      "requirement_id": "MV-RET-FROM-ID",
+      "semantic_fact": "return boarding stop id",
+      "severity": "critical",
+      "source_path": "/itinerary/return/from_stop_id"
+    },
+    {
+      "allowed_projection": [
+        "return.from_stop_label",
+        "stop_label",
+        "claims.entity_label"
+      ],
+      "applicability": "ok",
+      "expected_value": "Beasain - San Inazio 10",
+      "forbidden_omission": "return boarding label absent",
+      "requirement_id": "MV-RET-FROM-LABEL",
+      "semantic_fact": "return boarding stop label",
+      "severity": "high",
+      "source_path": "snapshot:/stops/7218/name"
+    },
+    {
+      "allowed_projection": [
+        "return.to_stop_id",
+        "claims.value"
+      ],
+      "applicability": "ok",
+      "expected_value": "8309",
+      "forbidden_omission": "return arrival id absent",
+      "requirement_id": "MV-RET-TO-ID",
+      "semantic_fact": "return arrival stop id",
+      "severity": "critical",
+      "source_path": "/itinerary/return/to_stop_id"
+    },
+    {
+      "allowed_projection": [
+        "return.to_stop_label",
+        "stop_label",
+        "claims.entity_label"
+      ],
+      "applicability": "ok",
+      "expected_value": "Zegama - Elizalde Kalea 4",
+      "forbidden_omission": "return arrival label absent",
+      "requirement_id": "MV-RET-TO-LABEL",
+      "semantic_fact": "return arrival stop label",
+      "severity": "high",
+      "source_path": "snapshot:/stops/8309/name"
+    },
+    {
+      "allowed_projection": [
+        "return.departure_time",
+        "claims.value"
+      ],
+      "applicability": "ok",
+      "expected_value": "10:29:50",
+      "forbidden_omission": "return departure absent",
+      "requirement_id": "MV-RET-DEP",
+      "semantic_fact": "scheduled return departure",
+      "severity": "critical",
+      "source_path": "/itinerary/return/departure_time"
+    },
+    {
+      "allowed_projection": [
+        "return.arrival_time",
+        "claims.value"
+      ],
+      "applicability": "ok",
+      "expected_value": "11:07:48",
+      "forbidden_omission": "return arrival absent",
+      "requirement_id": "MV-RET-ARR",
+      "semantic_fact": "scheduled return arrival",
+      "severity": "critical",
+      "source_path": "/itinerary/return/arrival_time"
+    },
+    {
+      "allowed_projection": [
+        "destination_walk_return_s",
+        "claims.value"
+      ],
+      "applicability": "ok",
+      "expected_value": 960,
+      "forbidden_omission": "return walk absent",
+      "requirement_id": "MV-RET-WALK-S",
+      "semantic_fact": "return walk seconds",
+      "severity": "high",
+      "source_path": "/components_s/destination_walk_return_s"
+    },
+    {
+      "allowed_projection": [
+        "return_wait_s",
+        "claims.value"
+      ],
+      "applicability": "ok",
+      "expected_value": 530,
+      "forbidden_omission": "return wait absent",
+      "requirement_id": "MV-RET-WAIT",
+      "semantic_fact": "return wait seconds",
+      "severity": "high",
+      "source_path": "/components_s/return_wait_s"
+    },
+    {
+      "allowed_projection": [
+        "return_slack_s",
+        "claims.value"
+      ],
+      "applicability": "ok",
+      "expected_value": 350,
+      "forbidden_omission": "return slack absent",
+      "requirement_id": "MV-RET-SLACK",
+      "semantic_fact": "return slack seconds",
+      "severity": "high",
+      "source_path": "/itinerary/return_slack_s"
+    },
+    {
+      "allowed_projection": [
+        "total_s",
+        "claims.value"
+      ],
+      "applicability": "ok",
+      "expected_value": 8591,
+      "forbidden_omission": "total absent",
+      "requirement_id": "MV-TOTAL",
+      "semantic_fact": "whole journey total seconds",
+      "severity": "critical",
+      "source_path": "/itinerary/total_s"
+    },
+    {
+      "allowed_projection": [
+        "centre_id",
+        "claims.entity_id"
+      ],
+      "applicability": "ok",
+      "expected_value": "entityBC631DA5",
+      "forbidden_omission": "centre id absent",
+      "requirement_id": "MV-CENTRE-ID",
+      "semantic_fact": "health centre identity",
+      "severity": "critical",
+      "source_path": "/health_destination/centre_id"
+    },
+    {
+      "allowed_projection": [
+        "health_destination.name",
+        "centre_label",
+        "claims.entity_label"
+      ],
+      "applicability": "ok",
+      "expected_value": "Ambulatorio de Beasain",
+      "forbidden_omission": "centre label absent",
+      "requirement_id": "MV-CENTRE-LABEL",
+      "semantic_fact": "health centre label",
+      "severity": "critical",
+      "source_path": "/health_destination/name"
+    },
+    {
+      "allowed_projection": [
+        "health_destination.modelled_access",
+        "limitations",
+        "method"
+      ],
+      "applicability": "ok",
+      "expected_value": true,
+      "forbidden_omission": "modelled nature absent",
+      "requirement_id": "MV-MODELLED-ACCESS",
+      "semantic_fact": "access is modelled",
+      "severity": "critical",
+      "source_path": "/health_destination/modelled_access"
+    },
+    {
+      "allowed_projection": [
+        "health_destination.entrance_verified",
+        "limitations"
+      ],
+      "applicability": "ok",
+      "expected_value": false,
+      "forbidden_omission": "entrance caveat absent",
+      "requirement_id": "MV-ENTRANCE",
+      "semantic_fact": "physical entrance is not verified",
+      "severity": "critical",
+      "source_path": "/health_destination/entrance_verified"
+    },
+    {
+      "allowed_projection": [
+        "scope",
+        "limitations"
+      ],
+      "applicability": "ok",
+      "expected_value": "origin_stop_presence_to_return_stop_arrival",
+      "forbidden_omission": "scope absent",
+      "requirement_id": "MV-SCOPE",
+      "semantic_fact": "stop-presence to return-stop-arrival scope",
+      "severity": "critical",
+      "source_path": "/scope"
+    },
+    {
+      "allowed_projection": [
+        "sources",
+        "source_ids",
+        "source_refs"
+      ],
+      "applicability": "ok",
+      "expected_value": [
+        "GTFS",
+        "HEALTH_REGISTRY",
+        "HEALTH_PAGE",
+        "PADI_2026",
+        "OSM",
+        "MODEL",
+        "USER",
+        "MODEL_DEFAULTS",
+        "DERIVED"
+      ],
+      "forbidden_omission": "source identity absent",
+      "requirement_id": "MV-SOURCES",
+      "semantic_fact": "readable sources and source identities",
+      "severity": "critical",
+      "source_path": "/sources"
+    },
+    {
+      "allowed_projection": [
+        "assumptions"
+      ],
+      "applicability": "all",
+      "expected_value": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "forbidden_omission": "assumptions absent",
+      "requirement_id": "MV-ASSUMPTIONS",
+      "semantic_fact": "producer assumptions",
+      "severity": "high",
+      "source_path": "/assumptions"
+    },
+    {
+      "allowed_projection": [
+        "limitations"
+      ],
+      "applicability": "all",
+      "expected_value": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "forbidden_omission": "limitations absent",
+      "requirement_id": "MV-LIMITATIONS",
+      "semantic_fact": "producer limitations",
+      "severity": "critical",
+      "source_path": "/limitations"
+    },
+    {
+      "allowed_projection": [
+        "parameter_provenance",
+        "effective_request.defaults_applied",
+        "normalized_input.arguments"
+      ],
+      "applicability": "ok",
+      "expected_value": [
+        {
+          "field": "origin_id",
+          "origin": "human_explicit",
+          "source_ref": "USER",
+          "value": "zegama_center_stops"
+        },
+        {
+          "field": "destination_id",
+          "origin": "human_explicit",
+          "source_ref": "USER",
+          "value": "beasain_official_centre_anchor"
+        },
+        {
+          "field": "date",
+          "origin": "human_explicit",
+          "source_ref": "USER",
+          "value": "2026-09-29"
+        },
+        {
+          "field": "appointment_time",
+          "origin": "human_explicit",
+          "source_ref": "USER",
+          "value": "09:45:00"
+        },
+        {
+          "field": "duration_minutes",
+          "origin": "human_explicit",
+          "source_ref": "USER",
+          "value": 20
+        },
+        {
+          "field": "arrival_margin_minutes",
+          "origin": "model_default",
+          "source_ref": "MODEL_DEFAULTS",
+          "value": 10
+        },
+        {
+          "field": "boarding_margin_minutes",
+          "origin": "model_default",
+          "source_ref": "MODEL_DEFAULTS",
+          "value": 3
+        },
+        {
+          "field": "walking_profile_id",
+          "origin": "model_default",
+          "source_ref": "MODEL_DEFAULTS",
+          "value": "poc_reference_50m_min_plus_120s"
+        },
+        {
+          "field": "snapshot_id",
+          "origin": "model_default",
+          "source_ref": "MODEL_DEFAULTS",
+          "value": "official-goierrialdea-go01-health-r5-20260929"
+        },
+        {
+          "field": "timezone",
+          "origin": "model_default",
+          "source_ref": "MODEL_DEFAULTS",
+          "value": "Europe/Madrid"
+        },
+        {
+          "field": "return_deadline",
+          "origin": "model_default",
+          "source_ref": "MODEL_DEFAULTS",
+          "value": null
+        }
+      ],
+      "forbidden_omission": "caller provenance absent",
+      "requirement_id": "MV-PROVENANCE",
+      "semantic_fact": "caller-supplied versus default-applied provenance",
+      "severity": "critical",
+      "source_path": "/parameter_provenance"
+    },
+    {
+      "allowed_projection": [
+        "timepoint",
+        "limitations",
+        "method"
+      ],
+      "applicability": "ok",
+      "forbidden_omission": "timepoint approximation absent",
+      "requirement_id": "MV-TIMEPOINT",
+      "semantic_fact": "timepoint zero is approximate/interpolated scheduled time",
+      "semantic_match_any": [
+        "aproxim",
+        "interpol"
+      ],
+      "severity": "critical",
+      "source_path": "/itinerary/outbound/from_timepoint"
+    }
+  ],
+  "runtime_changed": false,
+  "version": "r11.0"
+}

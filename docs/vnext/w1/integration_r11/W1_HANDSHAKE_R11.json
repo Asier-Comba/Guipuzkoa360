@@ -1,0 +1,385 @@
+{
+  "boundaries": {
+    "answerability": {
+      "available_entry_count": 9,
+      "available_statuses": [
+        "AVAILABLE_DIRECT",
+        "DERIVABLE_EXACT",
+        "ESTIMABLE_WITH_ASSUMPTIONS"
+      ],
+      "counts_by_status": {
+        "AVAILABLE_DIRECT": 3,
+        "DERIVABLE_EXACT": 5,
+        "ESTIMABLE_WITH_ASSUMPTIONS": 1,
+        "OUT_OF_SCOPE": 5,
+        "UNAVAILABLE": 11
+      },
+      "described_entry_count": 25,
+      "executable_tool_count": null,
+      "note": "Answerability entries describe questions; they are not executable tools.",
+      "out_of_scope_entry_count": 5,
+      "unavailable_entry_count": 11
+    },
+    "cross_origin_formal_delta": false,
+    "door_to_door": false,
+    "entrance_verified": false,
+    "producer_interfaces": {
+      "count": 3,
+      "names": [
+        "get_capabilities",
+        "plan_visit",
+        "compare_visits"
+      ],
+      "not_equivalent_to_answerability_entries": true
+    },
+    "realtime": false
+  },
+  "caller_provenance_ref": {
+    "bytes": 1709,
+    "hash_basis": "exact_bytes",
+    "path": "docs/vnext/w1/CALLER_PROVENANCE_R10.json",
+    "role": "caller_provenance",
+    "sha256": "2c2cadfa0bc72da09c2871dded1cc3d11783801c76fdeb13d5f7b928d8a6508c"
+  },
+  "candidate": {
+    "scenario_kind": "health_visit",
+    "scope": {
+      "id": "origin_stop_presence_to_return_stop_arrival",
+      "label": "Desde la presencia en la parada de origen hasta la llegada a la parada de regreso"
+    },
+    "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+    "snapshot_sha256": "59fcded9e4236ee094eeb0881c4eb94f521b96fb6c8c89c881c3e9f6d5140901",
+    "time_basis": "STATIC_SCHEDULED_SNAPSHOT",
+    "validated_date": "2026-09-29"
+  },
+  "canonical": {
+    "duration_variation_id": "VARIATION_DURATION",
+    "limit_ids": [
+      "LIMIT_DATE",
+      "LIMIT_SCOPE"
+    ],
+    "main_id": "MAIN",
+    "numeric_claim": {
+      "absolute_delta_s": 2100,
+      "claim_id": "R8-DELTA-ZEGAMA-0930-0945",
+      "hashes": {
+        "gtfs_zip": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+        "snapshot": "59fcded9e4236ee094eeb0881c4eb94f521b96fb6c8c89c881c3e9f6d5140901",
+        "walking_model": "0f3a02e69f8065f892ce19a0115ae7e3c661c32725bd37a423f3d283ae1a2a7d"
+      },
+      "left_request": {
+        "appointment_time": "09:30",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops"
+      },
+      "left_total_s": 10691,
+      "model_assumptions": [
+        "50 m/min",
+        "120 s per complete directed walking link",
+        "boarding margin default 3 min",
+        "arrival margin default 10 min"
+      ],
+      "oracle_result": {
+        "delta_s": -2100,
+        "left_total_s": 10691,
+        "right_total_s": 8591,
+        "status": "PASS"
+      },
+      "provider_result": {
+        "delta_s": -2100,
+        "left_total_s": 10691,
+        "right_total_s": 8591
+      },
+      "raw_rows": null,
+      "right_request": {
+        "appointment_time": "09:45",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops"
+      },
+      "right_total_s": 8591,
+      "signed_delta_s": -2100,
+      "source_data": [
+        "GTFS",
+        "OSM",
+        "HEALTH_REGISTRY"
+      ],
+      "text": "Con los demás parámetros iguales, el total modelado de 09:45 es 2.100 s (35 min) menor que el de 09:30 en el snapshot validado.",
+      "transformation": "right_total_s - left_total_s; totals independently reconstructed from raw GTFS rows, fixed walking evidence, human inputs and published formula",
+      "unit": "second",
+      "value": -2100,
+      "walking_evidence": null
+    },
+    "variation_id": "VARIATION_TIME"
+  },
+  "capability_descriptor_ref": {
+    "bytes": 1404,
+    "hash_basis": "exact_bytes",
+    "path": "docs/vnext/w1/CAPABILITY_DESCRIPTOR_R6.json",
+    "role": "capability_descriptor",
+    "sha256": "ed4ebe56c7b202821e2d9838ebf702c8144a7e6830054655f77dbb20c5bfde39"
+  },
+  "capability_snapshot_count": 2,
+  "catalog": {
+    "defaults": {
+      "arrival_margin_minutes": 10,
+      "boarding_margin_minutes": 3,
+      "return_deadline": null,
+      "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+      "timezone": "Europe/Madrid",
+      "walking_profile_id": "poc_reference_50m_min_plus_120s"
+    },
+    "destination": {
+      "centre_id": "entityBC631DA5",
+      "destination_id": "beasain_official_centre_anchor",
+      "name": "Ambulatorio de Beasain",
+      "reference_point_meaning": "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+      "verification": {
+        "centre_anchor": "CONFIRMED_OFFICIAL_POINT",
+        "centre_identity": "CONFIRMED",
+        "entrance_verified": false,
+        "modelled_access": true
+      }
+    },
+    "origins": [
+      {
+        "municipality_code": "20043",
+        "municipality_name": "Idiazabal",
+        "name": "Paradas centrales de Idiazabal",
+        "origin_id": "idiazabal_center_stops",
+        "stop_ids": [
+          "7903",
+          "7906"
+        ]
+      },
+      {
+        "municipality_code": "20070",
+        "municipality_name": "Segura",
+        "name": "Paradas Herriko Plaza de Segura",
+        "origin_id": "segura_herriko_plaza_stops",
+        "stop_ids": [
+          "7801",
+          "7813"
+        ]
+      },
+      {
+        "municipality_code": "20025",
+        "municipality_name": "Zegama",
+        "name": "Paradas centrales de Zegama",
+        "origin_id": "zegama_center_stops",
+        "stop_ids": [
+          "8305",
+          "8309"
+        ]
+      }
+    ],
+    "parameter_ranges": {
+      "arrival_margin_minutes": {
+        "maximum": 240,
+        "minimum": 0
+      },
+      "boarding_margin_minutes": {
+        "maximum": 120,
+        "minimum": 0
+      },
+      "duration_minutes": {
+        "maximum": 720,
+        "minimum": 1
+      }
+    },
+    "route": {
+      "long_name": "Zega>Segur>Idiaz>Olaber>Beasai>Ordiz>Zaldibia",
+      "route_id": "1",
+      "short_name": "GO01"
+    },
+    "walking": {
+      "distance_unit": "metre",
+      "formula": "ceil(total_metres/50)*60+120",
+      "profile_id": "poc_reference_50m_min_plus_120s",
+      "time_unit": "second"
+    }
+  },
+  "claim_semantic_classes": [
+    "DIRECT_SOURCE_VALUE",
+    "DERIVED_EXACT_FROM_PINNED_DATA",
+    "DERIVED_EXACT_FROM_PINNED_DATA_AND_MODEL_ASSUMPTIONS",
+    "MODELLED_ESTIMATE",
+    "HUMAN_INPUT",
+    "MODEL_DEFAULT",
+    "UNAVAILABLE"
+  ],
+  "consumer_gate": {
+    "command": "python scripts/mobility/intake_candidate_r11.py",
+    "diagnostic_not_run_exit": 0,
+    "model_view": "candidate tools.public_result(envelope)",
+    "strict_not_run_exit": "nonzero"
+  },
+  "deterministic_gold_ref": {
+    "bytes": 5977,
+    "hash_basis": "exact_bytes",
+    "path": "docs/vnext/w1/DETERMINISTIC_GOLD_R11.json",
+    "role": "public_deterministic_gold",
+    "sha256": "cb41c25b836deaecd0d3ab4de12160c7c5ec20cf80f10824f82912b68b9b16fb"
+  },
+  "handshake_version": "r11.0-support",
+  "heavy_evidence_is_by_reference": true,
+  "known_finding": {
+    "id": "W1-R7-F01",
+    "resolution": "EXPLANATORY_DAG_RESOLVED_EXTERNALLY",
+    "runtime_status": "RUNTIME_FINDING_RETAINED",
+    "severity": "MEDIUM"
+  },
+  "license_summary": {
+    "GTFS": "VERIFIED_GENERAL_TERMS_APPLY",
+    "HEALTH_PAGE": "NOT_VERIFIED",
+    "HEALTH_REGISTRY": "VERIFIED_GENERAL_TERMS_APPLY",
+    "OSM": "VERIFIED_SPECIFIC",
+    "PADI_2026": "NOT_VERIFIED"
+  },
+  "minimum_model_view_fields": [
+    "status",
+    "normalized_request",
+    "itinerary",
+    "components_s",
+    "walking",
+    "sources",
+    "limitations",
+    "assumptions",
+    "parameter_provenance"
+  ],
+  "model_view_requirements_ref": {
+    "bytes": 19086,
+    "hash_basis": "exact_bytes",
+    "path": "docs/vnext/w1/MODEL_VIEW_REQUIREMENTS_R11.json",
+    "role": "model_view_oracle",
+    "sha256": "cee2a75e3bc5f1cbe86c1e4bd4e08989373fe25df7a814364fc011a6f0bdd905"
+  },
+  "no_holdout_or_secret_data": true,
+  "refs": [
+    {
+      "bytes": 286413,
+      "hash_basis": "exact_bytes",
+      "path": "docs/vnext/w1/CONSUMER_CONFORMANCE_R7.json",
+      "role": "conformance",
+      "sha256": "4eb364265710336ecdd86b2c541953f130f3b0a80bbefc9cf1f27904bac55dea"
+    },
+    {
+      "bytes": 10156,
+      "hash_basis": "exact_bytes",
+      "path": "docs/vnext/w1/MOBILITY_ANSWERABILITY_R8.json",
+      "role": "answerability",
+      "sha256": "c2c8039b0bc7bfc324925ba32bd1e618af7d65b6537738121d5606d1bffd5b91"
+    },
+    {
+      "bytes": 5018,
+      "hash_basis": "exact_bytes",
+      "path": "docs/vnext/w1/STATUS_SEMANTICS_R8.json",
+      "role": "status_semantics",
+      "sha256": "2a5f8158c11ef8f348ffa89749cbbd4764c36a1f2c10df0300b296c4f5402c27"
+    },
+    {
+      "bytes": 6443,
+      "hash_basis": "exact_bytes",
+      "path": "docs/vnext/w1/RAW_DATA_CONTRAST_R8.json",
+      "role": "raw_contrast",
+      "sha256": "6a6a0c547dcc1aae1d045c93d6fd144b4ea08e31d527fe20d98bccc28abc9b04"
+    },
+    {
+      "bytes": 15215,
+      "hash_basis": "exact_bytes",
+      "path": "docs/vnext/w1/CLAIM_SEMANTICS_R9.json",
+      "role": "claim_semantics",
+      "sha256": "0879fac769d591f4edb7aa056cdec9ae7e1b72e90397773bdd4d18d79b46cb69"
+    },
+    {
+      "bytes": 4475,
+      "hash_basis": "exact_bytes",
+      "path": "docs/vnext/w1/SOURCE_LICENSE_R9.json",
+      "role": "source_license",
+      "sha256": "7ed1416edd1326be7067dea8b8c1422e686edcf8d540293d84ee4e07f6966611"
+    },
+    {
+      "bytes": 6701,
+      "hash_basis": "exact_bytes",
+      "path": "docs/vnext/w1/CLEAN_ROOM_REPRO_R9.json",
+      "role": "clean_room",
+      "sha256": "d42b1394d1fc052f8b170a097c44a575291d5b16a24261a8bf832f4f7c502ec2"
+    },
+    {
+      "bytes": 10045,
+      "hash_basis": "exact_bytes",
+      "path": "docs/vnext/w1/UPSTREAM_DRIFT_R9.json",
+      "role": "upstream_drift",
+      "sha256": "b75a9831347d1e0952eaa14755026fcf9f19b2b902abfdb514551f25083bc426"
+    },
+    {
+      "bytes": 1464,
+      "hash_basis": "exact_bytes",
+      "path": "docs/vnext/w1/ERRATA_R9_R10.json",
+      "role": "errata",
+      "sha256": "ab05e7dcb4bd4f3ec1f9a8461b16222704d7c7775eff1cd934a90ac163af94f4"
+    }
+  ],
+  "runtime": {
+    "contract": "0.3.1",
+    "entrypoint": "prototypes.ir_y_volver.provider_r6",
+    "package_bytes": 129365,
+    "package_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+    "tested_pin": "cb061a97e78d6b5c967104fef6b935132fdc450f"
+  },
+  "status_error_semantics_ref": {
+    "bytes": 4196,
+    "hash_basis": "exact_bytes",
+    "path": "docs/vnext/w1/STATUS_ERROR_SEMANTICS_R10.json",
+    "role": "status_error_semantics",
+    "sha256": "ff36df219d2ddae181d17e3aa66e132a694e7e4a88c4b308ebaa69c8f388d118"
+  },
+  "status_semantics": [
+    {
+      "forbidden": "Guaranteed real journey.",
+      "meaning": "Se encontró un itinerario programado/modelado en este alcance.",
+      "status": "ok"
+    },
+    {
+      "forbidden": "No existe transporte.",
+      "meaning": "No se encontró una pareja viable dentro del snapshot, paradas y restricciones modeladas.",
+      "status": "no_feasible_journey"
+    },
+    {
+      "forbidden": "Atribuir fecha, red, HTTP o ausencia de transporte sin el error observado.",
+      "meaning": "La evidencia no permite verificar el resultado; la causa concreta depende de status+error.code.",
+      "status": "unknown"
+    },
+    {
+      "forbidden": "El sistema está caído.",
+      "meaning": "La petición queda fuera del alcance disponible.",
+      "status": "unsupported"
+    },
+    {
+      "forbidden": "Fallo de red o ausencia de servicio.",
+      "meaning": "La petición no tiene un formato o valor válido.",
+      "status": "error"
+    }
+  ],
+  "support_patch": {
+    "reason": "Remove the remaining top-level unknown=date ambiguity and bind the real consumer model view.",
+    "runtime_changed": false,
+    "supersedes_handshake_version": "r10.0-support"
+  },
+  "timepoint_policy": "timepoint=0 means the scheduled GTFS time is approximate/interpolated; do not promise exact operational passage.",
+  "upstream": {
+    "automatic_pin_replacement": false,
+    "checked_at_utc": "2026-09-30T08:30:04.683125+00:00",
+    "summary": {
+      "CHANGED_BYTES_SEMANTICALLY_EQUIVALENT_USED_FIELDS": 3,
+      "CHANGED_METADATA_ONLY": 0,
+      "CHANGED_USED_FIELDS": 0,
+      "INDETERMINATE": 0,
+      "SOURCE_UNAVAILABLE": 0,
+      "UNCHANGED_BYTES": 2
+    }
+  }
+}

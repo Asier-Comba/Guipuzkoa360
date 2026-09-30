@@ -1,0 +1,226 @@
+{
+  "cases": [
+    {
+      "case_id": "GOLD-R11-DEFAULTS",
+      "critical_facts": {
+        "centre_id": "entityBC631DA5",
+        "entrance_verified": false,
+        "error_code": null,
+        "outbound_trip_id": "1_101_LJ_31500",
+        "return_trip_id": "1_106_LJ_37200",
+        "status": "ok",
+        "total_s": 8591
+      },
+      "expected_status": "ok",
+      "forbidden_claims": [
+        "real-time journey",
+        "verified physical entrance",
+        "appointment availability",
+        "human-authored caller parameters"
+      ],
+      "request": {
+        "appointment_time": "09:45",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops"
+      },
+      "source_refs": [
+        "GTFS",
+        "HEALTH_REGISTRY",
+        "HEALTH_PAGE",
+        "PADI_2026",
+        "OSM",
+        "MODEL",
+        "USER",
+        "MODEL_DEFAULTS",
+        "DERIVED"
+      ]
+    },
+    {
+      "case_id": "GOLD-R11-EXPLICIT-SAME",
+      "critical_facts": {
+        "centre_id": "entityBC631DA5",
+        "entrance_verified": false,
+        "error_code": null,
+        "outbound_trip_id": "1_101_LJ_31500",
+        "return_trip_id": "1_106_LJ_37200",
+        "status": "ok",
+        "total_s": 8591
+      },
+      "expected_status": "ok",
+      "forbidden_claims": [
+        "real-time journey",
+        "verified physical entrance",
+        "appointment availability",
+        "human-authored caller parameters"
+      ],
+      "request": {
+        "appointment_time": "09:45",
+        "boarding_margin_minutes": 3,
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops"
+      },
+      "source_refs": [
+        "GTFS",
+        "HEALTH_REGISTRY",
+        "HEALTH_PAGE",
+        "PADI_2026",
+        "OSM",
+        "MODEL",
+        "USER",
+        "MODEL_DEFAULTS",
+        "DERIVED"
+      ]
+    },
+    {
+      "case_id": "GOLD-R11-CALLER-CHANGED",
+      "critical_facts": {
+        "centre_id": "entityBC631DA5",
+        "entrance_verified": false,
+        "error_code": null,
+        "outbound_trip_id": "1_101_LJ_31500",
+        "return_trip_id": "1_106_LJ_37200",
+        "status": "ok",
+        "total_s": 8891
+      },
+      "expected_status": "ok",
+      "forbidden_claims": [
+        "real-time journey",
+        "verified physical entrance",
+        "appointment availability",
+        "human-authored caller parameters"
+      ],
+      "request": {
+        "appointment_time": "09:45",
+        "boarding_margin_minutes": 8,
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops"
+      },
+      "source_refs": [
+        "GTFS",
+        "HEALTH_REGISTRY",
+        "HEALTH_PAGE",
+        "PADI_2026",
+        "OSM",
+        "MODEL",
+        "USER",
+        "MODEL_DEFAULTS",
+        "DERIVED"
+      ]
+    },
+    {
+      "case_id": "GOLD-R11-FOLLOWUP-75MIN",
+      "critical_facts": {
+        "centre_id": "entityBC631DA5",
+        "entrance_verified": false,
+        "error_code": null,
+        "outbound_trip_id": "1_105_LJ_33300",
+        "return_trip_id": "1_102_LJ_42300",
+        "status": "ok",
+        "total_s": 12172
+      },
+      "expected_status": "ok",
+      "forbidden_claims": [
+        "real-time journey",
+        "verified physical entrance",
+        "appointment availability",
+        "human-authored caller parameters"
+      ],
+      "request": {
+        "appointment_time": "10:15",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 75,
+        "origin_id": "zegama_center_stops"
+      },
+      "source_refs": [
+        "GTFS",
+        "HEALTH_REGISTRY",
+        "HEALTH_PAGE",
+        "PADI_2026",
+        "OSM",
+        "MODEL",
+        "USER",
+        "MODEL_DEFAULTS",
+        "DERIVED"
+      ]
+    },
+    {
+      "case_id": "GOLD-R11-UNKNOWN-DATE",
+      "critical_facts": {
+        "error_code": "date_not_validated",
+        "status": "unknown"
+      },
+      "expected_status": "unknown",
+      "forbidden_claims": [
+        "real-time journey",
+        "verified physical entrance",
+        "appointment availability",
+        "human-authored caller parameters"
+      ],
+      "request": {
+        "appointment_time": "09:45",
+        "date": "2026-09-30",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops"
+      },
+      "source_refs": [
+        "GTFS",
+        "HEALTH_REGISTRY",
+        "HEALTH_PAGE",
+        "PADI_2026",
+        "OSM",
+        "MODEL",
+        "USER",
+        "MODEL_DEFAULTS"
+      ]
+    },
+    {
+      "case_id": "GOLD-R11-NO-FEASIBLE",
+      "critical_facts": {
+        "centre_id": "entityBC631DA5",
+        "entrance_verified": false,
+        "error_code": null,
+        "outbound_trip_id": "1_103_LJ_21600",
+        "return_trip_id": "1_104_LJ_27000",
+        "status": "ok",
+        "total_s": 8181
+      },
+      "expected_status": "ok",
+      "forbidden_claims": [
+        "real-time journey",
+        "verified physical entrance",
+        "appointment availability",
+        "human-authored caller parameters"
+      ],
+      "request": {
+        "appointment_time": "07:00",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops"
+      },
+      "source_refs": [
+        "GTFS",
+        "HEALTH_REGISTRY",
+        "HEALTH_PAGE",
+        "PADI_2026",
+        "OSM",
+        "MODEL",
+        "USER",
+        "MODEL_DEFAULTS",
+        "DERIVED"
+      ]
+    }
+  ],
+  "classification": "DETERMINISTIC_PUBLIC_GOLD_NOT_HOLDOUT",
+  "contains_final_answer_wording": false,
+  "runtime_changed": false,
+  "version": "r11.0"
+}
