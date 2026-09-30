@@ -3,14 +3,15 @@
 Estado: candidato determinista disponible, **no aceptación Studio ni release**.
 Consumir el commit de runtime fijado en `RESUME_R12.json`, no HEAD mutable.
 El primer patch `6693cbce605484dc48eca9ed7de867e32c5f3aa7` se conserva histórico;
-este segundo patch añade el cierre de archivos declarados tras el hallazgo W3.
+PATCH 2 `7dc4d807d4ac159b508ef383b9ec950b4dce3e41` añade el cierre declarado;
+PATCH 3 añade el layout anidado observado por W3, sin buscar raíces por cwd.
 
 ## Identidad y cierre de archivos
 
 Paquete: `scripts/vnext_agent/dist/gipuzkoa360-vnext-w2.zip`.
-SHA-256: `c5bedc0c2fbc028258135d3f8b2a94d5fc37aa3a9808417fee3165a9915e98d4`.
+SHA-256: `3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616`.
 Manifest: `scripts/vnext_agent/dist/gipuzkoa360-vnext-w2-manifest.json`.
-SHA-256 del manifest: `059ad32664aacaccdb7302e9f50ca519f21b5103a27df3bd409f45fa8caee1a9`.
+SHA-256 del manifest: `a672bf9a2afece58c468a1f762c860f0217536a2a4fa18737ba768cab755c70a`.
 
 La lista **exacta**, las rutas relativas, bytes y hashes de cada miembro están en
 `members` del manifest. El cierre ejecutable mínimo está en `freeze_paths` y
@@ -18,9 +19,9 @@ La lista **exacta**, las rutas relativas, bytes y hashes de cada miembro están 
 No usar las capacidades del checkout fuente como las del paquete: el builder habilita
 plan_visit solo en el registro combinado verificado dentro del ZIP.
 
-Tamaños: 225894 bytes comprimidos; 782144 bytes extraídos en el workspace;
+Tamaños: 226010 bytes comprimidos; 782621 bytes extraídos en el workspace;
 1252907 bytes adicionales del ZIP W1 extraído temporalmente. Total de ambas
-extracciones: 2035051 bytes. La ayuda observada por W3 dice 24 MB total y 100 MB
+extracciones: 2035528 bytes. La ayuda observada por W3 dice 24 MB total y 100 MB
 por archivo, sin precisar unidades o base comprimida/expandida. Todas estas
 medidas son inferiores a 24 millones de bytes; la comprobación real corresponde a W3.
 
@@ -34,7 +35,9 @@ medidas son inferiores a 24 millones de bytes; la comprobación real corresponde
    están bajo `datos_preparados/vnext`, `contracts/vnext`, `tests/vnext_agent` y
    `scripts/vnext_agent` según el inventario. Una discrepancia se comunica, no se oculta.
 3. W3 debe comprobar que cada asset de freeze_paths está realmente accesible mediante filesystem,
-   con su ruta relativa exacta, **junto al directorio que contiene tools.py generado**.
+   con su ruta relativa exacta en la raíz de datos. Se admiten explícitamente dos
+   layouts: módulos junto a assets en esa raíz; o módulos bajo
+   `agentes/<candidato>/` y assets en la raíz del workspace. No mover assets comunes.
    Los quince `STUDIO_CONTEXT_FILES` declaran los datos que se deben fijar, incluido
    el ZIP W1 y mobility_sources. El binario ZIP debe quedar legible por filesystem;
    no se debe interpretar su contenido como texto de prompt. La declaración no
@@ -65,7 +68,9 @@ Localmente no están instaladas. La prueba offline usa el fallback de decorador
 sin LLM: no demuestra integración de Studio ni LangChain.
 
 Orden de raíz: argumento explícito, variable `GIPUZKOA360_VNEXT_ROOT` si existe,
-directorio del tools.py generado. Una variable vacía o raíz incompleta falla;
+raíz anclada al módulo: directorio de tools.py en layout plano, o exactamente
+dos niveles por encima cuando tools.py está en `agentes/<candidato>/`.
+Una variable vacía o raíz incompleta falla;
 no se busca otro checkout. cwd y `GIPUZKOA360_DATA_DIR` no eligen los datos W2.
 main.py resuelve una raíz por llamada y la pasa al cálculo y a la proyección.
 Los cálculos territoriales usan el mismo repositorio explícito, sin modificar v4.
@@ -105,7 +110,9 @@ regresiones territoriales y errores/payload. La parada legacy fuera de las nueve
 etiquetas sanitarias se resuelve desde el snapshot completo GTFS dentro del ZIP W1,
 con SHA verificado, sin añadir nombres literales. Un cuarto modo extrae solo main.py,
 tools.py y los quince archivos declarados: no hay tests/gold/w1_pin en esa raíz y
-el mismo circuito determinista pasa. Esto reproduce la política observada por W3,
+el mismo circuito determinista pasa. Un quinto modo repite ese freeze con los módulos
+en `agentes/gipuzkoa360_vnext_r12/` y assets en raíz, desde un cwd observador ajeno.
+Esto reproduce la política y layout observados por W3,
 no certifica el filesystem real de Studio. Máxima vista de cuatro escenarios
 ensayada: 98137 bytes; límite local: 120000. Doble build idéntico.
 

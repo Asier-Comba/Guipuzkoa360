@@ -41,10 +41,11 @@ sys.path.append(str(observer))
 import tools
 exceptions=[]
 def trace(frame,event,arg):
+    frame.f_trace_lines=False  # Keep exception stacks without tracing GTFS loop lines.
     if event=='exception':
         kind,value,_=arg
         filename=frame.f_code.co_filename
-        if ('tools.py' in filename or 'adapter' in filename) and not isinstance(value,ImportError):
+        if ('tools.py' in filename or 'adapter' in filename) and isinstance(value,Exception) and not isinstance(value,ImportError):
             exceptions.append({'stage':frame.f_code.co_name,'file':filename,
                                'exception':kind.__name__,'message':str(value),
                                'stack':''.join(traceback.format_stack(frame))})

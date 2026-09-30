@@ -90,6 +90,8 @@ def main():
         "generated_global_collisions": collisions,
         "collision_resolution": "consultar_fuente is intentionally replaced after saving the unchanged core handler and _safe in territorial SimpleNamespace; all calculations use a root-bound repository",
         "root_policy": manifest["root_policy"], "bootstrap": "verify pinned W1 ZIP SHA, safely extract into writable tempfile, import only that runtime, embed W2 adapters in tools.py; cached runtime remains bound to the same root",
+        "code_placement_options": {"flat": ["main.py", "tools.py"], "studio_nested": ["agentes/<candidate>/main.py", "agentes/<candidate>/tools.py"]},
+        "data_placement": "All 15 declared data paths remain relative to workspace root in both layouts; module directory determines the fixed workspace root, never cwd or ancestor search.",
         "load_order": ["verify immutable package+manifest hashes", "explicitly extract locally; do not assume portal ZIP extraction", "verify common v4 assets are byte-identical before reuse", "mount exactly freeze_paths under their relative paths beside generated tools.py; test sources and gold are audit-only", "load tools.py then main.py in the two editors", "set name/instructions/configuration from main.py; no new model", "W3 verifies the declared assets including binary W1 ZIP are really frozen and accessible, then captures served schema/import closure and real conversation trace before acceptance"],
         "portal_asset_mount_verified": False, "studio_schema_verified": False,
         "llm_executed": 0, "portal_writes_by_w2": 0,

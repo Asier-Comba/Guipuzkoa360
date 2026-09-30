@@ -73,7 +73,7 @@ def _candidate_nodes() -> list[ast.stmt]:
         ):
             continue
         if isinstance(node, ast.Assign) and any(isinstance(target, ast.Name) and target.id == "_DEFAULT_WORKSPACE_ROOT" for target in node.targets):
-            node.value = ast.parse("Path(__file__).resolve().parent", mode="eval").body
+            node.value = ast.parse("Path(__file__).resolve().parents[2] if Path(__file__).resolve().parent.parent.name == 'agentes' else Path(__file__).resolve().parent", mode="eval").body
         nodes.append(node)
     return nodes
 
@@ -260,7 +260,7 @@ def main() -> None:
         "health_entrance_verified": False, "w1_package_sha256": W1_R6_PACKAGE_SHA256,
         "w1_source_files": w1_manifest["files"],
         "deployment_mode": "two Python editors (main.py, tools.py) plus static workspace assets including a pinned W1 ZIP; tools.py verifies and extracts that ZIP to a temporary runtime directory",
-        "root_policy": "explicit root, else GIPUZKOA360_VNEXT_ROOT if present, else generated tools.py directory; invalid root rejects; cwd and GIPUZKOA360_DATA_DIR do not select data",
+        "root_policy": "explicit root, else GIPUZKOA360_VNEXT_ROOT if present, else module-anchored layout: flat tools.py directory or workspace root for agentes/<candidate>/tools.py; invalid root rejects without search; cwd and GIPUZKOA360_DATA_DIR do not select data",
         "tool_count": tool_count,
         "agent_name_chars": len(constants["AGENT_NAME"]),
         "instruction_chars": len(constants["SYSTEM_PROMPT"]),

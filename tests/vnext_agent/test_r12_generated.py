@@ -18,11 +18,11 @@ WORKER = r'''
 import copy,hashlib,json,os,socket,sys
 from pathlib import Path
 directory=Path(sys.argv[1])
-sys.path.insert(0,str(directory))
+sys.path.insert(0,str(directory/'agentes/gipuzkoa360_vnext_r12') if sys.argv[2]=='declared_nested' else str(directory))
 socket.socket=lambda *a,**k: (_ for _ in ()).throw(RuntimeError('network forbidden'))
 import tools,main
 assert tools._workspace_root()==directory
-fixture=json.load(sys.stdin) if sys.argv[2]=='declared_freeze' else json.loads((directory/'datos_preparados/vnext/w1_conformance_r7.json').read_text())
+fixture=json.load(sys.stdin) if sys.argv[2].startswith('declared_') else json.loads((directory/'datos_preparados/vnext/w1_conformance_r7.json').read_text())
 cases={c['case_id']:c for c in fixture['cases']}
 health=cases['health_defaults_omitted']['request']
 legacy=cases['legacy_r4_explicit']['request']
@@ -143,18 +143,22 @@ print(json.dumps({'fourteen_cases':'PASS','sequences':'PASS','territorial_probes
 '''
 
 
-@pytest.mark.parametrize("mode", ["candidate_cwd", "foreign_data_cwd", "legacy_cold", "declared_freeze"])
+@pytest.mark.parametrize("mode", ["candidate_cwd", "foreign_data_cwd", "legacy_cold", "declared_freeze", "declared_nested"])
 def test_generated_r12_end_to_end(tmp_path: Path, mode: str):
     build_package()
     directory = tmp_path / "candidate"
     with zipfile.ZipFile(ZIP) as archive:
         fixture = json.loads(archive.read("datos_preparados/vnext/w1_conformance_r7.json"))
-        if mode == "declared_freeze":
+        if mode.startswith("declared_"):
             import ast
             tree = ast.parse(archive.read("main.py").decode("utf-8"))
             context = next(ast.literal_eval(node.value) for node in tree.body if isinstance(node, ast.Assign) and any(isinstance(target, ast.Name) and target.id == "STUDIO_CONTEXT_FILES" for target in node.targets))
-            for member in ["main.py", "tools.py", *context]:
+            for member in context:
                 archive.extract(member, directory)
+            code_directory = directory / "agentes/gipuzkoa360_vnext_r12" if mode == "declared_nested" else directory
+            code_directory.mkdir(parents=True, exist_ok=True)
+            for member in ("main.py", "tools.py"):
+                archive.extract(member, code_directory)
             assert not (directory / "tests").exists()
             assert not (directory / "datos_preparados/vnext/w1_conformance_r7.json").exists()
         else:
@@ -166,7 +170,7 @@ def test_generated_r12_end_to_end(tmp_path: Path, mode: str):
     environment.pop("GIPUZKOA360_VNEXT_ROOT", None)
     run = subprocess.run([sys.executable, "-c", WORKER, str(directory), mode],
                          cwd=directory if mode == "candidate_cwd" else observer,
-                         env=environment, input=json.dumps(fixture) if mode == "declared_freeze" else None,
+                         env=environment, input=json.dumps(fixture) if mode.startswith("declared_") else None,
                          text=True, encoding="utf-8", capture_output=True, timeout=180)
     assert run.returncode == 0, run.stderr + run.stdout
     print(run.stdout)
