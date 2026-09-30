@@ -1,6 +1,18 @@
 # Índice actual W1
 
-Ronda vigente: **G360-R6**, contrato opt-in **0.3.1**. Referencia canónica: [CURRENT.json](CURRENT.json).
+Ronda vigente de evidencia: **G360-R7** sobre runtime congelado **R6 0.3.1**. Referencia canónica: [CURRENT.json](CURRENT.json).
+
+- [Handoff R7](HANDOFF_R7.md)
+- [Consumer conformance R7](CONSUMER_CONFORMANCE_R7.md)
+- [Checklist W2](CONSUMER_CHECKLIST_R7.md)
+- [Auditoría de procedencia](PROVENANCE_AUDIT_R7.json)
+- [Matriz de mutaciones](MUTATION_MATRIX_R7.json)
+- [Stress metamórfico](METAMORPHIC_STRESS_R7.json)
+- [Integridad del paquete](PACKAGE_INTEGRITY_R7.json)
+
+R7 no modifica runtime, contrato, snapshot, catálogo ni identidad de paquete R6.
+
+## Runtime vigente R6
 
 - [Handoff R6](HANDOFF_R6.md)
 - [Consumo R6](CONSUMER_R6.md)

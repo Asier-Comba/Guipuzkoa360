@@ -1,5 +1,8 @@
 {
   "round": "G360-R6",
+  "hardening_round": "G360-R7",
+  "hardening_tested_head": "fb074c52d43a94fae7f7159100d377f6717773f2",
+  "runtime_changed_in_r7": false,
   "head": "cb061a97e78d6b5c967104fef6b935132fdc450f",
   "head_semantics": "Tested R6 executable pin; subsequent closure is documentation only",
   "contract_version": "0.3.1",
