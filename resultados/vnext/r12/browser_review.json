@@ -1,0 +1,29 @@
+{
+  "classification": "LOCAL_BROWSER_OFFLINE_PRODUCT_NOT_AGENT",
+  "viewports": [
+    {
+      "height": 768,
+      "identity": "Proveedor cb061a9e00a6496c40488a596bd94834bc2c49b2 · paquete b4feb978b625b34f9d7331ce8d376a34a29e84e4783868f83ce48a0c0d1011be · ZIP productor c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910 · contrato 0.3.1 · snapshot 59fcded9e4236ee094eeb0881c4eb94f521b96fb6c8c89c881c3e9f6d5140901",
+      "import_status": "Archivo compatible cargado; procedencia no comprobada.",
+      "overflow": false,
+      "scroll_width": 1351,
+      "width": 1366
+    },
+    {
+      "height": 844,
+      "identity": "Proveedor cb061a9e00a6496c40488a596bd94834bc2c49b2 · paquete b4feb978b625b34f9d7331ce8d376a34a29e84e4783868f83ce48a0c0d1011be · ZIP productor c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910 · contrato 0.3.1 · snapshot 59fcded9e4236ee094eeb0881c4eb94f521b96fb6c8c89c881c3e9f6d5140901",
+      "import_status": "Archivo compatible cargado; procedencia no comprobada.",
+      "overflow": false,
+      "scroll_width": 375,
+      "width": 390
+    }
+  ],
+  "checks": [
+    "main 10691 s",
+    "time variation 8591 s",
+    "unknown date_not_validated hides itinerary and timeline",
+    "R12 file import compatible; provenance unverified",
+    "Spanish text and exact W2/producer identities visible"
+  ],
+  "full_accessibility_certification": false
+}
