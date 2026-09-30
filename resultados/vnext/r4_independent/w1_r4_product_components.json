@@ -1,0 +1,405 @@
+{
+  "classification": "OFFLINE_W1_R4_COMPONENT_PROJECTION_NOT_AGENT",
+  "w1_head": "725a7b73ae0381092cd80edc41b8a25432d75fcd",
+  "views": {
+    "base": {
+      "status": "ok",
+      "scope": "origin_stop_presence_to_return_stop_arrival",
+      "time_basis": "scheduled",
+      "sources": [
+        {
+          "classification": "OFFICIAL",
+          "feed_version": "20260928054818",
+          "index_last_update": "2026-09-29 07:01:13",
+          "index_url": "https://opendata.euskadi.eus/transport/moveuskadi/data-index-gtfs.json",
+          "operator_feed": "Lurraldebus Goierrialdea",
+          "publisher": "Gobierno Vasco / Moveuskadi",
+          "retrieved_date": "2026-09-29",
+          "source_id": "MOVEUSKADI_GOIERRIALDEA_3276fcae7bfa",
+          "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+          "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+        }
+      ],
+      "assumptions": [
+        "Horarios programados; no incorpora incidencias ni retrasos en tiempo real.",
+        "La búsqueda solo contempla viajes directos y paradas declaradas en el catálogo.",
+        "Solo embarque y desembarque ordinarios; no se presume reserva ni acuerdo con conductor.",
+        "Inicio en parada con margen de embarque; no incluye acceso desde domicilio."
+      ],
+      "limitations": [
+        "Solo GO01 y viajes directos entre los pares de paradas catalogados.",
+        "Los tiempos tienen timepoint=0; son tiempos aproximados/interpolados del feed.",
+        "No demuestra un desplazamiento real, puntualidad, accesibilidad universal ni cobertura desde viviendas.",
+        "La ausencia de calendar_dates no se interpreta por sí sola como corrupción del GTFS.",
+        "Destino piloto en paradas del centro de Beasain; no reproduce el paseo al ambulatorio de la PoC histórica."
+      ],
+      "timeline": [
+        {
+          "kind": "initial_wait",
+          "start_s": 31477,
+          "end_s": 31657,
+          "seconds": 180,
+          "basis": "parameter:boarding_margin_minutes",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "outbound_vehicle",
+          "start_s": 31657,
+          "end_s": 33470,
+          "seconds": 1813,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "destination_walk_outbound",
+          "start_s": 33470,
+          "end_s": 33470,
+          "seconds": 0,
+          "basis": "assumption:stop_only_explicit_zero",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "pre_appointment_wait",
+          "start_s": 33470,
+          "end_s": 34200,
+          "seconds": 730,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "appointment",
+          "start_s": 34200,
+          "end_s": 36000,
+          "seconds": 1800,
+          "basis": "parameter:duration_minutes",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "destination_walk_return",
+          "start_s": 36000,
+          "end_s": 36000,
+          "seconds": 0,
+          "basis": "assumption:stop_only_explicit_zero",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "return_wait",
+          "start_s": 36000,
+          "end_s": 37790,
+          "seconds": 1790,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "return_vehicle",
+          "start_s": 37790,
+          "end_s": 40068,
+          "seconds": 2278,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        }
+      ],
+      "outbound": {
+        "trip_id": "1_101_LJ_31500",
+        "route_id": "1",
+        "service_id": "LJ",
+        "from_stop_id": "8305",
+        "to_stop_id": "7214",
+        "from_stop_sequence": 2,
+        "to_stop_sequence": 28,
+        "departure_time": "08:47:37",
+        "arrival_time": "09:17:50",
+        "pickup_type": 0,
+        "drop_off_type": 0,
+        "from_timepoint": 0,
+        "to_timepoint": 0
+      },
+      "return": {
+        "trip_id": "1_106_LJ_37200",
+        "route_id": "1",
+        "service_id": "LJ",
+        "from_stop_id": "7218",
+        "to_stop_id": "8309",
+        "from_stop_sequence": 8,
+        "to_stop_sequence": 35,
+        "departure_time": "10:29:50",
+        "arrival_time": "11:07:48",
+        "pickup_type": 0,
+        "drop_off_type": 0,
+        "from_timepoint": 0,
+        "to_timepoint": 0
+      },
+      "total_s": 8591,
+      "return_slack_s": 1610,
+      "return_slack_kind": "provider_value_not_appointment_availability",
+      "origin_stop_id": "8305",
+      "return_stop_id": "8309"
+    },
+    "duration90": {
+      "status": "ok",
+      "scope": "origin_stop_presence_to_return_stop_arrival",
+      "time_basis": "scheduled",
+      "sources": [
+        {
+          "classification": "OFFICIAL",
+          "feed_version": "20260928054818",
+          "index_last_update": "2026-09-29 07:01:13",
+          "index_url": "https://opendata.euskadi.eus/transport/moveuskadi/data-index-gtfs.json",
+          "operator_feed": "Lurraldebus Goierrialdea",
+          "publisher": "Gobierno Vasco / Moveuskadi",
+          "retrieved_date": "2026-09-29",
+          "source_id": "MOVEUSKADI_GOIERRIALDEA_3276fcae7bfa",
+          "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+          "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+        }
+      ],
+      "assumptions": [
+        "Horarios programados; no incorpora incidencias ni retrasos en tiempo real.",
+        "La búsqueda solo contempla viajes directos y paradas declaradas en el catálogo.",
+        "Solo embarque y desembarque ordinarios; no se presume reserva ni acuerdo con conductor.",
+        "Inicio en parada con margen de embarque; no incluye acceso desde domicilio."
+      ],
+      "limitations": [
+        "Solo GO01 y viajes directos entre los pares de paradas catalogados.",
+        "Los tiempos tienen timepoint=0; son tiempos aproximados/interpolados del feed.",
+        "No demuestra un desplazamiento real, puntualidad, accesibilidad universal ni cobertura desde viviendas.",
+        "La ausencia de calendar_dates no se interpreta por sí sola como corrupción del GTFS.",
+        "Destino piloto en paradas del centro de Beasain; no reproduce el paseo al ambulatorio de la PoC histórica."
+      ],
+      "timeline": [
+        {
+          "kind": "initial_wait",
+          "start_s": 31477,
+          "end_s": 31657,
+          "seconds": 180,
+          "basis": "parameter:boarding_margin_minutes",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "outbound_vehicle",
+          "start_s": 31657,
+          "end_s": 33470,
+          "seconds": 1813,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "destination_walk_outbound",
+          "start_s": 33470,
+          "end_s": 33470,
+          "seconds": 0,
+          "basis": "assumption:stop_only_explicit_zero",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "pre_appointment_wait",
+          "start_s": 33470,
+          "end_s": 34200,
+          "seconds": 730,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "appointment",
+          "start_s": 34200,
+          "end_s": 39600,
+          "seconds": 5400,
+          "basis": "parameter:duration_minutes",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "destination_walk_return",
+          "start_s": 39600,
+          "end_s": 39600,
+          "seconds": 0,
+          "basis": "assumption:stop_only_explicit_zero",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "return_wait",
+          "start_s": 39600,
+          "end_s": 43171,
+          "seconds": 3571,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "return_vehicle",
+          "start_s": 43171,
+          "end_s": 45449,
+          "seconds": 2278,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        }
+      ],
+      "outbound": {
+        "trip_id": "1_101_LJ_31500",
+        "route_id": "1",
+        "service_id": "LJ",
+        "from_stop_id": "8305",
+        "to_stop_id": "7214",
+        "from_stop_sequence": 2,
+        "to_stop_sequence": 28,
+        "departure_time": "08:47:37",
+        "arrival_time": "09:17:50",
+        "pickup_type": 0,
+        "drop_off_type": 0,
+        "from_timepoint": 0,
+        "to_timepoint": 0
+      },
+      "return": {
+        "trip_id": "1_102_LJ_42300",
+        "route_id": "1",
+        "service_id": "LJ",
+        "from_stop_id": "7218",
+        "to_stop_id": "8309",
+        "from_stop_sequence": 13,
+        "to_stop_sequence": 40,
+        "departure_time": "11:59:31",
+        "arrival_time": "12:37:29",
+        "pickup_type": 0,
+        "drop_off_type": 0,
+        "from_timepoint": 0,
+        "to_timepoint": 0
+      },
+      "total_s": 13972,
+      "return_slack_s": 3391,
+      "return_slack_kind": "provider_value_not_appointment_availability",
+      "origin_stop_id": "8305",
+      "return_stop_id": "8309"
+    },
+    "margin": {
+      "status": "ok",
+      "scope": "origin_stop_presence_to_return_stop_arrival",
+      "time_basis": "scheduled",
+      "sources": [
+        {
+          "classification": "OFFICIAL",
+          "feed_version": "20260928054818",
+          "index_last_update": "2026-09-29 07:01:13",
+          "index_url": "https://opendata.euskadi.eus/transport/moveuskadi/data-index-gtfs.json",
+          "operator_feed": "Lurraldebus Goierrialdea",
+          "publisher": "Gobierno Vasco / Moveuskadi",
+          "retrieved_date": "2026-09-29",
+          "source_id": "MOVEUSKADI_GOIERRIALDEA_3276fcae7bfa",
+          "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+          "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+        }
+      ],
+      "assumptions": [
+        "Horarios programados; no incorpora incidencias ni retrasos en tiempo real.",
+        "La búsqueda solo contempla viajes directos y paradas declaradas en el catálogo.",
+        "Solo embarque y desembarque ordinarios; no se presume reserva ni acuerdo con conductor.",
+        "Inicio en parada con margen de embarque; no incluye acceso desde domicilio."
+      ],
+      "limitations": [
+        "Solo GO01 y viajes directos entre los pares de paradas catalogados.",
+        "Los tiempos tienen timepoint=0; son tiempos aproximados/interpolados del feed.",
+        "No demuestra un desplazamiento real, puntualidad, accesibilidad universal ni cobertura desde viviendas.",
+        "La ausencia de calendar_dates no se interpreta por sí sola como corrupción del GTFS.",
+        "Destino piloto en paradas del centro de Beasain; no reproduce el paseo al ambulatorio de la PoC histórica."
+      ],
+      "timeline": [
+        {
+          "kind": "initial_wait",
+          "start_s": 29077,
+          "end_s": 29557,
+          "seconds": 480,
+          "basis": "parameter:boarding_margin_minutes",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "outbound_vehicle",
+          "start_s": 29557,
+          "end_s": 31252,
+          "seconds": 1695,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "destination_walk_outbound",
+          "start_s": 31252,
+          "end_s": 31252,
+          "seconds": 0,
+          "basis": "assumption:stop_only_explicit_zero",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "pre_appointment_wait",
+          "start_s": 31252,
+          "end_s": 34200,
+          "seconds": 2948,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "appointment",
+          "start_s": 34200,
+          "end_s": 36000,
+          "seconds": 1800,
+          "basis": "parameter:duration_minutes",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "destination_walk_return",
+          "start_s": 36000,
+          "end_s": 36000,
+          "seconds": 0,
+          "basis": "assumption:stop_only_explicit_zero",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "return_wait",
+          "start_s": 36000,
+          "end_s": 37790,
+          "seconds": 1790,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        },
+        {
+          "kind": "return_vehicle",
+          "start_s": 37790,
+          "end_s": 40068,
+          "seconds": 2278,
+          "basis": "source:GTFS stop_times + effective appointment parameters",
+          "derivation": "end_s - start_s"
+        }
+      ],
+      "outbound": {
+        "trip_id": "1_103_LJ_29400",
+        "route_id": "1",
+        "service_id": "LJ",
+        "from_stop_id": "8305",
+        "to_stop_id": "7214",
+        "from_stop_sequence": 2,
+        "to_stop_sequence": 26,
+        "departure_time": "08:12:37",
+        "arrival_time": "08:40:52",
+        "pickup_type": 0,
+        "drop_off_type": 0,
+        "from_timepoint": 0,
+        "to_timepoint": 0
+      },
+      "return": {
+        "trip_id": "1_106_LJ_37200",
+        "route_id": "1",
+        "service_id": "LJ",
+        "from_stop_id": "7218",
+        "to_stop_id": "8309",
+        "from_stop_sequence": 8,
+        "to_stop_sequence": 35,
+        "departure_time": "10:29:50",
+        "arrival_time": "11:07:48",
+        "pickup_type": 0,
+        "drop_off_type": 0,
+        "from_timepoint": 0,
+        "to_timepoint": 0
+      },
+      "total_s": 10991,
+      "return_slack_s": 1310,
+      "return_slack_kind": "provider_value_not_appointment_availability",
+      "origin_stop_id": "8305",
+      "return_stop_id": "8309"
+    }
+  }
+}

@@ -1,0 +1,79 @@
+[
+  {
+    "member": "contracts/vnext/capability-v1.1.schema.json",
+    "identical": true,
+    "expected_sha256": "66ab0036ce3a529dad3d51d193fa05970fd795bbefcab477281e5df055ff2f0b",
+    "portal_sha256": "66ab0036ce3a529dad3d51d193fa05970fd795bbefcab477281e5df055ff2f0b",
+    "bytes": 3527
+  },
+  {
+    "member": "contracts/vnext/capability-v1.schema.json",
+    "identical": true,
+    "expected_sha256": "1ad14eb4a825d426958d29fde54104f6d4b45e60f2e25ccc5920af23df435d4c",
+    "portal_sha256": "1ad14eb4a825d426958d29fde54104f6d4b45e60f2e25ccc5920af23df435d4c",
+    "bytes": 3396
+  },
+  {
+    "member": "contracts/vnext/evidence-v1.1.schema.json",
+    "identical": true,
+    "expected_sha256": "6fbd22a567cc5a8d8ce17fd1968c52fc92448526bf81103e2768486d724d9ad0",
+    "portal_sha256": "6fbd22a567cc5a8d8ce17fd1968c52fc92448526bf81103e2768486d724d9ad0",
+    "bytes": 7357
+  },
+  {
+    "member": "contracts/vnext/evidence-v1.schema.json",
+    "identical": true,
+    "expected_sha256": "81f1162cb90a65394d96e8735f6403050094eea29a9c17648426282dfc3dc191",
+    "portal_sha256": "81f1162cb90a65394d96e8735f6403050094eea29a9c17648426282dfc3dc191",
+    "bytes": 4726
+  },
+  {
+    "member": "datos_preparados/vnext/capabilities.json",
+    "identical": true,
+    "expected_sha256": "21bff0743a9c17a3517556eac4fca283e9b7b70139e083692557480e485ecbb5",
+    "portal_sha256": "21bff0743a9c17a3517556eac4fca283e9b7b70139e083692557480e485ecbb5",
+    "bytes": 26375
+  },
+  {
+    "member": "datos_preparados/vnext/consumer_labels_r7.json",
+    "identical": true,
+    "expected_sha256": "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799",
+    "portal_sha256": "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799",
+    "bytes": 3152
+  },
+  {
+    "member": "datos_preparados/vnext/mobility_sources.json",
+    "identical": true,
+    "expected_sha256": "9d9da299ea50e9e682838f65c9ebc7b01b79b7df1e15fccf45777d829fb376a0",
+    "portal_sha256": "9d9da299ea50e9e682838f65c9ebc7b01b79b7df1e15fccf45777d829fb376a0",
+    "bytes": 4713
+  },
+  {
+    "member": "datos_preparados/vnext/operational_catalog_r6.json",
+    "identical": true,
+    "expected_sha256": "c7bd3cc8ffe50956ce839bec0ef90a13578160a4d5b4053b09673d2dc4c4ec17",
+    "portal_sha256": "c7bd3cc8ffe50956ce839bec0ef90a13578160a4d5b4053b09673d2dc4c4ec17",
+    "bytes": 2651
+  },
+  {
+    "member": "datos_preparados/vnext/w1_conformance_r7.json",
+    "identical": true,
+    "expected_sha256": "4eb364265710336ecdd86b2c541953f130f3b0a80bbefc9cf1f27904bac55dea",
+    "portal_sha256": "4eb364265710336ecdd86b2c541953f130f3b0a80bbefc9cf1f27904bac55dea",
+    "bytes": 286413
+  },
+  {
+    "member": "datos_preparados/vnext/w1_r6_runtime.zip",
+    "identical": true,
+    "expected_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+    "portal_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+    "bytes": 129365
+  },
+  {
+    "member": "scripts/vnext_agent/w1_pin.json",
+    "identical": true,
+    "expected_sha256": "51d75ca9a8b06afab0ee53ba960d914fdc63ef5e8c7d77be33e3a47b479059c3",
+    "portal_sha256": "51d75ca9a8b06afab0ee53ba960d914fdc63ef5e8c7d77be33e3a47b479059c3",
+    "bytes": 1869
+  }
+]

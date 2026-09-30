@@ -1,0 +1,22 @@
+{
+  "START_SHA": "281f92a25170c5082c5772c0130d2275e57edaaf",
+  "TESTED_HEAD": "0601367e11ce0e869d3042e55623409d20aac203",
+  "PUBLISHED_HEAD": "Final PR14 publication comment records the exact final SHA; this document cannot contain its own commit hash.",
+  "branch": "work/vnext-w3-product-redteam",
+  "PR": 14,
+  "USER_MESSAGES_USED_OF_12": 0,
+  "private_draft": "agentes/gipuzkoa_360_vnext_r12_b4feb978",
+  "private_version": "NOT_CREATED",
+  "loaded_package_sha256": "b4feb978b625b34f9d7331ce8d376a34a29e84e4783868f83ce48a0c0d1011be",
+  "latest_reviewed_patch": "9dbb2d7421e2468e44949f94ad1ef5b9011430601d34dd76057fb1720e0bfb1b",
+  "next_exact_action": "W2 publish exact generated candidate with complete frozen runtime closure and compatible agent-folder root; W3 independently retest changed ZIP, load compatible separate paths, create private version, execute frozen R12 max-12-message plan.",
+  "do_not_repeat": [
+    "corpus/scorer/importer",
+    "old offline 34-case review unless package changes",
+    "same-lot permission request",
+    "v4 editing",
+    "no blind preparation/model retries"
+  ],
+  "release": "NO_GO",
+  "holdout_opened": false
+}

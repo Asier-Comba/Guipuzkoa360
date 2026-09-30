@@ -1,0 +1,126 @@
+{
+  "patch_head": "6693cbce605484dc48eca9ed7de867e32c5f3aa7",
+  "package_sha256": "9dbb2d7421e2468e44949f94ad1ef5b9011430601d34dd76057fb1720e0bfb1b",
+  "compressed_bytes": 224576,
+  "integrity": "PASS",
+  "static": {
+    "members": 25,
+    "expanded_bytes": 778639,
+    "package_bytes": 224576,
+    "imports": [
+      "__future__",
+      "agentes",
+      "copy",
+      "csv",
+      "dataclasses",
+      "functools",
+      "hashlib",
+      "health_adapter",
+      "importlib",
+      "inspect",
+      "json",
+      "langchain",
+      "math",
+      "mobility_adapter",
+      "os",
+      "pathlib",
+      "prototypes",
+      "pytest",
+      "re",
+      "scripts",
+      "studio",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "tools",
+      "types",
+      "typing",
+      "unicodedata",
+      "uuid",
+      "zipfile"
+    ]
+  },
+  "declared_context_files": [
+    "FUENTES.md",
+    "docs/METODOLOGIA.md",
+    "contracts/vnext/evidence-v1.1.schema.json",
+    "contracts/vnext/capability-v1.1.schema.json",
+    "datos_preparados/municipios.csv",
+    "datos_preparados/demografia.csv",
+    "datos_preparados/runtime_municipality_points.csv",
+    "datos_preparados/runtime_servicios.csv",
+    "datos_preparados/metadata_sources.json",
+    "datos_preparados/data_contract.json",
+    "datos_preparados/vnext/capabilities.json",
+    "datos_preparados/vnext/operational_catalog_r6.json",
+    "datos_preparados/vnext/consumer_labels_r7.json"
+  ],
+  "omitted_members": [
+    "contracts/vnext/capability-v1.schema.json",
+    "contracts/vnext/evidence-v1.schema.json",
+    "datos_preparados/vnext/mobility_sources.json",
+    "datos_preparados/vnext/w1_conformance_r7.json",
+    "datos_preparados/vnext/w1_r6_runtime.zip",
+    "scripts/vnext_agent/w1_pin.json",
+    "tests/vnext_agent/test_contracts.py",
+    "tests/vnext_agent/test_health_r10.py",
+    "tests/vnext_agent/test_mobility_binding.py",
+    "tests/vnext_agent/test_r12_generated.py"
+  ],
+  "declared_assembly_status": "FAIL",
+  "observed_direct_health": {
+    "assumptions": [],
+    "capability_id": "plan_visit",
+    "claims": [],
+    "effective_request": null,
+    "error": {
+      "available_options": [],
+      "code": "contract_violation",
+      "message": "capability:stale_validation_evidence",
+      "origin": "execution",
+      "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+    },
+    "execution": {
+      "arguments_sha256": "8d3f6a3f007bb4c1d75c8b2760024665a33d4cdf481573645028278d65c488c4",
+      "request_id": "fce6de97c45c42e0a266a2c34a01f350",
+      "snapshot_id": null,
+      "state": "failed",
+      "tool": "plan_visit"
+    },
+    "limitations": [],
+    "method": "",
+    "normalized_input": {
+      "arguments": {
+        "request": {
+          "appointment_time": "09:30",
+          "date": "2026-09-29",
+          "destination_id": "beasain_official_centre_anchor",
+          "duration_minutes": 20,
+          "origin_id": "zegama_center_stops"
+        }
+      },
+      "tool": "plan_visit"
+    },
+    "outcomes": [],
+    "raw_result_sha256": null,
+    "request_id": "fce6de97c45c42e0a266a2c34a01f350",
+    "schema_version": "1.1.0",
+    "selection": {
+      "criterion": "Primeras entidades en el orden validado de la herramienta",
+      "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+      "omitted_entities": 0,
+      "returned_entities": 0,
+      "total_entities": 0
+    },
+    "status": "error",
+    "versions": {
+      "code_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "contract_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "data_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  },
+  "full_package_semantic_retest": "NOT_RUN",
+  "root_propagation_patch_claim": "W2 reports fixed; independent full-package retest pending",
+  "portal_loaded": false,
+  "reason": "Same freeze omission remains. Additional test evidence files required by capability validation are absent as well. No LLM messages consumed."
+}

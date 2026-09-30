@@ -1,0 +1,66 @@
+- region "Notifications alt+T"
+- generic "Connection Error:"
+- link "Saltar al contenido":
+  - /url: "#platform-main"
+- banner:
+  - link "Gipuzkoa AI Hackathon · MIT Media Lab City Science":
+    - /url: /area/
+  - button "Abrir navegación":
+    - generic: ☰
+    - generic: Menú
+  - generic "Abrir menú de cuenta":
+    - generic: H
+    - generic: ⌄
+- main:
+  - button "GIPUZKOA 360":
+    - strong: GIPUZKOA 360
+  - generic: Sección del workspace
+  - combobox "Sección del workspace":
+    - option "Resumen"
+    - option "Datos"
+    - option "Agentes"
+    - option "Pruebas" [selected]
+    - option "Entrega"
+    - option "Asistente IA"
+  - generic "Estado del workspace":
+    - generic "Ver estado y actividad del workspace"
+    - button "Reiniciar el entorno del equipo":
+      - generic: ↻
+    - button "Ejemplo resuelto"
+    - button "?"
+  - 'tabpanel "Pruebas: Verificación con versiones creadas"':
+    - toolbar "Acciones de pruebas de agentes":
+      - generic: PRUEBAS
+      - button "Conversaciones"
+    - option "Selecciona una versión para probar…" [selected]
+    - option "Python · GIPUZKOA 360 vNext R14 binding 094745b · v1"
+    - option "Python · GIPUZKOA 360 vNext R13 patch3 3951b290 · v1"
+    - option "Python · GIPUZKOA 360 · Versión final · v6"
+    - option "Python · GIPUZKOA 360 · Final · v5"
+    - option "Python · urban-challenge-rc2-195b498 · v4"
+    - option "Python · urban-challenge-rc2-ae62080 · v3"
+    - option "Python · urban-challenge-rc2-d8ec018 · v2"
+    - option "Python · GIPUZKOA 360 integración Work 2 · v1"
+    - option "Python · GIPUZKOA 360 · RC2 compact · v1"
+    - option "Python · GIPUZKOA 360 · RC2 runtime · v1"
+    - option "Python · GIPUZKOA 360 · RC1 exacto · v1"
+    - option "Python · GIPUZKOA 360 · integración jurado · v3"
+    - option "Python · GIPUZKOA 360 · integración jurado · v2"
+    - option "Python · GIPUZKOA 360 · integración jurado · v1"
+    - generic: AGENTE PYTHON · VERSIÓN PROBADA · V1
+    - heading "GIPUZKOA 360 vNext R14 binding 094745b" [level=2]
+    - paragraph: Esta conversación mantiene la versión v1. Editar el borrador o crear otra versión no cambia esta prueba.
+    - generic: Memoria activa
+    - generic: Sin Internet
+    - generic "Revisar evidencia"
+    - log:
+      - generic: ✦
+      - strong: Comprueba qué hace con tus datos
+      - paragraph: El chat utiliza la versión fija de este agente y ejecuta sus herramientas en un entorno aislado. Esta versión no tiene acceso a Internet. Empieza con una pregunta que permita revisar fuentes, incertidumbre y límites.
+      - generic "Pruebas recomendadas":
+        - button "Explica qué muestran los datos y cita las fuentes utilizadas."
+        - button "¿Qué incertidumbres cambian la interpretación del resultado?"
+        - button "Contrasta dos explicaciones posibles y busca un caso que contradiga la primera."
+        - button "Indica cuándo necesitarías validación humana."
+    - textbox "Escribe un mensaje…"
+    - button "Enviar" [disabled]

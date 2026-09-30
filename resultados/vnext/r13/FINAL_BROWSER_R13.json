@@ -1,0 +1,210 @@
+{
+  "browser": "Codex in-app Chromium; OS Windows; CUA viewport overrides",
+  "url": "http://127.0.0.1:8772/resultados/vnext/health.html",
+  "classification": "TARGETED_PRODUCT_REVIEW_NOT_WCAG_CERTIFICATION",
+  "matrix": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 780
+      },
+      "zoom": "Native zoom NOT_OBSERVED; viewport override",
+      "measurement": {
+        "identity": "Proveedor cb061a9e00a6496c40488a596bd94834bc2c49b2 · paquete 3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616 · ZIP productor c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910 · contrato 0.3.1 · snapshot 59fcded9e4236ee094eeb0881c4eb94f521b96fb6c8c89c881c3e9f6d5140901",
+        "page": {
+          "client": 305,
+          "scroll": 305
+        },
+        "tables": [
+          {
+            "client": 237,
+            "overflow": "auto",
+            "scroll": 387
+          }
+        ],
+        "total": "2 h 23 min 11 s (8591 s)",
+        "viewport": {
+          "height": 780,
+          "width": 320
+        },
+        "visibleOverflows": []
+      },
+      "interaction": "09:45 scenario selected",
+      "screenshot": "browser_320.png",
+      "source_names": {
+        "identity": "Proveedor cb061a9e00a6496c40488a596bd94834bc2c49b2 · paquete 3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616 · ZIP productor c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910 · contrato 0.3.1 · snapshot 59fcded9e4236ee094eeb0881c4eb94f521b96fb6c8c89c881c3e9f6d5140901",
+        "page": {
+          "client": 305,
+          "scroll": 305
+        },
+        "tables": [
+          {
+            "client": 237,
+            "overflow": "auto",
+            "scroll": 387
+          }
+        ],
+        "total": "2 h 23 min 11 s (8591 s)",
+        "viewport": {
+          "height": 780,
+          "width": 320
+        },
+        "visibleOverflows": []
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "measurement": {
+        "identity": "Proveedor cb061a9e00a6496c40488a596bd94834bc2c49b2 · paquete 3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616 · ZIP productor c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910 · contrato 0.3.1 · snapshot 59fcded9e4236ee094eeb0881c4eb94f521b96fb6c8c89c881c3e9f6d5140901",
+        "page": {
+          "client": 375,
+          "scroll": 375
+        },
+        "tables": [
+          {
+            "client": 0,
+            "overflow": "auto",
+            "scroll": 0
+          }
+        ],
+        "total": "2 h 23 min 11 s (8591 s)",
+        "viewport": {
+          "height": 844,
+          "width": 390
+        },
+        "visibleOverflows": []
+      },
+      "interaction": "Uncovered date unknown; null itinerary and timeline hidden",
+      "screenshot": "browser_390.png"
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "measurement": {
+        "identity": "Proveedor cb061a9e00a6496c40488a596bd94834bc2c49b2 · paquete 3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616 · ZIP productor c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910 · contrato 0.3.1 · snapshot 59fcded9e4236ee094eeb0881c4eb94f521b96fb6c8c89c881c3e9f6d5140901",
+        "page": {
+          "client": 753,
+          "scroll": 753
+        },
+        "tables": [
+          {
+            "client": 0,
+            "overflow": "auto",
+            "scroll": 0
+          }
+        ],
+        "total": "2 h 23 min 11 s (8591 s)",
+        "viewport": {
+          "height": 1024,
+          "width": 768
+        },
+        "visibleOverflows": []
+      },
+      "interaction": "No feasible scheduled pair; no zero journey shown",
+      "screenshot": "browser_768.png"
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "measurement": {
+        "identity": "Proveedor cb061a9e00a6496c40488a596bd94834bc2c49b2 · paquete 3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616 · ZIP productor c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910 · contrato 0.3.1 · snapshot 59fcded9e4236ee094eeb0881c4eb94f521b96fb6c8c89c881c3e9f6d5140901",
+        "page": {
+          "client": 1351,
+          "scroll": 1351
+        },
+        "tables": [
+          {
+            "client": 1114,
+            "overflow": "auto",
+            "scroll": 1114
+          }
+        ],
+        "total": "2 h 58 min 11 s (10691 s)",
+        "viewport": {
+          "height": 768,
+          "width": 1366
+        },
+        "visibleOverflows": []
+      },
+      "interaction": "Tab, Shift+Tab, Enter, Space scenario buttons and details",
+      "screenshot": "browser_1366.png"
+    },
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "measurement": {
+        "identity": "Proveedor cb061a9e00a6496c40488a596bd94834bc2c49b2 · paquete 3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616 · ZIP productor c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910 · contrato 0.3.1 · snapshot 59fcded9e4236ee094eeb0881c4eb94f521b96fb6c8c89c881c3e9f6d5140901",
+        "page": {
+          "client": 1905,
+          "scroll": 1905
+        },
+        "tables": [
+          {
+            "client": 1114,
+            "overflow": "auto",
+            "scroll": 1114
+          }
+        ],
+        "total": "2 h 58 min 11 s (10691 s)",
+        "viewport": {
+          "height": 1080,
+          "width": 1920
+        },
+        "visibleOverflows": []
+      },
+      "interaction": "Comparison details open, fixed -2100 s delta",
+      "screenshot": "browser_1920.png"
+    }
+  ],
+  "keyboard": [
+    {
+      "focus": "Zegama · 09:45 · 20 min",
+      "key": "Tab",
+      "outline": "rgb(174, 107, 23) solid 2.4px"
+    },
+    {
+      "key": "Enter",
+      "total": "2 h 23 min 11 s (8591 s)"
+    },
+    {
+      "focus": "Zegama · 09:30 · 20 min",
+      "key": "Shift+Tab"
+    },
+    {
+      "key": "Space",
+      "total": "2 h 58 min 11 s (10691 s)"
+    },
+    {
+      "key": "Enter summary",
+      "open": false
+    },
+    {
+      "key": "Space summary",
+      "open": true,
+      "outline": "rgb(174, 107, 23) solid 2.4px"
+    }
+  ],
+  "imports": {
+    "current": "PASS; 8591 s; compatible not provenance-verified",
+    "historical": "PASS rejection; incompatible package, current display preserved"
+  },
+  "states": {
+    "unknown": "PASS; null itinerary hidden",
+    "no_feasible": "PASS; no zero substituted",
+    "comparison": "PASS; -2100 s provider delta; fixed assumptions"
+  },
+  "console": [],
+  "zoom": "NOT_OBSERVED native zoom; no zoom control changed; CSS viewport sizes measured with overrides",
+  "chat_vs_html": "No health figure comparison possible: agent M04 failed. Offline viewer truth remains separately labelled; M03 scope agrees.",
+  "result": "PASS_TARGETED_OFFLINE_VIEWER; REAL_AGENT_FAIL_REMAINS_VISIBLE",
+  "measurement_note": "For unknown/no-feasible, total text may remain in hidden DOM; itinerary/timeline are not rendered. Table internal overflow measured; no keyboard table-scroll certification."
+}

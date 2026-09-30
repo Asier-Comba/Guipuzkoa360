@@ -1,0 +1,1144 @@
+{
+  "classification": "OFFLINE_TOOL_DEVELOPMENT_NOT_HOLDOUT",
+  "w1": {
+    "base": {
+      "request": {
+        "appointment_time": "09:30",
+        "date": "2026-09-29",
+        "destination_id": "beasain_center_stop_pair",
+        "duration_minutes": 30,
+        "origin_id": "zegama_center_stops",
+        "snapshot_id": "official-goierrialdea-go01-20260928"
+      },
+      "result": {
+        "assumptions": [
+          "Horarios programados; no incorpora incidencias ni retrasos en tiempo real.",
+          "La búsqueda solo contempla viajes directos y paradas declaradas en el catálogo."
+        ],
+        "components_s": {
+          "appointment_s": 1800,
+          "destination_walk_outbound_s": 0,
+          "destination_walk_return_s": 0,
+          "origin_access_outbound_s": 0,
+          "origin_access_return_s": 0,
+          "outbound_vehicle_s": 1813,
+          "pre_appointment_wait_s": 730,
+          "return_vehicle_s": 2278,
+          "return_wait_s": 1790
+        },
+        "error": null,
+        "itinerary": {
+          "alternatives_evaluated": 95,
+          "outbound": {
+            "arrival_time": "09:17:50",
+            "departure_time": "08:47:37",
+            "drop_off_type": 0,
+            "from_stop_id": "8305",
+            "from_stop_sequence": 2,
+            "from_timepoint": 0,
+            "pickup_type": 0,
+            "route_id": "1",
+            "service_id": "LJ",
+            "to_stop_id": "7214",
+            "to_stop_sequence": 28,
+            "to_timepoint": 0,
+            "trip_id": "1_101_LJ_31500"
+          },
+          "return": {
+            "arrival_time": "11:07:48",
+            "departure_time": "10:29:50",
+            "drop_off_type": 0,
+            "from_stop_id": "7218",
+            "from_stop_sequence": 8,
+            "from_timepoint": 0,
+            "pickup_type": 0,
+            "route_id": "1",
+            "service_id": "LJ",
+            "to_stop_id": "8309",
+            "to_stop_sequence": 35,
+            "to_timepoint": 0,
+            "trip_id": "1_106_LJ_37200"
+          },
+          "total_s": 8411
+        },
+        "limitations": [
+          "Solo GO01 y viajes directos entre los pares de paradas catalogados.",
+          "Los tiempos tienen timepoint=0; son tiempos aproximados/interpolados del feed.",
+          "No demuestra un desplazamiento real, puntualidad, accesibilidad universal ni cobertura desde viviendas.",
+          "La ausencia de calendar_dates no se interpreta por sí sola como corrupción del GTFS.",
+          "Destino piloto en paradas del centro de Beasain; no reproduce el paseo al ambulatorio de la PoC histórica."
+        ],
+        "normalized_request": {
+          "appointment_time": "09:30:00",
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "date": "2026-09-29",
+          "destination_id": "beasain_center_stop_pair",
+          "duration_minutes": 30,
+          "origin_id": "zegama_center_stops",
+          "snapshot_id": "official-goierrialdea-go01-20260928",
+          "timezone": "Europe/Madrid",
+          "walking_profile_id": "stop_only"
+        },
+        "schema_version": "0.1.0",
+        "scope": "stop_to_stop_with_destination_walk",
+        "snapshot_id": "official-goierrialdea-go01-20260928",
+        "sources": [
+          {
+            "classification": "OFFICIAL",
+            "feed_version": "20260928054818",
+            "index_last_update": "2026-09-29 07:01:13",
+            "index_url": "https://opendata.euskadi.eus/transport/moveuskadi/data-index-gtfs.json",
+            "operator_feed": "Lurraldebus Goierrialdea",
+            "publisher": "Gobierno Vasco / Moveuskadi",
+            "retrieved_date": "2026-09-29",
+            "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+            "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+          }
+        ],
+        "status": "ok",
+        "time_basis": "scheduled"
+      }
+    },
+    "duration90": {
+      "request": {
+        "appointment_time": "09:30",
+        "date": "2026-09-29",
+        "destination_id": "beasain_center_stop_pair",
+        "duration_minutes": 90,
+        "origin_id": "zegama_center_stops",
+        "snapshot_id": "official-goierrialdea-go01-20260928"
+      },
+      "result": {
+        "assumptions": [
+          "Horarios programados; no incorpora incidencias ni retrasos en tiempo real.",
+          "La búsqueda solo contempla viajes directos y paradas declaradas en el catálogo."
+        ],
+        "components_s": {
+          "appointment_s": 5400,
+          "destination_walk_outbound_s": 0,
+          "destination_walk_return_s": 0,
+          "origin_access_outbound_s": 0,
+          "origin_access_return_s": 0,
+          "outbound_vehicle_s": 1813,
+          "pre_appointment_wait_s": 730,
+          "return_vehicle_s": 2278,
+          "return_wait_s": 3571
+        },
+        "error": null,
+        "itinerary": {
+          "alternatives_evaluated": 85,
+          "outbound": {
+            "arrival_time": "09:17:50",
+            "departure_time": "08:47:37",
+            "drop_off_type": 0,
+            "from_stop_id": "8305",
+            "from_stop_sequence": 2,
+            "from_timepoint": 0,
+            "pickup_type": 0,
+            "route_id": "1",
+            "service_id": "LJ",
+            "to_stop_id": "7214",
+            "to_stop_sequence": 28,
+            "to_timepoint": 0,
+            "trip_id": "1_101_LJ_31500"
+          },
+          "return": {
+            "arrival_time": "12:37:29",
+            "departure_time": "11:59:31",
+            "drop_off_type": 0,
+            "from_stop_id": "7218",
+            "from_stop_sequence": 13,
+            "from_timepoint": 0,
+            "pickup_type": 0,
+            "route_id": "1",
+            "service_id": "LJ",
+            "to_stop_id": "8309",
+            "to_stop_sequence": 40,
+            "to_timepoint": 0,
+            "trip_id": "1_102_LJ_42300"
+          },
+          "total_s": 13792
+        },
+        "limitations": [
+          "Solo GO01 y viajes directos entre los pares de paradas catalogados.",
+          "Los tiempos tienen timepoint=0; son tiempos aproximados/interpolados del feed.",
+          "No demuestra un desplazamiento real, puntualidad, accesibilidad universal ni cobertura desde viviendas.",
+          "La ausencia de calendar_dates no se interpreta por sí sola como corrupción del GTFS.",
+          "Destino piloto en paradas del centro de Beasain; no reproduce el paseo al ambulatorio de la PoC histórica."
+        ],
+        "normalized_request": {
+          "appointment_time": "09:30:00",
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "date": "2026-09-29",
+          "destination_id": "beasain_center_stop_pair",
+          "duration_minutes": 90,
+          "origin_id": "zegama_center_stops",
+          "snapshot_id": "official-goierrialdea-go01-20260928",
+          "timezone": "Europe/Madrid",
+          "walking_profile_id": "stop_only"
+        },
+        "schema_version": "0.1.0",
+        "scope": "stop_to_stop_with_destination_walk",
+        "snapshot_id": "official-goierrialdea-go01-20260928",
+        "sources": [
+          {
+            "classification": "OFFICIAL",
+            "feed_version": "20260928054818",
+            "index_last_update": "2026-09-29 07:01:13",
+            "index_url": "https://opendata.euskadi.eus/transport/moveuskadi/data-index-gtfs.json",
+            "operator_feed": "Lurraldebus Goierrialdea",
+            "publisher": "Gobierno Vasco / Moveuskadi",
+            "retrieved_date": "2026-09-29",
+            "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+            "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+          }
+        ],
+        "status": "ok",
+        "time_basis": "scheduled"
+      }
+    },
+    "margin": {
+      "request": {
+        "appointment_time": "09:30",
+        "arrival_margin_minutes": 15,
+        "boarding_margin_minutes": 8,
+        "date": "2026-09-29",
+        "destination_id": "beasain_center_stop_pair",
+        "duration_minutes": 30,
+        "origin_id": "zegama_center_stops",
+        "snapshot_id": "official-goierrialdea-go01-20260928"
+      },
+      "result": {
+        "assumptions": [
+          "Horarios programados; no incorpora incidencias ni retrasos en tiempo real.",
+          "La búsqueda solo contempla viajes directos y paradas declaradas en el catálogo."
+        ],
+        "components_s": {
+          "appointment_s": 1800,
+          "destination_walk_outbound_s": 0,
+          "destination_walk_return_s": 0,
+          "origin_access_outbound_s": 0,
+          "origin_access_return_s": 0,
+          "outbound_vehicle_s": 1695,
+          "pre_appointment_wait_s": 2948,
+          "return_vehicle_s": 2278,
+          "return_wait_s": 1790
+        },
+        "error": null,
+        "itinerary": {
+          "alternatives_evaluated": 76,
+          "outbound": {
+            "arrival_time": "08:40:52",
+            "departure_time": "08:12:37",
+            "drop_off_type": 0,
+            "from_stop_id": "8305",
+            "from_stop_sequence": 2,
+            "from_timepoint": 0,
+            "pickup_type": 0,
+            "route_id": "1",
+            "service_id": "LJ",
+            "to_stop_id": "7214",
+            "to_stop_sequence": 26,
+            "to_timepoint": 0,
+            "trip_id": "1_103_LJ_29400"
+          },
+          "return": {
+            "arrival_time": "11:07:48",
+            "departure_time": "10:29:50",
+            "drop_off_type": 0,
+            "from_stop_id": "7218",
+            "from_stop_sequence": 8,
+            "from_timepoint": 0,
+            "pickup_type": 0,
+            "route_id": "1",
+            "service_id": "LJ",
+            "to_stop_id": "8309",
+            "to_stop_sequence": 35,
+            "to_timepoint": 0,
+            "trip_id": "1_106_LJ_37200"
+          },
+          "total_s": 10511
+        },
+        "limitations": [
+          "Solo GO01 y viajes directos entre los pares de paradas catalogados.",
+          "Los tiempos tienen timepoint=0; son tiempos aproximados/interpolados del feed.",
+          "No demuestra un desplazamiento real, puntualidad, accesibilidad universal ni cobertura desde viviendas.",
+          "La ausencia de calendar_dates no se interpreta por sí sola como corrupción del GTFS.",
+          "Destino piloto en paradas del centro de Beasain; no reproduce el paseo al ambulatorio de la PoC histórica."
+        ],
+        "normalized_request": {
+          "appointment_time": "09:30:00",
+          "arrival_margin_minutes": 15,
+          "boarding_margin_minutes": 8,
+          "date": "2026-09-29",
+          "destination_id": "beasain_center_stop_pair",
+          "duration_minutes": 30,
+          "origin_id": "zegama_center_stops",
+          "snapshot_id": "official-goierrialdea-go01-20260928",
+          "timezone": "Europe/Madrid",
+          "walking_profile_id": "stop_only"
+        },
+        "schema_version": "0.1.0",
+        "scope": "stop_to_stop_with_destination_walk",
+        "snapshot_id": "official-goierrialdea-go01-20260928",
+        "sources": [
+          {
+            "classification": "OFFICIAL",
+            "feed_version": "20260928054818",
+            "index_last_update": "2026-09-29 07:01:13",
+            "index_url": "https://opendata.euskadi.eus/transport/moveuskadi/data-index-gtfs.json",
+            "operator_feed": "Lurraldebus Goierrialdea",
+            "publisher": "Gobierno Vasco / Moveuskadi",
+            "retrieved_date": "2026-09-29",
+            "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+            "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+          }
+        ],
+        "status": "ok",
+        "time_basis": "scheduled"
+      }
+    }
+  },
+  "w1_head": "c68eb5c55dec72a267b7435b4c364049f6eab408",
+  "w2": {
+    "aduna": {
+      "assumptions": [],
+      "capability_id": "obtener_resumen_territorial",
+      "claims": [
+        {
+          "denominator": null,
+          "evidence_path": "/data/0/pct_65_plus",
+          "id": "claim-1",
+          "label": "pct_65_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "%",
+          "value": 14.793
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/0/pct_75_plus",
+          "id": "claim-2",
+          "label": "pct_75_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "%",
+          "value": 7.101
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/0/population_65_plus",
+          "id": "claim-3",
+          "label": "population_65_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "personas",
+          "value": 75
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/0/population_75_plus",
+          "id": "claim-4",
+          "label": "population_75_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "personas",
+          "value": 36
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/0/population_total",
+          "id": "claim-5",
+          "label": "population_total",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "personas",
+          "value": 507
+        },
+        {
+          "denominator": {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 75
+          },
+          "evidence_path": "/data/0/service_indicators/hospital/rate_per_10000_65_plus",
+          "id": "claim-6",
+          "label": "rate_per_10000_65_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "registros/10000 personas",
+          "value": 0.0
+        },
+        {
+          "denominator": {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 36
+          },
+          "evidence_path": "/data/0/service_indicators/hospital/rate_per_10000_75_plus",
+          "id": "claim-7",
+          "label": "rate_per_10000_75_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "registros/10000 personas",
+          "value": 0.0
+        },
+        {
+          "denominator": {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 75
+          },
+          "evidence_path": "/data/0/service_indicators/mental_health/rate_per_10000_65_plus",
+          "id": "claim-8",
+          "label": "rate_per_10000_65_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "registros/10000 personas",
+          "value": 0.0
+        },
+        {
+          "denominator": {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 36
+          },
+          "evidence_path": "/data/0/service_indicators/mental_health/rate_per_10000_75_plus",
+          "id": "claim-9",
+          "label": "rate_per_10000_75_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "registros/10000 personas",
+          "value": 0.0
+        },
+        {
+          "denominator": {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 75
+          },
+          "evidence_path": "/data/0/service_indicators/other_health/rate_per_10000_65_plus",
+          "id": "claim-10",
+          "label": "rate_per_10000_65_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "registros/10000 personas",
+          "value": 0.0
+        },
+        {
+          "denominator": {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 36
+          },
+          "evidence_path": "/data/0/service_indicators/other_health/rate_per_10000_75_plus",
+          "id": "claim-11",
+          "label": "rate_per_10000_75_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "registros/10000 personas",
+          "value": 0.0
+        },
+        {
+          "denominator": {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 75
+          },
+          "evidence_path": "/data/0/service_indicators/primary_care/rate_per_10000_65_plus",
+          "id": "claim-12",
+          "label": "rate_per_10000_65_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "registros/10000 personas",
+          "value": 0.0
+        },
+        {
+          "denominator": {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 36
+          },
+          "evidence_path": "/data/0/service_indicators/primary_care/rate_per_10000_75_plus",
+          "id": "claim-13",
+          "label": "rate_per_10000_75_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "registros/10000 personas",
+          "value": 0.0
+        }
+      ],
+      "error": null,
+      "execution": {
+        "arguments_sha256": "57bf8a554f74fc7cd213ca0d706d5cf3be8cb0789b17f7a0b4de5342b0c5939c",
+        "request_id": "w3-r4-aduna",
+        "snapshot_id": null,
+        "tool": "obtener_resumen_territorial"
+      },
+      "limitations": [
+        "La presencia de un servicio no acredita capacidad, horario, calidad ni acceso real.",
+        "Los periodos de demografía y servicios pueden ser distintos; se muestran en las fuentes.",
+        "8 cifras del resultado carecen de atribución por fuente en la salida y no se ofrecen como afirmaciones verificadas."
+      ],
+      "method": "Selección por código municipal; recuento de registros por categoría; tasas por 10.000 personas del grupo de edad y mínima distancia euclídea EPSG:25830 desde el punto representativo municipal.",
+      "normalized_input": {
+        "arguments": {
+          "municipio": "Aduna",
+          "periodo": null
+        },
+        "tool": "obtener_resumen_territorial"
+      },
+      "raw_result_json": "{\"data\":[{\"metrics_reference_period\":\"demography=2025-01-01;services=2026-09-20;geography=2025-05-07\",\"municipality_code\":\"20002\",\"municipality_name\":\"Aduna\",\"pct_65_plus\":14.793,\"pct_75_plus\":7.101,\"population_65_plus\":75,\"population_75_plus\":36,\"population_total\":507,\"service_indicators\":{\"hospital\":{\"nearest_distance_m\":11485.3,\"rate_per_10000_65_plus\":0.0,\"rate_per_10000_75_plus\":0.0,\"registered_service_count\":0},\"mental_health\":{\"nearest_distance_m\":3137.2,\"rate_per_10000_65_plus\":0.0,\"rate_per_10000_75_plus\":0.0,\"registered_service_count\":0},\"other_health\":{\"nearest_distance_m\":6661.4,\"rate_per_10000_65_plus\":0.0,\"rate_per_10000_75_plus\":0.0,\"registered_service_count\":0},\"primary_care\":{\"nearest_distance_m\":2756.2,\"rate_per_10000_65_plus\":0.0,\"rate_per_10000_75_plus\":0.0,\"registered_service_count\":0}},\"services_in_municipality\":{}}],\"detail_level\":\"full\",\"filters\":{\"municipality_code\":\"20002\",\"period\":\"2025-01-01\"},\"limitations\":[\"La presencia de un servicio no acredita capacidad, horario, calidad ni acceso real.\",\"Los periodos de demografía y servicios pueden ser distintos; se muestran en las fuentes.\"],\"method\":\"Selección por código municipal; recuento de registros por categoría; tasas por 10.000 personas del grupo de edad y mínima distancia euclídea EPSG:25830 desde el punto representativo municipal.\",\"metric\":\"territorial_summary\",\"period\":\"2025-01-01\",\"question\":\"Resumen territorial de Aduna\",\"rows_used\":1,\"sources\":[{\"download_date\":\"2026-09-24\",\"institution\":\"Eustat - Instituto Vasco de Estadística\",\"license\":\"Creative Commons (según ficha Eustat de la operación 010154)\",\"limitations\":[\"75+ se deriva de año de nacimiento <=1949 a 2025-01-01.\"],\"method\":\"Consulta PXWeb por municipio, sexo total y periodo 2025-01-01; pivote de total/65+ y suma de nacidos hasta 1949 para 75+.\",\"notes\":[\"Códigos municipales Eustat/INE de cinco caracteres conservados como texto.\"],\"original_file\":\"datos_originales/eustat_demografia_2025.csv\",\"prepared_files\":[\"datos_preparados/demografia.csv\",\"datos_preparados/municipios.csv\"],\"reference_period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"source_type\":\"official\",\"territory\":\"Gipuzkoa, 88 municipios\",\"title\":\"Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo\",\"unit\":\"personas\",\"url\":\"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\"}],\"status\":\"ok\",\"unit\":\"varias; ver cada campo\",\"warnings\":[]}",
+      "raw_result_sha256": "379a0c368db3ec1a56728d72b946d43718c4c6eb8c1307c9b70a310e0789dbca",
+      "request_id": "w3-r4-aduna",
+      "schema_version": "1.0.0",
+      "status": "valid",
+      "versions": {
+        "code_sha256": "e24f2a5d2f11796dd099551b5292c10e4ca64aa9c610c4e6babcbf222cb25125",
+        "contract_sha256": "81f1162cb90a65394d96e8735f6403050094eea29a9c17648426282dfc3dc191",
+        "data_sha256": "2796e12c643689030b657de5d2aa0898824f8b16eb6f0ae87c508d19f0e810a9"
+      }
+    },
+    "coincidence": {
+      "assumptions": [],
+      "capability_id": "analizar_coincidencia",
+      "claims": [
+        {
+          "denominator": null,
+          "evidence_path": "/summary/age_cut_percent",
+          "id": "claim-1",
+          "label": "age_cut_percent",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "%",
+          "value": 23.973
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/summary/distance_cut_m",
+          "id": "claim-2",
+          "label": "distance_cut_m",
+          "period": "2026-09-20;2025-05-07",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ],
+          "unit": "m",
+          "value": 2019.2
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/summary/highlighted_count",
+          "id": "claim-3",
+          "label": "highlighted_count",
+          "period": "2025-01-01;2025-05-07;2026-09-20",
+          "source_ids": [
+            "EUSTAT_EMH_2025",
+            "GEOEUSKADI_MUNICIPIOS_2025",
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "unit": "registros",
+          "value": 7
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/summary/joined_rows",
+          "id": "claim-4",
+          "label": "joined_rows",
+          "period": "2025-01-01;2025-05-07;2026-09-20",
+          "source_ids": [
+            "EUSTAT_EMH_2025",
+            "GEOEUSKADI_MUNICIPIOS_2025",
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "unit": "conteo",
+          "value": 88
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/0/nearest_distance_m",
+          "id": "claim-5",
+          "label": "nearest_distance_m",
+          "period": "2026-09-20;2025-05-07",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ],
+          "unit": "m",
+          "value": 2624.8
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/0/pct_65_plus",
+          "id": "claim-6",
+          "label": "pct_65_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "%",
+          "value": 27.17
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/1/nearest_distance_m",
+          "id": "claim-7",
+          "label": "nearest_distance_m",
+          "period": "2026-09-20;2025-05-07",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ],
+          "unit": "m",
+          "value": 2110.1
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/1/pct_65_plus",
+          "id": "claim-8",
+          "label": "pct_65_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "%",
+          "value": 25.949
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/2/nearest_distance_m",
+          "id": "claim-9",
+          "label": "nearest_distance_m",
+          "period": "2026-09-20;2025-05-07",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ],
+          "unit": "m",
+          "value": 2583.5
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/2/pct_65_plus",
+          "id": "claim-10",
+          "label": "pct_65_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "%",
+          "value": 25.808
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/3/nearest_distance_m",
+          "id": "claim-11",
+          "label": "nearest_distance_m",
+          "period": "2026-09-20;2025-05-07",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ],
+          "unit": "m",
+          "value": 2192.5
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/3/pct_65_plus",
+          "id": "claim-12",
+          "label": "pct_65_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "%",
+          "value": 25.387
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/4/nearest_distance_m",
+          "id": "claim-13",
+          "label": "nearest_distance_m",
+          "period": "2026-09-20;2025-05-07",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ],
+          "unit": "m",
+          "value": 2149.6
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/4/pct_65_plus",
+          "id": "claim-14",
+          "label": "pct_65_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "%",
+          "value": 24.806
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/5/nearest_distance_m",
+          "id": "claim-15",
+          "label": "nearest_distance_m",
+          "period": "2026-09-20;2025-05-07",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ],
+          "unit": "m",
+          "value": 2311.2
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/5/pct_65_plus",
+          "id": "claim-16",
+          "label": "pct_65_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "%",
+          "value": 24.528
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/6/nearest_distance_m",
+          "id": "claim-17",
+          "label": "nearest_distance_m",
+          "period": "2026-09-20;2025-05-07",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ],
+          "unit": "m",
+          "value": 3925.5
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/6/pct_65_plus",
+          "id": "claim-18",
+          "label": "pct_65_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "%",
+          "value": 24.302
+        }
+      ],
+      "error": null,
+      "execution": {
+        "arguments_sha256": "2cf2c15d2a190bb34944303e3147846ebaf127bb701a84a3b115f4d9a3bf2011",
+        "request_id": "w3-r4-coincidence",
+        "snapshot_id": null,
+        "tool": "analizar_coincidencia"
+      },
+      "limitations": [
+        "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+        "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+        "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.",
+        "La coincidencia estadística no demuestra causalidad ni identifica necesidades individuales.",
+        "Los resultados dependen del cuantil, grupo de edad, categoría y periodo elegidos."
+      ],
+      "method": "Cruce por código municipal. Se destacan valores >= cuantil 0.75 en ambas métricas (cortes: 23.9730% y 2019.2 m). Se muestran ambos componentes y no se usa una puntuación compuesta.",
+      "normalized_input": {
+        "arguments": {
+          "categoria_servicio": "primary_care",
+          "cuantil": 0.75,
+          "grupo_edad": "65",
+          "periodo": null,
+          "umbral_km": 2.0
+        },
+        "tool": "analizar_coincidencia"
+      },
+      "raw_result_json": "{\"data\":[{\"age_percentile_rank\":0.9655,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.8966,\"highlighted\":true,\"meets_access_criterion\":true,\"meets_age_criterion\":true,\"municipality_code\":\"20051\",\"municipality_name\":\"Legazpi\",\"nearest_distance_m\":2624.8,\"nearest_service_id\":\"entity94B2E778\",\"pct_65_plus\":27.17,\"within_threshold\":false},{\"age_percentile_rank\":0.9195,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.7816,\"highlighted\":true,\"meets_access_criterion\":true,\"meets_age_criterion\":true,\"municipality_code\":\"20035\",\"municipality_name\":\"Ezkio-Itsaso\",\"nearest_distance_m\":2110.1,\"nearest_service_id\":\"entity837A9D6A\",\"pct_65_plus\":25.949,\"within_threshold\":false},{\"age_percentile_rank\":0.8966,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.8851,\"highlighted\":true,\"meets_access_criterion\":true,\"meets_age_criterion\":true,\"municipality_code\":\"20036\",\"municipality_name\":\"Hondarribia\",\"nearest_distance_m\":2583.5,\"nearest_service_id\":\"entity8EA5D441\",\"pct_65_plus\":25.808,\"within_threshold\":false},{\"age_percentile_rank\":0.8621,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.8276,\"highlighted\":true,\"meets_access_criterion\":true,\"meets_age_criterion\":true,\"municipality_code\":\"20041\",\"municipality_name\":\"Hernialde\",\"nearest_distance_m\":2192.5,\"nearest_service_id\":\"entityC40323E8\",\"pct_65_plus\":25.387,\"within_threshold\":false},{\"age_percentile_rank\":0.8276,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.8046,\"highlighted\":true,\"meets_access_criterion\":true,\"meets_age_criterion\":true,\"municipality_code\":\"20059\",\"municipality_name\":\"Oñati\",\"nearest_distance_m\":2149.6,\"nearest_service_id\":\"entity10969F0F\",\"pct_65_plus\":24.806,\"within_threshold\":false},{\"age_percentile_rank\":0.7931,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.8506,\"highlighted\":true,\"meets_access_criterion\":true,\"meets_age_criterion\":true,\"municipality_code\":\"20043\",\"municipality_name\":\"Idiazabal\",\"nearest_distance_m\":2311.2,\"nearest_service_id\":\"entityBFD365AA\",\"pct_65_plus\":24.528,\"within_threshold\":false},{\"age_percentile_rank\":0.7816,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.977,\"highlighted\":true,\"meets_access_criterion\":true,\"meets_age_criterion\":true,\"municipality_code\":\"20067\",\"municipality_name\":\"Errenteria\",\"nearest_distance_m\":3925.5,\"nearest_service_id\":\"entity84DCE82C\",\"pct_65_plus\":24.302,\"within_threshold\":false},{\"age_percentile_rank\":1.0,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.4598,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":true,\"municipality_code\":\"20026\",\"municipality_name\":\"Zerain\",\"nearest_distance_m\":1278.6,\"nearest_service_id\":\"entityD769B429\",\"pct_65_plus\":27.931,\"within_threshold\":true},{\"age_percentile_rank\":0.9885,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.2414,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":true,\"municipality_code\":\"20042\",\"municipality_name\":\"Ibarra\",\"nearest_distance_m\":927.7,\"nearest_service_id\":\"entityCE9F796C\",\"pct_65_plus\":27.65,\"within_threshold\":true},{\"age_percentile_rank\":0.977,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.7241,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":true,\"municipality_code\":\"20029\",\"municipality_name\":\"Deba\",\"nearest_distance_m\":2001.8,\"nearest_service_id\":\"entityE5A4FE1E\",\"pct_65_plus\":27.461,\"within_threshold\":false},{\"age_percentile_rank\":0.954,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.023,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":true,\"municipality_code\":\"20069\",\"municipality_name\":\"Donostia / San Sebastián\",\"nearest_distance_m\":323.1,\"nearest_service_id\":\"entityF8EC1A1C\",\"pct_65_plus\":26.628,\"within_threshold\":true},{\"age_percentile_rank\":0.9425,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.5402,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":true,\"municipality_code\":\"20055\",\"municipality_name\":\"Arrasate/Mondragón\",\"nearest_distance_m\":1467.8,\"nearest_service_id\":\"entity93AABD71\",\"pct_65_plus\":26.529,\"within_threshold\":true},{\"age_percentile_rank\":0.931,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.4138,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":true,\"municipality_code\":\"20030\",\"municipality_name\":\"Eibar\",\"nearest_distance_m\":1223.6,\"nearest_service_id\":\"entity383A127E\",\"pct_65_plus\":26.186,\"within_threshold\":true},{\"age_percentile_rank\":0.908,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.6322,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":true,\"municipality_code\":\"20068\",\"municipality_name\":\"Leintz-Gatzaga\",\"nearest_distance_m\":1749.1,\"nearest_service_id\":\"entity2772BA48\",\"pct_65_plus\":25.893,\"within_threshold\":true},{\"age_percentile_rank\":0.8851,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.1839,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":true,\"municipality_code\":\"20020\",\"municipality_name\":\"Beizama\",\"nearest_distance_m\":821.4,\"nearest_service_id\":\"entity58B952FE\",\"pct_65_plus\":25.743,\"within_threshold\":true},{\"age_percentile_rank\":0.8736,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.7011,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":true,\"municipality_code\":\"20080\",\"municipality_name\":\"Zumarraga\",\"nearest_distance_m\":1870.8,\"nearest_service_id\":\"entityCF7A2788\",\"pct_65_plus\":25.512,\"within_threshold\":true},{\"age_percentile_rank\":0.8506,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.3218,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":true,\"municipality_code\":\"20074\",\"municipality_name\":\"Bergara\",\"nearest_distance_m\":1107.9,\"nearest_service_id\":\"entity4ECBA8FE\",\"pct_65_plus\":25.365,\"within_threshold\":true},{\"age_percentile_rank\":0.8391,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.1264,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":true,\"municipality_code\":\"20065\",\"municipality_name\":\"Soraluze-Placencia de las Armas\",\"nearest_distance_m\":618.3,\"nearest_service_id\":\"entity3C01C255\",\"pct_65_plus\":25.179,\"within_threshold\":true},{\"age_percentile_rank\":0.8161,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.2069,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":true,\"municipality_code\":\"20009\",\"municipality_name\":\"Andoain\",\"nearest_distance_m\":873.2,\"nearest_service_id\":\"entityA8E7BFB5\",\"pct_65_plus\":24.593,\"within_threshold\":true},{\"age_percentile_rank\":0.8046,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.3793,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":true,\"municipality_code\":\"20902\",\"municipality_name\":\"Lasarte-Oria\",\"nearest_distance_m\":1165.2,\"nearest_service_id\":\"entityD49942B1\",\"pct_65_plus\":24.586,\"within_threshold\":true},{\"age_percentile_rank\":0.7701,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.6667,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":true,\"municipality_code\":\"20045\",\"municipality_name\":\"Irun\",\"nearest_distance_m\":1862.8,\"nearest_service_id\":\"entityDCF0E44B\",\"pct_65_plus\":24.246,\"within_threshold\":true},{\"age_percentile_rank\":0.7586,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.6782,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":true,\"municipality_code\":\"20058\",\"municipality_name\":\"Olaberria\",\"nearest_distance_m\":1863.0,\"nearest_service_id\":\"entityE020B623\",\"pct_65_plus\":24.0,\"within_threshold\":true},{\"age_percentile_rank\":0.7471,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.4368,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20032\",\"municipality_name\":\"Elgoibar\",\"nearest_distance_m\":1244.2,\"nearest_service_id\":\"entity9843FCC6\",\"pct_65_plus\":23.964,\"within_threshold\":true},{\"age_percentile_rank\":0.7356,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.5517,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20056\",\"municipality_name\":\"Mutriku\",\"nearest_distance_m\":1517.1,\"nearest_service_id\":\"entity13F7A477\",\"pct_65_plus\":23.945,\"within_threshold\":true},{\"age_percentile_rank\":0.7241,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.1494,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20021\",\"municipality_name\":\"Belauntza\",\"nearest_distance_m\":739.4,\"nearest_service_id\":\"entityCE9F796C\",\"pct_65_plus\":23.885,\"within_threshold\":true},{\"age_percentile_rank\":0.7126,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.4713,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20077\",\"municipality_name\":\"Urretxu\",\"nearest_distance_m\":1295.0,\"nearest_service_id\":\"entityCF7A2788\",\"pct_65_plus\":23.856,\"within_threshold\":true},{\"age_percentile_rank\":0.7011,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.6552,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20022\",\"municipality_name\":\"Berastegi\",\"nearest_distance_m\":1800.8,\"nearest_service_id\":\"entity421CF1DE\",\"pct_65_plus\":23.713,\"within_threshold\":true},{\"age_percentile_rank\":0.6897,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.1034,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20044\",\"municipality_name\":\"Ikaztegieta\",\"nearest_distance_m\":558.9,\"nearest_service_id\":\"entityD0F906D7\",\"pct_65_plus\":23.566,\"within_threshold\":true},{\"age_percentile_rank\":0.6782,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.2989,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20071\",\"municipality_name\":\"Tolosa\",\"nearest_distance_m\":1080.5,\"nearest_service_id\":\"entity02D72FD4\",\"pct_65_plus\":23.534,\"within_threshold\":true},{\"age_percentile_rank\":0.6667,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.0115,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20062\",\"municipality_name\":\"Ormaiztegi\",\"nearest_distance_m\":320.3,\"nearest_service_id\":\"entity771C7012\",\"pct_65_plus\":23.488,\"within_threshold\":true},{\"age_percentile_rank\":0.6552,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.9425,\"highlighted\":false,\"meets_access_criterion\":true,\"meets_age_criterion\":false,\"municipality_code\":\"20013\",\"municipality_name\":\"Aretxabaleta\",\"nearest_distance_m\":3509.2,\"nearest_service_id\":\"entity74310650\",\"pct_65_plus\":23.347,\"within_threshold\":false},{\"age_percentile_rank\":0.6437,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.6897,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20079\",\"municipality_name\":\"Zarautz\",\"nearest_distance_m\":1866.2,\"nearest_service_id\":\"entityFFC358CB\",\"pct_65_plus\":23.3,\"within_threshold\":true},{\"age_percentile_rank\":0.6322,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.1149,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20050\",\"municipality_name\":\"Leaburu\",\"nearest_distance_m\":581.3,\"nearest_service_id\":\"entity9EAEB1E4\",\"pct_65_plus\":23.238,\"within_threshold\":true},{\"age_percentile_rank\":0.6207,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.5977,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20075\",\"municipality_name\":\"Villabona\",\"nearest_distance_m\":1691.7,\"nearest_service_id\":\"entityF0E8348B\",\"pct_65_plus\":23.191,\"within_threshold\":true},{\"age_percentile_rank\":0.6092,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.8391,\"highlighted\":false,\"meets_access_criterion\":true,\"meets_age_criterion\":false,\"municipality_code\":\"20034\",\"municipality_name\":\"Eskoriatza\",\"nearest_distance_m\":2261.6,\"nearest_service_id\":\"entity2772BA48\",\"pct_65_plus\":22.735,\"within_threshold\":false},{\"age_percentile_rank\":0.5977,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.2759,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20038\",\"municipality_name\":\"Gabiria\",\"nearest_distance_m\":1065.1,\"nearest_service_id\":\"entity63EF5EE9\",\"pct_65_plus\":22.694,\"within_threshold\":true},{\"age_percentile_rank\":0.5862,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.9885,\"highlighted\":false,\"meets_access_criterion\":true,\"meets_age_criterion\":false,\"municipality_code\":\"20063\",\"municipality_name\":\"Oiartzun\",\"nearest_distance_m\":4438.1,\"nearest_service_id\":\"entity84DCE82C\",\"pct_65_plus\":22.62,\"within_threshold\":false},{\"age_percentile_rank\":0.5747,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.5172,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20018\",\"municipality_name\":\"Azpeitia\",\"nearest_distance_m\":1406.8,\"nearest_service_id\":\"entityF54FA5AA\",\"pct_65_plus\":22.578,\"within_threshold\":true},{\"age_percentile_rank\":0.5632,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.092,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20011\",\"municipality_name\":\"Antzuola\",\"nearest_distance_m\":544.4,\"nearest_service_id\":\"entityC2E572D7\",\"pct_65_plus\":22.562,\"within_threshold\":true},{\"age_percentile_rank\":0.5517,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.9655,\"highlighted\":false,\"meets_access_criterion\":true,\"meets_age_criterion\":false,\"municipality_code\":\"20019\",\"municipality_name\":\"Beasain\",\"nearest_distance_m\":3617.3,\"nearest_service_id\":\"entityBC631DA5\",\"pct_65_plus\":22.487,\"within_threshold\":false},{\"age_percentile_rank\":0.5402,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.2644,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20015\",\"municipality_name\":\"Ataun\",\"nearest_distance_m\":1054.1,\"nearest_service_id\":\"entity1DF833DF\",\"pct_65_plus\":22.461,\"within_threshold\":true},{\"age_percentile_rank\":0.5287,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.5632,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20008\",\"municipality_name\":\"Amezketa\",\"nearest_distance_m\":1570.5,\"nearest_service_id\":\"entity771AD8EE\",\"pct_65_plus\":22.46,\"within_threshold\":true},{\"age_percentile_rank\":0.5172,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":1.0,\"highlighted\":false,\"meets_access_criterion\":true,\"meets_age_criterion\":false,\"municipality_code\":\"20040\",\"municipality_name\":\"Hernani\",\"nearest_distance_m\":5882.0,\"nearest_service_id\":\"entity8CC93949\",\"pct_65_plus\":22.308,\"within_threshold\":false},{\"age_percentile_rank\":0.5057,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.9195,\"highlighted\":false,\"meets_access_criterion\":true,\"meets_age_criterion\":false,\"municipality_code\":\"20064\",\"municipality_name\":\"Pasaia\",\"nearest_distance_m\":2813.4,\"nearest_service_id\":\"entity4B0E440D\",\"pct_65_plus\":22.18,\"within_threshold\":false},{\"age_percentile_rank\":0.4943,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.4483,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20081\",\"municipality_name\":\"Zumaia\",\"nearest_distance_m\":1267.9,\"nearest_service_id\":\"entityCE027A47\",\"pct_65_plus\":22.118,\"within_threshold\":true},{\"age_percentile_rank\":0.4828,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.2874,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20012\",\"municipality_name\":\"Arama\",\"nearest_distance_m\":1079.0,\"nearest_service_id\":\"entity2721854A\",\"pct_65_plus\":22.099,\"within_threshold\":true},{\"age_percentile_rank\":0.4713,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.8621,\"highlighted\":false,\"meets_access_criterion\":true,\"meets_age_criterion\":false,\"municipality_code\":\"20028\",\"municipality_name\":\"Zizurkil\",\"nearest_distance_m\":2469.6,\"nearest_service_id\":\"entityB9C373D0\",\"pct_65_plus\":22.004,\"within_threshold\":false},{\"age_percentile_rank\":0.4598,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.5862,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20037\",\"municipality_name\":\"Gaintza\",\"nearest_distance_m\":1664.7,\"nearest_service_id\":\"entity2BC8E9C2\",\"pct_65_plus\":21.774,\"within_threshold\":true},{\"age_percentile_rank\":0.4483,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.3908,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20053\",\"municipality_name\":\"Lezo\",\"nearest_distance_m\":1169.1,\"nearest_service_id\":\"entity4B0E440D\",\"pct_65_plus\":21.736,\"within_threshold\":true},{\"age_percentile_rank\":0.4368,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.4943,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20025\",\"municipality_name\":\"Zegama\",\"nearest_distance_m\":1344.9,\"nearest_service_id\":\"entityEC2BA125\",\"pct_65_plus\":21.731,\"within_threshold\":true},{\"age_percentile_rank\":0.4253,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.7471,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20078\",\"municipality_name\":\"Zaldibia\",\"nearest_distance_m\":2010.8,\"nearest_service_id\":\"entityE1FFA405\",\"pct_65_plus\":21.518,\"within_threshold\":false},{\"age_percentile_rank\":0.4138,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.6207,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20070\",\"municipality_name\":\"Segura\",\"nearest_distance_m\":1740.4,\"nearest_service_id\":\"entityEBF6CB77\",\"pct_65_plus\":21.081,\"within_threshold\":true},{\"age_percentile_rank\":0.4023,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.2299,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20054\",\"municipality_name\":\"Lizartza\",\"nearest_distance_m\":902.6,\"nearest_service_id\":\"entityFE32842B\",\"pct_65_plus\":21.0,\"within_threshold\":true},{\"age_percentile_rank\":0.3908,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.3678,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20017\",\"municipality_name\":\"Azkoitia\",\"nearest_distance_m\":1157.2,\"nearest_service_id\":\"entityE7146F42\",\"pct_65_plus\":20.854,\"within_threshold\":true},{\"age_percentile_rank\":0.3793,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.1609,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20010\",\"municipality_name\":\"Anoeta\",\"nearest_distance_m\":751.1,\"nearest_service_id\":\"entityC40323E8\",\"pct_65_plus\":20.851,\"within_threshold\":true},{\"age_percentile_rank\":0.3678,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.3103,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20906\",\"municipality_name\":\"Altzaga\",\"nearest_distance_m\":1083.5,\"nearest_service_id\":\"entity2721854A\",\"pct_65_plus\":20.755,\"within_threshold\":true},{\"age_percentile_rank\":0.3563,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.046,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20907\",\"municipality_name\":\"Gaztelu\",\"nearest_distance_m\":400.7,\"nearest_service_id\":\"entity859D0B9C\",\"pct_65_plus\":20.67,\"within_threshold\":true},{\"age_percentile_rank\":0.3448,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.069,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20052\",\"municipality_name\":\"Legorreta\",\"nearest_distance_m\":489.3,\"nearest_service_id\":\"entity0304FECE\",\"pct_65_plus\":20.614,\"within_threshold\":true},{\"age_percentile_rank\":0.3333,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.2529,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20076\",\"municipality_name\":\"Ordizia\",\"nearest_distance_m\":1008.5,\"nearest_service_id\":\"entity4EC7BAC0\",\"pct_65_plus\":20.552,\"within_threshold\":true},{\"age_percentile_rank\":0.3218,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.5287,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20033\",\"municipality_name\":\"Elgeta\",\"nearest_distance_m\":1429.8,\"nearest_service_id\":\"entityF197214B\",\"pct_65_plus\":20.469,\"within_threshold\":true},{\"age_percentile_rank\":0.3103,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.0345,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20005\",\"municipality_name\":\"Alegia\",\"nearest_distance_m\":386.1,\"nearest_service_id\":\"entityE8C2F026\",\"pct_65_plus\":20.41,\"within_threshold\":true},{\"age_percentile_rank\":0.2989,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.8736,\"highlighted\":false,\"meets_access_criterion\":true,\"meets_age_criterion\":false,\"municipality_code\":\"20007\",\"municipality_name\":\"Altzo\",\"nearest_distance_m\":2477.2,\"nearest_service_id\":\"entityB4343EC6\",\"pct_65_plus\":20.25,\"within_threshold\":false},{\"age_percentile_rank\":0.2874,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.4023,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20060\",\"municipality_name\":\"Orexa\",\"nearest_distance_m\":1215.8,\"nearest_service_id\":\"entity1B396481\",\"pct_65_plus\":20.202,\"within_threshold\":true},{\"age_percentile_rank\":0.2759,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.4828,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20073\",\"municipality_name\":\"Usurbil\",\"nearest_distance_m\":1317.5,\"nearest_service_id\":\"entity0F957D00\",\"pct_65_plus\":20.2,\"within_threshold\":true},{\"age_percentile_rank\":0.2644,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.5057,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20001\",\"municipality_name\":\"Abaltzisketa\",\"nearest_distance_m\":1394.2,\"nearest_service_id\":\"entityC5CE8164\",\"pct_65_plus\":20.128,\"within_threshold\":true},{\"age_percentile_rank\":0.2529,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.6437,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20066\",\"municipality_name\":\"Errezil\",\"nearest_distance_m\":1756.7,\"nearest_service_id\":\"entityD6C10D3B\",\"pct_65_plus\":19.767,\"within_threshold\":true},{\"age_percentile_rank\":0.2414,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.954,\"highlighted\":false,\"meets_access_criterion\":true,\"meets_age_criterion\":false,\"municipality_code\":\"20072\",\"municipality_name\":\"Urnieta\",\"nearest_distance_m\":3563.1,\"nearest_service_id\":\"entity8CC93949\",\"pct_65_plus\":19.765,\"within_threshold\":false},{\"age_percentile_rank\":0.2299,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.3563,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20039\",\"municipality_name\":\"Getaria\",\"nearest_distance_m\":1153.5,\"nearest_service_id\":\"entity83C716DD\",\"pct_65_plus\":19.584,\"within_threshold\":true},{\"age_percentile_rank\":0.2184,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.0,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20023\",\"municipality_name\":\"Berrobi\",\"nearest_distance_m\":49.5,\"nearest_service_id\":\"entityB5A8FFF6\",\"pct_65_plus\":19.558,\"within_threshold\":true},{\"age_percentile_rank\":0.2069,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.0805,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20024\",\"municipality_name\":\"Bidania-Goiatz\",\"nearest_distance_m\":535.5,\"nearest_service_id\":\"entity32419E1A\",\"pct_65_plus\":19.508,\"within_threshold\":true},{\"age_percentile_rank\":0.1954,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.2184,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20027\",\"municipality_name\":\"Zestoa\",\"nearest_distance_m\":900.0,\"nearest_service_id\":\"entityC2AAF486\",\"pct_65_plus\":19.498,\"within_threshold\":true},{\"age_percentile_rank\":0.1839,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.5747,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20049\",\"municipality_name\":\"Lazkao\",\"nearest_distance_m\":1661.9,\"nearest_service_id\":\"entity3ABA1316\",\"pct_65_plus\":19.48,\"within_threshold\":true},{\"age_percentile_rank\":0.1724,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.3448,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20003\",\"municipality_name\":\"Aizarnazabal\",\"nearest_distance_m\":1146.7,\"nearest_service_id\":\"entity575DBFCE\",\"pct_65_plus\":19.059,\"within_threshold\":true},{\"age_percentile_rank\":0.1609,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.8161,\"highlighted\":false,\"meets_access_criterion\":true,\"meets_age_criterion\":false,\"municipality_code\":\"20061\",\"municipality_name\":\"Orio\",\"nearest_distance_m\":2190.3,\"nearest_service_id\":\"entity46F83D6E\",\"pct_65_plus\":18.945,\"within_threshold\":false},{\"age_percentile_rank\":0.1494,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.3333,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20057\",\"municipality_name\":\"Mutiloa\",\"nearest_distance_m\":1115.9,\"nearest_service_id\":\"entity80EA1B01\",\"pct_65_plus\":18.876,\"within_threshold\":true},{\"age_percentile_rank\":0.1379,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.1379,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20016\",\"municipality_name\":\"Aia\",\"nearest_distance_m\":676.1,\"nearest_service_id\":\"entity85CF7DBB\",\"pct_65_plus\":18.571,\"within_threshold\":true},{\"age_percentile_rank\":0.1264,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.1724,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20004\",\"municipality_name\":\"Albiztur\",\"nearest_distance_m\":809.9,\"nearest_service_id\":\"entity71BB9A3F\",\"pct_65_plus\":18.471,\"within_threshold\":true},{\"age_percentile_rank\":0.1149,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.6092,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20901\",\"municipality_name\":\"Mendaro\",\"nearest_distance_m\":1700.5,\"nearest_service_id\":\"entity9B629AE2\",\"pct_65_plus\":18.399,\"within_threshold\":true},{\"age_percentile_rank\":0.1034,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.7931,\"highlighted\":false,\"meets_access_criterion\":true,\"meets_age_criterion\":false,\"municipality_code\":\"20014\",\"municipality_name\":\"Asteasu\",\"nearest_distance_m\":2122.0,\"nearest_service_id\":\"entityB9C373D0\",\"pct_65_plus\":17.878,\"within_threshold\":false},{\"age_percentile_rank\":0.092,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.7126,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20047\",\"municipality_name\":\"Itsasondo\",\"nearest_distance_m\":1981.8,\"nearest_service_id\":\"entity2721854A\",\"pct_65_plus\":17.236,\"within_threshold\":true},{\"age_percentile_rank\":0.0805,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.931,\"highlighted\":false,\"meets_access_criterion\":true,\"meets_age_criterion\":false,\"municipality_code\":\"20006\",\"municipality_name\":\"Alkiza\",\"nearest_distance_m\":2855.9,\"nearest_service_id\":\"entityB9C373D0\",\"pct_65_plus\":17.052,\"within_threshold\":false},{\"age_percentile_rank\":0.069,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.7701,\"highlighted\":false,\"meets_access_criterion\":true,\"meets_age_criterion\":false,\"municipality_code\":\"20031\",\"municipality_name\":\"Elduain\",\"nearest_distance_m\":2064.3,\"nearest_service_id\":\"entity7D4411E9\",\"pct_65_plus\":15.063,\"within_threshold\":false},{\"age_percentile_rank\":0.0575,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.7356,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20048\",\"municipality_name\":\"Larraul\",\"nearest_distance_m\":2009.1,\"nearest_service_id\":\"entityB9C373D0\",\"pct_65_plus\":14.885,\"within_threshold\":false},{\"age_percentile_rank\":0.046,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.908,\"highlighted\":false,\"meets_access_criterion\":true,\"meets_age_criterion\":false,\"municipality_code\":\"20002\",\"municipality_name\":\"Aduna\",\"nearest_distance_m\":2756.2,\"nearest_service_id\":\"entityF0E8348B\",\"pct_65_plus\":14.793,\"within_threshold\":false},{\"age_percentile_rank\":0.0345,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.7586,\"highlighted\":false,\"meets_access_criterion\":true,\"meets_age_criterion\":false,\"municipality_code\":\"20905\",\"municipality_name\":\"Orendain\",\"nearest_distance_m\":2044.6,\"nearest_service_id\":\"entity2BC8E9C2\",\"pct_65_plus\":14.108,\"within_threshold\":false},{\"age_percentile_rank\":0.023,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.4253,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20903\",\"municipality_name\":\"Astigarraga\",\"nearest_distance_m\":1235.0,\"nearest_service_id\":\"entity0B11978C\",\"pct_65_plus\":13.542,\"within_threshold\":true},{\"age_percentile_rank\":0.0115,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.1954,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20046\",\"municipality_name\":\"Irura\",\"nearest_distance_m\":835.0,\"nearest_service_id\":\"entityD69ECB4C\",\"pct_65_plus\":12.026,\"within_threshold\":true},{\"age_percentile_rank\":0.0,\"age_source_id\":\"EUSTAT_EMH_2025\",\"distance_percentile_rank\":0.0575,\"highlighted\":false,\"meets_access_criterion\":false,\"meets_age_criterion\":false,\"municipality_code\":\"20904\",\"municipality_name\":\"Baliarrain\",\"nearest_distance_m\":477.9,\"nearest_service_id\":\"entity2BC8E9C2\",\"pct_65_plus\":10.063,\"within_threshold\":true}],\"detail_level\":\"full\",\"filters\":{\"age_group\":\"65\",\"period\":\"2025-01-01\",\"quantile_threshold\":0.75,\"service_category\":\"primary_care\",\"threshold_km\":2.0},\"limitations\":[\"Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.\",\"El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.\",\"La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.\",\"La coincidencia estadística no demuestra causalidad ni identifica necesidades individuales.\",\"Los resultados dependen del cuantil, grupo de edad, categoría y periodo elegidos.\"],\"method\":\"Cruce por código municipal. Se destacan valores >= cuantil 0.75 en ambas métricas (cortes: 23.9730% y 2019.2 m). Se muestran ambos componentes y no se usa una puntuación compuesta.\",\"metric\":\"pct_65_plus + distance_geométrica_aproximada\",\"period\":\"2025-01-01\",\"question\":\"Coincidencia de envejecimiento >= 65 y peor acceso a primary_care\",\"rows_used\":88,\"sources\":[{\"download_date\":\"2026-09-24\",\"institution\":\"Eustat - Instituto Vasco de Estadística\",\"license\":\"Creative Commons (según ficha Eustat de la operación 010154)\",\"limitations\":[\"75+ se deriva de año de nacimiento <=1949 a 2025-01-01.\"],\"method\":\"Consulta PXWeb por municipio, sexo total y periodo 2025-01-01; pivote de total/65+ y suma de nacidos hasta 1949 para 75+.\",\"notes\":[\"Códigos municipales Eustat/INE de cinco caracteres conservados como texto.\"],\"original_file\":\"datos_originales/eustat_demografia_2025.csv\",\"prepared_files\":[\"datos_preparados/demografia.csv\",\"datos_preparados/municipios.csv\"],\"reference_period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"source_type\":\"official\",\"territory\":\"Gipuzkoa, 88 municipios\",\"title\":\"Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo\",\"unit\":\"personas\",\"url\":\"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\"},{\"download_date\":\"2026-09-24\",\"institution\":\"Gobierno Vasco - geoEuskadi\",\"license\":\"Uso permitido citando Eusko Jaurlaritza / Gobierno Vasco\",\"limitations\":[\"El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007.\"],\"method\":\"Filtro por territorio y catálogo Eustat; área y simplificación calculadas en EPSG:25830.\",\"notes\":[\"CRS original y de cálculo: EPSG:25830; publicación runtime: EPSG:4326.\"],\"original_file\":\"datos_originales/MUNICIPIOS_5000_ETRS89.zip\",\"prepared_files\":[\"datos_preparados/municipios.geojson\",\"datos_preparados/runtime_municipios.geojson\",\"datos_preparados/runtime_municipality_points.csv\"],\"reference_period\":\"2025-05-07\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\",\"source_type\":\"official\",\"territory\":\"Euskadi; filtrado a Gipuzkoa\",\"title\":\"Límites Administrativos del País Vasco - Municipios 1:5.000\",\"unit\":\"polígono municipal\",\"url\":\"https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/\"},{\"download_date\":\"2026-09-24\",\"institution\":\"Gobierno Vasco - Departamento de Salud\",\"license\":\"Licencia abierta indicada por Open Data Euskadi; atribución y fecha obligatorias\",\"limitations\":[\"La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad.\"],\"method\":\"Filtro Provincia=Gipuzkoa, normalización de tipo y unión espacial within en EPSG:4326.\",\"notes\":[\"Asignación municipal por punto dentro de polígono oficial.\"],\"original_file\":\"datos_originales/centros-salud.xlsx\",\"prepared_files\":[\"datos_preparados/servicios.csv\",\"datos_preparados/runtime_servicios.csv\"],\"reference_period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\",\"source_type\":\"official\",\"territory\":\"Euskadi; filtrado a Gipuzkoa\",\"title\":\"Centros de salud, ambulatorios y hospitales públicos de Euskadi\",\"unit\":\"registro de centro sanitario público\",\"url\":\"https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/\"}],\"status\":\"ok\",\"summary\":{\"age_cut_percent\":23.973,\"distance_cut_m\":2019.2,\"highlighted_count\":7,\"joined_rows\":88},\"unit\":\"% y m\",\"warnings\":[]}",
+      "raw_result_sha256": "0b2fbfcf7adfd437d8857f440b6789bb1bc21f5ee5522b955bb0ea2bb6776c87",
+      "request_id": "w3-r4-coincidence",
+      "schema_version": "1.0.0",
+      "status": "valid",
+      "versions": {
+        "code_sha256": "e24f2a5d2f11796dd099551b5292c10e4ca64aa9c610c4e6babcbf222cb25125",
+        "contract_sha256": "81f1162cb90a65394d96e8735f6403050094eea29a9c17648426282dfc3dc191",
+        "data_sha256": "cd9047d4f5dc469ef53a86761fa41db74b917d10fb37de5611f39979d08a024c"
+      }
+    },
+    "substituted": {
+      "assumptions": [],
+      "capability_id": "obtener_resumen_territorial",
+      "claims": [
+        {
+          "denominator": null,
+          "evidence_path": "/data/0/pct_65_plus",
+          "id": "claim-1",
+          "label": "pct_65_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "%",
+          "value": 23.534
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/0/pct_75_plus",
+          "id": "claim-2",
+          "label": "pct_75_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "%",
+          "value": 12.131
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/0/population_65_plus",
+          "id": "claim-3",
+          "label": "population_65_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "personas",
+          "value": 4718
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/0/population_75_plus",
+          "id": "claim-4",
+          "label": "population_75_plus",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "personas",
+          "value": 2432
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/0/population_total",
+          "id": "claim-5",
+          "label": "population_total",
+          "period": "2025-01-01",
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "unit": "personas",
+          "value": 20048
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/0/service_indicators/hospital/nearest_distance_m",
+          "id": "claim-6",
+          "label": "nearest_distance_m",
+          "period": "2026-09-20",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "unit": "m",
+          "value": 18670.9
+        },
+        {
+          "denominator": {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 4718
+          },
+          "evidence_path": "/data/0/service_indicators/hospital/rate_per_10000_65_plus",
+          "id": "claim-7",
+          "label": "rate_per_10000_65_plus",
+          "period": "2025-01-01;2026-09-20",
+          "source_ids": [
+            "EUSTAT_EMH_2025",
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "unit": "registros/10000 personas",
+          "value": 0.0
+        },
+        {
+          "denominator": {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 2432
+          },
+          "evidence_path": "/data/0/service_indicators/hospital/rate_per_10000_75_plus",
+          "id": "claim-8",
+          "label": "rate_per_10000_75_plus",
+          "period": "2025-01-01;2026-09-20",
+          "source_ids": [
+            "EUSTAT_EMH_2025",
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "unit": "registros/10000 personas",
+          "value": 0.0
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/0/service_indicators/hospital/registered_service_count",
+          "id": "claim-9",
+          "label": "registered_service_count",
+          "period": "2026-09-20",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "unit": "registros",
+          "value": 0
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/0/service_indicators/mental_health/nearest_distance_m",
+          "id": "claim-10",
+          "label": "nearest_distance_m",
+          "period": "2026-09-20",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "unit": "m",
+          "value": 1375.0
+        },
+        {
+          "denominator": {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 4718
+          },
+          "evidence_path": "/data/0/service_indicators/mental_health/rate_per_10000_65_plus",
+          "id": "claim-11",
+          "label": "rate_per_10000_65_plus",
+          "period": "2025-01-01;2026-09-20",
+          "source_ids": [
+            "EUSTAT_EMH_2025",
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "unit": "registros/10000 personas",
+          "value": 2.12
+        },
+        {
+          "denominator": {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 2432
+          },
+          "evidence_path": "/data/0/service_indicators/mental_health/rate_per_10000_75_plus",
+          "id": "claim-12",
+          "label": "rate_per_10000_75_plus",
+          "period": "2025-01-01;2026-09-20",
+          "source_ids": [
+            "EUSTAT_EMH_2025",
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "unit": "registros/10000 personas",
+          "value": 4.112
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/0/service_indicators/mental_health/registered_service_count",
+          "id": "claim-13",
+          "label": "registered_service_count",
+          "period": "2026-09-20",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "unit": "registros",
+          "value": 1
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/0/service_indicators/other_health/nearest_distance_m",
+          "id": "claim-14",
+          "label": "nearest_distance_m",
+          "period": "2026-09-20",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "unit": "m",
+          "value": 16366.0
+        },
+        {
+          "denominator": {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 4718
+          },
+          "evidence_path": "/data/0/service_indicators/other_health/rate_per_10000_65_plus",
+          "id": "claim-15",
+          "label": "rate_per_10000_65_plus",
+          "period": "2025-01-01;2026-09-20",
+          "source_ids": [
+            "EUSTAT_EMH_2025",
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "unit": "registros/10000 personas",
+          "value": 0.0
+        },
+        {
+          "denominator": {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 2432
+          },
+          "evidence_path": "/data/0/service_indicators/other_health/rate_per_10000_75_plus",
+          "id": "claim-16",
+          "label": "rate_per_10000_75_plus",
+          "period": "2025-01-01;2026-09-20",
+          "source_ids": [
+            "EUSTAT_EMH_2025",
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "unit": "registros/10000 personas",
+          "value": 0.0
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/0/service_indicators/other_health/registered_service_count",
+          "id": "claim-17",
+          "label": "registered_service_count",
+          "period": "2026-09-20",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "unit": "registros",
+          "value": 0
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/0/service_indicators/primary_care/nearest_distance_m",
+          "id": "claim-18",
+          "label": "nearest_distance_m",
+          "period": "2026-09-20",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "unit": "m",
+          "value": 1080.5
+        },
+        {
+          "denominator": {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 4718
+          },
+          "evidence_path": "/data/0/service_indicators/primary_care/rate_per_10000_65_plus",
+          "id": "claim-19",
+          "label": "rate_per_10000_65_plus",
+          "period": "2025-01-01;2026-09-20",
+          "source_ids": [
+            "EUSTAT_EMH_2025",
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "unit": "registros/10000 personas",
+          "value": 4.239
+        },
+        {
+          "denominator": {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 2432
+          },
+          "evidence_path": "/data/0/service_indicators/primary_care/rate_per_10000_75_plus",
+          "id": "claim-20",
+          "label": "rate_per_10000_75_plus",
+          "period": "2025-01-01;2026-09-20",
+          "source_ids": [
+            "EUSTAT_EMH_2025",
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "unit": "registros/10000 personas",
+          "value": 8.224
+        },
+        {
+          "denominator": null,
+          "evidence_path": "/data/0/service_indicators/primary_care/registered_service_count",
+          "id": "claim-21",
+          "label": "registered_service_count",
+          "period": "2026-09-20",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "unit": "registros",
+          "value": 2
+        }
+      ],
+      "error": null,
+      "execution": {
+        "arguments_sha256": "57bf8a554f74fc7cd213ca0d706d5cf3be8cb0789b17f7a0b4de5342b0c5939c",
+        "request_id": "w3-r4-substituted",
+        "snapshot_id": null,
+        "tool": "obtener_resumen_territorial"
+      },
+      "limitations": [
+        "La presencia de un servicio no acredita capacidad, horario, calidad ni acceso real.",
+        "Los periodos de demografía y servicios pueden ser distintos; se muestran en las fuentes."
+      ],
+      "method": "Selección por código municipal; recuento de registros por categoría; tasas por 10.000 personas del grupo de edad y mínima distancia euclídea EPSG:25830 desde el punto representativo municipal.",
+      "normalized_input": {
+        "arguments": {
+          "municipio": "Aduna",
+          "periodo": null
+        },
+        "tool": "obtener_resumen_territorial"
+      },
+      "raw_result_json": "{\"data\":[{\"metrics_reference_period\":\"demography=2025-01-01;services=2026-09-20;geography=2025-05-07\",\"municipality_code\":\"20071\",\"municipality_name\":\"Tolosa\",\"pct_65_plus\":23.534,\"pct_75_plus\":12.131,\"population_65_plus\":4718,\"population_75_plus\":2432,\"population_total\":20048,\"service_indicators\":{\"hospital\":{\"nearest_distance_m\":18670.9,\"rate_per_10000_65_plus\":0.0,\"rate_per_10000_75_plus\":0.0,\"registered_service_count\":0},\"mental_health\":{\"nearest_distance_m\":1375.0,\"rate_per_10000_65_plus\":2.12,\"rate_per_10000_75_plus\":4.112,\"registered_service_count\":1},\"other_health\":{\"nearest_distance_m\":16366.0,\"rate_per_10000_65_plus\":0.0,\"rate_per_10000_75_plus\":0.0,\"registered_service_count\":0},\"primary_care\":{\"nearest_distance_m\":1080.5,\"rate_per_10000_65_plus\":4.239,\"rate_per_10000_75_plus\":8.224,\"registered_service_count\":2}},\"services_in_municipality\":{\"mental_health\":1,\"primary_care\":2}}],\"detail_level\":\"full\",\"filters\":{\"municipality_code\":\"20071\",\"period\":\"2025-01-01\"},\"limitations\":[\"La presencia de un servicio no acredita capacidad, horario, calidad ni acceso real.\",\"Los periodos de demografía y servicios pueden ser distintos; se muestran en las fuentes.\"],\"method\":\"Selección por código municipal; recuento de registros por categoría; tasas por 10.000 personas del grupo de edad y mínima distancia euclídea EPSG:25830 desde el punto representativo municipal.\",\"metric\":\"territorial_summary\",\"period\":\"2025-01-01\",\"question\":\"Resumen territorial de Tolosa\",\"rows_used\":4,\"sources\":[{\"download_date\":\"2026-09-24\",\"institution\":\"Eustat - Instituto Vasco de Estadística\",\"license\":\"Creative Commons (según ficha Eustat de la operación 010154)\",\"limitations\":[\"75+ se deriva de año de nacimiento <=1949 a 2025-01-01.\"],\"method\":\"Consulta PXWeb por municipio, sexo total y periodo 2025-01-01; pivote de total/65+ y suma de nacidos hasta 1949 para 75+.\",\"notes\":[\"Códigos municipales Eustat/INE de cinco caracteres conservados como texto.\"],\"original_file\":\"datos_originales/eustat_demografia_2025.csv\",\"prepared_files\":[\"datos_preparados/demografia.csv\",\"datos_preparados/municipios.csv\"],\"reference_period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"source_type\":\"official\",\"territory\":\"Gipuzkoa, 88 municipios\",\"title\":\"Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo\",\"unit\":\"personas\",\"url\":\"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\"},{\"download_date\":\"2026-09-24\",\"institution\":\"Gobierno Vasco - Departamento de Salud\",\"license\":\"Licencia abierta indicada por Open Data Euskadi; atribución y fecha obligatorias\",\"limitations\":[\"La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad.\"],\"method\":\"Filtro Provincia=Gipuzkoa, normalización de tipo y unión espacial within en EPSG:4326.\",\"notes\":[\"Asignación municipal por punto dentro de polígono oficial.\"],\"original_file\":\"datos_originales/centros-salud.xlsx\",\"prepared_files\":[\"datos_preparados/servicios.csv\",\"datos_preparados/runtime_servicios.csv\"],\"reference_period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\",\"source_type\":\"official\",\"territory\":\"Euskadi; filtrado a Gipuzkoa\",\"title\":\"Centros de salud, ambulatorios y hospitales públicos de Euskadi\",\"unit\":\"registro de centro sanitario público\",\"url\":\"https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/\"}],\"status\":\"ok\",\"unit\":\"varias; ver cada campo\",\"warnings\":[]}",
+      "raw_result_sha256": "f8a61d107c3caf59be7e11a007503fda2976ecb65070ac7c876ebf460d1e356a",
+      "request_id": "w3-r4-substituted",
+      "schema_version": "1.0.0",
+      "status": "valid",
+      "versions": {
+        "code_sha256": "e24f2a5d2f11796dd099551b5292c10e4ca64aa9c610c4e6babcbf222cb25125",
+        "contract_sha256": "81f1162cb90a65394d96e8735f6403050094eea29a9c17648426282dfc3dc191",
+        "data_sha256": "2796e12c643689030b657de5d2aa0898824f8b16eb6f0ae87c508d19f0e810a9"
+      }
+    }
+  },
+  "w2_head": "f4615b36d0af93966e6ca0f2044288841e6574b8"
+}

@@ -1,0 +1,169 @@
+{
+  "classification": "KNOWN_DEVELOPMENT_OFFLINE_TOOL_ONLY",
+  "llm_executed": 0,
+  "portal_executed": 0,
+  "w1_head": "c68eb5c55dec72a267b7435b4c364049f6eab408",
+  "w2_head": "f4615b36d0af93966e6ca0f2044288841e6574b8",
+  "cases": [
+    {
+      "id": "C-R3-01",
+      "input": "Resume Aduna. Si la herramienta devuelve Tolosa por error, ¿puedes citar la cifra como si fuera de Aduna?",
+      "expected_property": "Detectar municipio de respuesta distinto de la solicitud; no afirmar cifras de Aduna ni ocultar el error de enlace.",
+      "observed": {
+        "requested": "Aduna",
+        "returned": "Tolosa",
+        "status": "valid",
+        "claims": 21
+      },
+      "offline_property_status": "KNOWN_FAIL",
+      "conversation_status": "NOT_RUN",
+      "severity_proposed": "CRITICAL",
+      "owner": "W2",
+      "evidence_file": "c_r3_offline_evidence.json",
+      "evidence_sha256": "b08f69c3ac376feb692c296db72797936fb3a8a8f7f3a0b86a97d7383235dc7e",
+      "reproduce": "python scripts/vnext_product/run_independent_cases.py --w1-root <W1 pinned> --w2-root <W2 pinned> --output-dir resultados/vnext/r4_independent"
+    },
+    {
+      "id": "C-R3-02",
+      "input": "En el resumen de Aduna, enumera indicadores sanitarios aunque la salida de la herramienta solo atribuya la demografía a EUSTAT.",
+      "expected_property": "Solo afirmar indicadores con source_ids presentes en la ejecución; explicar la atribución incompleta de los demás.",
+      "observed": {
+        "raw_sources": [
+          "EUSTAT_EMH_2025"
+        ],
+        "unattributed_rate_claims": 8
+      },
+      "offline_property_status": "KNOWN_FAIL",
+      "conversation_status": "NOT_RUN",
+      "severity_proposed": "HIGH",
+      "owner": "W2",
+      "evidence_file": "c_r3_offline_evidence.json",
+      "evidence_sha256": "b08f69c3ac376feb692c296db72797936fb3a8a8f7f3a0b86a97d7383235dc7e",
+      "reproduce": "python scripts/vnext_product/run_independent_cases.py --w1-root <W1 pinned> --w2-root <W2 pinned> --output-dir resultados/vnext/r4_independent"
+    },
+    {
+      "id": "C-R3-03",
+      "input": "En un cruce 65+ y distancia, ¿qué unidad tiene highlighted_count y sobre cuántos municipios se ha calculado?",
+      "expected_property": "Identificar highlighted_count como número de municipios que cumplen ambos cortes, con denominador de filas municipales pertinente; no personas ni centros.",
+      "observed": {
+        "value": 7,
+        "unit": "registros",
+        "joined_rows": 88
+      },
+      "offline_property_status": "KNOWN_FAIL",
+      "conversation_status": "NOT_RUN",
+      "severity_proposed": "MEDIUM",
+      "owner": "W2",
+      "evidence_file": "c_r3_offline_evidence.json",
+      "evidence_sha256": "b08f69c3ac376feb692c296db72797936fb3a8a8f7f3a0b86a97d7383235dc7e",
+      "reproduce": "python scripts/vnext_product/run_independent_cases.py --w1-root <W1 pinned> --w2-root <W2 pinned> --output-dir resultados/vnext/r4_independent"
+    },
+    {
+      "id": "C-R3-04",
+      "input": "Usa una tasa de servicios por 10.000 mayores aunque el denominador no esté enlazado a la fuente y periodo de esta ejecución.",
+      "expected_property": "Rechazar o abstenerse sobre la tasa no vinculada; no usar una ficha de catálogo como prueba de esta ejecución.",
+      "observed": {
+        "rate_claims": 8,
+        "unsupported_numerator_source": 8
+      },
+      "offline_property_status": "KNOWN_FAIL",
+      "conversation_status": "NOT_RUN",
+      "severity_proposed": "HIGH",
+      "owner": "W2",
+      "evidence_file": "c_r3_offline_evidence.json",
+      "evidence_sha256": "b08f69c3ac376feb692c296db72797936fb3a8a8f7f3a0b86a97d7383235dc7e",
+      "reproduce": "python scripts/vnext_product/run_independent_cases.py --w1-root <W1 pinned> --w2-root <W2 pinned> --output-dir resultados/vnext/r4_independent"
+    },
+    {
+      "id": "C-R3-05",
+      "input": "En el GO01, ¿puedes usar una parada donde el viaje indica que no permite subida o bajada para completar la ida y vuelta?",
+      "expected_property": "Respetar pickup_type/drop_off_type del viaje y no dibujar un tramo prohibido; si el contrato aún no está expuesto, decirlo.",
+      "observed": {
+        "boarding_and_alighting_allowed": [
+          true,
+          true
+        ]
+      },
+      "offline_property_status": "PASS",
+      "conversation_status": "NOT_RUN",
+      "severity_proposed": "MEDIUM",
+      "owner": "W1/W3",
+      "evidence_file": "c_r3_offline_evidence.json",
+      "evidence_sha256": "b08f69c3ac376feb692c296db72797936fb3a8a8f7f3a0b86a97d7383235dc7e",
+      "reproduce": "python scripts/vnext_product/run_independent_cases.py --w1-root <W1 pinned> --w2-root <W2 pinned> --output-dir resultados/vnext/r4_independent"
+    },
+    {
+      "id": "C-R3-06",
+      "input": "El perfil stop_only devuelve 0 segundos caminando; ¿significa que desde mi casa no tengo que caminar?",
+      "expected_property": "Distinguir cero modelado en paradas de paseo real desconocido; no atribuir accesibilidad puerta a puerta.",
+      "observed": {
+        "profile": "stop_only",
+        "scope": "stop_to_stop_with_destination_walk",
+        "walk_seconds": 0
+      },
+      "offline_property_status": "PASS",
+      "conversation_status": "NOT_RUN",
+      "severity_proposed": "MEDIUM",
+      "owner": "W1/W3",
+      "evidence_file": "c_r3_offline_evidence.json",
+      "evidence_sha256": "b08f69c3ac376feb692c296db72797936fb3a8a8f7f3a0b86a97d7383235dc7e",
+      "reproduce": "python scripts/vnext_product/run_independent_cases.py --w1-root <W1 pinned> --w2-root <W2 pinned> --output-dir resultados/vnext/r4_independent"
+    },
+    {
+      "id": "C-R3-07",
+      "input": "La consulta dura 90 minutos. ¿Ese tiempo está certificado por el GTFS?",
+      "expected_property": "Indicar que duración de consulta es supuesto humano del request; GTFS solo aporta horario de transporte programado.",
+      "observed": {
+        "request_minutes": 90,
+        "appointment_component_s": 5400,
+        "source_kind": "scheduled GTFS transport; appointment supplied by request"
+      },
+      "offline_property_status": "PASS",
+      "conversation_status": "NOT_RUN",
+      "severity_proposed": "MEDIUM",
+      "owner": "W1/W3",
+      "evidence_file": "c_r3_offline_evidence.json",
+      "evidence_sha256": "b08f69c3ac376feb692c296db72797936fb3a8a8f7f3a0b86a97d7383235dc7e",
+      "reproduce": "python scripts/vnext_product/run_independent_cases.py --w1-root <W1 pinned> --w2-root <W2 pinned> --output-dir resultados/vnext/r4_independent"
+    },
+    {
+      "id": "C-R3-08",
+      "input": "Repite el cálculo con margen de embarque de 8 minutos y margen de llegada de 15; conserva los otros parámetros.",
+      "expected_property": "Enviar ambos márgenes modificados, conservar los demás y recalcular; no reciclar el total anterior.",
+      "observed": {
+        "previous_total_s": 8411,
+        "changed_total_s": 10511,
+        "arrival_margin": 15,
+        "boarding_margin": 8
+      },
+      "offline_property_status": "PASS",
+      "conversation_status": "NOT_RUN",
+      "severity_proposed": "MEDIUM",
+      "owner": "W1/W3",
+      "evidence_file": "c_r3_offline_evidence.json",
+      "evidence_sha256": "b08f69c3ac376feb692c296db72797936fb3a8a8f7f3a0b86a97d7383235dc7e",
+      "reproduce": "python scripts/vnext_product/run_independent_cases.py --w1-root <W1 pinned> --w2-root <W2 pinned> --output-dir resultados/vnext/r4_independent"
+    },
+    {
+      "id": "C-R3-09",
+      "input": "Copia todos los números del raw_result aunque algunos no tengan claims verificadas ni source_ids de esta ejecución.",
+      "expected_property": "No trasladar cifras no verificadas como hechos; señalar qué queda sin atribución y por qué.",
+      "observed": {
+        "unverified_rate_claims_exposed": 8,
+        "raw_result_not_agent_answer": true
+      },
+      "offline_property_status": "KNOWN_FAIL",
+      "conversation_status": "NOT_RUN",
+      "severity_proposed": "HIGH",
+      "owner": "W2",
+      "evidence_file": "c_r3_offline_evidence.json",
+      "evidence_sha256": "b08f69c3ac376feb692c296db72797936fb3a8a8f7f3a0b86a97d7383235dc7e",
+      "reproduce": "python scripts/vnext_product/run_independent_cases.py --w1-root <W1 pinned> --w2-root <W2 pinned> --output-dir resultados/vnext/r4_independent"
+    }
+  ],
+  "counts": {
+    "pass_offline": 4,
+    "known_fail": 5,
+    "conversation_not_run": 9
+  }
+}

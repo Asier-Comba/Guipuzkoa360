@@ -1,0 +1,37 @@
+{
+  "assets_byte_identical": true,
+  "base_sha": "8c94f8c3cf9d732c4ce94af7b4bef8f6e154c243",
+  "branch": "hotfix/r14-portal-binding",
+  "changed_members": [
+    "main.py"
+  ],
+  "double_build": "PASS",
+  "fuzz_cases": 5000,
+  "hotfix_sha": "094745b26bc57aee5cc1a5e003401743d96a914f",
+  "main_sha256": "bc955c57558ae3f8f00aa6d8ad1452732ad7ead40faea794fa9e0f1e39ee6f23",
+  "manifest_sha256": "d6c0122b475284c468fdfc3e343b9ab0d9d175cf20513048c915281cedf4e911",
+  "model_calls": 0,
+  "nested_w1_zip_byte_identical": true,
+  "node_tests": {
+    "evaluator": 37,
+    "hotfix": 17,
+    "result": "PASS"
+  },
+  "parity_cases": 18,
+  "portal_upload": "EXACT_CODE_AND15_ASSETS_REHASH_PASS",
+  "python_tests": {
+    "evaluator": 321,
+    "full_hotfix": 378,
+    "python_hotfix": "3.12.14",
+    "result": "PASS"
+  },
+  "seed": 360014,
+  "status": "PASS_OFFLINE_NOT_PORTAL",
+  "tools_byte_identical": true,
+  "tools_sha256": "46498d6be4f65642784e3a721e408b7d22a0910f937f91660d095b7e57de807c",
+  "w1_independent_acceptance": "PASS",
+  "w1_support_pin": "106879509a667b75baec4860e28a16b9720fdc71",
+  "w2_documental_pin": "5e3b43cce61e29693d8b11a01beaeb0e497c97d6",
+  "zip_sha256": "9c6fa5c692df178afe36366c6291e7c0e7c3da06134381b09d853f55d6707252",
+  "real_agent_acceptance": "FAIL_M05_EMPTY_OPTIONAL_DEADLINE"
+}

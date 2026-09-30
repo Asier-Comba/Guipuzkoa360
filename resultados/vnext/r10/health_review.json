@@ -1,0 +1,323 @@
+{
+  "classification": "INDEPENDENT_OFFLINE_PRODUCER_REVIEW",
+  "w1_runtime_pin": "cb061a97e78d6b5c967104fef6b935132fdc450f",
+  "w1_support_pin": "6ebf41e2f1fe24f1c3678c4be13c6c44cf8cb62b",
+  "package_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+  "static": {
+    "members": 26,
+    "expanded_bytes": 1252907,
+    "package_bytes": 129365,
+    "imports": [
+      "__future__",
+      "collections",
+      "copy",
+      "datetime",
+      "hashlib",
+      "heapq",
+      "json",
+      "math",
+      "pathlib",
+      "prototypes",
+      "re",
+      "typing",
+      "xml"
+    ]
+  },
+  "schema_validation": "PASS",
+  "statuses": {
+    "main": "ok",
+    "time": "ok",
+    "duration": "ok",
+    "origin": "ok",
+    "no_feasible": "no_feasible_journey",
+    "date": "unknown",
+    "destination": "unsupported",
+    "profile": "error"
+  },
+  "contrast": {
+    "main": {
+      "status": "PASS",
+      "raw_rows": [
+        {
+          "trip_id": "1_103_LJ_29400",
+          "arrival_time": "08:12:32",
+          "departure_time": "08:12:37",
+          "stop_id": "8305",
+          "stop_sequence": "2",
+          "stop_headsign": "Zegama - Elizalde 6 - Plaza",
+          "pickup_type": "0",
+          "drop_off_type": "0",
+          "timepoint": "0",
+          "csv_line": 2729
+        },
+        {
+          "trip_id": "1_103_LJ_29400",
+          "arrival_time": "08:40:08",
+          "departure_time": "08:40:13",
+          "stop_id": "7219",
+          "stop_sequence": "25",
+          "stop_headsign": "Beasain - Lokomotora Biribilgunea",
+          "pickup_type": "0",
+          "drop_off_type": "0",
+          "timepoint": "0",
+          "csv_line": 2752
+        },
+        {
+          "trip_id": "1_106_LJ_37200",
+          "arrival_time": "10:29:45",
+          "departure_time": "10:29:50",
+          "stop_id": "7218",
+          "stop_sequence": "8",
+          "stop_headsign": "Beasain - San Inazio 10",
+          "pickup_type": "0",
+          "drop_off_type": "0",
+          "timepoint": "0",
+          "csv_line": 314
+        },
+        {
+          "trip_id": "1_106_LJ_37200",
+          "arrival_time": "11:07:48",
+          "departure_time": "11:07:53",
+          "stop_id": "8309",
+          "stop_sequence": "35",
+          "stop_headsign": "Zegama - Elizalde Kalea 4",
+          "pickup_type": "0",
+          "drop_off_type": "0",
+          "timepoint": "0",
+          "csv_line": 341
+        }
+      ],
+      "walking": {
+        "outbound": {
+          "metres_reconstructed": 205.0796474103542,
+          "seconds_reconstructed": 420,
+          "basis": "pinned derived geometry + published formula; not measured walk"
+        },
+        "return": {
+          "metres_reconstructed": 686.1157628496067,
+          "seconds_reconstructed": 960,
+          "basis": "pinned derived geometry + published formula; not measured walk"
+        }
+      },
+      "total_s_reconstructed": 10691,
+      "slack_s_reconstructed": 1250,
+      "limitation": "Checks selected rows, geometry lengths and arithmetic; not exhaustive optimality or physical entrance."
+    },
+    "time": {
+      "status": "PASS",
+      "raw_rows": [
+        {
+          "trip_id": "1_101_LJ_31500",
+          "arrival_time": "08:47:32",
+          "departure_time": "08:47:37",
+          "stop_id": "8305",
+          "stop_sequence": "2",
+          "stop_headsign": "Zegama - Elizalde 6 - Plaza",
+          "pickup_type": "0",
+          "drop_off_type": "0",
+          "timepoint": "0",
+          "csv_line": 7654
+        },
+        {
+          "trip_id": "1_101_LJ_31500",
+          "arrival_time": "09:17:06",
+          "departure_time": "09:17:11",
+          "stop_id": "7219",
+          "stop_sequence": "27",
+          "stop_headsign": "Beasain - Lokomotora Biribilgunea",
+          "pickup_type": "0",
+          "drop_off_type": "0",
+          "timepoint": "0",
+          "csv_line": 7679
+        },
+        {
+          "trip_id": "1_106_LJ_37200",
+          "arrival_time": "10:29:45",
+          "departure_time": "10:29:50",
+          "stop_id": "7218",
+          "stop_sequence": "8",
+          "stop_headsign": "Beasain - San Inazio 10",
+          "pickup_type": "0",
+          "drop_off_type": "0",
+          "timepoint": "0",
+          "csv_line": 314
+        },
+        {
+          "trip_id": "1_106_LJ_37200",
+          "arrival_time": "11:07:48",
+          "departure_time": "11:07:53",
+          "stop_id": "8309",
+          "stop_sequence": "35",
+          "stop_headsign": "Zegama - Elizalde Kalea 4",
+          "pickup_type": "0",
+          "drop_off_type": "0",
+          "timepoint": "0",
+          "csv_line": 341
+        }
+      ],
+      "walking": {
+        "outbound": {
+          "metres_reconstructed": 205.0796474103542,
+          "seconds_reconstructed": 420,
+          "basis": "pinned derived geometry + published formula; not measured walk"
+        },
+        "return": {
+          "metres_reconstructed": 686.1157628496067,
+          "seconds_reconstructed": 960,
+          "basis": "pinned derived geometry + published formula; not measured walk"
+        }
+      },
+      "total_s_reconstructed": 8591,
+      "slack_s_reconstructed": 350,
+      "limitation": "Checks selected rows, geometry lengths and arithmetic; not exhaustive optimality or physical entrance."
+    },
+    "duration": {
+      "status": "PASS",
+      "raw_rows": [
+        {
+          "trip_id": "1_103_LJ_29400",
+          "arrival_time": "08:12:32",
+          "departure_time": "08:12:37",
+          "stop_id": "8305",
+          "stop_sequence": "2",
+          "stop_headsign": "Zegama - Elizalde 6 - Plaza",
+          "pickup_type": "0",
+          "drop_off_type": "0",
+          "timepoint": "0",
+          "csv_line": 2729
+        },
+        {
+          "trip_id": "1_103_LJ_29400",
+          "arrival_time": "08:40:08",
+          "departure_time": "08:40:13",
+          "stop_id": "7219",
+          "stop_sequence": "25",
+          "stop_headsign": "Beasain - Lokomotora Biribilgunea",
+          "pickup_type": "0",
+          "drop_off_type": "0",
+          "timepoint": "0",
+          "csv_line": 2752
+        },
+        {
+          "trip_id": "1_102_LJ_42300",
+          "arrival_time": "11:59:26",
+          "departure_time": "11:59:31",
+          "stop_id": "7218",
+          "stop_sequence": "13",
+          "stop_headsign": "Beasain - San Inazio 10",
+          "pickup_type": "0",
+          "drop_off_type": "0",
+          "timepoint": "0",
+          "csv_line": 13973
+        },
+        {
+          "trip_id": "1_102_LJ_42300",
+          "arrival_time": "12:37:29",
+          "departure_time": "12:37:34",
+          "stop_id": "8309",
+          "stop_sequence": "40",
+          "stop_headsign": "Zegama - Elizalde Kalea 4",
+          "pickup_type": "0",
+          "drop_off_type": "0",
+          "timepoint": "0",
+          "csv_line": 14000
+        }
+      ],
+      "walking": {
+        "outbound": {
+          "metres_reconstructed": 205.0796474103542,
+          "seconds_reconstructed": 420,
+          "basis": "pinned derived geometry + published formula; not measured walk"
+        },
+        "return": {
+          "metres_reconstructed": 686.1157628496067,
+          "seconds_reconstructed": 960,
+          "basis": "pinned derived geometry + published formula; not measured walk"
+        }
+      },
+      "total_s_reconstructed": 16072,
+      "slack_s_reconstructed": 2431,
+      "limitation": "Checks selected rows, geometry lengths and arithmetic; not exhaustive optimality or physical entrance."
+    },
+    "origin": {
+      "status": "PASS",
+      "raw_rows": [
+        {
+          "trip_id": "1_103_LJ_29400",
+          "arrival_time": "08:20:28",
+          "departure_time": "08:20:33",
+          "stop_id": "7801",
+          "stop_sequence": "10",
+          "stop_headsign": "Segura - Kale Nagusia 31 – Herriko Plaza",
+          "pickup_type": "0",
+          "drop_off_type": "0",
+          "timepoint": "0",
+          "csv_line": 2737
+        },
+        {
+          "trip_id": "1_103_LJ_29400",
+          "arrival_time": "08:40:08",
+          "departure_time": "08:40:13",
+          "stop_id": "7219",
+          "stop_sequence": "25",
+          "stop_headsign": "Beasain - Lokomotora Biribilgunea",
+          "pickup_type": "0",
+          "drop_off_type": "0",
+          "timepoint": "0",
+          "csv_line": 2752
+        },
+        {
+          "trip_id": "1_106_LJ_37200",
+          "arrival_time": "10:29:45",
+          "departure_time": "10:29:50",
+          "stop_id": "7218",
+          "stop_sequence": "8",
+          "stop_headsign": "Beasain - San Inazio 10",
+          "pickup_type": "0",
+          "drop_off_type": "0",
+          "timepoint": "0",
+          "csv_line": 314
+        },
+        {
+          "trip_id": "1_106_LJ_37200",
+          "arrival_time": "10:58:15",
+          "departure_time": "10:58:20",
+          "stop_id": "7813",
+          "stop_sequence": "27",
+          "stop_headsign": "Segura - Kale Nagusia 31 Parean – Herriko Plaza",
+          "pickup_type": "0",
+          "drop_off_type": "0",
+          "timepoint": "0",
+          "csv_line": 333
+        }
+      ],
+      "walking": {
+        "outbound": {
+          "metres_reconstructed": 205.0796474103542,
+          "seconds_reconstructed": 420,
+          "basis": "pinned derived geometry + published formula; not measured walk"
+        },
+        "return": {
+          "metres_reconstructed": 686.1157628496067,
+          "seconds_reconstructed": 960,
+          "basis": "pinned derived geometry + published formula; not measured walk"
+        }
+      },
+      "total_s_reconstructed": 9642,
+      "slack_s_reconstructed": 1250,
+      "limitation": "Checks selected rows, geometry lengths and arithmetic; not exhaustive optimality or physical entrance."
+    }
+  },
+  "verified_delta_s": -2100,
+  "llm_executed": 0,
+  "portal_executed": 0,
+  "health_evidence_sha256": "81e7618ff6e7393b38a99279c67633a673374c30be937419df94fdc40de2c243",
+  "acceptance": "PASS_MODELLED_OFFICIAL_POINT_WITH_VISIBLE_LIMITS",
+  "not_verified": [
+    "physical entrance",
+    "door to door",
+    "appointment availability",
+    "punctuality",
+    "exhaustive route optimality"
+  ]
+}

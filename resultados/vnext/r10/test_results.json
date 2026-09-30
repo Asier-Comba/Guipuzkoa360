@@ -1,0 +1,32 @@
+{
+  "classification": "TEST_RESULTS_NOT_AGENT_ACCEPTANCE",
+  "python": {
+    "passed": 303,
+    "failed": 0,
+    "duration_s": 19.87,
+    "interpreter": "CPython 3.14.7",
+    "command": "python -m pytest -o addopts='' -q",
+    "full_suite_source_commit": "1de0dfd25e07383bb59d43b9333778770faa640f"
+  },
+  "node": {
+    "passed": 32,
+    "failed": 0,
+    "interpreter": "Node 24.19.0",
+    "command": "node --test tests/e2e/contract_flow.test.mjs tests/vnext_redteam/import_contract.test.mjs tests/vnext_redteam/health_contract.test.mjs"
+  },
+  "followup_after_line_ending_fix": {
+    "python_targeted_passed": 6,
+    "not_added_to_unique_suite_total": true,
+    "w2_pinned_retest": "PASS",
+    "support_reference_audit": "PASS",
+    "html_byte_rebuild": "PASS"
+  },
+  "gates": {
+    "verify_jury_results": "PASS",
+    "verify_final_artifacts": "PASS",
+    "runtime_v4_identity": "PASS"
+  },
+  "tested_product_code_commit": "a91b6808b8da4c4fde9fa8db831747eee78ae14b",
+  "llm_executed": 0,
+  "portal_executed": 0
+}

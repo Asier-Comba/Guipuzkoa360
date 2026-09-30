@@ -1,0 +1,1051 @@
+{
+  "schema_version": "W3-HEALTH-QUERY-1",
+  "provider_pin": "cb061a9e00a6496c40488a596bd94834bc2c49b2",
+  "package_sha256": "3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616",
+  "output": {
+    "request": {
+      "appointment_time": "09:45",
+      "date": "2026-09-29",
+      "destination_id": "beasain_official_centre_anchor",
+      "duration_minutes": 20,
+      "origin_id": "zegama_center_stops"
+    },
+    "result": {
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "components": [
+        {
+          "basis": "model_default",
+          "derivation": "end_s - start_s",
+          "end_s": 31657,
+          "kind": "initial_wait",
+          "seconds": 180,
+          "source_refs": [
+            "MODEL_DEFAULTS"
+          ],
+          "start_s": 31477
+        },
+        {
+          "basis": "official_schedule",
+          "derivation": "end_s - start_s",
+          "end_s": 33426,
+          "kind": "outbound_vehicle",
+          "seconds": 1769,
+          "source_refs": [
+            "GTFS"
+          ],
+          "start_s": 31657
+        },
+        {
+          "basis": "modelled_derived",
+          "derivation": "end_s - start_s",
+          "end_s": 33846,
+          "kind": "destination_walk_outbound",
+          "seconds": 420,
+          "source_refs": [
+            "GTFS",
+            "OSM",
+            "HEALTH_REGISTRY",
+            "MODEL",
+            "MODEL_DEFAULTS"
+          ],
+          "start_s": 33426
+        },
+        {
+          "basis": "modelled_derived",
+          "derivation": "end_s - start_s",
+          "end_s": 35100,
+          "kind": "pre_appointment_wait",
+          "seconds": 1254,
+          "source_refs": [
+            "GTFS",
+            "OSM",
+            "HEALTH_REGISTRY",
+            "MODEL",
+            "USER",
+            "MODEL_DEFAULTS",
+            "DERIVED"
+          ],
+          "start_s": 33846
+        },
+        {
+          "basis": "user_input",
+          "derivation": "end_s - start_s",
+          "end_s": 36300,
+          "kind": "appointment",
+          "seconds": 1200,
+          "source_refs": [
+            "USER"
+          ],
+          "start_s": 35100
+        },
+        {
+          "basis": "modelled_derived",
+          "derivation": "end_s - start_s",
+          "end_s": 37260,
+          "kind": "destination_walk_return",
+          "seconds": 960,
+          "source_refs": [
+            "GTFS",
+            "OSM",
+            "HEALTH_REGISTRY",
+            "MODEL",
+            "MODEL_DEFAULTS"
+          ],
+          "start_s": 36300
+        },
+        {
+          "basis": "modelled_derived",
+          "derivation": "end_s - start_s",
+          "end_s": 37790,
+          "kind": "return_wait",
+          "seconds": 530,
+          "source_refs": [
+            "GTFS",
+            "OSM",
+            "HEALTH_REGISTRY",
+            "MODEL",
+            "USER",
+            "MODEL_DEFAULTS",
+            "DERIVED"
+          ],
+          "start_s": 37260
+        },
+        {
+          "basis": "official_schedule",
+          "derivation": "end_s - start_s",
+          "end_s": 40068,
+          "kind": "return_vehicle",
+          "seconds": 2278,
+          "source_refs": [
+            "GTFS"
+          ],
+          "start_s": 37790
+        }
+      ],
+      "components_s": {
+        "appointment_s": 1200,
+        "destination_walk_outbound_s": 420,
+        "destination_walk_return_s": 960,
+        "initial_wait_s": 180,
+        "outbound_vehicle_s": 1769,
+        "pre_appointment_wait_s": 1254,
+        "return_vehicle_s": 2278,
+        "return_wait_s": 530
+      },
+      "error": null,
+      "health_destination": {
+        "address": "Bernedo Enea 1",
+        "address_conflict": "conflicting_current_sources",
+        "anchor_coordinates": [
+          43.04527740634045,
+          -2.1977014177917447
+        ],
+        "anchor_kind": "official_centre_point",
+        "centre_anchor": "CONFIRMED_OFFICIAL_POINT",
+        "centre_id": "entityBC631DA5",
+        "centre_identity": "CONFIRMED",
+        "crs": "EPSG:4326",
+        "door_to_door": "UNAVAILABLE",
+        "entrance_verification": "NOT_VERIFIED",
+        "entrance_verified": false,
+        "human_review_required": true,
+        "modelled_access": true,
+        "modelled_network_access": "PASS",
+        "name": "Ambulatorio de Beasain",
+        "source_refs": [
+          "HEALTH_REGISTRY",
+          "HEALTH_PAGE",
+          "PADI_2026"
+        ],
+        "wording": "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada."
+      },
+      "itinerary": {
+        "alternatives_evaluated": 228,
+        "end_s": 40068,
+        "origin_stop_id": "8305",
+        "outbound": {
+          "arrival_time": "09:17:06",
+          "departure_time": "08:47:37",
+          "drop_off_type": 0,
+          "from_stop_id": "8305",
+          "from_stop_sequence": 2,
+          "from_timepoint": 0,
+          "pickup_type": 0,
+          "route_id": "1",
+          "service_id": "LJ",
+          "to_stop_id": "7219",
+          "to_stop_sequence": 27,
+          "to_timepoint": 0,
+          "trip_id": "1_101_LJ_31500"
+        },
+        "return": {
+          "arrival_time": "11:07:48",
+          "departure_time": "10:29:50",
+          "drop_off_type": 0,
+          "from_stop_id": "7218",
+          "from_stop_sequence": 8,
+          "from_timepoint": 0,
+          "pickup_type": 0,
+          "route_id": "1",
+          "service_id": "LJ",
+          "to_stop_id": "8309",
+          "to_stop_sequence": 35,
+          "to_timepoint": 0,
+          "trip_id": "1_106_LJ_37200"
+        },
+        "return_slack_s": 350,
+        "return_stop_id": "8309",
+        "start_s": 31477,
+        "total_s": 8591,
+        "vehicle_span_s": 8411
+      },
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "normalized_request": {
+        "appointment_time": "09:45:00",
+        "arrival_margin_minutes": 10,
+        "boarding_margin_minutes": 3,
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops",
+        "return_deadline": null,
+        "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+        "timezone": "Europe/Madrid",
+        "walking_profile_id": "poc_reference_50m_min_plus_120s"
+      },
+      "parameter_provenance": [
+        {
+          "field": "origin_id",
+          "origin": "human_explicit",
+          "source_ref": "USER",
+          "value": "zegama_center_stops"
+        },
+        {
+          "field": "destination_id",
+          "origin": "human_explicit",
+          "source_ref": "USER",
+          "value": "beasain_official_centre_anchor"
+        },
+        {
+          "field": "date",
+          "origin": "human_explicit",
+          "source_ref": "USER",
+          "value": "2026-09-29"
+        },
+        {
+          "field": "appointment_time",
+          "origin": "human_explicit",
+          "source_ref": "USER",
+          "value": "09:45:00"
+        },
+        {
+          "field": "duration_minutes",
+          "origin": "human_explicit",
+          "source_ref": "USER",
+          "value": 20
+        },
+        {
+          "field": "arrival_margin_minutes",
+          "origin": "model_default",
+          "source_ref": "MODEL_DEFAULTS",
+          "value": 10
+        },
+        {
+          "field": "boarding_margin_minutes",
+          "origin": "model_default",
+          "source_ref": "MODEL_DEFAULTS",
+          "value": 3
+        },
+        {
+          "field": "walking_profile_id",
+          "origin": "model_default",
+          "source_ref": "MODEL_DEFAULTS",
+          "value": "poc_reference_50m_min_plus_120s"
+        },
+        {
+          "field": "snapshot_id",
+          "origin": "model_default",
+          "source_ref": "MODEL_DEFAULTS",
+          "value": "official-goierrialdea-go01-health-r5-20260929"
+        },
+        {
+          "field": "timezone",
+          "origin": "model_default",
+          "source_ref": "MODEL_DEFAULTS",
+          "value": "Europe/Madrid"
+        },
+        {
+          "field": "return_deadline",
+          "origin": "model_default",
+          "source_ref": "MODEL_DEFAULTS",
+          "value": null
+        }
+      ],
+      "scenario_kind": "health_visit",
+      "schema_version": "0.3.1",
+      "scope": "origin_stop_presence_to_return_stop_arrival",
+      "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+      "sources": [
+        {
+          "publisher": "Moveuskadi / Goierrialdea",
+          "reference_period": "2026-09-28/2026-12-27",
+          "retrieved_date": "2026-09-29",
+          "source_id": "GTFS",
+          "source_role": "official_schedule",
+          "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+          "transformation": "R4 normalized GO01 rows, unchanged; approximate stop times, no realtime",
+          "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+        },
+        {
+          "publisher": "Open Data Euskadi",
+          "reference_period": "2026-09-20",
+          "retrieved_date": "2026-09-24",
+          "source_id": "HEALTH_REGISTRY",
+          "source_role": "official_health_registry",
+          "source_sha256": "87a2b8ea3309678ff743e2f267320b94216c3d1e4f52b578bdd0a77bd8bf29ab",
+          "transformation": "entityBC631DA5 coordinates EPSG:4326",
+          "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+        },
+        {
+          "publisher": "Osakidetza",
+          "reference_period": "Observed 2026-09-29",
+          "retrieved_date": "2026-09-29",
+          "source_id": "HEALTH_PAGE",
+          "source_role": "official_health_page",
+          "source_sha256": "7ba21b4f78f79b55d5761f427582daaef48097245142c9cb259288dc923f3160",
+          "transformation": "Specific centre name/address/telephone; publication date not stated",
+          "url": "https://www.osakidetza.euskadi.eus/ambulatorio-de-beasain/webosk00-cercon/es/"
+        },
+        {
+          "publisher": "Osakidetza",
+          "reference_period": "2026-01",
+          "retrieved_date": "2026-09-29",
+          "source_id": "PADI_2026",
+          "source_role": "official_health_page",
+          "source_sha256": "6cf5d40245eb29c9c98785d03aba518c44677104b71625db36c3f2801455ac10",
+          "transformation": "Page 4 dental consultation listing; address conflict retained",
+          "url": "https://www.osakidetza.euskadi.eus/contenidos/informacion/salud_padi/es_def/adjuntos/padi-kontsultak-gipuzkoa.pdf"
+        },
+        {
+          "publisher": "OpenStreetMap contributors",
+          "reference_period": "Acquired 2026-09-29",
+          "retrieved_date": "2026-09-29",
+          "source_id": "OSM",
+          "source_role": "open_network",
+          "source_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+          "transformation": "R4 public derivative removes editor/contact metadata; R5 canonicalizes XML line endings to LF for hashing, no geometry change; ODbL 1.0",
+          "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-2.203,43.041,-2.190,43.052"
+        },
+        {
+          "publisher": "GIPUZKOA360",
+          "reference_period": "R5.1",
+          "retrieved_date": "2026-09-29",
+          "source_id": "MODEL",
+          "source_role": "model_parameter",
+          "source_sha256": "0f3a02e69f8065f892ce19a0115ae7e3c661c32725bd37a423f3d283ae1a2a7d",
+          "transformation": "ceil(raw total metres/50)*60+120 per complete directed link; each connector <=100 m",
+          "url": null
+        },
+        {
+          "publisher": "GIPUZKOA360 request/calculation",
+          "reference_period": "2026-09-29",
+          "retrieved_date": null,
+          "source_id": "USER",
+          "source_role": "user_input",
+          "source_sha256": "10a7fc12bde2ec195dcb35ce271ccb5a87d5e01cf3ac78dbc7eccaf812895d8d",
+          "transformation": "Only fields explicitly supplied by the caller; no provider defaults.",
+          "url": null
+        },
+        {
+          "publisher": "GIPUZKOA360 request/calculation",
+          "reference_period": "2026-09-29",
+          "retrieved_date": null,
+          "source_id": "MODEL_DEFAULTS",
+          "source_role": "model_parameter",
+          "source_sha256": "e5f563e38a8c094f01468a02a55f06b560faa668926878fbcc347dfd14a438e3",
+          "transformation": "Defaults applied by provider_r6; not observed human choices.",
+          "url": null
+        },
+        {
+          "publisher": "GIPUZKOA360 request/calculation",
+          "reference_period": "2026-09-29",
+          "retrieved_date": null,
+          "source_id": "DERIVED",
+          "source_role": "derived_metric",
+          "source_sha256": "32cfc8ca56dc821bafc38643f14d2715a9a955e88943a672d428f07d518c61c0",
+          "transformation": "Intervals derived from explicit inputs, model defaults, schedule and walking model.",
+          "url": null
+        }
+      ],
+      "status": "ok",
+      "time_basis": "scheduled",
+      "walking": {
+        "outbound": {
+          "builder_version": "r5.1",
+          "connector_metres": [
+            3.8689597780987146,
+            13.232397049117077
+          ],
+          "connector_threshold_m": 100,
+          "end_coordinates": [
+            43.04527740634045,
+            -2.1977014177917447
+          ],
+          "end_node_id": "537657326",
+          "entrance_verified": false,
+          "geometry": [
+            [
+              43.04626553099556,
+              -2.1961924562286215
+            ],
+            [
+              43.0462956,
+              -2.1961685
+            ],
+            [
+              43.0463028,
+              -2.1962115
+            ],
+            [
+              43.0462808,
+              -2.1963513
+            ],
+            [
+              43.0462545,
+              -2.196396
+            ],
+            [
+              43.046223,
+              -2.1964495
+            ],
+            [
+              43.0461686,
+              -2.196487
+            ],
+            [
+              43.0460541,
+              -2.1965717
+            ],
+            [
+              43.0459481,
+              -2.1966502
+            ],
+            [
+              43.0458338,
+              -2.1967223
+            ],
+            [
+              43.0455658,
+              -2.1968727
+            ],
+            [
+              43.0454766,
+              -2.1969502
+            ],
+            [
+              43.0454351,
+              -2.1970107
+            ],
+            [
+              43.0454057,
+              -2.1970536
+            ],
+            [
+              43.0453143,
+              -2.1972141
+            ],
+            [
+              43.0452571,
+              -2.1973357
+            ],
+            [
+              43.0452086,
+              -2.197472
+            ],
+            [
+              43.0451594,
+              -2.1976804
+            ],
+            [
+              43.04527740634045,
+              -2.1977014177917447
+            ]
+          ],
+          "modelled_access": true,
+          "network_metres": 187.97829058313837,
+          "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+          "node_ids": [
+            "12388562316",
+            "11987784838",
+            "537660297",
+            "13424352459",
+            "537657332",
+            "11987784840",
+            "11987784844",
+            "4601506790",
+            "537657333",
+            "537657331",
+            "4601506488",
+            "13424352447",
+            "537657330",
+            "537657324",
+            "13536940929",
+            "537657325",
+            "537657326"
+          ],
+          "reason": null,
+          "seconds": 420,
+          "source_refs": [
+            "GTFS",
+            "HEALTH_REGISTRY",
+            "OSM",
+            "MODEL"
+          ],
+          "start_coordinates": [
+            43.04626553099556,
+            -2.1961924562286215
+          ],
+          "start_node_id": "12388562316",
+          "status": "ok",
+          "total_metres": 205.07964741035417,
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "way_ids": [
+            "1293110953",
+            "1293110953",
+            "42928253",
+            "42928253",
+            "1388315723",
+            "1388315723",
+            "1293110954",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120"
+          ],
+          "way_tags": [
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            }
+          ]
+        },
+        "return": {
+          "builder_version": "r5.1",
+          "connector_metres": [
+            13.232397049117077,
+            4.4204180797501005
+          ],
+          "connector_threshold_m": 100,
+          "end_coordinates": [
+            43.04730234019161,
+            -2.1976522802175604
+          ],
+          "end_node_id": "537835620",
+          "entrance_verified": false,
+          "geometry": [
+            [
+              43.04527740634045,
+              -2.1977014177917447
+            ],
+            [
+              43.0451594,
+              -2.1976804
+            ],
+            [
+              43.0452086,
+              -2.197472
+            ],
+            [
+              43.0452571,
+              -2.1973357
+            ],
+            [
+              43.0453143,
+              -2.1972141
+            ],
+            [
+              43.0454057,
+              -2.1970536
+            ],
+            [
+              43.0454351,
+              -2.1970107
+            ],
+            [
+              43.0454766,
+              -2.1969502
+            ],
+            [
+              43.0455658,
+              -2.1968727
+            ],
+            [
+              43.0458338,
+              -2.1967223
+            ],
+            [
+              43.0459481,
+              -2.1966502
+            ],
+            [
+              43.0460628,
+              -2.1966674
+            ],
+            [
+              43.0460705,
+              -2.1967155
+            ],
+            [
+              43.0460975,
+              -2.1968001
+            ],
+            [
+              43.0460541,
+              -2.1970117
+            ],
+            [
+              43.0460412,
+              -2.1971506
+            ],
+            [
+              43.0460427,
+              -2.1976485
+            ],
+            [
+              43.0460404,
+              -2.197829
+            ],
+            [
+              43.0460414,
+              -2.1979901
+            ],
+            [
+              43.0461923,
+              -2.1980307
+            ],
+            [
+              43.0463843,
+              -2.1980824
+            ],
+            [
+              43.0465628,
+              -2.1981304
+            ],
+            [
+              43.0465144,
+              -2.1986017
+            ],
+            [
+              43.0464962,
+              -2.1987992
+            ],
+            [
+              43.046482,
+              -2.1989535
+            ],
+            [
+              43.0464993,
+              -2.199581
+            ],
+            [
+              43.0465048,
+              -2.1997353
+            ],
+            [
+              43.0465446,
+              -2.1997342
+            ],
+            [
+              43.0465133,
+              -2.1990444
+            ],
+            [
+              43.0465193,
+              -2.1989582
+            ],
+            [
+              43.0465218,
+              -2.1989139
+            ],
+            [
+              43.0465324,
+              -2.1988769
+            ],
+            [
+              43.0465664,
+              -2.1988576
+            ],
+            [
+              43.0466316,
+              -2.1988621
+            ],
+            [
+              43.0466917,
+              -2.1988148
+            ],
+            [
+              43.046674,
+              -2.198797
+            ],
+            [
+              43.0466683,
+              -2.198744
+            ],
+            [
+              43.0466729,
+              -2.1986958
+            ],
+            [
+              43.0466933,
+              -2.1986615
+            ],
+            [
+              43.0467639,
+              -2.1986444
+            ],
+            [
+              43.046971,
+              -2.1986543
+            ],
+            [
+              43.0470415,
+              -2.1986508
+            ],
+            [
+              43.0470621,
+              -2.1985246
+            ],
+            [
+              43.0472821,
+              -2.1976991
+            ],
+            [
+              43.04730234019161,
+              -2.1976522802175604
+            ]
+          ],
+          "modelled_access": true,
+          "network_metres": 668.4629477207395,
+          "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+          "node_ids": [
+            "537657326",
+            "537657325",
+            "13536940929",
+            "537657324",
+            "537657330",
+            "13424352447",
+            "4601506488",
+            "537657331",
+            "537657333",
+            "4601506790",
+            "11987784842",
+            "11987784843",
+            "4601506789",
+            "537790810",
+            "537790809",
+            "537790808",
+            "537790807",
+            "537831013",
+            "13282166540",
+            "13424547712",
+            "537831030",
+            "2919607168",
+            "13359626656",
+            "537817922",
+            "12504287628",
+            "12504287634",
+            "12504287633",
+            "12504287625",
+            "12504287626",
+            "12504287627",
+            "12504287631",
+            "3443175090",
+            "12504287630",
+            "12504287632",
+            "12504287620",
+            "12504287621",
+            "12504287622",
+            "12504287623",
+            "12504287624",
+            "13282166515",
+            "537817930",
+            "537824871",
+            "537835620"
+          ],
+          "reason": null,
+          "seconds": 960,
+          "source_refs": [
+            "GTFS",
+            "HEALTH_REGISTRY",
+            "OSM",
+            "MODEL"
+          ],
+          "start_coordinates": [
+            43.04527740634045,
+            -2.1977014177917447
+          ],
+          "start_node_id": "537657326",
+          "status": "ok",
+          "total_metres": 686.1157628496067,
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "way_ids": [
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "1388315721",
+            "1293110957",
+            "1293110957",
+            "1456700137",
+            "1456700137",
+            "1456700137",
+            "1456700137",
+            "1456700137",
+            "42936320",
+            "42936320",
+            "42936320",
+            "42936319",
+            "42936319",
+            "42936319",
+            "42936319",
+            "42936319",
+            "42937242",
+            "42936194",
+            "42936194",
+            "42936194",
+            "42936194",
+            "42936194",
+            "1351545716",
+            "1351545716",
+            "42935961",
+            "42935961",
+            "42935961",
+            "42935961",
+            "42935961",
+            "42935961",
+            "42935961",
+            "42944983",
+            "42944983"
+          ],
+          "way_tags": [
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "foot": "yes",
+              "highway": "pedestrian"
+            },
+            {
+              "foot": "yes",
+              "highway": "pedestrian"
+            },
+            {
+              "foot": "yes",
+              "highway": "pedestrian"
+            },
+            {
+              "foot": "yes",
+              "highway": "pedestrian"
+            },
+            {
+              "foot": "yes",
+              "highway": "pedestrian"
+            },
+            {
+              "highway": "pedestrian"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

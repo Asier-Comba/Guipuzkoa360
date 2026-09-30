@@ -1,0 +1,25 @@
+{
+  "status": "NOT_RUN",
+  "scoring_version": "2.1.0",
+  "single_cases": {
+    "target": 48,
+    "target_per_system": 48,
+    "scored_by_system": {},
+    "correct_by_system": {},
+    "incorrect_by_system": {}
+  },
+  "conversations": {
+    "planned": 20,
+    "planned_per_system": 20,
+    "executed_by_system": {},
+    "complete_by_system": {},
+    "turns_scored_by_system": {}
+  },
+  "attempts": 0,
+  "llm_executed": 0,
+  "systems": {},
+  "paired_single": {
+    "observed": 0,
+    "calculation_comparable": 0
+  }
+}

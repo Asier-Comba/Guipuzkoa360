@@ -1,0 +1,50 @@
+[
+  {
+    "class": "studio-message is-user",
+    "tag": "ARTICLE",
+    "text": "Tú\n\nDesde las paradas del centro de Zegama, quiero ir al Ambulatorio de Beasain el 29 de septiembre de 2026 para una consulta a las 09:30 que dura 20 minutos y regresar. ¿Qué carga temporal completa resultaría con los datos disponibles?",
+    "toolcalls": []
+  },
+  {
+    "class": "studio-message is-assistant",
+    "tag": "ARTICLE",
+    "text": "GIPUZKOA 360 vNext R13 patch3 3951b290\nTool · plan_visit\n{\"request\":\"Planifica una visita sanitaria de ida y vuelta desde las paradas centrales de Zegama al Ambulatorio de Beasain, usando el origen catalogado zegama_center_stops y el destino beasain_official_centre_anchor, el 29 de septiembre de 2026. La consulta es a las 09:30 y dura 20 minutos. Calcula la carga temporal completa con los valores predeterminados disponibles; usa el snapshot oficial por defecto y el perfil de paseo predeterminado.\"}",
+    "toolcalls": [
+      {
+        "args": "{\"request\":\"Planifica una visita sanitaria de ida y vuelta desde las paradas centrales de Zegama al Ambulatorio de Beasain, usando el origen catalogado zegama_center_stops y el destino beasain_official_centre_anchor, el 29 de septiembre de 2026. La consulta es a las 09:30 y dura 20 minutos. Calcula la carga temporal completa con los valores predeterminados disponibles; usa el snapshot oficial por defecto y el perfil de paseo predeterminado.\"}",
+        "name": "Tool · plan_visit"
+      }
+    ]
+  },
+  {
+    "class": "studio-tool-message ",
+    "result": "{\"assumptions\":[],\"capability_id\":\"plan_visit\",\"claims\":[],\"effective_request\":null,\"error\":{\"available_options\":[],\"code\":\"invalid_arguments\",\"message\":\"arguments:request:invalid_value\",\"origin\":\"domain\",\"safe_next_action\":\"Revisar los valores disponibles; si el fallo persiste, no usar el resultado.\"},\"execution\":{\"arguments_sha256\":\"b16434a7b8976b73b84e856a6399192ac9d23c5868a6cfc6baa90181d2869808\",\"request_id\":\"f35b663064a442448202557515dacaf4\",\"snapshot_id\":null,\"state\":\"failed\",\"tool\":\"plan_visit\"},\"limitations\":[],\"method\":\"\",\"normalized_input\":{\"arguments\":{\"request\":\"Planifica una visita sanitaria de ida y vuelta desde las paradas centrales de Zegama al Ambulatorio de Beasain, usando el origen catalogado zegama_center_stops y el destino beasain_official_centre_anchor, el 29 de septiembre de 2026. La consulta es a las 09:30 y dura 20 minutos. Calcula la carga temporal completa con los valores predeterminados disponibles; usa el snapshot oficial por defecto y el perfil de paseo predeterminado.\"},\"tool\":\"plan_visit\"},\"outcomes\":[],\"raw_result_sha256\":null,\"request_id\":\"f35b663064a442448202557515dacaf4\",\"schema_version\":\"1.1.0\",\"selection\":{\"criterion\":\"Primeras entidades en el orden validado de la herramienta\",\"detail_mechanism\":\"Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.\",\"omitted_entities\":0,\"returned_entities\":0,\"total_entities\":0},\"status\":\"error\",\"versions\":{\"code_sha256\":\"46498d6be4f65642784e3a721e408b7d22a0910f937f91660d095b7e57de807c\",\"contract_sha256\":\"6fbd22a567cc5a8d8ce17fd1968c52fc92448526bf81103e2768486d724d9ad0\",\"data_sha256\":\"ca7ed5f15a4d9b5de5667f27dd08c91ae3e98b57a2fa383f7a77d11200170b92\"}}",
+    "tag": "SECTION",
+    "text": "Resultado de plan_visit",
+    "toolcalls": []
+  },
+  {
+    "class": "studio-message is-assistant",
+    "tag": "ARTICLE",
+    "text": "GIPUZKOA 360 vNext R13 patch3 3951b290\nTool · plan_visit\n{\"request\":\"Origen: Paradas centrales de Zegama. Destino: Ambulatorio de Beasain. Fecha: 2026-09-29. Hora de la cita: 09:30. Duración de la consulta: 20 minutos. Viaje de ida y vuelta, usando los valores predeterminados disponibles.\"}",
+    "toolcalls": [
+      {
+        "args": "{\"request\":\"Origen: Paradas centrales de Zegama. Destino: Ambulatorio de Beasain. Fecha: 2026-09-29. Hora de la cita: 09:30. Duración de la consulta: 20 minutos. Viaje de ida y vuelta, usando los valores predeterminados disponibles.\"}",
+        "name": "Tool · plan_visit"
+      }
+    ]
+  },
+  {
+    "class": "studio-tool-message ",
+    "result": "{\"assumptions\":[],\"capability_id\":\"plan_visit\",\"claims\":[],\"effective_request\":null,\"error\":{\"available_options\":[],\"code\":\"invalid_arguments\",\"message\":\"arguments:request:invalid_value\",\"origin\":\"domain\",\"safe_next_action\":\"Revisar los valores disponibles; si el fallo persiste, no usar el resultado.\"},\"execution\":{\"arguments_sha256\":\"6172b2c569046bbad90931497a1a07f656dd7ee7a7ce79bb18d88fc9eec28baa\",\"request_id\":\"8e9817257a074471b6a2ee3c7b52948d\",\"snapshot_id\":null,\"state\":\"failed\",\"tool\":\"plan_visit\"},\"limitations\":[],\"method\":\"\",\"normalized_input\":{\"arguments\":{\"request\":\"Origen: Paradas centrales de Zegama. Destino: Ambulatorio de Beasain. Fecha: 2026-09-29. Hora de la cita: 09:30. Duración de la consulta: 20 minutos. Viaje de ida y vuelta, usando los valores predeterminados disponibles.\"},\"tool\":\"plan_visit\"},\"outcomes\":[],\"raw_result_sha256\":null,\"request_id\":\"8e9817257a074471b6a2ee3c7b52948d\",\"schema_version\":\"1.1.0\",\"selection\":{\"criterion\":\"Primeras entidades en el orden validado de la herramienta\",\"detail_mechanism\":\"Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.\",\"omitted_entities\":0,\"returned_entities\":0,\"total_entities\":0},\"status\":\"error\",\"versions\":{\"code_sha256\":\"46498d6be4f65642784e3a721e408b7d22a0910f937f91660d095b7e57de807c\",\"contract_sha256\":\"6fbd22a567cc5a8d8ce17fd1968c52fc92448526bf81103e2768486d724d9ad0\",\"data_sha256\":\"ca7ed5f15a4d9b5de5667f27dd08c91ae3e98b57a2fa383f7a77d11200170b92\"}}",
+    "tag": "SECTION",
+    "text": "Resultado de plan_visit",
+    "toolcalls": []
+  },
+  {
+    "class": "studio-message is-assistant",
+    "tag": "ARTICLE",
+    "text": "GIPUZKOA 360 vNext R13 patch3 3951b290\n\nNo puedo calcular la carga temporal completa: el planificador ha rechazado la petición con el error observado arguments:request:invalid_value (origin=domain). No devuelve horarios, trayectos ni duración, así que no debo inventar cifras.\n\nLa petición sí contiene los datos necesarios según el catálogo: paradas centrales de Zegama, Ambulatorio de Beasain, 29/09/2026, cita a las 09:30, duración de 20 minutos y regreso. El resultado que habría que obtener incluiría viaje de ida, paseo modelado hasta el punto oficial, espera o margen aplicable, 20 minutos de consulta, viaje de vuelta y llegada a las paradas de regreso.\n\nSe mantiene la limitación: sería una estimación con horarios programados y paseo modelado, no un tiempo real puerta a puerta; la entrada física del ambulatorio no está verificada.",
+    "toolcalls": []
+  }
+]

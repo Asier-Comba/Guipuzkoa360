@@ -1,0 +1,641 @@
+{
+  "schema_version": "W3-PROVIDER-EVIDENCE-1",
+  "classification": "OFFLINE_DETERMINISTIC_PROVIDER_OUTPUT",
+  "disclaimer": "Resultados guardados de un proveedor determinista de W1; no son respuestas del agente W2 ni consultas live.",
+  "provider_head": "c68eb5c55dec72a267b7435b4c364049f6eab408",
+  "provider_contract_version": "0.1.0",
+  "snapshot_sha256": "30fc9d638f3576ae0e1084ee1e0c7b0268469bffc8af1dd15fd12430019d968b",
+  "outputs": [
+    {
+      "id": "zegama_0930",
+      "title": "Zegama · cita 09:30 · 30 min",
+      "source_case_id": "W1-RC-01",
+      "changed_request_fields": {},
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_center_stop_pair",
+        "date": "2026-09-29",
+        "appointment_time": "09:30",
+        "duration_minutes": 30,
+        "snapshot_id": "official-goierrialdea-go01-20260928"
+      },
+      "result": {
+        "schema_version": "0.1.0",
+        "normalized_request": {
+          "origin_id": "zegama_center_stops",
+          "destination_id": "beasain_center_stop_pair",
+          "date": "2026-09-29",
+          "appointment_time": "09:30:00",
+          "duration_minutes": 30,
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "stop_only",
+          "snapshot_id": "official-goierrialdea-go01-20260928",
+          "timezone": "Europe/Madrid"
+        },
+        "status": "ok",
+        "time_basis": "scheduled",
+        "scope": "stop_to_stop_with_destination_walk",
+        "snapshot_id": "official-goierrialdea-go01-20260928",
+        "itinerary": {
+          "outbound": {
+            "trip_id": "1_101_LJ_31500",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "8305",
+            "to_stop_id": "7214",
+            "from_stop_sequence": 2,
+            "to_stop_sequence": 28,
+            "departure_time": "08:47:37",
+            "arrival_time": "09:17:50",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "return": {
+            "trip_id": "1_106_LJ_37200",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "7218",
+            "to_stop_id": "8309",
+            "from_stop_sequence": 8,
+            "to_stop_sequence": 35,
+            "departure_time": "10:29:50",
+            "arrival_time": "11:07:48",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "total_s": 8411,
+          "alternatives_evaluated": 95
+        },
+        "components_s": {
+          "origin_access_outbound_s": 0,
+          "outbound_vehicle_s": 1813,
+          "destination_walk_outbound_s": 0,
+          "pre_appointment_wait_s": 730,
+          "appointment_s": 1800,
+          "destination_walk_return_s": 0,
+          "return_wait_s": 1790,
+          "return_vehicle_s": 2278,
+          "origin_access_return_s": 0
+        },
+        "sources": [
+          {
+            "classification": "OFFICIAL",
+            "feed_version": "20260928054818",
+            "index_last_update": "2026-09-29 07:01:13",
+            "index_url": "https://opendata.euskadi.eus/transport/moveuskadi/data-index-gtfs.json",
+            "operator_feed": "Lurraldebus Goierrialdea",
+            "publisher": "Gobierno Vasco / Moveuskadi",
+            "retrieved_date": "2026-09-29",
+            "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+            "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+          }
+        ],
+        "assumptions": [
+          "Horarios programados; no incorpora incidencias ni retrasos en tiempo real.",
+          "La búsqueda solo contempla viajes directos y paradas declaradas en el catálogo."
+        ],
+        "limitations": [
+          "Solo GO01 y viajes directos entre los pares de paradas catalogados.",
+          "Los tiempos tienen timepoint=0; son tiempos aproximados/interpolados del feed.",
+          "No demuestra un desplazamiento real, puntualidad, accesibilidad universal ni cobertura desde viviendas.",
+          "La ausencia de calendar_dates no se interpreta por sí sola como corrupción del GTFS.",
+          "Destino piloto en paradas del centro de Beasain; no reproduce el paseo al ambulatorio de la PoC histórica."
+        ],
+        "error": null
+      }
+    },
+    {
+      "id": "zegama_1000",
+      "title": "Zegama · cita 10:00 · 30 min",
+      "source_case_id": "W1-RC-02",
+      "changed_request_fields": {},
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_center_stop_pair",
+        "date": "2026-09-29",
+        "appointment_time": "10:00",
+        "duration_minutes": 30,
+        "snapshot_id": "official-goierrialdea-go01-20260928"
+      },
+      "result": {
+        "schema_version": "0.1.0",
+        "normalized_request": {
+          "origin_id": "zegama_center_stops",
+          "destination_id": "beasain_center_stop_pair",
+          "date": "2026-09-29",
+          "appointment_time": "10:00:00",
+          "duration_minutes": 30,
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "stop_only",
+          "snapshot_id": "official-goierrialdea-go01-20260928",
+          "timezone": "Europe/Madrid"
+        },
+        "status": "ok",
+        "time_basis": "scheduled",
+        "scope": "stop_to_stop_with_destination_walk",
+        "snapshot_id": "official-goierrialdea-go01-20260928",
+        "itinerary": {
+          "outbound": {
+            "trip_id": "1_105_LJ_33300",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "8305",
+            "to_stop_id": "7214",
+            "from_stop_sequence": 2,
+            "to_stop_sequence": 28,
+            "departure_time": "09:17:37",
+            "arrival_time": "09:47:50",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "return": {
+            "trip_id": "1_102_LJ_38700",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "7218",
+            "to_stop_id": "8309",
+            "from_stop_sequence": 13,
+            "to_stop_sequence": 40,
+            "departure_time": "10:59:31",
+            "arrival_time": "11:37:29",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "total_s": 8392,
+          "alternatives_evaluated": 108
+        },
+        "components_s": {
+          "origin_access_outbound_s": 0,
+          "outbound_vehicle_s": 1813,
+          "destination_walk_outbound_s": 0,
+          "pre_appointment_wait_s": 730,
+          "appointment_s": 1800,
+          "destination_walk_return_s": 0,
+          "return_wait_s": 1771,
+          "return_vehicle_s": 2278,
+          "origin_access_return_s": 0
+        },
+        "sources": [
+          {
+            "classification": "OFFICIAL",
+            "feed_version": "20260928054818",
+            "index_last_update": "2026-09-29 07:01:13",
+            "index_url": "https://opendata.euskadi.eus/transport/moveuskadi/data-index-gtfs.json",
+            "operator_feed": "Lurraldebus Goierrialdea",
+            "publisher": "Gobierno Vasco / Moveuskadi",
+            "retrieved_date": "2026-09-29",
+            "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+            "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+          }
+        ],
+        "assumptions": [
+          "Horarios programados; no incorpora incidencias ni retrasos en tiempo real.",
+          "La búsqueda solo contempla viajes directos y paradas declaradas en el catálogo."
+        ],
+        "limitations": [
+          "Solo GO01 y viajes directos entre los pares de paradas catalogados.",
+          "Los tiempos tienen timepoint=0; son tiempos aproximados/interpolados del feed.",
+          "No demuestra un desplazamiento real, puntualidad, accesibilidad universal ni cobertura desde viviendas.",
+          "La ausencia de calendar_dates no se interpreta por sí sola como corrupción del GTFS.",
+          "Destino piloto en paradas del centro de Beasain; no reproduce el paseo al ambulatorio de la PoC histórica."
+        ],
+        "error": null
+      }
+    },
+    {
+      "id": "segura_1900_30",
+      "title": "Segura · cita 19:00 · 30 min",
+      "source_case_id": "W1-RC-07",
+      "changed_request_fields": {},
+      "request": {
+        "origin_id": "segura_herriko_plaza_stops",
+        "destination_id": "beasain_center_stop_pair",
+        "date": "2026-09-29",
+        "appointment_time": "19:00",
+        "duration_minutes": 30,
+        "snapshot_id": "official-goierrialdea-go01-20260928"
+      },
+      "result": {
+        "schema_version": "0.1.0",
+        "normalized_request": {
+          "origin_id": "segura_herriko_plaza_stops",
+          "destination_id": "beasain_center_stop_pair",
+          "date": "2026-09-29",
+          "appointment_time": "19:00:00",
+          "duration_minutes": 30,
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "stop_only",
+          "snapshot_id": "official-goierrialdea-go01-20260928",
+          "timezone": "Europe/Madrid"
+        },
+        "status": "ok",
+        "time_basis": "scheduled",
+        "scope": "stop_to_stop_with_destination_walk",
+        "snapshot_id": "official-goierrialdea-go01-20260928",
+        "itinerary": {
+          "outbound": {
+            "trip_id": "1_101_LJ_63900",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "7801",
+            "to_stop_id": "7214",
+            "from_stop_sequence": 10,
+            "to_stop_sequence": 28,
+            "departure_time": "17:55:33",
+            "arrival_time": "18:17:50",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "return": {
+            "trip_id": "1_102_LJ_71100",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "7218",
+            "to_stop_id": "7813",
+            "from_stop_sequence": 13,
+            "to_stop_sequence": 32,
+            "departure_time": "19:59:31",
+            "arrival_time": "20:27:56",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "total_s": 9143,
+          "alternatives_evaluated": 57
+        },
+        "components_s": {
+          "origin_access_outbound_s": 0,
+          "outbound_vehicle_s": 1337,
+          "destination_walk_outbound_s": 0,
+          "pre_appointment_wait_s": 2530,
+          "appointment_s": 1800,
+          "destination_walk_return_s": 0,
+          "return_wait_s": 1771,
+          "return_vehicle_s": 1705,
+          "origin_access_return_s": 0
+        },
+        "sources": [
+          {
+            "classification": "OFFICIAL",
+            "feed_version": "20260928054818",
+            "index_last_update": "2026-09-29 07:01:13",
+            "index_url": "https://opendata.euskadi.eus/transport/moveuskadi/data-index-gtfs.json",
+            "operator_feed": "Lurraldebus Goierrialdea",
+            "publisher": "Gobierno Vasco / Moveuskadi",
+            "retrieved_date": "2026-09-29",
+            "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+            "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+          }
+        ],
+        "assumptions": [
+          "Horarios programados; no incorpora incidencias ni retrasos en tiempo real.",
+          "La búsqueda solo contempla viajes directos y paradas declaradas en el catálogo."
+        ],
+        "limitations": [
+          "Solo GO01 y viajes directos entre los pares de paradas catalogados.",
+          "Los tiempos tienen timepoint=0; son tiempos aproximados/interpolados del feed.",
+          "No demuestra un desplazamiento real, puntualidad, accesibilidad universal ni cobertura desde viviendas.",
+          "La ausencia de calendar_dates no se interpreta por sí sola como corrupción del GTFS.",
+          "Destino piloto en paradas del centro de Beasain; no reproduce el paseo al ambulatorio de la PoC histórica."
+        ],
+        "error": null
+      }
+    },
+    {
+      "id": "segura_1900_180",
+      "title": "Segura · cita 19:00 · 180 min",
+      "source_case_id": "W1-RC-07",
+      "changed_request_fields": {
+        "duration_minutes": 180
+      },
+      "request": {
+        "origin_id": "segura_herriko_plaza_stops",
+        "destination_id": "beasain_center_stop_pair",
+        "date": "2026-09-29",
+        "appointment_time": "19:00",
+        "duration_minutes": 180,
+        "snapshot_id": "official-goierrialdea-go01-20260928"
+      },
+      "result": {
+        "schema_version": "0.1.0",
+        "normalized_request": {
+          "origin_id": "segura_herriko_plaza_stops",
+          "destination_id": "beasain_center_stop_pair",
+          "date": "2026-09-29",
+          "appointment_time": "19:00:00",
+          "duration_minutes": 180,
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "stop_only",
+          "snapshot_id": "official-goierrialdea-go01-20260928",
+          "timezone": "Europe/Madrid"
+        },
+        "status": "no_feasible_journey",
+        "time_basis": "scheduled",
+        "scope": "stop_to_stop_with_destination_walk",
+        "snapshot_id": "official-goierrialdea-go01-20260928",
+        "itinerary": null,
+        "components_s": null,
+        "sources": [
+          {
+            "classification": "OFFICIAL",
+            "feed_version": "20260928054818",
+            "index_last_update": "2026-09-29 07:01:13",
+            "index_url": "https://opendata.euskadi.eus/transport/moveuskadi/data-index-gtfs.json",
+            "operator_feed": "Lurraldebus Goierrialdea",
+            "publisher": "Gobierno Vasco / Moveuskadi",
+            "retrieved_date": "2026-09-29",
+            "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+            "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+          }
+        ],
+        "assumptions": [
+          "Horarios programados; no incorpora incidencias ni retrasos en tiempo real.",
+          "La búsqueda solo contempla viajes directos y paradas declaradas en el catálogo."
+        ],
+        "limitations": [
+          "Solo GO01 y viajes directos entre los pares de paradas catalogados.",
+          "Los tiempos tienen timepoint=0; son tiempos aproximados/interpolados del feed.",
+          "No demuestra un desplazamiento real, puntualidad, accesibilidad universal ni cobertura desde viviendas.",
+          "La ausencia de calendar_dates no se interpreta por sí sola como corrupción del GTFS.",
+          "Destino piloto en paradas del centro de Beasain; no reproduce el paseo al ambulatorio de la PoC histórica."
+        ],
+        "error": {
+          "code": "no_pair_in_complete_direct_search",
+          "message": "No hay pareja directa viable en el alcance completo del snapshot"
+        }
+      }
+    },
+    {
+      "id": "zegama_unvalidated",
+      "title": "Zegama · fecha aún no validada",
+      "source_case_id": "W1-RC-01",
+      "changed_request_fields": {
+        "date": "2026-10-04"
+      },
+      "request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_center_stop_pair",
+        "date": "2026-10-04",
+        "appointment_time": "09:30",
+        "duration_minutes": 30,
+        "snapshot_id": "official-goierrialdea-go01-20260928"
+      },
+      "result": {
+        "schema_version": "0.1.0",
+        "normalized_request": {
+          "origin_id": "zegama_center_stops",
+          "destination_id": "beasain_center_stop_pair",
+          "date": "2026-10-04",
+          "appointment_time": "09:30:00",
+          "duration_minutes": 30,
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "stop_only",
+          "snapshot_id": "official-goierrialdea-go01-20260928",
+          "timezone": "Europe/Madrid"
+        },
+        "status": "unknown",
+        "time_basis": "scheduled",
+        "scope": "stop_to_stop_with_destination_walk",
+        "snapshot_id": "official-goierrialdea-go01-20260928",
+        "itinerary": null,
+        "components_s": null,
+        "sources": [
+          {
+            "classification": "OFFICIAL",
+            "feed_version": "20260928054818",
+            "index_last_update": "2026-09-29 07:01:13",
+            "index_url": "https://opendata.euskadi.eus/transport/moveuskadi/data-index-gtfs.json",
+            "operator_feed": "Lurraldebus Goierrialdea",
+            "publisher": "Gobierno Vasco / Moveuskadi",
+            "retrieved_date": "2026-09-29",
+            "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+            "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+          }
+        ],
+        "assumptions": [
+          "Horarios programados; no incorpora incidencias ni retrasos en tiempo real.",
+          "La búsqueda solo contempla viajes directos y paradas declaradas en el catálogo."
+        ],
+        "limitations": [
+          "Solo GO01 y viajes directos entre los pares de paradas catalogados.",
+          "Los tiempos tienen timepoint=0; son tiempos aproximados/interpolados del feed.",
+          "No demuestra un desplazamiento real, puntualidad, accesibilidad universal ni cobertura desde viviendas.",
+          "La ausencia de calendar_dates no se interpreta por sí sola como corrupción del GTFS.",
+          "Destino piloto en paradas del centro de Beasain; no reproduce el paseo al ambulatorio de la PoC histórica."
+        ],
+        "error": {
+          "code": "date_not_validated",
+          "message": "La fecha está cubierta nominalmente pero no validada para este snapshot"
+        }
+      }
+    }
+  ],
+  "appointment_comparison": {
+    "schema_version": "0.1.0",
+    "status": "ok",
+    "results": [
+      {
+        "schema_version": "0.1.0",
+        "normalized_request": {
+          "origin_id": "zegama_center_stops",
+          "destination_id": "beasain_center_stop_pair",
+          "date": "2026-09-29",
+          "appointment_time": "09:30:00",
+          "duration_minutes": 30,
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "stop_only",
+          "snapshot_id": "official-goierrialdea-go01-20260928",
+          "timezone": "Europe/Madrid"
+        },
+        "status": "ok",
+        "time_basis": "scheduled",
+        "scope": "stop_to_stop_with_destination_walk",
+        "snapshot_id": "official-goierrialdea-go01-20260928",
+        "itinerary": {
+          "outbound": {
+            "trip_id": "1_101_LJ_31500",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "8305",
+            "to_stop_id": "7214",
+            "from_stop_sequence": 2,
+            "to_stop_sequence": 28,
+            "departure_time": "08:47:37",
+            "arrival_time": "09:17:50",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "return": {
+            "trip_id": "1_106_LJ_37200",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "7218",
+            "to_stop_id": "8309",
+            "from_stop_sequence": 8,
+            "to_stop_sequence": 35,
+            "departure_time": "10:29:50",
+            "arrival_time": "11:07:48",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "total_s": 8411,
+          "alternatives_evaluated": 95
+        },
+        "components_s": {
+          "origin_access_outbound_s": 0,
+          "outbound_vehicle_s": 1813,
+          "destination_walk_outbound_s": 0,
+          "pre_appointment_wait_s": 730,
+          "appointment_s": 1800,
+          "destination_walk_return_s": 0,
+          "return_wait_s": 1790,
+          "return_vehicle_s": 2278,
+          "origin_access_return_s": 0
+        },
+        "sources": [
+          {
+            "classification": "OFFICIAL",
+            "feed_version": "20260928054818",
+            "index_last_update": "2026-09-29 07:01:13",
+            "index_url": "https://opendata.euskadi.eus/transport/moveuskadi/data-index-gtfs.json",
+            "operator_feed": "Lurraldebus Goierrialdea",
+            "publisher": "Gobierno Vasco / Moveuskadi",
+            "retrieved_date": "2026-09-29",
+            "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+            "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+          }
+        ],
+        "assumptions": [
+          "Horarios programados; no incorpora incidencias ni retrasos en tiempo real.",
+          "La búsqueda solo contempla viajes directos y paradas declaradas en el catálogo."
+        ],
+        "limitations": [
+          "Solo GO01 y viajes directos entre los pares de paradas catalogados.",
+          "Los tiempos tienen timepoint=0; son tiempos aproximados/interpolados del feed.",
+          "No demuestra un desplazamiento real, puntualidad, accesibilidad universal ni cobertura desde viviendas.",
+          "La ausencia de calendar_dates no se interpreta por sí sola como corrupción del GTFS.",
+          "Destino piloto en paradas del centro de Beasain; no reproduce el paseo al ambulatorio de la PoC histórica."
+        ],
+        "error": null
+      },
+      {
+        "schema_version": "0.1.0",
+        "normalized_request": {
+          "origin_id": "zegama_center_stops",
+          "destination_id": "beasain_center_stop_pair",
+          "date": "2026-09-29",
+          "appointment_time": "10:00:00",
+          "duration_minutes": 30,
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "stop_only",
+          "snapshot_id": "official-goierrialdea-go01-20260928",
+          "timezone": "Europe/Madrid"
+        },
+        "status": "ok",
+        "time_basis": "scheduled",
+        "scope": "stop_to_stop_with_destination_walk",
+        "snapshot_id": "official-goierrialdea-go01-20260928",
+        "itinerary": {
+          "outbound": {
+            "trip_id": "1_105_LJ_33300",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "8305",
+            "to_stop_id": "7214",
+            "from_stop_sequence": 2,
+            "to_stop_sequence": 28,
+            "departure_time": "09:17:37",
+            "arrival_time": "09:47:50",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "return": {
+            "trip_id": "1_102_LJ_38700",
+            "route_id": "1",
+            "service_id": "LJ",
+            "from_stop_id": "7218",
+            "to_stop_id": "8309",
+            "from_stop_sequence": 13,
+            "to_stop_sequence": 40,
+            "departure_time": "10:59:31",
+            "arrival_time": "11:37:29",
+            "pickup_type": 0,
+            "drop_off_type": 0,
+            "from_timepoint": 0,
+            "to_timepoint": 0
+          },
+          "total_s": 8392,
+          "alternatives_evaluated": 108
+        },
+        "components_s": {
+          "origin_access_outbound_s": 0,
+          "outbound_vehicle_s": 1813,
+          "destination_walk_outbound_s": 0,
+          "pre_appointment_wait_s": 730,
+          "appointment_s": 1800,
+          "destination_walk_return_s": 0,
+          "return_wait_s": 1771,
+          "return_vehicle_s": 2278,
+          "origin_access_return_s": 0
+        },
+        "sources": [
+          {
+            "classification": "OFFICIAL",
+            "feed_version": "20260928054818",
+            "index_last_update": "2026-09-29 07:01:13",
+            "index_url": "https://opendata.euskadi.eus/transport/moveuskadi/data-index-gtfs.json",
+            "operator_feed": "Lurraldebus Goierrialdea",
+            "publisher": "Gobierno Vasco / Moveuskadi",
+            "retrieved_date": "2026-09-29",
+            "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+            "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+          }
+        ],
+        "assumptions": [
+          "Horarios programados; no incorpora incidencias ni retrasos en tiempo real.",
+          "La búsqueda solo contempla viajes directos y paradas declaradas en el catálogo."
+        ],
+        "limitations": [
+          "Solo GO01 y viajes directos entre los pares de paradas catalogados.",
+          "Los tiempos tienen timepoint=0; son tiempos aproximados/interpolados del feed.",
+          "No demuestra un desplazamiento real, puntualidad, accesibilidad universal ni cobertura desde viviendas.",
+          "La ausencia de calendar_dates no se interpreta por sí sola como corrupción del GTFS.",
+          "Destino piloto en paradas del centro de Beasain; no reproduce el paseo al ambulatorio de la PoC histórica."
+        ],
+        "error": null
+      }
+    ],
+    "differences_s": [
+      {
+        "left_index": 0,
+        "right_index": 1,
+        "total_difference_s": -19
+      }
+    ],
+    "error": null
+  }
+}

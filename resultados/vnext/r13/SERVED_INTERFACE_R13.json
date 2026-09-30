@@ -1,0 +1,450 @@
+{
+  "observation_scope": "Studio preparation UI, not a model request trace",
+  "classification": "PARTIAL_OBSERVED",
+  "tools": {
+    "analizar_acceso_servicios": {
+      "name": "PASS",
+      "parameter_names": "PASS",
+      "types": "NOT_OBSERVED",
+      "required": "NOT_OBSERVED",
+      "nested_request_representation": "NOT_OBSERVED",
+      "expected_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "categoria_servicio": {
+            "type": "string"
+          },
+          "municipios": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "periodo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "umbral_km": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "categoria_servicio"
+        ],
+        "type": "object"
+      }
+    },
+    "analizar_coincidencia": {
+      "name": "PASS",
+      "parameter_names": "PASS",
+      "types": "NOT_OBSERVED",
+      "required": "NOT_OBSERVED",
+      "nested_request_representation": "NOT_OBSERVED",
+      "expected_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "categoria_servicio": {
+            "type": "string"
+          },
+          "cuantil": {
+            "type": "number"
+          },
+          "grupo_edad": {
+            "type": "string"
+          },
+          "periodo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "umbral_km": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "categoria_servicio"
+        ],
+        "type": "object"
+      }
+    },
+    "analizar_envejecimiento": {
+      "name": "PASS",
+      "parameter_names": "PASS",
+      "types": "NOT_OBSERVED",
+      "required": "NOT_OBSERVED",
+      "nested_request_representation": "NOT_OBSERVED",
+      "expected_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "grupo_edad": {
+            "type": "string"
+          },
+          "medida": {
+            "type": "string"
+          },
+          "periodo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "top_n": {
+            "type": "integer"
+          }
+        },
+        "required": [],
+        "type": "object"
+      }
+    },
+    "comparar_municipios": {
+      "name": "PASS",
+      "parameter_names": "PASS",
+      "types": "NOT_OBSERVED",
+      "required": "NOT_OBSERVED",
+      "nested_request_representation": "NOT_OBSERVED",
+      "expected_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "categoria_servicio": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "grupo_edad": {
+            "type": "string"
+          },
+          "municipios": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "periodo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "umbral_km": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "municipios"
+        ],
+        "type": "object"
+      }
+    },
+    "consultar_capacidades": {
+      "name": "PASS",
+      "parameter_names": "PASS",
+      "types": "NOT_OBSERVED",
+      "required": "NOT_OBSERVED",
+      "nested_request_representation": "NOT_OBSERVED",
+      "expected_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "pregunta_o_dimension": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [],
+        "type": "object"
+      }
+    },
+    "consultar_fuente": {
+      "name": "PASS",
+      "parameter_names": "PASS",
+      "types": "NOT_OBSERVED",
+      "required": "NOT_OBSERVED",
+      "nested_request_representation": "NOT_OBSERVED",
+      "expected_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "source_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [],
+        "type": "object"
+      }
+    },
+    "obtener_resumen_territorial": {
+      "name": "PASS",
+      "parameter_names": "PASS",
+      "types": "NOT_OBSERVED",
+      "required": "NOT_OBSERVED",
+      "nested_request_representation": "NOT_OBSERVED",
+      "expected_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "municipio": {
+            "type": "string"
+          },
+          "periodo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "municipio"
+        ],
+        "type": "object"
+      }
+    },
+    "plan_visit": {
+      "name": "PASS",
+      "parameter_names": "PASS",
+      "types": "NOT_OBSERVED",
+      "required": "NOT_OBSERVED",
+      "nested_request_representation": "NOT_OBSERVED",
+      "expected_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "request": {
+            "anyOf": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "appointment_time": {
+                    "type": "string"
+                  },
+                  "arrival_margin_minutes": {
+                    "type": "integer"
+                  },
+                  "boarding_margin_minutes": {
+                    "type": "integer"
+                  },
+                  "date": {
+                    "type": "string"
+                  },
+                  "destination_id": {
+                    "type": "string"
+                  },
+                  "duration_minutes": {
+                    "type": "integer"
+                  },
+                  "origin_id": {
+                    "type": "string"
+                  },
+                  "return_deadline": {
+                    "type": "string"
+                  },
+                  "snapshot_id": {
+                    "type": "string"
+                  },
+                  "walking_profile_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "origin_id",
+                  "destination_id",
+                  "date",
+                  "appointment_time",
+                  "duration_minutes"
+                ],
+                "type": "object"
+              },
+              {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "appointment_time": {
+                      "type": "string"
+                    },
+                    "arrival_margin_minutes": {
+                      "type": "integer"
+                    },
+                    "boarding_margin_minutes": {
+                      "type": "integer"
+                    },
+                    "date": {
+                      "type": "string"
+                    },
+                    "destination_id": {
+                      "type": "string"
+                    },
+                    "duration_minutes": {
+                      "type": "integer"
+                    },
+                    "origin_id": {
+                      "type": "string"
+                    },
+                    "return_deadline": {
+                      "type": "string"
+                    },
+                    "snapshot_id": {
+                      "type": "string"
+                    },
+                    "walking_profile_id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "origin_id",
+                    "destination_id",
+                    "date",
+                    "appointment_time",
+                    "duration_minutes"
+                  ],
+                  "type": "object"
+                },
+                "maxItems": 4,
+                "minItems": 2,
+                "type": "array"
+              }
+            ]
+          }
+        },
+        "required": [
+          "request"
+        ],
+        "type": "object"
+      }
+    },
+    "simular_escenario": {
+      "name": "PASS",
+      "parameter_names": "PASS",
+      "types": "NOT_OBSERVED",
+      "required": "NOT_OBSERVED",
+      "nested_request_representation": "NOT_OBSERVED",
+      "expected_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "accion": {
+            "type": "string"
+          },
+          "categoria_servicio": {
+            "type": "string"
+          },
+          "latitud": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "longitud": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "nuevo_umbral_km": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "periodo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "service_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "umbral_km": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "accion",
+          "categoria_servicio"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "model_visible": "openai:gpt-5.6-luna",
+  "tools_visible": 9,
+  "memory_visible": true,
+  "internet_visible": false,
+  "iterations_code": 8,
+  "full_served_schema": "NOT_OBSERVED",
+  "basis": "studio_preparation.txt lists nine names and parameter lists. Annotations in editor are code, not observed serialized schema.",
+  "real_observed_request": {
+    "evidence": "M04.json",
+    "tool": "plan_visit",
+    "request_type": "string",
+    "attempts": 2,
+    "expected_representation": "object or list of objects",
+    "binding": "FAIL",
+    "full_schema_causation": "NOT_OBSERVED; actual argument does not prove served schema type"
+  }
+}

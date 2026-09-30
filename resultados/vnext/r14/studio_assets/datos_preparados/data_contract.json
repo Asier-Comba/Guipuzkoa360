@@ -1,0 +1,110 @@
+{
+  "contract_version": "1.1.0",
+  "geographic_unit": "municipality",
+  "municipality_key": {
+    "field": "municipality_code",
+    "type": "string",
+    "pattern": "^20[0-9]{3}$",
+    "expected_unique_values": 88
+  },
+  "source_id_separator": "|",
+  "files": {
+    "datos_preparados/municipios.csv": {
+      "row_semantics": "Una fila por municipio de Gipuzkoa.",
+      "primary_key": ["municipality_code"],
+      "required_columns": {
+        "municipality_code": "string",
+        "municipality_name": "string",
+        "population_total": "integer",
+        "population_65_plus": "integer",
+        "population_75_plus": "integer",
+        "pct_65_plus": "number_pct_0_100",
+        "pct_75_plus": "number_pct_0_100",
+        "reference_period": "date_iso",
+        "source_id": "string",
+        "area_km2": "number_km2",
+        "services_hospital": "integer_count",
+        "services_mental_health": "integer_count",
+        "services_other_health": "integer_count",
+        "services_primary_care": "integer_count",
+        "services_total": "integer_count",
+        "primary_care_per_10000_65_plus": "number_rate_per_10000",
+        "primary_care_per_10000_75_plus": "number_rate_per_10000",
+        "hospital_per_10000_65_plus": "number_rate_per_10000",
+        "hospital_per_10000_75_plus": "number_rate_per_10000",
+        "mental_health_per_10000_65_plus": "number_rate_per_10000",
+        "mental_health_per_10000_75_plus": "number_rate_per_10000",
+        "other_health_per_10000_65_plus": "number_rate_per_10000",
+        "other_health_per_10000_75_plus": "number_rate_per_10000",
+        "representative_point_longitude": "number_degrees_epsg4326",
+        "representative_point_latitude": "number_degrees_epsg4326",
+        "distance_to_nearest_primary_care_m": "number_metres",
+        "distance_to_nearest_hospital_m": "number_metres",
+        "distance_to_nearest_mental_health_m": "number_metres",
+        "distance_to_nearest_other_health_m": "number_metres",
+        "metrics_reference_period": "string",
+        "source_ids": "pipe_delimited_source_ids"
+      }
+    },
+    "datos_preparados/demografia.csv": {
+      "row_semantics": "Una fila por municipio de Gipuzkoa; población residente a 2025-01-01.",
+      "primary_key": ["municipality_code"],
+      "expected_rows": 88
+    },
+    "datos_preparados/servicios.csv": {
+      "row_semantics": "Una fila por registro de centro sanitario público de la fuente.",
+      "primary_key": ["service_id"],
+      "foreign_key": {"municipality_code": "datos_preparados/municipios.csv.municipality_code"},
+      "coordinate_crs": "EPSG:4326",
+      "service_category_enum": ["primary_care", "hospital", "mental_health", "other_health"]
+    },
+    "datos_preparados/runtime_servicios.csv": {
+      "row_semantics": "Vista mínima de servicios para consulta y simulación; conserva una fila por service_id.",
+      "primary_key": ["service_id"],
+      "coordinate_crs": "EPSG:4326 y EPSG:25830",
+      "required_columns": ["service_id", "service_name", "service_category", "municipality_code", "latitude", "longitude", "reference_period", "source_id", "easting_m", "northing_m"]
+    },
+    "datos_preparados/runtime_municipality_points.csv": {
+      "row_semantics": "Un punto interior representativo por municipio para cálculos sin GeoPandas en runtime.",
+      "primary_key": ["municipality_code"],
+      "expected_rows": 88,
+      "coordinate_crs": "EPSG:4326 y EPSG:25830",
+      "required_columns": ["municipality_code", "municipality_name", "latitude", "longitude", "easting_m", "northing_m", "reference_period", "source_id"]
+    },
+    "datos_preparados/runtime_municipios.geojson": {
+      "row_semantics": "Una Feature por municipio con geometría simplificada y las mismas métricas de municipios.csv.",
+      "primary_key": ["municipality_code"],
+      "crs": "EPSG:4326",
+      "geometry_types": ["Polygon", "MultiPolygon"],
+      "simplification_tolerance_m": 25
+    }
+  },
+  "invariants": [
+    "population_75_plus <= population_65_plus <= population_total",
+    "pct_* = population_* / population_total * 100, redondeado a 3 decimales",
+    "services_total = suma de los cuatro services_<category>",
+    "<category>_per_10000_<age>_plus = services_<category> / population_<age>_plus * 10000, redondeado a 3 decimales",
+    "distance_to_nearest_<category>_m se calcula en EPSG:25830 desde representative_point al punto de servicio más cercano",
+    "un cero en services_<category> significa ausencia de registros de esa categoría en el municipio; no significa falta de acceso",
+    "un nulo nunca se convierte implícitamente en cero"
+  ],
+  "periods": {
+    "demography": "2025-01-01",
+    "geography": "2025-05-07",
+    "services": "2026-09-20",
+    "maximum_separation_days": 627
+  },
+  "calculation_crs": "EPSG:25830",
+  "publication_crs": "EPSG:4326",
+  "work3_mapping": {
+    "unit_id": "municipality_code",
+    "name": "municipality_name",
+    "population": "population_total",
+    "age_65_count": "population_65_plus",
+    "age_75_count": "population_75_plus",
+    "service_count": "services_<selected_category>",
+    "service_distance_km": "distance_to_nearest_<selected_category>_m / 1000",
+    "period": "metrics_reference_period",
+    "source_ids": "split source_ids by |"
+  }
+}

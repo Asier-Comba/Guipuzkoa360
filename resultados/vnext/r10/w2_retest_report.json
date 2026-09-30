@@ -1,0 +1,123 @@
+{
+  "classification": "OFFLINE_TOOL_KNOWN_DEVELOPMENT_NOT_CONVERSATION",
+  "w2_pin": "8272988566f5bca2d65d3119732bf831d11382dc",
+  "package_sha256": "366cdc7d160ee6743cb125c6709f57e48f6ddfb91ead812a92eb881570233357",
+  "manifest_sha256": "eba21c679004c7ecccb2ff786074f0f8e2411ae64cf567dfe2e94cd144b76ceb",
+  "static_package_review": {
+    "members": 30,
+    "expanded_bytes": 1148944,
+    "package_bytes": 153456,
+    "imports": [
+      "__future__",
+      "agentes",
+      "copy",
+      "csv",
+      "dataclasses",
+      "datetime",
+      "functools",
+      "hashlib",
+      "importlib",
+      "inspect",
+      "json",
+      "langchain",
+      "math",
+      "mobility_adapter",
+      "os",
+      "pathlib",
+      "prototypes",
+      "pytest",
+      "re",
+      "studio",
+      "subprocess",
+      "sys",
+      "tools",
+      "types",
+      "typing",
+      "unicodedata",
+      "uuid"
+    ],
+    "test_only_imports_not_declared_as_runtime": [
+      "pytest",
+      "agentes"
+    ],
+    "bundled_source_tests_executable_as_packaged": false
+  },
+  "legitimate_results_valid": true,
+  "checks": {
+    "C-R3-01": "PASS",
+    "C-R3-02": "PASS",
+    "C-R3-04": "PASS",
+    "C-R3-03": "PASS",
+    "C-R3-09": "PASS"
+  },
+  "root_defects": {
+    "municipality_binding": "FIXED_INDEPENDENTLY_VERIFIED",
+    "rate_lineage_and_model_leak": "FIXED_INDEPENDENTLY_VERIFIED",
+    "municipality_unit": "FIXED_INDEPENDENTLY_VERIFIED"
+  },
+  "observed": {
+    "aduna_public_rate_count": 0,
+    "tolosa_public_rate_count": 8,
+    "substitution_error": {
+      "available_options": [],
+      "code": "contract_violation",
+      "message": "tool_result:request_mismatch:municipio",
+      "origin": "execution",
+      "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+    },
+    "highlighted_claim": {
+      "assumptions": [],
+      "denominator": null,
+      "derivation": "derived_exact",
+      "entity_id": "GIPUZKOA_FILTERED",
+      "entity_label": "Municipios incluidos en el cruce",
+      "entity_type": "municipality_set",
+      "evidence_path": "/summary/highlighted_count",
+      "id": "claim-3",
+      "label": "highlighted_count",
+      "metric_id": "highlighted_count",
+      "numerator": null,
+      "period": "2025-01-01;2025-05-07;2026-09-20",
+      "reference_periods": [
+        {
+          "period": "2025-01-01",
+          "source_id": "EUSTAT_EMH_2025"
+        },
+        {
+          "period": "2025-05-07",
+          "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+        },
+        {
+          "period": "2026-09-20",
+          "source_id": "ODE_HEALTH_CENTRES_2026"
+        }
+      ],
+      "source_ids": [
+        "EUSTAT_EMH_2025",
+        "GEOEUSKADI_MUNICIPIOS_2025",
+        "ODE_HEALTH_CENTRES_2026"
+      ],
+      "source_refs": [
+        {
+          "role": "demographic_observation",
+          "source_id": "EUSTAT_EMH_2025"
+        },
+        {
+          "role": "municipal_reference_point",
+          "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+        },
+        {
+          "role": "service_location",
+          "source_id": "ODE_HEALTH_CENTRES_2026"
+        }
+      ],
+      "unit": "municipios",
+      "value": 7
+    }
+  },
+  "evidence_file": "w2_retest_evidence.json",
+  "evidence_sha256": "0af80434a3d97d91af60f87cd48c2545b7dc7f6637358c49fc8adfe09077ef39",
+  "llm_executed": 0,
+  "portal_executed": 0,
+  "health_contract": "NOT_IN_THIS_0.2.0_PACKAGE"
+}

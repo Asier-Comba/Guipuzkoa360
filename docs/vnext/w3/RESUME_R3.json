@@ -1,0 +1,31 @@
+{
+  "stage": "R3_HANDOFF_PARTIAL",
+  "last_tested_commit": "d912347a783189a268c90306ab1990c66b7344c0",
+  "dirty_files_at_handoff": [],
+  "consumed_heads": {
+    "w1": "c68eb5c55dec72a267b7435b4c364049f6eab408",
+    "w2": "f4615b36d0af93966e6ca0f2044288841e6574b8",
+    "v4_runtime": "195b4980fa5998b096c308296a55e452380b0371"
+  },
+  "contracts": {
+    "w1_visit": "0.1.0",
+    "w2_evidence": "1.0.0",
+    "w2_capability": "1.0.0",
+    "w3_trace": "2.0.0",
+    "scoring": "2.0.0"
+  },
+  "commands_and_results": [
+    "product-jury-qa-env/Scripts/python.exe -m pytest -q -o addopts=: 282 PASS",
+    "node --test tests/e2e/contract_flow.test.mjs: 17 PASS",
+    "python scripts/ops/verify_runtime_identity.py: 14/14 PASS",
+    "python scripts/benchmark/verify_jury_results.py: PASS",
+    "python scripts/release/verify_final_artifacts.py: PASS",
+    "python scripts/vnext_product/score_runs.py [--holdout private]: NOT_RUN, llm_executed=0"
+  ],
+  "next_task": "Read new W1/W2 heads by SHA, verify combined package and unit fix; freeze candidate; request separate portal authorization only for a concrete 12-case private smoke.",
+  "resume_condition": "A published combined W1+W2 candidate with exact HEAD/package/data manifests and HEALTH_DESTINATION_GO, or newly supplied official M4/M5/private source files.",
+  "portal_mutations": 0,
+  "llm_executed": 0,
+  "v4_vs_vnext": "NOT_RUN",
+  "merged_or_published_release": false
+}

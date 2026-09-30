@@ -1,0 +1,176 @@
+{
+  "schema_version": "W3_RELEASE_READINESS_R12_1",
+  "START_SHA": "281f92a25170c5082c5772c0130d2275e57edaaf",
+  "TESTED_HEAD": "0601367e11ce0e869d3042e55623409d20aac203",
+  "PUBLISHED_HEAD": "Final PR14 publication comment records the exact final SHA; this document cannot contain its own commit hash.",
+  "PACKAGE_TESTED": {
+    "baseline_sha256": "b4feb978b625b34f9d7331ce8d376a34a29e84e4783868f83ce48a0c0d1011be",
+    "baseline_w2_pin": "2321e03e3d994b488db9723560383d9defedcac7",
+    "latest_patch_sha256": "9dbb2d7421e2468e44949f94ad1ef5b9011430601d34dd76057fb1720e0bfb1b",
+    "latest_patch_head": "6693cbce605484dc48eca9ed7de867e32c5f3aa7",
+    "latest_patch_scope": "Integrity and declared-only assembly reproduction; full semantic acceptance NOT_RUN."
+  },
+  "pins": {
+    "W1_SUPPORT": "c9cb37f6c65e77149e18cd883eeaff40d1c1bb8e",
+    "W1_RUNTIME": "cb061a9e00a6496c40488a596bd94834bc2c49b2",
+    "W1_ZIP": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+    "V4_RUNTIME": "195b4980fa5998b096c308296a55e452380b0371",
+    "MAIN_ANCESTOR": "e213eaa9b73b0f8a4d1893e0269fe92fe6756955"
+  },
+  "CURRENT_FINDINGS": [
+    {
+      "id": "STUDIO_FREEZE_OMITS_RUNTIME_ASSETS",
+      "severity": "HIGH",
+      "owner": "W2",
+      "status": "OPEN_BASELINE_AND_9DB_PATCH",
+      "reproduction": "Exact declared data plus generated main/tools: contract_violation / capability:stale_validation_evidence; missing test proof files and runtime/static assets."
+    },
+    {
+      "id": "ROOT_PROPAGATION",
+      "severity": "HIGH",
+      "owner": "W2",
+      "status": "BASELINE_OPEN_PATCH_FIX_REPORTED_NOT_INDEPENDENTLY_RETESTED",
+      "reproduction": "Foreign W1 cwd yields legacy raw null/unverified_result and ID labels; W2 confirms product defect, even though supported package-cwd mode passes."
+    },
+    {
+      "id": "LEGACY_STOP_7214_LABEL",
+      "severity": "MEDIUM",
+      "owner": "W2",
+      "status": "BASELINE_OPEN_PATCH_FIX_REPORTED_NOT_INDEPENDENTLY_RETESTED",
+      "observed": "Correct stop ID retained, human name absent; three case occurrences of one root issue."
+    }
+  ],
+  "HARNESS_VS_PRODUCT_FINDINGS": {
+    "package_cwd": "Baseline PASS_WITH_MEDIUM_LIMIT, scope explicit; not deploy acceptance.",
+    "foreign_cwd": "Reproduced root dependency; W2 acknowledges genuine product defect. Evaluator mixed roots explain earlier FAIL but do not clear portability.",
+    "KeyError_transformation": "NOT_REPRODUCED in W3 public_result; W2 reports W1 evaluator applies health-only field to legacy. Do not attribute this stack to candidate without reproduction.",
+    "w3_initial_probe_errors": "Bootstrap/import ordering and missing legacy-label lookup were harness defects corrected before final verdict.",
+    "editor_first_attempt": "AX setValue did not persist code; real CodeMirror edit then downloaded-byte verification succeeded. No model message involved."
+  },
+  "OFFLINE_RESULTS": {
+    "integrity": "PASS",
+    "supported_package_cwd": "PASS",
+    "supported_case_count": 34,
+    "supported_cases_with_medium_warning": 3,
+    "case_fail_count": 0,
+    "generated_at_tool_direct_views": 3,
+    "binding_substitution_probe": 1,
+    "territorial_positives": "PASS",
+    "producer_raw_parity": "PASS",
+    "independent_r10_gtfs_geometry_contrast": "PASS",
+    "conditional_delta_s": -2100,
+    "foreign_cwd_diagnostic_calls": 2,
+    "declared_only_diagnostic_calls": 2,
+    "declared_only_direct_calls": 1,
+    "count_note": "34 is the final supported case set, not all repeated diagnostic executions, LLM messages or benchmark size.",
+    "PYTHON_TESTS": {
+      "status": "PASS",
+      "count": 312
+    },
+    "NODE_TESTS": {
+      "status": "PASS",
+      "count": 34
+    },
+    "jury_gate": "PASS",
+    "artifact_gate": "PASS"
+  },
+  "studio": {
+    "draft_name": "GIPUZKOA 360 vNext R12 b4feb978",
+    "draft_folder": "agentes/gipuzkoa_360_vnext_r12_b4feb978",
+    "loaded_package": "baseline b4feb978 only",
+    "saved_editors_byte_identical": "PASS",
+    "reused_common_assets": 8,
+    "new_assets": 11,
+    "asset_download_hash_verification": "PASS",
+    "extra_platform_template": "ejecucion.py created automatically; not imported by approved main/tools; immutable membership NOT_OBSERVED because no version created.",
+    "preparation_import_only": "PASS",
+    "model_visible": "openai:gpt-5.6-luna",
+    "tools_visible": 9,
+    "memory_config_visible": true,
+    "internet_config_visible": false,
+    "max_iterations_code": 8,
+    "declared_data_count": 13,
+    "actual_version_members": "NOT_OBSERVED",
+    "served_parameter_names": "PASS_OBSERVED_NINE_TOOLS_REQUEST_FIELD",
+    "served_complete_json_schema": "NOT_OBSERVED",
+    "effective_assembly_gate": "FAIL",
+    "version_creation": "BLOCKED"
+  },
+  "PORTAL_VERSION_ID": "NOT_OBSERVED",
+  "AUTHORIZATION_USED": "Separate draft, exact assets/code upload, preparation; private-version and <=12-user-message authorization retained, no scope extension used.",
+  "USER_MESSAGES_USED_OF_12": 0,
+  "MODEL_CALLS_OBSERVED": 0,
+  "model_call_count_scope": "No Pruebas message submitted; preparation internals do not expose model invocations. Internal count NOT_OBSERVED.",
+  "SMOKE_RESULTS": "BLOCKED",
+  "memory_history_inspection": "NOT_OBSERVED",
+  "memory_behavior": "NOT_RUN",
+  "routing_followup_recalculation_error_recovery": "NOT_RUN",
+  "CAPTURE_LIMITATIONS": [
+    "Preparation lists tool parameter names, not full served JSON schema.",
+    "No immutable version ID/membership or effective model history available.",
+    "No assistant final or autonomous tool choice claimed.",
+    "W3_TRACE_2.1.0 and scorer preserved; no partial preparation capture scored as conversation."
+  ],
+  "sources": {
+    "status": "PASS",
+    "scope": "Offline sources only; model explanation NOT_RUN"
+  },
+  "product": {
+    "status": "PASS",
+    "classification": "OFFLINE_W2_EXACT_PACKAGE_R12_NOT_AGENT",
+    "current_html": "resultados/vnext/health.html",
+    "historical_html": "resultados/vnext/health_r10.html",
+    "browser": "PASS_1366x768_AND_390x844_PLUS_VARIATION_UNKNOWN_IMPORT",
+    "live_agent_connection": "NOT_RUN"
+  },
+  "V4_PRESERVATION": {
+    "status": "PASS",
+    "local_runtime_identity": "PASS",
+    "portal_common_files": "PASS_BYTE_IDENTICAL_NO_OVERWRITE",
+    "existing_v4_agent": "UNMODIFIED_BY_W3",
+    "portal_frozen_v4_rehash": "NOT_OBSERVED"
+  },
+  "v4_comparison": "NOT_RUN",
+  "full_48_development": "NOT_RUN",
+  "full_20_conversations": "NOT_RUN",
+  "holdout_12": "NOT_RUN_NOT_OPENED",
+  "human_release_review": "NOT_RUN",
+  "rag": "NO_GO_SAME_CORPUS_BENEFIT_NOT_DEMONSTRATED",
+  "CI": {
+    "status": "PASS",
+    "tested_head": "0601367e11ce0e869d3042e55623409d20aac203",
+    "url": "https://github.com/Asier-Comba/Guipuzkoa360/actions/runs/36739794998",
+    "final_documentation_head": "See final publication comment."
+  },
+  "READY_FOR_FEEDBACK": "NO_FOR_CONVERSATIONAL_CANDIDATE_OFFLINE_MATERIAL_AVAILABLE",
+  "RELEASE_GO_NO_GO": "NO_GO",
+  "NEXT_EXACT_ACTION": "W2 publish exact generated candidate with complete frozen runtime closure and compatible agent-folder root; W3 independently retest changed ZIP, load compatible separate paths, create private version, execute frozen R12 max-12-message plan.",
+  "ADDITIONAL_AUTHORIZATION_NEEDED": "NO for same private candidate/preparation/<=12 messages. YES for extra messages, v4 LLM comparison/full benchmark, publication or new resources.",
+  "MERGED_OR_PUBLISHED_RELEASE": "NO",
+  "owner_comments": [
+    "https://github.com/Asier-Comba/Guipuzkoa360/pull/17#issuecomment-5914732632",
+    "https://github.com/Asier-Comba/Guipuzkoa360/pull/17#issuecomment-5914876930"
+  ],
+  "artifact_hashes": {
+    "resultados/vnext/r12/browser_review.json": "13c790d232e35c491adf4582e0d9a9cc0397d2a87502866bc137c0400c05001c",
+    "resultados/vnext/r12/candidate_evidence.json": "42db523f0a1e3691cc0cadd9a048e821a0eb9f22802a3548188da48e703b0c99",
+    "resultados/vnext/r12/candidate_review.json": "88ee92ed238d23223330c3e3dd727618a640c1d9448b0a612029c0a202e08965",
+    "resultados/vnext/r12/declared_files_diagnostic.json": "1141840f8ca0d9a70e0dfdd26a1a2ca411702e9d5005dcb7c8da658ceb0e6327",
+    "resultados/vnext/r12/deployment_review.json": "29c1b06bc8c631e749266c0992ee188206270a5407cfa98fc3f50921fcb870dc",
+    "resultados/vnext/r12/example_health_query.json": "830d8b9cafaa8d63fae1668c2d7794e187f21126e60630cd6d71a535fd0395bd",
+    "resultados/vnext/r12/foreign_cwd_diagnostic.json": "648653c356272adb10528354a46faa728a34d40137e8fca1e6e1249a5f21f615",
+    "resultados/vnext/r12/health_evidence.json": "bc9e6897ddcd0befa466322bead08ea4902a7e91eb21920782d2f433b5c3c628",
+    "resultados/vnext/r12/health_r12.png": "ae872343681b395b625530da8c5ba6bc3c688f853cfc70ac5c5b27a4f4842c0d",
+    "resultados/vnext/r12/latest_patch_review.json": "73e468ac8129cd46ee74c7bdb0a4f19043a5adb318acc528f48ff4250249438b",
+    "resultados/vnext/r12/patch_declared_files_diagnostic.json": "1ae048aae4e6556bd760c963337e1f7083f6ce2e237a316d94e60da0e72b0feb",
+    "resultados/vnext/r12/portal_asset_review.json": "28f1f4fce78e5547b5659f40341d89df842d579d524603ee44247c2f8d303223",
+    "resultados/vnext/r12/portal_code_review.json": "44d1d50fd89581dbf828774a734a32c6df965520c70a2e7cceb2483eef19042a",
+    "resultados/vnext/r12/shared_asset_review.json": "199edbd8b897de7fbd2fbb80226e0b9c6f1b18f8b9cbaee69ba0b1206ab5f544",
+    "resultados/vnext/r12/studio_preparation.png": "64989ea5e24db71ba27945f7384ec932c67b3850f3df87df52cac253908cd31b",
+    "resultados/vnext/r12/studio_preparation.txt": "e8af0f2ecc273988c27d5d4c09cac40c782ddbda1053f66b0e43d72c9ea3e86a"
+  },
+  "corpus_preservation": {
+    "status": "PASS",
+    "basis": "git diff from START_SHA contains only W3 product/evaluation/evidence/documentation files; corpus, holdout and gold untouched."
+  }
+}
