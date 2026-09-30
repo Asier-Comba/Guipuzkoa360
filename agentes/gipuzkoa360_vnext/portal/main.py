@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Any, Callable
+from typing import Any, Callable, NotRequired, TypedDict
 from uuid import uuid4
 
 try:
@@ -30,6 +30,8 @@ STUDIO_CONTEXT_FILES = [
     "datos_preparados/metadata_sources.json",
     "datos_preparados/data_contract.json",
     "datos_preparados/vnext/capabilities.json",
+    "datos_preparados/vnext/operational_catalog_r6.json",
+    "datos_preparados/vnext/consumer_labels_r7.json",
 ]
 
 SYSTEM_PROMPT = """Eres el coordinador privado GIPUZKOA 360 vNext. Responde preguntas territoriales
@@ -48,8 +50,17 @@ En un seguimiento conserva intención y parámetros que sigan vigentes, aplica l
 y vuelve a llamar la herramienta. Nunca reciclas un resultado anterior como evidencia nueva.
 Corrige a lo sumo un alias inequívoco. No cambies la intención para obtener un resultado.
 Si 50+, 70+, farmacia, citas o médicos no están habilitados, explica el dato o contrato faltante.
-La visita W1 solo calcula un viaje programado entre paradas con retorno, nunca acceso al centro
-sanitario, puerta a puerta ni tiempos reales. Conserva resultados no viables y unknown sin mezclarlos.
+Para visitas sanitarias, consulta consultar_capacidades('plan_visit') para obtener orígenes,
+destino, fecha, perfil, rangos y defaults. Resuelve nombres cotidianos mediante ese catálogo,
+no exijas IDs al usuario. plan_visit usa W1 0.3.1: viaje GO01 programado y paseo modelado
+hasta el punto oficial del Ambulatorio de Beasain. La entrada NO está verificada, la dirección
+tiene conflicto y no existen citas, tiempos reales ni puerta a puerta. La variante 0.2 stop_only
+requiere snapshot_id explícito; no la sustituyas por la visita sanitaria. Para márgenes, perfil,
+fecha y duración distingue petición acreditada del usuario, default y supuesto del agente:
+la presencia de un argumento no demuestra elección humana. Si falta información decisiva,
+pregunta; nunca inventes una cita ni cambies fechas relativas por la única fecha validada.
+Conserva resultados no viables, unsupported y unknown sin mezclarlos. Una comparación solo
+contiene 2–4 escenarios. Usa horarios, paradas, paseos y componentes de la vista verificada.
 
 Responde de forma natural y breve. Distingue una observación de un escenario hipotético. Distancia
 geométrica desde punto representativo no es viaje ni acceso real; un registro no acredita capacidad
@@ -111,9 +122,24 @@ def consultar_capacidades(pregunta_o_dimension: str | None = None) -> str:
     return _run("consultar_capacidades", {"pregunta_o_dimension": pregunta_o_dimension})
 
 
+class VisitRequest(TypedDict):
+    """W1 GO01 health_visit; optional snapshot_id selects the explicit legacy stop_only."""
+
+    origin_id: str
+    destination_id: str
+    date: str
+    appointment_time: str
+    duration_minutes: int
+    arrival_margin_minutes: NotRequired[int]
+    boarding_margin_minutes: NotRequired[int]
+    walking_profile_id: NotRequired[str]
+    snapshot_id: NotRequired[str]
+    return_deadline: NotRequired[str]
+
+
 @tool
-def plan_visit(request: dict[str, Any] | list[dict[str, Any]]) -> str:
-    """Plan W1 GO01 stop_only, or compare 2–32 explicit scenarios. No health-centre access."""
+def plan_visit(request: VisitRequest | list[VisitRequest]) -> str:
+    """Plan a health visit or compare 2–4 scenarios. First call consultar_capacidades('plan_visit') for valid origin and destination IDs, date, defaults and restrictions. The destination is a modelled official point, not a verified entrance or appointment. Stop-only requires explicit legacy snapshot_id."""
     return _run("plan_visit", {"request": request})
 
 

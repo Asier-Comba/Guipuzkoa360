@@ -1,0 +1,14 @@
+{
+  "round": "G360-R10",
+  "work_id": "W2",
+  "state": "LOCAL_CANDIDATE_COMPLETE_PORTAL_EVALUATION_PENDING",
+  "branch": "work/vnext-w2-agent-evidence",
+  "start_sha": "8272988566f5bca2d65d3119732bf831d11382dc",
+  "w1_support_pin": "6ebf41e2f1fe24f1c3678c4be13c6c44cf8cb62b",
+  "w3_consumed_head": "e821341ba1ffd8ed7947cdb97802348919ef502a",
+  "package_manifest": "docs/vnext/w2/CANDIDATE_MANIFEST_R10.json",
+  "stages": ["INTERFACE_AND_MODEL_VIEW_READY", "HEALTH_031_ADAPTER_READY", "DEPLOYABLE_PACKAGE_READY_LOCAL_ONLY", "AGENT_RUNNER_READY", "DEVELOPMENT_SMOKE_STATUS_NO_AUTHORIZED_MODEL"],
+  "next_exact_action": "W3 checks PR17 candidate package, actual Studio-served schema and two-editor/static-workspace loading in read-only review; after explicit authorization for a development model/portal run, execute scripts/vnext_agent/run_agent.py with an existing model factory and score observed traces independently.",
+  "human_authorization_required": "A previously authorized LangChain model factory or permitted portal agent test; portal writes and new credentials remain prohibited.",
+  "merged_or_published_release": false
+}

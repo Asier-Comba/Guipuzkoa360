@@ -23,7 +23,7 @@ except ImportError:  # Generated Studio bundle supplies this name.
 
 VERSION = "1.1.0"
 CAPABILITY_VERSION = "1.1.0"
-MAX_EVIDENCE_BYTES = 120_000
+MAX_EVIDENCE_BYTES = 500_000
 MAX_PUBLIC_BYTES = 120_000
 DEFAULT_PUBLIC_ENTITIES = 10
 SHA256_KEYS = {"data_sha256", "code_sha256", "contract_sha256", "arguments_sha256", "raw_result_sha256"}
@@ -129,10 +129,10 @@ def _workspace_root() -> Path:
     configured = os.environ.get("GIPUZKOA360_VNEXT_ROOT")
     if configured:
         return Path(configured).resolve()
-    candidate = Path.cwd().resolve()
-    if (candidate / "datos_preparados").is_dir():
-        return candidate
-    return Path(__file__).resolve().parents[2]
+    for candidate in (Path.cwd().resolve(), *Path(__file__).resolve().parents):
+        if (candidate / "datos_preparados").is_dir():
+            return candidate
+    raise ContractViolation("workspace:data_root_not_found")
 
 
 def _catalog(root: Path) -> dict[str, dict[str, Any]]:
@@ -224,7 +224,7 @@ def validate_capability(item: Any, root: Path, catalog: dict[str, Any]) -> None:
         actual_entities = sum(1 for _ in municipality_file.open(encoding="utf-8-sig")) - 1
         if coverage["entities"] != actual_entities:
             raise ContractViolation("capability:false_coverage")
-    if coverage["territory"] == "source_catalog" and coverage["entities"] != len([source for source in catalog if not source.startswith(("W1_", "W2_"))]):
+    if coverage["territory"] == "source_catalog" and coverage["entities"] != len(catalog):
         raise ContractViolation("capability:false_catalog_coverage")
     _strings(item["source_ids"], "capability.source_ids", nonempty=item["enabled"])
     if any(source not in catalog for source in item["source_ids"]):
@@ -498,6 +498,11 @@ def _source_roles(field: str, sources: list[str]) -> list[dict[str, str]]:
         "EUSTAT_EMH_2025": "denominator" if "per_10000" in field else "demographic_observation",
         "ODE_HEALTH_CENTRES_2026": "numerator" if "per_10000" in field else "service_location",
         "GEOEUSKADI_MUNICIPIOS_2025": "municipal_reference_point",
+        "GTFS": "official_schedule", "HEALTH_REGISTRY": "official_health_registry",
+        "HEALTH_PAGE": "official_health_page", "PADI_2026": "official_health_page",
+        "OSM": "open_network", "MODEL": "model_parameter",
+        "USER": "agent_or_user_parameter", "MODEL_DEFAULTS": "model_parameter",
+        "DERIVED": "derived_metric",
     }
     def role(source: str) -> str:
         for prefix, label in (("W1_GTFS@", "official_schedule"), ("W2_USER@", "user_parameter"), ("W1_MODEL@", "modelling_assumption"), ("W1_DERIVED@", "derived_network")):
@@ -508,9 +513,13 @@ def _source_roles(field: str, sources: list[str]) -> list[dict[str, str]]:
 
 
 def _claim_entity(raw: dict[str, Any], pointer: str) -> tuple[str, str, str]:
-    if raw.get("schema_version") == "0.2.0":
+    if raw.get("schema_version") in {"0.2.0", "0.3.1"}:
         if pointer.startswith("/differences_s/"):
             part = raw["differences_s"][int(pointer.split("/")[2])]
+            left, right = part["left_index"], part["right_index"]
+            return "comparison", f"{left}->{right}", f"Comparación de escenarios {left} y {right}"
+        if pointer.startswith("/comparisons/"):
+            part = raw["comparisons"][int(pointer.split("/")[2])]
             left, right = part["left_index"], part["right_index"]
             return "comparison", f"{left}->{right}", f"Comparación de escenarios {left} y {right}"
         result = raw["results"][int(pointer.split("/")[2])] if pointer.startswith("/results/") else raw
@@ -811,14 +820,43 @@ def consultar_capacidades(pregunta_o_dimension: str | None = None, *, root: Path
     })
 
 
+def consultar_fuente(source_id: str | None = None, *, root: Path | None = None, detalle: bool = True) -> str:
+    """Resolve W1 references through the W2 catalog; retain v4 source handling."""
+    root = (root or _workspace_root()).resolve()
+    additional = strict_loads((root / "datos_preparados/vnext/mobility_sources.json").read_text(encoding="utf-8"))
+    selected = [item for item in additional if item["source_id"] == source_id]
+    if not selected:
+        return territorial.consultar_fuente(source_id=source_id, detalle=detalle)
+    return canonical({
+        "status": "ok", "question": "Consulta de procedencia", "filters": {"source_id": source_id},
+        "period": None, "metric": "source_metadata", "unit": "no aplica", "rows_used": 1,
+        "data": selected, "method": "Ficha W2 cotejada con referencias y hashes W1 publicados.",
+        "sources": [{"source_id": source_id}], "warnings": [],
+        "limitations": ["La ficha describe procedencia; no convierte parámetros o modelos en observaciones oficiales."],
+        "summary": {"total_result_rows": 1}, "detail_level": "compact",
+    })
+
+
+def _ensure_w1_runtime(root: Path) -> None:
+    """The generated two-editor bundle replaces this with a pinned ZIP loader."""
+
+
 def _execute_mobility(request: Any, request_id: str, root: Path) -> dict[str, Any]:
     try:
-        from prototypes.ir_y_volver import provider
+        _ensure_w1_runtime(root)
+        from prototypes.ir_y_volver import provider_r6
         try:
-            from . import mobility_adapter
+            from . import mobility_adapter, health_adapter
         except ImportError:
             import mobility_adapter
-        result = mobility_adapter.consume_compare_visits(provider, request, request_id) if type(request) is list else mobility_adapter.consume_plan_visit(provider, request, request_id)
+            import health_adapter
+        if type(request) is list:
+            only_legacy = all(type(item) is dict and item.get("snapshot_id") == mobility_adapter.SNAPSHOT_ID for item in request)
+            result = mobility_adapter.consume_compare_visits(provider_r6.r4, request, request_id) if only_legacy else health_adapter.consume_compare(provider_r6, request, request_id, root)
+        elif type(request) is dict and request.get("snapshot_id") == mobility_adapter.SNAPSHOT_ID:
+            result = mobility_adapter.consume_plan_visit(provider_r6.r4, request, request_id)
+        else:
+            result = health_adapter.consume_health(provider_r6, request, request_id, root)
         return result
     except ContractViolation as exc:
         result = _error(request_id, "plan_visit", {"request": request}, "domain" if str(exc).startswith("mobility:invalid") else "execution", "contract_violation", str(exc))
@@ -853,9 +891,9 @@ def execute(capability_id: str, arguments: dict[str, Any], request_id: str, *, r
         normalized = _validate_arguments(repaired, cap)
         if capability_id == "plan_visit":
             return _execute_mobility(normalized["request"], request_id, root)
-        handler = consultar_capacidades if cap["handler"] == "consultar_capacidades" else getattr(territorial, cap["handler"])
+        handler = consultar_capacidades if cap["handler"] == "consultar_capacidades" else consultar_fuente if cap["handler"] == "consultar_fuente" else getattr(territorial, cap["handler"])
         call_args = {**normalized, "detalle": True}
-        if handler is consultar_capacidades:
+        if handler in {consultar_capacidades, consultar_fuente}:
             call_args["root"] = root
         effective = _effective_request(handler, normalized, root)
         raw_text = transport(handler, call_args) if transport else handler(**call_args)
@@ -896,6 +934,88 @@ def execute(capability_id: str, arguments: dict[str, Any], request_id: str, *, r
     return result
 
 
+def _mobility_catalog_view(root: Path) -> dict[str, Any] | None:
+    catalog_path = root / "datos_preparados/vnext/operational_catalog_r6.json"
+    labels_path = root / "datos_preparados/vnext/consumer_labels_r7.json"
+    if not catalog_path.is_file() or not labels_path.is_file():
+        return None
+    if digest(catalog_path.read_bytes()) != "c7bd3cc8ffe50956ce839bec0ef90a13578160a4d5b4053b09673d2dc4c4ec17" or digest(labels_path.read_bytes()) != "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799":
+        raise ContractViolation("mobility:catalog_or_labels_changed")
+    catalog = strict_loads(catalog_path.read_text(encoding="utf-8"))
+    labels = strict_loads(labels_path.read_text(encoding="utf-8"))
+    return {
+        "scenario_kind": "health_visit", "contract_version": "0.3.1",
+        "origin_options": [{"origin_id": item["origin_id"], "municipality_name": item["municipality_name"], "name": item["name"]} for item in catalog["origins"]],
+        "destination": catalog["destination"], "validated_date": catalog["validated_date"],
+        "walking_profile": labels["walking_profile"], "defaults": catalog["defaults"],
+        "ranges": catalog["ranges"], "restrictions": catalog["restrictions"],
+        "request_fields": ["origin_id", "destination_id", "date", "appointment_time", "duration_minutes", "arrival_margin_minutes", "boarding_margin_minutes", "walking_profile_id", "snapshot_id", "return_deadline"],
+        "required_fields": ["origin_id", "destination_id", "date", "appointment_time", "duration_minutes"],
+        "comparison_size": {"minimum": 2, "maximum": 4},
+        "legacy_stop_only": {"snapshot_id": "official-goierrialdea-go01-r4-20260929", "contract_version": "0.2.0", "must_be_explicit": True},
+    }
+
+
+def _mobility_view(raw: dict[str, Any], root: Path) -> dict[str, Any]:
+    labels_path = root / "datos_preparados/vnext/consumer_labels_r7.json"
+    if labels_path.is_file() and digest(labels_path.read_bytes()) != "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799":
+        raise ContractViolation("mobility:labels_changed_before_model_view")
+    labels = strict_loads(labels_path.read_text(encoding="utf-8")) if labels_path.is_file() else {"stops": [], "routes": [], "origins": [], "destination": {}}
+    stop_labels = {item["stop_id"]: item["name"] for item in labels["stops"]}
+    route_labels = {item["route_id"]: item["short_name"] for item in labels["routes"]}
+    origin_labels = {item["origin_id"]: item["name"] for item in labels["origins"]}
+
+    def scenario(result: dict[str, Any], index: int) -> dict[str, Any]:
+        request = result.get("normalized_request") or {}
+        supplied = {row["field"]: row for row in result.get("parameter_provenance", [])}
+        attribution = [{
+            "field": key, "value": value,
+            "provider_origin": supplied[key]["origin"] if key in supplied else "not_provided_by_legacy_contract",
+            "w2_attribution": "provider_default" if key in supplied and supplied[key]["origin"] == "model_default" else "tool_argument_origin_unverified",
+        } for key, value in request.items()]
+        sources = [{key: item.get(key) for key in ("source_id", "source_role", "publisher", "url", "reference_period", "transformation")} for item in result.get("sources", [])]
+        view: dict[str, Any] = {
+            "index": index, "status": result["status"], "error": result["error"],
+            "scenario_kind": result["scenario_kind"], "scope": result["scope"],
+            "time_basis": result["time_basis"], "snapshot_id": result["snapshot_id"],
+            "effective_parameters": request, "parameter_attribution": attribution,
+            "origin_label": origin_labels.get(request.get("origin_id"), request.get("origin_id")),
+            "destination_label": labels["destination"].get("name") if result["scenario_kind"] == "health_visit" else "Paradas de Beasain (sin acceso sanitario)",
+            "sources": sources, "assumptions": result["assumptions"], "limitations": result["limitations"],
+        }
+        if result["status"] != "ok":
+            return view
+        itinerary = result["itinerary"]
+        def leg(value: dict[str, Any]) -> dict[str, Any]:
+            return {**value,
+                    "route_label": route_labels.get(value["route_id"], value["route_id"]),
+                    "from_stop_label": stop_labels.get(value["from_stop_id"], value["from_stop_id"]),
+                    "to_stop_label": stop_labels.get(value["to_stop_id"], value["to_stop_id"])}
+        view["itinerary"] = {
+            "outbound": leg(itinerary["outbound"]), "return": leg(itinerary["return"]),
+            "origin_stop_id": itinerary["origin_stop_id"], "return_stop_id": itinerary["return_stop_id"],
+            "total_s": itinerary["total_s"], "return_slack_s": itinerary["return_slack_s"],
+        }
+        view["components_s"] = result["components_s"]
+        if result["scenario_kind"] == "health_visit":
+            view["walking"] = {direction: {
+                "total_metres": link["total_metres"], "seconds": link["seconds"],
+                "modelled_access": link["modelled_access"], "entrance_verified": link["entrance_verified"],
+                "source_refs": link["source_refs"],
+            } for direction, link in result["walking"].items()}
+            destination = result["health_destination"]
+            view["health_destination"] = {key: destination[key] for key in (
+                "centre_id", "name", "centre_anchor", "address", "address_conflict",
+                "human_review_required", "entrance_verification", "entrance_verified",
+                "modelled_access", "wording", "source_refs")}
+        return view
+
+    if "results" in raw:
+        return {"scenarios": [scenario(item, index) for index, item in enumerate(raw["results"])],
+                "comparisons": raw.get("comparisons", [])}
+    return {"scenarios": [scenario(raw, 0)], "comparisons": []}
+
+
 def public_result(evidence: dict[str, Any]) -> str:
     """Return a bounded, attributed model view; keep raw evidence out of the prompt."""
     claims = evidence["claims"]
@@ -925,11 +1045,16 @@ def public_result(evidence: dict[str, Any]) -> str:
             {key: item[key] for key in ("id", "description", "enabled", "validation_status", "derivation", "coverage", "semantic_limits") if key in item}
             for item in raw["data"] if type(item) is dict
         ]
+        mobility_catalog = _mobility_catalog_view(_workspace_root())
+        if mobility_catalog is not None:
+            view["mobility_catalog"] = mobility_catalog
     if evidence["capability_id"] == "consultar_fuente" and type(raw.get("data")) is list:
         view["source_metadata"] = [
             {key: item[key] for key in ("source_id", "title", "institution", "reference_period", "unit", "url", "limitations") if key in item}
             for item in raw["data"] if type(item) is dict
         ]
+    if evidence["capability_id"] == "plan_visit" and raw:
+        view["mobility"] = _mobility_view(raw, _workspace_root())
     if explicit_entities and len(claim_entities) != len(municipality_ids):
         failure = _error(evidence["request_id"], evidence["capability_id"], args, "data", "missing_attributed_entity", "Una entidad solicitada carece de cifra atribuida en la salida; no se ofrece una comparación parcial.")
         view.update(status="error", claims=[], error=failure["error"])

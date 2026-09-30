@@ -56,13 +56,14 @@ def sha(path: Path) -> str:
 
 def main() -> None:
     catalog = {entry["source_id"]: entry for entry in json.loads((ROOT / DATA / "metadata_sources.json").read_text(encoding="utf-8"))}
+    mobility_catalog = json.loads((ROOT / DATA / "vnext/mobility_sources.json").read_text(encoding="utf-8"))
     capabilities = []
     for name, description, derivation, fields, files, source_kind in SPECS:
         scope, transformations, semantic_limit, test_name = META[name]
         source_ids = SOURCES[source_kind]
         periods = list(dict.fromkeys(str(catalog[source]["reference_period"]) for source in source_ids)) if name != "consultar_capacidades" else []
         territory = "Gipuzkoa" if name not in {"consultar_fuente", "consultar_capacidades"} else "source_catalog" if name == "consultar_fuente" else "capability_registry"
-        entities = 88 if territory == "Gipuzkoa" else len(catalog) if name == "consultar_fuente" else len(SPECS) + 1
+        entities = 88 if territory == "Gipuzkoa" else len(catalog) + len(mobility_catalog) if name == "consultar_fuente" else len(SPECS) + 1
         test_file = "tests/vnext_agent/test_contracts.py"
         capabilities.append({
             "schema_version": "1.1.0", "id": name, "description": description,

@@ -5,11 +5,15 @@ from __future__ import annotations
 import ast
 import hashlib
 import json
-import subprocess
 import zipfile
 from pathlib import Path
 
 from scripts.agent.build_portal_sources import _module_nodes
+from scripts.vnext_agent.w1_r6_bundle import (
+    LABELS_PATH, PACKAGE_SHA256 as W1_R6_PACKAGE_SHA256,
+    SUPPORT_PIN, TESTED_RUNTIME_COMMIT, blob as w1_blob,
+    published_runtime,
+)
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -20,12 +24,15 @@ DIST = ROOT / "scripts/vnext_agent/dist"
 ZIP = DIST / "gipuzkoa360-vnext-w2.zip"
 MANIFEST = DIST / "gipuzkoa360-vnext-w2-manifest.json"
 STAMP = (2026, 9, 29, 0, 0, 0)
-LIMIT = 24 * 1024 * 1024  # Local safety limit; not an observed portal limit.
+LIMIT = 24 * 1024 * 1024  # Conservative local guard; portal says 24 MB, basis/unit unspecified.
 PIN_FILE = ROOT / "scripts/vnext_agent/w1_pin.json"
+W1_PACKAGE_PATH = "datos_preparados/vnext/w1_r6_runtime.zip"
+W1_CATALOG_PATH = "datos_preparados/vnext/operational_catalog_r6.json"
+W1_LABELS_PATH = "datos_preparados/vnext/consumer_labels_r7.json"
+W1_CONFORMANCE_PATH = "datos_preparados/vnext/w1_conformance_r7.json"
 FILES = {
     PORTAL / "main.py": "main.py",
     PORTAL / "tools.py": "tools.py",
-    PORTAL / "mobility_adapter.py": "mobility_adapter.py",
     ROOT / "FUENTES.md": "FUENTES.md",
     ROOT / "docs/METODOLOGIA.md": "docs/METODOLOGIA.md",
     ROOT / "contracts/vnext/evidence-v1.schema.json": "contracts/vnext/evidence-v1.schema.json",
@@ -37,6 +44,7 @@ FILES = {
     ROOT / "datos_preparados/vnext/mobility_sources.json": "datos_preparados/vnext/mobility_sources.json",
     PIN_FILE: "scripts/vnext_agent/w1_pin.json",
     ROOT / "tests/vnext_agent/test_mobility_binding.py": "tests/vnext_agent/test_mobility_binding.py",
+    ROOT / "tests/vnext_agent/test_health_r10.py": "tests/vnext_agent/test_health_r10.py",
     ROOT / "datos_preparados/municipios.csv": "datos_preparados/municipios.csv",
     ROOT / "datos_preparados/demografia.csv": "datos_preparados/demografia.csv",
     ROOT / "datos_preparados/runtime_municipality_points.csv": "datos_preparados/runtime_municipality_points.csv",
@@ -67,6 +75,55 @@ def _candidate_nodes() -> list[ast.stmt]:
     return nodes
 
 
+def _bootstrap_source() -> str:
+    helpers = {
+        name: (NEXT / f"{name}.py").read_text(encoding="utf-8")
+        for name in ("mobility_adapter", "health_adapter")
+    }
+    return f'''
+import sys as _w1_sys
+import tempfile as _w1_tempfile
+import types as _w1_types
+import zipfile as _w1_zipfile
+from pathlib import PurePosixPath as _W1PurePath
+
+_W1_PACKAGE_SHA256 = {W1_R6_PACKAGE_SHA256!r}
+_W1_HELPERS = {helpers!r}
+_W1_TEMPDIR = None
+
+def _ensure_w1_runtime(root):
+    global _W1_TEMPDIR
+    if _W1_TEMPDIR is not None:
+        return
+    archive_path = root / {W1_PACKAGE_PATH!r}
+    if not archive_path.is_file():
+        raise ContractViolation("mobility:pinned_package_missing")
+    raw = archive_path.read_bytes()
+    if digest(raw) != _W1_PACKAGE_SHA256:
+        raise ContractViolation("mobility:pinned_package_sha_mismatch")
+    existing = _w1_sys.modules.get("prototypes")
+    if existing is not None:
+        raise ContractViolation("mobility:unverified_preloaded_provider")
+    temp = _w1_tempfile.TemporaryDirectory(prefix="g360-w1-r6-")
+    with _w1_zipfile.ZipFile(archive_path) as archive:
+        members = archive.infolist()
+        if sum(item.file_size for item in members) > 2_000_000:
+            raise ContractViolation("mobility:archive_too_large")
+        for item in members:
+            part = _W1PurePath(item.filename)
+            if part.is_absolute() or ".." in part.parts or "\\\\" in item.filename:
+                raise ContractViolation("mobility:unsafe_archive_path")
+        archive.extractall(temp.name)
+    _w1_sys.path.insert(0, temp.name)
+    for name, source in _W1_HELPERS.items():
+        module = _w1_types.ModuleType(name)
+        module.__file__ = "<verified W2 bundled " + name + ">"
+        _w1_sys.modules[name] = module
+        exec(compile(source, module.__file__, "exec"), module.__dict__)
+    _W1_TEMPDIR = temp
+'''
+
+
 def build_portal() -> None:
     PORTAL.mkdir(parents=True, exist_ok=True)
     body: list[ast.stmt] = [ast.ImportFrom(module="__future__", names=[ast.alias(name="annotations")], level=0)]
@@ -91,7 +148,7 @@ territorial = SimpleNamespace(
     body.extend(_candidate_nodes())
     bundled = ast.unparse(ast.fix_missing_locations(ast.Module(body=body, type_ignores=[])))
     (PORTAL / "tools.py").write_text(
-        '"""Generated vNext Studio tool bundle. Edit source modules, not this file."""\n\n' + bundled + "\n",
+        '"""Generated two-editor Studio tool bundle. Edit source modules, not this file."""\n\n' + bundled + "\n" + _bootstrap_source(),
         encoding="utf-8", newline="\n",
     )
     main = (NEXT / "main.py").read_text(encoding="utf-8")
@@ -99,46 +156,33 @@ territorial = SimpleNamespace(
     if main.count(package_import) != 1:
         raise SystemExit("Candidate main import boundary changed")
     (PORTAL / "main.py").write_text(main.replace(package_import, "import tools as evidence"), encoding="utf-8", newline="\n")
+    # The historical generated helper is retained for audit; only main.py and
+    # tools.py are executable editors in the combined package.
     (PORTAL / "mobility_adapter.py").write_text((NEXT / "mobility_adapter.py").read_text(encoding="utf-8"), encoding="utf-8", newline="\n")
 
 
-def _w1_blobs() -> tuple[dict[str, bytes], dict]:
-    pin = json.loads(PIN_FILE.read_text(encoding="utf-8"))
-    if pin["commit"] != "725a7b73ae0381092cd80edc41b8a25432d75fcd" or pin["contract_version"] != "0.2.0" or pin["health_destination_go"] is not False:
-        raise SystemExit("W1 pin is not the approved stop-only contract")
-    blobs = {}
-    for item in pin["files"]:
-        path = item["path"]
-        if not path.startswith("prototypes/") or ".." in Path(path).parts:
-            raise SystemExit("W1 pin has unsafe path")
-        data = subprocess.check_output(["git", "show", f"{pin['commit']}:{path}"], cwd=ROOT)
-        if len(data) != item["bytes"] or sha(data) != item["sha256"]:
-            raise SystemExit(f"W1 pinned blob mismatch: {path}")
-        blobs[path] = data
-    if len(blobs) != len(pin["files"]):
-        raise SystemExit("Duplicate W1 pin path")
-    return blobs, pin
-
-
-def _combined_registry(pin: dict) -> bytes:
+def _combined_registry(w1_package_sha: str, w1_catalog_sha: str, w1_labels_sha: str) -> bytes:
     registry = json.loads((ROOT / "datos_preparados/vnext/capabilities.json").read_text(encoding="utf-8"))
     mobility = next(item for item in registry["capabilities"] if item["id"] == "plan_visit")
     if mobility["enabled"] or mobility["validation_status"] != "pending":
         raise SystemExit("Source registry must leave mobility pending")
-    test_file = ROOT / "tests/vnext_agent/test_mobility_binding.py"
+    test_file = ROOT / "tests/vnext_agent/test_health_r10.py"
+    sources = ["GTFS", "HEALTH_REGISTRY", "HEALTH_PAGE", "PADI_2026", "OSM", "MODEL", "USER", "MODEL_DEFAULTS", "DERIVED"]
+    source_metadata = {item["source_id"]: item for item in json.loads((ROOT / "datos_preparados/vnext/mobility_sources.json").read_text(encoding="utf-8"))}
+    periods = list(dict.fromkeys(source_metadata[source]["reference_period"] for source in sources))
     mobility.update({
-        "description": "Viaje GO01 programado entre paradas y comparación 2–32, no visita sanitaria",
+        "description": "Visita sanitaria GO01 programada a punto oficial modelado del Ambulatorio de Beasain; opción legacy stop_only explícita; comparación 2–4",
         "enabled": True, "validation_status": "tested", "handler": "plan_visit",
         "input_fields": [{"name": "request", "type": "object_or_array", "required": True, "allowed_values": []}],
-        "required_data": [{"path": item["path"], "sha256": item["sha256"]} for item in pin["files"]],
-        "coverage": {"territory": "Goierrialdea", "periods": ["2026-09-29"], "entities": 1, "scope": "scheduled; stop_only; origin_stop_presence_to_return_stop_arrival"},
-        "source_ids": ["W1_GTFS@2026-09-29", "W2_USER@2026-09-29", "W1_MODEL@2026-09-29", "W1_DERIVED@2026-09-29"],
-        "allowed_transformations": ["direct_pair_search", "contiguous_component_sum", "bounded_comparison"],
-        "preconditions": ["Proveedor, allowlist, validator y snapshot coinciden con el pin W1 publicado.", "Solo stop_only con fecha validada; ningún acceso sanitario acreditado."],
+        "required_data": [{"path": W1_PACKAGE_PATH, "sha256": w1_package_sha}, {"path": W1_CATALOG_PATH, "sha256": w1_catalog_sha}, {"path": W1_LABELS_PATH, "sha256": w1_labels_sha}],
+        "coverage": {"territory": "Goierrialdea", "periods": periods, "entities": 3, "scope": "2026-09-29 only; health_visit modelled; stop_only explicit; origin_stop_presence_to_return_stop_arrival"},
+        "source_ids": sources,
+        "allowed_transformations": ["direct_pair_search", "pinned_walking_formula", "contiguous_component_sum", "bounded_comparison"],
+        "preconditions": ["W1 R6 package, catalog, snapshot and schemas match published hashes.", "Health destination is modelled to an official centre point, not a verified entrance."],
         "precondition_checks": ["required_data_sha256", "handler_signature", "source_catalog", "coverage_count"],
-        "validation_evidence": [{"test_file": "tests/vnext_agent/test_mobility_binding.py", "test_name": "test_published_w1_020_is_pinned_and_role_attributed", "sha256": sha(test_file.read_bytes())}],
-        "restrictions": ["Solo parada a parada; no Ambulatorio de Beasain, puerta a puerta, transbordo o realtime."],
-        "semantic_limits": ["Horarios programados y walking stop_only modelado no son observaciones de llegada real.", "Unknown no significa ausencia de transporte; no viable no es fallo de red."],
+        "validation_evidence": [{"test_file": "tests/vnext_agent/test_health_r10.py", "test_name": "test_health_provider_and_model_view", "sha256": sha(test_file.read_bytes())}],
+        "restrictions": ["Fecha validada 2026-09-29; tres orígenes y GO01 directa; no puerta física, domicilio, citas, realtime ni accesibilidad garantizada."],
+        "semantic_limits": ["Paseo modelado y tiempo GTFS programado, no llegada real.", "Unknown no significa ausencia de transporte; no viable no es fallo de red.", "Los argumentos de la tool no acreditan autoría humana."],
     })
     return (json.dumps(registry, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode("utf-8")
 
@@ -149,14 +193,21 @@ def main() -> None:
     if missing:
         raise SystemExit("Missing package files: " + ", ".join(missing))
     DIST.mkdir(parents=True, exist_ok=True)
-    w1_blobs, pin = _w1_blobs()
+    w1_package, w1_manifest = published_runtime()
+    w1_catalog = w1_blob("datos_preparados/movilidad/operational_catalog_r6.json")
+    w1_labels = w1_blob(LABELS_PATH)
+    w1_conformance = w1_blob("docs/vnext/w1/CONSUMER_CONFORMANCE_R7.json")
     package_files = {destination: source.read_bytes().replace(b"\r\n", b"\n") for source, destination in FILES.items()}
-    package_files.update(w1_blobs)
-    package_files["datos_preparados/vnext/capabilities.json"] = _combined_registry(pin)
+    package_files[W1_PACKAGE_PATH] = w1_package
+    package_files[W1_CATALOG_PATH] = w1_catalog
+    package_files[W1_LABELS_PATH] = w1_labels
+    package_files[W1_CONFORMANCE_PATH] = w1_conformance
+    package_files["datos_preparados/vnext/capabilities.json"] = _combined_registry(sha(w1_package), sha(w1_catalog), sha(w1_labels))
     members = {}
     with zipfile.ZipFile(ZIP, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
         for destination, data in sorted(package_files.items()):
-            data.decode("utf-8")
+            if not destination.endswith(".zip"):
+                data.decode("utf-8")
             info = zipfile.ZipInfo(destination, STAMP)
             info.create_system = 3
             info.external_attr = 0o100644 << 16
@@ -185,9 +236,13 @@ def main() -> None:
     report = {
         "package": "GIPUZKOA360_vNext_W2_candidate", "entrypoint": "main.py:build_agent",
         "bytes": size, "sha256": sha(ZIP.read_bytes()), "limit_bytes": LIMIT,
-        "limit_provenance": "local_safety_limit_not_portal_rule",
+        "limit_provenance": "W3 read-only portal help reports 24 MB total agent package; compressed/uncompressed basis and MB unit unspecified; builder uses conservative 24 MiB local guard",
         "uncompressed_bytes": sum(item["bytes"] for item in members.values()),
-        "w1_pin": pin["commit"], "w1_contract": pin["contract_version"], "health_destination_go": False,
+        "w1_support_pin": SUPPORT_PIN, "w1_runtime_commit_observed": TESTED_RUNTIME_COMMIT,
+        "w1_contract": "0.3.1", "w1_legacy_contract": "0.2.0", "health_destination_modelled": True,
+        "health_entrance_verified": False, "w1_package_sha256": W1_R6_PACKAGE_SHA256,
+        "w1_source_files": w1_manifest["files"],
+        "deployment_mode": "two Python editors (main.py, tools.py) plus static workspace assets including a pinned W1 ZIP; tools.py verifies and extracts that ZIP to a temporary runtime directory",
         "tool_count": tool_count,
         "agent_name_chars": len(constants["AGENT_NAME"]),
         "instruction_chars": len(constants["SYSTEM_PROMPT"]),
@@ -196,7 +251,7 @@ def main() -> None:
         "context_paths": context_paths,
         "runtime_dependencies": ["Python 3.12 standard library", "portal-provided studio.tool", "portal-provided langchain.agents.create_agent"],
         "members": members, "canonicalization": "UTF-8 and LF; sorted names; fixed ZIP metadata",
-        "mobility_binding": "PINNED_STOP_ONLY_0.2.0; W1 source and snapshot bytes verified at build time",
+        "mobility_binding": "PINNED_HEALTH_0.3.1_AND_EXPLICIT_STOP_ONLY_0.2.0; W1 package, source and snapshot bytes verified at build time and runtime",
     }
     MANIFEST.write_text(json.dumps(report, ensure_ascii=False, sort_keys=True, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps({"zip": ZIP.relative_to(ROOT).as_posix(), "bytes": size, "sha256": report["sha256"]}))

@@ -21,13 +21,13 @@ CASES = [
     ("followup_75", "analizar_coincidencia", {"categoria_servicio": "primary_care", "grupo_edad": "75", "umbral_km": 3.0, "cuantil": 0.80}),
     ("unsupported_age", "analizar_envejecimiento", {"grupo_edad": "70"}),
     ("unknown_source", "consultar_fuente", {"source_id": "TEST_FALSE_SOURCE"}),
-    ("visit", "plan_visit", {"request": {"origin_id": "zegama_center_stops", "destination_id": "beasain_center_stop_pair", "date": "2026-09-29", "appointment_time": "09:30", "duration_minutes": 30}}),
+    ("visit", "plan_visit", {"request": {"origin_id": "zegama_center_stops", "destination_id": "beasain_official_centre_anchor", "date": "2026-09-29", "appointment_time": "09:45", "duration_minutes": 20}}),
     ("comparison", "plan_visit", {"request": [
-        {"origin_id": "zegama_center_stops", "destination_id": "beasain_center_stop_pair", "date": "2026-09-29", "appointment_time": "09:30", "duration_minutes": 30},
-        {"origin_id": "zegama_center_stops", "destination_id": "beasain_center_stop_pair", "date": "2026-09-29", "appointment_time": "10:30", "duration_minutes": 30},
+        {"origin_id": "zegama_center_stops", "destination_id": "beasain_official_centre_anchor", "date": "2026-09-29", "appointment_time": "09:30", "duration_minutes": 30},
+        {"origin_id": "zegama_center_stops", "destination_id": "beasain_official_centre_anchor", "date": "2026-09-29", "appointment_time": "10:30", "duration_minutes": 30},
     ]}),
-    ("no_viable", "plan_visit", {"request": {"origin_id": "zegama_center_stops", "destination_id": "beasain_center_stop_pair", "date": "2026-09-29", "appointment_time": "00:30", "duration_minutes": 30}}),
-    ("unknown_date", "plan_visit", {"request": {"origin_id": "zegama_center_stops", "destination_id": "beasain_center_stop_pair", "date": "2026-09-30", "appointment_time": "09:30", "duration_minutes": 30}}),
+    ("no_viable", "plan_visit", {"request": {"origin_id": "zegama_center_stops", "destination_id": "beasain_official_centre_anchor", "date": "2026-09-29", "appointment_time": "00:30", "duration_minutes": 30}}),
+    ("unknown_date", "plan_visit", {"request": {"origin_id": "zegama_center_stops", "destination_id": "beasain_official_centre_anchor", "date": "2026-09-30", "appointment_time": "09:30", "duration_minutes": 30}}),
 ]
 
 CHILD = """import json,sys,socket
@@ -61,7 +61,7 @@ def record(output_dir: Path) -> dict:
         assert not (checkout / ".git").exists()
         environment = {**os.environ, "PYTHONPATH": "", "PYTHONNOUSERSITE": "1", "GIPUZKOA360_VNEXT_ROOT": str(checkout)}
         for index, (name, tool_name, arguments) in enumerate(CASES, start=1):
-            request_id = f"OFFLINE_W2_R4_{index:02d}"
+            request_id = f"OFFLINE_W2_R10_{index:02d}"
             started = stamp()
             completed = subprocess.run(
                 [sys.executable, "-c", CHILD], input=json.dumps({"name": tool_name, "arguments": arguments, "request_id": request_id}, ensure_ascii=False),

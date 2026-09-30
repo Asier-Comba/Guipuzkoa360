@@ -1,6 +1,6 @@
 # GIPUZKOA 360 vNext — W2 handoff index
 
-Current candidate: [G360-R4 handoff](HANDOFF_R4.md). Earlier R2 handoff follows unchanged as historical evidence; it does not describe the current package or enabled capabilities.
+Current candidate: [G360-R10 handoff](HANDOFF_R10.md), [candidate manifest](CANDIDATE_MANIFEST_R10.json) and [resume checkpoint](RESUME_R10.json). Earlier R4 and R2 handoffs remain historical; they do not describe the current package or enabled capabilities.
 
 ## Historical R2 handoff
 

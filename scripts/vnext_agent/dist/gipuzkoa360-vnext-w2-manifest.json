@@ -1,9 +1,9 @@
 {
   "agent_name_chars": 38,
-  "bytes": 153456,
+  "bytes": 219354,
   "canonicalization": "UTF-8 and LF; sorted names; fixed ZIP metadata",
-  "context_bytes": 126577,
-  "context_file_count": 11,
+  "context_bytes": 131525,
+  "context_file_count": 13,
   "context_paths": [
     "FUENTES.md",
     "docs/METODOLOGIA.md",
@@ -15,13 +15,17 @@
     "datos_preparados/runtime_servicios.csv",
     "datos_preparados/metadata_sources.json",
     "datos_preparados/data_contract.json",
-    "datos_preparados/vnext/capabilities.json"
+    "datos_preparados/vnext/capabilities.json",
+    "datos_preparados/vnext/operational_catalog_r6.json",
+    "datos_preparados/vnext/consumer_labels_r7.json"
   ],
+  "deployment_mode": "two Python editors (main.py, tools.py) plus static workspace assets including a pinned W1 ZIP; tools.py verifies and extracts that ZIP to a temporary runtime directory",
   "entrypoint": "main.py:build_agent",
-  "health_destination_go": false,
-  "instruction_chars": 1961,
+  "health_destination_modelled": true,
+  "health_entrance_verified": false,
+  "instruction_chars": 2784,
   "limit_bytes": 25165824,
-  "limit_provenance": "local_safety_limit_not_portal_rule",
+  "limit_provenance": "W3 read-only portal help reports 24 MB total agent package; compressed/uncompressed basis and MB unit unspecified; builder uses conservative 24 MiB local guard",
   "members": {
     "FUENTES.md": {
       "bytes": 6963,
@@ -68,64 +72,36 @@
       "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
     },
     "datos_preparados/vnext/capabilities.json": {
-      "bytes": 27230,
-      "sha256": "0a475647d1dd79d4597c3002ba608e2507c4b5e1d3bdee4289a4a9a7380b8832"
+      "bytes": 26375,
+      "sha256": "21bff0743a9c17a3517556eac4fca283e9b7b70139e083692557480e485ecbb5"
+    },
+    "datos_preparados/vnext/consumer_labels_r7.json": {
+      "bytes": 3152,
+      "sha256": "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799"
     },
     "datos_preparados/vnext/mobility_sources.json": {
-      "bytes": 867,
-      "sha256": "5f7c9aba55c1d2bc1db48ec8efaeb4be4510bdeb27010047b0a0102ffc52ad66"
+      "bytes": 4713,
+      "sha256": "9d9da299ea50e9e682838f65c9ebc7b01b79b7df1e15fccf45777d829fb376a0"
+    },
+    "datos_preparados/vnext/operational_catalog_r6.json": {
+      "bytes": 2651,
+      "sha256": "c7bd3cc8ffe50956ce839bec0ef90a13578160a4d5b4053b09673d2dc4c4ec17"
+    },
+    "datos_preparados/vnext/w1_conformance_r7.json": {
+      "bytes": 286413,
+      "sha256": "4eb364265710336ecdd86b2c541953f130f3b0a80bbefc9cf1f27904bac55dea"
+    },
+    "datos_preparados/vnext/w1_r6_runtime.zip": {
+      "bytes": 129365,
+      "sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910"
     },
     "docs/METODOLOGIA.md": {
       "bytes": 1210,
       "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7"
     },
     "main.py": {
-      "bytes": 6071,
-      "sha256": "bb4b29f39f281668a15fdc06c470330ba89f83bab1e51dc72e5bca4790395145"
-    },
-    "mobility_adapter.py": {
-      "bytes": 19122,
-      "sha256": "5e81f223a30e231e812cc35fa3510b957b8177c577f55bbf67e165c359bf3ea8"
-    },
-    "prototypes/__init__.py": {
-      "bytes": 73,
-      "sha256": "da32847820b8ce0bc5963eb3aa2c0e5a71946243dbc92b7546b19431d18bb8eb"
-    },
-    "prototypes/ir_y_volver/__init__.py": {
-      "bytes": 210,
-      "sha256": "4173adabd908dcca574d4cd3aebefb5017fb6cd23c92f40cf3d0c1db142bce21"
-    },
-    "prototypes/ir_y_volver/contracts/v0.2.0/capabilities.schema.json": {
-      "bytes": 782,
-      "sha256": "b28ce4ef94a266ccdad5e4cb9603d486cba0d2259826a0a5bf5ecce362297d46"
-    },
-    "prototypes/ir_y_volver/contracts/v0.2.0/comparison.schema.json": {
-      "bytes": 5457,
-      "sha256": "6368ff668ce46bd7cc97447e05d4d2036c1321c63c47e91e5db9cfb141f2f942"
-    },
-    "prototypes/ir_y_volver/contracts/v0.2.0/request.schema.json": {
-      "bytes": 1345,
-      "sha256": "16f65e95dd26e09e65829331739bea4ebb59c9a2ffd12434910663365ba36f0b"
-    },
-    "prototypes/ir_y_volver/contracts/v0.2.0/result.schema.json": {
-      "bytes": 3525,
-      "sha256": "8fde2a90c42e0cf20c950bb81902d797f26a8a7a3ff1b9cb5704cf7baf48141e"
-    },
-    "prototypes/ir_y_volver/provider.py": {
-      "bytes": 21982,
-      "sha256": "c97842617f3077c2eec1892653361b4471a18e1c64f8127b808b9968401cb834"
-    },
-    "prototypes/ir_y_volver/snapshot_validation.py": {
-      "bytes": 7846,
-      "sha256": "0773a1a612b366f59ea01f80ea1dc4fc0a4650ebbd339f6b99869c4061a16d42"
-    },
-    "prototypes/ir_y_volver/snapshots/allowlist.json": {
-      "bytes": 1435,
-      "sha256": "80d67a0a10da8f4aa6f7d3a30629a35dd861da9e419ede2e7fd5c907b8217cff"
-    },
-    "prototypes/ir_y_volver/snapshots/official-goierrialdea-go01-r4-20260929.json": {
-      "bytes": 812758,
-      "sha256": "62e00c04edb96ccde0a5ce4fe81574452ddcacdb4c173b030ca49b000f5a084b"
+      "bytes": 7692,
+      "sha256": "a3b01df42d6702d3ecea5bc3ae36da2a0381d2193a6f34d39122f0fb7d551a95"
     },
     "scripts/vnext_agent/w1_pin.json": {
       "bytes": 1869,
@@ -135,25 +111,190 @@
       "bytes": 10615,
       "sha256": "8182f101056b37a9d9356bb05b81cb0b209571e0b5a4f57c7551a1760f0c76f0"
     },
+    "tests/vnext_agent/test_health_r10.py": {
+      "bytes": 8422,
+      "sha256": "6c9c44e65355af5afe7e6c365502eca1b7a3208ad0f1aec743886c1b702ca216"
+    },
     "tests/vnext_agent/test_mobility_binding.py": {
       "bytes": 6784,
       "sha256": "c1dfaccca55db59815c87b385a66cc51a9611cc820f49bef6c2f1d649f252311"
     },
     "tools.py": {
-      "bytes": 113504,
-      "sha256": "6223c9f1a8ccf9e812d5b253e5e11b7b95aa2d6acb2091cc4bd6dd88d656b5b1"
+      "bytes": 165753,
+      "sha256": "d99354c46a62679c80a64e8f0b8d22a5486608f8caf775fd830af19a91ce966f"
     }
   },
-  "mobility_binding": "PINNED_STOP_ONLY_0.2.0; W1 source and snapshot bytes verified at build time",
+  "mobility_binding": "PINNED_HEALTH_0.3.1_AND_EXPLICIT_STOP_ONLY_0.2.0; W1 package, source and snapshot bytes verified at build time and runtime",
   "package": "GIPUZKOA360_vNext_W2_candidate",
   "runtime_dependencies": [
     "Python 3.12 standard library",
     "portal-provided studio.tool",
     "portal-provided langchain.agents.create_agent"
   ],
-  "sha256": "366cdc7d160ee6743cb125c6709f57e48f6ddfb91ead812a92eb881570233357",
+  "sha256": "b4feb978b625b34f9d7331ce8d376a34a29e84e4783868f83ce48a0c0d1011be",
   "tool_count": 9,
-  "uncompressed_bytes": 1148944,
-  "w1_contract": "0.2.0",
-  "w1_pin": "725a7b73ae0381092cd80edc41b8a25432d75fcd"
+  "uncompressed_bytes": 761273,
+  "w1_contract": "0.3.1",
+  "w1_legacy_contract": "0.2.0",
+  "w1_package_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+  "w1_runtime_commit_observed": "cb061a9e00a6496c40488a596bd94834bc2c49b2",
+  "w1_source_files": [
+    {
+      "bytes": 2651,
+      "path": "datos_preparados/movilidad/operational_catalog_r6.json",
+      "role": "runtime",
+      "sha256": "c7bd3cc8ffe50956ce839bec0ef90a13578160a4d5b4053b09673d2dc4c4ec17"
+    },
+    {
+      "bytes": 73,
+      "path": "prototypes/__init__.py",
+      "role": "runtime",
+      "sha256": "da32847820b8ce0bc5963eb3aa2c0e5a71946243dbc92b7546b19431d18bb8eb"
+    },
+    {
+      "bytes": 210,
+      "path": "prototypes/ir_y_volver/__init__.py",
+      "role": "runtime",
+      "sha256": "4173adabd908dcca574d4cd3aebefb5017fb6cd23c92f40cf3d0c1db142bce21"
+    },
+    {
+      "bytes": 782,
+      "path": "prototypes/ir_y_volver/contracts/v0.2.0/capabilities.schema.json",
+      "role": "runtime",
+      "sha256": "b28ce4ef94a266ccdad5e4cb9603d486cba0d2259826a0a5bf5ecce362297d46"
+    },
+    {
+      "bytes": 5457,
+      "path": "prototypes/ir_y_volver/contracts/v0.2.0/comparison.schema.json",
+      "role": "runtime",
+      "sha256": "6368ff668ce46bd7cc97447e05d4d2036c1321c63c47e91e5db9cfb141f2f942"
+    },
+    {
+      "bytes": 1345,
+      "path": "prototypes/ir_y_volver/contracts/v0.2.0/request.schema.json",
+      "role": "runtime",
+      "sha256": "16f65e95dd26e09e65829331739bea4ebb59c9a2ffd12434910663365ba36f0b"
+    },
+    {
+      "bytes": 3525,
+      "path": "prototypes/ir_y_volver/contracts/v0.2.0/result.schema.json",
+      "role": "runtime",
+      "sha256": "8fde2a90c42e0cf20c950bb81902d797f26a8a7a3ff1b9cb5704cf7baf48141e"
+    },
+    {
+      "bytes": 30729,
+      "path": "prototypes/ir_y_volver/contracts/v0.3.0/capabilities.schema.json",
+      "role": "runtime",
+      "sha256": "530d27225509f38960c7224fab2a31a65096f3d3e1ba696d98b8e660dab9e672"
+    },
+    {
+      "bytes": 30994,
+      "path": "prototypes/ir_y_volver/contracts/v0.3.0/comparison.schema.json",
+      "role": "runtime",
+      "sha256": "dd78e711a226222d03d36284817e77c0ff8ab9e3b2f7974d038dc100c53784c2"
+    },
+    {
+      "bytes": 31414,
+      "path": "prototypes/ir_y_volver/contracts/v0.3.0/request.schema.json",
+      "role": "runtime",
+      "sha256": "d4a3c8bdf33f084e2ef2c60482db1694ede8a8886df6a53cab65f746990b0a07"
+    },
+    {
+      "bytes": 34757,
+      "path": "prototypes/ir_y_volver/contracts/v0.3.0/result.schema.json",
+      "role": "runtime",
+      "sha256": "db535eb2a335e3c90c791c5af5a0886ebeea59e86db9a9edf206dadcac642b85"
+    },
+    {
+      "bytes": 31731,
+      "path": "prototypes/ir_y_volver/contracts/v0.3.1/capabilities.schema.json",
+      "role": "runtime",
+      "sha256": "718448ca007258c031820c13061c9c9d600fb2549c05f167218257e324dfad17"
+    },
+    {
+      "bytes": 2213,
+      "path": "prototypes/ir_y_volver/contracts/v0.3.1/catalog.schema.json",
+      "role": "runtime",
+      "sha256": "6bb7b60a0e9de5f54100d845a33a046f7c3f7ab8611f74cd15cd3fe70e384a93"
+    },
+    {
+      "bytes": 31996,
+      "path": "prototypes/ir_y_volver/contracts/v0.3.1/comparison.schema.json",
+      "role": "runtime",
+      "sha256": "4e03b03f99622aa799aa62f5674827d2b1df86ac9d5a54a12ea40362cf117728"
+    },
+    {
+      "bytes": 32416,
+      "path": "prototypes/ir_y_volver/contracts/v0.3.1/request.schema.json",
+      "role": "runtime",
+      "sha256": "911bbbb6ef91f55f310ac4b60d9b49e4c3d904f5d8a4c234f4564d61530dfb74"
+    },
+    {
+      "bytes": 36576,
+      "path": "prototypes/ir_y_volver/contracts/v0.3.1/result.schema.json",
+      "role": "runtime",
+      "sha256": "5408f0869cc243f901ce5d142865af968bac00b02113cfa0e793ed2b1a96226a"
+    },
+    {
+      "bytes": 21982,
+      "path": "prototypes/ir_y_volver/provider.py",
+      "role": "runtime",
+      "sha256": "c97842617f3077c2eec1892653361b4471a18e1c64f8127b808b9968401cb834"
+    },
+    {
+      "bytes": 13494,
+      "path": "prototypes/ir_y_volver/provider_r5.py",
+      "role": "runtime",
+      "sha256": "7a775dfd6f7ba2cb19a1e9a40b531ee626e26462f726226fbf62a1a1dd34f013"
+    },
+    {
+      "bytes": 5166,
+      "path": "prototypes/ir_y_volver/provider_r6.py",
+      "role": "runtime",
+      "sha256": "c9fe7e4c8078ba7f9bf2eb2a51e050b729d9f01e6021dbcc6909f951d2e936e8"
+    },
+    {
+      "bytes": 2770,
+      "path": "prototypes/ir_y_volver/schema_r5.py",
+      "role": "runtime",
+      "sha256": "370f9d2fd7d0bf5f8c2f4237741bb5ce9972f813e65c09f965021f52285373d8"
+    },
+    {
+      "bytes": 7846,
+      "path": "prototypes/ir_y_volver/snapshot_validation.py",
+      "role": "runtime",
+      "sha256": "0773a1a612b366f59ea01f80ea1dc4fc0a4650ebbd339f6b99869c4061a16d42"
+    },
+    {
+      "bytes": 1435,
+      "path": "prototypes/ir_y_volver/snapshots/allowlist.json",
+      "role": "runtime",
+      "sha256": "80d67a0a10da8f4aa6f7d3a30629a35dd861da9e419ede2e7fd5c907b8217cff"
+    },
+    {
+      "bytes": 242,
+      "path": "prototypes/ir_y_volver/snapshots/allowlist_r5.json",
+      "role": "runtime",
+      "sha256": "0427594793c39a72db3a28cdd47f291c4c3ab0f5be903082f710ba1c51434c82"
+    },
+    {
+      "bytes": 103969,
+      "path": "prototypes/ir_y_volver/snapshots/official-goierrialdea-go01-health-r5-20260929.json",
+      "role": "runtime",
+      "sha256": "59fcded9e4236ee094eeb0881c4eb94f521b96fb6c8c89c881c3e9f6d5140901"
+    },
+    {
+      "bytes": 812758,
+      "path": "prototypes/ir_y_volver/snapshots/official-goierrialdea-go01-r4-20260929.json",
+      "role": "runtime",
+      "sha256": "62e00c04edb96ccde0a5ce4fe81574452ddcacdb4c173b030ca49b000f5a084b"
+    },
+    {
+      "bytes": 6376,
+      "path": "prototypes/ir_y_volver/walking_r5.py",
+      "role": "runtime",
+      "sha256": "0f3a02e69f8065f892ce19a0115ae7e3c661c32725bd37a423f3d283ae1a2a7d"
+    }
+  ],
+  "w1_support_pin": "6ebf41e2f1fe24f1c3678c4be13c6c44cf8cb62b"
 }
