@@ -1,0 +1,451 @@
+{
+  "taxonomy_version": "r9.0",
+  "classes": [
+    "DIRECT_SOURCE_VALUE",
+    "DERIVED_EXACT_FROM_PINNED_DATA",
+    "DERIVED_EXACT_FROM_PINNED_DATA_AND_MODEL_ASSUMPTIONS",
+    "MODELLED_ESTIMATE",
+    "HUMAN_INPUT",
+    "MODEL_DEFAULT",
+    "UNAVAILABLE"
+  ],
+  "scheduled_source_policy": "A direct GTFS value is a scheduled source value, never a real-world observation.",
+  "timepoint_policy": "timepoint=0 means the scheduled GTFS time is approximate/interpolated; do not promise exact operational passage.",
+  "walking_policy": "Geometry and seconds are modelled, not measured pedestrian behaviour.",
+  "claim_mappings": [
+    {
+      "claim_id": "MAIN:total_s",
+      "metric": "total_s",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA_AND_MODEL_ASSUMPTIONS",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "MAIN:initial_wait_s",
+      "metric": "initial_wait_s",
+      "semantic_class": "MODEL_DEFAULT",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "MAIN:bus_out_s",
+      "metric": "bus_out_s",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "MAIN:walk_out_s",
+      "metric": "walk_out_s",
+      "semantic_class": "MODELLED_ESTIMATE",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "MAIN:preappointment_wait_s",
+      "metric": "preappointment_wait_s",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA_AND_MODEL_ASSUMPTIONS",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "MAIN:appointment_s",
+      "metric": "appointment_s",
+      "semantic_class": "HUMAN_INPUT",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "MAIN:walk_return_s",
+      "metric": "walk_return_s",
+      "semantic_class": "MODELLED_ESTIMATE",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "MAIN:return_wait_s",
+      "metric": "return_wait_s",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA_AND_MODEL_ASSUMPTIONS",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "MAIN:bus_return_s",
+      "metric": "bus_return_s",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "MAIN:return_slack_s",
+      "metric": "return_slack_s",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA_AND_MODEL_ASSUMPTIONS",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "MAIN:outbound_departure_time",
+      "metric": "outbound_departure_time",
+      "semantic_class": "DIRECT_SOURCE_VALUE",
+      "unit": "HH:MM:SS",
+      "wording_guard": "scheduled_not_observed"
+    },
+    {
+      "claim_id": "MAIN:outbound_arrival_time",
+      "metric": "outbound_arrival_time",
+      "semantic_class": "DIRECT_SOURCE_VALUE",
+      "unit": "HH:MM:SS",
+      "wording_guard": "scheduled_not_observed"
+    },
+    {
+      "claim_id": "MAIN:return_departure_time",
+      "metric": "return_departure_time",
+      "semantic_class": "DIRECT_SOURCE_VALUE",
+      "unit": "HH:MM:SS",
+      "wording_guard": "scheduled_not_observed"
+    },
+    {
+      "claim_id": "MAIN:return_arrival_time",
+      "metric": "return_arrival_time",
+      "semantic_class": "DIRECT_SOURCE_VALUE",
+      "unit": "HH:MM:SS",
+      "wording_guard": "scheduled_not_observed"
+    },
+    {
+      "claim_id": "MAIN:outbound_trip_id",
+      "metric": "outbound_trip_id",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA",
+      "unit": "identifier",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "MAIN:return_trip_id",
+      "metric": "return_trip_id",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA",
+      "unit": "identifier",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "MAIN:outbound_stop_id",
+      "metric": "outbound_stop_id",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA",
+      "unit": "identifier",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "MAIN:return_stop_id",
+      "metric": "return_stop_id",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA",
+      "unit": "identifier",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_TIME:total_s",
+      "metric": "total_s",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA_AND_MODEL_ASSUMPTIONS",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_TIME:initial_wait_s",
+      "metric": "initial_wait_s",
+      "semantic_class": "MODEL_DEFAULT",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_TIME:bus_out_s",
+      "metric": "bus_out_s",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_TIME:walk_out_s",
+      "metric": "walk_out_s",
+      "semantic_class": "MODELLED_ESTIMATE",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_TIME:preappointment_wait_s",
+      "metric": "preappointment_wait_s",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA_AND_MODEL_ASSUMPTIONS",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_TIME:appointment_s",
+      "metric": "appointment_s",
+      "semantic_class": "HUMAN_INPUT",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_TIME:walk_return_s",
+      "metric": "walk_return_s",
+      "semantic_class": "MODELLED_ESTIMATE",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_TIME:return_wait_s",
+      "metric": "return_wait_s",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA_AND_MODEL_ASSUMPTIONS",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_TIME:bus_return_s",
+      "metric": "bus_return_s",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_TIME:return_slack_s",
+      "metric": "return_slack_s",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA_AND_MODEL_ASSUMPTIONS",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_TIME:outbound_departure_time",
+      "metric": "outbound_departure_time",
+      "semantic_class": "DIRECT_SOURCE_VALUE",
+      "unit": "HH:MM:SS",
+      "wording_guard": "scheduled_not_observed"
+    },
+    {
+      "claim_id": "VARIATION_TIME:outbound_arrival_time",
+      "metric": "outbound_arrival_time",
+      "semantic_class": "DIRECT_SOURCE_VALUE",
+      "unit": "HH:MM:SS",
+      "wording_guard": "scheduled_not_observed"
+    },
+    {
+      "claim_id": "VARIATION_TIME:return_departure_time",
+      "metric": "return_departure_time",
+      "semantic_class": "DIRECT_SOURCE_VALUE",
+      "unit": "HH:MM:SS",
+      "wording_guard": "scheduled_not_observed"
+    },
+    {
+      "claim_id": "VARIATION_TIME:return_arrival_time",
+      "metric": "return_arrival_time",
+      "semantic_class": "DIRECT_SOURCE_VALUE",
+      "unit": "HH:MM:SS",
+      "wording_guard": "scheduled_not_observed"
+    },
+    {
+      "claim_id": "VARIATION_TIME:outbound_trip_id",
+      "metric": "outbound_trip_id",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA",
+      "unit": "identifier",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_TIME:return_trip_id",
+      "metric": "return_trip_id",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA",
+      "unit": "identifier",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_TIME:outbound_stop_id",
+      "metric": "outbound_stop_id",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA",
+      "unit": "identifier",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_TIME:return_stop_id",
+      "metric": "return_stop_id",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA",
+      "unit": "identifier",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:total_s",
+      "metric": "total_s",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA_AND_MODEL_ASSUMPTIONS",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:initial_wait_s",
+      "metric": "initial_wait_s",
+      "semantic_class": "MODEL_DEFAULT",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:bus_out_s",
+      "metric": "bus_out_s",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:walk_out_s",
+      "metric": "walk_out_s",
+      "semantic_class": "MODELLED_ESTIMATE",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:preappointment_wait_s",
+      "metric": "preappointment_wait_s",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA_AND_MODEL_ASSUMPTIONS",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:appointment_s",
+      "metric": "appointment_s",
+      "semantic_class": "HUMAN_INPUT",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:walk_return_s",
+      "metric": "walk_return_s",
+      "semantic_class": "MODELLED_ESTIMATE",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:return_wait_s",
+      "metric": "return_wait_s",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA_AND_MODEL_ASSUMPTIONS",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:bus_return_s",
+      "metric": "bus_return_s",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:return_slack_s",
+      "metric": "return_slack_s",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA_AND_MODEL_ASSUMPTIONS",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:outbound_departure_time",
+      "metric": "outbound_departure_time",
+      "semantic_class": "DIRECT_SOURCE_VALUE",
+      "unit": "HH:MM:SS",
+      "wording_guard": "scheduled_not_observed"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:outbound_arrival_time",
+      "metric": "outbound_arrival_time",
+      "semantic_class": "DIRECT_SOURCE_VALUE",
+      "unit": "HH:MM:SS",
+      "wording_guard": "scheduled_not_observed"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:return_departure_time",
+      "metric": "return_departure_time",
+      "semantic_class": "DIRECT_SOURCE_VALUE",
+      "unit": "HH:MM:SS",
+      "wording_guard": "scheduled_not_observed"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:return_arrival_time",
+      "metric": "return_arrival_time",
+      "semantic_class": "DIRECT_SOURCE_VALUE",
+      "unit": "HH:MM:SS",
+      "wording_guard": "scheduled_not_observed"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:outbound_trip_id",
+      "metric": "outbound_trip_id",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA",
+      "unit": "identifier",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:return_trip_id",
+      "metric": "return_trip_id",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA",
+      "unit": "identifier",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:outbound_stop_id",
+      "metric": "outbound_stop_id",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA",
+      "unit": "identifier",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:return_stop_id",
+      "metric": "return_stop_id",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA",
+      "unit": "identifier",
+      "wording_guard": "preserve_assumptions_and_limits"
+    },
+    {
+      "claim_id": "R8-DELTA-ZEGAMA-0930-0945",
+      "metric": "comparison_delta_s",
+      "semantic_class": "DERIVED_EXACT_FROM_PINNED_DATA_AND_MODEL_ASSUMPTIONS",
+      "unit": "second",
+      "wording_guard": "preserve_assumptions_and_limits"
+    }
+  ],
+  "phrase_safety": [
+    {
+      "id": "scheduled_timepoint",
+      "claim_refs": [
+        "MAIN:outbound_departure_time",
+        "VARIATION_TIME:outbound_departure_time",
+        "VARIATION_DURATION:outbound_departure_time"
+      ],
+      "bad": "El autobús sale exactamente a las 08:12:37.",
+      "better": "El horario GTFS utilizado sitúa la salida programada en 08:12:37; el feed la marca como aproximada (timepoint=0)."
+    },
+    {
+      "id": "walking",
+      "claim_refs": [
+        "MAIN:walk_out_s",
+        "VARIATION_TIME:walk_out_s",
+        "VARIATION_DURATION:walk_out_s"
+      ],
+      "bad": "Caminas 7 minutos.",
+      "better": "El modelo estima 420 s de paseo con el supuesto fijado."
+    },
+    {
+      "id": "delta",
+      "claim_refs": [
+        "R8-DELTA-ZEGAMA-0930-0945"
+      ],
+      "bad": "Ahorras 35 minutos.",
+      "better": "En el escenario modelado, el total de 09:45 es 35 min menor que el de 09:30."
+    },
+    {
+      "id": "no_feasible",
+      "claim_refs": [],
+      "bad": "No hay transporte.",
+      "better": "No se encontró una combinación viable dentro del snapshot y restricciones analizados."
+    },
+    {
+      "id": "centre_anchor",
+      "claim_refs": [
+        "MAIN:walk_out_s",
+        "MAIN:walk_return_s",
+        "VARIATION_TIME:walk_out_s",
+        "VARIATION_TIME:walk_return_s",
+        "VARIATION_DURATION:walk_out_s",
+        "VARIATION_DURATION:walk_return_s"
+      ],
+      "bad": "Esta es la entrada del ambulatorio.",
+      "better": "El paseo termina en el punto oficial modelado del centro; la entrada física no está verificada."
+    }
+  ]
+}

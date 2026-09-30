@@ -1,0 +1,85 @@
+{
+  "audit_version": "r9.0",
+  "retrieval_date": "2026-09-30",
+  "status_values": [
+    "VERIFIED_SPECIFIC",
+    "VERIFIED_GENERAL_TERMS_APPLY",
+    "SECONDARY_METADATA_ONLY",
+    "NOT_VERIFIED",
+    "NOT_APPLICABLE"
+  ],
+  "legal_disclaimer": "Engineering reuse inventory, not legal advice.",
+  "sources": [
+    {
+      "source_id": "GTFS",
+      "license_status": "VERIFIED_GENERAL_TERMS_APPLY",
+      "license_name": "Open Data Euskadi linked general reuse terms; specific variant not named on the dataset page",
+      "license_url": "https://opendata.euskadi.eus/general/-/informacion-legal-opendata/",
+      "official_evidence_url": "https://opendata.euskadi.eus/catalogo/-/moveuskadi-datos-de-la-red-de-transporte-publico-de-euskadi-operadores-horarios-paradas-calendario-tarifas-etc/",
+      "evidence_retrieval_date": "2026-09-30",
+      "attribution_requirement": "cite source and last-update date",
+      "alteration_restrictions": "do not alter or denaturalize meaning",
+      "redistribution_allowed": "YES_UNDER_LINKED_GENERAL_TERMS",
+      "commercial_reuse_allowed": "YES_UNDER_GENERAL_OPEN_DATA_GUIDANCE",
+      "last_update_attribution_required": true,
+      "notes": "Dataset page points to official legal notice; do not relabel as a dataset-specific CC BY grant."
+    },
+    {
+      "source_id": "HEALTH_REGISTRY",
+      "license_status": "VERIFIED_GENERAL_TERMS_APPLY",
+      "license_name": "Open Data Euskadi linked general reuse terms; specific variant not named on the primary dataset page",
+      "license_url": "https://opendata.euskadi.eus/general/-/informacion-legal-opendata/",
+      "official_evidence_url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/",
+      "evidence_retrieval_date": "2026-09-30",
+      "attribution_requirement": "cite source and last-update date",
+      "alteration_restrictions": "do not alter or denaturalize meaning",
+      "redistribution_allowed": "YES_UNDER_LINKED_GENERAL_TERMS",
+      "commercial_reuse_allowed": "YES_UNDER_GENERAL_OPEN_DATA_GUIDANCE",
+      "last_update_attribution_required": true,
+      "notes": "datos.gob.es reports CC BY 4.0 as secondary metadata; retained as corroboration, not elevated to primary specific-license evidence.",
+      "secondary_evidence_url": "https://datos.gob.es/es/catalogo/a16003011-centros-de-salud-ambulatorios-y-hospitales-publicos-de-euskadi1"
+    },
+    {
+      "source_id": "HEALTH_PAGE",
+      "license_status": "NOT_VERIFIED",
+      "license_name": null,
+      "license_url": null,
+      "official_evidence_url": "https://www.osakidetza.euskadi.eus/ambulatorio-de-beasain/webosk00-cercon/es/",
+      "evidence_retrieval_date": "2026-09-30",
+      "attribution_requirement": "UNKNOWN",
+      "alteration_restrictions": "UNKNOWN",
+      "redistribution_allowed": "UNKNOWN",
+      "commercial_reuse_allowed": "UNKNOWN",
+      "last_update_attribution_required": "UNKNOWN",
+      "notes": "Open Data dataset terms are not assumed to cover arbitrary Osakidetza HTML."
+    },
+    {
+      "source_id": "PADI_2026",
+      "license_status": "NOT_VERIFIED",
+      "license_name": null,
+      "license_url": null,
+      "official_evidence_url": "https://www.osakidetza.euskadi.eus/contenidos/informacion/salud_padi/es_def/adjuntos/padi-kontsultak-gipuzkoa.pdf",
+      "evidence_retrieval_date": "2026-09-30",
+      "attribution_requirement": "UNKNOWN",
+      "alteration_restrictions": "UNKNOWN",
+      "redistribution_allowed": "UNKNOWN",
+      "commercial_reuse_allowed": "UNKNOWN",
+      "last_update_attribution_required": "UNKNOWN",
+      "notes": "No specific PDF reuse license was found; do not infer one."
+    },
+    {
+      "source_id": "OSM",
+      "license_status": "VERIFIED_SPECIFIC",
+      "license_name": "Open Data Commons Open Database License 1.0",
+      "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "official_evidence_url": "https://www.openstreetmap.org/copyright",
+      "evidence_retrieval_date": "2026-09-30",
+      "attribution_requirement": "credit OpenStreetMap and contributors and identify ODbL",
+      "alteration_restrictions": "share-alike obligations apply to altered/derived databases",
+      "redistribution_allowed": "YES_WITH_ODBL_COMPLIANCE",
+      "commercial_reuse_allowed": "YES_WITH_ODBL_COMPLIANCE",
+      "last_update_attribution_required": false,
+      "notes": "Attribution form depends on medium; distributing data form should link the license directly."
+    }
+  ]
+}

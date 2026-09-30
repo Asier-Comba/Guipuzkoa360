@@ -1,0 +1,27 @@
+{
+  "advice_version": "r9.0",
+  "owner": {
+    "package": "W2",
+    "delivery_review": "W3",
+    "evidence": "W1"
+  },
+  "categories": {
+    "RUNTIME_REQUIRED": [
+      "R6 package members exactly as frozen; do not add R9 maintenance scripts"
+    ],
+    "CONTEXT_REQUIRED": [
+      "W1_HANDSHAKE_R9.json or a consumer projection of its semantics"
+    ],
+    "AUDIT_ONLY": [
+      "clean-room, upstream drift, license, distribution, hygiene, playbook and data-freeze artifacts"
+    ],
+    "DELIVERY_EVIDENCE_ONLY": [
+      "canonical R8 evidence, raw contrast, timelines and claim ledger"
+    ],
+    "DO_NOT_BUNDLE_UNLESS_LICENSE_VERIFIED": [
+      "raw Osakidetza HTML",
+      "PADI PDF"
+    ]
+  },
+  "decision": "ADVICE_ONLY_NO_FINAL_PACKAGE_MUTATION"
+}

@@ -1,0 +1,74 @@
+{
+  "audit_version": "r9.0",
+  "policy_values": [
+    "INCLUDE_ALLOWED",
+    "INCLUDE_WITH_ATTRIBUTION",
+    "REFERENCE_ONLY",
+    "HASH_ONLY",
+    "HUMAN_REVIEW_REQUIRED"
+  ],
+  "no_files_deleted": true,
+  "not_legal_advice": true,
+  "files": [
+    {
+      "path": "datos_originales/movilidad/goierrialdea-3276fcae.zip",
+      "source": "GTFS",
+      "is_runtime_required": false,
+      "is_evidence_only": true,
+      "currently_committed": true,
+      "license_status": "VERIFIED_GENERAL_TERMS_APPLY",
+      "redistribution_status": "YES_UNDER_LINKED_GENERAL_TERMS",
+      "required_attribution": "cite source and last-update date",
+      "delivery_bundle_policy": "REFERENCE_ONLY",
+      "risk": "LOW"
+    },
+    {
+      "path": "datos_originales/centros-salud.xlsx",
+      "source": "HEALTH_REGISTRY",
+      "is_runtime_required": false,
+      "is_evidence_only": true,
+      "currently_committed": true,
+      "license_status": "VERIFIED_GENERAL_TERMS_APPLY",
+      "redistribution_status": "YES_UNDER_LINKED_GENERAL_TERMS",
+      "required_attribution": "cite source and last-update date",
+      "delivery_bundle_policy": "REFERENCE_ONLY",
+      "risk": "LOW"
+    },
+    {
+      "path": "datos_originales/movilidad/r5/beasain-official.html",
+      "source": "HEALTH_PAGE",
+      "is_runtime_required": false,
+      "is_evidence_only": true,
+      "currently_committed": true,
+      "license_status": "NOT_VERIFIED",
+      "redistribution_status": "UNKNOWN",
+      "required_attribution": "UNKNOWN",
+      "delivery_bundle_policy": "HUMAN_REVIEW_REQUIRED",
+      "risk": "MEDIUM"
+    },
+    {
+      "path": "datos_originales/movilidad/r5/padi-2026.pdf",
+      "source": "PADI_2026",
+      "is_runtime_required": false,
+      "is_evidence_only": true,
+      "currently_committed": true,
+      "license_status": "NOT_VERIFIED",
+      "redistribution_status": "UNKNOWN",
+      "required_attribution": "UNKNOWN",
+      "delivery_bundle_policy": "HUMAN_REVIEW_REQUIRED",
+      "risk": "MEDIUM"
+    },
+    {
+      "path": "datos_originales/movilidad/beasain-network-r4-public.osm",
+      "source": "OSM",
+      "is_runtime_required": false,
+      "is_evidence_only": true,
+      "currently_committed": true,
+      "license_status": "VERIFIED_SPECIFIC",
+      "redistribution_status": "YES_WITH_ODBL_COMPLIANCE",
+      "required_attribution": "credit OpenStreetMap and contributors and identify ODbL",
+      "delivery_bundle_policy": "INCLUDE_WITH_ATTRIBUTION",
+      "risk": "LOW"
+    }
+  ]
+}
