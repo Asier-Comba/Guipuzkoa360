@@ -11,6 +11,8 @@ import inspect
 import json
 import math
 import os
+import zipfile
+from functools import wraps
 from pathlib import Path
 from typing import Any, Callable
 from uuid import uuid4
@@ -22,6 +24,7 @@ except ImportError:  # Generated Studio bundle supplies this name.
 
 
 VERSION = "1.1.0"
+_DEFAULT_WORKSPACE_ROOT = Path(__file__).resolve().parents[2]
 CAPABILITY_VERSION = "1.1.0"
 MAX_EVIDENCE_BYTES = 500_000
 MAX_PUBLIC_BYTES = 120_000
@@ -125,14 +128,43 @@ def _hex(value: Any, where: str) -> None:
         raise ContractViolation(f"{where}:expected_sha256")
 
 
-def _workspace_root() -> Path:
-    configured = os.environ.get("GIPUZKOA360_VNEXT_ROOT")
-    if configured:
-        return Path(configured).resolve()
-    for candidate in (Path.cwd().resolve(), *Path(__file__).resolve().parents):
-        if (candidate / "datos_preparados").is_dir():
-            return candidate
-    raise ContractViolation("workspace:data_root_not_found")
+def _workspace_root(root: Path | None = None) -> Path:
+    """One declared root, independent of cwd; invalid configuration fails closed."""
+    if root is not None:
+        candidate = Path(root).resolve()
+    elif "GIPUZKOA360_VNEXT_ROOT" in os.environ:
+        configured = os.environ["GIPUZKOA360_VNEXT_ROOT"]
+        if not configured.strip():
+            raise ContractViolation("workspace:invalid_configured_root")
+        candidate = Path(configured).resolve()
+    else:
+        candidate = _DEFAULT_WORKSPACE_ROOT
+    required = ("datos_preparados/metadata_sources.json", "datos_preparados/vnext/capabilities.json", "contracts/vnext/evidence-v1.1.schema.json")
+    if not candidate.is_dir() or any(not (candidate / path).is_file() for path in required):
+        raise ContractViolation("workspace:invalid_data_root")
+    return candidate
+
+
+def _territorial_handler(name: str, root: Path) -> Callable[..., str]:
+    """Use the unchanged v4 calculation with an explicitly bound repository."""
+    method, kind = {
+        "obtener_resumen_territorial": ("resumen", "summary"),
+        "comparar_municipios": ("comparar", "comparison"),
+        "analizar_envejecimiento": ("envejecimiento", "aging"),
+        "analizar_acceso_servicios": ("acceso", "access"),
+        "analizar_coincidencia": ("coincidencia", "coincidence"),
+        "simular_escenario": ("escenario", "scenario"),
+        "consultar_fuente": ("fuente", "source"),
+    }[name]
+    original = getattr(territorial, name)
+    @wraps(original)
+    def bound_handler(**arguments: Any) -> str:
+        bound = inspect.signature(original).bind(**arguments)
+        bound.apply_defaults()
+        values = [value for key, value in bound.arguments.items() if key != "detalle"]
+        analysis = territorial.TerritorialAnalysis(territorial.DataRepository(root / "datos_preparados"))
+        return territorial._safe(lambda: getattr(analysis, method)(*values), result_kind=kind, detail=bound.arguments["detalle"])
+    return bound_handler
 
 
 def _catalog(root: Path) -> dict[str, dict[str, Any]]:
@@ -268,7 +300,7 @@ def _validate_arguments(args: Any, capability: dict[str, Any]) -> dict[str, Any]
             "integer": lambda v: type(v) is int,
             "boolean": lambda v: type(v) is bool,
             "string_array": lambda v: type(v) is list and bool(v) and all(type(x) is str and bool(x) for x in v),
-            "object_or_array": lambda v: type(v) is dict or type(v) is list and 2 <= len(v) <= 32 and all(type(x) is dict for x in v),
+            "object_or_array": lambda v: type(v) is dict or type(v) is list and 2 <= len(v) <= 4 and all(type(x) is dict for x in v),
         }[kind](value)
         if not valid or (field["allowed_values"] and value not in field["allowed_values"]):
             raise ContractViolation(f"arguments:{name}:invalid_value")
@@ -620,7 +652,7 @@ def _make_claims(raw: dict[str, Any], catalog: dict[str, Any], root: Path) -> tu
 
 
 def validate_evidence(evidence: Any, catalog: dict[str, Any], root: Path | None = None) -> None:
-    root = (root or _workspace_root()).resolve()
+    root = _workspace_root(root)
     _keys(evidence, EVIDENCE_KEYS, "evidence")
     if evidence["schema_version"] != VERSION or evidence["status"] not in {"valid", "no_data", "unsupported", "error"}:
         raise ContractViolation("evidence:version_or_status")
@@ -804,7 +836,7 @@ def _versions(root: Path, cap: dict[str, Any]) -> dict[str, str]:
 
 def consultar_capacidades(pregunta_o_dimension: str | None = None, *, root: Path | None = None, detalle: bool = True) -> str:
     """Inspect validated capabilities; disabled entries stay visibly disabled."""
-    root = (root or _workspace_root()).resolve()
+    root = _workspace_root(root)
     entries = _registry(root)
     selected = [item for item in entries if not pregunta_o_dimension or pregunta_o_dimension.lower() in (item["id"] + " " + item["description"]).lower()]
     if not selected:
@@ -822,11 +854,11 @@ def consultar_capacidades(pregunta_o_dimension: str | None = None, *, root: Path
 
 def consultar_fuente(source_id: str | None = None, *, root: Path | None = None, detalle: bool = True) -> str:
     """Resolve W1 references through the W2 catalog; retain v4 source handling."""
-    root = (root or _workspace_root()).resolve()
+    root = _workspace_root(root)
     additional = strict_loads((root / "datos_preparados/vnext/mobility_sources.json").read_text(encoding="utf-8"))
     selected = [item for item in additional if item["source_id"] == source_id]
     if not selected:
-        return territorial.consultar_fuente(source_id=source_id, detalle=detalle)
+        return _territorial_handler("consultar_fuente", root)(source_id=source_id, detalle=detalle)
     return canonical({
         "status": "ok", "question": "Consulta de procedencia", "filters": {"source_id": source_id},
         "period": None, "metric": "source_metadata", "unit": "no aplica", "rows_used": 1,
@@ -852,9 +884,9 @@ def _execute_mobility(request: Any, request_id: str, root: Path) -> dict[str, An
             import health_adapter
         if type(request) is list:
             only_legacy = all(type(item) is dict and item.get("snapshot_id") == mobility_adapter.SNAPSHOT_ID for item in request)
-            result = mobility_adapter.consume_compare_visits(provider_r6.r4, request, request_id) if only_legacy else health_adapter.consume_compare(provider_r6, request, request_id, root)
+            result = mobility_adapter.consume_compare_visits(provider_r6.r4, request, request_id, root=root) if only_legacy else health_adapter.consume_compare(provider_r6, request, request_id, root)
         elif type(request) is dict and request.get("snapshot_id") == mobility_adapter.SNAPSHOT_ID:
-            result = mobility_adapter.consume_plan_visit(provider_r6.r4, request, request_id)
+            result = mobility_adapter.consume_plan_visit(provider_r6.r4, request, request_id, root=root)
         else:
             result = health_adapter.consume_health(provider_r6, request, request_id, root)
         return result
@@ -862,7 +894,7 @@ def _execute_mobility(request: Any, request_id: str, root: Path) -> dict[str, An
         result = _error(request_id, "plan_visit", {"request": request}, "domain" if str(exc).startswith("mobility:invalid") else "execution", "contract_violation", str(exc))
     except Exception:
         result = _error(request_id, "plan_visit", {"request": request}, "unknown", "unverified_result", "No se ha podido verificar el proveedor de movilidad.")
-    validate_evidence(result, _catalog(root))
+    validate_evidence(result, _catalog(root), root=root)
     return result
 
 
@@ -873,7 +905,6 @@ def plan_visit(request: Any) -> dict[str, Any]:
 
 def execute(capability_id: str, arguments: dict[str, Any], request_id: str, *, root: Path | None = None, transport: Callable[[Callable[..., str], dict[str, Any]], str] | None = None) -> dict[str, Any]:
     """Execute one deterministic tool, bind and validate its evidence, fail closed."""
-    root = (root or _workspace_root()).resolve()
     _text(request_id, "request_id")
     _text(capability_id, "capability_id")
     if type(arguments) is not dict:
@@ -881,6 +912,7 @@ def execute(capability_id: str, arguments: dict[str, Any], request_id: str, *, r
     catalog: dict[str, Any] = {}
     versions = None
     try:
+        root = _workspace_root(root)
         catalog = _catalog(root)
         registry = _registry(root)
         cap = next((item for item in registry if item["id"] == capability_id), None)
@@ -891,7 +923,7 @@ def execute(capability_id: str, arguments: dict[str, Any], request_id: str, *, r
         normalized = _validate_arguments(repaired, cap)
         if capability_id == "plan_visit":
             return _execute_mobility(normalized["request"], request_id, root)
-        handler = consultar_capacidades if cap["handler"] == "consultar_capacidades" else consultar_fuente if cap["handler"] == "consultar_fuente" else getattr(territorial, cap["handler"])
+        handler = consultar_capacidades if cap["handler"] == "consultar_capacidades" else consultar_fuente if cap["handler"] == "consultar_fuente" else _territorial_handler(cap["handler"], root)
         call_args = {**normalized, "detalle": True}
         if handler in {consultar_capacidades, consultar_fuente}:
             call_args["root"] = root
@@ -919,18 +951,20 @@ def execute(capability_id: str, arguments: dict[str, Any], request_id: str, *, r
                 "assumptions": repair_notes, "limitations": raw["limitations"] + ([f"{unattributed} cifras del resultado carecen de atribución por fuente en la salida y no se ofrecen como afirmaciones verificadas."] if unattributed else []), "error": None,
                 "versions": versions, "raw_result_json": raw_json, "raw_result_sha256": digest(raw_json),
             }
-        validate_evidence(result, catalog)
+        validate_evidence(result, catalog, root=root)
         return result
     except ObservedTransportError as exc:
         result = _error(request_id, capability_id, arguments, "transport", "observed_transport_failure", str(exc) or "Fallo de transporte observado.", versions=versions)
     except ContractViolation as exc:
+        if str(exc).startswith("workspace:"):
+            return _error(request_id, capability_id, arguments, "data", "invalid_workspace_root", "La raíz declarada no contiene el candidato completo; no se ha usado otra raíz.")
         user_argument_error = str(exc).startswith("arguments:")
         result = _error(request_id, capability_id, arguments, "domain" if user_argument_error else "execution", "invalid_arguments" if user_argument_error else "contract_violation", str(exc), versions=versions)
     except (OSError, json.JSONDecodeError) as exc:
         result = _error(request_id, capability_id, arguments, "data", "data_unavailable", str(exc), versions=versions)
     except Exception:
         result = _error(request_id, capability_id, arguments, "unknown", "unverified_result", "No se ha podido verificar el resultado.", versions=versions)
-    validate_evidence(result, catalog)
+    validate_evidence(result, catalog, root=root)
     return result
 
 
@@ -956,30 +990,67 @@ def _mobility_catalog_view(root: Path) -> dict[str, Any] | None:
     }
 
 
-def _mobility_view(raw: dict[str, Any], root: Path) -> dict[str, Any]:
+def _mobility_view(raw: dict[str, Any], root: Path, arguments: dict[str, Any]) -> dict[str, Any]:
     labels_path = root / "datos_preparados/vnext/consumer_labels_r7.json"
-    if labels_path.is_file() and digest(labels_path.read_bytes()) != "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799":
+    if not labels_path.is_file() or digest(labels_path.read_bytes()) != "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799":
         raise ContractViolation("mobility:labels_changed_before_model_view")
-    labels = strict_loads(labels_path.read_text(encoding="utf-8")) if labels_path.is_file() else {"stops": [], "routes": [], "origins": [], "destination": {}}
+    labels = strict_loads(labels_path.read_text(encoding="utf-8"))
     stop_labels = {item["stop_id"]: item["name"] for item in labels["stops"]}
+    scenarios = raw["results"] if "results" in raw else [raw]
+    if any(item["schema_version"] == "0.2.0" for item in scenarios):
+        package = root / "datos_preparados/vnext/w1_r6_runtime.zip"
+        if digest(package.read_bytes()) != "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910":
+            raise ContractViolation("mobility:legacy_labels_package_changed")
+        with zipfile.ZipFile(package) as archive:
+            snapshot_bytes = archive.read("prototypes/ir_y_volver/snapshots/official-goierrialdea-go01-r4-20260929.json")
+        if digest(snapshot_bytes) != "62e00c04edb96ccde0a5ce4fe81574452ddcacdb4c173b030ca49b000f5a084b":
+            raise ContractViolation("mobility:legacy_labels_snapshot_changed")
+        snapshot = strict_loads(snapshot_bytes.decode("utf-8"))
+        for stop_id, row in snapshot["stops"].items():
+            if stop_id in stop_labels and stop_labels[stop_id] != row["name"]:
+                raise ContractViolation("mobility:conflicting_stop_labels")
+            stop_labels[stop_id] = row["name"]
     route_labels = {item["route_id"]: item["short_name"] for item in labels["routes"]}
     origin_labels = {item["origin_id"]: item["name"] for item in labels["origins"]}
+    catalog = _catalog(root)
+    originals = arguments.get("requests", arguments.get("request", arguments))
+    originals = originals if type(originals) is list else [originals]
+
+    def label(table: dict[str, str], key: str) -> str:
+        value = table.get(key)
+        if not value or value == key:
+            raise ContractViolation("mobility:missing_human_label")
+        return value
 
     def scenario(result: dict[str, Any], index: int) -> dict[str, Any]:
         request = result.get("normalized_request") or {}
         supplied = {row["field"]: row for row in result.get("parameter_provenance", [])}
+        original = originals[index]
         attribution = [{
             "field": key, "value": value,
             "provider_origin": supplied[key]["origin"] if key in supplied else "not_provided_by_legacy_contract",
-            "w2_attribution": "provider_default" if key in supplied and supplied[key]["origin"] == "model_default" else "tool_argument_origin_unverified",
+            "w2_attribution": "provider_default" if key in supplied and supplied[key]["origin"] == "model_default" else "tool_argument_origin_unverified" if key in original else "legacy_provider_default",
         } for key, value in request.items()]
-        sources = [{key: item.get(key) for key in ("source_id", "source_role", "publisher", "url", "reference_period", "transformation")} for item in result.get("sources", [])]
+        sources = []
+        for item in result["sources"]:
+            if result["schema_version"] == "0.3.1":
+                source = {key: item[key] for key in ("source_id", "source_role", "publisher", "url", "reference_period", "transformation")}
+                metadata = catalog[item["source_id"]]
+            elif result["schema_version"] == "0.2.0":
+                # The official legacy schema has no transformation/source_role.
+                # Preserve it, never manufacture health-contract fields.
+                source = dict(item)
+                metadata = catalog["W1_GTFS@" + request["date"]]
+            else:
+                raise ContractViolation("mobility:unsupported_projection_version")
+            source.update(title=metadata["title"], institution=metadata["institution"], contract_version=result["schema_version"], catalog_source_id=metadata["source_id"])
+            sources.append(source)
         view: dict[str, Any] = {
             "index": index, "status": result["status"], "error": result["error"],
             "scenario_kind": result["scenario_kind"], "scope": result["scope"],
             "time_basis": result["time_basis"], "snapshot_id": result["snapshot_id"],
             "effective_parameters": request, "parameter_attribution": attribution,
-            "origin_label": origin_labels.get(request.get("origin_id"), request.get("origin_id")),
+            "origin_label": label(origin_labels, request["origin_id"]) if result["status"] == "ok" else origin_labels.get(request.get("origin_id")),
             "destination_label": labels["destination"].get("name") if result["scenario_kind"] == "health_visit" else "Paradas de Beasain (sin acceso sanitario)",
             "sources": sources, "assumptions": result["assumptions"], "limitations": result["limitations"],
         }
@@ -988,9 +1059,9 @@ def _mobility_view(raw: dict[str, Any], root: Path) -> dict[str, Any]:
         itinerary = result["itinerary"]
         def leg(value: dict[str, Any]) -> dict[str, Any]:
             return {**value,
-                    "route_label": route_labels.get(value["route_id"], value["route_id"]),
-                    "from_stop_label": stop_labels.get(value["from_stop_id"], value["from_stop_id"]),
-                    "to_stop_label": stop_labels.get(value["to_stop_id"], value["to_stop_id"])}
+                    "route_label": label(route_labels, value["route_id"]),
+                    "from_stop_label": label(stop_labels, value["from_stop_id"]),
+                    "to_stop_label": label(stop_labels, value["to_stop_id"])}
         view["itinerary"] = {
             "outbound": leg(itinerary["outbound"]), "return": leg(itinerary["return"]),
             "origin_stop_id": itinerary["origin_stop_id"], "return_stop_id": itinerary["return_stop_id"],
@@ -1012,11 +1083,33 @@ def _mobility_view(raw: dict[str, Any], root: Path) -> dict[str, Any]:
 
     if "results" in raw:
         return {"scenarios": [scenario(item, index) for index, item in enumerate(raw["results"])],
-                "comparisons": raw.get("comparisons", [])}
+                "comparisons": raw["comparisons"], "differences_s": raw.get("differences_s", [])}
     return {"scenarios": [scenario(raw, 0)], "comparisons": []}
 
 
-def public_result(evidence: dict[str, Any]) -> str:
+def public_result(evidence: dict[str, Any], *, root: Path | None = None) -> str:
+    """Validate at the projection boundary and never expose partial evidence."""
+    try:
+        root = _workspace_root(root)
+        validate_evidence(evidence, _catalog(root), root=root)
+        if evidence["raw_result_json"] is not None:
+            if evidence["versions"]["contract_sha256"] != digest((root / "contracts/vnext/evidence-v1.1.schema.json").read_bytes()):
+                raise ContractViolation("projection:contract_root_mismatch")
+            if evidence["capability_id"] == "plan_visit":
+                if globals().get("_W1_BOUND_ROOT", root) != root:
+                    raise ContractViolation("projection:provider_root_mismatch")
+            elif evidence["status"] == "valid":
+                cap = next(item for item in _registry(root) if item["id"] == evidence["capability_id"])
+                if evidence["versions"] != _versions(root, cap):
+                    raise ContractViolation("projection:data_root_mismatch")
+        return _public_result(evidence, root)
+    except Exception as exc:
+        code = "invalid_workspace_root" if isinstance(exc, ContractViolation) and str(exc).startswith("workspace:") else "public_projection_unverified"
+        failure = _error(evidence.get("request_id", "projection"), evidence.get("capability_id", "unknown"), {}, "data", code, "No se ha podido verificar la vista con la raíz declarada; no se ofrecen cifras parciales.")
+        return canonical({"schema_version": VERSION, "request_id": failure["request_id"], "capability_id": failure["capability_id"], "status": "error", "claims": [], "error": failure["error"]})
+
+
+def _public_result(evidence: dict[str, Any], root: Path) -> str:
     """Return a bounded, attributed model view; keep raw evidence out of the prompt."""
     claims = evidence["claims"]
     args = evidence["normalized_input"]["arguments"]
@@ -1045,7 +1138,7 @@ def public_result(evidence: dict[str, Any]) -> str:
             {key: item[key] for key in ("id", "description", "enabled", "validation_status", "derivation", "coverage", "semantic_limits") if key in item}
             for item in raw["data"] if type(item) is dict
         ]
-        mobility_catalog = _mobility_catalog_view(_workspace_root())
+        mobility_catalog = _mobility_catalog_view(root)
         if mobility_catalog is not None:
             view["mobility_catalog"] = mobility_catalog
     if evidence["capability_id"] == "consultar_fuente" and type(raw.get("data")) is list:
@@ -1054,7 +1147,7 @@ def public_result(evidence: dict[str, Any]) -> str:
             for item in raw["data"] if type(item) is dict
         ]
     if evidence["capability_id"] == "plan_visit" and raw:
-        view["mobility"] = _mobility_view(raw, _workspace_root())
+        view["mobility"] = _mobility_view(raw, root, args)
     if explicit_entities and len(claim_entities) != len(municipality_ids):
         failure = _error(evidence["request_id"], evidence["capability_id"], args, "data", "missing_attributed_entity", "Una entidad solicitada carece de cifra atribuida en la salida; no se ofrece una comparación parcial.")
         view.update(status="error", claims=[], error=failure["error"])
@@ -1063,6 +1156,8 @@ def public_result(evidence: dict[str, Any]) -> str:
         failure = _error(evidence["request_id"], evidence["capability_id"], args, "execution", "public_payload_too_large", "La vista validada supera el límite local; acote los municipios o parámetros.")
         failure["error"]["safe_next_action"] = "Solicite municipios concretos; no se ha publicado ninguna cifra parcial."
         view.update(status="error", claims=[], selection={**selection, "returned_entities": 0, "omitted_entities": selection["total_entities"]}, error=failure["error"])
+        for key in ("mobility", "mobility_catalog", "capabilities", "source_metadata"):
+            view.pop(key, None)
         rendered = canonical(view)
         if len(rendered.encode("utf-8")) > MAX_PUBLIC_BYTES:
             rendered = canonical({"status": "error", "code": "public_payload_too_large", "claims": []})

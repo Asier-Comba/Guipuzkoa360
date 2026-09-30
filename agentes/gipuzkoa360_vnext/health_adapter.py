@@ -228,7 +228,9 @@ def _claims(raw: dict[str, Any], prefix: str, catalog: dict[str, Any], claims: l
     sources = ["GTFS", "HEALTH_REGISTRY", "OSM", "MODEL", "USER", "MODEL_DEFAULTS", "DERIVED"]
     _claim(raw, prefix + "/itinerary/total_s", "s", sources, catalog, claims)
     for field in COMPONENTS:
-        related = ["GTFS"] if field.endswith("vehicle_s") else ["USER", "MODEL_DEFAULTS"] if field in {"appointment_s", "initial_wait_s"} else sources
+        scenario = tools._pointer(raw, prefix) if prefix else raw
+        provenance = {row["field"]: row["source_ref"] for row in scenario["parameter_provenance"]}
+        related = ["GTFS"] if field.endswith("vehicle_s") else [provenance["duration_minutes" if field == "appointment_s" else "boarding_margin_minutes"]] if field in {"appointment_s", "initial_wait_s"} else sources
         _claim(raw, prefix + "/components_s/" + field, "s", related, catalog, claims)
     for direction in ("outbound", "return"):
         _claim(raw, prefix + f"/walking/{direction}/total_metres", "m", ["GTFS", "HEALTH_REGISTRY", "OSM", "MODEL"], catalog, claims)

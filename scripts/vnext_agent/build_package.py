@@ -45,6 +45,7 @@ FILES = {
     PIN_FILE: "scripts/vnext_agent/w1_pin.json",
     ROOT / "tests/vnext_agent/test_mobility_binding.py": "tests/vnext_agent/test_mobility_binding.py",
     ROOT / "tests/vnext_agent/test_health_r10.py": "tests/vnext_agent/test_health_r10.py",
+    ROOT / "tests/vnext_agent/test_r12_generated.py": "tests/vnext_agent/test_r12_generated.py",
     ROOT / "datos_preparados/municipios.csv": "datos_preparados/municipios.csv",
     ROOT / "datos_preparados/demografia.csv": "datos_preparados/demografia.csv",
     ROOT / "datos_preparados/runtime_municipality_points.csv": "datos_preparados/runtime_municipality_points.csv",
@@ -71,6 +72,8 @@ def _candidate_nodes() -> list[ast.stmt]:
             for child in node.body
         ):
             continue
+        if isinstance(node, ast.Assign) and any(isinstance(target, ast.Name) and target.id == "_DEFAULT_WORKSPACE_ROOT" for target in node.targets):
+            node.value = ast.parse("Path(__file__).resolve().parent", mode="eval").body
         nodes.append(node)
     return nodes
 
@@ -90,17 +93,20 @@ from pathlib import PurePosixPath as _W1PurePath
 _W1_PACKAGE_SHA256 = {W1_R6_PACKAGE_SHA256!r}
 _W1_HELPERS = {helpers!r}
 _W1_TEMPDIR = None
+_W1_BOUND_ROOT = None
 
 def _ensure_w1_runtime(root):
-    global _W1_TEMPDIR
-    if _W1_TEMPDIR is not None:
-        return
+    global _W1_TEMPDIR, _W1_BOUND_ROOT
     archive_path = root / {W1_PACKAGE_PATH!r}
     if not archive_path.is_file():
         raise ContractViolation("mobility:pinned_package_missing")
     raw = archive_path.read_bytes()
     if digest(raw) != _W1_PACKAGE_SHA256:
         raise ContractViolation("mobility:pinned_package_sha_mismatch")
+    if _W1_TEMPDIR is not None:
+        if root != _W1_BOUND_ROOT:
+            raise ContractViolation("mobility:runtime_root_changed")
+        return
     existing = _w1_sys.modules.get("prototypes")
     if existing is not None:
         raise ContractViolation("mobility:unverified_preloaded_provider")
@@ -121,6 +127,7 @@ def _ensure_w1_runtime(root):
         _w1_sys.modules[name] = module
         exec(compile(source, module.__file__, "exec"), module.__dict__)
     _W1_TEMPDIR = temp
+    _W1_BOUND_ROOT = root
 '''
 
 
@@ -133,6 +140,7 @@ def build_portal() -> None:
 territorial = SimpleNamespace(
     DataRepository=DataRepository,
     TerritorialAnalysis=TerritorialAnalysis,
+    _safe=_safe,
     normalize_service_category=normalize_service_category,
     normalize_age_group=normalize_age_group,
     normalize_scenario_action=normalize_scenario_action,
@@ -180,7 +188,7 @@ def _combined_registry(w1_package_sha: str, w1_catalog_sha: str, w1_labels_sha: 
         "allowed_transformations": ["direct_pair_search", "pinned_walking_formula", "contiguous_component_sum", "bounded_comparison"],
         "preconditions": ["W1 R6 package, catalog, snapshot and schemas match published hashes.", "Health destination is modelled to an official centre point, not a verified entrance."],
         "precondition_checks": ["required_data_sha256", "handler_signature", "source_catalog", "coverage_count"],
-        "validation_evidence": [{"test_file": "tests/vnext_agent/test_health_r10.py", "test_name": "test_health_provider_and_model_view", "sha256": sha(test_file.read_bytes())}],
+        "validation_evidence": [{"test_file": "tests/vnext_agent/test_health_r10.py", "test_name": "test_health_provider_and_model_view", "sha256": sha(test_file.read_bytes())}, {"test_file": "tests/vnext_agent/test_r12_generated.py", "test_name": "test_generated_r12_end_to_end", "sha256": sha((ROOT / "tests/vnext_agent/test_r12_generated.py").read_bytes())}],
         "restrictions": ["Fecha validada 2026-09-29; tres orígenes y GO01 directa; no puerta física, domicilio, citas, realtime ni accesibilidad garantizada."],
         "semantic_limits": ["Paseo modelado y tiempo GTFS programado, no llegada real.", "Unknown no significa ausencia de transporte; no viable no es fallo de red.", "Los argumentos de la tool no acreditan autoría humana."],
     })
@@ -243,6 +251,7 @@ def main() -> None:
         "health_entrance_verified": False, "w1_package_sha256": W1_R6_PACKAGE_SHA256,
         "w1_source_files": w1_manifest["files"],
         "deployment_mode": "two Python editors (main.py, tools.py) plus static workspace assets including a pinned W1 ZIP; tools.py verifies and extracts that ZIP to a temporary runtime directory",
+        "root_policy": "explicit root, else GIPUZKOA360_VNEXT_ROOT if present, else generated tools.py directory; invalid root rejects; cwd and GIPUZKOA360_DATA_DIR do not select data",
         "tool_count": tool_count,
         "agent_name_chars": len(constants["AGENT_NAME"]),
         "instruction_chars": len(constants["SYSTEM_PROMPT"]),

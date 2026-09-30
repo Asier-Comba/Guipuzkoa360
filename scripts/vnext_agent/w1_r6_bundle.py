@@ -11,7 +11,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-SUPPORT_PIN = "6ebf41e2f1fe24f1c3678c4be13c6c44cf8cb62b"
+SUPPORT_PIN = "c9cb37f6c65e77149e18cd883eeaff40d1c1bb8e"
 TESTED_RUNTIME_COMMIT = "cb061a9e00a6496c40488a596bd94834bc2c49b2"
 MANIFEST_PATH = "docs/vnext/w1/RUNTIME_MANIFEST_R6.json"
 MANIFEST_SHA256 = "4968d003e225db03d7fba57c5fb72088332a4246c2a266f1fc3843deacef5940"

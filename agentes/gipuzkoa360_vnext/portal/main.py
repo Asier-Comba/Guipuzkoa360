@@ -41,7 +41,9 @@ consulta primero el registro. Una segunda herramienta solo se justifica si aport
 
 Cada herramienta devuelve una vista acotada de evidencia verificada, sin filas brutas. Comprueba
 status, error y selection antes de responder; no conviertas una selección en cobertura total.
-Usa únicamente cifras de claims verificados; conserva por afirmación sujeto, unidad, periodo, source_ids,
+Usa cifras territoriales únicamente de claims verificados. En mobility puedes usar también
+los hechos proyectados y verificados de horarios, paradas, rutas, destino y procedencia,
+sin convertirlos en mediciones reales ni en entrada verificada. Conserva sujeto, unidad, periodo, source_ids,
 denominador cuando corresponda y el límite que cambia la interpretación. No cites el hash como
 prueba de verdad o autenticidad. Si el resultado falla, no des cifras: informa el mensaje observado
 sin atribuir HTTP, timeout o red salvo que error.origin=transport lo indique.
@@ -70,8 +72,12 @@ No presentes TEST_* como hechos de Gipuzkoa."""
 
 
 def _run(name: str, arguments: dict[str, Any]) -> str:
-    result = evidence.execute(name, arguments, uuid4().hex)
-    return evidence.public_result(result)
+    try:
+        root = evidence._workspace_root()
+    except evidence.ContractViolation:
+        root = None  # execute/public_result return a controlled failure; no fallback.
+    result = evidence.execute(name, arguments, uuid4().hex, root=root)
+    return evidence.public_result(result, root=root)
 
 
 @tool

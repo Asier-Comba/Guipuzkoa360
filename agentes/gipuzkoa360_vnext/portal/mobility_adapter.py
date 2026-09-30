@@ -167,7 +167,8 @@ def _claim(raw: dict[str, Any], pointer: str, value: int, date_text: str, claims
     })
 
 
-def _envelope(raw: dict[str, Any], original_args: dict[str, Any], effective_parameters: dict[str, Any], defaults_applied: list[str], request_id: str, claims: list[dict[str, Any]], outcomes: list[dict[str, Any]], status: str, error: dict[str, Any] | None, catalog: dict[str, Any]) -> dict[str, Any]:
+def _envelope(raw: dict[str, Any], original_args: dict[str, Any], effective_parameters: dict[str, Any], defaults_applied: list[str], request_id: str, claims: list[dict[str, Any]], outcomes: list[dict[str, Any]], status: str, error: dict[str, Any] | None, catalog: dict[str, Any], root: Path | None = None) -> dict[str, Any]:
+    root = tools._workspace_root(root)
     raw_json = tools.canonical(raw)
     if len(raw_json.encode("utf-8")) > tools.MAX_EVIDENCE_BYTES:
         raise tools.ContractViolation("mobility:payload_too_large")
@@ -178,14 +179,14 @@ def _envelope(raw: dict[str, Any], original_args: dict[str, Any], effective_para
         "effective_request": {"operation": "plan_visit", "municipality_codes": [], "municipality_labels": [], "effective_period": date_text, "parameters": effective_parameters, "defaults_applied": defaults_applied, "snapshot_id": SNAPSHOT_ID, "contracts": {"evidence": tools.VERSION, "capability": tools.CAPABILITY_VERSION, "mobility": W1_VERSION}},
         "execution": {"request_id": request_id, "tool": "plan_visit", "arguments_sha256": tools.digest(tools.canonical(original_args)), "snapshot_id": SNAPSHOT_ID, "state": "completed"},
         "status": status, "outcomes": outcomes, "claims": claims,
-        "method": "W1 0.2.0: búsqueda completa de pares directos programados entre paradas; tiempos modelados y parámetros humanos diferenciados.",
+        "method": "W1 0.2.0: búsqueda completa de pares directos programados entre paradas; tiempos modelados y parámetros aplicados diferenciados, sin acreditar autoría humana.",
         "assumptions": ["Horario programado, no observado en tiempo real.", "El destino es una parada; no acredita entrada ni visita a centro sanitario."],
         "limitations": ["Solo fecha GO01 validada y scope stop_only; no puerta a puerta, transbordos ni acceso sanitario acreditado."],
         "error": error,
-        "versions": {"data_sha256": SNAPSHOT_SHA256, "code_sha256": PROVIDER_SHA256, "contract_sha256": tools.digest((tools._workspace_root() / "contracts/vnext/evidence-v1.1.schema.json").read_bytes())},
+        "versions": {"data_sha256": SNAPSHOT_SHA256, "code_sha256": PROVIDER_SHA256, "contract_sha256": tools.digest((root / "contracts/vnext/evidence-v1.1.schema.json").read_bytes())},
         "raw_result_json": raw_json, "raw_result_sha256": tools.digest(raw_json),
     }
-    tools.validate_evidence(result, catalog)
+    tools.validate_evidence(result, catalog, root=root)
     return result
 
 
@@ -193,7 +194,7 @@ def _outcome(index: int, raw: dict[str, Any]) -> dict[str, Any]:
     return {"index": index, "status": raw["status"], "error": raw["error"]}
 
 
-def consume_plan_visit(provider: Any, request: dict[str, Any], request_id: str) -> dict[str, Any]:
+def consume_plan_visit(provider: Any, request: dict[str, Any], request_id: str, *, root: Path | None = None) -> dict[str, Any]:
     normalized_input = _request(request)
     snapshot = _capabilities(provider)
     raw = _validate_result(provider.plan_visit(normalized_input), normalized_input, snapshot)
@@ -209,10 +210,10 @@ def consume_plan_visit(provider: Any, request: dict[str, Any], request_id: str) 
         "code": raw["error"]["code"], "message": raw["error"]["message"],
         "available_options": [], "safe_next_action": "Revise el catálogo y la fecha validada; unknown no demuestra ausencia de transporte.",
     }
-    return _envelope(raw, normalized_input, expected if raw["normalized_request"] is not None else normalized_input, sorted(set(expected if raw["normalized_request"] is not None else normalized_input) - set(normalized_input)), request_id, claims, [_outcome(0, raw)], status, error, _catalog(expected["date"]))
+    return _envelope(raw, normalized_input, expected if raw["normalized_request"] is not None else normalized_input, sorted(set(expected if raw["normalized_request"] is not None else normalized_input) - set(normalized_input)), request_id, claims, [_outcome(0, raw)], status, error, _catalog(expected["date"]), root)
 
 
-def consume_compare_visits(provider: Any, requests: list[dict[str, Any]], request_id: str) -> dict[str, Any]:
+def consume_compare_visits(provider: Any, requests: list[dict[str, Any]], request_id: str, *, root: Path | None = None) -> dict[str, Any]:
     if type(requests) is not list or not 2 <= len(requests) <= 32:
         raise tools.ContractViolation("mobility:comparison_requires_2_to_32")
     normalized = [_request(request) for request in requests]
@@ -273,4 +274,4 @@ def consume_compare_visits(provider: Any, requests: list[dict[str, Any]], reques
         _claim(raw, f"/differences_s/{index}/total_difference_s", difference["total_difference_s"], date_text, claims, "total_difference_s")
     args = {"requests": normalized}
     outcomes = [_outcome(index, item) for index, item in enumerate(raw["results"])]
-    return _envelope(raw, args, args, [], request_id, claims, outcomes, "valid", None, catalog)
+    return _envelope(raw, args, args, [], request_id, claims, outcomes, "valid", None, catalog, root)

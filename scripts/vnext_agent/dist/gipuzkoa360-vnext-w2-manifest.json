@@ -1,8 +1,8 @@
 {
   "agent_name_chars": 38,
-  "bytes": 219354,
+  "bytes": 224576,
   "canonicalization": "UTF-8 and LF; sorted names; fixed ZIP metadata",
-  "context_bytes": 131525,
+  "context_bytes": 131755,
   "context_file_count": 13,
   "context_paths": [
     "FUENTES.md",
@@ -23,7 +23,7 @@
   "entrypoint": "main.py:build_agent",
   "health_destination_modelled": true,
   "health_entrance_verified": false,
-  "instruction_chars": 2784,
+  "instruction_chars": 2968,
   "limit_bytes": 25165824,
   "limit_provenance": "W3 read-only portal help reports 24 MB total agent package; compressed/uncompressed basis and MB unit unspecified; builder uses conservative 24 MiB local guard",
   "members": {
@@ -72,16 +72,16 @@
       "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
     },
     "datos_preparados/vnext/capabilities.json": {
-      "bytes": 26375,
-      "sha256": "21bff0743a9c17a3517556eac4fca283e9b7b70139e083692557480e485ecbb5"
+      "bytes": 26605,
+      "sha256": "61183df49ac43bd03e7892da31789f07688bd5ddb96bafe1200bde18eca8376f"
     },
     "datos_preparados/vnext/consumer_labels_r7.json": {
       "bytes": 3152,
       "sha256": "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799"
     },
     "datos_preparados/vnext/mobility_sources.json": {
-      "bytes": 4713,
-      "sha256": "9d9da299ea50e9e682838f65c9ebc7b01b79b7df1e15fccf45777d829fb376a0"
+      "bytes": 5622,
+      "sha256": "a5ba0b7a9ee0ad85366e89ee888de2635013c148d005dcf9ecb94d24215bc445"
     },
     "datos_preparados/vnext/operational_catalog_r6.json": {
       "bytes": 2651,
@@ -100,8 +100,8 @@
       "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7"
     },
     "main.py": {
-      "bytes": 7692,
-      "sha256": "a3b01df42d6702d3ecea5bc3ae36da2a0381d2193a6f34d39122f0fb7d551a95"
+      "bytes": 8075,
+      "sha256": "9b4044c7e93a3b6bcfc48a4469c9734940fc9dfcd67b945e61414264fba859d9"
     },
     "scripts/vnext_agent/w1_pin.json": {
       "bytes": 1869,
@@ -119,21 +119,26 @@
       "bytes": 6784,
       "sha256": "c1dfaccca55db59815c87b385a66cc51a9611cc820f49bef6c2f1d649f252311"
     },
+    "tests/vnext_agent/test_r12_generated.py": {
+      "bytes": 9461,
+      "sha256": "0d2cf3e896c03c096cce7347267ef83b6c384e68742076db8640aa93b44f284d"
+    },
     "tools.py": {
-      "bytes": 165753,
-      "sha256": "d99354c46a62679c80a64e8f0b8d22a5486608f8caf775fd830af19a91ce966f"
+      "bytes": 172136,
+      "sha256": "068f604b6c395c7e4c9f84bebf79844bcb9f9bb6c771e63e18da5ec9a73f3558"
     }
   },
   "mobility_binding": "PINNED_HEALTH_0.3.1_AND_EXPLICIT_STOP_ONLY_0.2.0; W1 package, source and snapshot bytes verified at build time and runtime",
   "package": "GIPUZKOA360_vNext_W2_candidate",
+  "root_policy": "explicit root, else GIPUZKOA360_VNEXT_ROOT if present, else generated tools.py directory; invalid root rejects; cwd and GIPUZKOA360_DATA_DIR do not select data",
   "runtime_dependencies": [
     "Python 3.12 standard library",
     "portal-provided studio.tool",
     "portal-provided langchain.agents.create_agent"
   ],
-  "sha256": "b4feb978b625b34f9d7331ce8d376a34a29e84e4783868f83ce48a0c0d1011be",
+  "sha256": "9dbb2d7421e2468e44949f94ad1ef5b9011430601d34dd76057fb1720e0bfb1b",
   "tool_count": 9,
-  "uncompressed_bytes": 761273,
+  "uncompressed_bytes": 778639,
   "w1_contract": "0.3.1",
   "w1_legacy_contract": "0.2.0",
   "w1_package_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
@@ -296,5 +301,5 @@
       "sha256": "0f3a02e69f8065f892ce19a0115ae7e3c661c32725bd37a423f3d283ae1a2a7d"
     }
   ],
-  "w1_support_pin": "6ebf41e2f1fe24f1c3678c4be13c6c44cf8cb62b"
+  "w1_support_pin": "c9cb37f6c65e77149e18cd883eeaff40d1c1bb8e"
 }
