@@ -1,0 +1,43 @@
+{
+  "w2_support_sha": "f7a376b3cee79078cbc8b3f878f6eea3a53fcebb",
+  "source_path": "docs/vnext/w2/RAG_AB_R13.json",
+  "source_sha256": "f06b10aff35e2546dcae2455a0faaeee69a1149edc03335dc8ac2760b03591ec",
+  "decision": "RAG_NO_GO",
+  "questions": 18,
+  "supported": 15,
+  "unsupported": 3,
+  "llm_calls": 0,
+  "arms": {
+    "A_NAVIGABLE_FULL_DOCUMENT_LOOKUP": {
+      "citation_correctness": 18,
+      "local_latency_median_ms": 1.583,
+      "mean_context_bytes": 5267.17,
+      "retrieval_hit": 14,
+      "support_completeness": 14,
+      "supported_count": 15,
+      "unsupported_abstention": 3,
+      "unsupported_count": 3,
+      "wrong_source_rate": 0.06666666666666667
+    },
+    "B_EXISTING_LEXICAL_SECTION_RETRIEVAL": {
+      "citation_correctness": 18,
+      "local_latency_median_ms": 6.475,
+      "mean_context_bytes": 1626.44,
+      "retrieval_hit": 15,
+      "support_completeness": 11,
+      "supported_count": 15,
+      "unsupported_abstention": 3,
+      "unsupported_count": 3,
+      "wrong_source_rate": 0.0
+    }
+  },
+  "review": "Same four pinned documents; retrieval hit improves 14/15 to 15/15, but support completeness falls 14/15 to 11/15. Lower context does not offset lost support. NO_GO upheld.",
+  "limits": [
+    "Small authored documentary set, not independent holdout",
+    "Citation identity and literal support completeness only, not generated-answer truth",
+    "Corpus contains territorial methodology, not a complete health corpus",
+    "A/B latency includes different document-loading costs; not optimized production latency",
+    "Unsupported questions contain some generic source tokens; false retrieval is explicitly counted"
+  ],
+  "candidate_changed": false
+}

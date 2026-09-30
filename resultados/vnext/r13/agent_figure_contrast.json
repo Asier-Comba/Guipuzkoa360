@@ -1,0 +1,23 @@
+{
+  "classification": "ACTUAL_AGENT_M01_FIGURE_VS_EXACT_SOURCE_FILE",
+  "source_id": "EUSTAT_EMH_2025",
+  "period": "2025-01-01",
+  "source_path": "datos_preparados/demografia.csv",
+  "source_sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96",
+  "row": {
+    "municipality_code": "20002",
+    "municipality_name": "Aduna",
+    "population_total": "507",
+    "population_65_plus": "75",
+    "population_75_plus": "36",
+    "pct_65_plus": "14.793",
+    "pct_75_plus": "7.101",
+    "reference_period": "2025-01-01",
+    "source_id": "EUSTAT_EMH_2025"
+  },
+  "unit": "%",
+  "formula": "round(36 / 507 * 100, 3)",
+  "result": 7.101,
+  "actual_agent_evidence": "M01.json",
+  "method_limit": "75+ derived from birth year, not a separately sourced direct 75+ series; not a portal health result."
+}

@@ -1,0 +1,104 @@
+Tú
+
+¿Qué muestran los datos de Aduna sobre población mayor y presencia de centros sanitarios? Explica qué significa que una categoría tenga cero registros.
+
+GIPUZKOA 360 vNext R13 patch3 3951b290
+Tool · consultar_capacidades
+{"pregunta_o_dimension":"población mayor y presencia de centros sanitarios en un municipio, incluyendo significado de cero registros"}
+Resultado de consultar_capacidades
+GIPUZKOA 360 vNext R13 patch3 3951b290
+Tool · obtener_resumen_territorial
+{"municipio":"Aduna","periodo":"2025-01-01"}
+Resultado de obtener_resumen_territorial
+GIPUZKOA 360 vNext R13 patch3 3951b290
+
+En Aduna, con periodo demográfico 2025-01-01, los datos verificados muestran:
+
+507 habitantes en total.
+75 personas de 65 o más años, el 14,793 % de la población.
+36 personas de 75 o más años, el 7,101 %.
+
+La salida consultada no aporta como afirmaciones verificadas los recuentos concretos de centros sanitarios de Aduna: esos valores carecen de atribución de fuente y, por tanto, no los presento como datos confirmados. Además, los periodos de población y servicios pueden no coincidir.
+
+Que una categoría tenga cero registros significa únicamente que no se encontró ninguna entrada registrada para esa categoría en el ámbito y periodo de la consulta. No demuestra que no exista ningún servicio, ni que no haya capacidad, apertura, disponibilidad o acceso real. Un registro tampoco acredita por sí solo que el centro esté operativo o disponible.
+
+Tú
+
+Compáralo con Tolosa para personas de 75 años o más.
+
+GIPUZKOA 360 vNext R13 patch3 3951b290
+Tool · obtener_resumen_territorial
+{"municipio":"Aduna","periodo":"2025-01-01"}
+Tool · obtener_resumen_territorial
+{"municipio":"Tolosa","periodo":"2025-01-01"}
+Resultado de obtener_resumen_territorial
+Resultado de obtener_resumen_territorial
+GIPUZKOA 360 vNext R13 patch3 3951b290
+
+Para personas de 75 años o más, en el periodo demográfico 2025-01-01:
+
+Municipio	Población total	Personas de 75+	Proporción
+Aduna	507	36	7,101 %
+Tolosa	20.048	2.432	12,131 %
+
+Comparación: Tolosa tiene 2.396 personas más de 75 años o más y una proporción 5,03 puntos porcentuales superior a la de Aduna.
+
+Sobre centros sanitarios, la consulta sí verifica para Tolosa —con registros de servicios a 2026-09-20—:
+
+Atención primaria: 2 registros, equivalentes a 8,224 registros por cada 10.000 personas de 75+.
+Salud mental: 1 registro, 4,112 por cada 10.000.
+Hospital: 0 registros.
+Otros servicios sanitarios: 0 registros.
+
+Para Aduna, la salida consultada solo ofrece cifras demográficas verificadas; no permite afirmar recuentos de centros por categoría. Por tanto, no debe interpretarse como que Aduna tenga cero centros. Además, los periodos demográfico y de servicios no son homogéneos. Estos registros tampoco acreditan capacidad, horarios, disponibilidad ni acceso real.
+
+Tú
+
+Pasando de ese screening a una visita sanitaria, ¿qué necesitarías para estudiar cuánto tiempo supondría ir al ambulatorio de Beasain y volver?
+
+GIPUZKOA 360 vNext R13 patch3 3951b290
+Tool · consultar_capacidades
+{"pregunta_o_dimension":"plan_visit"}
+Resultado de consultar_capacidades
+GIPUZKOA 360 vNext R13 patch3 3951b290
+
+Para estudiarlo necesitaría estos datos:
+
+Origen: una de las opciones actualmente catalogadas:
+
+Paradas centrales de Idiazabal.
+Paradas de Herriko Plaza de Segura.
+Paradas centrales de Zegama.
+Aduna no figura entre los orígenes habilitados para este plan, así que no la sustituiría automáticamente por otro municipio.
+
+Destino: el punto oficial modelado del Ambulatorio de Beasain. La identidad del centro está confirmada, pero no su entrada física.
+
+Fecha de la visita: solo está validada actualmente la fecha 29 de septiembre de 2026.
+
+Hora de la cita.
+
+Duración estimada de la consulta, entre 1 y 720 minutos, para calcular la vuelta.
+
+También podría especificarse, si se desea, un margen de llegada, un margen para subir al autobús, una hora límite de regreso y el perfil de paseo. Si no se indican, se aplicarían los valores predeterminados del modelo: 10 minutos de margen de llegada, 3 minutos para embarcar y un paseo de referencia de 50 metros por minuto más 120 segundos por enlace.
+
+El resultado sería un cálculo con horarios GO01 programados, paradas y paseo modelado: no mediría tiempos reales, tráfico, acceso puerta a puerta ni una entrada verificada del ambulatorio. Para continuar, necesito al menos origen, hora de cita y duración prevista.
+
+Tú
+
+Desde las paradas del centro de Zegama, quiero ir al Ambulatorio de Beasain el 29 de septiembre de 2026 para una consulta a las 09:30 que dura 20 minutos y regresar. ¿Qué carga temporal completa resultaría con los datos disponibles?
+
+GIPUZKOA 360 vNext R13 patch3 3951b290
+Tool · plan_visit
+{"request":"Planifica una visita sanitaria de ida y vuelta desde las paradas centrales de Zegama al Ambulatorio de Beasain, usando el origen catalogado zegama_center_stops y el destino beasain_official_centre_anchor, el 29 de septiembre de 2026. La consulta es a las 09:30 y dura 20 minutos. Calcula la carga temporal completa con los valores predeterminados disponibles; usa el snapshot oficial por defecto y el perfil de paseo predeterminado."}
+Resultado de plan_visit
+GIPUZKOA 360 vNext R13 patch3 3951b290
+Tool · plan_visit
+{"request":"Origen: Paradas centrales de Zegama. Destino: Ambulatorio de Beasain. Fecha: 2026-09-29. Hora de la cita: 09:30. Duración de la consulta: 20 minutos. Viaje de ida y vuelta, usando los valores predeterminados disponibles."}
+Resultado de plan_visit
+GIPUZKOA 360 vNext R13 patch3 3951b290
+
+No puedo calcular la carga temporal completa: el planificador ha rechazado la petición con el error observado arguments:request:invalid_value (origin=domain). No devuelve horarios, trayectos ni duración, así que no debo inventar cifras.
+
+La petición sí contiene los datos necesarios según el catálogo: paradas centrales de Zegama, Ambulatorio de Beasain, 29/09/2026, cita a las 09:30, duración de 20 minutos y regreso. El resultado que habría que obtener incluiría viaje de ida, paseo modelado hasta el punto oficial, espera o margen aplicable, 20 minutos de consulta, viaje de vuelta y llegada a las paradas de regreso.
+
+Se mantiene la limitación: sería una estimación con horarios programados y paseo modelado, no un tiempo real puerta a puerta; la entrada física del ambulatorio no está verificada.

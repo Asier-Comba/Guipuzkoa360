@@ -47,7 +47,7 @@ def test_health_html_rebuild_is_byte_identical_and_embeds_exact_evidence():
     subprocess.run([sys.executable,'-m','scripts.vnext_product.build_health_visual'],cwd=ROOT,check=True,capture_output=True)
     assert html.read_bytes()==before
     text=before.decode();embedded=text.split('<script id="evidence" type="application/json">',1)[1].split('</script>',1)[0]
-    assert json.loads(embedded)==json.loads((ROOT/'resultados/vnext/r12/health_evidence.json').read_bytes())
+    assert json.loads(embedded)==json.loads((ROOT/'resultados/vnext/r13/health_evidence.json').read_bytes())
     historic=(ROOT/'resultados/vnext/health_r10.html').read_text(encoding='utf-8').split('<script id="evidence" type="application/json">',1)[1].split('</script>',1)[0]
     assert json.loads(historic)==load('health_evidence.json')
     assert '<script src=' not in text and 'Resultado offline, sin conversación con el agente.' in text

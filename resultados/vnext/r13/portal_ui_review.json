@@ -1,0 +1,5 @@
+{
+  "summary": "Revisar evidencia\nÚltima consulta · ejecución observada\n\n2 resultados de herramientas. No se observan errores de herramienta en esta consulta.\n\nUna ejecución terminada no evalúa la calidad del análisis. Revisad:\n\nContrasta una cifra decisiva con los datos y revisa el filtro y el denominador.\nComprueba que la explicación responde a tu pregunta y distingue hechos de hipótesis.\nAnota qué falta por comprobar antes de utilizar el resultado.\nDescargar evidencia para revisar\n\nIncluye preguntas, respuestas y operaciones de esta conversación. Revisad el archivo antes de compartirlo en Entrega.",
+  "note": "UI summary says no tool errors although both actual plan_visit outputs contain status:error. Export download did not return a local path within capture timeout; no export fabricated.",
+  "logs": []
+}

@@ -1,0 +1,338 @@
+{
+  "classification": "MANUAL_INDEPENDENT_VISIBLE_TURN_REVIEW_NOT_FULL_BENCHMARK",
+  "dimensions": [
+    "INTENT_UNDERSTANDING",
+    "CAPABILITY_DISCOVERY",
+    "TOOL_SELECTION",
+    "ARGUMENT_BINDING",
+    "TOOL_RESULT_USE",
+    "GROUNDING",
+    "NUMERIC_CORRECTNESS",
+    "IDENTITY_CORRECTNESS",
+    "SOURCE_GROUNDING",
+    "LIMIT_HANDLING",
+    "FOLLOWUP_CONTEXT",
+    "RECALCULATION",
+    "ERROR_RECOVERY",
+    "HALLUCINATION",
+    "CLARITY"
+  ],
+  "turns": [
+    {
+      "slot": "R13-M01",
+      "session": "A",
+      "state": "COMPLETED",
+      "dimensions": {
+        "INTENT_UNDERSTANDING": "PASS",
+        "CAPABILITY_DISCOVERY": "PASS",
+        "TOOL_SELECTION": "PASS",
+        "ARGUMENT_BINDING": "PASS",
+        "TOOL_RESULT_USE": "PASS",
+        "GROUNDING": "PASS",
+        "NUMERIC_CORRECTNESS": "PASS",
+        "IDENTITY_CORRECTNESS": "PASS",
+        "SOURCE_GROUNDING": "WARN",
+        "LIMIT_HANDLING": "PASS",
+        "FOLLOWUP_CONTEXT": "NOT_APPLICABLE",
+        "RECALCULATION": "NOT_APPLICABLE",
+        "ERROR_RECOVERY": "NOT_APPLICABLE",
+        "HALLUCINATION": "PASS",
+        "CLARITY": "PASS"
+      },
+      "notes": "Five demographic claims match final; source ID/75+ derivation exist in tool output, absent in final copy. No health counts promoted.",
+      "evidence": "M01.json",
+      "findings": [
+        "R13-SOURCE-COPY"
+      ]
+    },
+    {
+      "slot": "R13-M02",
+      "session": "A",
+      "state": "COMPLETED",
+      "dimensions": {
+        "INTENT_UNDERSTANDING": "PASS",
+        "CAPABILITY_DISCOVERY": "PASS",
+        "TOOL_SELECTION": "PASS",
+        "ARGUMENT_BINDING": "PASS",
+        "TOOL_RESULT_USE": "PASS",
+        "GROUNDING": "PASS",
+        "NUMERIC_CORRECTNESS": "PASS",
+        "IDENTITY_CORRECTNESS": "PASS",
+        "SOURCE_GROUNDING": "WARN",
+        "LIMIT_HANDLING": "PASS",
+        "FOLLOWUP_CONTEXT": "PASS",
+        "RECALCULATION": "PASS",
+        "ERROR_RECOVERY": "NOT_APPLICABLE",
+        "HALLUCINATION": "PASS",
+        "CLARITY": "PASS"
+      },
+      "notes": "Fresh Aduna and Tolosa tool results; 2432-36=2396 and 12.131-7.101=5.030 percentage points. Periods and service denominator preserved.",
+      "evidence": "M02.json",
+      "findings": [
+        "R13-SOURCE-COPY"
+      ]
+    },
+    {
+      "slot": "R13-M03",
+      "session": "A",
+      "state": "COMPLETED",
+      "dimensions": {
+        "INTENT_UNDERSTANDING": "PASS",
+        "CAPABILITY_DISCOVERY": "PASS",
+        "TOOL_SELECTION": "PASS",
+        "ARGUMENT_BINDING": "PASS",
+        "TOOL_RESULT_USE": "PASS",
+        "GROUNDING": "PASS",
+        "NUMERIC_CORRECTNESS": "NOT_APPLICABLE",
+        "IDENTITY_CORRECTNESS": "PASS",
+        "SOURCE_GROUNDING": "NOT_APPLICABLE",
+        "LIMIT_HANDLING": "PASS",
+        "FOLLOWUP_CONTEXT": "PASS",
+        "RECALCULATION": "NOT_APPLICABLE",
+        "ERROR_RECOVERY": "PASS",
+        "HALLUCINATION": "PASS",
+        "CLARITY": "PASS"
+      },
+      "notes": "Catalog consulted; decisive origin/time/duration requested; no substitution of Aduna; defaults and modelled scope stated.",
+      "evidence": "M03.json",
+      "findings": []
+    },
+    {
+      "slot": "R13-M04",
+      "session": "A",
+      "state": "COMPLETED",
+      "dimensions": {
+        "INTENT_UNDERSTANDING": "PASS",
+        "CAPABILITY_DISCOVERY": "PASS",
+        "TOOL_SELECTION": "PASS",
+        "ARGUMENT_BINDING": "FAIL",
+        "TOOL_RESULT_USE": "PASS",
+        "GROUNDING": "PASS",
+        "NUMERIC_CORRECTNESS": "NOT_APPLICABLE",
+        "IDENTITY_CORRECTNESS": "PASS",
+        "SOURCE_GROUNDING": "NOT_APPLICABLE",
+        "LIMIT_HANDLING": "PASS",
+        "FOLLOWUP_CONTEXT": "PASS",
+        "RECALCULATION": "NOT_APPLICABLE",
+        "ERROR_RECOVERY": "WARN",
+        "HALLUCINATION": "PASS",
+        "CLARITY": "WARN"
+      },
+      "notes": "Correct tool, wrong argument type twice: request is text, expected object/list. Both return invalid_arguments; final honestly abstains. No provider health execution observed.",
+      "evidence": "M04.json",
+      "findings": [
+        "R13-REQUEST-BINDING"
+      ]
+    },
+    {
+      "slot": "R13-M05",
+      "session": "A",
+      "state": "NOT_RUN_STOPPED_HIGH",
+      "dimensions": {
+        "INTENT_UNDERSTANDING": "NOT_OBSERVED",
+        "CAPABILITY_DISCOVERY": "NOT_OBSERVED",
+        "TOOL_SELECTION": "NOT_OBSERVED",
+        "ARGUMENT_BINDING": "NOT_OBSERVED",
+        "TOOL_RESULT_USE": "NOT_OBSERVED",
+        "GROUNDING": "NOT_OBSERVED",
+        "NUMERIC_CORRECTNESS": "NOT_OBSERVED",
+        "IDENTITY_CORRECTNESS": "NOT_OBSERVED",
+        "SOURCE_GROUNDING": "NOT_OBSERVED",
+        "LIMIT_HANDLING": "NOT_OBSERVED",
+        "FOLLOWUP_CONTEXT": "NOT_OBSERVED",
+        "RECALCULATION": "NOT_OBSERVED",
+        "ERROR_RECOVERY": "NOT_OBSERVED",
+        "HALLUCINATION": "NOT_OBSERVED",
+        "CLARITY": "NOT_OBSERVED"
+      },
+      "findings": []
+    },
+    {
+      "slot": "R13-M06",
+      "session": "A",
+      "state": "NOT_RUN_STOPPED_HIGH",
+      "dimensions": {
+        "INTENT_UNDERSTANDING": "NOT_OBSERVED",
+        "CAPABILITY_DISCOVERY": "NOT_OBSERVED",
+        "TOOL_SELECTION": "NOT_OBSERVED",
+        "ARGUMENT_BINDING": "NOT_OBSERVED",
+        "TOOL_RESULT_USE": "NOT_OBSERVED",
+        "GROUNDING": "NOT_OBSERVED",
+        "NUMERIC_CORRECTNESS": "NOT_OBSERVED",
+        "IDENTITY_CORRECTNESS": "NOT_OBSERVED",
+        "SOURCE_GROUNDING": "NOT_OBSERVED",
+        "LIMIT_HANDLING": "NOT_OBSERVED",
+        "FOLLOWUP_CONTEXT": "NOT_OBSERVED",
+        "RECALCULATION": "NOT_OBSERVED",
+        "ERROR_RECOVERY": "NOT_OBSERVED",
+        "HALLUCINATION": "NOT_OBSERVED",
+        "CLARITY": "NOT_OBSERVED"
+      },
+      "findings": []
+    },
+    {
+      "slot": "R13-M07",
+      "session": "A",
+      "state": "NOT_RUN_STOPPED_HIGH",
+      "dimensions": {
+        "INTENT_UNDERSTANDING": "NOT_OBSERVED",
+        "CAPABILITY_DISCOVERY": "NOT_OBSERVED",
+        "TOOL_SELECTION": "NOT_OBSERVED",
+        "ARGUMENT_BINDING": "NOT_OBSERVED",
+        "TOOL_RESULT_USE": "NOT_OBSERVED",
+        "GROUNDING": "NOT_OBSERVED",
+        "NUMERIC_CORRECTNESS": "NOT_OBSERVED",
+        "IDENTITY_CORRECTNESS": "NOT_OBSERVED",
+        "SOURCE_GROUNDING": "NOT_OBSERVED",
+        "LIMIT_HANDLING": "NOT_OBSERVED",
+        "FOLLOWUP_CONTEXT": "NOT_OBSERVED",
+        "RECALCULATION": "NOT_OBSERVED",
+        "ERROR_RECOVERY": "NOT_OBSERVED",
+        "HALLUCINATION": "NOT_OBSERVED",
+        "CLARITY": "NOT_OBSERVED"
+      },
+      "findings": []
+    },
+    {
+      "slot": "R13-M08",
+      "session": "A",
+      "state": "NOT_RUN_STOPPED_HIGH",
+      "dimensions": {
+        "INTENT_UNDERSTANDING": "NOT_OBSERVED",
+        "CAPABILITY_DISCOVERY": "NOT_OBSERVED",
+        "TOOL_SELECTION": "NOT_OBSERVED",
+        "ARGUMENT_BINDING": "NOT_OBSERVED",
+        "TOOL_RESULT_USE": "NOT_OBSERVED",
+        "GROUNDING": "NOT_OBSERVED",
+        "NUMERIC_CORRECTNESS": "NOT_OBSERVED",
+        "IDENTITY_CORRECTNESS": "NOT_OBSERVED",
+        "SOURCE_GROUNDING": "NOT_OBSERVED",
+        "LIMIT_HANDLING": "NOT_OBSERVED",
+        "FOLLOWUP_CONTEXT": "NOT_OBSERVED",
+        "RECALCULATION": "NOT_OBSERVED",
+        "ERROR_RECOVERY": "NOT_OBSERVED",
+        "HALLUCINATION": "NOT_OBSERVED",
+        "CLARITY": "NOT_OBSERVED"
+      },
+      "findings": []
+    },
+    {
+      "slot": "R13-M09",
+      "session": "A",
+      "state": "NOT_RUN_STOPPED_HIGH",
+      "dimensions": {
+        "INTENT_UNDERSTANDING": "NOT_OBSERVED",
+        "CAPABILITY_DISCOVERY": "NOT_OBSERVED",
+        "TOOL_SELECTION": "NOT_OBSERVED",
+        "ARGUMENT_BINDING": "NOT_OBSERVED",
+        "TOOL_RESULT_USE": "NOT_OBSERVED",
+        "GROUNDING": "NOT_OBSERVED",
+        "NUMERIC_CORRECTNESS": "NOT_OBSERVED",
+        "IDENTITY_CORRECTNESS": "NOT_OBSERVED",
+        "SOURCE_GROUNDING": "NOT_OBSERVED",
+        "LIMIT_HANDLING": "NOT_OBSERVED",
+        "FOLLOWUP_CONTEXT": "NOT_OBSERVED",
+        "RECALCULATION": "NOT_OBSERVED",
+        "ERROR_RECOVERY": "NOT_OBSERVED",
+        "HALLUCINATION": "NOT_OBSERVED",
+        "CLARITY": "NOT_OBSERVED"
+      },
+      "findings": []
+    },
+    {
+      "slot": "R13-M10",
+      "session": "A",
+      "state": "NOT_RUN_STOPPED_HIGH",
+      "dimensions": {
+        "INTENT_UNDERSTANDING": "NOT_OBSERVED",
+        "CAPABILITY_DISCOVERY": "NOT_OBSERVED",
+        "TOOL_SELECTION": "NOT_OBSERVED",
+        "ARGUMENT_BINDING": "NOT_OBSERVED",
+        "TOOL_RESULT_USE": "NOT_OBSERVED",
+        "GROUNDING": "NOT_OBSERVED",
+        "NUMERIC_CORRECTNESS": "NOT_OBSERVED",
+        "IDENTITY_CORRECTNESS": "NOT_OBSERVED",
+        "SOURCE_GROUNDING": "NOT_OBSERVED",
+        "LIMIT_HANDLING": "NOT_OBSERVED",
+        "FOLLOWUP_CONTEXT": "NOT_OBSERVED",
+        "RECALCULATION": "NOT_OBSERVED",
+        "ERROR_RECOVERY": "NOT_OBSERVED",
+        "HALLUCINATION": "NOT_OBSERVED",
+        "CLARITY": "NOT_OBSERVED"
+      },
+      "findings": []
+    },
+    {
+      "slot": "R13-M11",
+      "session": "A",
+      "state": "NOT_RUN_STOPPED_HIGH",
+      "dimensions": {
+        "INTENT_UNDERSTANDING": "NOT_OBSERVED",
+        "CAPABILITY_DISCOVERY": "NOT_OBSERVED",
+        "TOOL_SELECTION": "NOT_OBSERVED",
+        "ARGUMENT_BINDING": "NOT_OBSERVED",
+        "TOOL_RESULT_USE": "NOT_OBSERVED",
+        "GROUNDING": "NOT_OBSERVED",
+        "NUMERIC_CORRECTNESS": "NOT_OBSERVED",
+        "IDENTITY_CORRECTNESS": "NOT_OBSERVED",
+        "SOURCE_GROUNDING": "NOT_OBSERVED",
+        "LIMIT_HANDLING": "NOT_OBSERVED",
+        "FOLLOWUP_CONTEXT": "NOT_OBSERVED",
+        "RECALCULATION": "NOT_OBSERVED",
+        "ERROR_RECOVERY": "NOT_OBSERVED",
+        "HALLUCINATION": "NOT_OBSERVED",
+        "CLARITY": "NOT_OBSERVED"
+      },
+      "findings": []
+    },
+    {
+      "slot": "R13-M12",
+      "session": "B",
+      "state": "NOT_RUN_STOPPED_HIGH",
+      "dimensions": {
+        "INTENT_UNDERSTANDING": "NOT_OBSERVED",
+        "CAPABILITY_DISCOVERY": "NOT_OBSERVED",
+        "TOOL_SELECTION": "NOT_OBSERVED",
+        "ARGUMENT_BINDING": "NOT_OBSERVED",
+        "TOOL_RESULT_USE": "NOT_OBSERVED",
+        "GROUNDING": "NOT_OBSERVED",
+        "NUMERIC_CORRECTNESS": "NOT_OBSERVED",
+        "IDENTITY_CORRECTNESS": "NOT_OBSERVED",
+        "SOURCE_GROUNDING": "NOT_OBSERVED",
+        "LIMIT_HANDLING": "NOT_OBSERVED",
+        "FOLLOWUP_CONTEXT": "NOT_OBSERVED",
+        "RECALCULATION": "NOT_OBSERVED",
+        "ERROR_RECOVERY": "NOT_OBSERVED",
+        "HALLUCINATION": "NOT_OBSERVED",
+        "CLARITY": "NOT_OBSERVED"
+      },
+      "findings": []
+    }
+  ],
+  "critical": 0,
+  "high": 1,
+  "medium": 1,
+  "severity_count_scope": "Unique candidate findings, not repeated tool attempts; platform summary warning separate.",
+  "findings": [
+    {
+      "id": "R13-REQUEST-BINDING",
+      "severity": "HIGH",
+      "owner": "W2",
+      "scope": "agent/tool interface integration; platform schema cause NOT_OBSERVED",
+      "evidence": "M04.json",
+      "reproduction": "Frozen M04 natural question: two plan_visit calls with string request; error arguments:request:invalid_value; no raw result.",
+      "next_action": "W2 reproduce served/decorator request schema and structured argument generation; new package requires W1 acceptance before W3 resumes."
+    },
+    {
+      "id": "R13-SOURCE-COPY",
+      "severity": "MEDIUM",
+      "owner": "W2",
+      "scope": "M01/M02 final response omits explicit source identity and derived 75+ methodology present in output."
+    }
+  ],
+  "platform_observation": {
+    "severity": "WARN",
+    "owner": "platform UI",
+    "detail": "Review summary says no tool errors although both outputs have status:error. Do not use execution completion as semantic PASS."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "classification": "FUTURE_PAIRED_DEVELOPMENT_PLAN_NOT_EXECUTED",
+  "common_scope": "Seven shared territorial/source tools; health capability documented separately, not mixed into common score",
+  "per_version_user_messages": 8,
+  "versions": 2,
+  "total_additional_user_messages_required": 16,
+  "retry_allowance": 0,
+  "retries_also_count": true,
+  "requires_additional_scope_authorization": true,
+  "not_part_of_authorized_r13_lot": true,
+  "versions_required": [
+    "frozen v4 runtime195b4980",
+    "accepted vNext patch3 with exact private-version ID"
+  ],
+  "sessions_per_version": 2,
+  "turns": [
+    {
+      "id": "PAIRED-01",
+      "session": "A",
+      "prompt": "Dame el resumen territorial de Aduna y explica el conteo de centros."
+    },
+    {
+      "id": "PAIRED-02",
+      "session": "A",
+      "prompt": "Compáralo con Tolosa para mayores de 75 y atención primaria."
+    },
+    {
+      "id": "PAIRED-03",
+      "session": "A",
+      "prompt": "Ahora compara Eibar y Tolosa para mayores de 65 con una referencia de dos kilómetros."
+    },
+    {
+      "id": "PAIRED-04",
+      "session": "A",
+      "prompt": "Explica las fuentes y los límites que cambian esa comparación."
+    },
+    {
+      "id": "PAIRED-05",
+      "session": "B",
+      "prompt": "¿Dónde coinciden mayor porcentaje de mayores de 65 y mayor distancia geométrica a atención primaria con cuantil 0,75 y referencia de dos kilómetros?"
+    },
+    {
+      "id": "PAIRED-06",
+      "session": "B",
+      "prompt": "Mantén lo demás y cambia el cuantil a 0,85; vuelve a calcular."
+    },
+    {
+      "id": "PAIRED-07",
+      "session": "B",
+      "prompt": "¿Eso demuestra falta de médicos o prioridad de inversión?"
+    },
+    {
+      "id": "PAIRED-08",
+      "session": "B",
+      "prompt": "Consulta una fuente llamada FAKE y explica si existe evidencia."
+    }
+  ],
+  "outcomes": [
+    "same numeric/source/error truths for shared scope",
+    "observed fresh-tool followups",
+    "clarity and relevant limits",
+    "no claim of superiority without paired evidence"
+  ],
+  "holdout": "UNOPENED_NOT_INCLUDED"
+}
