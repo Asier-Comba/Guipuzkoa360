@@ -1,0 +1,22 @@
+{
+  "cold_reference": "separate cold generated-module subprocess, then same normalized view for every operation",
+  "count": 500,
+  "different_root_policy": "W1 runtime intentionally stays bound to its first verified root; root switching is not a supported success mode; separate package-root probes are in package hardening.",
+  "elapsed_s": 1448.557,
+  "length_range": [
+    6,
+    8
+  ],
+  "normalized_fields_removed": [
+    "request_id",
+    "execution.request_id"
+  ],
+  "not_llm_benchmark": true,
+  "passed": true,
+  "result_stream_sha256": "d5ecb4528684be77f93ec7224ef55a1e2acd61560dc4e99706c341cb6c6d8a3e",
+  "runtime_sha": "8c94f8c3cf9d732c4ce94af7b4bef8f6e154c243",
+  "seed": 360013,
+  "state_leak_findings": [],
+  "tool_calls": 3213,
+  "zip_sha256": "3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616"
+}
