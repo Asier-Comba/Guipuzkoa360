@@ -1,0 +1,112 @@
+{
+  "budget_seconds": 2640,
+  "classification": "generated/property stress; not independent tests or real users",
+  "counterexamples": [],
+  "crashes": [],
+  "distribution": {
+    "error": 1618,
+    "no_feasible_journey": 779,
+    "ok": 1338,
+    "unknown": 882,
+    "unsupported": 383
+  },
+  "environment": {
+    "configured_root": null,
+    "cwd": "C:\\Users\\oier.dunabeitia\\Documents\\Codex\\2026-09-24\\acceso-disponible-en-el-navegador-en\\gipuzkoa360-vnext-w1",
+    "imports": {
+      "prototypes": {
+        "path": "C:\\Users\\oier.dunabeitia\\Documents\\Codex\\2026-09-24\\acceso-disponible-en-el-navegador-en\\gipuzkoa360-vnext-w1\\prototypes\\__init__.py",
+        "sha256": "da32847820b8ce0bc5963eb3aa2c0e5a71946243dbc92b7546b19431d18bb8eb"
+      },
+      "prototypes.ir_y_volver": {
+        "path": "C:\\Users\\oier.dunabeitia\\Documents\\Codex\\2026-09-24\\acceso-disponible-en-el-navegador-en\\gipuzkoa360-vnext-w1\\prototypes\\ir_y_volver\\__init__.py",
+        "sha256": "4173adabd908dcca574d4cd3aebefb5017fb6cd23c92f40cf3d0c1db142bce21"
+      },
+      "prototypes.ir_y_volver.provider": {
+        "path": "C:\\Users\\oier.dunabeitia\\Documents\\Codex\\2026-09-24\\acceso-disponible-en-el-navegador-en\\gipuzkoa360-vnext-w1\\prototypes\\ir_y_volver\\provider.py",
+        "sha256": "c97842617f3077c2eec1892653361b4471a18e1c64f8127b808b9968401cb834"
+      },
+      "prototypes.ir_y_volver.provider_r5": {
+        "path": "C:\\Users\\oier.dunabeitia\\Documents\\Codex\\2026-09-24\\acceso-disponible-en-el-navegador-en\\gipuzkoa360-vnext-w1\\prototypes\\ir_y_volver\\provider_r5.py",
+        "sha256": "7a775dfd6f7ba2cb19a1e9a40b531ee626e26462f726226fbf62a1a1dd34f013"
+      },
+      "prototypes.ir_y_volver.provider_r6": {
+        "path": "C:\\Users\\oier.dunabeitia\\Documents\\Codex\\2026-09-24\\acceso-disponible-en-el-navegador-en\\gipuzkoa360-vnext-w1\\prototypes\\ir_y_volver\\provider_r6.py",
+        "sha256": "c9fe7e4c8078ba7f9bf2eb2a51e050b729d9f01e6021dbcc6909f951d2e936e8"
+      },
+      "prototypes.ir_y_volver.schema_r5": {
+        "path": "C:\\Users\\oier.dunabeitia\\Documents\\Codex\\2026-09-24\\acceso-disponible-en-el-navegador-en\\gipuzkoa360-vnext-w1\\prototypes\\ir_y_volver\\schema_r5.py",
+        "sha256": "370f9d2fd7d0bf5f8c2f4237741bb5ce9972f813e65c09f965021f52285373d8"
+      },
+      "prototypes.ir_y_volver.snapshot_validation": {
+        "path": "C:\\Users\\oier.dunabeitia\\Documents\\Codex\\2026-09-24\\acceso-disponible-en-el-navegador-en\\gipuzkoa360-vnext-w1\\prototypes\\ir_y_volver\\snapshot_validation.py",
+        "sha256": "0773a1a612b366f59ea01f80ea1dc4fc0a4650ebbd339f6b99869c4061a16d42"
+      },
+      "prototypes.ir_y_volver.walking_r5": {
+        "path": "C:\\Users\\oier.dunabeitia\\Documents\\Codex\\2026-09-24\\acceso-disponible-en-el-navegador-en\\gipuzkoa360-vnext-w1\\prototypes\\ir_y_volver\\walking_r5.py",
+        "sha256": "0f3a02e69f8065f892ce19a0115ae7e3c661c32725bd37a423f3d283ae1a2a7d"
+      }
+    },
+    "isolated": true,
+    "network": "BLOCKED_BY_AUDIT_HOOK",
+    "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+    "root": "C:\\Users\\oier.dunabeitia\\Documents\\Codex\\2026-09-24\\acceso-disponible-en-el-navegador-en\\gipuzkoa360-vnext-w1"
+  },
+  "families": {
+    "arrival_boundary": 1000,
+    "boarding_boundary": 1000,
+    "duration_boundary": 1000,
+    "malformed_snapshot": 500,
+    "missing_field": 500,
+    "return_deadline_boundary": 500,
+    "unvalidated_date": 500
+  },
+  "generated_requests": 5000,
+  "global_requested": 20000,
+  "hour_distribution": {
+    "00": 178,
+    "01": 185,
+    "02": 174,
+    "03": 179,
+    "04": 165,
+    "05": 188,
+    "06": 170,
+    "07": 175,
+    "08": 166,
+    "09": 706,
+    "10": 190,
+    "11": 173,
+    "12": 209,
+    "13": 190,
+    "14": 184,
+    "15": 163,
+    "16": 193,
+    "17": 208,
+    "18": 179,
+    "19": 191,
+    "20": 168,
+    "21": 165,
+    "22": 179,
+    "23": 219
+  },
+  "input_stream_sha256": "e145578eed16cf526fcb4c1463eece17b20908bb8b6554758302e86bd1cec0c4",
+  "limits": [
+    "Repeated outputs checked for every generated input; no producer cache or monkeypatch.",
+    "Bounded static catalog/date/network; not general transport coverage or LLM/portal acceptance.",
+    "No new independent source evidence: generated properties use pinned assets; raw-source sample reported separately."
+  ],
+  "origin_distribution": {
+    "idiazabal_center_stops": 1636,
+    "segura_herriko_plaza_stops": 1627,
+    "zegama_center_stops": 1642
+  },
+  "output_stream_sha256": "9d42d01d0f537c554802e59f9b11d905908a9837d320f78306a79f2b5651a9ed",
+  "producer_executions": 10000,
+  "requested": 5000,
+  "runtime_s": 978.213,
+  "seed": 360013,
+  "shard_index": 1,
+  "shards": 4,
+  "status": "PASS",
+  "unique_request_bytes": 4421
+}
