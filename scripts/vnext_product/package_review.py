@@ -63,6 +63,8 @@ def review_zip(package: Path, members: dict[str, str], external_imports: list[st
         total = 0
         imported = set()
         local_modules = {Path(name).stem for name in names if name.endswith(".py")}
+        local_modules.update(name.split("/")[0] for name in names
+                             if name.endswith("/__init__.py"))
         for info in infos:
             safe_name(info.filename)
             mode = (info.external_attr >> 16) & 0xFFFF

@@ -61,3 +61,17 @@ def test_manifest_relationships_and_duplicate_json_keys(tmp_path):
         review_assembly(tmp_path, manifest)
     with pytest.raises(ValueError, match="Duplicate JSON key"):
         strict_json('{"identity":{"runtime_commit":"a","runtime_commit":"b"}}')
+
+
+def test_local_package_imports_are_recognized_without_whitelisting_external_code(tmp_path):
+    package = tmp_path / 'local.zip'
+    files = {'main.py': b'from prototypes.provider import run\n',
+             'prototypes/__init__.py': b'',
+             'prototypes/provider.py': b'import json\n'}
+    with zipfile.ZipFile(package, 'w') as archive:
+        for name, data in files.items():
+            archive.writestr(name, data)
+    result = review_zip(package, {name: digest(data) for name, data in files.items()}, [])
+    assert result['imports'] == ['json', 'prototypes']
+    with pytest.raises(ValueError, match='Undeclared'):
+        review_assembly(tmp_path, example(tmp_path, b'import outside_provider\n'))
