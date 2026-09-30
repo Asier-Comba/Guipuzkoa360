@@ -26,6 +26,6 @@ Verificación final propia: evaluador325Python/37Node PASS; identidad v4 PASS14/
 
 ## Próximo paso acotado
 
-Handoff a ingeniería/agente: revisar generación de opcionales y schema real a partir de M05. No nueva feature, dataset o cambios de math. Cualquier nuevo byte requiere nuevo SHA/ZIP y aceptación independiente W1. No más mensajes contra este candidato tras High. Preservar5/12consumidos y7restantes; no reiniciar presupuesto ni abrir benchmark. Producto continúaoffline con falloR14 visible. Detener la ronda aquí.
+Handoff a ingeniería/agente: revisar generación de opcionales y schema real a partir de M05. No nueva feature, dataset o cambios de math. Cualquier nuevo byte requiere nuevo SHA/ZIP y aceptación independiente W1. No más mensajes contra este candidato tras High. Preservar5/12consumidos y7restantes; no reiniciar presupuesto ni abrir benchmark. Producto continúaoffline con falloR14 visible. Vista actual comprobada en navegador y captura health_R14_status.png; servidor local reiniciado tras conexión rechazada, sin llamadas nuevas al portal. Detener la ronda aquí.
 
 Reproducción: python scripts/vnext_product/replay_m05_r14.py --python <CPython3.12> --candidate <ZIPexactoextraído>. La prueba offline requiere solo librería estándar y no llama al modelo. Defensa humana actualizada en DEFENSA_TECNICA_R14.md.
