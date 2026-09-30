@@ -1,0 +1,50 @@
+[
+  {
+    "member": "datos_preparados/data_contract.json",
+    "portal_sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae",
+    "package_sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae",
+    "identical": true
+  },
+  {
+    "member": "datos_preparados/demografia.csv",
+    "portal_sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96",
+    "package_sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96",
+    "identical": true
+  },
+  {
+    "member": "datos_preparados/metadata_sources.json",
+    "portal_sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
+    "package_sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
+    "identical": true
+  },
+  {
+    "member": "datos_preparados/municipios.csv",
+    "portal_sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
+    "package_sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
+    "identical": true
+  },
+  {
+    "member": "datos_preparados/runtime_municipality_points.csv",
+    "portal_sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11",
+    "package_sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11",
+    "identical": true
+  },
+  {
+    "member": "datos_preparados/runtime_servicios.csv",
+    "portal_sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece",
+    "package_sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece",
+    "identical": true
+  },
+  {
+    "member": "docs/METODOLOGIA.md",
+    "portal_sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7",
+    "package_sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7",
+    "identical": true
+  },
+  {
+    "member": "FUENTES.md",
+    "portal_sha256": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de",
+    "package_sha256": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de",
+    "identical": true
+  }
+]

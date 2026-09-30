@@ -1,0 +1,16 @@
+[
+  {
+    "member": "main.py",
+    "identical": true,
+    "expected_sha256": "a3b01df42d6702d3ecea5bc3ae36da2a0381d2193a6f34d39122f0fb7d551a95",
+    "portal_sha256": "a3b01df42d6702d3ecea5bc3ae36da2a0381d2193a6f34d39122f0fb7d551a95",
+    "bytes": 7692
+  },
+  {
+    "member": "tools.py",
+    "identical": true,
+    "expected_sha256": "d99354c46a62679c80a64e8f0b8d22a5486608f8caf775fd830af19a91ce966f",
+    "portal_sha256": "d99354c46a62679c80a64e8f0b8d22a5486608f8caf775fd830af19a91ce966f",
+    "bytes": 165753
+  }
+]

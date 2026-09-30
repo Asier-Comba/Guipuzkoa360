@@ -1,0 +1,302 @@
+{
+  "acceptance": "PASS_WITH_MEDIUM_LIMIT",
+  "calls": [
+    {
+      "envelope_status": "valid",
+      "id": "health_defaults_omitted",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "health_defaults_explicit",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "health_nondefault_margins",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "health_duration_changes_return",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "no_data",
+      "id": "health_no_feasible",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "error",
+      "id": "health_date_not_validated",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "unsupported",
+      "id": "health_destination_unsupported",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "error",
+      "id": "health_profile_unsupported",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "compare_same_origin_two_hours",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "compare_duration",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "compare_cross_origin",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "legacy_r4_explicit",
+      "public_exception": null,
+      "status": "WARN"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "mixed_r4_r6",
+      "public_exception": null,
+      "status": "WARN"
+    },
+    {
+      "envelope_status": "error",
+      "id": "invalid_structural",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "error",
+      "id": "W3-date",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "unsupported",
+      "id": "W3-destination",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "W3-duration",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "W3-main",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "no_data",
+      "id": "W3-no_feasible",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "W3-origin",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "error",
+      "id": "W3-profile",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "W3-time",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "origin-idiazabal_center_stops",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "origin-segura_herriko_plaza_stops",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "origin-zegama_center_stops",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "sequence-health-1",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "sequence-legacy",
+      "public_exception": null,
+      "status": "WARN"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "sequence-health-2",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "main-time-comparison",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "Aduna",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "Tolosa",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "coincidence",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "capabilities",
+      "public_exception": null,
+      "status": "PASS"
+    },
+    {
+      "envelope_status": "valid",
+      "id": "source-GTFS",
+      "public_exception": null,
+      "status": "PASS"
+    }
+  ],
+  "catalog_labels": "PASS_EXACT_PINS",
+  "classification": "OFFLINE_TOOL_INDEPENDENT_EXACT_PACKAGE_NOT_LLM",
+  "evidence_sha256": "42db523f0a1e3691cc0cadd9a048e821a0eb9f22802a3548188da48e703b0c99",
+  "findings": [
+    {
+      "case_id": "legacy_r4_explicit",
+      "id": "LABEL_NOT_IN_CONSUMER_CATALOG",
+      "index": 0,
+      "severity": "MEDIUM",
+      "stop_id": "7214"
+    },
+    {
+      "case_id": "mixed_r4_r6",
+      "id": "LABEL_NOT_IN_CONSUMER_CATALOG",
+      "index": 1,
+      "severity": "MEDIUM",
+      "stop_id": "7214"
+    },
+    {
+      "case_id": "sequence-legacy",
+      "id": "LABEL_NOT_IN_CONSUMER_CATALOG",
+      "index": 0,
+      "severity": "MEDIUM",
+      "stop_id": "7214"
+    }
+  ],
+  "foreign_diagnostic_sha256": "648653c356272adb10528354a46faa728a34d40137e8fca1e6e1249a5f21f615",
+  "foreign_root_diagnostic": "Evaluator changes cwd while execute root points to ZIP; diagnostic is outside supported package-cwd mode, not a Studio test.",
+  "generated_tools_tested": true,
+  "integrity": "PASS",
+  "llm_executed": 0,
+  "model_routing": "NOT_RUN",
+  "nested_members": 26,
+  "package_sha256": "b4feb978b625b34f9d7331ce8d376a34a29e84e4783868f83ce48a0c0d1011be",
+  "parity_basis": "Actual bundled producer plus independently contrasted frozen W3 R10 outputs/GTFS arithmetic; no W1 verdict helper used.",
+  "source_policy": "PASS_NO_COMPLETE_HTML_PDF_HOLDOUT_OR_SECRET_PATTERN",
+  "static": {
+    "bundled_imports_verified": [
+      "prototypes (nested hashed W1 ZIP)",
+      "health_adapter/mobility_adapter (embedded helper source)"
+    ],
+    "expanded_bytes": 761273,
+    "imports": [
+      "__future__",
+      "agentes",
+      "copy",
+      "csv",
+      "dataclasses",
+      "functools",
+      "hashlib",
+      "health_adapter",
+      "importlib",
+      "inspect",
+      "json",
+      "langchain",
+      "math",
+      "mobility_adapter",
+      "os",
+      "pathlib",
+      "prototypes",
+      "pytest",
+      "re",
+      "scripts",
+      "studio",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "tools",
+      "types",
+      "typing",
+      "unicodedata",
+      "uuid",
+      "zipfile"
+    ],
+    "members": 24,
+    "package_bytes": 219354,
+    "repository_test_only_imports": [
+      "scripts",
+      "agentes",
+      "pytest"
+    ]
+  },
+  "studio_served_schema": "NOT_OBSERVED",
+  "territorial_retest": {
+    "aduna_unattributed_rates_absent": true,
+    "binding_rejects_substitution": true,
+    "highlighted_unit_municipios": true,
+    "tolosa_positive_rates_retained": true
+  },
+  "verified_conditional_delta_s": -2100,
+  "w1_nested_package_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+  "w1_runtime_git_real": "cb061a9e00a6496c40488a596bd94834bc2c49b2",
+  "w2_pin": "2321e03e3d994b488db9723560383d9defedcac7"
+}

@@ -1,0 +1,392 @@
+{
+  "cwd_is_package": true,
+  "direct_tool_outputs": {
+    "health": {
+      "assumptions": [],
+      "capability_id": "plan_visit",
+      "claims": [],
+      "effective_request": null,
+      "error": {
+        "available_options": [],
+        "code": "contract_violation",
+        "message": "capability:stale_validation_evidence",
+        "origin": "execution",
+        "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+      },
+      "execution": {
+        "arguments_sha256": "8d3f6a3f007bb4c1d75c8b2760024665a33d4cdf481573645028278d65c488c4",
+        "request_id": "42ed9671a5df48869c0dce4fd89506bd",
+        "snapshot_id": null,
+        "state": "failed",
+        "tool": "plan_visit"
+      },
+      "limitations": [],
+      "method": "",
+      "normalized_input": {
+        "arguments": {
+          "request": {
+            "appointment_time": "09:30",
+            "date": "2026-09-29",
+            "destination_id": "beasain_official_centre_anchor",
+            "duration_minutes": 20,
+            "origin_id": "zegama_center_stops"
+          }
+        },
+        "tool": "plan_visit"
+      },
+      "outcomes": [],
+      "raw_result_sha256": null,
+      "request_id": "42ed9671a5df48869c0dce4fd89506bd",
+      "schema_version": "1.1.0",
+      "selection": {
+        "criterion": "Primeras entidades en el orden validado de la herramienta",
+        "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+        "omitted_entities": 0,
+        "returned_entities": 0,
+        "total_entities": 0
+      },
+      "status": "error",
+      "versions": {
+        "code_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "contract_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "data_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "municipal_substitution": {
+      "envelope": {
+        "assumptions": [],
+        "capability_id": "obtener_resumen_territorial",
+        "claims": [],
+        "effective_request": null,
+        "error": {
+          "available_options": [],
+          "code": "contract_violation",
+          "message": "capability:stale_validation_evidence",
+          "origin": "execution",
+          "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+        },
+        "execution": {
+          "arguments_sha256": "57bf8a554f74fc7cd213ca0d706d5cf3be8cb0789b17f7a0b4de5342b0c5939c",
+          "request_id": "R12-substitution",
+          "snapshot_id": null,
+          "state": "failed",
+          "tool": "obtener_resumen_territorial"
+        },
+        "limitations": [],
+        "method": "",
+        "normalized_input": {
+          "arguments": {
+            "municipio": "Aduna",
+            "periodo": null
+          },
+          "tool": "obtener_resumen_territorial"
+        },
+        "outcomes": [],
+        "raw_result_json": null,
+        "raw_result_sha256": null,
+        "request_id": "R12-substitution",
+        "schema_version": "1.1.0",
+        "status": "error",
+        "versions": {
+          "code_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "contract_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "data_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      },
+      "public_result": {
+        "assumptions": [],
+        "capability_id": "obtener_resumen_territorial",
+        "claims": [],
+        "effective_request": null,
+        "error": {
+          "available_options": [],
+          "code": "contract_violation",
+          "message": "capability:stale_validation_evidence",
+          "origin": "execution",
+          "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+        },
+        "execution": {
+          "arguments_sha256": "57bf8a554f74fc7cd213ca0d706d5cf3be8cb0789b17f7a0b4de5342b0c5939c",
+          "request_id": "R12-substitution",
+          "snapshot_id": null,
+          "state": "failed",
+          "tool": "obtener_resumen_territorial"
+        },
+        "limitations": [],
+        "method": "",
+        "normalized_input": {
+          "arguments": {
+            "municipio": "Aduna",
+            "periodo": null
+          },
+          "tool": "obtener_resumen_territorial"
+        },
+        "outcomes": [],
+        "raw_result_sha256": null,
+        "request_id": "R12-substitution",
+        "schema_version": "1.1.0",
+        "selection": {
+          "criterion": "Todas las entidades solicitadas explícitamente",
+          "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+          "omitted_entities": 0,
+          "returned_entities": 0,
+          "total_entities": 0
+        },
+        "status": "error",
+        "versions": {
+          "code_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "contract_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "data_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      }
+    }
+  },
+  "isolated": 1,
+  "model_executed": 0,
+  "network_disabled": true,
+  "results": [
+    {
+      "arguments": {
+        "request": {
+          "appointment_time": "09:45",
+          "date": "2026-09-29",
+          "destination_id": "beasain_official_centre_anchor",
+          "duration_minutes": 20,
+          "origin_id": "zegama_center_stops"
+        }
+      },
+      "envelope": {
+        "assumptions": [],
+        "capability_id": "plan_visit",
+        "claims": [],
+        "effective_request": null,
+        "error": {
+          "available_options": [],
+          "code": "contract_violation",
+          "message": "capability:stale_validation_evidence",
+          "origin": "execution",
+          "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+        },
+        "execution": {
+          "arguments_sha256": "683fcac97d1b4af30a966cbd4e1979e410bce610e735e34c4b4a99990dbb7561",
+          "request_id": "health_defaults_omitted",
+          "snapshot_id": null,
+          "state": "failed",
+          "tool": "plan_visit"
+        },
+        "limitations": [],
+        "method": "",
+        "normalized_input": {
+          "arguments": {
+            "request": {
+              "appointment_time": "09:45",
+              "date": "2026-09-29",
+              "destination_id": "beasain_official_centre_anchor",
+              "duration_minutes": 20,
+              "origin_id": "zegama_center_stops"
+            }
+          },
+          "tool": "plan_visit"
+        },
+        "outcomes": [],
+        "raw_result_json": null,
+        "raw_result_sha256": null,
+        "request_id": "health_defaults_omitted",
+        "schema_version": "1.1.0",
+        "status": "error",
+        "versions": {
+          "code_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "contract_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "data_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      },
+      "exception": {
+        "message": "No module named 'prototypes'",
+        "traceback": "Traceback (most recent call last):\n  File \"<string>\", line 20, in <module>\nModuleNotFoundError: No module named 'prototypes'\n",
+        "type": "ModuleNotFoundError"
+      },
+      "id": "health_defaults_omitted",
+      "public_result": {
+        "assumptions": [],
+        "capability_id": "plan_visit",
+        "claims": [],
+        "effective_request": null,
+        "error": {
+          "available_options": [],
+          "code": "contract_violation",
+          "message": "capability:stale_validation_evidence",
+          "origin": "execution",
+          "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+        },
+        "execution": {
+          "arguments_sha256": "683fcac97d1b4af30a966cbd4e1979e410bce610e735e34c4b4a99990dbb7561",
+          "request_id": "health_defaults_omitted",
+          "snapshot_id": null,
+          "state": "failed",
+          "tool": "plan_visit"
+        },
+        "limitations": [],
+        "method": "",
+        "normalized_input": {
+          "arguments": {
+            "request": {
+              "appointment_time": "09:45",
+              "date": "2026-09-29",
+              "destination_id": "beasain_official_centre_anchor",
+              "duration_minutes": 20,
+              "origin_id": "zegama_center_stops"
+            }
+          },
+          "tool": "plan_visit"
+        },
+        "outcomes": [],
+        "raw_result_sha256": null,
+        "request_id": "health_defaults_omitted",
+        "schema_version": "1.1.0",
+        "selection": {
+          "criterion": "Primeras entidades en el orden validado de la herramienta",
+          "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+          "omitted_entities": 0,
+          "returned_entities": 0,
+          "total_entities": 0
+        },
+        "status": "error",
+        "versions": {
+          "code_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "contract_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "data_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      },
+      "tool": "plan_visit"
+    },
+    {
+      "arguments": {
+        "request": {
+          "appointment_time": "09:30",
+          "date": "2026-09-29",
+          "destination_id": "beasain_center_stop_pair",
+          "duration_minutes": 30,
+          "origin_id": "zegama_center_stops",
+          "snapshot_id": "official-goierrialdea-go01-r4-20260929"
+        }
+      },
+      "envelope": {
+        "assumptions": [],
+        "capability_id": "plan_visit",
+        "claims": [],
+        "effective_request": null,
+        "error": {
+          "available_options": [],
+          "code": "contract_violation",
+          "message": "capability:stale_validation_evidence",
+          "origin": "execution",
+          "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+        },
+        "execution": {
+          "arguments_sha256": "b63351a7e969d12b32e3b26782432943ea80725c8fb39841fa3b7c989b9f3829",
+          "request_id": "legacy_r4_explicit",
+          "snapshot_id": null,
+          "state": "failed",
+          "tool": "plan_visit"
+        },
+        "limitations": [],
+        "method": "",
+        "normalized_input": {
+          "arguments": {
+            "request": {
+              "appointment_time": "09:30",
+              "date": "2026-09-29",
+              "destination_id": "beasain_center_stop_pair",
+              "duration_minutes": 30,
+              "origin_id": "zegama_center_stops",
+              "snapshot_id": "official-goierrialdea-go01-r4-20260929"
+            }
+          },
+          "tool": "plan_visit"
+        },
+        "outcomes": [],
+        "raw_result_json": null,
+        "raw_result_sha256": null,
+        "request_id": "legacy_r4_explicit",
+        "schema_version": "1.1.0",
+        "status": "error",
+        "versions": {
+          "code_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "contract_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "data_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      },
+      "exception": {
+        "message": "No module named 'prototypes'",
+        "traceback": "Traceback (most recent call last):\n  File \"<string>\", line 20, in <module>\nModuleNotFoundError: No module named 'prototypes'\n",
+        "type": "ModuleNotFoundError"
+      },
+      "id": "legacy_r4_explicit",
+      "public_result": {
+        "assumptions": [],
+        "capability_id": "plan_visit",
+        "claims": [],
+        "effective_request": null,
+        "error": {
+          "available_options": [],
+          "code": "contract_violation",
+          "message": "capability:stale_validation_evidence",
+          "origin": "execution",
+          "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+        },
+        "execution": {
+          "arguments_sha256": "b63351a7e969d12b32e3b26782432943ea80725c8fb39841fa3b7c989b9f3829",
+          "request_id": "legacy_r4_explicit",
+          "snapshot_id": null,
+          "state": "failed",
+          "tool": "plan_visit"
+        },
+        "limitations": [],
+        "method": "",
+        "normalized_input": {
+          "arguments": {
+            "request": {
+              "appointment_time": "09:30",
+              "date": "2026-09-29",
+              "destination_id": "beasain_center_stop_pair",
+              "duration_minutes": 30,
+              "origin_id": "zegama_center_stops",
+              "snapshot_id": "official-goierrialdea-go01-r4-20260929"
+            }
+          },
+          "tool": "plan_visit"
+        },
+        "outcomes": [],
+        "raw_result_sha256": null,
+        "request_id": "legacy_r4_explicit",
+        "schema_version": "1.1.0",
+        "selection": {
+          "criterion": "Primeras entidades en el orden validado de la herramienta",
+          "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+          "omitted_entities": 0,
+          "returned_entities": 0,
+          "total_entities": 0
+        },
+        "status": "error",
+        "versions": {
+          "code_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "contract_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "data_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      },
+      "tool": "plan_visit"
+    }
+  ],
+  "source_signature": "(request: 'VisitRequest | list[VisitRequest]') -> 'str'",
+  "tool_names": [
+    "obtener_resumen_territorial",
+    "comparar_municipios",
+    "analizar_envejecimiento",
+    "analizar_acceso_servicios",
+    "analizar_coincidencia",
+    "simular_escenario",
+    "consultar_fuente",
+    "consultar_capacidades",
+    "plan_visit"
+  ]
+}
