@@ -25,6 +25,7 @@ except ImportError:  # Generated Studio bundle supplies this name.
 
 VERSION = "1.1.0"
 _DEFAULT_WORKSPACE_ROOT = Path(__file__).resolve().parents[2]
+_BUNDLED_VALIDATION_INDEX: dict[str, Any] = {}
 CAPABILITY_VERSION = "1.1.0"
 MAX_EVIDENCE_BYTES = 500_000
 MAX_PUBLIC_BYTES = 120_000
@@ -275,7 +276,10 @@ def validate_capability(item: Any, root: Path, catalog: dict[str, Any]) -> None:
         _text(proof["test_name"], "capability.validation_evidence.test_name")
         _hex(proof["sha256"], "capability.validation_evidence.sha256")
         path = (root / proof["test_file"]).resolve()
-        if root not in path.parents or not path.is_file() or digest(path.read_bytes()) != proof["sha256"] or f"def {proof['test_name']}(" not in path.read_text(encoding="utf-8"):
+        bundled = _BUNDLED_VALIDATION_INDEX.get(proof["test_file"])
+        file_valid = path.is_file() and digest(path.read_bytes()) == proof["sha256"] and f"def {proof['test_name']}(" in path.read_text(encoding="utf-8")
+        bundled_valid = not path.exists() and type(bundled) is dict and bundled["sha256"] == proof["sha256"] and proof["test_name"] in bundled["test_names"]
+        if root not in path.parents or not (file_valid or bundled_valid):
             raise ContractViolation("capability:stale_validation_evidence")
     for key in ("allowed_transformations", "preconditions", "restrictions", "semantic_limits"):
         _strings(item[key], f"capability.{key}", nonempty=key == "semantic_limits")

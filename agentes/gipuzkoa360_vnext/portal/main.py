@@ -32,6 +32,8 @@ STUDIO_CONTEXT_FILES = [
     "datos_preparados/vnext/capabilities.json",
     "datos_preparados/vnext/operational_catalog_r6.json",
     "datos_preparados/vnext/consumer_labels_r7.json",
+    "datos_preparados/vnext/mobility_sources.json",
+    "datos_preparados/vnext/w1_r6_runtime.zip",
 ]
 
 SYSTEM_PROMPT = """Eres el coordinador privado GIPUZKOA 360 vNext. Responde preguntas territoriales

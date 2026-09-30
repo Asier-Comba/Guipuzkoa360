@@ -154,6 +154,15 @@ territorial = SimpleNamespace(
 )"""
     body.extend(ast.parse(alias).body)
     body.extend(_candidate_nodes())
+    # Runtime freeze must not require mounting test sources/gold as LLM context.
+    # Carry only an index of the exact reviewed test bytes and actual function names.
+    proof_index = {}
+    for source, destination in FILES.items():
+        if destination.startswith("tests/vnext_agent/"):
+            test_source = source.read_bytes()
+            test_tree = ast.parse(test_source.decode("utf-8"))
+            proof_index[destination] = {"sha256": sha(test_source), "test_names": sorted(node.name for node in test_tree.body if isinstance(node, ast.FunctionDef) and node.name.startswith("test_"))}
+    body.extend(ast.parse("_BUNDLED_VALIDATION_INDEX = " + repr(proof_index)).body)
     bundled = ast.unparse(ast.fix_missing_locations(ast.Module(body=body, type_ignores=[])))
     (PORTAL / "tools.py").write_text(
         '"""Generated two-editor Studio tool bundle. Edit source modules, not this file."""\n\n' + bundled + "\n" + _bootstrap_source(),
@@ -258,6 +267,8 @@ def main() -> None:
         "context_file_count": len(context_paths),
         "context_bytes": sum(len(package_files[path]) for path in context_paths),
         "context_paths": context_paths,
+        "freeze_paths": ["main.py", "tools.py", *context_paths],
+        "validation_proof_mode": "exact test source SHA and AST function-name index embedded in tools.py; full tests remain ZIP audit-only, never context/gold for the model",
         "runtime_dependencies": ["Python 3.12 standard library", "portal-provided studio.tool", "portal-provided langchain.agents.create_agent"],
         "members": members, "canonicalization": "UTF-8 and LF; sorted names; fixed ZIP metadata",
         "mobility_binding": "PINNED_HEALTH_0.3.1_AND_EXPLICIT_STOP_ONLY_0.2.0; W1 package, source and snapshot bytes verified at build time and runtime",

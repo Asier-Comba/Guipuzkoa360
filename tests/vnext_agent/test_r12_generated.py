@@ -22,7 +22,7 @@ sys.path.insert(0,str(directory))
 socket.socket=lambda *a,**k: (_ for _ in ()).throw(RuntimeError('network forbidden'))
 import tools,main
 assert tools._workspace_root()==directory
-fixture=json.loads((directory/'datos_preparados/vnext/w1_conformance_r7.json').read_text())
+fixture=json.load(sys.stdin) if sys.argv[2]=='declared_freeze' else json.loads((directory/'datos_preparados/vnext/w1_conformance_r7.json').read_text())
 cases={c['case_id']:c for c in fixture['cases']}
 health=cases['health_defaults_omitted']['request']
 legacy=cases['legacy_r4_explicit']['request']
@@ -143,12 +143,22 @@ print(json.dumps({'fourteen_cases':'PASS','sequences':'PASS','territorial_probes
 '''
 
 
-@pytest.mark.parametrize("mode", ["candidate_cwd", "foreign_data_cwd", "legacy_cold"])
+@pytest.mark.parametrize("mode", ["candidate_cwd", "foreign_data_cwd", "legacy_cold", "declared_freeze"])
 def test_generated_r12_end_to_end(tmp_path: Path, mode: str):
     build_package()
     directory = tmp_path / "candidate"
     with zipfile.ZipFile(ZIP) as archive:
-        archive.extractall(directory)
+        fixture = json.loads(archive.read("datos_preparados/vnext/w1_conformance_r7.json"))
+        if mode == "declared_freeze":
+            import ast
+            tree = ast.parse(archive.read("main.py").decode("utf-8"))
+            context = next(ast.literal_eval(node.value) for node in tree.body if isinstance(node, ast.Assign) and any(isinstance(target, ast.Name) and target.id == "STUDIO_CONTEXT_FILES" for target in node.targets))
+            for member in ["main.py", "tools.py", *context]:
+                archive.extract(member, directory)
+            assert not (directory / "tests").exists()
+            assert not (directory / "datos_preparados/vnext/w1_conformance_r7.json").exists()
+        else:
+            archive.extractall(directory)
     observer = tmp_path / "observer"
     (observer / "datos_preparados").mkdir(parents=True)
     (observer / "datos_preparados/metadata_sources.json").write_text("[]")
@@ -156,7 +166,8 @@ def test_generated_r12_end_to_end(tmp_path: Path, mode: str):
     environment.pop("GIPUZKOA360_VNEXT_ROOT", None)
     run = subprocess.run([sys.executable, "-c", WORKER, str(directory), mode],
                          cwd=directory if mode == "candidate_cwd" else observer,
-                         env=environment, text=True, encoding="utf-8", capture_output=True, timeout=180)
+                         env=environment, input=json.dumps(fixture) if mode == "declared_freeze" else None,
+                         text=True, encoding="utf-8", capture_output=True, timeout=180)
     assert run.returncode == 0, run.stderr + run.stdout
     print(run.stdout)
 

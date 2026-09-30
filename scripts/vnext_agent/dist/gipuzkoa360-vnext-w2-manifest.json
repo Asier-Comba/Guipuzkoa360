@@ -1,9 +1,9 @@
 {
   "agent_name_chars": 38,
-  "bytes": 224576,
+  "bytes": 225894,
   "canonicalization": "UTF-8 and LF; sorted names; fixed ZIP metadata",
-  "context_bytes": 131755,
-  "context_file_count": 13,
+  "context_bytes": 266742,
+  "context_file_count": 15,
   "context_paths": [
     "FUENTES.md",
     "docs/METODOLOGIA.md",
@@ -17,10 +17,31 @@
     "datos_preparados/data_contract.json",
     "datos_preparados/vnext/capabilities.json",
     "datos_preparados/vnext/operational_catalog_r6.json",
-    "datos_preparados/vnext/consumer_labels_r7.json"
+    "datos_preparados/vnext/consumer_labels_r7.json",
+    "datos_preparados/vnext/mobility_sources.json",
+    "datos_preparados/vnext/w1_r6_runtime.zip"
   ],
   "deployment_mode": "two Python editors (main.py, tools.py) plus static workspace assets including a pinned W1 ZIP; tools.py verifies and extracts that ZIP to a temporary runtime directory",
   "entrypoint": "main.py:build_agent",
+  "freeze_paths": [
+    "main.py",
+    "tools.py",
+    "FUENTES.md",
+    "docs/METODOLOGIA.md",
+    "contracts/vnext/evidence-v1.1.schema.json",
+    "contracts/vnext/capability-v1.1.schema.json",
+    "datos_preparados/municipios.csv",
+    "datos_preparados/demografia.csv",
+    "datos_preparados/runtime_municipality_points.csv",
+    "datos_preparados/runtime_servicios.csv",
+    "datos_preparados/metadata_sources.json",
+    "datos_preparados/data_contract.json",
+    "datos_preparados/vnext/capabilities.json",
+    "datos_preparados/vnext/operational_catalog_r6.json",
+    "datos_preparados/vnext/consumer_labels_r7.json",
+    "datos_preparados/vnext/mobility_sources.json",
+    "datos_preparados/vnext/w1_r6_runtime.zip"
+  ],
   "health_destination_modelled": true,
   "health_entrance_verified": false,
   "instruction_chars": 2968,
@@ -73,7 +94,7 @@
     },
     "datos_preparados/vnext/capabilities.json": {
       "bytes": 26605,
-      "sha256": "61183df49ac43bd03e7892da31789f07688bd5ddb96bafe1200bde18eca8376f"
+      "sha256": "3802ef0a89b7b6d98101031d53be9525502d45707272ce541d1c54e617cbeae5"
     },
     "datos_preparados/vnext/consumer_labels_r7.json": {
       "bytes": 3152,
@@ -100,8 +121,8 @@
       "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7"
     },
     "main.py": {
-      "bytes": 8075,
-      "sha256": "9b4044c7e93a3b6bcfc48a4469c9734940fc9dfcd67b945e61414264fba859d9"
+      "bytes": 8175,
+      "sha256": "512fb03f260c5c2ce0543ab41df18c1d4751e4915ee8bda71a032fc413fc3870"
     },
     "scripts/vnext_agent/w1_pin.json": {
       "bytes": 1869,
@@ -120,12 +141,12 @@
       "sha256": "c1dfaccca55db59815c87b385a66cc51a9611cc820f49bef6c2f1d649f252311"
     },
     "tests/vnext_agent/test_r12_generated.py": {
-      "bytes": 9461,
-      "sha256": "0d2cf3e896c03c096cce7347267ef83b6c384e68742076db8640aa93b44f284d"
+      "bytes": 10348,
+      "sha256": "88e24decf9e6b4623efa36d7b0f91ebe369fe8ac2f34e954623a8b4f19d7927c"
     },
     "tools.py": {
-      "bytes": 172136,
-      "sha256": "068f604b6c395c7e4c9f84bebf79844bcb9f9bb6c771e63e18da5ec9a73f3558"
+      "bytes": 174654,
+      "sha256": "b716917cc8c200f16c697f43df2b6d9ac0d3c7e2e93af22c02f71e5cac8f369e"
     }
   },
   "mobility_binding": "PINNED_HEALTH_0.3.1_AND_EXPLICIT_STOP_ONLY_0.2.0; W1 package, source and snapshot bytes verified at build time and runtime",
@@ -136,9 +157,10 @@
     "portal-provided studio.tool",
     "portal-provided langchain.agents.create_agent"
   ],
-  "sha256": "9dbb2d7421e2468e44949f94ad1ef5b9011430601d34dd76057fb1720e0bfb1b",
+  "sha256": "c5bedc0c2fbc028258135d3f8b2a94d5fc37aa3a9808417fee3165a9915e98d4",
   "tool_count": 9,
-  "uncompressed_bytes": 778639,
+  "uncompressed_bytes": 782144,
+  "validation_proof_mode": "exact test source SHA and AST function-name index embedded in tools.py; full tests remain ZIP audit-only, never context/gold for the model",
   "w1_contract": "0.3.1",
   "w1_legacy_contract": "0.2.0",
   "w1_package_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
