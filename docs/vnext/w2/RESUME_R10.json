@@ -4,6 +4,8 @@
   "state": "LOCAL_CANDIDATE_COMPLETE_PORTAL_EVALUATION_PENDING",
   "branch": "work/vnext-w2-agent-evidence",
   "start_sha": "8272988566f5bca2d65d3119732bf831d11382dc",
+  "tested_head": "d9ed1b7148f5ab044e45c1c1bb784f33bfd22195",
+  "remote_ci_at_tested_head": "W2 candidate and Release fast CI success",
   "w1_support_pin": "6ebf41e2f1fe24f1c3678c4be13c6c44cf8cb62b",
   "w3_consumed_head": "e821341ba1ffd8ed7947cdb97802348919ef502a",
   "package_manifest": "docs/vnext/w2/CANDIDATE_MANIFEST_R10.json",

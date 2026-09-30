@@ -2,7 +2,7 @@
 
 WORK_ID: W2. ROUND: G360-R10. STATUS: LOCAL_CANDIDATE_COMPLETE; portal deployment and real-agent acceptance remain unverified. This is not a release approval.
 
-START_SHA: `8272988566f5bca2d65d3119732bf831d11382dc`. TESTED_HEAD: the code commit for this round, reported in PR17 after push. PUBLISHED_HEAD: the PR17 head after the handoff commit, reported in PR17 and the final delivery; it is intentionally not embedded in its own contents.
+START_SHA: `8272988566f5bca2d65d3119732bf831d11382dc`. TESTED_HEAD: `d9ed1b7148f5ab044e45c1c1bb784f33bfd22195` (all code, generated package and local tests). PUBLISHED_HEAD: the PR17 head after this documentation-only commit, reported in PR17 and the final delivery; it is intentionally not embedded in its own contents.
 
 CONSUMED_W1/W3_HEADS: W1 support `6ebf41e2f1fe24f1c3678c4be13c6c44cf8cb62b`, W3 `e821341ba1ffd8ed7947cdb97802348919ef502a`, read-only. The prompt's runtime `cb061a97e78d6b5c967104fef6b935132fdc450f` is not an object on fetched origin. The observed executable W1 commit is `cb061a9e00a6496c40488a596bd94834bc2c49b2`. The published W1 R6 ZIP was independently reconstructed at its exact stated SHA `c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910` from 26 hashed blobs; this, rather than the mistyped commit, is the runtime boundary.
 
@@ -28,7 +28,7 @@ KNOWN_FAIL: Portal deployment and served schema unverified; no real model/memory
 
 NOT_RUN: No portal reset, upload, publication, track confirmation or paid API call was authorized. No LLM smoke, live portal conversation, W3 scorer or release test ran. No new dates, realtime, RAG vector system or second model were introduced.
 
-V4_PRESERVATION: `195b4980fa5998b096c308296a55e452380b0371` passed runtime identity verification; 13 frozen files match. CI: local tests passed; remote PR17 CI status must be checked after push.
+V4_PRESERVATION: `195b4980fa5998b096c308296a55e452380b0371` passed runtime identity verification; 13 frozen files match. CI: at TESTED_HEAD, [vNext W2 candidate validation](https://github.com/Asier-Comba/Guipuzkoa360/actions/runs/36719544251) and [Release fast CI](https://github.com/Asier-Comba/Guipuzkoa360/actions/runs/36719544267) both concluded success. The handoff-only commit does not change candidate bytes; its own CI status is reported separately.
 
 NEXT_EXACT_ACTION: W3 should inspect PR17 at the pinned package SHA, validate the Studio-served tool schema and actual handling of static assets in read-only review, then request explicit permission for a bounded development model/portal run if required. With such existing authorization, W2 can execute the runner and pass observed traces to W3. Do not silently change the candidate pin mid-evaluation.
 

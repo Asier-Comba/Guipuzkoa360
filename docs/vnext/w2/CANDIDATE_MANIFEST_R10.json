@@ -2,6 +2,7 @@
   "schema_version": "W2_CANDIDATE_R10_1",
   "classification": "VERIFIED_LIVE_LOCAL_CANDIDATE_NOT_RELEASE",
   "start_sha": "8272988566f5bca2d65d3119732bf831d11382dc",
+  "tested_w2_head": "d9ed1b7148f5ab044e45c1c1bb784f33bfd22195",
   "w1_support_pin": "6ebf41e2f1fe24f1c3678c4be13c6c44cf8cb62b",
   "w1_source_pin": "cb061a9e00a6496c40488a596bd94834bc2c49b2",
   "w1_source_pin_note": "The prompt's cb061a97e78d6b5c967104fef6b935132fdc450f is not a Git object on the fetched remote; cb061a9e00a6496c40488a596bd94834bc2c49b2 is the observed producer runtime commit. The support pin and exact published package SHA are the consumption boundary.",
@@ -44,6 +45,6 @@
     "static_labels_sha256": "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799"
   },
   "limits": ["W1 validated date 2026-09-29 only", "Three origins, one Beasain official centre point", "Entrance NOT_VERIFIED; address conflict requires human review", "GTFS static; walking modelled; no home-to-door, real appointment or realtime", "Agent comparison limited to 2–4 scenarios", "Tool arguments do not prove human authorship", "Studio schema and loading of static ZIP unverified without authorized portal test"],
-  "tests": {"python_full": "361 passed", "w2_cases": "97 passed", "w1_producer_fixture_cases": 14, "v4_runtime_identity": "PASS, 13 frozen files", "node_contract_flow": "17 passed", "offline_tool_records": 8, "local_llm_count": 0, "portal_llm_count": 0},
+  "tests": {"python_full": "361 passed", "w2_cases": "97 passed", "w1_producer_fixture_cases": 14, "v4_runtime_identity": "PASS, 13 frozen files", "node_contract_flow": "17 passed", "offline_tool_records": 8, "local_llm_count": 0, "portal_llm_count": 0, "remote_w2_ci_at_tested_head": "success", "remote_fast_ci_at_tested_head": "success"},
   "known_findings": ["No authorized local/portal model was available to inspect the served Studio schema, memory transport, or novel-conversation quality", "Portal ZIP/static workspace deployment remains unverified; isolated Python execution is proven", "W1 source pin typo in prompt; support pin and package bytes verified", "W1 producer fixture is not an independent semantic oracle"]
 }
