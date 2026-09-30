@@ -11,7 +11,7 @@ import zipfile
 
 import pytest
 
-from scripts.vnext_agent.build_package import ZIP, main as build_package
+from scripts.vnext_agent.build_r14_binding import ZIP, build as build_package
 
 
 WORKER = r'''
@@ -134,11 +134,11 @@ assert invalid['status']=='error' and not invalid['claims'] and 'mobility' not i
 labels_path.write_bytes(saved)
 for invalid_root in ('',str(directory/'missing')):
     os.environ['GIPUZKOA360_VNEXT_ROOT']=invalid_root
-    failed=json.loads(main.plan_visit(health))
+    failed=json.loads(main.plan_visit(**health))
     assert failed['status']=='error' and not failed['claims'] and 'mobility' not in failed
     assert failed['error']['origin']=='data'
 os.environ.pop('GIPUZKOA360_VNEXT_ROOT')
-assert json.loads(main.plan_visit(health))['status']=='valid'
+assert json.loads(main.plan_visit(**health))['status']=='valid'
 print(json.dumps({'fourteen_cases':'PASS','sequences':'PASS','territorial_probes':5,'stop_labels':9,'origins':3,'max_four_scenario_public_bytes':maximum,'cwd':str(Path.cwd()),'root':str(tools._workspace_root())}))
 '''
 

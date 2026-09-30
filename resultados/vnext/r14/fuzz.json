@@ -1,0 +1,16 @@
+{
+  "cases": 5000,
+  "classification": "GENERATED_OFFLINE_FRONTDOOR_NOT_LLM",
+  "crashes": 0,
+  "distinct_kwargs": 5000,
+  "elapsed_s": 954.313,
+  "executions": 10000,
+  "input_sequence_sha256": "f516c4df248a1482fcfb331f57edb6222b69b2bb0e5dd0c4801e135cef1b3787",
+  "mapping_failures": 0,
+  "partial_authoritative_errors": 0,
+  "seed": 360014,
+  "statuses": {
+    "error": 5000
+  },
+  "valid_inputs": "separate explicit parity fixtures"
+}

@@ -1,0 +1,50 @@
+{
+  "cases": [
+    {
+      "case": "MAIN",
+      "numeric_components_checked": 9,
+      "source_periods_checked": 9,
+      "status": "PASS"
+    },
+    {
+      "case": "VARIATION",
+      "numeric_components_checked": 9,
+      "source_periods_checked": 9,
+      "status": "PASS"
+    },
+    {
+      "case": "DURATION",
+      "numeric_components_checked": 9,
+      "source_periods_checked": 9,
+      "status": "PASS"
+    },
+    {
+      "case": "LIMIT_DATE",
+      "numeric_components_checked": 0,
+      "source_periods_checked": 8,
+      "status": "PASS"
+    },
+    {
+      "case": "LIMIT_SCOPE",
+      "numeric_components_checked": 0,
+      "source_periods_checked": 8,
+      "status": "PASS"
+    },
+    {
+      "case": "ERROR",
+      "numeric_components_checked": 0,
+      "source_periods_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "UNKNOWN_SNAPSHOT",
+      "numeric_components_checked": 0,
+      "source_periods_checked": 0,
+      "status": "PASS"
+    }
+  ],
+  "llm_calls": 0,
+  "oracle_sha256": "2f57634fcab245a63c95b2a4e833895f664b8a43b52592214470b913b6b1ba53",
+  "parameter_attribution": "PASS; caller does not prove human choice",
+  "status": "PASS"
+}
