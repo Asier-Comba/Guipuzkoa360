@@ -22,11 +22,11 @@
       "sha256": "cb41c25b836deaecd0d3ab4de12160c7c5ec20cf80f10824f82912b68b9b16fb"
     },
     {
-      "bytes": 20516,
+      "bytes": 22389,
       "hash_basis": "exact_bytes",
       "path": "scripts/mobility/intake_candidate_r11.py",
       "role": "candidate_intake",
-      "sha256": "f889ff8a656e0aeb10cf1b5a7e6c697457a621cd2d8db5996d06b7569901154e"
+      "sha256": "aa4caf434f9d5a1a45e7dbd82b2eabb5cf22f727051c9dd7d62adedd685607a3"
     }
   ],
   "manifest_version": "r11.0",

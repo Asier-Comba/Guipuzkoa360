@@ -173,3 +173,10 @@ def test_failure_catalog_is_complete_and_structured():
                 "MODEL_VIEW_WRONG_SEMANTICS", "DISTRIBUTION_POLICY_FAILURE", "NOT_RUN"}
     assert required == set(intake.FAILURE_CATALOG)
     assert all(len(value) == 4 for value in intake.FAILURE_CATALOG.values())
+
+
+def test_validated_invalid_request_reason_is_an_allowed_failure_projection():
+    raw = provider_r6.plan_visit({**build_r11.BASE, "duration_minutes": "20"})
+    view = {"status": "error", "error": {"code": "contract_violation", "message": "health:invalid_duration",
+                                                   "safe_next_action": "Revise el valor."}}
+    assert intake.safe_failure_projection(view, raw) is True

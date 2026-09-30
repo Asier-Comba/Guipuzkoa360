@@ -5,7 +5,7 @@
   "tested_head": "99ad907ff1515174ac9823bf4cef2b4c928495b9",
   "published_head": "RECORDED_EXTERNALLY_AFTER_DOCUMENTATION_COMMIT",
   "w2_head_first_seen": "8272988566f5bca2d65d3119732bf831d11382dc",
-  "w2_head_final_seen": "8272988566f5bca2d65d3119732bf831d11382dc",
+  "w2_head_final_seen": "2321e03e3d994b488db9723560383d9defedcac7",
   "w3_head_final_seen": "281f92a25170c5082c5772c0130d2275e57edaaf",
   "runtime_changed": false,
   "r6_package_preserved": {
@@ -29,17 +29,23 @@
   "diagnostic_gate": {"pass_exit": 0, "not_run_exit": 0, "fail_exit": "NONZERO", "tested": true},
   "candidate_package": {
     "path": "scripts/vnext_agent/dist/gipuzkoa360-vnext-w2.zip",
-    "bytes": 153456,
-    "sha256": "366cdc7d160ee6743cb125c6709f57e48f6ddfb91ead812a92eb881570233357"
+    "bytes": 219354,
+    "sha256": "b4feb978b625b34f9d7331ce8d376a34a29e84e4783868f83ce48a0c0d1011be"
   },
   "candidate_manifest": "scripts/vnext_agent/dist/gipuzkoa360-vnext-w2-manifest.json",
-  "candidate_w1_pin": "725a7b73ae0381092cd80edc41b8a25432d75fcd",
-  "candidate_w1_contract": "0.2.0",
-  "package_integrity": "PASS_30_MEMBERS",
-  "raw_parity": "NOT_RUN_INCOMPATIBLE_W1_PIN",
-  "model_view_parity": "NOT_RUN_INCOMPATIBLE_W1_PIN",
+  "candidate_w1_pin": "EXACT_R6_PACKAGE_SHA256_c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+  "candidate_w1_contract": "0.3.1",
+  "package_integrity": "PASS_24_MEMBERS",
+  "raw_parity": "FAIL_13_OF_14_CASES_PASS_LEGACY_R4_EXPLICIT_FAILS",
+  "model_view_parity": "FAIL_9_OF_14_CASES_PASS_STOP_LABELS_AND_LEGACY_PROJECTION_FAIL",
   "distribution_gate": "PASS",
-  "w1_parity_pass": "NOT_RUN",
+  "w1_parity_pass": "FAIL",
+  "candidate_intake_evidence": {
+    "path": "docs/vnext/w1/candidate_r11/candidate_intake_r11.json",
+    "bytes": 19181,
+    "sha256": "cc1755a72bfc3c80e6b3afcc23c4f0410e0d7ac4b7865cda57e39051bab2fb37",
+    "strict_exit": "NONZERO"
+  },
   "deterministic_gold": {
     "cases": 6,
     "classification": "DETERMINISTIC_PUBLIC_GOLD_NOT_HOLDOUT",
@@ -47,10 +53,10 @@
   },
   "critical_high": {
     "w1_producer_or_support": [],
-    "compatibility_precondition": ["HIGH W2: current published package is pinned to W1 0.2.0"]
+    "w2_candidate": ["CRITICAL legacy R4 raw parity failure", "CRITICAL legacy public_result projection exception", "HIGH stop labels collapse to IDs in four health cases"]
   },
   "medium_low": ["Historical DERIVED explanatory DAG remains external; no new R11 runtime defect."],
-  "not_run": ["compatible R6 candidate parity", "LLM/routing/language", "portal", "human release review", "private holdout"],
+  "not_run": ["LLM/routing/language", "portal", "human release review", "private holdout"],
   "python": "517/517 PASS; one non-failing openpyxl style warning",
   "node": "17/17 PASS",
   "ci": {
@@ -64,7 +70,7 @@
   "w1_candidate_gate_ready": true,
   "portal_mutations": 0,
   "merged_or_published_release": false,
-  "w2_action_required": "Publish immutable DEPLOYABLE_PACKAGE_READY ZIP+manifest pinned to W1 0.3.1/cb061a and expose R11 facts through actual public_result.",
-  "w3_action_required": "After W1 strict PASS, independently test routing/language/portal using deterministic gold only as public truth.",
-  "next_exact_action": "Run scripts/mobility/intake_candidate_r11.py in strict mode against the exact compatible W2 package; publish PASS or structured failures."
+  "w2_action_required": "Fix stop/route label binding and the sequence-dependent explicit R4/public_result failure; publish a new immutable package+manifest.",
+  "w3_action_required": "Do not test b4feb978 in portal; after W1 strict PASS, independently test routing/language/portal using deterministic gold only as public truth.",
+  "next_exact_action": "Run the same strict R11 intake against W2's minimal patched exact package; publish PASS or remaining structured failures."
 }

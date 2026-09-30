@@ -97,20 +97,24 @@ def _load_module(name: str, path: Path):
 def load_candidate(directory: Path):
     tools_path = directory / "tools.py"
     adapter_path = directory / "mobility_adapter.py"
-    if not tools_path.is_file() or not adapter_path.is_file():
-        raise ImportError("tools.py and mobility_adapter.py are required at package root")
+    if not tools_path.is_file():
+        raise ImportError("tools.py is required at package root")
     prior_path = list(sys.path)
-    prior_modules = {name: sys.modules.get(name) for name in ("tools", "mobility_adapter")}
+    isolated_names = {name for name in sys.modules if name == "prototypes" or name.startswith("prototypes.")}
+    isolated_names.update({"tools", "mobility_adapter", "health_adapter"})
+    prior_modules = {name: sys.modules.get(name) for name in isolated_names}
     for name in prior_modules:
         sys.modules.pop(name, None)
     sys.path.insert(0, str(directory))
     try:
         tools = _load_module("tools", tools_path)
-        adapter = _load_module("mobility_adapter", adapter_path)
+        adapter = _load_module("mobility_adapter", adapter_path) if adapter_path.is_file() else None
         if not callable(getattr(tools, "public_result", None)):
             raise ImportError("tools.public_result is missing")
-        if not callable(getattr(adapter, "consume_plan_visit", None)) or not callable(getattr(adapter, "consume_compare_visits", None)):
-            raise ImportError("candidate adapter interfaces are missing")
+        direct = adapter is not None and callable(getattr(adapter, "consume_plan_visit", None)) and callable(getattr(adapter, "consume_compare_visits", None))
+        packaged = callable(getattr(tools, "execute", None))
+        if not direct and not packaged:
+            raise ImportError("candidate exposes neither adapter interfaces nor tools.execute")
         return tools, adapter, prior_path, prior_modules
     except Exception:
         unload_candidate(prior_path, prior_modules)
@@ -119,10 +123,12 @@ def load_candidate(directory: Path):
 
 def unload_candidate(prior_path: list[str], prior_modules: dict) -> None:
     sys.path[:] = prior_path
-    for name in ("mobility_adapter", "tools"):
-        sys.modules.pop(name, None)
-        if prior_modules.get(name) is not None:
-            sys.modules[name] = prior_modules[name]
+    for name in list(sys.modules):
+        if name in {"mobility_adapter", "health_adapter", "tools"} or name == "prototypes" or name.startswith("prototypes."):
+            sys.modules.pop(name, None)
+    for name, module in prior_modules.items():
+        if module is not None:
+            sys.modules[name] = module
 
 
 def flatten(value: Any, path: str = "") -> list[tuple[str, Any]]:
@@ -208,14 +214,24 @@ def validate_caller_provenance(view: dict, raw: dict) -> list[dict]:
     return gaps
 
 
+def safe_failure_projection(view: dict, raw: dict) -> bool:
+    error = view.get("error")
+    if type(error) is not dict or not (error.get("safe_next_action") or error.get("message")):
+        return False
+    expected_code = (raw.get("error") or {}).get("code")
+    if error.get("code") == expected_code:
+        return True
+    rendered = json.dumps(error, ensure_ascii=False).casefold()
+    return expected_code == "invalid_request" and error.get("code") in {"contract_violation", "invalid_arguments"} and "invalid" in rendered
+
+
 def validate_model_view(view: dict, raw: dict, requirements: list[dict]) -> list[dict]:
     gaps = []
     status = raw.get("status")
     if status != "ok":
-        error = view.get("error")
         observed_code = (raw.get("error") or {}).get("code")
         text = json.dumps(view, ensure_ascii=False).casefold()
-        safe = type(error) is dict and error.get("code") == observed_code and bool(error.get("safe_next_action") or error.get("message"))
+        safe = safe_failure_projection(view, raw)
         if not safe:
             gaps.append(finding("MODEL_VIEW_WRONG_SEMANTICS", "failure view does not preserve observed status+error.code and a safe explanation",
                                 requirement_id="MV-FAILURE", expected_error_code=observed_code))
@@ -267,9 +283,13 @@ def intake(package: Path, manifest_path: Path, expected_pin: str, *, strict: boo
         report["SOURCE_POLICY"] = {"status": "NOT_RUN"}
         report["findings"].append(finding("PACKAGE_INTEGRITY_FAILURE", str(exc)))
         return report
-    compatible = expected_pin == RUNTIME_PIN and manifest.get("w1_pin") == expected_pin and manifest.get("w1_contract") == CONTRACT
+    direct_pin = manifest.get("w1_pin") == expected_pin
+    package_pin = manifest.get("w1_package_sha256") == RUNTIME_PACKAGE_SHA
+    compatible = expected_pin == RUNTIME_PIN and manifest.get("w1_contract") == CONTRACT and (direct_pin or package_pin)
     report["W1_PIN_STATUS"] = {"status": "PASS" if compatible else "INCOMPATIBLE", "required_contract": CONTRACT,
-                               "frozen_runtime_package_sha256": RUNTIME_PACKAGE_SHA}
+                               "frozen_runtime_package_sha256": RUNTIME_PACKAGE_SHA,
+                               "binding": "expected_runtime_pin" if direct_pin else "exact_frozen_runtime_package_sha256" if package_pin else None,
+                               "observed_runtime_commit": manifest.get("w1_runtime_commit_observed")}
     if not compatible:
         report["findings"].append(finding("INCOMPATIBLE_W1_PIN", "candidate does not pin frozen W1 R6 contract 0.3.1"))
         report["findings"].append(finding("NOT_RUN", "producer/adapter/model-view parity requires a compatible candidate"))
@@ -279,6 +299,10 @@ def intake(package: Path, manifest_path: Path, expected_pin: str, *, strict: boo
         report["FINAL_STATUS"] = "NOT_RUN"
         return report
     requirements = json.loads(REQUIREMENTS.read_text(encoding="utf-8"))["requirements"]
+    evaluations = []
+    for case in cases():
+        expected = provider_r6.plan_visit(case["request"]) if case["operation"] == "plan" else provider_r6.compare_visits(case["requests"])
+        evaluations.append((case, expected))
     raw_cases, model_cases = [], []
     with tempfile.TemporaryDirectory(prefix="g360-r11-intake-") as temporary:
         directory = Path(temporary)
@@ -292,19 +316,21 @@ def intake(package: Path, manifest_path: Path, expected_pin: str, *, strict: boo
             report["MODEL_VIEW_PARITY"] = {"status": "NOT_RUN", "cases": []}
             return report
         try:
-            for case in cases():
+            for case, expected in evaluations:
                 raw_record = {"case_id": case["case_id"], "findings": []}
                 model_record = {"case_id": case["case_id"], "findings": []}
                 try:
                     if case["operation"] == "plan":
-                        expected = provider_r6.plan_visit(case["request"])
-                        envelope = adapter.consume_plan_visit(provider_r6, case["request"], f"R11_{case['case_id']}")
+                        envelope = (adapter.consume_plan_visit(provider_r6, case["request"], f"R11_{case['case_id']}")
+                                    if adapter is not None else tools.execute("plan_visit", {"request": case["request"]}, f"R11_{case['case_id']}", root=directory))
                     else:
-                        expected = provider_r6.compare_visits(case["requests"])
-                        envelope = adapter.consume_compare_visits(provider_r6, case["requests"], f"R11_{case['case_id']}")
+                        envelope = (adapter.consume_compare_visits(provider_r6, case["requests"], f"R11_{case['case_id']}")
+                                    if adapter is not None else tools.execute("plan_visit", {"request": case["requests"]}, f"R11_{case['case_id']}", root=directory))
                     actual = raw_from_envelope(envelope)
                     if actual is None:
-                        raw_record["findings"].append(finding("PRODUCER_ADAPTER_PARITY_FAILURE", "raw_result_json missing"))
+                        if expected.get("status") != "error" or not safe_failure_projection(envelope, expected):
+                            raw_record["findings"].append(finding("PRODUCER_ADAPTER_PARITY_FAILURE", "raw_result_json missing",
+                                                                  observed_status=envelope.get("status"), observed_error=envelope.get("error")))
                     elif case["operation"] == "compare":
                         if actual != expected:
                             raw_record["findings"].append(finding("PRODUCER_ADAPTER_PARITY_FAILURE", "comparison raw result differs"))
@@ -317,11 +343,10 @@ def intake(package: Path, manifest_path: Path, expected_pin: str, *, strict: boo
                     view = tools.strict_loads(rendered) if callable(getattr(tools, "strict_loads", None)) else json.loads(rendered)
                     if type(view) is not dict:
                         raise TypeError("public model view is not an object")
-                    if actual is not None:
-                        if case["operation"] == "plan":
-                            model_record["findings"].extend(validate_model_view(view, actual, requirements))
-                        elif not isinstance(view.get("outcomes"), list):
-                            model_record["findings"].append(finding("MODEL_VIEW_MISSING", "comparison outcomes absent"))
+                    if case["operation"] == "plan":
+                        model_record["findings"].extend(validate_model_view(view, actual if actual is not None else expected, requirements))
+                    elif not isinstance(view.get("outcomes"), list):
+                        model_record["findings"].append(finding("MODEL_VIEW_MISSING", "comparison outcomes absent"))
                 except Exception as exc:
                     model_record["findings"].append(finding("MODEL_VIEW_WRONG_VALUE", f"{type(exc).__name__}: {exc}"))
                 raw_record["status"] = "PASS" if not raw_record["findings"] else "FAIL"
