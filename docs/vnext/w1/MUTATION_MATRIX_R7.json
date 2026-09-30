@@ -1,0 +1,151 @@
+{
+  "baseline_status": "PASS",
+  "mutations": 29,
+  "counts": {
+    "SCHEMA_CAUGHT": 7,
+    "SEMANTIC_VALIDATOR_CAUGHT": 22,
+    "NOT_REQUIRED_BY_CONTRACT": 0,
+    "GAP": 0
+  },
+  "critical_high_gaps": 0,
+  "results": [
+    {
+      "mutation": "schema_version",
+      "classification": "SCHEMA_CAUGHT"
+    },
+    {
+      "mutation": "snapshot_id",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "identity"
+    },
+    {
+      "mutation": "scenario_kind",
+      "classification": "SCHEMA_CAUGHT"
+    },
+    {
+      "mutation": "scope",
+      "classification": "SCHEMA_CAUGHT"
+    },
+    {
+      "mutation": "trip_id",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "GTFS departure"
+    },
+    {
+      "mutation": "from_stop_id",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "GTFS departure"
+    },
+    {
+      "mutation": "to_stop_id",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "GTFS arrival"
+    },
+    {
+      "mutation": "departure_time",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "GTFS departure"
+    },
+    {
+      "mutation": "arrival_time",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "GTFS arrival"
+    },
+    {
+      "mutation": "total_s",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "total"
+    },
+    {
+      "mutation": "return_slack_s",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "return slack"
+    },
+    {
+      "mutation": "component_seconds",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "total"
+    },
+    {
+      "mutation": "component_interval",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "component interval"
+    },
+    {
+      "mutation": "walking_metres",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "walking identity"
+    },
+    {
+      "mutation": "walking_seconds",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "walking identity"
+    },
+    {
+      "mutation": "walking_source_refs",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "walking identity"
+    },
+    {
+      "mutation": "centre_id",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "health destination"
+    },
+    {
+      "mutation": "modelled_access",
+      "classification": "SCHEMA_CAUGHT"
+    },
+    {
+      "mutation": "entrance_verified",
+      "classification": "SCHEMA_CAUGHT"
+    },
+    {
+      "mutation": "address_conflict",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "health destination"
+    },
+    {
+      "mutation": "parameter_provenance",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "provenance origin"
+    },
+    {
+      "mutation": "USER_hash",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "USER content"
+    },
+    {
+      "mutation": "MODEL_DEFAULTS_hash",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "default content"
+    },
+    {
+      "mutation": "GTFS_source_hash",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "official source GTFS"
+    },
+    {
+      "mutation": "source_role",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "USER content"
+    },
+    {
+      "mutation": "missing_source",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "derived content"
+    },
+    {
+      "mutation": "duplicate_source",
+      "classification": "SEMANTIC_VALIDATOR_CAUGHT",
+      "reason": "duplicate source"
+    },
+    {
+      "mutation": "non_finite",
+      "classification": "SCHEMA_CAUGHT"
+    },
+    {
+      "mutation": "extra_unknown_key",
+      "classification": "SCHEMA_CAUGHT"
+    }
+  ]
+}

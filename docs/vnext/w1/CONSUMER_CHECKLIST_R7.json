@@ -1,0 +1,28 @@
+{
+  "checklist_version": "1.0.0",
+  "producer_contract": "0.3.1",
+  "pre_acceptance_checks": [
+    {"id": "provider_version", "path": "schema_version", "expected": "0.3.1"},
+    {"id": "snapshot", "path": "snapshot_id", "expected": "official-goierrialdea-go01-health-r5-20260929"},
+    {"id": "scenario", "path": "scenario_kind", "expected": "health_visit"},
+    {"id": "destination", "path": "normalized_request.destination_id", "expected": "beasain_official_centre_anchor"},
+    {"id": "modelled_access", "path": "health_destination.modelled_access", "expected": true},
+    {"id": "entrance_verified", "path": "health_destination.entrance_verified", "expected": false},
+    {"id": "source_roles", "path": "sources[*].source_role", "rule": "validate against result schema and referenced source IDs"},
+    {"id": "parameter_provenance", "path": "parameter_provenance", "rule": "one row per normalized field; explicit iff supplied"},
+    {"id": "totals", "path": "itinerary.total_s", "rule": "end-start=sum components"},
+    {"id": "trip_stop_identity", "path": "itinerary", "rule": "trip/stop/times must match fixed GTFS"},
+    {"id": "status", "path": "status", "allowed": ["ok", "no_feasible_journey", "unknown", "unsupported", "error"]},
+    {"id": "comparison_semantics", "path": "comparisons[*]", "rule": "numeric delta only when comparability=comparable; never across origins"}
+  ],
+  "minimum_model_view": [
+    "status", "outbound trip and departure", "outbound alighting stop and arrival",
+    "return boarding stop and departure", "return arrival", "walking distance/time per direction",
+    "wait components", "appointment duration", "boarding and arrival margins", "requested changes",
+    "modelled_access", "entrance_verified", "sources", "limitations"
+  ],
+  "forbidden_inferences": [
+    "modelled access is not a verified entrance", "schedule is not realtime",
+    "centre identity is not appointment availability or capacity", "cross-origin side-by-side is not a population or individual recommendation"
+  ]
+}

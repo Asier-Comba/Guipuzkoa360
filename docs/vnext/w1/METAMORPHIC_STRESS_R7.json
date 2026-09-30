@@ -1,0 +1,28 @@
+{
+  "seed": 360007,
+  "cases": 500,
+  "case_description": "Seeded requests; not independent tests.",
+  "distribution": {
+    "error": 57,
+    "no_feasible_journey": 122,
+    "ok": 245,
+    "unknown": 14,
+    "unsupported": 62
+  },
+  "properties_checked": 15,
+  "first_counterexample": null,
+  "metamorphic": {
+    "omitted_vs_explicit_defaults": "PASS",
+    "request_reordering": "PASS",
+    "comparison_delta": "PASS",
+    "cross_origin_no_delta": "PASS",
+    "deadline_tightening": "PASS"
+  },
+  "isolation": {
+    "A_B_A": true,
+    "valid_error_valid": true,
+    "health_R4_health": true,
+    "single_compare_single": true
+  },
+  "status": "PASS"
+}

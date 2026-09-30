@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "contract_version",
+    "snapshot_id",
+    "scenario_kind",
+    "validated_date",
+    "scope",
+    "origins",
+    "stops",
+    "destination",
+    "routes",
+    "walking_profile",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "contract_version": {
+      "const": "0.3.1"
+    },
+    "snapshot_id": {
+      "const": "official-goierrialdea-go01-health-r5-20260929"
+    },
+    "scenario_kind": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label"
+      ],
+      "properties": {
+        "id": {
+          "const": "health_visit"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "validated_date": {
+      "const": "2026-09-29"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label"
+      ],
+      "properties": {
+        "id": {
+          "const": "origin_stop_presence_to_return_stop_arrival"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "origins": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "origin_id",
+          "name",
+          "municipality_code",
+          "municipality_name"
+        ],
+        "properties": {
+          "origin_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "municipality_code": {
+            "type": "string",
+            "pattern": "^[0-9]{5}$"
+          },
+          "municipality_name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "stops": {
+      "type": "array",
+      "minItems": 9,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stop_id",
+          "name"
+        ],
+        "properties": {
+          "stop_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "destination": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "destination_id",
+        "name",
+        "centre_id",
+        "entrance_verified",
+        "modelled_access"
+      ],
+      "properties": {
+        "destination_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "centre_id": {
+          "type": "string"
+        },
+        "entrance_verified": {
+          "const": false
+        },
+        "modelled_access": {
+          "const": true
+        }
+      }
+    },
+    "routes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "route_id",
+          "short_name",
+          "long_name"
+        ],
+        "properties": {
+          "route_id": {
+            "type": "string"
+          },
+          "short_name": {
+            "type": "string"
+          },
+          "long_name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "walking_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      }
+    },
+    "provenance": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_id",
+          "source_sha256",
+          "reference_period",
+          "transformation"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string"
+          },
+          "source_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "reference_period": {
+            "type": "string"
+          },
+          "transformation": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0.0",
+  "contract_version": "0.3.1",
+  "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+  "scenario_kind": {
+    "id": "health_visit",
+    "label": "Visita sanitaria programada"
+  },
+  "validated_date": "2026-09-29",
+  "scope": {
+    "id": "origin_stop_presence_to_return_stop_arrival",
+    "label": "Desde la presencia en la parada de origen hasta la llegada a la parada de regreso"
+  },
+  "origins": [
+    {
+      "origin_id": "idiazabal_center_stops",
+      "name": "Paradas centrales de Idiazabal",
+      "municipality_code": "20043",
+      "municipality_name": "Idiazabal"
+    },
+    {
+      "origin_id": "segura_herriko_plaza_stops",
+      "name": "Paradas Herriko Plaza de Segura",
+      "municipality_code": "20070",
+      "municipality_name": "Segura"
+    },
+    {
+      "origin_id": "zegama_center_stops",
+      "name": "Paradas centrales de Zegama",
+      "municipality_code": "20025",
+      "municipality_name": "Zegama"
+    }
+  ],
+  "stops": [
+    {
+      "stop_id": "7215",
+      "name": "Beasain - Barrendain Plaza 1, Renfe Geltokia"
+    },
+    {
+      "stop_id": "7218",
+      "name": "Beasain - San Inazio 10"
+    },
+    {
+      "stop_id": "7219",
+      "name": "Beasain - Lokomotora Biribilgunea"
+    },
+    {
+      "stop_id": "7801",
+      "name": "Segura - Kale Nagusia 31 – Herriko Plaza"
+    },
+    {
+      "stop_id": "7813",
+      "name": "Segura - Kale Nagusia 31 Parean – Herriko Plaza"
+    },
+    {
+      "stop_id": "7903",
+      "name": "Idiazabal - Kale Nagusia 8- Parean"
+    },
+    {
+      "stop_id": "7906",
+      "name": "Idiazabal - Kale Nagusia 8"
+    },
+    {
+      "stop_id": "8305",
+      "name": "Zegama - Elizalde 6 - Plaza"
+    },
+    {
+      "stop_id": "8309",
+      "name": "Zegama - Elizalde Kalea 4"
+    }
+  ],
+  "destination": {
+    "destination_id": "beasain_official_centre_anchor",
+    "name": "Ambulatorio de Beasain",
+    "centre_id": "entityBC631DA5",
+    "entrance_verified": false,
+    "modelled_access": true
+  },
+  "routes": [
+    {
+      "route_id": "1",
+      "short_name": "GO01",
+      "long_name": "Zega>Segur>Idiaz>Olaber>Beasai>Ordiz>Zaldibia"
+    }
+  ],
+  "walking_profile": {
+    "id": "poc_reference_50m_min_plus_120s",
+    "label": "Paseo modelado de referencia: 50 m/min más 120 s por enlace completo"
+  },
+  "provenance": [
+    {
+      "source_id": "GTFS",
+      "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+      "reference_period": "2026-09-29",
+      "transformation": "Nombres de paradas y ruta seleccionados por IDs del snapshot fijado."
+    },
+    {
+      "source_id": "HEALTH_REGISTRY",
+      "source_sha256": "87a2b8ea3309678ff743e2f267320b94216c3d1e4f52b578bdd0a77bd8bf29ab",
+      "reference_period": "2026-09-20",
+      "transformation": "Nombre e identidad del centro del snapshot sanitario fijado."
+    },
+    {
+      "source_id": "R6_OPERATIONAL_CATALOG",
+      "source_sha256": "c7bd3cc8ffe50956ce839bec0ef90a13578160a4d5b4053b09673d2dc4c4ec17",
+      "reference_period": "2026-09-29",
+      "transformation": "Correspondencia uno-a-uno de origin_id y código municipal."
+    }
+  ]
+}
