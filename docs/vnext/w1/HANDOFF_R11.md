@@ -65,5 +65,5 @@ W3 advanced during R11 to `281f92a…` and independently reported `NO_GO`: produ
 - W3_ACTION_REQUIRED: after W1 strict PASS on that exact package, perform independent model/routing/language and bounded portal acceptance; use `DETERMINISTIC_GOLD_R11.json` only as public deterministic truth, never as answer wording or holdout.
 - NEXT_EXACT_ACTION: run the single R11 intake command against the exact compatible W2 package; publish `W1_W2_PARITY_PASS` or structured failures without modifying W2.
 
-PORTAL_MUTATIONS: **0**  
+PORTAL_MUTATIONS: **0**
 MERGED_OR_PUBLISHED_RELEASE: **NO**
