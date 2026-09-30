@@ -1,0 +1,82 @@
+{
+  "$id": "g360-w1-handshake-r10.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "boundaries": {
+      "type": "object"
+    },
+    "caller_provenance_ref": {
+      "type": "object"
+    },
+    "candidate": {
+      "type": "object"
+    },
+    "canonical": {
+      "type": "object"
+    },
+    "capability_descriptor_ref": {
+      "type": "object"
+    },
+    "capability_snapshot_count": {
+      "type": "integer"
+    },
+    "catalog": {
+      "type": "object"
+    },
+    "claim_semantic_classes": {
+      "type": "array"
+    },
+    "handshake_version": {
+      "const": "r10.0-support"
+    },
+    "heavy_evidence_is_by_reference": {
+      "type": "boolean"
+    },
+    "known_finding": {
+      "type": "object"
+    },
+    "license_summary": {
+      "type": "object"
+    },
+    "minimum_model_view_fields": {
+      "type": "array"
+    },
+    "no_holdout_or_secret_data": {
+      "type": "boolean"
+    },
+    "refs": {
+      "type": "array"
+    },
+    "runtime": {
+      "type": "object"
+    },
+    "status_error_semantics_ref": {
+      "type": "object"
+    },
+    "status_semantics": {
+      "type": "array"
+    },
+    "support_patch": {
+      "type": "object"
+    },
+    "timepoint_policy": {
+      "type": "string"
+    },
+    "upstream": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "handshake_version",
+    "runtime",
+    "candidate",
+    "catalog",
+    "boundaries",
+    "status_error_semantics_ref",
+    "caller_provenance_ref",
+    "refs"
+  ],
+  "title": "G360 W1 compact consumer handshake R10",
+  "type": "object"
+}

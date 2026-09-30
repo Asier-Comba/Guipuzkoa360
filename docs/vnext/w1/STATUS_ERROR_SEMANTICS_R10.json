@@ -1,0 +1,122 @@
+{
+  "cases": [
+    {
+      "error": {
+        "code": "date_not_validated",
+        "message": "Fecha no validada"
+      },
+      "fixture_kind": "PROVIDER_OBSERVED",
+      "request": {
+        "appointment_time": "09:45",
+        "date": "2026-09-30",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops"
+      },
+      "status": "unknown",
+      "technical_code_preserved": "date_not_validated",
+      "user_facing": "La fecha solicitada no está validada por este snapshot."
+    },
+    {
+      "error": {
+        "code": "catalog_scope",
+        "message": "Origen o destino fuera del catálogo sanitario"
+      },
+      "fixture_kind": "PROVIDER_OBSERVED",
+      "request": {
+        "appointment_time": "09:45",
+        "date": "2026-09-29",
+        "destination_id": "outside_catalog",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops"
+      },
+      "status": "unsupported",
+      "technical_code_preserved": "catalog_scope",
+      "user_facing": "El origen o destino queda fuera del catálogo fijado."
+    },
+    {
+      "error": {
+        "code": "invalid_request",
+        "message": "duration_minutes debe ser entero"
+      },
+      "fixture_kind": "PROVIDER_OBSERVED",
+      "request": {
+        "appointment_time": "09:45",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": "20",
+        "origin_id": "zegama_center_stops"
+      },
+      "status": "error",
+      "technical_code_preserved": "invalid_request",
+      "user_facing": "La petición contiene un formato o valor no válido."
+    },
+    {
+      "error": {
+        "code": "no_pair_in_complete_direct_search",
+        "message": "Sin pareja viable en paradas/red admitidas"
+      },
+      "fixture_kind": "PROVIDER_OBSERVED",
+      "request": {
+        "appointment_time": "22:00",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops"
+      },
+      "status": "no_feasible_journey",
+      "technical_code_preserved": "no_pair_in_complete_direct_search",
+      "user_facing": "No se encontró una combinación viable tras completar la búsqueda dentro del snapshot y restricciones analizados."
+    },
+    {
+      "error": {
+        "code": "cross_day_appointment",
+        "message": "Fuera del mismo día"
+      },
+      "fixture_kind": "PROVIDER_OBSERVED",
+      "request": {
+        "appointment_time": "23:59",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops"
+      },
+      "status": "unsupported",
+      "technical_code_preserved": "cross_day_appointment",
+      "user_facing": "La cita termina fuera del día civil admitido por el modelo."
+    },
+    {
+      "error": {
+        "code": "invalid_health_snapshot",
+        "message": "R10 controlled invalid snapshot fixture"
+      },
+      "fixture_kind": "PROVIDER_OBSERVED",
+      "request": {
+        "appointment_time": "09:45",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops"
+      },
+      "status": "unknown",
+      "technical_code_preserved": "invalid_health_snapshot",
+      "user_facing": "La evidencia sanitaria fijada no pudo validarse o cargarse; no se puede verificar el resultado."
+    },
+    {
+      "error": {
+        "code": "future_unknown_code",
+        "message": "fixture"
+      },
+      "fixture_kind": "CONSUMER_FALLBACK_ONLY",
+      "request": null,
+      "status": "unknown",
+      "technical_code_preserved": "future_unknown_code",
+      "user_facing": "La evidencia disponible no permite verificar el resultado; no se atribuye una causa no observada."
+    }
+  ],
+  "generic_unknown_rule": "Evidence is insufficient or unverifiable; never invent date, HTTP, network or service absence.",
+  "key": "status+error.code",
+  "mapping_version": "r10.0",
+  "preserve_technical_error_in_audit": true,
+  "runtime_changed": false
+}

@@ -1,0 +1,42 @@
+{
+  "consumer_action": "Use W1_HANDSHAKE_R10.json; retain R9 only as historical evidence.",
+  "defects": [
+    {
+      "cause": "UNAVAILABLE was counted as available because only OUT_OF_SCOPE was excluded.",
+      "corrected": {
+        "available_entry_count": 9,
+        "available_statuses": [
+          "AVAILABLE_DIRECT",
+          "DERIVABLE_EXACT",
+          "ESTIMABLE_WITH_ASSUMPTIONS"
+        ],
+        "counts_by_status": {
+          "AVAILABLE_DIRECT": 3,
+          "DERIVABLE_EXACT": 5,
+          "ESTIMABLE_WITH_ASSUMPTIONS": 1,
+          "OUT_OF_SCOPE": 5,
+          "UNAVAILABLE": 11
+        },
+        "described_entry_count": 25,
+        "executable_tool_count": null,
+        "note": "Answerability entries describe questions; they are not executable tools.",
+        "out_of_scope_entry_count": 5,
+        "unavailable_entry_count": 11
+      },
+      "id": "R9-HANDSHAKE-CAPABILITY-COUNT",
+      "old": {
+        "available_capability_count": 20
+      }
+    },
+    {
+      "cause": "The provider also emits unknown for invalid/unloadable snapshot and may gain other codes.",
+      "corrected_ref": "docs/vnext/w1/STATUS_ERROR_SEMANTICS_R10.json",
+      "id": "R9-HANDSHAKE-UNKNOWN-SEMANTICS",
+      "old": "unknown always means date not validated"
+    }
+  ],
+  "errata_version": "r10.0",
+  "historical_r9_sha256": "090335ab9e18b76a0dea311408aeff2a913289c7368f0801ac02a70031f056d6",
+  "runtime_changed": false,
+  "superseded_support": "r9.0"
+}

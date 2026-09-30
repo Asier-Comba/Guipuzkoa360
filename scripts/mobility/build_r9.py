@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import collections
 import hashlib
 import json
 import re
@@ -34,6 +35,29 @@ def ref(path: Path, role: str) -> dict:
         raw = raw.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
     return {"path": path.relative_to(ROOT).as_posix(), "sha256": hashlib.sha256(raw).hexdigest(), "bytes": len(raw),
             "hash_basis": "canonical_lf" if normalized else "exact_bytes", "role": role}
+
+
+ANSWERABILITY_AVAILABLE_STATUSES = {
+    "AVAILABLE_DIRECT", "DERIVABLE_EXACT", "ESTIMABLE_WITH_ASSUMPTIONS",
+}
+
+
+def capability_status_counts(capabilities: list[dict]) -> dict:
+    """Count described answerability entries without calling them executable tools."""
+    counts = collections.Counter(row["status"] for row in capabilities)
+    allowed = ANSWERABILITY_AVAILABLE_STATUSES | {"UNAVAILABLE", "OUT_OF_SCOPE"}
+    if set(counts) - allowed:
+        raise ValueError(f"unexpected answerability status: {sorted(set(counts) - allowed)}")
+    return {
+        "described_entry_count": len(capabilities),
+        "counts_by_status": {status: counts.get(status, 0) for status in sorted(allowed)},
+        "available_statuses": sorted(ANSWERABILITY_AVAILABLE_STATUSES),
+        "available_entry_count": sum(counts[status] for status in ANSWERABILITY_AVAILABLE_STATUSES),
+        "unavailable_entry_count": counts.get("UNAVAILABLE", 0),
+        "out_of_scope_entry_count": counts.get("OUT_OF_SCOPE", 0),
+        "executable_tool_count": None,
+        "note": "Answerability entries describe questions; they are not executable tools.",
+    }
 
 
 def build_clean_room(source: Path) -> dict:
@@ -225,7 +249,7 @@ def build_handshake(upstream: dict, semantics: dict, licenses: dict) -> dict:
                  "canonical": {"main_id": "MAIN", "variation_id": "VARIATION_TIME", "duration_variation_id": "VARIATION_DURATION",
                                "limit_ids": ["LIMIT_DATE", "LIMIT_SCOPE"], "numeric_claim": evidence["directly_contrasted_claim"] | {"raw_rows": None, "walking_evidence": None}},
                  "boundaries": {"entrance_verified": False, "realtime": False, "door_to_door": False, "cross_origin_formal_delta": False,
-                                "available_capability_count": sum(row["status"] != "OUT_OF_SCOPE" for row in answerability["capabilities"])},
+                                "answerability": capability_status_counts(answerability["capabilities"])},
                  "known_finding": {"id": "W1-R7-F01", "severity": "MEDIUM", "runtime_status": "RUNTIME_FINDING_RETAINED", "resolution": "EXPLANATORY_DAG_RESOLVED_EXTERNALLY"},
                  "upstream": {"checked_at_utc": upstream["checked_at_utc"], "summary": upstream["summary"], "automatic_pin_replacement": False},
                  "license_summary": {row["source_id"]: row["license_status"] for row in licenses["sources"]},
