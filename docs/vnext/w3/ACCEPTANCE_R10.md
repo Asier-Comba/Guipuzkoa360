@@ -30,7 +30,7 @@ python -m scripts.vnext_product.retest_w2_r10 --package <ZIP-publicado> --manife
 Runtime `cb061a97e78d6b5c967104fef6b935132fdc450f`, `provider_r6`, 0.3.1.
 ZIP `c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910`;
 reconstrucción idéntica del empaquetador publicado en una copia aislada.
-No se recompuso W1+W2. 22 miembros revisados; ocho solicitudes, cinco estados.
+No se recompuso W1+W2. 26 miembros revisados; ocho solicitudes, cinco estados.
 Schemas de resultado, comparación y catálogo validados con jsonschema en entorno aislado.
 
 Contraste propio, sin oracle/helper de aceptación de W1: filas del GTFS original
