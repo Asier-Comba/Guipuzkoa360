@@ -13,7 +13,7 @@ import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
 
-from scripts.vnext_agent.build_package import MANIFEST, ROOT, ZIP, main as build_package
+from scripts.vnext_agent.build_r14_binding import MANIFEST, ROOT, ZIP, build as build_package
 
 
 CASES = [

@@ -14,7 +14,7 @@ from pathlib import Path
 import pytest
 
 from agentes.gipuzkoa360_vnext import health_adapter, tools
-from scripts.vnext_agent.build_package import MANIFEST, ROOT, ZIP, main as build_package
+from scripts.vnext_agent.build_r14_binding import MANIFEST, ROOT, ZIP, build as build_package
 from scripts.vnext_agent.w1_r6_bundle import published_runtime
 
 
@@ -25,7 +25,11 @@ def _isolated(tmp_path: Path, operation: str, payload: dict) -> dict:
 socket.socket=lambda *a,**k: (_ for _ in ()).throw(RuntimeError('network forbidden'))
 import main
 data=json.loads(sys.stdin.read())
-print(getattr(main,data['operation'])(**data['payload']))
+if data['operation']=='plan_visit':
+    request=data['payload']['request']
+    print(main._run('plan_visit', {'request':request}) if isinstance(request,list) else main.plan_visit(**request))
+else:
+    print(getattr(main,data['operation'])(**data['payload']))
 """
     environment = {**os.environ, "PYTHONPATH": "", "PYTHONNOUSERSITE": "1", "GIPUZKOA360_VNEXT_ROOT": str(tmp_path)}
     run = subprocess.run([sys.executable, "-c", script], input=json.dumps({"operation": operation, "payload": payload}), text=True, cwd=tmp_path, env=environment, capture_output=True, check=True)

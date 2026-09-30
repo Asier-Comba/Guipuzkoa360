@@ -1,0 +1,20 @@
+{
+  "assets_byte_identical": true,
+  "changed_members": [
+    "main.py"
+  ],
+  "double_build": "PASS",
+  "fuzz_cases": 5000,
+  "main_sha256": "bc955c57558ae3f8f00aa6d8ad1452732ad7ead40faea794fa9e0f1e39ee6f23",
+  "manifest_sha256": "d6c0122b475284c468fdfc3e343b9ab0d9d175cf20513048c915281cedf4e911",
+  "model_calls": 0,
+  "nested_w1_zip_byte_identical": true,
+  "parity_cases": 18,
+  "portal_upload": "NOT_RUN",
+  "seed": 360014,
+  "status": "PASS_OFFLINE_NOT_PORTAL",
+  "tools_byte_identical": true,
+  "tools_sha256": "46498d6be4f65642784e3a721e408b7d22a0910f937f91660d095b7e57de807c",
+  "w1_independent_acceptance": "PENDING",
+  "zip_sha256": "9c6fa5c692df178afe36366c6291e7c0e7c3da06134381b09d853f55d6707252"
+}

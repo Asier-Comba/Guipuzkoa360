@@ -11,12 +11,12 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-ZIP = ROOT / "scripts/vnext_agent/dist/gipuzkoa360-vnext-w2.zip"
-MANIFEST = ROOT / "scripts/vnext_agent/dist/gipuzkoa360-vnext-w2-manifest.json"
+ZIP = ROOT / "scripts/vnext_agent/dist/r14/gipuzkoa360-r14-binding.zip"
+MANIFEST = ROOT / "scripts/vnext_agent/dist/r14/gipuzkoa360-r14-binding-manifest.json"
 
 
 def build():
-    subprocess.run([sys.executable, "-m", "scripts.vnext_agent.build_package"], cwd=ROOT, check=True, capture_output=True, text=True)
+    subprocess.run([sys.executable, "-m", "scripts.vnext_agent.build_r14_binding"], cwd=ROOT, check=True, capture_output=True, text=True)
     return ZIP.read_bytes()
 
 
@@ -39,5 +39,5 @@ def test_double_build_manifest_context_and_offline_execution(tmp_path):
     check = "import json,main; r=json.loads(main.analizar_coincidencia('primary_care', umbral_km=2.0, cuantil=0.75)); assert r['status']=='valid',r; assert 'raw_result_json' not in r; assert next(c for c in r['claims'] if c['metric_id']=='highlighted_count')['value']==7"
     isolated_env = {**os.environ, "PYTHONPATH": "", "PYTHONNOUSERSITE": "1", "GIPUZKOA360_VNEXT_ROOT": str(tmp_path)}
     subprocess.run([sys.executable, "-c", check], cwd=tmp_path, env=isolated_env, check=True, capture_output=True, text=True)
-    mobility = "import json,main,socket; socket.socket=lambda *a,**k: (_ for _ in ()).throw(RuntimeError('network forbidden')); assert len(main.TOOLS)==9; r=json.loads(main.plan_visit({'origin_id':'zegama_center_stops','destination_id':'beasain_official_centre_anchor','date':'2026-09-29','appointment_time':'09:45','duration_minutes':20})); assert r['status']=='valid',r; assert r['outcomes'][0]['status']=='ok'; assert 'raw_result_json' not in r; assert r['mobility']['scenarios'][0]['itinerary']['total_s']==8591; c=json.loads(main.consultar_capacidades('plan_visit')); assert any(x['id']=='plan_visit' and x['enabled'] for x in c['capabilities'])"
+    mobility = "import json,main,socket; socket.socket=lambda *a,**k: (_ for _ in ()).throw(RuntimeError('network forbidden')); assert len(main.TOOLS)==9; r=json.loads(main.plan_visit(**{'origin_id':'zegama_center_stops','destination_id':'beasain_official_centre_anchor','date':'2026-09-29','appointment_time':'09:45','duration_minutes':20})); assert r['status']=='valid',r; assert r['outcomes'][0]['status']=='ok'; assert 'raw_result_json' not in r; assert r['mobility']['scenarios'][0]['itinerary']['total_s']==8591; c=json.loads(main.consultar_capacidades('plan_visit')); assert any(x['id']=='plan_visit' and x['enabled'] for x in c['capabilities'])"
     subprocess.run([sys.executable, "-c", mobility], cwd=tmp_path, env=isolated_env, check=True, capture_output=True, text=True)
