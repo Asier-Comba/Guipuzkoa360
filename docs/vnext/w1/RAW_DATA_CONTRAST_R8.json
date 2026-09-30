@@ -1,0 +1,249 @@
+{
+  "claim_id": "R8-DELTA-ZEGAMA-0930-0945",
+  "raw_gtfs_rows": [
+    {
+      "side": "left",
+      "trip_id": "1_103_LJ_29400",
+      "stop_id": "8305",
+      "arrival_time": "08:12:32",
+      "departure_time": "08:12:37",
+      "csv_line": 2729
+    },
+    {
+      "side": "left",
+      "trip_id": "1_103_LJ_29400",
+      "stop_id": "7219",
+      "arrival_time": "08:40:08",
+      "departure_time": "08:40:13",
+      "csv_line": 2752
+    },
+    {
+      "side": "left",
+      "trip_id": "1_106_LJ_37200",
+      "stop_id": "7218",
+      "arrival_time": "10:29:45",
+      "departure_time": "10:29:50",
+      "csv_line": 314
+    },
+    {
+      "side": "left",
+      "trip_id": "1_106_LJ_37200",
+      "stop_id": "8309",
+      "arrival_time": "11:07:48",
+      "departure_time": "11:07:53",
+      "csv_line": 341
+    },
+    {
+      "side": "right",
+      "trip_id": "1_101_LJ_31500",
+      "stop_id": "8305",
+      "arrival_time": "08:47:32",
+      "departure_time": "08:47:37",
+      "csv_line": 7654
+    },
+    {
+      "side": "right",
+      "trip_id": "1_101_LJ_31500",
+      "stop_id": "7219",
+      "arrival_time": "09:17:06",
+      "departure_time": "09:17:11",
+      "csv_line": 7679
+    },
+    {
+      "side": "right",
+      "trip_id": "1_106_LJ_37200",
+      "stop_id": "7218",
+      "arrival_time": "10:29:45",
+      "departure_time": "10:29:50",
+      "csv_line": 314
+    },
+    {
+      "side": "right",
+      "trip_id": "1_106_LJ_37200",
+      "stop_id": "8309",
+      "arrival_time": "11:07:48",
+      "departure_time": "11:07:53",
+      "csv_line": 341
+    }
+  ],
+  "walking_evidence": {
+    "left": {
+      "outbound": {
+        "verification_method": "independent atan2 geometry length + published walking formula",
+        "metres": 205.07964741014632,
+        "seconds": 420,
+        "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+        "way_ids_sha256": "78e4660861a8c2b193d5ff8e7f24f44e75c6b0caf418e05b5094885548880293",
+        "way_ids": [
+          "1293110953",
+          "1293110953",
+          "42928253",
+          "42928253",
+          "1388315723",
+          "1388315723",
+          "1293110954",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120"
+        ]
+      },
+      "return": {
+        "verification_method": "independent atan2 geometry length + published walking formula",
+        "metres": 686.1157628506438,
+        "seconds": 960,
+        "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+        "way_ids_sha256": "5f2be752c2df1749fb672287c27b288c6b3f679e96c7c44ceb93cd9dd3e176dc",
+        "way_ids": [
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "1388315721",
+          "1293110957",
+          "1293110957",
+          "1456700137",
+          "1456700137",
+          "1456700137",
+          "1456700137",
+          "1456700137",
+          "42936320",
+          "42936320",
+          "42936320",
+          "42936319",
+          "42936319",
+          "42936319",
+          "42936319",
+          "42936319",
+          "42937242",
+          "42936194",
+          "42936194",
+          "42936194",
+          "42936194",
+          "42936194",
+          "1351545716",
+          "1351545716",
+          "42935961",
+          "42935961",
+          "42935961",
+          "42935961",
+          "42935961",
+          "42935961",
+          "42935961",
+          "42944983",
+          "42944983"
+        ]
+      }
+    },
+    "right": {
+      "outbound": {
+        "verification_method": "independent atan2 geometry length + published walking formula",
+        "metres": 205.07964741014632,
+        "seconds": 420,
+        "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+        "way_ids_sha256": "78e4660861a8c2b193d5ff8e7f24f44e75c6b0caf418e05b5094885548880293",
+        "way_ids": [
+          "1293110953",
+          "1293110953",
+          "42928253",
+          "42928253",
+          "1388315723",
+          "1388315723",
+          "1293110954",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120"
+        ]
+      },
+      "return": {
+        "verification_method": "independent atan2 geometry length + published walking formula",
+        "metres": 686.1157628506438,
+        "seconds": 960,
+        "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+        "way_ids_sha256": "5f2be752c2df1749fb672287c27b288c6b3f679e96c7c44ceb93cd9dd3e176dc",
+        "way_ids": [
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "42935120",
+          "1388315721",
+          "1293110957",
+          "1293110957",
+          "1456700137",
+          "1456700137",
+          "1456700137",
+          "1456700137",
+          "1456700137",
+          "42936320",
+          "42936320",
+          "42936320",
+          "42936319",
+          "42936319",
+          "42936319",
+          "42936319",
+          "42936319",
+          "42937242",
+          "42936194",
+          "42936194",
+          "42936194",
+          "42936194",
+          "42936194",
+          "1351545716",
+          "1351545716",
+          "42935961",
+          "42935961",
+          "42935961",
+          "42935961",
+          "42935961",
+          "42935961",
+          "42935961",
+          "42944983",
+          "42944983"
+        ]
+      }
+    }
+  },
+  "appointment_inputs": {
+    "left": {
+      "origin_id": "zegama_center_stops",
+      "destination_id": "beasain_official_centre_anchor",
+      "date": "2026-09-29",
+      "duration_minutes": 20,
+      "appointment_time": "09:30"
+    },
+    "right": {
+      "origin_id": "zegama_center_stops",
+      "destination_id": "beasain_official_centre_anchor",
+      "date": "2026-09-29",
+      "duration_minutes": 20,
+      "appointment_time": "09:45"
+    }
+  },
+  "calculation": "8591 - 10691 = -2100 s",
+  "final_result": {
+    "signed_delta_s": -2100,
+    "absolute_delta_s": 2100
+  },
+  "status": "PASS"
+}

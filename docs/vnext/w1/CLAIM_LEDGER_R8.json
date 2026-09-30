@@ -1,0 +1,1524 @@
+{
+  "ledger_version": "r8.0",
+  "claims": [
+    {
+      "claim_id": "MAIN:total_s",
+      "scenario_id": "MAIN",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "total_s",
+      "value": 10691,
+      "unit": "second",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS",
+        "OSM",
+        "HEALTH_REGISTRY",
+        "MODEL",
+        "MODEL_DEFAULTS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/MAIN",
+      "transformation": "end_s - start_s = sum components",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "MAIN:total_s"
+    },
+    {
+      "claim_id": "MAIN:initial_wait_s",
+      "scenario_id": "MAIN",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "initial_wait_s",
+      "value": 180,
+      "unit": "second",
+      "classification": "modelled_with_assumption",
+      "source_refs": [
+        "MODEL_DEFAULTS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/MAIN",
+      "transformation": "boarding_margin_minutes * 60 when omitted",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "MAIN:initial_wait_s"
+    },
+    {
+      "claim_id": "MAIN:bus_out_s",
+      "scenario_id": "MAIN",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "bus_out_s",
+      "value": 1651,
+      "unit": "second",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/MAIN",
+      "transformation": "outbound arrival - departure",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "MAIN:bus_out_s"
+    },
+    {
+      "claim_id": "MAIN:walk_out_s",
+      "scenario_id": "MAIN",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "walk_out_s",
+      "value": 420,
+      "unit": "second",
+      "classification": "modelled_with_assumption",
+      "source_refs": [
+        "OSM",
+        "HEALTH_REGISTRY",
+        "MODEL"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/MAIN",
+      "transformation": "ceil(metres/50)*60+120",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "MAIN:walk_out_s"
+    },
+    {
+      "claim_id": "MAIN:preappointment_wait_s",
+      "scenario_id": "MAIN",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "preappointment_wait_s",
+      "value": 2572,
+      "unit": "second",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS",
+        "OSM",
+        "HEALTH_REGISTRY",
+        "MODEL",
+        "USER",
+        "MODEL_DEFAULTS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/MAIN",
+      "transformation": "appointment - arrival - walk_out",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "MAIN:preappointment_wait_s"
+    },
+    {
+      "claim_id": "MAIN:appointment_s",
+      "scenario_id": "MAIN",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "appointment_s",
+      "value": 1200,
+      "unit": "second",
+      "classification": "human_input",
+      "source_refs": [
+        "USER"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/MAIN",
+      "transformation": "duration_minutes * 60",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "MAIN:appointment_s"
+    },
+    {
+      "claim_id": "MAIN:walk_return_s",
+      "scenario_id": "MAIN",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "walk_return_s",
+      "value": 960,
+      "unit": "second",
+      "classification": "modelled_with_assumption",
+      "source_refs": [
+        "OSM",
+        "HEALTH_REGISTRY",
+        "MODEL"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/MAIN",
+      "transformation": "ceil(metres/50)*60+120",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "MAIN:walk_return_s"
+    },
+    {
+      "claim_id": "MAIN:return_wait_s",
+      "scenario_id": "MAIN",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "return_wait_s",
+      "value": 1430,
+      "unit": "second",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS",
+        "OSM",
+        "HEALTH_REGISTRY",
+        "MODEL",
+        "USER"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/MAIN",
+      "transformation": "return departure - appointment - duration - walk_return",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "MAIN:return_wait_s"
+    },
+    {
+      "claim_id": "MAIN:bus_return_s",
+      "scenario_id": "MAIN",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "bus_return_s",
+      "value": 2278,
+      "unit": "second",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/MAIN",
+      "transformation": "return arrival - departure",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "MAIN:bus_return_s"
+    },
+    {
+      "claim_id": "MAIN:return_slack_s",
+      "scenario_id": "MAIN",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "return_slack_s",
+      "value": 1250,
+      "unit": "second",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS",
+        "OSM",
+        "HEALTH_REGISTRY",
+        "MODEL",
+        "USER",
+        "MODEL_DEFAULTS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/MAIN",
+      "transformation": "return_wait_s - boarding_margin_s",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "MAIN:return_slack_s"
+    },
+    {
+      "claim_id": "MAIN:outbound_departure_time",
+      "scenario_id": "MAIN",
+      "entity": "GO01 scheduled journey",
+      "metric": "outbound_departure_time",
+      "value": "08:12:37",
+      "unit": "HH:MM:SS",
+      "classification": "direct_observation",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/MAIN/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "MAIN:selected_pair"
+    },
+    {
+      "claim_id": "MAIN:outbound_arrival_time",
+      "scenario_id": "MAIN",
+      "entity": "GO01 scheduled journey",
+      "metric": "outbound_arrival_time",
+      "value": "08:40:08",
+      "unit": "HH:MM:SS",
+      "classification": "direct_observation",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/MAIN/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "MAIN:selected_pair"
+    },
+    {
+      "claim_id": "MAIN:return_departure_time",
+      "scenario_id": "MAIN",
+      "entity": "GO01 scheduled journey",
+      "metric": "return_departure_time",
+      "value": "10:29:50",
+      "unit": "HH:MM:SS",
+      "classification": "direct_observation",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/MAIN/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "MAIN:selected_pair"
+    },
+    {
+      "claim_id": "MAIN:return_arrival_time",
+      "scenario_id": "MAIN",
+      "entity": "GO01 scheduled journey",
+      "metric": "return_arrival_time",
+      "value": "11:07:48",
+      "unit": "HH:MM:SS",
+      "classification": "direct_observation",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/MAIN/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "MAIN:selected_pair"
+    },
+    {
+      "claim_id": "MAIN:outbound_trip_id",
+      "scenario_id": "MAIN",
+      "entity": "GO01 scheduled journey",
+      "metric": "outbound_trip_id",
+      "value": "1_103_LJ_29400",
+      "unit": "identifier",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/MAIN/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "MAIN:selected_pair"
+    },
+    {
+      "claim_id": "MAIN:return_trip_id",
+      "scenario_id": "MAIN",
+      "entity": "GO01 scheduled journey",
+      "metric": "return_trip_id",
+      "value": "1_106_LJ_37200",
+      "unit": "identifier",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/MAIN/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "MAIN:selected_pair"
+    },
+    {
+      "claim_id": "MAIN:outbound_stop_id",
+      "scenario_id": "MAIN",
+      "entity": "GO01 scheduled journey",
+      "metric": "outbound_stop_id",
+      "value": "7219",
+      "unit": "identifier",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/MAIN/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "MAIN:selected_pair"
+    },
+    {
+      "claim_id": "MAIN:return_stop_id",
+      "scenario_id": "MAIN",
+      "entity": "GO01 scheduled journey",
+      "metric": "return_stop_id",
+      "value": "7218",
+      "unit": "identifier",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/MAIN/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "MAIN:selected_pair"
+    },
+    {
+      "claim_id": "VARIATION_TIME:total_s",
+      "scenario_id": "VARIATION_TIME",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "total_s",
+      "value": 8591,
+      "unit": "second",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS",
+        "OSM",
+        "HEALTH_REGISTRY",
+        "MODEL",
+        "MODEL_DEFAULTS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_TIME",
+      "transformation": "end_s - start_s = sum components",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "VARIATION_TIME:total_s"
+    },
+    {
+      "claim_id": "VARIATION_TIME:initial_wait_s",
+      "scenario_id": "VARIATION_TIME",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "initial_wait_s",
+      "value": 180,
+      "unit": "second",
+      "classification": "modelled_with_assumption",
+      "source_refs": [
+        "MODEL_DEFAULTS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_TIME",
+      "transformation": "boarding_margin_minutes * 60 when omitted",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "VARIATION_TIME:initial_wait_s"
+    },
+    {
+      "claim_id": "VARIATION_TIME:bus_out_s",
+      "scenario_id": "VARIATION_TIME",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "bus_out_s",
+      "value": 1769,
+      "unit": "second",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_TIME",
+      "transformation": "outbound arrival - departure",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "VARIATION_TIME:bus_out_s"
+    },
+    {
+      "claim_id": "VARIATION_TIME:walk_out_s",
+      "scenario_id": "VARIATION_TIME",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "walk_out_s",
+      "value": 420,
+      "unit": "second",
+      "classification": "modelled_with_assumption",
+      "source_refs": [
+        "OSM",
+        "HEALTH_REGISTRY",
+        "MODEL"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_TIME",
+      "transformation": "ceil(metres/50)*60+120",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "VARIATION_TIME:walk_out_s"
+    },
+    {
+      "claim_id": "VARIATION_TIME:preappointment_wait_s",
+      "scenario_id": "VARIATION_TIME",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "preappointment_wait_s",
+      "value": 1254,
+      "unit": "second",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS",
+        "OSM",
+        "HEALTH_REGISTRY",
+        "MODEL",
+        "USER",
+        "MODEL_DEFAULTS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_TIME",
+      "transformation": "appointment - arrival - walk_out",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "VARIATION_TIME:preappointment_wait_s"
+    },
+    {
+      "claim_id": "VARIATION_TIME:appointment_s",
+      "scenario_id": "VARIATION_TIME",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "appointment_s",
+      "value": 1200,
+      "unit": "second",
+      "classification": "human_input",
+      "source_refs": [
+        "USER"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_TIME",
+      "transformation": "duration_minutes * 60",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "VARIATION_TIME:appointment_s"
+    },
+    {
+      "claim_id": "VARIATION_TIME:walk_return_s",
+      "scenario_id": "VARIATION_TIME",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "walk_return_s",
+      "value": 960,
+      "unit": "second",
+      "classification": "modelled_with_assumption",
+      "source_refs": [
+        "OSM",
+        "HEALTH_REGISTRY",
+        "MODEL"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_TIME",
+      "transformation": "ceil(metres/50)*60+120",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "VARIATION_TIME:walk_return_s"
+    },
+    {
+      "claim_id": "VARIATION_TIME:return_wait_s",
+      "scenario_id": "VARIATION_TIME",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "return_wait_s",
+      "value": 530,
+      "unit": "second",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS",
+        "OSM",
+        "HEALTH_REGISTRY",
+        "MODEL",
+        "USER"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_TIME",
+      "transformation": "return departure - appointment - duration - walk_return",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "VARIATION_TIME:return_wait_s"
+    },
+    {
+      "claim_id": "VARIATION_TIME:bus_return_s",
+      "scenario_id": "VARIATION_TIME",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "bus_return_s",
+      "value": 2278,
+      "unit": "second",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_TIME",
+      "transformation": "return arrival - departure",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "VARIATION_TIME:bus_return_s"
+    },
+    {
+      "claim_id": "VARIATION_TIME:return_slack_s",
+      "scenario_id": "VARIATION_TIME",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "return_slack_s",
+      "value": 350,
+      "unit": "second",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS",
+        "OSM",
+        "HEALTH_REGISTRY",
+        "MODEL",
+        "USER",
+        "MODEL_DEFAULTS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_TIME",
+      "transformation": "return_wait_s - boarding_margin_s",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "VARIATION_TIME:return_slack_s"
+    },
+    {
+      "claim_id": "VARIATION_TIME:outbound_departure_time",
+      "scenario_id": "VARIATION_TIME",
+      "entity": "GO01 scheduled journey",
+      "metric": "outbound_departure_time",
+      "value": "08:47:37",
+      "unit": "HH:MM:SS",
+      "classification": "direct_observation",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_TIME/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "VARIATION_TIME:selected_pair"
+    },
+    {
+      "claim_id": "VARIATION_TIME:outbound_arrival_time",
+      "scenario_id": "VARIATION_TIME",
+      "entity": "GO01 scheduled journey",
+      "metric": "outbound_arrival_time",
+      "value": "09:17:06",
+      "unit": "HH:MM:SS",
+      "classification": "direct_observation",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_TIME/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "VARIATION_TIME:selected_pair"
+    },
+    {
+      "claim_id": "VARIATION_TIME:return_departure_time",
+      "scenario_id": "VARIATION_TIME",
+      "entity": "GO01 scheduled journey",
+      "metric": "return_departure_time",
+      "value": "10:29:50",
+      "unit": "HH:MM:SS",
+      "classification": "direct_observation",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_TIME/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "VARIATION_TIME:selected_pair"
+    },
+    {
+      "claim_id": "VARIATION_TIME:return_arrival_time",
+      "scenario_id": "VARIATION_TIME",
+      "entity": "GO01 scheduled journey",
+      "metric": "return_arrival_time",
+      "value": "11:07:48",
+      "unit": "HH:MM:SS",
+      "classification": "direct_observation",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_TIME/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "VARIATION_TIME:selected_pair"
+    },
+    {
+      "claim_id": "VARIATION_TIME:outbound_trip_id",
+      "scenario_id": "VARIATION_TIME",
+      "entity": "GO01 scheduled journey",
+      "metric": "outbound_trip_id",
+      "value": "1_101_LJ_31500",
+      "unit": "identifier",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_TIME/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "VARIATION_TIME:selected_pair"
+    },
+    {
+      "claim_id": "VARIATION_TIME:return_trip_id",
+      "scenario_id": "VARIATION_TIME",
+      "entity": "GO01 scheduled journey",
+      "metric": "return_trip_id",
+      "value": "1_106_LJ_37200",
+      "unit": "identifier",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_TIME/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "VARIATION_TIME:selected_pair"
+    },
+    {
+      "claim_id": "VARIATION_TIME:outbound_stop_id",
+      "scenario_id": "VARIATION_TIME",
+      "entity": "GO01 scheduled journey",
+      "metric": "outbound_stop_id",
+      "value": "7219",
+      "unit": "identifier",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_TIME/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "VARIATION_TIME:selected_pair"
+    },
+    {
+      "claim_id": "VARIATION_TIME:return_stop_id",
+      "scenario_id": "VARIATION_TIME",
+      "entity": "GO01 scheduled journey",
+      "metric": "return_stop_id",
+      "value": "7218",
+      "unit": "identifier",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_TIME/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "VARIATION_TIME:selected_pair"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:total_s",
+      "scenario_id": "VARIATION_DURATION",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "total_s",
+      "value": 10372,
+      "unit": "second",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS",
+        "OSM",
+        "HEALTH_REGISTRY",
+        "MODEL",
+        "MODEL_DEFAULTS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_DURATION",
+      "transformation": "end_s - start_s = sum components",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "VARIATION_DURATION:total_s"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:initial_wait_s",
+      "scenario_id": "VARIATION_DURATION",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "initial_wait_s",
+      "value": 180,
+      "unit": "second",
+      "classification": "modelled_with_assumption",
+      "source_refs": [
+        "MODEL_DEFAULTS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_DURATION",
+      "transformation": "boarding_margin_minutes * 60 when omitted",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "VARIATION_DURATION:initial_wait_s"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:bus_out_s",
+      "scenario_id": "VARIATION_DURATION",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "bus_out_s",
+      "value": 1769,
+      "unit": "second",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_DURATION",
+      "transformation": "outbound arrival - departure",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "VARIATION_DURATION:bus_out_s"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:walk_out_s",
+      "scenario_id": "VARIATION_DURATION",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "walk_out_s",
+      "value": 420,
+      "unit": "second",
+      "classification": "modelled_with_assumption",
+      "source_refs": [
+        "OSM",
+        "HEALTH_REGISTRY",
+        "MODEL"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_DURATION",
+      "transformation": "ceil(metres/50)*60+120",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "VARIATION_DURATION:walk_out_s"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:preappointment_wait_s",
+      "scenario_id": "VARIATION_DURATION",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "preappointment_wait_s",
+      "value": 1254,
+      "unit": "second",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS",
+        "OSM",
+        "HEALTH_REGISTRY",
+        "MODEL",
+        "USER",
+        "MODEL_DEFAULTS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_DURATION",
+      "transformation": "appointment - arrival - walk_out",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "VARIATION_DURATION:preappointment_wait_s"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:appointment_s",
+      "scenario_id": "VARIATION_DURATION",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "appointment_s",
+      "value": 1560,
+      "unit": "second",
+      "classification": "human_input",
+      "source_refs": [
+        "USER"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_DURATION",
+      "transformation": "duration_minutes * 60",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "VARIATION_DURATION:appointment_s"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:walk_return_s",
+      "scenario_id": "VARIATION_DURATION",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "walk_return_s",
+      "value": 960,
+      "unit": "second",
+      "classification": "modelled_with_assumption",
+      "source_refs": [
+        "OSM",
+        "HEALTH_REGISTRY",
+        "MODEL"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_DURATION",
+      "transformation": "ceil(metres/50)*60+120",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "VARIATION_DURATION:walk_return_s"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:return_wait_s",
+      "scenario_id": "VARIATION_DURATION",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "return_wait_s",
+      "value": 1951,
+      "unit": "second",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS",
+        "OSM",
+        "HEALTH_REGISTRY",
+        "MODEL",
+        "USER"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_DURATION",
+      "transformation": "return departure - appointment - duration - walk_return",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "VARIATION_DURATION:return_wait_s"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:bus_return_s",
+      "scenario_id": "VARIATION_DURATION",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "bus_return_s",
+      "value": 2278,
+      "unit": "second",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_DURATION",
+      "transformation": "return arrival - departure",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "VARIATION_DURATION:bus_return_s"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:return_slack_s",
+      "scenario_id": "VARIATION_DURATION",
+      "entity": "Zegama → Ambulatorio de Beasain → Zegama",
+      "metric": "return_slack_s",
+      "value": 1771,
+      "unit": "second",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS",
+        "OSM",
+        "HEALTH_REGISTRY",
+        "MODEL",
+        "USER",
+        "MODEL_DEFAULTS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_DURATION",
+      "transformation": "return_wait_s - boarding_margin_s",
+      "assumptions": [
+        "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+        "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+      ],
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ],
+      "verification_method": "raw GTFS oracle + independent walking geometry/formula",
+      "dag_node_id": "VARIATION_DURATION:return_slack_s"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:outbound_departure_time",
+      "scenario_id": "VARIATION_DURATION",
+      "entity": "GO01 scheduled journey",
+      "metric": "outbound_departure_time",
+      "value": "08:47:37",
+      "unit": "HH:MM:SS",
+      "classification": "direct_observation",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_DURATION/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "VARIATION_DURATION:selected_pair"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:outbound_arrival_time",
+      "scenario_id": "VARIATION_DURATION",
+      "entity": "GO01 scheduled journey",
+      "metric": "outbound_arrival_time",
+      "value": "09:17:06",
+      "unit": "HH:MM:SS",
+      "classification": "direct_observation",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_DURATION/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "VARIATION_DURATION:selected_pair"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:return_departure_time",
+      "scenario_id": "VARIATION_DURATION",
+      "entity": "GO01 scheduled journey",
+      "metric": "return_departure_time",
+      "value": "10:59:31",
+      "unit": "HH:MM:SS",
+      "classification": "direct_observation",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_DURATION/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "VARIATION_DURATION:selected_pair"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:return_arrival_time",
+      "scenario_id": "VARIATION_DURATION",
+      "entity": "GO01 scheduled journey",
+      "metric": "return_arrival_time",
+      "value": "11:37:29",
+      "unit": "HH:MM:SS",
+      "classification": "direct_observation",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_DURATION/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "VARIATION_DURATION:selected_pair"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:outbound_trip_id",
+      "scenario_id": "VARIATION_DURATION",
+      "entity": "GO01 scheduled journey",
+      "metric": "outbound_trip_id",
+      "value": "1_101_LJ_31500",
+      "unit": "identifier",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_DURATION/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "VARIATION_DURATION:selected_pair"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:return_trip_id",
+      "scenario_id": "VARIATION_DURATION",
+      "entity": "GO01 scheduled journey",
+      "metric": "return_trip_id",
+      "value": "1_102_LJ_38700",
+      "unit": "identifier",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_DURATION/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "VARIATION_DURATION:selected_pair"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:outbound_stop_id",
+      "scenario_id": "VARIATION_DURATION",
+      "entity": "GO01 scheduled journey",
+      "metric": "outbound_stop_id",
+      "value": "7219",
+      "unit": "identifier",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_DURATION/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "VARIATION_DURATION:selected_pair"
+    },
+    {
+      "claim_id": "VARIATION_DURATION:return_stop_id",
+      "scenario_id": "VARIATION_DURATION",
+      "entity": "GO01 scheduled journey",
+      "metric": "return_stop_id",
+      "value": "7218",
+      "unit": "identifier",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/cases/VARIATION_DURATION/independent_oracle/gtfs/rows",
+      "transformation": "selected raw GTFS row field",
+      "assumptions": [
+        "Static scheduled GTFS; timepoint=0"
+      ],
+      "limitations": [
+        "Not realtime; selected within bounded direct-search scenario"
+      ],
+      "verification_method": "exact raw CSV row match",
+      "dag_node_id": "VARIATION_DURATION:selected_pair"
+    },
+    {
+      "claim_id": "R8-DELTA-ZEGAMA-0930-0945",
+      "scenario_id": "MAIN_vs_VARIATION_TIME",
+      "entity": "Zegama canonical comparison",
+      "metric": "comparison_delta_s",
+      "value": -2100,
+      "unit": "second",
+      "classification": "derived_exact",
+      "source_refs": [
+        "GTFS",
+        "OSM",
+        "HEALTH_REGISTRY",
+        "MODEL",
+        "USER",
+        "MODEL_DEFAULTS"
+      ],
+      "reference_period": "2026-09-29",
+      "data_ref": "DELIVERY_EVIDENCE_R8.json#/directly_contrasted_claim",
+      "transformation": "VARIATION_TIME.total_s - MAIN.total_s",
+      "assumptions": [
+        "50 m/min",
+        "120 s per complete directed walking link",
+        "boarding margin default 3 min",
+        "arrival margin default 10 min"
+      ],
+      "limitations": [
+        "Scenario delta, not causality or guaranteed real travel saving"
+      ],
+      "verification_method": "two independent raw-data reconstructions then subtraction",
+      "dag_node_id": "COMPARE:delta_s"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "semantics_version": "r8.0",
+  "statuses": [
+    {
+      "status": "ok",
+      "technical_meaning": "A valid itinerary exists within the fixed snapshot and constraints.",
+      "what_is_known": "Selected scheduled/modelled result is known.",
+      "what_is_not_known": "Real operation, punctuality, entrance and appointment availability are not known.",
+      "allowed_user_facing_meaning": "Se encontró un itinerario programado/modelado en este alcance.",
+      "forbidden_inference": "Guaranteed real journey.",
+      "safe_recovery": "Show sources, date and limitations.",
+      "fixture_request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_official_centre_anchor",
+        "date": "2026-09-29",
+        "duration_minutes": 20,
+        "appointment_time": "09:30"
+      },
+      "fixture_result": {
+        "status": "ok",
+        "error": null
+      }
+    },
+    {
+      "status": "no_feasible_journey",
+      "technical_meaning": "No pair meets all modeled constraints in the searched snapshot.",
+      "what_is_known": "Search completed within catalog/stops/constraints.",
+      "what_is_not_known": "It does not prove that transport does not exist.",
+      "allowed_user_facing_meaning": "No se encontró una pareja viable dentro del snapshot, paradas y restricciones modeladas.",
+      "forbidden_inference": "No existe transporte.",
+      "safe_recovery": "Change supported inputs or consult a broader planner.",
+      "fixture_request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_official_centre_anchor",
+        "date": "2026-09-29",
+        "duration_minutes": 20,
+        "appointment_time": "22:00"
+      },
+      "fixture_result": {
+        "status": "no_feasible_journey",
+        "error": {
+          "code": "no_pair_in_complete_direct_search",
+          "message": "Sin pareja viable en paradas/red admitidas"
+        }
+      }
+    },
+    {
+      "status": "unknown",
+      "technical_meaning": "The provider lacks validated evidence for the request, notably another date.",
+      "what_is_known": "Requested value is outside validated evidence.",
+      "what_is_not_known": "It does not prove no buses run.",
+      "allowed_user_facing_meaning": "La fecha no está validada por este snapshot.",
+      "forbidden_inference": "No hay autobuses ese día.",
+      "safe_recovery": "Obtain a validated snapshot; never substitute 2026-09-29 silently.",
+      "fixture_request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_official_centre_anchor",
+        "date": "2026-09-30",
+        "duration_minutes": 20,
+        "appointment_time": "09:30"
+      },
+      "fixture_result": {
+        "status": "unknown",
+        "error": {
+          "code": "date_not_validated",
+          "message": "Fecha no validada"
+        }
+      }
+    },
+    {
+      "status": "unsupported",
+      "technical_meaning": "The request is outside declared catalog/capability.",
+      "what_is_known": "The provider recognizes the request but cannot model it.",
+      "what_is_not_known": "It is not an infrastructure failure.",
+      "allowed_user_facing_meaning": "La petición queda fuera del alcance disponible.",
+      "forbidden_inference": "El sistema está caído.",
+      "safe_recovery": "Use catalog IDs or obtain new scoped evidence.",
+      "fixture_request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "outside_catalog",
+        "date": "2026-09-29",
+        "duration_minutes": 20,
+        "appointment_time": "09:30"
+      },
+      "fixture_result": {
+        "status": "unsupported",
+        "error": {
+          "code": "catalog_scope",
+          "message": "Origen o destino fuera del catálogo sanitario"
+        }
+      }
+    },
+    {
+      "status": "error",
+      "technical_meaning": "The request structure/value is invalid.",
+      "what_is_known": "Validation failed before a journey claim.",
+      "what_is_not_known": "It is not an HTTP/network timeout.",
+      "allowed_user_facing_meaning": "La petición no tiene un formato o valor válido.",
+      "forbidden_inference": "Fallo de red o ausencia de servicio.",
+      "safe_recovery": "Correct the input and retry.",
+      "fixture_request": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_official_centre_anchor",
+        "date": "2026-09-29",
+        "duration_minutes": "20",
+        "appointment_time": "09:30"
+      },
+      "fixture_result": {
+        "status": "error",
+        "error": {
+          "code": "invalid_request",
+          "message": "duration_minutes debe ser entero"
+        }
+      }
+    }
+  ],
+  "relative_date_policy": {
+    "natural_language_owner": "W2 agent, before calling W1",
+    "examples": [
+      "hoy",
+      "mañana",
+      "este viernes"
+    ],
+    "rule": "Resolve to a real date. If it is not 2026-09-29, pass it unchanged; never silently substitute the validated date.",
+    "expected_w1_status_for_other_date": "unknown"
+  }
+}

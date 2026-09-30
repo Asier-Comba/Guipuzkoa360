@@ -1,0 +1,97 @@
+{
+  "manifest_version": "r8.0",
+  "runtime_inclusion": false,
+  "runtime_package_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+  "files": [
+    {
+      "path": "docs/vnext/w1/CURRENT.json",
+      "sha256": "38078be481bc982febaca332df9122fd54c86c175e13d9e3dd5f408254a15dff",
+      "bytes": 987,
+      "role": "pin"
+    },
+    {
+      "path": "docs/vnext/w1/RUNTIME_MANIFEST_R6.json",
+      "sha256": "4968d003e225db03d7fba57c5fb72088332a4246c2a266f1fc3843deacef5940",
+      "bytes": 5867,
+      "role": "runtime_manifest"
+    },
+    {
+      "path": "datos_preparados/movilidad/operational_catalog_r6.json",
+      "sha256": "c7bd3cc8ffe50956ce839bec0ef90a13578160a4d5b4053b09673d2dc4c4ec17",
+      "bytes": 2651,
+      "role": "catalog"
+    },
+    {
+      "path": "datos_preparados/movilidad/consumer_labels_r7.json",
+      "sha256": "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799",
+      "bytes": 3152,
+      "role": "labels"
+    },
+    {
+      "path": "docs/vnext/w1/CONSUMER_CONFORMANCE_R7.json",
+      "sha256": "4eb364265710336ecdd86b2c541953f130f3b0a80bbefc9cf1f27904bac55dea",
+      "bytes": 286413,
+      "role": "conformance"
+    },
+    {
+      "path": "docs/vnext/w1/CONSUMER_CHECKLIST_R7.json",
+      "sha256": "9448ea317eb236bf744fdf2641691ea83da45fca6ad2ee532257893c07a48e36",
+      "bytes": 2028,
+      "role": "consumer_checklist"
+    },
+    {
+      "path": "docs/vnext/w1/DELIVERY_EVIDENCE_R8.json",
+      "sha256": "3b4813557b5738a676b256ea76ba39c545e26617121aebb56020e6dc3678b5f8",
+      "bytes": 259876,
+      "role": "canonical_evidence"
+    },
+    {
+      "path": "docs/vnext/w1/CLAIM_LEDGER_R8.json",
+      "sha256": "c1e16171264edf173b55e720b567e592b80aaf32ba384e591ac5c53ba9b06be8",
+      "bytes": 65772,
+      "role": "claim_ledger"
+    },
+    {
+      "path": "docs/vnext/w1/DERIVATION_DAG_R8.json",
+      "sha256": "46229db654763943e41028e26821d2b916ea27a5b981967f6b962b7473926dbf",
+      "bytes": 19032,
+      "role": "derivation_dag"
+    },
+    {
+      "path": "docs/vnext/w1/SOURCE_LEDGER_R8.json",
+      "sha256": "beca2626952c8a0a2ee75bcf17c20c879e1b508e77229d2dd851a5bfcb886f50",
+      "bytes": 6741,
+      "role": "source_ledger"
+    },
+    {
+      "path": "docs/vnext/w1/MOBILITY_ANSWERABILITY_R8.json",
+      "sha256": "c2c8039b0bc7bfc324925ba32bd1e618af7d65b6537738121d5606d1bffd5b91",
+      "bytes": 10156,
+      "role": "answerability"
+    },
+    {
+      "path": "docs/vnext/w1/STATUS_SEMANTICS_R8.json",
+      "sha256": "2a5f8158c11ef8f348ffa89749cbbd4764c36a1f2c10df0300b296c4f5402c27",
+      "bytes": 5018,
+      "role": "status_semantics"
+    },
+    {
+      "path": "docs/vnext/w1/TIMELINE_EVIDENCE_R8.json",
+      "sha256": "73bdabbe8077bbbbc6a26d1d4be6b325ce21a8c4c1563ed35647a97256ab4cf3",
+      "bytes": 7389,
+      "role": "timeline"
+    },
+    {
+      "path": "docs/vnext/w1/RAW_DATA_CONTRAST_R8.json",
+      "sha256": "cb2bae5eb4512fb940f7c0527985f4b48cf0f05624159426237b8ca158a42b09",
+      "bytes": 6473,
+      "role": "raw_contrast"
+    },
+    {
+      "path": "docs/vnext/w1/CONSUMER_COST_GUIDANCE_R8.json",
+      "sha256": "602c9cc544c41bde2c51d76e016da17b552c55c4cdbd5486b7068d8cf4382178",
+      "bytes": 2492,
+      "role": "cost_guidance"
+    }
+  ]
+}

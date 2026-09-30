@@ -1,0 +1,778 @@
+{
+  "dag_version": "r8.0",
+  "runtime_finding": "W1-R7-F01",
+  "runtime_status": "RUNTIME_FINDING_RETAINED",
+  "resolution": "EXPLANATORY_DAG_RESOLVED_EXTERNALLY",
+  "nodes": [
+    {
+      "id": "src:GTFS",
+      "kind": "source_or_model",
+      "label": "Static scheduled GTFS"
+    },
+    {
+      "id": "src:OSM",
+      "kind": "source_or_model",
+      "label": "OSM path geometry"
+    },
+    {
+      "id": "src:HEALTH",
+      "kind": "source_or_model",
+      "label": "Official health-centre anchor"
+    },
+    {
+      "id": "model:walking",
+      "kind": "source_or_model",
+      "label": "50 m/min +120 s walking model"
+    },
+    {
+      "id": "model:defaults",
+      "kind": "source_or_model",
+      "label": "Provider defaults"
+    },
+    {
+      "id": "MAIN:input:origin",
+      "kind": "human_input",
+      "label": "origin"
+    },
+    {
+      "id": "MAIN:input:date",
+      "kind": "human_input",
+      "label": "date"
+    },
+    {
+      "id": "MAIN:input:appointment_time",
+      "kind": "human_input",
+      "label": "appointment_time"
+    },
+    {
+      "id": "MAIN:input:duration_minutes",
+      "kind": "human_input",
+      "label": "duration_minutes"
+    },
+    {
+      "id": "MAIN:selected_pair",
+      "kind": "derived",
+      "label": "Selected outbound/return GTFS pair"
+    },
+    {
+      "id": "MAIN:walk_out_s",
+      "kind": "modelled",
+      "label": "Walking seconds"
+    },
+    {
+      "id": "MAIN:walk_return_s",
+      "kind": "modelled",
+      "label": "Walking seconds"
+    },
+    {
+      "id": "MAIN:initial_wait_s",
+      "kind": "modelled",
+      "label": "Initial boarding margin"
+    },
+    {
+      "id": "MAIN:bus_out_s",
+      "kind": "derived",
+      "label": "Outbound vehicle seconds"
+    },
+    {
+      "id": "MAIN:preappointment_wait_s",
+      "kind": "derived",
+      "label": "Wait before appointment"
+    },
+    {
+      "id": "MAIN:appointment_s",
+      "kind": "derived",
+      "label": "Hypothetical appointment duration"
+    },
+    {
+      "id": "MAIN:return_wait_s",
+      "kind": "derived",
+      "label": "Wait after return walk including boarding margin"
+    },
+    {
+      "id": "MAIN:bus_return_s",
+      "kind": "derived",
+      "label": "Return vehicle seconds"
+    },
+    {
+      "id": "MAIN:return_slack_s",
+      "kind": "derived",
+      "label": "Return wait minus boarding margin"
+    },
+    {
+      "id": "MAIN:total_s",
+      "kind": "derived",
+      "label": "Whole journey total"
+    },
+    {
+      "id": "VARIATION_TIME:input:origin",
+      "kind": "human_input",
+      "label": "origin"
+    },
+    {
+      "id": "VARIATION_TIME:input:date",
+      "kind": "human_input",
+      "label": "date"
+    },
+    {
+      "id": "VARIATION_TIME:input:appointment_time",
+      "kind": "human_input",
+      "label": "appointment_time"
+    },
+    {
+      "id": "VARIATION_TIME:input:duration_minutes",
+      "kind": "human_input",
+      "label": "duration_minutes"
+    },
+    {
+      "id": "VARIATION_TIME:selected_pair",
+      "kind": "derived",
+      "label": "Selected outbound/return GTFS pair"
+    },
+    {
+      "id": "VARIATION_TIME:walk_out_s",
+      "kind": "modelled",
+      "label": "Walking seconds"
+    },
+    {
+      "id": "VARIATION_TIME:walk_return_s",
+      "kind": "modelled",
+      "label": "Walking seconds"
+    },
+    {
+      "id": "VARIATION_TIME:initial_wait_s",
+      "kind": "modelled",
+      "label": "Initial boarding margin"
+    },
+    {
+      "id": "VARIATION_TIME:bus_out_s",
+      "kind": "derived",
+      "label": "Outbound vehicle seconds"
+    },
+    {
+      "id": "VARIATION_TIME:preappointment_wait_s",
+      "kind": "derived",
+      "label": "Wait before appointment"
+    },
+    {
+      "id": "VARIATION_TIME:appointment_s",
+      "kind": "derived",
+      "label": "Hypothetical appointment duration"
+    },
+    {
+      "id": "VARIATION_TIME:return_wait_s",
+      "kind": "derived",
+      "label": "Wait after return walk including boarding margin"
+    },
+    {
+      "id": "VARIATION_TIME:bus_return_s",
+      "kind": "derived",
+      "label": "Return vehicle seconds"
+    },
+    {
+      "id": "VARIATION_TIME:return_slack_s",
+      "kind": "derived",
+      "label": "Return wait minus boarding margin"
+    },
+    {
+      "id": "VARIATION_TIME:total_s",
+      "kind": "derived",
+      "label": "Whole journey total"
+    },
+    {
+      "id": "VARIATION_DURATION:input:origin",
+      "kind": "human_input",
+      "label": "origin"
+    },
+    {
+      "id": "VARIATION_DURATION:input:date",
+      "kind": "human_input",
+      "label": "date"
+    },
+    {
+      "id": "VARIATION_DURATION:input:appointment_time",
+      "kind": "human_input",
+      "label": "appointment_time"
+    },
+    {
+      "id": "VARIATION_DURATION:input:duration_minutes",
+      "kind": "human_input",
+      "label": "duration_minutes"
+    },
+    {
+      "id": "VARIATION_DURATION:selected_pair",
+      "kind": "derived",
+      "label": "Selected outbound/return GTFS pair"
+    },
+    {
+      "id": "VARIATION_DURATION:walk_out_s",
+      "kind": "modelled",
+      "label": "Walking seconds"
+    },
+    {
+      "id": "VARIATION_DURATION:walk_return_s",
+      "kind": "modelled",
+      "label": "Walking seconds"
+    },
+    {
+      "id": "VARIATION_DURATION:initial_wait_s",
+      "kind": "modelled",
+      "label": "Initial boarding margin"
+    },
+    {
+      "id": "VARIATION_DURATION:bus_out_s",
+      "kind": "derived",
+      "label": "Outbound vehicle seconds"
+    },
+    {
+      "id": "VARIATION_DURATION:preappointment_wait_s",
+      "kind": "derived",
+      "label": "Wait before appointment"
+    },
+    {
+      "id": "VARIATION_DURATION:appointment_s",
+      "kind": "derived",
+      "label": "Hypothetical appointment duration"
+    },
+    {
+      "id": "VARIATION_DURATION:return_wait_s",
+      "kind": "derived",
+      "label": "Wait after return walk including boarding margin"
+    },
+    {
+      "id": "VARIATION_DURATION:bus_return_s",
+      "kind": "derived",
+      "label": "Return vehicle seconds"
+    },
+    {
+      "id": "VARIATION_DURATION:return_slack_s",
+      "kind": "derived",
+      "label": "Return wait minus boarding margin"
+    },
+    {
+      "id": "VARIATION_DURATION:total_s",
+      "kind": "derived",
+      "label": "Whole journey total"
+    },
+    {
+      "id": "COMPARE:delta_s",
+      "kind": "derived",
+      "label": "VARIATION_TIME total minus MAIN total"
+    }
+  ],
+  "edges": [
+    {
+      "from": "src:GTFS",
+      "to": "MAIN:selected_pair",
+      "operation": "SELECTS"
+    },
+    {
+      "from": "MAIN:input:origin",
+      "to": "MAIN:selected_pair",
+      "operation": "SELECTS"
+    },
+    {
+      "from": "MAIN:input:date",
+      "to": "MAIN:selected_pair",
+      "operation": "SELECTS"
+    },
+    {
+      "from": "MAIN:input:appointment_time",
+      "to": "MAIN:selected_pair",
+      "operation": "SELECTS"
+    },
+    {
+      "from": "MAIN:input:duration_minutes",
+      "to": "MAIN:selected_pair",
+      "operation": "SELECTS"
+    },
+    {
+      "from": "model:defaults",
+      "to": "MAIN:selected_pair",
+      "operation": "SELECTS"
+    },
+    {
+      "from": "src:OSM",
+      "to": "MAIN:walk_out_s",
+      "operation": "USES"
+    },
+    {
+      "from": "src:HEALTH",
+      "to": "MAIN:walk_out_s",
+      "operation": "USES"
+    },
+    {
+      "from": "model:walking",
+      "to": "MAIN:walk_out_s",
+      "operation": "USES"
+    },
+    {
+      "from": "src:OSM",
+      "to": "MAIN:walk_return_s",
+      "operation": "USES"
+    },
+    {
+      "from": "src:HEALTH",
+      "to": "MAIN:walk_return_s",
+      "operation": "USES"
+    },
+    {
+      "from": "model:walking",
+      "to": "MAIN:walk_return_s",
+      "operation": "USES"
+    },
+    {
+      "from": "model:defaults",
+      "to": "MAIN:initial_wait_s",
+      "operation": "DERIVES"
+    },
+    {
+      "from": "src:GTFS",
+      "to": "MAIN:bus_out_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "src:GTFS",
+      "to": "MAIN:bus_return_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "MAIN:walk_out_s",
+      "to": "MAIN:preappointment_wait_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "src:GTFS",
+      "to": "MAIN:preappointment_wait_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "MAIN:input:appointment_time",
+      "to": "MAIN:preappointment_wait_s",
+      "operation": "BOUNDS"
+    },
+    {
+      "from": "MAIN:input:duration_minutes",
+      "to": "MAIN:appointment_s",
+      "operation": "DERIVES"
+    },
+    {
+      "from": "MAIN:walk_return_s",
+      "to": "MAIN:return_wait_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "src:GTFS",
+      "to": "MAIN:return_wait_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "MAIN:input:appointment_time",
+      "to": "MAIN:return_wait_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "MAIN:input:duration_minutes",
+      "to": "MAIN:return_wait_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "MAIN:return_wait_s",
+      "to": "MAIN:return_slack_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "model:defaults",
+      "to": "MAIN:return_slack_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "MAIN:walk_out_s",
+      "to": "MAIN:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "MAIN:walk_return_s",
+      "to": "MAIN:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "MAIN:initial_wait_s",
+      "to": "MAIN:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "MAIN:bus_out_s",
+      "to": "MAIN:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "MAIN:preappointment_wait_s",
+      "to": "MAIN:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "MAIN:appointment_s",
+      "to": "MAIN:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "MAIN:return_wait_s",
+      "to": "MAIN:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "MAIN:bus_return_s",
+      "to": "MAIN:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "src:GTFS",
+      "to": "VARIATION_TIME:selected_pair",
+      "operation": "SELECTS"
+    },
+    {
+      "from": "VARIATION_TIME:input:origin",
+      "to": "VARIATION_TIME:selected_pair",
+      "operation": "SELECTS"
+    },
+    {
+      "from": "VARIATION_TIME:input:date",
+      "to": "VARIATION_TIME:selected_pair",
+      "operation": "SELECTS"
+    },
+    {
+      "from": "VARIATION_TIME:input:appointment_time",
+      "to": "VARIATION_TIME:selected_pair",
+      "operation": "SELECTS"
+    },
+    {
+      "from": "VARIATION_TIME:input:duration_minutes",
+      "to": "VARIATION_TIME:selected_pair",
+      "operation": "SELECTS"
+    },
+    {
+      "from": "model:defaults",
+      "to": "VARIATION_TIME:selected_pair",
+      "operation": "SELECTS"
+    },
+    {
+      "from": "src:OSM",
+      "to": "VARIATION_TIME:walk_out_s",
+      "operation": "USES"
+    },
+    {
+      "from": "src:HEALTH",
+      "to": "VARIATION_TIME:walk_out_s",
+      "operation": "USES"
+    },
+    {
+      "from": "model:walking",
+      "to": "VARIATION_TIME:walk_out_s",
+      "operation": "USES"
+    },
+    {
+      "from": "src:OSM",
+      "to": "VARIATION_TIME:walk_return_s",
+      "operation": "USES"
+    },
+    {
+      "from": "src:HEALTH",
+      "to": "VARIATION_TIME:walk_return_s",
+      "operation": "USES"
+    },
+    {
+      "from": "model:walking",
+      "to": "VARIATION_TIME:walk_return_s",
+      "operation": "USES"
+    },
+    {
+      "from": "model:defaults",
+      "to": "VARIATION_TIME:initial_wait_s",
+      "operation": "DERIVES"
+    },
+    {
+      "from": "src:GTFS",
+      "to": "VARIATION_TIME:bus_out_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "src:GTFS",
+      "to": "VARIATION_TIME:bus_return_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "VARIATION_TIME:walk_out_s",
+      "to": "VARIATION_TIME:preappointment_wait_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "src:GTFS",
+      "to": "VARIATION_TIME:preappointment_wait_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "VARIATION_TIME:input:appointment_time",
+      "to": "VARIATION_TIME:preappointment_wait_s",
+      "operation": "BOUNDS"
+    },
+    {
+      "from": "VARIATION_TIME:input:duration_minutes",
+      "to": "VARIATION_TIME:appointment_s",
+      "operation": "DERIVES"
+    },
+    {
+      "from": "VARIATION_TIME:walk_return_s",
+      "to": "VARIATION_TIME:return_wait_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "src:GTFS",
+      "to": "VARIATION_TIME:return_wait_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "VARIATION_TIME:input:appointment_time",
+      "to": "VARIATION_TIME:return_wait_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "VARIATION_TIME:input:duration_minutes",
+      "to": "VARIATION_TIME:return_wait_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "VARIATION_TIME:return_wait_s",
+      "to": "VARIATION_TIME:return_slack_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "model:defaults",
+      "to": "VARIATION_TIME:return_slack_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "VARIATION_TIME:walk_out_s",
+      "to": "VARIATION_TIME:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "VARIATION_TIME:walk_return_s",
+      "to": "VARIATION_TIME:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "VARIATION_TIME:initial_wait_s",
+      "to": "VARIATION_TIME:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "VARIATION_TIME:bus_out_s",
+      "to": "VARIATION_TIME:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "VARIATION_TIME:preappointment_wait_s",
+      "to": "VARIATION_TIME:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "VARIATION_TIME:appointment_s",
+      "to": "VARIATION_TIME:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "VARIATION_TIME:return_wait_s",
+      "to": "VARIATION_TIME:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "VARIATION_TIME:bus_return_s",
+      "to": "VARIATION_TIME:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "src:GTFS",
+      "to": "VARIATION_DURATION:selected_pair",
+      "operation": "SELECTS"
+    },
+    {
+      "from": "VARIATION_DURATION:input:origin",
+      "to": "VARIATION_DURATION:selected_pair",
+      "operation": "SELECTS"
+    },
+    {
+      "from": "VARIATION_DURATION:input:date",
+      "to": "VARIATION_DURATION:selected_pair",
+      "operation": "SELECTS"
+    },
+    {
+      "from": "VARIATION_DURATION:input:appointment_time",
+      "to": "VARIATION_DURATION:selected_pair",
+      "operation": "SELECTS"
+    },
+    {
+      "from": "VARIATION_DURATION:input:duration_minutes",
+      "to": "VARIATION_DURATION:selected_pair",
+      "operation": "SELECTS"
+    },
+    {
+      "from": "model:defaults",
+      "to": "VARIATION_DURATION:selected_pair",
+      "operation": "SELECTS"
+    },
+    {
+      "from": "src:OSM",
+      "to": "VARIATION_DURATION:walk_out_s",
+      "operation": "USES"
+    },
+    {
+      "from": "src:HEALTH",
+      "to": "VARIATION_DURATION:walk_out_s",
+      "operation": "USES"
+    },
+    {
+      "from": "model:walking",
+      "to": "VARIATION_DURATION:walk_out_s",
+      "operation": "USES"
+    },
+    {
+      "from": "src:OSM",
+      "to": "VARIATION_DURATION:walk_return_s",
+      "operation": "USES"
+    },
+    {
+      "from": "src:HEALTH",
+      "to": "VARIATION_DURATION:walk_return_s",
+      "operation": "USES"
+    },
+    {
+      "from": "model:walking",
+      "to": "VARIATION_DURATION:walk_return_s",
+      "operation": "USES"
+    },
+    {
+      "from": "model:defaults",
+      "to": "VARIATION_DURATION:initial_wait_s",
+      "operation": "DERIVES"
+    },
+    {
+      "from": "src:GTFS",
+      "to": "VARIATION_DURATION:bus_out_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "src:GTFS",
+      "to": "VARIATION_DURATION:bus_return_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "VARIATION_DURATION:walk_out_s",
+      "to": "VARIATION_DURATION:preappointment_wait_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "src:GTFS",
+      "to": "VARIATION_DURATION:preappointment_wait_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "VARIATION_DURATION:input:appointment_time",
+      "to": "VARIATION_DURATION:preappointment_wait_s",
+      "operation": "BOUNDS"
+    },
+    {
+      "from": "VARIATION_DURATION:input:duration_minutes",
+      "to": "VARIATION_DURATION:appointment_s",
+      "operation": "DERIVES"
+    },
+    {
+      "from": "VARIATION_DURATION:walk_return_s",
+      "to": "VARIATION_DURATION:return_wait_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "src:GTFS",
+      "to": "VARIATION_DURATION:return_wait_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "VARIATION_DURATION:input:appointment_time",
+      "to": "VARIATION_DURATION:return_wait_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "VARIATION_DURATION:input:duration_minutes",
+      "to": "VARIATION_DURATION:return_wait_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "VARIATION_DURATION:return_wait_s",
+      "to": "VARIATION_DURATION:return_slack_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "model:defaults",
+      "to": "VARIATION_DURATION:return_slack_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "VARIATION_DURATION:walk_out_s",
+      "to": "VARIATION_DURATION:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "VARIATION_DURATION:walk_return_s",
+      "to": "VARIATION_DURATION:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "VARIATION_DURATION:initial_wait_s",
+      "to": "VARIATION_DURATION:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "VARIATION_DURATION:bus_out_s",
+      "to": "VARIATION_DURATION:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "VARIATION_DURATION:preappointment_wait_s",
+      "to": "VARIATION_DURATION:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "VARIATION_DURATION:appointment_s",
+      "to": "VARIATION_DURATION:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "VARIATION_DURATION:return_wait_s",
+      "to": "VARIATION_DURATION:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "VARIATION_DURATION:bus_return_s",
+      "to": "VARIATION_DURATION:total_s",
+      "operation": "ADDS"
+    },
+    {
+      "from": "MAIN:total_s",
+      "to": "COMPARE:delta_s",
+      "operation": "SUBTRACTS"
+    },
+    {
+      "from": "VARIATION_TIME:total_s",
+      "to": "COMPARE:delta_s",
+      "operation": "SUBTRACTS"
+    }
+  ],
+  "formulae": {
+    "initial_wait": "boarding_margin_s",
+    "pre_appointment_wait": "appointment_time - outbound_arrival - walk_out_s",
+    "return_wait": "return_departure - appointment_time - appointment_s - walk_return_s",
+    "return_slack": "return_wait_s - boarding_margin_s",
+    "total": "sum of eight contiguous components"
+  },
+  "note": "return_wait includes the boarding-margin interval; return_slack removes it. DERIVED is not a source node."
+}

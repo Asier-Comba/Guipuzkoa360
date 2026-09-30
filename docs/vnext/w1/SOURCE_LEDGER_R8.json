@@ -1,0 +1,142 @@
+{
+  "ledger_version": "r8.0",
+  "license_note": "Official source does not automatically imply a verified redistribution license.",
+  "sources": [
+    {
+      "source_id": "GTFS",
+      "institution": "Moveuskadi / Goierrialdea",
+      "title": "GTFS Lurraldebus Goierrialdea",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip",
+      "reference_period": "2026-09-28/2026-12-27",
+      "acquisition_date": "2026-09-29",
+      "content_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+      "local_prepared_artifact": "datos_originales/movilidad/goierrialdea-3276fcae.zip",
+      "transformation": "R4 normalized GO01 rows, unchanged; approximate stop times, no realtime",
+      "role": "official_schedule",
+      "license_terms_status": "NOT_VERIFIED",
+      "redistribution_status": "REVIEW_SPECIFIC_TERMS_BEFORE_ADDITIONAL_REDISTRIBUTION",
+      "known_limitations": [
+        "Official source does not by itself establish a specific redistribution license"
+      ]
+    },
+    {
+      "source_id": "HEALTH_REGISTRY",
+      "institution": "Open Data Euskadi",
+      "title": "Centros de salud públicos en Euskadi",
+      "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/",
+      "reference_period": "2026-09-20",
+      "acquisition_date": "2026-09-24",
+      "content_sha256": "87a2b8ea3309678ff743e2f267320b94216c3d1e4f52b578bdd0a77bd8bf29ab",
+      "local_prepared_artifact": "prototypes/ir_y_volver/snapshots/official-goierrialdea-go01-health-r5-20260929.json",
+      "transformation": "entityBC631DA5 coordinates EPSG:4326",
+      "role": "official_health_registry",
+      "license_terms_status": "NOT_VERIFIED",
+      "redistribution_status": "REVIEW_SPECIFIC_TERMS_BEFORE_ADDITIONAL_REDISTRIBUTION",
+      "known_limitations": [
+        "Official source does not by itself establish a specific redistribution license"
+      ]
+    },
+    {
+      "source_id": "HEALTH_PAGE",
+      "institution": "Osakidetza",
+      "title": "Ambulatorio de Beasain",
+      "url": "https://www.osakidetza.euskadi.eus/ambulatorio-de-beasain/webosk00-cercon/es/",
+      "reference_period": "Observed 2026-09-29",
+      "acquisition_date": "2026-09-29",
+      "content_sha256": "7ba21b4f78f79b55d5761f427582daaef48097245142c9cb259288dc923f3160",
+      "local_prepared_artifact": "datos_originales/movilidad/r5/beasain-official.html",
+      "transformation": "Specific centre name/address/telephone; publication date not stated",
+      "role": "official_health_page",
+      "license_terms_status": "NOT_VERIFIED",
+      "redistribution_status": "REVIEW_SPECIFIC_TERMS_BEFORE_ADDITIONAL_REDISTRIBUTION",
+      "known_limitations": [
+        "Official source does not by itself establish a specific redistribution license"
+      ]
+    },
+    {
+      "source_id": "PADI_2026",
+      "institution": "Osakidetza",
+      "title": "Consultas PADI Gipuzkoa 2026",
+      "url": "https://www.osakidetza.euskadi.eus/contenidos/informacion/salud_padi/es_def/adjuntos/padi-kontsultak-gipuzkoa.pdf",
+      "reference_period": "2026-01",
+      "acquisition_date": "2026-09-29",
+      "content_sha256": "6cf5d40245eb29c9c98785d03aba518c44677104b71625db36c3f2801455ac10",
+      "local_prepared_artifact": "datos_originales/movilidad/r5/padi-2026.pdf",
+      "transformation": "Page 4 dental consultation listing; address conflict retained",
+      "role": "official_health_page",
+      "license_terms_status": "NOT_VERIFIED",
+      "redistribution_status": "REVIEW_SPECIFIC_TERMS_BEFORE_ADDITIONAL_REDISTRIBUTION",
+      "known_limitations": [
+        "Official source does not by itself establish a specific redistribution license"
+      ]
+    },
+    {
+      "source_id": "OSM",
+      "institution": "OpenStreetMap contributors",
+      "title": "OpenStreetMap bounded network extract",
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-2.203,43.041,-2.190,43.052",
+      "reference_period": "Acquired 2026-09-29",
+      "acquisition_date": "2026-09-29",
+      "content_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+      "local_prepared_artifact": "datos_originales/movilidad/beasain-network-r4-public.osm",
+      "transformation": "R4 public derivative removes editor/contact metadata; R5 canonicalizes XML line endings to LF for hashing, no geometry change; ODbL 1.0",
+      "role": "open_network",
+      "license_terms_status": "ODbL_1.0_DOCUMENTED",
+      "redistribution_status": "ATTRIBUTION_AND_ODBL_APPLY",
+      "known_limitations": [
+        "Modelled network; no verified physical entrance"
+      ]
+    },
+    {
+      "source_id": "MODEL",
+      "institution": "GIPUZKOA360",
+      "title": "Walking model parameters",
+      "url": null,
+      "reference_period": "R5.1",
+      "acquisition_date": "2026-09-29",
+      "content_sha256": "0f3a02e69f8065f892ce19a0115ae7e3c661c32725bd37a423f3d283ae1a2a7d",
+      "local_prepared_artifact": "prototypes/ir_y_volver/walking_r5.py",
+      "transformation": "ceil(raw total metres/50)*60+120 per complete directed link; each connector <=100 m",
+      "role": "model_parameter",
+      "license_terms_status": "NOT_APPLICABLE_INTERNAL_MODEL",
+      "redistribution_status": "INTERNAL_CODE",
+      "known_limitations": [
+        "Model, not observed behaviour"
+      ]
+    },
+    {
+      "source_id": "MODEL_DEFAULTS",
+      "institution": "GIPUZKOA360",
+      "title": "R6 normalized defaults",
+      "url": null,
+      "reference_period": "0.3.1",
+      "acquisition_date": null,
+      "content_sha256": "e5f563e38a8c094f01468a02a55f06b560faa668926878fbcc347dfd14a438e3",
+      "local_prepared_artifact": "prototypes/ir_y_volver/provider_r6.py",
+      "transformation": "Applied only when caller omits the field",
+      "role": "model_parameter",
+      "license_terms_status": "NOT_APPLICABLE_INTERNAL_MODEL",
+      "redistribution_status": "INTERNAL_CODE",
+      "known_limitations": [
+        "Defaults are not observed human choices"
+      ]
+    },
+    {
+      "source_id": "HUMAN_REQUEST",
+      "institution": "Caller",
+      "title": "Canonical hypothetical requests R8",
+      "url": null,
+      "reference_period": "2026-09-29 scenarios",
+      "acquisition_date": null,
+      "content_sha256": "02df6cc11b6000b179a37558f7993848e002263616eb5d8f88f3997231dab32c",
+      "local_prepared_artifact": "docs/vnext/w1/DELIVERY_EVIDENCE_R8.json",
+      "transformation": "Explicit request fields only",
+      "role": "human_input",
+      "license_terms_status": "NOT_APPLICABLE_INPUT",
+      "redistribution_status": "EVIDENCE_FIXTURE_ONLY",
+      "known_limitations": [
+        "Hypothetical request, not medical appointment data"
+      ]
+    }
+  ]
+}

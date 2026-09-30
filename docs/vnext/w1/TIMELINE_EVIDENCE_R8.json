@@ -1,0 +1,221 @@
+{
+  "timeline_version": "r8.0",
+  "timelines": [
+    {
+      "scenario_id": "MAIN",
+      "events": [
+        {
+          "event": "presence_required",
+          "seconds_since_midnight": 29377,
+          "time": "08:09:37",
+          "label": "Zegama - Elizalde 6 - Plaza"
+        },
+        {
+          "event": "outbound_departure",
+          "seconds_since_midnight": 29557,
+          "time": "08:12:37",
+          "label": "Zegama - Elizalde 6 - Plaza"
+        },
+        {
+          "event": "outbound_arrival",
+          "seconds_since_midnight": 31208,
+          "time": "08:40:08",
+          "label": "Beasain - Lokomotora Biribilgunea"
+        },
+        {
+          "event": "anchor_arrival",
+          "seconds_since_midnight": 31628,
+          "time": "08:47:08",
+          "label": "Ambulatorio de Beasain"
+        },
+        {
+          "event": "appointment_start",
+          "seconds_since_midnight": 34200,
+          "time": "09:30:00",
+          "label": "Ambulatorio de Beasain"
+        },
+        {
+          "event": "appointment_end",
+          "seconds_since_midnight": 35400,
+          "time": "09:50:00",
+          "label": "Ambulatorio de Beasain"
+        },
+        {
+          "event": "return_stop_arrival",
+          "seconds_since_midnight": 36360,
+          "time": "10:06:00",
+          "label": "Beasain - San Inazio 10"
+        },
+        {
+          "event": "return_departure",
+          "seconds_since_midnight": 37790,
+          "time": "10:29:50",
+          "label": "Beasain - San Inazio 10"
+        },
+        {
+          "event": "origin_arrival",
+          "seconds_since_midnight": 40068,
+          "time": "11:07:48",
+          "label": "Zegama - Elizalde Kalea 4"
+        }
+      ],
+      "walking": {
+        "outbound": 420,
+        "return": 960,
+        "classification": "modelled"
+      },
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ]
+    },
+    {
+      "scenario_id": "VARIATION_TIME",
+      "events": [
+        {
+          "event": "presence_required",
+          "seconds_since_midnight": 31477,
+          "time": "08:44:37",
+          "label": "Zegama - Elizalde 6 - Plaza"
+        },
+        {
+          "event": "outbound_departure",
+          "seconds_since_midnight": 31657,
+          "time": "08:47:37",
+          "label": "Zegama - Elizalde 6 - Plaza"
+        },
+        {
+          "event": "outbound_arrival",
+          "seconds_since_midnight": 33426,
+          "time": "09:17:06",
+          "label": "Beasain - Lokomotora Biribilgunea"
+        },
+        {
+          "event": "anchor_arrival",
+          "seconds_since_midnight": 33846,
+          "time": "09:24:06",
+          "label": "Ambulatorio de Beasain"
+        },
+        {
+          "event": "appointment_start",
+          "seconds_since_midnight": 35100,
+          "time": "09:45:00",
+          "label": "Ambulatorio de Beasain"
+        },
+        {
+          "event": "appointment_end",
+          "seconds_since_midnight": 36300,
+          "time": "10:05:00",
+          "label": "Ambulatorio de Beasain"
+        },
+        {
+          "event": "return_stop_arrival",
+          "seconds_since_midnight": 37260,
+          "time": "10:21:00",
+          "label": "Beasain - San Inazio 10"
+        },
+        {
+          "event": "return_departure",
+          "seconds_since_midnight": 37790,
+          "time": "10:29:50",
+          "label": "Beasain - San Inazio 10"
+        },
+        {
+          "event": "origin_arrival",
+          "seconds_since_midnight": 40068,
+          "time": "11:07:48",
+          "label": "Zegama - Elizalde Kalea 4"
+        }
+      ],
+      "walking": {
+        "outbound": 420,
+        "return": 960,
+        "classification": "modelled"
+      },
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ]
+    },
+    {
+      "scenario_id": "VARIATION_DURATION",
+      "events": [
+        {
+          "event": "presence_required",
+          "seconds_since_midnight": 31477,
+          "time": "08:44:37",
+          "label": "Zegama - Elizalde 6 - Plaza"
+        },
+        {
+          "event": "outbound_departure",
+          "seconds_since_midnight": 31657,
+          "time": "08:47:37",
+          "label": "Zegama - Elizalde 6 - Plaza"
+        },
+        {
+          "event": "outbound_arrival",
+          "seconds_since_midnight": 33426,
+          "time": "09:17:06",
+          "label": "Beasain - Lokomotora Biribilgunea"
+        },
+        {
+          "event": "anchor_arrival",
+          "seconds_since_midnight": 33846,
+          "time": "09:24:06",
+          "label": "Ambulatorio de Beasain"
+        },
+        {
+          "event": "appointment_start",
+          "seconds_since_midnight": 35100,
+          "time": "09:45:00",
+          "label": "Ambulatorio de Beasain"
+        },
+        {
+          "event": "appointment_end",
+          "seconds_since_midnight": 36660,
+          "time": "10:11:00",
+          "label": "Ambulatorio de Beasain"
+        },
+        {
+          "event": "return_stop_arrival",
+          "seconds_since_midnight": 37620,
+          "time": "10:27:00",
+          "label": "Beasain - San Inazio 10"
+        },
+        {
+          "event": "return_departure",
+          "seconds_since_midnight": 39571,
+          "time": "10:59:31",
+          "label": "Beasain - San Inazio 10"
+        },
+        {
+          "event": "origin_arrival",
+          "seconds_since_midnight": 41849,
+          "time": "11:37:29",
+          "label": "Zegama - Elizalde Kalea 4"
+        }
+      ],
+      "walking": {
+        "outbound": 420,
+        "return": 960,
+        "classification": "modelled"
+      },
+      "limitations": [
+        "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+        "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+        "Horarios GTFS aproximados programados, no información en tiempo real.",
+        "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+        "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+      ]
+    }
+  ]
+}
