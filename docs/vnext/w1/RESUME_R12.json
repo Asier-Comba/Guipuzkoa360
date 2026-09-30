@@ -7,13 +7,14 @@
   "REAL_RUNTIME_GIT_SHA": "cb061a9e00a6496c40488a596bd94834bc2c49b2",
   "CONTRACT": "0.3.1",
   "ENTRYPOINT": "prototypes.ir_y_volver.provider_r6",
-  "PACKAGE_SHA": "c5bedc0c2fbc028258135d3f8b2a94d5fc37aa3a9808417fee3165a9915e98d4",
-  "PACKAGE_BYTES": 225894,
-  "PACKAGE_MANIFEST_SHA": "059ad32664aacaccdb7302e9f50ca519f21b5103a27df3bd409f45fa8caee1a9",
-  "PATCHED_W2_HEAD": "7dc4d807d4ac159b508ef383b9ec950b4dce3e41",
+  "PACKAGE_SHA": "3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616",
+  "PACKAGE_BYTES": 226010,
+  "PACKAGE_MANIFEST_SHA": "a672bf9a2afece58c468a1f762c860f0217536a2a4fa18737ba768cab755c70a",
+  "PATCHED_W2_HEAD": "8c94f8c3cf9d732c4ce94af7b4bef8f6e154c243",
+  "PREVIOUS_PATCH2": {"HEAD": "7dc4d807d4ac159b508ef383b9ec950b4dce3e41", "ZIP_SHA256": "c5bedc0c2fbc028258135d3f8b2a94d5fc37aa3a9808417fee3165a9915e98d4", "BYTES": 225894, "STATUS": "PASS", "EVIDENCE": "docs/vnext/w1/candidate_r12/final_patch_intake_r12.json", "REPOSITORY_LF_SHA256": "802ce0d06b4d8830ec7326c4e2dd0d306d7b766ead010c806824ce56005bc50d"},
   "BASELINE_W2_HEAD": "2321e03e3d994b488db9723560383d9defedcac7",
   "W3_PUBLISHED_HEAD_CONSUMED": "1d60cdf81d3eb7661bc1d97c12425b9bdcf69b8d",
-  "W3_STATUS": "NO_GO_FOR_BASELINE_AND_PATCH1_STUDIO_FREEZE; PATCH2_PORTAL_NOT_RUN",
+  "W3_STATUS": "NO_GO_FOR_BASELINE_AND_PATCH1_STUDIO_FREEZE; PATCH2_AND_PATCH3_PORTAL_NOT_RUN",
   "W1_R6_PACKAGE_SHA": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
   "W1_R6_PACKAGE_BYTES": 129365,
   "SUPPORT_IDENTITY": {
@@ -30,7 +31,8 @@
     "R11_16_HEALTH_LABEL_ATTRIBUTION": "WITHDRAWN_HARNESS_DEFECT; labels bind effective stop IDs",
     "KEYERROR_TRANSFORMATION": "W1_ASSERTIONS_VERIFIER_ERROR; validate_model_view -> expected_value -> pointer; traceback retained",
     "BASELINE_PRODUCT_DEFECTS": ["legacy 7214 label", "alternate-root propagation", "declared Studio freeze missing runtime/proof dependencies"],
-    "PATCH2_RETEST": "ALL_THREE_REPRODUCTIONS_CLEARED_LOCALLY; NOT_PORTAL_ACCEPTANCE"
+    "PATCH2_RETEST": "ALL_THREE_REPRODUCTIONS_CLEARED_LOCALLY; NOT_PORTAL_ACCEPTANCE",
+    "PATCH3_RETEST": "SAME_FROZEN_GATE_PASS; LOCAL_FLAT_DECLARED_FREEZE_ONLY; NOT_PORTAL_OR_NESTED_LAYOUT_ACCEPTANCE"
   },
   "BASELINE_PACKAGE_RESULT": {
     "STATUS": "FAIL",
@@ -48,8 +50,8 @@
   "PATCHED_PACKAGE_RESULT": {
     "STATUS": "PASS",
     "STRICT_EXIT": 0,
-    "EVIDENCE": "docs/vnext/w1/candidate_r12/final_patch_intake_r12.json",
-    "REPOSITORY_LF_SHA256": "802ce0d06b4d8830ec7326c4e2dd0d306d7b766ead010c806824ce56005bc50d",
+    "EVIDENCE": "docs/vnext/w1/candidate_r12/patch3_intake_r12.json",
+    "REPOSITORY_LF_SHA256": "a55a237f1189c3f51bdf0dc7bc484477f28593822de8a9fb28df75a6fca33328",
     "DECLARED_FREEZE": "PASS raw/model 14/14; main.py + tools.py + literal 15 declared assets only",
     "ALTERNATE_CWD": "PASS both unconfigured and explicit valid root",
     "INVALID_ROOT": "CONTROLLED_ERROR; no fallback; zero claims",
@@ -74,8 +76,8 @@
   "LOCAL_VALIDATION": {"PYTHON": "541 PASS; one openpyxl style warning", "NODE": "17 PASS", "JURY": "PASS", "ARTIFACT": "PASS", "DIFF": "PASS"},
   "CI": "READ_EXACT_PUBLISHED_SHA_RESULT_IN_PR15; NOT_INFERRED_FROM_LOCAL_PASS",
   "OPEN_FINDINGS": ["Studio binary ZIP mounting/layout, served schema, LLM routing/memory/language remain W3 acceptance boundaries", "Physical entrance and source/address limitations remain frozen, no new producer defect"],
-  "NOT_RUN": ["LLM conversation", "portal", "private holdout", "W3 independent patch2 acceptance", "mutating corruption of the actual frozen runtime ZIP", "all nine W2 tools in this W1 mobility gate"],
+  "NOT_RUN": ["LLM conversation", "portal", "private holdout", "W3 independent patch2 or patch3 acceptance", "W1 independent nested agentes layout execution", "mutating corruption of the actual frozen runtime ZIP", "all nine W2 tools in this W1 mobility gate"],
   "V4_PRESERVATION": "PASS before/after; 195b4980fa5998b096c308296a55e452380b0371; no v4 changes",
-  "NEXT_EXACT_ACTION": "W3 independently retests exact patch2 Git/ZIP, verifies effective Studio inclusion and only then uses its existing bounded private smoke authorization. W2 holds candidate identity. W1 introduces no further change absent a concrete observed failure.",
+  "NEXT_EXACT_ACTION": "Consumer validation must target exact patch3 Git/ZIP and verify effective Studio inclusion/layout/schema before any authorized private smoke. W3 has finished its baseline/patch1 review, not approved patch3. W2 receives this exact deterministic PASS and should preserve candidate identity. W1 introduces no further change absent a concrete observed failure.",
   "MERGED_OR_PUBLISHED_RELEASE": "NO"
 }
