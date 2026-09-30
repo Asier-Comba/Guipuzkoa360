@@ -1,0 +1,21 @@
+{
+  "w1_sha": "4bf975511ecea46c25662becfccb65713d381aa0",
+  "hotfix_sha": "094745b26bc57aee5cc1a5e003401743d96a914f",
+  "zip_sha256": "9c6fa5c692df178afe36366c6291e7c0e7c3da06134381b09d853f55d6707252",
+  "manifest_sha256": "d6c0122b475284c468fdfc3e343b9ab0d9d175cf20513048c915281cedf4e911",
+  "checkpoint": {
+    "id": "IC_kwDOUpe9ns8AAAABYModrQ",
+    "author": {
+      "login": "oierdu"
+    },
+    "authorAssociation": "COLLABORATOR",
+    "body": "W1_R14_FRONTDOOR_ACCEPTANCE=PASS\r\n\r\nFINAL_SHA (Oier): 4bf975511ecea46c25662becfccb65713d381aa0\r\nHOTFIX_SHA: 094745b26bc57aee5cc1a5e003401743d96a914f\r\nZIP SHA-256: 9c6fa5c692df178afe36366c6291e7c0e7c3da06134381b09d853f55d6707252 (226337 bytes)\r\nManifest SHA-256: d6c0122b475284c468fdfc3e343b9ab0d9d175cf20513048c915281cedf4e911\r\n\r\nIndependent acceptance of those exact bytes, not mutable HEAD. tools.py, all15 assets and nested W1 ZIP byte-identical to patch3. Only material expanded runtime member changed: main.py (flat binding plus two generic prompt rules). No producer/data/math/contract/source change. Safe inventory, declared paths, nested package and two independent in-memory reproductions of the exact ZIP PASS.\r\n\r\n47/47 detailed flat-vs-structured calls PASS with execute-boundary mapping and full public_result equality. Five required primitives + five None optionals, nine tools, no external request parameter. Three origins, omitted/None/explicit defaults, nondefault margins, legacy and invalid inputs PASS. Provenance distinction retained: caller-supplied is not proof of human authorship. Seven oracle cases match figures, components, sources and limits; M04 is representable through this interface locally, NOT a claim that Studio/LLM repaired the historical failure.\r\n\r\nExact-package parity: raw32/32 (30 exact objects +2 documented safe rejections), model-view32/32, comparisons5/5, scenarios37, assertions1811, findings/errors0; declared freeze14/14. Independent fuzz seed360114:5000 indexed requests /10000 executions,566 distinct payloads,1500 valid-domain +3500 invalid,916.077s, four disjoint cold shards. Exceptions, mapping mismatch, silent defaults, invalid accepted, valid rejected and semantic mismatch ALL0. This is generated/property evidence, not5000 independent tests. First stopped fuzz attempt was a W1 verifier status-layer expectation error, preserved in first-fuzz-attempt; corrected only verifier and four regressions, not a candidate defect or waiver. No repeat of unchanged producer R13 stress20k.\r\n\r\nLocal final suite once:577 Python PASS (targeted12 included; one historical openpyxl style warning), Node17/17 PASS; v4 identity before/after, jury, artifact and diff gates PASS. W1 same-FINAL_SHA CI: https://github.com/Asier-Comba/Guipuzkoa360/actions/runs/36770251523 — SUCCESS Ubuntu/Windows. Hotfix CI36765784442 separately green.\r\n\r\nR14 Critical0 /High0 /new Medium0. Three historical W1 Medium observations retained (DERIVED explanatory circularity; raw+pinned health derivative, not fully raw; specific HTML/PADI reuse terms not verified). Historical W3 portal High1/Medium1 remain pending real retest, not closed by this local technical PASS.\r\n\r\nW1_RUNTIME_CHANGED=NO\r\nV4_PRESERVED=YES (195b4980fa5998b096c308296a55e452380b0371)\r\nPORTAL_LLM=NOT_CLAIMED\r\n\r\nCanonical evidence: docs/vnext/w1/HANDOFF_R14.md, RESUME_R14.json and r14/ at FINAL_SHA. W1 worktree clean; no foreign edits, merge, portal calls or publication. This is the independent technical prerequisite for Hugo's bounded W3_PORTAL_RETEST of this exact package; remaining8/12 private message budget is unchanged. Served schema, binary inclusion/layout and real conversational acceptance still belong to W3. RELEASE_GO not granted by W1. W1 STOP; no R15/features.",
+    "createdAt": "2026-09-30T20:11:09Z",
+    "includesCreatedEdit": false,
+    "isMinimized": false,
+    "minimizedReason": "",
+    "reactionGroups": [],
+    "url": "https://github.com/Asier-Comba/Guipuzkoa360/pull/18#issuecomment-5918825901",
+    "viewerDidAuthor": false
+  }
+}

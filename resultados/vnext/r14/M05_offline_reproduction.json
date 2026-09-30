@@ -1,0 +1,1250 @@
+{
+  "classification": "OFFLINE_REPLAY_AND_OMISSION_CONTROL_NOT_AGENT",
+  "model_calls": 0,
+  "observed_argument_replays": [
+    {
+      "arguments": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_official_centre_anchor",
+        "date": "2026-09-29",
+        "appointment_time": "09:30",
+        "duration_minutes": 20,
+        "arrival_margin_minutes": 10,
+        "boarding_margin_minutes": 3,
+        "walking_profile_id": "poc_reference_50m_min_plus_120s",
+        "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+        "return_deadline": ""
+      },
+      "output": {
+        "assumptions": [],
+        "capability_id": "plan_visit",
+        "claims": [],
+        "effective_request": null,
+        "error": {
+          "available_options": [],
+          "code": "contract_violation",
+          "message": "mobility:invalid_clock",
+          "origin": "domain",
+          "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+        },
+        "execution": {
+          "arguments_sha256": "3a31b551784b646bf09a46635580b6057c1dc7e9ec74d07bac2a9fe9a8f3e823",
+          "request_id": "6f42cff94ad64146a7a09bbfa18ea735",
+          "snapshot_id": null,
+          "state": "failed",
+          "tool": "plan_visit"
+        },
+        "limitations": [],
+        "method": "",
+        "normalized_input": {
+          "arguments": {
+            "request": {
+              "appointment_time": "09:30",
+              "arrival_margin_minutes": 10,
+              "boarding_margin_minutes": 3,
+              "date": "2026-09-29",
+              "destination_id": "beasain_official_centre_anchor",
+              "duration_minutes": 20,
+              "origin_id": "zegama_center_stops",
+              "return_deadline": "",
+              "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+              "walking_profile_id": "poc_reference_50m_min_plus_120s"
+            }
+          },
+          "tool": "plan_visit"
+        },
+        "outcomes": [],
+        "raw_result_sha256": null,
+        "request_id": "6f42cff94ad64146a7a09bbfa18ea735",
+        "schema_version": "1.1.0",
+        "selection": {
+          "criterion": "Primeras entidades en el orden validado de la herramienta",
+          "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+          "omitted_entities": 0,
+          "returned_entities": 0,
+          "total_entities": 0
+        },
+        "status": "error",
+        "versions": {
+          "code_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "contract_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "data_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      }
+    },
+    {
+      "arguments": {
+        "origin_id": "zegama_center_stops",
+        "destination_id": "beasain_official_centre_anchor",
+        "date": "2026-09-29",
+        "appointment_time": "09:30",
+        "duration_minutes": 20,
+        "arrival_margin_minutes": 10,
+        "boarding_margin_minutes": 3,
+        "walking_profile_id": "poc_reference_50m_min_plus_120s",
+        "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+        "return_deadline": ""
+      },
+      "output": {
+        "assumptions": [],
+        "capability_id": "plan_visit",
+        "claims": [],
+        "effective_request": null,
+        "error": {
+          "available_options": [],
+          "code": "contract_violation",
+          "message": "mobility:invalid_clock",
+          "origin": "domain",
+          "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+        },
+        "execution": {
+          "arguments_sha256": "3a31b551784b646bf09a46635580b6057c1dc7e9ec74d07bac2a9fe9a8f3e823",
+          "request_id": "e3f8583e74364543837b9338f187c7cf",
+          "snapshot_id": null,
+          "state": "failed",
+          "tool": "plan_visit"
+        },
+        "limitations": [],
+        "method": "",
+        "normalized_input": {
+          "arguments": {
+            "request": {
+              "appointment_time": "09:30",
+              "arrival_margin_minutes": 10,
+              "boarding_margin_minutes": 3,
+              "date": "2026-09-29",
+              "destination_id": "beasain_official_centre_anchor",
+              "duration_minutes": 20,
+              "origin_id": "zegama_center_stops",
+              "return_deadline": "",
+              "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+              "walking_profile_id": "poc_reference_50m_min_plus_120s"
+            }
+          },
+          "tool": "plan_visit"
+        },
+        "outcomes": [],
+        "raw_result_sha256": null,
+        "request_id": "e3f8583e74364543837b9338f187c7cf",
+        "schema_version": "1.1.0",
+        "selection": {
+          "criterion": "Primeras entidades en el orden validado de la herramienta",
+          "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+          "omitted_entities": 0,
+          "returned_entities": 0,
+          "total_entities": 0
+        },
+        "status": "error",
+        "versions": {
+          "code_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "contract_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "data_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      }
+    }
+  ],
+  "control": {
+    "change": "Only remove return_deadline empty string; no candidate byte change",
+    "arguments": {
+      "origin_id": "zegama_center_stops",
+      "destination_id": "beasain_official_centre_anchor",
+      "date": "2026-09-29",
+      "appointment_time": "09:30",
+      "duration_minutes": 20,
+      "arrival_margin_minutes": 10,
+      "boarding_margin_minutes": 3,
+      "walking_profile_id": "poc_reference_50m_min_plus_120s",
+      "snapshot_id": "official-goierrialdea-go01-health-r5-20260929"
+    },
+    "output": {
+      "assumptions": [
+        "Los argumentos del agente no acreditan autoría humana aunque W1 los marque human_explicit.",
+        "Paseo de referencia 50 m/min + 120 s por enlace completo y sentido."
+      ],
+      "capability_id": "plan_visit",
+      "claims": [
+        {
+          "assumptions": [
+            "Horario GTFS estático y paseo modelado; no duración real observada."
+          ],
+          "denominator": null,
+          "derivation": "estimated_with_assumptions",
+          "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_type": "journey",
+          "evidence_path": "/itinerary/total_s",
+          "id": "claim-1",
+          "label": "total_s",
+          "metric_id": "total_s",
+          "numerator": null,
+          "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;R5.1;2026-09-29",
+          "reference_periods": [
+            {
+              "period": "2026-09-28/2026-12-27",
+              "source_id": "GTFS"
+            },
+            {
+              "period": "2026-09-20",
+              "source_id": "HEALTH_REGISTRY"
+            },
+            {
+              "period": "Acquired 2026-09-29",
+              "source_id": "OSM"
+            },
+            {
+              "period": "R5.1",
+              "source_id": "MODEL"
+            },
+            {
+              "period": "2026-09-29",
+              "source_id": "USER"
+            },
+            {
+              "period": "2026-09-29",
+              "source_id": "MODEL_DEFAULTS"
+            },
+            {
+              "period": "2026-09-29",
+              "source_id": "DERIVED"
+            }
+          ],
+          "source_ids": [
+            "GTFS",
+            "HEALTH_REGISTRY",
+            "OSM",
+            "MODEL",
+            "USER",
+            "MODEL_DEFAULTS",
+            "DERIVED"
+          ],
+          "source_refs": [
+            {
+              "role": "official_schedule",
+              "source_id": "GTFS"
+            },
+            {
+              "role": "official_health_registry",
+              "source_id": "HEALTH_REGISTRY"
+            },
+            {
+              "role": "open_network",
+              "source_id": "OSM"
+            },
+            {
+              "role": "model_parameter",
+              "source_id": "MODEL"
+            },
+            {
+              "role": "agent_or_user_parameter",
+              "source_id": "USER"
+            },
+            {
+              "role": "model_parameter",
+              "source_id": "MODEL_DEFAULTS"
+            },
+            {
+              "role": "derived_metric",
+              "source_id": "DERIVED"
+            }
+          ],
+          "unit": "s",
+          "value": 10691
+        },
+        {
+          "assumptions": [
+            "Horario GTFS estático y paseo modelado; no duración real observada."
+          ],
+          "denominator": null,
+          "derivation": "estimated_with_assumptions",
+          "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_type": "journey",
+          "evidence_path": "/components_s/initial_wait_s",
+          "id": "claim-2",
+          "label": "initial_wait_s",
+          "metric_id": "initial_wait_s",
+          "numerator": null,
+          "period": "2026-09-29",
+          "reference_periods": [
+            {
+              "period": "2026-09-29",
+              "source_id": "USER"
+            }
+          ],
+          "source_ids": [
+            "USER"
+          ],
+          "source_refs": [
+            {
+              "role": "agent_or_user_parameter",
+              "source_id": "USER"
+            }
+          ],
+          "unit": "s",
+          "value": 180
+        },
+        {
+          "assumptions": [
+            "Horario GTFS estático y paseo modelado; no duración real observada."
+          ],
+          "denominator": null,
+          "derivation": "estimated_with_assumptions",
+          "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_type": "journey",
+          "evidence_path": "/components_s/outbound_vehicle_s",
+          "id": "claim-3",
+          "label": "outbound_vehicle_s",
+          "metric_id": "outbound_vehicle_s",
+          "numerator": null,
+          "period": "2026-09-28/2026-12-27",
+          "reference_periods": [
+            {
+              "period": "2026-09-28/2026-12-27",
+              "source_id": "GTFS"
+            }
+          ],
+          "source_ids": [
+            "GTFS"
+          ],
+          "source_refs": [
+            {
+              "role": "official_schedule",
+              "source_id": "GTFS"
+            }
+          ],
+          "unit": "s",
+          "value": 1651
+        },
+        {
+          "assumptions": [
+            "Horario GTFS estático y paseo modelado; no duración real observada."
+          ],
+          "denominator": null,
+          "derivation": "estimated_with_assumptions",
+          "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_type": "journey",
+          "evidence_path": "/components_s/destination_walk_outbound_s",
+          "id": "claim-4",
+          "label": "destination_walk_outbound_s",
+          "metric_id": "destination_walk_outbound_s",
+          "numerator": null,
+          "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;R5.1;2026-09-29",
+          "reference_periods": [
+            {
+              "period": "2026-09-28/2026-12-27",
+              "source_id": "GTFS"
+            },
+            {
+              "period": "2026-09-20",
+              "source_id": "HEALTH_REGISTRY"
+            },
+            {
+              "period": "Acquired 2026-09-29",
+              "source_id": "OSM"
+            },
+            {
+              "period": "R5.1",
+              "source_id": "MODEL"
+            },
+            {
+              "period": "2026-09-29",
+              "source_id": "USER"
+            },
+            {
+              "period": "2026-09-29",
+              "source_id": "MODEL_DEFAULTS"
+            },
+            {
+              "period": "2026-09-29",
+              "source_id": "DERIVED"
+            }
+          ],
+          "source_ids": [
+            "GTFS",
+            "HEALTH_REGISTRY",
+            "OSM",
+            "MODEL",
+            "USER",
+            "MODEL_DEFAULTS",
+            "DERIVED"
+          ],
+          "source_refs": [
+            {
+              "role": "official_schedule",
+              "source_id": "GTFS"
+            },
+            {
+              "role": "official_health_registry",
+              "source_id": "HEALTH_REGISTRY"
+            },
+            {
+              "role": "open_network",
+              "source_id": "OSM"
+            },
+            {
+              "role": "model_parameter",
+              "source_id": "MODEL"
+            },
+            {
+              "role": "agent_or_user_parameter",
+              "source_id": "USER"
+            },
+            {
+              "role": "model_parameter",
+              "source_id": "MODEL_DEFAULTS"
+            },
+            {
+              "role": "derived_metric",
+              "source_id": "DERIVED"
+            }
+          ],
+          "unit": "s",
+          "value": 420
+        },
+        {
+          "assumptions": [
+            "Horario GTFS estático y paseo modelado; no duración real observada."
+          ],
+          "denominator": null,
+          "derivation": "estimated_with_assumptions",
+          "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_type": "journey",
+          "evidence_path": "/components_s/pre_appointment_wait_s",
+          "id": "claim-5",
+          "label": "pre_appointment_wait_s",
+          "metric_id": "pre_appointment_wait_s",
+          "numerator": null,
+          "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;R5.1;2026-09-29",
+          "reference_periods": [
+            {
+              "period": "2026-09-28/2026-12-27",
+              "source_id": "GTFS"
+            },
+            {
+              "period": "2026-09-20",
+              "source_id": "HEALTH_REGISTRY"
+            },
+            {
+              "period": "Acquired 2026-09-29",
+              "source_id": "OSM"
+            },
+            {
+              "period": "R5.1",
+              "source_id": "MODEL"
+            },
+            {
+              "period": "2026-09-29",
+              "source_id": "USER"
+            },
+            {
+              "period": "2026-09-29",
+              "source_id": "MODEL_DEFAULTS"
+            },
+            {
+              "period": "2026-09-29",
+              "source_id": "DERIVED"
+            }
+          ],
+          "source_ids": [
+            "GTFS",
+            "HEALTH_REGISTRY",
+            "OSM",
+            "MODEL",
+            "USER",
+            "MODEL_DEFAULTS",
+            "DERIVED"
+          ],
+          "source_refs": [
+            {
+              "role": "official_schedule",
+              "source_id": "GTFS"
+            },
+            {
+              "role": "official_health_registry",
+              "source_id": "HEALTH_REGISTRY"
+            },
+            {
+              "role": "open_network",
+              "source_id": "OSM"
+            },
+            {
+              "role": "model_parameter",
+              "source_id": "MODEL"
+            },
+            {
+              "role": "agent_or_user_parameter",
+              "source_id": "USER"
+            },
+            {
+              "role": "model_parameter",
+              "source_id": "MODEL_DEFAULTS"
+            },
+            {
+              "role": "derived_metric",
+              "source_id": "DERIVED"
+            }
+          ],
+          "unit": "s",
+          "value": 2572
+        },
+        {
+          "assumptions": [
+            "Horario GTFS estático y paseo modelado; no duración real observada."
+          ],
+          "denominator": null,
+          "derivation": "estimated_with_assumptions",
+          "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_type": "journey",
+          "evidence_path": "/components_s/appointment_s",
+          "id": "claim-6",
+          "label": "appointment_s",
+          "metric_id": "appointment_s",
+          "numerator": null,
+          "period": "2026-09-29",
+          "reference_periods": [
+            {
+              "period": "2026-09-29",
+              "source_id": "USER"
+            }
+          ],
+          "source_ids": [
+            "USER"
+          ],
+          "source_refs": [
+            {
+              "role": "agent_or_user_parameter",
+              "source_id": "USER"
+            }
+          ],
+          "unit": "s",
+          "value": 1200
+        },
+        {
+          "assumptions": [
+            "Horario GTFS estático y paseo modelado; no duración real observada."
+          ],
+          "denominator": null,
+          "derivation": "estimated_with_assumptions",
+          "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_type": "journey",
+          "evidence_path": "/components_s/destination_walk_return_s",
+          "id": "claim-7",
+          "label": "destination_walk_return_s",
+          "metric_id": "destination_walk_return_s",
+          "numerator": null,
+          "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;R5.1;2026-09-29",
+          "reference_periods": [
+            {
+              "period": "2026-09-28/2026-12-27",
+              "source_id": "GTFS"
+            },
+            {
+              "period": "2026-09-20",
+              "source_id": "HEALTH_REGISTRY"
+            },
+            {
+              "period": "Acquired 2026-09-29",
+              "source_id": "OSM"
+            },
+            {
+              "period": "R5.1",
+              "source_id": "MODEL"
+            },
+            {
+              "period": "2026-09-29",
+              "source_id": "USER"
+            },
+            {
+              "period": "2026-09-29",
+              "source_id": "MODEL_DEFAULTS"
+            },
+            {
+              "period": "2026-09-29",
+              "source_id": "DERIVED"
+            }
+          ],
+          "source_ids": [
+            "GTFS",
+            "HEALTH_REGISTRY",
+            "OSM",
+            "MODEL",
+            "USER",
+            "MODEL_DEFAULTS",
+            "DERIVED"
+          ],
+          "source_refs": [
+            {
+              "role": "official_schedule",
+              "source_id": "GTFS"
+            },
+            {
+              "role": "official_health_registry",
+              "source_id": "HEALTH_REGISTRY"
+            },
+            {
+              "role": "open_network",
+              "source_id": "OSM"
+            },
+            {
+              "role": "model_parameter",
+              "source_id": "MODEL"
+            },
+            {
+              "role": "agent_or_user_parameter",
+              "source_id": "USER"
+            },
+            {
+              "role": "model_parameter",
+              "source_id": "MODEL_DEFAULTS"
+            },
+            {
+              "role": "derived_metric",
+              "source_id": "DERIVED"
+            }
+          ],
+          "unit": "s",
+          "value": 960
+        },
+        {
+          "assumptions": [
+            "Horario GTFS estático y paseo modelado; no duración real observada."
+          ],
+          "denominator": null,
+          "derivation": "estimated_with_assumptions",
+          "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_type": "journey",
+          "evidence_path": "/components_s/return_wait_s",
+          "id": "claim-8",
+          "label": "return_wait_s",
+          "metric_id": "return_wait_s",
+          "numerator": null,
+          "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;R5.1;2026-09-29",
+          "reference_periods": [
+            {
+              "period": "2026-09-28/2026-12-27",
+              "source_id": "GTFS"
+            },
+            {
+              "period": "2026-09-20",
+              "source_id": "HEALTH_REGISTRY"
+            },
+            {
+              "period": "Acquired 2026-09-29",
+              "source_id": "OSM"
+            },
+            {
+              "period": "R5.1",
+              "source_id": "MODEL"
+            },
+            {
+              "period": "2026-09-29",
+              "source_id": "USER"
+            },
+            {
+              "period": "2026-09-29",
+              "source_id": "MODEL_DEFAULTS"
+            },
+            {
+              "period": "2026-09-29",
+              "source_id": "DERIVED"
+            }
+          ],
+          "source_ids": [
+            "GTFS",
+            "HEALTH_REGISTRY",
+            "OSM",
+            "MODEL",
+            "USER",
+            "MODEL_DEFAULTS",
+            "DERIVED"
+          ],
+          "source_refs": [
+            {
+              "role": "official_schedule",
+              "source_id": "GTFS"
+            },
+            {
+              "role": "official_health_registry",
+              "source_id": "HEALTH_REGISTRY"
+            },
+            {
+              "role": "open_network",
+              "source_id": "OSM"
+            },
+            {
+              "role": "model_parameter",
+              "source_id": "MODEL"
+            },
+            {
+              "role": "agent_or_user_parameter",
+              "source_id": "USER"
+            },
+            {
+              "role": "model_parameter",
+              "source_id": "MODEL_DEFAULTS"
+            },
+            {
+              "role": "derived_metric",
+              "source_id": "DERIVED"
+            }
+          ],
+          "unit": "s",
+          "value": 1430
+        },
+        {
+          "assumptions": [
+            "Horario GTFS estático y paseo modelado; no duración real observada."
+          ],
+          "denominator": null,
+          "derivation": "estimated_with_assumptions",
+          "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_type": "journey",
+          "evidence_path": "/components_s/return_vehicle_s",
+          "id": "claim-9",
+          "label": "return_vehicle_s",
+          "metric_id": "return_vehicle_s",
+          "numerator": null,
+          "period": "2026-09-28/2026-12-27",
+          "reference_periods": [
+            {
+              "period": "2026-09-28/2026-12-27",
+              "source_id": "GTFS"
+            }
+          ],
+          "source_ids": [
+            "GTFS"
+          ],
+          "source_refs": [
+            {
+              "role": "official_schedule",
+              "source_id": "GTFS"
+            }
+          ],
+          "unit": "s",
+          "value": 2278
+        },
+        {
+          "assumptions": [
+            "Horario GTFS estático y paseo modelado; no duración real observada."
+          ],
+          "denominator": null,
+          "derivation": "estimated_with_assumptions",
+          "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_type": "journey",
+          "evidence_path": "/walking/outbound/total_metres",
+          "id": "claim-10",
+          "label": "total_metres",
+          "metric_id": "total_metres",
+          "numerator": null,
+          "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;R5.1",
+          "reference_periods": [
+            {
+              "period": "2026-09-28/2026-12-27",
+              "source_id": "GTFS"
+            },
+            {
+              "period": "2026-09-20",
+              "source_id": "HEALTH_REGISTRY"
+            },
+            {
+              "period": "Acquired 2026-09-29",
+              "source_id": "OSM"
+            },
+            {
+              "period": "R5.1",
+              "source_id": "MODEL"
+            }
+          ],
+          "source_ids": [
+            "GTFS",
+            "HEALTH_REGISTRY",
+            "OSM",
+            "MODEL"
+          ],
+          "source_refs": [
+            {
+              "role": "official_schedule",
+              "source_id": "GTFS"
+            },
+            {
+              "role": "official_health_registry",
+              "source_id": "HEALTH_REGISTRY"
+            },
+            {
+              "role": "open_network",
+              "source_id": "OSM"
+            },
+            {
+              "role": "model_parameter",
+              "source_id": "MODEL"
+            }
+          ],
+          "unit": "m",
+          "value": 205.07964741035417
+        },
+        {
+          "assumptions": [
+            "Horario GTFS estático y paseo modelado; no duración real observada."
+          ],
+          "denominator": null,
+          "derivation": "estimated_with_assumptions",
+          "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+          "entity_type": "journey",
+          "evidence_path": "/walking/return/total_metres",
+          "id": "claim-11",
+          "label": "total_metres",
+          "metric_id": "total_metres",
+          "numerator": null,
+          "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;R5.1",
+          "reference_periods": [
+            {
+              "period": "2026-09-28/2026-12-27",
+              "source_id": "GTFS"
+            },
+            {
+              "period": "2026-09-20",
+              "source_id": "HEALTH_REGISTRY"
+            },
+            {
+              "period": "Acquired 2026-09-29",
+              "source_id": "OSM"
+            },
+            {
+              "period": "R5.1",
+              "source_id": "MODEL"
+            }
+          ],
+          "source_ids": [
+            "GTFS",
+            "HEALTH_REGISTRY",
+            "OSM",
+            "MODEL"
+          ],
+          "source_refs": [
+            {
+              "role": "official_schedule",
+              "source_id": "GTFS"
+            },
+            {
+              "role": "official_health_registry",
+              "source_id": "HEALTH_REGISTRY"
+            },
+            {
+              "role": "open_network",
+              "source_id": "OSM"
+            },
+            {
+              "role": "model_parameter",
+              "source_id": "MODEL"
+            }
+          ],
+          "unit": "m",
+          "value": 686.1157628496067
+        }
+      ],
+      "effective_request": {
+        "contracts": {
+          "capability": "1.1.0",
+          "evidence": "1.1.0",
+          "mobility": "0.3.1"
+        },
+        "defaults_applied": [
+          "return_deadline",
+          "timezone"
+        ],
+        "effective_period": "2026-09-29",
+        "municipality_codes": [],
+        "municipality_labels": [],
+        "operation": "plan_visit",
+        "parameters": {
+          "appointment_time": "09:30:00",
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "date": "2026-09-29",
+          "destination_id": "beasain_official_centre_anchor",
+          "duration_minutes": 20,
+          "origin_id": "zegama_center_stops",
+          "return_deadline": null,
+          "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+          "timezone": "Europe/Madrid",
+          "walking_profile_id": "poc_reference_50m_min_plus_120s"
+        },
+        "snapshot_id": "official-goierrialdea-go01-health-r5-20260929"
+      },
+      "error": null,
+      "execution": {
+        "arguments_sha256": "7e500f67720a006ebd4228e111854626930d268e9d3b534346513a00964d803c",
+        "request_id": "501f0059cdcc43c78daa891b31060294",
+        "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+        "state": "completed",
+        "tool": "plan_visit"
+      },
+      "limitations": [
+        "Entrada física NOT_VERIFIED; conflicto Bernedo Enea 1 / Zaldizurreta 2 pendiente de revisión humana.",
+        "GTFS estático y tiempos timepoint=0 aproximados; no realtime, domicilio, cita ni accesibilidad garantizada."
+      ],
+      "method": "W1 0.3.1: pares GO01 programados y paseo modelado hasta punto oficial del centro; validación W2 de identidad, parámetros y componentes.",
+      "mobility": {
+        "comparisons": [],
+        "scenarios": [
+          {
+            "assumptions": [
+              "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+              "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+            ],
+            "components_s": {
+              "appointment_s": 1200,
+              "destination_walk_outbound_s": 420,
+              "destination_walk_return_s": 960,
+              "initial_wait_s": 180,
+              "outbound_vehicle_s": 1651,
+              "pre_appointment_wait_s": 2572,
+              "return_vehicle_s": 2278,
+              "return_wait_s": 1430
+            },
+            "destination_label": "Ambulatorio de Beasain",
+            "effective_parameters": {
+              "appointment_time": "09:30:00",
+              "arrival_margin_minutes": 10,
+              "boarding_margin_minutes": 3,
+              "date": "2026-09-29",
+              "destination_id": "beasain_official_centre_anchor",
+              "duration_minutes": 20,
+              "origin_id": "zegama_center_stops",
+              "return_deadline": null,
+              "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+              "timezone": "Europe/Madrid",
+              "walking_profile_id": "poc_reference_50m_min_plus_120s"
+            },
+            "error": null,
+            "health_destination": {
+              "address": "Bernedo Enea 1",
+              "address_conflict": "conflicting_current_sources",
+              "centre_anchor": "CONFIRMED_OFFICIAL_POINT",
+              "centre_id": "entityBC631DA5",
+              "entrance_verification": "NOT_VERIFIED",
+              "entrance_verified": false,
+              "human_review_required": true,
+              "modelled_access": true,
+              "name": "Ambulatorio de Beasain",
+              "source_refs": [
+                "HEALTH_REGISTRY",
+                "HEALTH_PAGE",
+                "PADI_2026"
+              ],
+              "wording": "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada."
+            },
+            "index": 0,
+            "itinerary": {
+              "origin_stop_id": "8305",
+              "outbound": {
+                "arrival_time": "08:40:08",
+                "departure_time": "08:12:37",
+                "drop_off_type": 0,
+                "from_stop_id": "8305",
+                "from_stop_label": "Zegama - Elizalde 6 - Plaza",
+                "from_stop_sequence": 2,
+                "from_timepoint": 0,
+                "pickup_type": 0,
+                "route_id": "1",
+                "route_label": "GO01",
+                "service_id": "LJ",
+                "to_stop_id": "7219",
+                "to_stop_label": "Beasain - Lokomotora Biribilgunea",
+                "to_stop_sequence": 25,
+                "to_timepoint": 0,
+                "trip_id": "1_103_LJ_29400"
+              },
+              "return": {
+                "arrival_time": "11:07:48",
+                "departure_time": "10:29:50",
+                "drop_off_type": 0,
+                "from_stop_id": "7218",
+                "from_stop_label": "Beasain - San Inazio 10",
+                "from_stop_sequence": 8,
+                "from_timepoint": 0,
+                "pickup_type": 0,
+                "route_id": "1",
+                "route_label": "GO01",
+                "service_id": "LJ",
+                "to_stop_id": "8309",
+                "to_stop_label": "Zegama - Elizalde Kalea 4",
+                "to_stop_sequence": 35,
+                "to_timepoint": 0,
+                "trip_id": "1_106_LJ_37200"
+              },
+              "return_slack_s": 1250,
+              "return_stop_id": "8309",
+              "total_s": 10691
+            },
+            "limitations": [
+              "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+              "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+              "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+              "Horarios GTFS aproximados programados, no información en tiempo real.",
+              "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+              "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+            ],
+            "origin_label": "Paradas centrales de Zegama",
+            "parameter_attribution": [
+              {
+                "field": "appointment_time",
+                "provider_origin": "human_explicit",
+                "value": "09:30:00",
+                "w2_attribution": "tool_argument_origin_unverified"
+              },
+              {
+                "field": "arrival_margin_minutes",
+                "provider_origin": "human_explicit",
+                "value": 10,
+                "w2_attribution": "tool_argument_origin_unverified"
+              },
+              {
+                "field": "boarding_margin_minutes",
+                "provider_origin": "human_explicit",
+                "value": 3,
+                "w2_attribution": "tool_argument_origin_unverified"
+              },
+              {
+                "field": "date",
+                "provider_origin": "human_explicit",
+                "value": "2026-09-29",
+                "w2_attribution": "tool_argument_origin_unverified"
+              },
+              {
+                "field": "destination_id",
+                "provider_origin": "human_explicit",
+                "value": "beasain_official_centre_anchor",
+                "w2_attribution": "tool_argument_origin_unverified"
+              },
+              {
+                "field": "duration_minutes",
+                "provider_origin": "human_explicit",
+                "value": 20,
+                "w2_attribution": "tool_argument_origin_unverified"
+              },
+              {
+                "field": "origin_id",
+                "provider_origin": "human_explicit",
+                "value": "zegama_center_stops",
+                "w2_attribution": "tool_argument_origin_unverified"
+              },
+              {
+                "field": "return_deadline",
+                "provider_origin": "model_default",
+                "value": null,
+                "w2_attribution": "provider_default"
+              },
+              {
+                "field": "snapshot_id",
+                "provider_origin": "human_explicit",
+                "value": "official-goierrialdea-go01-health-r5-20260929",
+                "w2_attribution": "tool_argument_origin_unverified"
+              },
+              {
+                "field": "timezone",
+                "provider_origin": "model_default",
+                "value": "Europe/Madrid",
+                "w2_attribution": "provider_default"
+              },
+              {
+                "field": "walking_profile_id",
+                "provider_origin": "human_explicit",
+                "value": "poc_reference_50m_min_plus_120s",
+                "w2_attribution": "tool_argument_origin_unverified"
+              }
+            ],
+            "scenario_kind": "health_visit",
+            "scope": "origin_stop_presence_to_return_stop_arrival",
+            "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+            "sources": [
+              {
+                "catalog_source_id": "GTFS",
+                "contract_version": "0.3.1",
+                "institution": "Moveuskadi / Goierrialdea",
+                "publisher": "Moveuskadi / Goierrialdea",
+                "reference_period": "2026-09-28/2026-12-27",
+                "source_id": "GTFS",
+                "source_role": "official_schedule",
+                "title": "Horario GO01 Goierrialdea",
+                "transformation": "R4 normalized GO01 rows, unchanged; approximate stop times, no realtime",
+                "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+              },
+              {
+                "catalog_source_id": "HEALTH_REGISTRY",
+                "contract_version": "0.3.1",
+                "institution": "Open Data Euskadi",
+                "publisher": "Open Data Euskadi",
+                "reference_period": "2026-09-20",
+                "source_id": "HEALTH_REGISTRY",
+                "source_role": "official_health_registry",
+                "title": "Registro de centros de salud públicos",
+                "transformation": "entityBC631DA5 coordinates EPSG:4326",
+                "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+              },
+              {
+                "catalog_source_id": "HEALTH_PAGE",
+                "contract_version": "0.3.1",
+                "institution": "Osakidetza",
+                "publisher": "Osakidetza",
+                "reference_period": "Observed 2026-09-29",
+                "source_id": "HEALTH_PAGE",
+                "source_role": "official_health_page",
+                "title": "Ficha del Ambulatorio de Beasain",
+                "transformation": "Specific centre name/address/telephone; publication date not stated",
+                "url": "https://www.osakidetza.euskadi.eus/ambulatorio-de-beasain/webosk00-cercon/es/"
+              },
+              {
+                "catalog_source_id": "PADI_2026",
+                "contract_version": "0.3.1",
+                "institution": "Osakidetza",
+                "publisher": "Osakidetza",
+                "reference_period": "2026-01",
+                "source_id": "PADI_2026",
+                "source_role": "official_health_page",
+                "title": "Listado PADI de consultas dentales 2026",
+                "transformation": "Page 4 dental consultation listing; address conflict retained",
+                "url": "https://www.osakidetza.euskadi.eus/contenidos/informacion/salud_padi/es_def/adjuntos/padi-kontsultak-gipuzkoa.pdf"
+              },
+              {
+                "catalog_source_id": "OSM",
+                "contract_version": "0.3.1",
+                "institution": "OpenStreetMap contributors",
+                "publisher": "OpenStreetMap contributors",
+                "reference_period": "Acquired 2026-09-29",
+                "source_id": "OSM",
+                "source_role": "open_network",
+                "title": "Derivado público de red peatonal",
+                "transformation": "R4 public derivative removes editor/contact metadata; R5 canonicalizes XML line endings to LF for hashing, no geometry change; ODbL 1.0",
+                "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-2.203,43.041,-2.190,43.052"
+              },
+              {
+                "catalog_source_id": "MODEL",
+                "contract_version": "0.3.1",
+                "institution": "GIPUZKOA360",
+                "publisher": "GIPUZKOA360",
+                "reference_period": "R5.1",
+                "source_id": "MODEL",
+                "source_role": "model_parameter",
+                "title": "Perfil de paseo W1 R5.1",
+                "transformation": "ceil(raw total metres/50)*60+120 per complete directed link; each connector <=100 m",
+                "url": null
+              },
+              {
+                "catalog_source_id": "USER",
+                "contract_version": "0.3.1",
+                "institution": "Entrada del agente",
+                "publisher": "GIPUZKOA360 request/calculation",
+                "reference_period": "2026-09-29",
+                "source_id": "USER",
+                "source_role": "user_input",
+                "title": "Parámetros presentes en la petición a W1",
+                "transformation": "Only fields explicitly supplied by the caller; no provider defaults.",
+                "url": null
+              },
+              {
+                "catalog_source_id": "MODEL_DEFAULTS",
+                "contract_version": "0.3.1",
+                "institution": "Proveedor W1 0.3.1",
+                "publisher": "GIPUZKOA360 request/calculation",
+                "reference_period": "2026-09-29",
+                "source_id": "MODEL_DEFAULTS",
+                "source_role": "model_parameter",
+                "title": "Defaults aplicados por W1",
+                "transformation": "Defaults applied by provider_r6; not observed human choices.",
+                "url": null
+              },
+              {
+                "catalog_source_id": "DERIVED",
+                "contract_version": "0.3.1",
+                "institution": "Proveedor W1 0.3.1",
+                "publisher": "GIPUZKOA360 request/calculation",
+                "reference_period": "2026-09-29",
+                "source_id": "DERIVED",
+                "source_role": "derived_metric",
+                "title": "Componentes calculados del itinerario",
+                "transformation": "Intervals derived from explicit inputs, model defaults, schedule and walking model.",
+                "url": null
+              }
+            ],
+            "status": "ok",
+            "time_basis": "scheduled",
+            "walking": {
+              "outbound": {
+                "entrance_verified": false,
+                "modelled_access": true,
+                "seconds": 420,
+                "source_refs": [
+                  "GTFS",
+                  "HEALTH_REGISTRY",
+                  "OSM",
+                  "MODEL"
+                ],
+                "total_metres": 205.07964741035417
+              },
+              "return": {
+                "entrance_verified": false,
+                "modelled_access": true,
+                "seconds": 960,
+                "source_refs": [
+                  "GTFS",
+                  "HEALTH_REGISTRY",
+                  "OSM",
+                  "MODEL"
+                ],
+                "total_metres": 686.1157628496067
+              }
+            }
+          }
+        ]
+      },
+      "normalized_input": {
+        "arguments": {
+          "appointment_time": "09:30",
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "date": "2026-09-29",
+          "destination_id": "beasain_official_centre_anchor",
+          "duration_minutes": 20,
+          "origin_id": "zegama_center_stops",
+          "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+          "walking_profile_id": "poc_reference_50m_min_plus_120s"
+        },
+        "tool": "plan_visit"
+      },
+      "outcomes": [
+        {
+          "error": null,
+          "index": 0,
+          "status": "ok"
+        }
+      ],
+      "raw_result_sha256": "0b67450c4d56be947b7fdc51dbf55ee45e5141544fa031a8f75220fc0068c9c8",
+      "request_id": "501f0059cdcc43c78daa891b31060294",
+      "schema_version": "1.1.0",
+      "selection": {
+        "criterion": "Primeras entidades en el orden validado de la herramienta",
+        "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+        "omitted_entities": 0,
+        "returned_entities": 0,
+        "total_entities": 0
+      },
+      "status": "valid",
+      "versions": {
+        "code_sha256": "c9fe7e4c8078ba7f9bf2eb2a51e050b729d9f01e6021dbcc6909f951d2e936e8",
+        "contract_sha256": "6fbd22a567cc5a8d8ce17fd1968c52fc92448526bf81103e2768486d724d9ad0",
+        "data_sha256": "59fcded9e4236ee094eeb0881c4eb94f521b96fb6c8c89c881c3e9f6d5140901"
+      }
+    }
+  },
+  "conclusion": "Empty return_deadline is preserved by flat wrapper and rejected; omitted optional succeeds offline. Full served schema and reason for model empty value NOT_OBSERVED."
+}

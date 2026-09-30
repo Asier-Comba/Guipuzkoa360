@@ -1,0 +1,116 @@
+- region "Notifications alt+T"
+- generic "Connection Error:"
+- link "Saltar al contenido":
+  - /url: "#platform-main"
+- banner:
+  - link "Gipuzkoa AI Hackathon · MIT Media Lab City Science":
+    - /url: /area/
+  - button "Abrir navegación":
+    - generic: ☰
+    - generic: Menú
+  - generic "Abrir menú de cuenta":
+    - generic: H
+    - generic: ⌄
+- main:
+  - button "GIPUZKOA 360":
+    - strong: GIPUZKOA 360
+  - generic: Sección del workspace
+  - combobox "Sección del workspace":
+    - option "Resumen"
+    - option "Datos"
+    - option "Agentes"
+    - option "Pruebas" [selected]
+    - option "Entrega"
+    - option "Asistente IA"
+  - generic "Estado del workspace":
+    - generic "Ver estado y actividad del workspace"
+    - button "Reiniciar el entorno del equipo":
+      - generic: ↻
+    - button "Ejemplo resuelto"
+    - button "?"
+  - 'tabpanel "Pruebas: Verificación con versiones creadas"':
+    - toolbar "Acciones de pruebas de agentes":
+      - generic: PRUEBAS
+      - button "Conversaciones"
+    - option "Selecciona una versión para probar…" [selected]
+    - option "Python · GIPUZKOA 360 vNext R14 binding 094745b · v1"
+    - option "Python · GIPUZKOA 360 vNext R13 patch3 3951b290 · v1"
+    - option "Python · GIPUZKOA 360 · Versión final · v6"
+    - option "Python · GIPUZKOA 360 · Final · v5"
+    - option "Python · urban-challenge-rc2-195b498 · v4"
+    - option "Python · urban-challenge-rc2-ae62080 · v3"
+    - option "Python · urban-challenge-rc2-d8ec018 · v2"
+    - option "Python · GIPUZKOA 360 integración Work 2 · v1"
+    - option "Python · GIPUZKOA 360 · RC2 compact · v1"
+    - option "Python · GIPUZKOA 360 · RC2 runtime · v1"
+    - option "Python · GIPUZKOA 360 · RC1 exacto · v1"
+    - option "Python · GIPUZKOA 360 · integración jurado · v3"
+    - option "Python · GIPUZKOA 360 · integración jurado · v2"
+    - option "Python · GIPUZKOA 360 · integración jurado · v1"
+    - generic: AGENTE PYTHON · VERSIÓN PROBADA · V1
+    - heading "GIPUZKOA 360 vNext R14 binding 094745b" [level=2]
+    - paragraph: Esta conversación mantiene la versión v1. Editar el borrador o crear otra versión no cambia esta prueba.
+    - generic: Memoria activa
+    - generic: Sin Internet
+    - generic: 15585 tokens · 5 llamadas
+    - generic "Revisar evidencia" [active]
+    - strong: Última consulta · ejecución observada
+    - paragraph: "4 resultados de herramientas. 1 con error: revisad la salida antes de interpretar el resultado."
+    - paragraph: "Una ejecución terminada no evalúa la calidad del análisis. Revisad:"
+    - list:
+      - listitem: Contrasta una cifra decisiva con los datos y revisa el filtro y el denominador.
+      - listitem: Comprueba que la explicación responde a tu pregunta y distingue hechos de hipótesis.
+      - listitem: Anota qué falta por comprobar antes de utilizar el resultado.
+    - button "Descargar evidencia para revisar"
+    - paragraph: Incluye preguntas, respuestas y operaciones de esta conversación. Revisad el archivo antes de compartirlo en Entrega.
+    - log:
+      - article:
+        - generic: Tú
+        - paragraph: Desde las paradas del centro de Zegama, quiero ir al Ambulatorio de Beasain el 29 de septiembre de 2026 para una consulta a las 09:30 que dura 20 minutos y regresar. ¿Qué carga temporal completa resultaría con los datos disponibles?
+      - article:
+        - generic: GIPUZKOA 360 vNext R14 binding 094745b
+        - strong: Tool · consultar_capacidades
+        - code: "{\"pregunta_o_dimension\":\"plan_visit\"}"
+      - generic "Resultado de consultar_capacidades"
+      - article:
+        - generic: GIPUZKOA 360 vNext R14 binding 094745b
+        - strong: Tool · plan_visit
+        - code: "{\"origin_id\":\"zegama_center_stops\",\"destination_id\":\"beasain_official_centre_anchor\",\"date\":\"2026-09-29\",\"appointment_time\":\"09:30\",\"duration_minutes\":20,\"arrival_margin_minutes\":10,\"boarding_margin_minutes\":3,\"walking_profile_id\":\"poc_reference_50m_min_plus_120s\",\"snapshot_id\":\"official-goierrialdea-go01-health-r5-20260929\",\"return_deadline\":\"\"}"
+      - generic "Resultado de plan_visit"
+      - article:
+        - generic: GIPUZKOA 360 vNext R14 binding 094745b
+        - strong: Tool · plan_visit
+        - code: "{\"origin_id\":\"zegama_center_stops\",\"destination_id\":\"beasain_official_centre_anchor\",\"date\":\"2026-09-29\",\"appointment_time\":\"09:30\",\"duration_minutes\":20,\"arrival_margin_minutes\":10,\"boarding_margin_minutes\":3,\"walking_profile_id\":\"poc_reference_50m_min_plus_120s\",\"snapshot_id\":\"official-goierrialdea-go01-health-r5-20260929\",\"return_deadline\":\"\"}"
+      - generic "Resultado de plan_visit"
+      - article:
+        - generic: GIPUZKOA 360 vNext R14 binding 094745b
+        - strong: Tool · plan_visit
+        - code: "{\"origin_id\":\"zegama_center_stops\",\"destination_id\":\"beasain_official_centre_anchor\",\"date\":\"2026-09-29\",\"appointment_time\":\"09:30\",\"duration_minutes\":20,\"arrival_margin_minutes\":10,\"boarding_margin_minutes\":3,\"walking_profile_id\":\"poc_reference_50m_min_plus_120s\",\"snapshot_id\":\"official-goierrialdea-go01-health-r5-20260929\",\"return_deadline\":\"\"}"
+      - alert:
+        - generic "Error en plan_visit"
+      - article:
+        - generic: GIPUZKOA 360 vNext R14 binding 094745b
+        - paragraph: "No puedo calcular la carga temporal completa con los datos disponibles: la planificación no ha producido un resultado válido."
+        - list:
+          - text: La capacidad está habilitada para el
+          - strong: 29/09/2026
+          - text: ", desde las"
+          - strong: paradas centrales de Zegama
+          - text: hasta el
+          - strong: punto oficial modelado del Ambulatorio de Beasain
+          - text: .
+          - text: He aplicado la consulta a las
+          - strong: 09:30
+          - text: ", con"
+          - strong: 20 minutos
+          - text: "de duración y los márgenes predeterminados:"
+          - strong: 10 minutos de llegada
+          - text: "y"
+          - strong: 3 de subida
+          - text: .
+          - text: La ejecución falló con
+          - code: mobility:invalid_clock
+          - text: ; un segundo intento devolvió el mismo error y el siguiente no pudo ejecutarse. Por tanto, no hay horarios, duración de ida, espera ni regreso verificados que sumar.
+        - paragraph: Además, el modelo solo representaría paseo hasta un punto de referencia, no una entrada física verificada; los horarios serían programados, no tiempos reales.
+    - textbox "Escribe un mensaje…"
+    - button "Enviar" [disabled]

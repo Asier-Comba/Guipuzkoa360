@@ -1,51 +1,31 @@
-# W3 R14 — corrección lista; aceptación independiente pendiente
+# W3 R14 — agente real: gate M05 fallido
 
-PORTAL_BINDING_HOTFIX_READY. READY_FOR_FEEDBACK=NO. RELEASE_GO=NO.
+READY_FOR_FEEDBACK=NO. RELEASE_GO=NO. Critical0 / High1 / Medium2.
 
-## Identidad
+## Identidad y prerequisite cumplido
 
-- W3 base: 46657c9fc966052dce8b5de75959f8c68282cfb4.
-- Hotfix separado: hotfix/r14-portal-binding, 094745b26bc57aee5cc1a5e003401743d96a914f.
-- Base runtime exacta: 8c94f8c3cf9d732c4ce94af7b4bef8f6e154c243.
-- ZIP: 9c6fa5c692df178afe36366c6291e7c0e7c3da06134381b09d853f55d6707252.
-- Manifest: d6c0122b475284c468fdfc3e343b9ab0d9d175cf20513048c915281cedf4e911.
-- main.py: bc955c57558ae3f8f00aa6d8ad1452732ad7ead40faea794fa9e0f1e39ee6f23.
-- tools.py: 46498d6be4f65642784e3a721e408b7d22a0910f937f91660d095b7e57de807c (byte-idéntico).
-- ZIP/manifest nuevos en scripts/vnext_agent/dist/r14 de la rama hotfix.
-- Único miembro del paquete cambiado: main.py. Quince assets, productor W1 y nested ZIP intactos. Double-build PASS.
-- W1 soporte final: 106879509a667b75baec4860e28a16b9720fdc71; W2 documental: 5e3b43cce61e29693d8b11a01beaeb0e497c97d6.
+Oier publicó W1_R14_FRONTDOOR_ACCEPTANCE=PASS en PR15, PR18 e Issue16. W1 FINAL4bf975511ecea46c25662becfccb65713d381aa0. Hotfix exacto094745b26bc57aee5cc1a5e003401743d96a914f; ZIP9c6fa5c692df178afe36366c6291e7c0e7c3da06134381b09d853f55d6707252; manifest d6c0122b475284c468fdfc3e343b9ab0d9d175cf20513048c915281cedf4e911. Checkpoint completo en resultados/vnext/r14/W1_ACCEPTANCE_R14.json. CI hotfix36765784442 y W1 final36770251523 Windows/Ubuntu SUCCESS. La aceptación determinista independiente no acredita el agente real.
 
-## Evidencia
+Nueva versión privada GIPUZKOA360 vNext R14 binding094745b · v1, ID agentv_f6184593cd4f4daf80166122760c4a7f. R13v1 conservada sin modificar. Nuevo directorio agentes/gipuzkoa_360_vnext_r14_binding_094745b. main.py y tools.py descargados coinciden;15assets existentes descargados coinciden, incluido ZIPW1. No cambios de datos/math/runtime/tools ni en v4. Preparación visible: gpt-5.6-luna,9tools,memoria activa,Internet desactivado. plan_visit muestra diez nombres planos; schema completo servido NOT_OBSERVED. Version_creation retrasada y descarga inicial demoraron, sin reenviar preguntas. Archivos descargados del trabajo guardados fuera de Descargas.
 
-Firma: cinco campos requeridos y cinco opcionales planos. None opcional se omite; sin defaults nuevos ni parser. La llamada interna sigue siendo _run("plan_visit", {"request": request}). Nueve tools. Dos reglas genéricas añadidas al prompt, sin respuestas gold.
+## Resultado real y presupuesto
 
-Paridad completa de public_result (status, effective request, raw hash, claims, mobility, fuentes y límites), con ID de prueba fijo: siete casos truth pack y fixtures de tres orígenes, márgenes, duración, legacy, errores y None. Contraste numérico/semántico contra el truth pack final PASS. 5.000 combinaciones, seed360014, 10.000 ejecuciones direct/wrapper, sin crashes ni fallos de mapping o claims autoritativos en errores. No implica cobertura exhaustiva ni aceptación del LLM.
+Plan congelado intacto. Solo M05 enviado una vez desde sesión nueva vacía. Total5/12 mensajes usados (4 históricos+1nuevo),7restantes. Cuatro llamadas internas observadas: catálogo, dos plan_visit con error de dominio y tercer plan_visit con error de sandbox. Las llamadas internas no son mensajes adicionales. Total observado histórico+nuevo11 llamadas a tools; número de llamadas al modelo/historial interno NOT_OBSERVED.
 
-Hotfix: 378 Python y 17 Node PASS. Evaluador: 321 Python y 37 Node PASS. V4, jury y artifact gates PASS. Tests focales 76 PASS; recorder actualizado 1 PASS adicional tras la suite para evitar regenerar el ZIP histórico. Los tests de comparación continúan llamando al contrato interno: no se expone una interfaz nested al modelo. Los tests incluidos dentro del ZIP son auditoría histórica patch3 preservada; los tests planos actuales viven fuera del paquete.
+Intención/tool/entidad/campos planos correctos. El agente añadió return_deadline="" sin que el usuario pidiera deadline. Dos resultados contract_violation / mobility:invalid_clock, effective_request null, claims vacíos y raw hash null. El tercer intento idéntico no pudo crear sandbox. Final honesto: no cifra, no horarios verificados ni recomendación; conserva límites programado/modelado y entrada no verificada. No main sanitaria válida ni cadena completa natural→motor→resultado→respuesta fundada. M05 FAIL_HIGH; M06–M12 NOT_RUN_STOPPED_HIGH.
 
-Intentos previos conservados como incidencias del verificador: assertion demasiado estricta para error con evidencia explicativa, Python3.14 no reproduce ZIP W1, mezcla de numpy3.14/Python3.12 y callers de firma histórica. Corregidos sin tocar datos/math/tools.py. Un recorder antiguo regeneraba artefactos históricos durante tests; ahora usa el constructor R14. Las copias locales generadas por ese test fueron restauradas a sus bytes base exactos.
+Replay propio contra mismos bytes reproduce dos fallos. Control offline eliminando únicamente deadline vacío obtiene10691s. Este control NO es respuesta del agente ni cierra el High. No se modifica wrapper para convertir silenciosamente valores inválidos en defaults. La razón del valor vacío y el schema recibido por modelo no se observaron. No afirmar que Studio/Luna rompan nullables ni que la matemática W1 falle.
 
-## Portal y gates
+High actual: generación de opcional inválido impide el caso principal. Medium histórico de fuente/derivación no cerrado: falta respuesta numérica nueva con comunicación comprobable. Medium nuevo: error explícito de creación de sandbox en tercer intento. UI resume1error aunque2envelopeserror y1error de infraestructura son visibles; prevalece evidencia completa. HistóricoR13 se conserva con su severidad y candidato; no se transforma en PASS.
 
-W1_R14_FRONTDOOR_ACCEPTANCE=PENDING. No candidato nuevo cargado. No mensajes nuevos: 4/12 consumidos, 8 restantes. R13 M04 se conserva como HIGH real; el hotfix offline no lo reclasifica. Medium de fuentes/derivación pendiente de retest real. Critical0 / High1 / Medium1. Schema Studio completo NOT_OBSERVED; firma/esquema local esperado no se presenta como schema servido.
+## Artefactos y verificación
 
-El usuario exige PASS independiente W1 sobre SHA y ZIP exactos antes de cargar Studio. Esta es la única dependencia que impide continuar el portal. No corresponde pedir otra autorización al usuario ni consumir mensajes para probar sin W1. Después: nueva versión privada identificable, rehash de dos módulos y quince assets, observar parámetros planos, ejecutar plan congelado M05–M12 y detenerse ante High/Critical. No tocar R13v1, Entrega, track, main, v4 ni holdout.
+M05.json conserva DOM completo, M05_normalized.json argumentos/outputs/final, M05_complete_dom.txt, M05_failure.png. PORTAL_SMOKE_R14 y TURN_SCORECARD_R14 incluyen los8slots y14dimensiones; los7noenviados no puntúanPASS. SERVED_INTERFACE_R14 distingue nombres observados de schema esperado/no observado. W1_ACCEPTANCE_R14, studio_code_hashes, studio_asset_hashes y preparación fijan identidad. M05_offline_reproduction conserva errores reales y control positivo separado.
 
-## Reanudación exacta
+Verificación final propia: evaluador325Python/37Node PASS; identidad v4 PASS14/14, verify_jury_results PASS, verify_final_artifacts PASS y git diff --check limpio. Hotfix previo378Python/17Node PASS. No se repitió el benchmark completo. V4/jury/artifact identidad siguen siendo gates de regresión, no aceptación LLM. No benchmark completo, holdout, comparación LLM, merge, publicación, Entrega o track. Automatización de espera pausada al obtener PASS, para evitar mensajes duplicados.
 
-1. Leer PR15/Issue16 y comprobar W1_R14_FRONTDOOR_ACCEPTANCE=PASS para esta identidad; fetch y verificar que no hay candidato posterior.
-2. Crear una versión privada independiente: GIPUZKOA 360 vNext R14 binding 094745b2.
-3. Conservar presupuesto histórico, usar SMOKE_PLAN_R14.json, 14 dimensiones por turno. M05 debe ejecutar productor; M06/M07 requieren nuevas llamadas; M12 sesión nueva real.
-4. Actualizar evidencia/producto solo sobre capacidades realmente observadas. No confundir HTML offline con chat conectado.
-5. Con 0 Critical/High y gates clave PASS: READY_FOR_FEEDBACK=YES y STOP. Benchmark/holdout/release requieren alcance posterior.
+## Próximo paso acotado
 
-Para W1: ZIP/manifest R14, constructor build_r14_binding.py, verify_r14_binding.py, parity.json, fuzz.json, truth_pack_contrast.json, historical_m04_replay.json y firma esperada. Reproducción: python -m scripts.vnext_agent.verify_r14_binding --oracle docs/vnext/w3/r14/FINAL_ORACLE_R13.json --output resultados/vnext/r14. No necesita credenciales ni red ni framework/modelo. No benchmark completo ejecutado.
+Handoff a ingeniería/agente: revisar generación de opcionales y schema real a partir de M05. No nueva feature, dataset o cambios de math. Cualquier nuevo byte requiere nuevo SHA/ZIP y aceptación independiente W1. No más mensajes contra este candidato tras High. Preservar5/12consumidos y7restantes; no reiniciar presupuesto ni abrir benchmark. Producto continúaoffline con falloR14 visible. Detener la ronda aquí.
 
-## Publicación y CI confirmadas
-
-- Hotfix draft PR18: https://github.com/Asier-Comba/Guipuzkoa360/pull/18 . CI36765784442 SUCCESS, Ubuntu y Windows, exacto094745b26bc57aee5cc1a5e003401743d96a914f.
-- Evaluador PR14: CI36765616561 SUCCESS, Ubuntu y Windows, exacto9a49672672388a871874c93f23300283477d9483. El commit posterior solo incorpora este estado documental de publicación/CI.
-- Issue16: https://github.com/Asier-Comba/Guipuzkoa360/issues/16#issuecomment-5918172714 . W1 PR15: https://github.com/Asier-Comba/Guipuzkoa360/pull/15#issuecomment-5918173041 . PR14: https://github.com/Asier-Comba/Guipuzkoa360/pull/14#issuecomment-5918173332 .
-- Confirmación de último fetch/lectura: no PASS independiente W1 R14 publicado aún. No equivalencia entre CI y aceptación W1/LLM. HOTFIX_SHA/ZIP/manifest no cambian al publicar este cierre del evaluador.
-- Trece tests finales package/flat/recorder PASS tras guard de constructor y cambio de recorder. 5.000 combinaciones aleatorias eran errores controlados; no equivalen a viajes válidos. Los 18 probes explícitos cubren respuestas positivas y negativas.
-- Reconciliación reproducible adicional: python -m scripts.vnext_agent.reconcile_r14_reports. Constructor requiere CPython3.12; no usar la identidad comprimida3.14 experimental.
+Reproducción: python scripts/vnext_product/replay_m05_r14.py --python <CPython3.12> --candidate <ZIPexactoextraído>. La prueba offline requiere solo librería estándar y no llama al modelo. Defensa humana actualizada en DEFENSA_TECNICA_R14.md.

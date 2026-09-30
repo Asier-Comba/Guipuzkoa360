@@ -1,175 +1,586 @@
 {
-  "aggregation": "no averaging across failed gates",
-  "historical_m04_severity": "HIGH",
-  "status": "NOT_RUN_R14",
+  "classification": "MANUAL_INDEPENDENT_VISIBLE_TURN_REVIEW_NOT_FULL_BENCHMARK",
+  "status": "STOPPED_HIGH_M05",
+  "dimensions": [
+    "INTENT",
+    "TOOL",
+    "ARGS",
+    "BINDING",
+    "RESULT",
+    "GROUNDING",
+    "NUMERIC",
+    "SOURCE",
+    "LIMITS",
+    "FOLLOWUP",
+    "RECALC",
+    "ERROR",
+    "HALLUCINATION",
+    "CLARITY"
+  ],
   "turns": [
     {
-      "dimensions": {
-        "ARGS": "NOT_RUN",
-        "BINDING": "NOT_RUN",
-        "CLARITY": "NOT_RUN",
-        "ERROR": "NOT_RUN",
-        "FOLLOWUP": "NOT_RUN",
-        "GROUNDING": "NOT_RUN",
-        "HALLUCINATION": "NOT_RUN",
-        "INTENT": "NOT_RUN",
-        "LIMITS": "NOT_RUN",
-        "NUMERIC": "NOT_RUN",
-        "RECALC": "NOT_RUN",
-        "RESULT": "NOT_RUN",
-        "SOURCE": "NOT_RUN",
-        "TOOL": "NOT_RUN"
-      },
       "id": "M05",
-      "reason": "W1 exact SHA/ZIP independent acceptance not yet published",
-      "status": "NOT_RUN"
+      "session": "R14_A_NEW",
+      "status": "FAIL_HIGH",
+      "message": "Desde las paradas del centro de Zegama, quiero ir al Ambulatorio de Beasain el 29 de septiembre de 2026 para una consulta a las 09:30 que dura 20 minutos y regresar. ¿Qué carga temporal completa resultaría con los datos disponibles?",
+      "dimensions": {
+        "INTENT": "PASS",
+        "TOOL": "PASS",
+        "ARGS": "FAIL",
+        "BINDING": "PASS",
+        "RESULT": "FAIL",
+        "GROUNDING": "PASS",
+        "NUMERIC": "NOT_APPLICABLE_NO_HEALTH_FIGURE",
+        "SOURCE": "NOT_OBSERVED_NUMERICAL_SOURCE_EXPLANATION",
+        "LIMITS": "PASS",
+        "FOLLOWUP": "NOT_APPLICABLE",
+        "RECALC": "NOT_APPLICABLE",
+        "ERROR": "FAIL_REPEATED_INVALID_OPTIONAL",
+        "HALLUCINATION": "PASS",
+        "CLARITY": "PASS"
+      },
+      "tool_calls": [
+        {
+          "name": "consultar_capacidades",
+          "arguments": {
+            "pregunta_o_dimension": "plan_visit"
+          }
+        },
+        {
+          "name": "plan_visit",
+          "arguments": {
+            "origin_id": "zegama_center_stops",
+            "destination_id": "beasain_official_centre_anchor",
+            "date": "2026-09-29",
+            "appointment_time": "09:30",
+            "duration_minutes": 20,
+            "arrival_margin_minutes": 10,
+            "boarding_margin_minutes": 3,
+            "walking_profile_id": "poc_reference_50m_min_plus_120s",
+            "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+            "return_deadline": ""
+          }
+        },
+        {
+          "name": "plan_visit",
+          "arguments": {
+            "origin_id": "zegama_center_stops",
+            "destination_id": "beasain_official_centre_anchor",
+            "date": "2026-09-29",
+            "appointment_time": "09:30",
+            "duration_minutes": 20,
+            "arrival_margin_minutes": 10,
+            "boarding_margin_minutes": 3,
+            "walking_profile_id": "poc_reference_50m_min_plus_120s",
+            "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+            "return_deadline": ""
+          }
+        },
+        {
+          "name": "plan_visit",
+          "arguments": {
+            "origin_id": "zegama_center_stops",
+            "destination_id": "beasain_official_centre_anchor",
+            "date": "2026-09-29",
+            "appointment_time": "09:30",
+            "duration_minutes": 20,
+            "arrival_margin_minutes": 10,
+            "boarding_margin_minutes": 3,
+            "walking_profile_id": "poc_reference_50m_min_plus_120s",
+            "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+            "return_deadline": ""
+          }
+        }
+      ],
+      "tool_outputs": [
+        {
+          "assumptions": [],
+          "capabilities": [
+            {
+              "coverage": {
+                "entities": 3,
+                "periods": [
+                  "2026-09-28/2026-12-27",
+                  "2026-09-20",
+                  "Observed 2026-09-29",
+                  "2026-01",
+                  "Acquired 2026-09-29",
+                  "R5.1",
+                  "2026-09-29"
+                ],
+                "scope": "2026-09-29 only; health_visit modelled; stop_only explicit; origin_stop_presence_to_return_stop_arrival",
+                "territory": "Goierrialdea"
+              },
+              "derivation": "estimated_with_assumptions",
+              "description": "Visita sanitaria GO01 programada a punto oficial modelado del Ambulatorio de Beasain; opción legacy stop_only explícita; comparación 2–4",
+              "enabled": true,
+              "id": "plan_visit",
+              "semantic_limits": [
+                "Paseo modelado y tiempo GTFS programado, no llegada real.",
+                "Unknown no significa ausencia de transporte; no viable no es fallo de red.",
+                "Los argumentos de la tool no acreditan autoría humana."
+              ],
+              "validation_status": "tested"
+            }
+          ],
+          "capability_id": "consultar_capacidades",
+          "claims": [],
+          "effective_request": {
+            "contracts": {
+              "capability": "1.1.0",
+              "evidence": "1.1.0"
+            },
+            "defaults_applied": [],
+            "effective_period": null,
+            "municipality_codes": [],
+            "municipality_labels": [],
+            "operation": "consultar_capacidades",
+            "parameters": {
+              "pregunta_o_dimension": "plan_visit"
+            },
+            "snapshot_id": null
+          },
+          "error": null,
+          "execution": {
+            "arguments_sha256": "ef01b1a987e8702b83932f06eea42d74b3509da033ce9e014e7b71466943e520",
+            "request_id": "ba983ca65e0e482ba45854f9cbde82dc",
+            "snapshot_id": null,
+            "state": "completed",
+            "tool": "consultar_capacidades"
+          },
+          "limitations": [
+            "Una capacidad deshabilitada no se puede ejecutar.",
+            "El registro no sustituye una prueba conversacional en portal."
+          ],
+          "method": "Lectura del registro validado contra handlers, fuentes y hashes de datos.",
+          "mobility_catalog": {
+            "comparison_size": {
+              "maximum": 4,
+              "minimum": 2
+            },
+            "contract_version": "0.3.1",
+            "defaults": {
+              "arrival_margin_minutes": 10,
+              "boarding_margin_minutes": 3,
+              "return_deadline": null,
+              "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+              "timezone": "Europe/Madrid",
+              "walking_profile_id": "poc_reference_50m_min_plus_120s"
+            },
+            "destination": {
+              "centre_id": "entityBC631DA5",
+              "destination_id": "beasain_official_centre_anchor",
+              "name": "Ambulatorio de Beasain",
+              "reference_point_meaning": "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+              "verification": {
+                "centre_anchor": "CONFIRMED_OFFICIAL_POINT",
+                "centre_identity": "CONFIRMED",
+                "entrance_verified": false,
+                "modelled_access": true
+              }
+            },
+            "legacy_stop_only": {
+              "contract_version": "0.2.0",
+              "must_be_explicit": true,
+              "snapshot_id": "official-goierrialdea-go01-r4-20260929"
+            },
+            "origin_options": [
+              {
+                "municipality_name": "Idiazabal",
+                "name": "Paradas centrales de Idiazabal",
+                "origin_id": "idiazabal_center_stops"
+              },
+              {
+                "municipality_name": "Segura",
+                "name": "Paradas Herriko Plaza de Segura",
+                "origin_id": "segura_herriko_plaza_stops"
+              },
+              {
+                "municipality_name": "Zegama",
+                "name": "Paradas centrales de Zegama",
+                "origin_id": "zegama_center_stops"
+              }
+            ],
+            "ranges": {
+              "arrival_margin_minutes": {
+                "maximum": 240,
+                "minimum": 0
+              },
+              "boarding_margin_minutes": {
+                "maximum": 120,
+                "minimum": 0
+              },
+              "duration_minutes": {
+                "maximum": 720,
+                "minimum": 1
+              }
+            },
+            "request_fields": [
+              "origin_id",
+              "destination_id",
+              "date",
+              "appointment_time",
+              "duration_minutes",
+              "arrival_margin_minutes",
+              "boarding_margin_minutes",
+              "walking_profile_id",
+              "snapshot_id",
+              "return_deadline"
+            ],
+            "required_fields": [
+              "origin_id",
+              "destination_id",
+              "date",
+              "appointment_time",
+              "duration_minutes"
+            ],
+            "restrictions": [
+              "GO01 direct only",
+              "static schedule; not realtime",
+              "same civil day",
+              "origin stop presence to return stop arrival",
+              "validated date only",
+              "not assigned centre, appointment availability, universal accessibility or verified entrance"
+            ],
+            "scenario_kind": "health_visit",
+            "validated_date": "2026-09-29",
+            "walking_profile": {
+              "id": "poc_reference_50m_min_plus_120s",
+              "label": "Paseo modelado de referencia: 50 m/min más 120 s por enlace completo"
+            }
+          },
+          "normalized_input": {
+            "arguments": {
+              "pregunta_o_dimension": "plan_visit"
+            },
+            "tool": "consultar_capacidades"
+          },
+          "outcomes": [],
+          "raw_result_sha256": "6435c0d5387dcdc2bd9b066786aa8ae9d561d4deaba15432f573458cfa1bd87b",
+          "request_id": "ba983ca65e0e482ba45854f9cbde82dc",
+          "schema_version": "1.1.0",
+          "selection": {
+            "criterion": "Primeras entidades en el orden validado de la herramienta",
+            "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+            "omitted_entities": 0,
+            "returned_entities": 0,
+            "total_entities": 0
+          },
+          "status": "valid",
+          "versions": {
+            "code_sha256": "46498d6be4f65642784e3a721e408b7d22a0910f937f91660d095b7e57de807c",
+            "contract_sha256": "6fbd22a567cc5a8d8ce17fd1968c52fc92448526bf81103e2768486d724d9ad0",
+            "data_sha256": "45c28e3e606821ee7738d67066c6bb9291a0e75f8fdace6ca44809cc46e20468"
+          }
+        },
+        {
+          "assumptions": [],
+          "capability_id": "plan_visit",
+          "claims": [],
+          "effective_request": null,
+          "error": {
+            "available_options": [],
+            "code": "contract_violation",
+            "message": "mobility:invalid_clock",
+            "origin": "domain",
+            "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+          },
+          "execution": {
+            "arguments_sha256": "3a31b551784b646bf09a46635580b6057c1dc7e9ec74d07bac2a9fe9a8f3e823",
+            "request_id": "228a24d5cb5a4ea0bc0ae762f3dff0e3",
+            "snapshot_id": null,
+            "state": "failed",
+            "tool": "plan_visit"
+          },
+          "limitations": [],
+          "method": "",
+          "normalized_input": {
+            "arguments": {
+              "request": {
+                "appointment_time": "09:30",
+                "arrival_margin_minutes": 10,
+                "boarding_margin_minutes": 3,
+                "date": "2026-09-29",
+                "destination_id": "beasain_official_centre_anchor",
+                "duration_minutes": 20,
+                "origin_id": "zegama_center_stops",
+                "return_deadline": "",
+                "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+                "walking_profile_id": "poc_reference_50m_min_plus_120s"
+              }
+            },
+            "tool": "plan_visit"
+          },
+          "outcomes": [],
+          "raw_result_sha256": null,
+          "request_id": "228a24d5cb5a4ea0bc0ae762f3dff0e3",
+          "schema_version": "1.1.0",
+          "selection": {
+            "criterion": "Primeras entidades en el orden validado de la herramienta",
+            "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+            "omitted_entities": 0,
+            "returned_entities": 0,
+            "total_entities": 0
+          },
+          "status": "error",
+          "versions": {
+            "code_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "contract_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "data_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+          }
+        },
+        {
+          "assumptions": [],
+          "capability_id": "plan_visit",
+          "claims": [],
+          "effective_request": null,
+          "error": {
+            "available_options": [],
+            "code": "contract_violation",
+            "message": "mobility:invalid_clock",
+            "origin": "domain",
+            "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+          },
+          "execution": {
+            "arguments_sha256": "3a31b551784b646bf09a46635580b6057c1dc7e9ec74d07bac2a9fe9a8f3e823",
+            "request_id": "dc9162fdbef441e29cc1f512e7c5d939",
+            "snapshot_id": null,
+            "state": "failed",
+            "tool": "plan_visit"
+          },
+          "limitations": [],
+          "method": "",
+          "normalized_input": {
+            "arguments": {
+              "request": {
+                "appointment_time": "09:30",
+                "arrival_margin_minutes": 10,
+                "boarding_margin_minutes": 3,
+                "date": "2026-09-29",
+                "destination_id": "beasain_official_centre_anchor",
+                "duration_minutes": 20,
+                "origin_id": "zegama_center_stops",
+                "return_deadline": "",
+                "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+                "walking_profile_id": "poc_reference_50m_min_plus_120s"
+              }
+            },
+            "tool": "plan_visit"
+          },
+          "outcomes": [],
+          "raw_result_sha256": null,
+          "request_id": "dc9162fdbef441e29cc1f512e7c5d939",
+          "schema_version": "1.1.0",
+          "selection": {
+            "criterion": "Primeras entidades en el orden validado de la herramienta",
+            "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+            "omitted_entities": 0,
+            "returned_entities": 0,
+            "total_entities": 0
+          },
+          "status": "error",
+          "versions": {
+            "code_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "contract_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "data_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+          }
+        },
+        {
+          "platform_error": "ERROR al ejecutar plan_visit: Failed to create sandbox. Please try again.",
+          "producer_result": "NOT_OBSERVED"
+        }
+      ],
+      "assistant_final": "No puedo calcular la carga temporal completa con los datos disponibles: la planificación no ha producido un resultado válido.\n\nLa capacidad está habilitada para el 29/09/2026, desde las paradas centrales de Zegama hasta el punto oficial modelado del Ambulatorio de Beasain.\nHe aplicado la consulta a las 09:30, con 20 minutos de duración y los márgenes predeterminados: 10 minutos de llegada y 3 de subida.\nLa ejecución falló con mobility:invalid_clock; un segundo intento devolvió el mismo error y el siguiente no pudo ejecutarse. Por tanto, no hay horarios, duración de ida, espera ni regreso verificados que sumar.\n\nAdemás, el modelo solo representaría paseo hasta un punto de referencia, no una entrada física verificada; los horarios serían programados, no tiempos reales.",
+      "portal_version_id": "agentv_f6184593cd4f4daf80166122760c4a7f",
+      "model_visible_configuration": "openai:gpt-5.6-luna",
+      "model_request_identity": "NOT_OBSERVED",
+      "model_history": "NOT_OBSERVED",
+      "model_call_count": "NOT_OBSERVED",
+      "capture_scope": "Actual current conversation DOM; tool args, complete visible output JSON/platform error and final",
+      "entity_identity": "PASS; Zegama to modelled Beasain anchor on requested date/time/duration",
+      "source_period_review": "Capabilities include source periods; no computed health figure or numerical source/derivation explanation to score",
+      "fresh_producer_raw": "NOT_OBSERVED; both domain errors raw hash null; third attempt sandbox creation failed",
+      "findings": [
+        "R14-EMPTY-DEADLINE",
+        "R14-SANDBOX-CREATION"
+      ]
     },
     {
-      "dimensions": {
-        "ARGS": "NOT_RUN",
-        "BINDING": "NOT_RUN",
-        "CLARITY": "NOT_RUN",
-        "ERROR": "NOT_RUN",
-        "FOLLOWUP": "NOT_RUN",
-        "GROUNDING": "NOT_RUN",
-        "HALLUCINATION": "NOT_RUN",
-        "INTENT": "NOT_RUN",
-        "LIMITS": "NOT_RUN",
-        "NUMERIC": "NOT_RUN",
-        "RECALC": "NOT_RUN",
-        "RESULT": "NOT_RUN",
-        "SOURCE": "NOT_RUN",
-        "TOOL": "NOT_RUN"
-      },
       "id": "M06",
-      "reason": "W1 exact SHA/ZIP independent acceptance not yet published",
-      "status": "NOT_RUN"
+      "status": "NOT_RUN_STOPPED_HIGH",
+      "dimensions": {
+        "INTENT": "NOT_OBSERVED",
+        "TOOL": "NOT_OBSERVED",
+        "ARGS": "NOT_OBSERVED",
+        "BINDING": "NOT_OBSERVED",
+        "RESULT": "NOT_OBSERVED",
+        "GROUNDING": "NOT_OBSERVED",
+        "NUMERIC": "NOT_OBSERVED",
+        "SOURCE": "NOT_OBSERVED",
+        "LIMITS": "NOT_OBSERVED",
+        "FOLLOWUP": "NOT_OBSERVED",
+        "RECALC": "NOT_OBSERVED",
+        "ERROR": "NOT_OBSERVED",
+        "HALLUCINATION": "NOT_OBSERVED",
+        "CLARITY": "NOT_OBSERVED"
+      },
+      "reason": "M05 absolute gate failed; no user retry and no later message sent"
     },
     {
-      "dimensions": {
-        "ARGS": "NOT_RUN",
-        "BINDING": "NOT_RUN",
-        "CLARITY": "NOT_RUN",
-        "ERROR": "NOT_RUN",
-        "FOLLOWUP": "NOT_RUN",
-        "GROUNDING": "NOT_RUN",
-        "HALLUCINATION": "NOT_RUN",
-        "INTENT": "NOT_RUN",
-        "LIMITS": "NOT_RUN",
-        "NUMERIC": "NOT_RUN",
-        "RECALC": "NOT_RUN",
-        "RESULT": "NOT_RUN",
-        "SOURCE": "NOT_RUN",
-        "TOOL": "NOT_RUN"
-      },
       "id": "M07",
-      "reason": "W1 exact SHA/ZIP independent acceptance not yet published",
-      "status": "NOT_RUN"
+      "status": "NOT_RUN_STOPPED_HIGH",
+      "dimensions": {
+        "INTENT": "NOT_OBSERVED",
+        "TOOL": "NOT_OBSERVED",
+        "ARGS": "NOT_OBSERVED",
+        "BINDING": "NOT_OBSERVED",
+        "RESULT": "NOT_OBSERVED",
+        "GROUNDING": "NOT_OBSERVED",
+        "NUMERIC": "NOT_OBSERVED",
+        "SOURCE": "NOT_OBSERVED",
+        "LIMITS": "NOT_OBSERVED",
+        "FOLLOWUP": "NOT_OBSERVED",
+        "RECALC": "NOT_OBSERVED",
+        "ERROR": "NOT_OBSERVED",
+        "HALLUCINATION": "NOT_OBSERVED",
+        "CLARITY": "NOT_OBSERVED"
+      },
+      "reason": "M05 absolute gate failed; no user retry and no later message sent"
     },
     {
-      "dimensions": {
-        "ARGS": "NOT_RUN",
-        "BINDING": "NOT_RUN",
-        "CLARITY": "NOT_RUN",
-        "ERROR": "NOT_RUN",
-        "FOLLOWUP": "NOT_RUN",
-        "GROUNDING": "NOT_RUN",
-        "HALLUCINATION": "NOT_RUN",
-        "INTENT": "NOT_RUN",
-        "LIMITS": "NOT_RUN",
-        "NUMERIC": "NOT_RUN",
-        "RECALC": "NOT_RUN",
-        "RESULT": "NOT_RUN",
-        "SOURCE": "NOT_RUN",
-        "TOOL": "NOT_RUN"
-      },
       "id": "M08",
-      "reason": "W1 exact SHA/ZIP independent acceptance not yet published",
-      "status": "NOT_RUN"
+      "status": "NOT_RUN_STOPPED_HIGH",
+      "dimensions": {
+        "INTENT": "NOT_OBSERVED",
+        "TOOL": "NOT_OBSERVED",
+        "ARGS": "NOT_OBSERVED",
+        "BINDING": "NOT_OBSERVED",
+        "RESULT": "NOT_OBSERVED",
+        "GROUNDING": "NOT_OBSERVED",
+        "NUMERIC": "NOT_OBSERVED",
+        "SOURCE": "NOT_OBSERVED",
+        "LIMITS": "NOT_OBSERVED",
+        "FOLLOWUP": "NOT_OBSERVED",
+        "RECALC": "NOT_OBSERVED",
+        "ERROR": "NOT_OBSERVED",
+        "HALLUCINATION": "NOT_OBSERVED",
+        "CLARITY": "NOT_OBSERVED"
+      },
+      "reason": "M05 absolute gate failed; no user retry and no later message sent"
     },
     {
-      "dimensions": {
-        "ARGS": "NOT_RUN",
-        "BINDING": "NOT_RUN",
-        "CLARITY": "NOT_RUN",
-        "ERROR": "NOT_RUN",
-        "FOLLOWUP": "NOT_RUN",
-        "GROUNDING": "NOT_RUN",
-        "HALLUCINATION": "NOT_RUN",
-        "INTENT": "NOT_RUN",
-        "LIMITS": "NOT_RUN",
-        "NUMERIC": "NOT_RUN",
-        "RECALC": "NOT_RUN",
-        "RESULT": "NOT_RUN",
-        "SOURCE": "NOT_RUN",
-        "TOOL": "NOT_RUN"
-      },
       "id": "M09",
-      "reason": "W1 exact SHA/ZIP independent acceptance not yet published",
-      "status": "NOT_RUN"
+      "status": "NOT_RUN_STOPPED_HIGH",
+      "dimensions": {
+        "INTENT": "NOT_OBSERVED",
+        "TOOL": "NOT_OBSERVED",
+        "ARGS": "NOT_OBSERVED",
+        "BINDING": "NOT_OBSERVED",
+        "RESULT": "NOT_OBSERVED",
+        "GROUNDING": "NOT_OBSERVED",
+        "NUMERIC": "NOT_OBSERVED",
+        "SOURCE": "NOT_OBSERVED",
+        "LIMITS": "NOT_OBSERVED",
+        "FOLLOWUP": "NOT_OBSERVED",
+        "RECALC": "NOT_OBSERVED",
+        "ERROR": "NOT_OBSERVED",
+        "HALLUCINATION": "NOT_OBSERVED",
+        "CLARITY": "NOT_OBSERVED"
+      },
+      "reason": "M05 absolute gate failed; no user retry and no later message sent"
     },
     {
-      "dimensions": {
-        "ARGS": "NOT_RUN",
-        "BINDING": "NOT_RUN",
-        "CLARITY": "NOT_RUN",
-        "ERROR": "NOT_RUN",
-        "FOLLOWUP": "NOT_RUN",
-        "GROUNDING": "NOT_RUN",
-        "HALLUCINATION": "NOT_RUN",
-        "INTENT": "NOT_RUN",
-        "LIMITS": "NOT_RUN",
-        "NUMERIC": "NOT_RUN",
-        "RECALC": "NOT_RUN",
-        "RESULT": "NOT_RUN",
-        "SOURCE": "NOT_RUN",
-        "TOOL": "NOT_RUN"
-      },
       "id": "M10",
-      "reason": "W1 exact SHA/ZIP independent acceptance not yet published",
-      "status": "NOT_RUN"
+      "status": "NOT_RUN_STOPPED_HIGH",
+      "dimensions": {
+        "INTENT": "NOT_OBSERVED",
+        "TOOL": "NOT_OBSERVED",
+        "ARGS": "NOT_OBSERVED",
+        "BINDING": "NOT_OBSERVED",
+        "RESULT": "NOT_OBSERVED",
+        "GROUNDING": "NOT_OBSERVED",
+        "NUMERIC": "NOT_OBSERVED",
+        "SOURCE": "NOT_OBSERVED",
+        "LIMITS": "NOT_OBSERVED",
+        "FOLLOWUP": "NOT_OBSERVED",
+        "RECALC": "NOT_OBSERVED",
+        "ERROR": "NOT_OBSERVED",
+        "HALLUCINATION": "NOT_OBSERVED",
+        "CLARITY": "NOT_OBSERVED"
+      },
+      "reason": "M05 absolute gate failed; no user retry and no later message sent"
     },
     {
-      "dimensions": {
-        "ARGS": "NOT_RUN",
-        "BINDING": "NOT_RUN",
-        "CLARITY": "NOT_RUN",
-        "ERROR": "NOT_RUN",
-        "FOLLOWUP": "NOT_RUN",
-        "GROUNDING": "NOT_RUN",
-        "HALLUCINATION": "NOT_RUN",
-        "INTENT": "NOT_RUN",
-        "LIMITS": "NOT_RUN",
-        "NUMERIC": "NOT_RUN",
-        "RECALC": "NOT_RUN",
-        "RESULT": "NOT_RUN",
-        "SOURCE": "NOT_RUN",
-        "TOOL": "NOT_RUN"
-      },
       "id": "M11",
-      "reason": "W1 exact SHA/ZIP independent acceptance not yet published",
-      "status": "NOT_RUN"
+      "status": "NOT_RUN_STOPPED_HIGH",
+      "dimensions": {
+        "INTENT": "NOT_OBSERVED",
+        "TOOL": "NOT_OBSERVED",
+        "ARGS": "NOT_OBSERVED",
+        "BINDING": "NOT_OBSERVED",
+        "RESULT": "NOT_OBSERVED",
+        "GROUNDING": "NOT_OBSERVED",
+        "NUMERIC": "NOT_OBSERVED",
+        "SOURCE": "NOT_OBSERVED",
+        "LIMITS": "NOT_OBSERVED",
+        "FOLLOWUP": "NOT_OBSERVED",
+        "RECALC": "NOT_OBSERVED",
+        "ERROR": "NOT_OBSERVED",
+        "HALLUCINATION": "NOT_OBSERVED",
+        "CLARITY": "NOT_OBSERVED"
+      },
+      "reason": "M05 absolute gate failed; no user retry and no later message sent"
     },
     {
-      "dimensions": {
-        "ARGS": "NOT_RUN",
-        "BINDING": "NOT_RUN",
-        "CLARITY": "NOT_RUN",
-        "ERROR": "NOT_RUN",
-        "FOLLOWUP": "NOT_RUN",
-        "GROUNDING": "NOT_RUN",
-        "HALLUCINATION": "NOT_RUN",
-        "INTENT": "NOT_RUN",
-        "LIMITS": "NOT_RUN",
-        "NUMERIC": "NOT_RUN",
-        "RECALC": "NOT_RUN",
-        "RESULT": "NOT_RUN",
-        "SOURCE": "NOT_RUN",
-        "TOOL": "NOT_RUN"
-      },
       "id": "M12",
-      "reason": "W1 exact SHA/ZIP independent acceptance not yet published",
-      "status": "NOT_RUN"
+      "status": "NOT_RUN_STOPPED_HIGH",
+      "dimensions": {
+        "INTENT": "NOT_OBSERVED",
+        "TOOL": "NOT_OBSERVED",
+        "ARGS": "NOT_OBSERVED",
+        "BINDING": "NOT_OBSERVED",
+        "RESULT": "NOT_OBSERVED",
+        "GROUNDING": "NOT_OBSERVED",
+        "NUMERIC": "NOT_OBSERVED",
+        "SOURCE": "NOT_OBSERVED",
+        "LIMITS": "NOT_OBSERVED",
+        "FOLLOWUP": "NOT_OBSERVED",
+        "RECALC": "NOT_OBSERVED",
+        "ERROR": "NOT_OBSERVED",
+        "HALLUCINATION": "NOT_OBSERVED",
+        "CLARITY": "NOT_OBSERVED"
+      },
+      "reason": "M05 absolute gate failed; no user retry and no later message sent"
     }
-  ]
+  ],
+  "critical": 0,
+  "high": 1,
+  "medium": 2,
+  "findings": [
+    {
+      "id": "R14-EMPTY-DEADLINE",
+      "severity": "HIGH",
+      "owner": "agent/tool interface",
+      "evidence": "M05.json and M05_normalized.json",
+      "detail": "Model sends flat fields but sets optional return_deadline empty string. Two actual domain errors mobility:invalid_clock, no claims/raw, third same args cannot create sandbox. Natural main journey not demonstrated.",
+      "reproduction": "M05_offline_reproduction.json; actual bad arguments reproduce error; only omission control succeeds offline",
+      "cause_limit": "Full served model schema and reason for empty value NOT_OBSERVED; no blame assigned to Studio/Luna/provider math",
+      "next_action": "Review optional-field generation against served interface. Any changed candidate needs new identity and W1 acceptance. No further portal messages under this failed gate."
+    },
+    {
+      "id": "R13-SOURCE-COPY",
+      "severity": "MEDIUM",
+      "status": "HISTORICAL_UNRESOLVED_REAL_NUMERICAL_RETEST_NOT_COMPLETED",
+      "detail": "M05 has no computed health figure. New numerical source/period/derivation communication not established; generic prompt rule alone does not close prior finding."
+    },
+    {
+      "id": "R14-SANDBOX-CREATION",
+      "severity": "MEDIUM",
+      "owner": "platform availability risk",
+      "detail": "ERROR al ejecutar plan_visit: Failed to create sandbox. Please try again.",
+      "scope": "Actual third internal attempt, separate from the two reproduced domain errors; not evidence of provider arithmetic defect"
+    }
+  ],
+  "historical_r13": "Preserved unchanged; request:string failure remains historical HIGH, not retroactively reclassified",
+  "severity_scope": "One current candidate integration High, one unresolved historical source-copy Medium and one observed platform risk Medium; not an average of attempts"
 }

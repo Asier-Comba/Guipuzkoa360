@@ -17,6 +17,9 @@ def main():
     style=re.search(r"<style>(.*?)</style>",(BASE/"template.html").read_text(encoding="utf-8"),re.S).group(1)
     template=(BASE/"health_template.html").read_text(encoding="utf-8")
     portal_note='Studio R13: la pregunta sanitaria falló por argumentos incompatibles; lote detenido en 4/12 mensajes. Estas cifras proceden del cálculo offline aceptado de patch3, no de esa respuesta del agente.' if evidence.get('portal_health_status')=='BLOCKED_REQUEST_BINDING_R13_M04' else ''
+    current=BASE/'r14/PORTAL_SMOKE_R14.json'
+    if args.output.name=='health.html' and current.is_file() and json.loads(current.read_bytes()).get('status')=='STOPPED_HIGH_M05':
+        portal_note='Studio R14: M05 envió campos planos, pero añadió un plazo de regreso vacío y el cálculo fue rechazado; un tercer intento interno no pudo crear el sandbox. Lote detenido en 5/12 mensajes. Estas cifras siguen siendo cálculos offline verificados, no una respuesta sanitaria válida del agente real.'
     output=template.replace("__STYLE__",style).replace("__PORTAL_NOTE__",html.escape(portal_note)).replace("__EVIDENCE__",json.dumps(evidence,ensure_ascii=False,separators=(",",":")).replace("<","\\u003c")).replace("__CONTRACT__",(ROOT/"scripts/vnext_product/health_contract.js").read_text(encoding="utf-8"))
     path=args.output;path.write_bytes(output.encode("utf-8"))
     payload={"schema_version":"W3-HEALTH-QUERY-1","provider_pin":evidence["provider_pin"],"package_sha256":evidence["package_sha256"],"output":evidence["outputs"]["time"]}

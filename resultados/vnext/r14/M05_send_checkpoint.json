@@ -1,0 +1,7 @@
+{
+  "id": "M05",
+  "message": "Desde las paradas del centro de Zegama, quiero ir al Ambulatorio de Beasain el 29 de septiembre de 2026 para una consulta a las 09:30 que dura 20 minutos y regresar. ¿Qué carga temporal completa resultaría con los datos disponibles?",
+  "budget_before": 4,
+  "budget_after_send": 5,
+  "state": "SENDING_ONCE"
+}

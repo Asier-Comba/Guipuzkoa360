@@ -22,9 +22,11 @@
 
 ## Estado que debemos decir hoy
 
-La interfaz corregida y el motor pasan sus comprobaciones offline. La versión anterior falló al enviar texto libre en vez de parámetros estructurados y respondió reconociendo el error, sin inventar una cifra. No hemos demostrado que la causa estuviera en Studio o en el modelo.
+La interfaz corregida y el motor pasan sus comprobaciones offline y la revisión independiente de Oier. La versión anterior falló al enviar texto libre en vez de parámetros estructurados y respondió reconociendo el error, sin inventar una cifra.
 
-Falta la aceptación independiente de Oier sobre el paquete exacto. Solo después se creará una versión privada distinta y se ejecutarán los ocho mensajes restantes: caso principal, cambio de hora, duración, explicación, límites, intento adversarial y sesión nueva. El agente real debe elegir bien, llamar de nuevo al motor cuando corresponda y explicar fuentes y límites. La corrección offline no cierra por sí sola el fallo histórico ni el problema de comunicación de fuentes.
+Después de esa aceptación creamos una versión privada distinta y probamos el caso principal una sola vez. El agente eligió la herramienta correcta y envió campos separados, pero añadió un plazo de regreso vacío que la herramienta rechazó. Dos intentos internos devolvieron ese error y el tercero no pudo crear el entorno de ejecución. La respuesta final reconoció que no había un resultado válido y no inventó una duración. No está demostrada una causa en Studio o en el modelo para ese valor vacío.
+
+Por eso detuvimos el lote: siguen sin probarse el cambio de hora, la duración, la explicación numérica de fuentes, el intento adversarial y la sesión limpia. Hemos usado cinco de los doce mensajes autorizados. En un control offline, omitir ese único plazo vacío permite calcular el caso, pero eso no equivale a que el agente lo haya resuelto. Hay que revisar la generación de opcionales y aceptar cualquier candidato nuevo antes de volver al portal. El problema de comunicación de fuentes anterior tampoco queda cerrado sin una respuesta numérica nueva que podamos revisar.
 
 Si esas pruebas pasan, podremos declarar que está listo para recibir feedback. Seguirán pendientes el benchmark final, el holdout y la decisión humana de publicación. El HTML sanitario actual es un artefacto explicativo offline.
 
