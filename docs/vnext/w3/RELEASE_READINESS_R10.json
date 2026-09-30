@@ -1,0 +1,150 @@
+{
+  "schema_version": "W3_RELEASE_READINESS_R10_1",
+  "reviewed_on": "2026-09-30",
+  "start_sha": "e821341ba1ffd8ed7947cdb97802348919ef502a",
+  "tested_product_code_sha": "a91b6808b8da4c4fde9fa8db831747eee78ae14b",
+  "published_final_head": "See final PR14 publication comment; avoids self-referential commit SHA.",
+  "identities": {
+    "w1_runtime": "cb061a97e78d6b5c967104fef6b935132fdc450f",
+    "w1_initial_support": "6ebf41e2f1fe24f1c3678c4be13c6c44cf8cb62b",
+    "w1_corrected_support": "6e284aff347cfcf5fbb3d7eb9cb89a227b83e0d5",
+    "w1_health_package_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+    "w2_code": "8272988566f5bca2d65d3119732bf831d11382dc",
+    "w2_stop_only_package_sha256": "366cdc7d160ee6743cb125c6709f57e48f6ddfb91ead812a92eb881570233357",
+    "w2_health_combined_package_sha256": null,
+    "v4_runtime": "195b4980fa5998b096c308296a55e452380b0371",
+    "main_ancestor": "e213eaa9b73b0f8a4d1893e0269fe92fe6756955",
+    "contracts": {
+      "w1_health": "0.3.1",
+      "w2_current_mobility": "0.2.0",
+      "import": "W3-HEALTH-QUERY-1",
+      "trace": "W3_TRACE_2.1.0",
+      "scorer": "2.1.0"
+    },
+    "model_id": null,
+    "model_config": null,
+    "corpus": {
+      "development": "40ec6a2e25331a2e040b7fedfd3ad75ff7245b508ef30c605d9cc6fdeb5e046a",
+      "conversations": "ca1dcb321bc92d2efa42c871e9730926421a375bfeab77edfee696e5ed09f413",
+      "private_holdout": "4dda59721932f620cba53e5686df288f7cf0e0e968ec30540216ffb1f52ec5c0"
+    },
+    "artifacts": {
+      "resultados/vnext/r10/health_evidence.json": "81e7618ff6e7393b38a99279c67633a673374c30be937419df94fdc40de2c243",
+      "resultados/vnext/r10/health_review.json": "69918c08c259d8f07bac353b654337e6f1dfc255cdd8f77bfdbffa1fe632a45a",
+      "resultados/vnext/r10/w2_retest_evidence.json": "0af80434a3d97d91af60f87cd48c2545b7dc7f6637358c49fc8adfe09077ef39",
+      "resultados/vnext/r10/w2_retest_report.json": "ea4041b54332285b96978d749efe9fb1dbe79b09d39e8a337e64ebe76d44e779",
+      "resultados/vnext/r10/support_review.json": "f44393804e8655c0c9e4df22dc629ba57b38942bd9d6dbfbec1018e940000a46",
+      "resultados/vnext/r10/local_smoke_status.json": "78479378ce8e8980a42e5cd4c5ab85412c6a0618ee248c652d12a59b56ba924c",
+      "resultados/vnext/r10/conversation_evaluation_status.json": "5c6343a4ffa3599fc966e7a2611ce45e31664cb06e92b0fec55249eaec3279e9",
+      "resultados/vnext/health.html": "50638aa11c98e7bdecf48180c5a7d77ceb1c8c3a095ffea6eb553f29e4ed86d8",
+      "docs/vnext/w3/SMOKE_PLAN_R10.json": "3ef9a9672977d80b0c10d89ea57fc1f037e06d29ceb5bc695b1201a65b970895",
+      "docs/vnext/w3/DOCUMENT_GOLD_R4.json": "41bc6823449d161d1ad695134e353a7b3c169ca69c17861ba70393ea5b0b2220",
+      "resultados/vnext/r10/test_results.json": "542afc055cb7669c1f4a98fd10d22cf45729d2804267b860121aca9525de389b"
+    }
+  },
+  "PRODUCER_READY": {
+    "status": "PASS",
+    "reason": "Pinned 0.3.1 outputs accepted for modelled official point only; selected raw rows and arithmetic independently contrasted.",
+    "evidence": "resultados/vnext/r10/health_review.json"
+  },
+  "CONTRACTS_RETESTED": {
+    "status": "PASS",
+    "reason": "Five historical development probes / three roots FIXED_INDEPENDENTLY_VERIFIED in current W2 0.2.0 package; legitimate public results retained. Not a conversation score.",
+    "evidence": "resultados/vnext/r10/w2_retest_report.json"
+  },
+  "ASSEMBLY_READY": {
+    "status": "BLOCKED",
+    "reason": "W1 health package passes and W2 territorial tools run cleanly, but no published exact combined W2 health 0.3.1 package. Portal import closure still requires authorized smoke.",
+    "evidence": "docs/vnext/w3/ACCEPTANCE_R10.md"
+  },
+  "MODEL_INTERFACE_READY": {
+    "status": "BLOCKED",
+    "reason": "Current W2 prompts/tools expose stop-only 0.2.0; no health 0.3.1 model view accepted. Routing never inferred from direct tool tests.",
+    "evidence": "docs/vnext/w3/REAL_AGENT_SMOKE_R10.md"
+  },
+  "LOCAL_LLM_STATUS": {
+    "status": "BLOCKED",
+    "reason": "No authorized model/configuration/budget; QA lacks langchain/langchain_core. Raw-capture runner prepared and safety/unit probes pass; real execution and reviewed trace conversion unverified.",
+    "evidence": "resultados/vnext/r10/local_smoke_status.json"
+  },
+  "PORTAL_STATUS": {
+    "status": "NOT_RUN",
+    "reason": "Read-only deployment observations PARTIAL_READ_ONLY. No preparation/upload/version/test/other mutation. Human action authorization absent.",
+    "evidence": "docs/vnext/w3/PORTAL_DEPLOYMENT_CONTRACT_R10.md"
+  },
+  "HUMAN_REVIEW_STATUS": {
+    "status": "NOT_RUN",
+    "reason": "No independent human approval of real-agent outputs or release. W3 automated/browser review is not human evaluation.",
+    "evidence": "docs/vnext/w3/HANDOFF_R10.md"
+  },
+  "V4_COMPARISON_STATUS": {
+    "status": "NOT_RUN",
+    "reason": "Zero comparable paired model cases; no superiority claim. Source/model changes must remain separate from common-capability comparison.",
+    "evidence": "resultados/vnext/r10/conversation_evaluation_status.json"
+  },
+  "RELEASE_GO_NO_GO": {
+    "status": "FAIL",
+    "reason": "NO_GO: producer/product acceptance does not satisfy integrated real-agent, portal, comparison and human gates.",
+    "evidence": "docs/vnext/w3/HANDOFF_R10.md"
+  },
+  "milestones": {
+    "W2_OLD_FINDINGS_RETESTED": "PASS",
+    "PORTAL_DEPLOYMENT_CONTRACT_VERIFIED": "PARTIAL_READ_ONLY",
+    "HEALTH_PACKAGE_REVIEWED": "PASS_W1_SEPARATE_PACKAGE",
+    "HEALTH_PRODUCT_READY": "PASS_OFFLINE_PRODUCER_PRODUCT",
+    "REAL_AGENT_SMOKE_STATUS": "BLOCKED",
+    "PORTAL_TEST_REQUEST_READY": "BLOCKED_IDENTITY_NOT_FIXED"
+  },
+  "coverage": {
+    "python_unit_integration_tests": 303,
+    "node_tests": 32,
+    "known_offline_root_probes": 5,
+    "known_root_defects_retested": 3,
+    "health_offline_requests": 8,
+    "single_cases_scored": 0,
+    "conversations_executed": 0,
+    "model_invocations_started": 0,
+    "portal_invocations_started": 0,
+    "holdout_cases_run": 0,
+    "targets": {
+      "development_per_system": 48,
+      "holdout_private": 12,
+      "conversations_per_system": 20,
+      "smoke_conversations": 12,
+      "smoke_turns": 36
+    }
+  },
+  "known_findings": [
+    {
+      "severity": "MEDIUM",
+      "owner": "W1",
+      "id": "W1-R7-F01",
+      "scope": "DERIVED runtime provenance explanatory DAG external; no observed numeric failure."
+    },
+    {
+      "severity": "MEDIUM",
+      "owner": "W1",
+      "id": "R10-INLINE-UNKNOWN",
+      "scope": "Legacy inline unknown description remains date-specific; use status+error.code ref. Mitigated in W3."
+    }
+  ],
+  "verified_current_critical_open": [],
+  "verified_current_high_open": [],
+  "finding_count_scope": "Only independently tested pins/cases; untested combined package and real conversations remain unknown, not clean by inference.",
+  "rag": {
+    "decision": "RAG_NO_GO",
+    "gold_count": 30,
+    "gold_source_ids": [
+      "S1",
+      "S2",
+      "S3"
+    ],
+    "w2_b1_corpus": "Four public repository reference documents; external_sources_ingested=false",
+    "same_corpus_comparison": "NOT_RUN_DIFFERENT_CORPUS",
+    "generation": "NOT_RUN"
+  },
+  "runtime_changed": false,
+  "portal_mutations": 0,
+  "MERGED_OR_PUBLISHED_RELEASE": "NO",
+  "next_action": "Consume exact W2 health 0.3.1 package/manifest, independently verify generated tools and model view, then request bounded private portal/model authorization. Preserve v4 and all frozen expected."
+}

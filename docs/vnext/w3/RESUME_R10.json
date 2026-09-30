@@ -1,0 +1,83 @@
+{
+  "stage": "R10_ACCEPTANCE_HANDOFF_NO_GO",
+  "start_sha": "e821341ba1ffd8ed7947cdb97802348919ef502a",
+  "tested_product_code_sha": "a91b6808b8da4c4fde9fa8db831747eee78ae14b",
+  "final_head_reference": "Final publication comment in PR14",
+  "readiness": "RELEASE_READINESS_R10.json",
+  "handoff": "HANDOFF_R10.md",
+  "identity": {
+    "w1_runtime": "cb061a97e78d6b5c967104fef6b935132fdc450f",
+    "w1_initial_support": "6ebf41e2f1fe24f1c3678c4be13c6c44cf8cb62b",
+    "w1_corrected_support": "6e284aff347cfcf5fbb3d7eb9cb89a227b83e0d5",
+    "w1_health_package_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+    "w2_code": "8272988566f5bca2d65d3119732bf831d11382dc",
+    "w2_stop_only_package_sha256": "366cdc7d160ee6743cb125c6709f57e48f6ddfb91ead812a92eb881570233357",
+    "w2_health_combined_package_sha256": null,
+    "v4_runtime": "195b4980fa5998b096c308296a55e452380b0371",
+    "main_ancestor": "e213eaa9b73b0f8a4d1893e0269fe92fe6756955",
+    "contracts": {
+      "w1_health": "0.3.1",
+      "w2_current_mobility": "0.2.0",
+      "import": "W3-HEALTH-QUERY-1",
+      "trace": "W3_TRACE_2.1.0",
+      "scorer": "2.1.0"
+    },
+    "model_id": null,
+    "model_config": null,
+    "corpus": {
+      "development": "40ec6a2e25331a2e040b7fedfd3ad75ff7245b508ef30c605d9cc6fdeb5e046a",
+      "conversations": "ca1dcb321bc92d2efa42c871e9730926421a375bfeab77edfee696e5ed09f413",
+      "private_holdout": "4dda59721932f620cba53e5686df288f7cf0e0e968ec30540216ffb1f52ec5c0"
+    },
+    "artifacts": {
+      "resultados/vnext/r10/health_evidence.json": "81e7618ff6e7393b38a99279c67633a673374c30be937419df94fdc40de2c243",
+      "resultados/vnext/r10/health_review.json": "69918c08c259d8f07bac353b654337e6f1dfc255cdd8f77bfdbffa1fe632a45a",
+      "resultados/vnext/r10/w2_retest_evidence.json": "0af80434a3d97d91af60f87cd48c2545b7dc7f6637358c49fc8adfe09077ef39",
+      "resultados/vnext/r10/w2_retest_report.json": "ea4041b54332285b96978d749efe9fb1dbe79b09d39e8a337e64ebe76d44e779",
+      "resultados/vnext/r10/support_review.json": "f44393804e8655c0c9e4df22dc629ba57b38942bd9d6dbfbec1018e940000a46",
+      "resultados/vnext/r10/local_smoke_status.json": "78479378ce8e8980a42e5cd4c5ab85412c6a0618ee248c652d12a59b56ba924c",
+      "resultados/vnext/r10/conversation_evaluation_status.json": "5c6343a4ffa3599fc966e7a2611ce45e31664cb06e92b0fec55249eaec3279e9",
+      "resultados/vnext/health.html": "50638aa11c98e7bdecf48180c5a7d77ceb1c8c3a095ffea6eb553f29e4ed86d8",
+      "docs/vnext/w3/SMOKE_PLAN_R10.json": "3ef9a9672977d80b0c10d89ea57fc1f037e06d29ceb5bc695b1201a65b970895",
+      "docs/vnext/w3/DOCUMENT_GOLD_R4.json": "41bc6823449d161d1ad695134e353a7b3c169ca69c17861ba70393ea5b0b2220",
+      "resultados/vnext/r10/test_results.json": "542afc055cb7669c1f4a98fd10d22cf45729d2804267b860121aca9525de389b"
+    }
+  },
+  "test_results": {
+    "classification": "TEST_RESULTS_NOT_AGENT_ACCEPTANCE",
+    "python": {
+      "passed": 303,
+      "failed": 0,
+      "duration_s": 19.87,
+      "interpreter": "CPython 3.14.7",
+      "command": "python -m pytest -o addopts='' -q",
+      "full_suite_source_commit": "1de0dfd25e07383bb59d43b9333778770faa640f"
+    },
+    "node": {
+      "passed": 32,
+      "failed": 0,
+      "interpreter": "Node 24.19.0",
+      "command": "node --test tests/e2e/contract_flow.test.mjs tests/vnext_redteam/import_contract.test.mjs tests/vnext_redteam/health_contract.test.mjs"
+    },
+    "followup_after_line_ending_fix": {
+      "python_targeted_passed": 6,
+      "not_added_to_unique_suite_total": true,
+      "w2_pinned_retest": "PASS",
+      "support_reference_audit": "PASS",
+      "html_byte_rebuild": "PASS"
+    },
+    "gates": {
+      "verify_jury_results": "PASS",
+      "verify_final_artifacts": "PASS",
+      "runtime_v4_identity": "PASS"
+    },
+    "tested_product_code_commit": "a91b6808b8da4c4fde9fa8db831747eee78ae14b",
+    "llm_executed": 0,
+    "portal_executed": 0
+  },
+  "llm_executed": 0,
+  "portal_executed": 0,
+  "portal_mutations": 0,
+  "next_exact_action": "Consume exact W2 health 0.3.1 package/manifest, independently verify generated tools and model view, then request bounded private portal/model authorization. Preserve v4 and all frozen expected.",
+  "MERGED_OR_PUBLISHED_RELEASE": "NO"
+}
