@@ -96,7 +96,7 @@ def run(package: Path, manifest_path: Path, output: Path) -> dict:
               "evidence_sha256": hashlib.sha256(raw_bytes).hexdigest(),
               "llm_executed": 0, "portal_executed": 0,
               "health_contract": "NOT_IN_THIS_0.2.0_PACKAGE"}
-    (output / "w2_retest_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2)+"\n",encoding="utf-8")
+    (output / "w2_retest_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2)+"\n",encoding="utf-8",newline="\n")
     return report
 
 

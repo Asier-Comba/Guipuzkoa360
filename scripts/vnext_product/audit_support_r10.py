@@ -37,5 +37,5 @@ def audit(root, support_pin):
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--w1-root',type=Path,required=True);p.add_argument('--support-pin',required=True);p.add_argument('--output',type=Path,required=True)
-    a=p.parse_args();r=audit(a.w1_root,a.support_pin);a.output.write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');print(r['acceptance'])
+    a=p.parse_args();r=audit(a.w1_root,a.support_pin);a.output.write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n');print(r['acceptance'])
 if __name__=='__main__':main()

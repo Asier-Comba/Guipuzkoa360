@@ -122,7 +122,7 @@ def run(root,package,out):
             "health_evidence_sha256":hashlib.sha256(payload).hexdigest(),
             "acceptance":"PASS_MODELLED_OFFICIAL_POINT_WITH_VISIBLE_LIMITS",
             "not_verified":["physical entrance","door to door","appointment availability","punctuality","exhaustive route optimality"]}
-    (out/"health_review.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    (out/"health_review.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8",newline="\n")
     return report
 
 def main():

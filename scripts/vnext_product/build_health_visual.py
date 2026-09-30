@@ -15,7 +15,7 @@ def main():
     output=template.replace("__STYLE__",style).replace("__EVIDENCE__",json.dumps(evidence,ensure_ascii=False,separators=(",",":")).replace("<","\\u003c")).replace("__CONTRACT__",(ROOT/"scripts/vnext_product/health_contract.js").read_text(encoding="utf-8"))
     path=BASE/"health.html";path.write_bytes(output.encode("utf-8"))
     payload={"schema_version":"W3-HEALTH-QUERY-1","provider_pin":evidence["provider_pin"],"package_sha256":evidence["package_sha256"],"output":evidence["outputs"]["time"]}
-    (BASE/"r10/example_health_query.json").write_text(json.dumps(payload,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    (BASE/"r10/example_health_query.json").write_text(json.dumps(payload,ensure_ascii=False,indent=2)+"\n",encoding="utf-8",newline="\n")
     print(json.dumps({"path":str(path),"sha256":hashlib.sha256(path.read_bytes()).hexdigest()}))
 
 if __name__=="__main__":main()
