@@ -1,0 +1,286 @@
+{
+  "matrix_version": "r8.0",
+  "allowed_statuses": [
+    "AVAILABLE_DIRECT",
+    "DERIVABLE_EXACT",
+    "ESTIMABLE_WITH_ASSUMPTIONS",
+    "UNAVAILABLE",
+    "OUT_OF_SCOPE"
+  ],
+  "capabilities": [
+    {
+      "capability": "trip_supported_origin_date",
+      "status": "AVAILABLE_DIRECT",
+      "required_inputs": [
+        "origin_id",
+        "date",
+        "appointment_time",
+        "duration_minutes"
+      ],
+      "source": "GTFS+catalog",
+      "reason": "Within fixed GO01/date/catalog scope",
+      "allowed_wording": "Hay una combinación programada viable…",
+      "forbidden_interpretation": "Garantía de viaje o puntualidad",
+      "safe_next_action": "Show schedule/model limitations"
+    },
+    {
+      "capability": "change_appointment_time",
+      "status": "DERIVABLE_EXACT",
+      "required_inputs": [
+        "supported request with new time"
+      ],
+      "source": "GTFS+model",
+      "reason": "Provider recomputes pair",
+      "allowed_wording": "Al cambiar la hora, el escenario recalculado…",
+      "forbidden_interpretation": "Causal or guaranteed saving",
+      "safe_next_action": "Compare same-origin scenarios"
+    },
+    {
+      "capability": "change_duration",
+      "status": "DERIVABLE_EXACT",
+      "required_inputs": [
+        "supported request with duration"
+      ],
+      "source": "GTFS+human input",
+      "reason": "Return selection is recomputed",
+      "allowed_wording": "Con esta duración hipotética…",
+      "forbidden_interpretation": "Official appointment duration",
+      "safe_next_action": "State duration is user input"
+    },
+    {
+      "capability": "change_margins",
+      "status": "DERIVABLE_EXACT",
+      "required_inputs": [
+        "arrival/boarding margin"
+      ],
+      "source": "model defaults or human input",
+      "reason": "Margins enter deterministic constraints",
+      "allowed_wording": "Con este margen solicitado…",
+      "forbidden_interpretation": "Observed passenger behaviour",
+      "safe_next_action": "Expose margin and provenance"
+    },
+    {
+      "capability": "walking_to_centre_anchor",
+      "status": "ESTIMABLE_WITH_ASSUMPTIONS",
+      "required_inputs": [
+        "supported stop/anchor"
+      ],
+      "source": "OSM+health anchor+MODEL",
+      "reason": "Fixed walking model",
+      "allowed_wording": "Paseo modelado hasta el punto oficial…",
+      "forbidden_interpretation": "Verified door or accessibility",
+      "safe_next_action": "State entrance not verified"
+    },
+    {
+      "capability": "scheduled_bus_times",
+      "status": "AVAILABLE_DIRECT",
+      "required_inputs": [
+        "supported trip/date"
+      ],
+      "source": "GTFS",
+      "reason": "Raw scheduled rows",
+      "allowed_wording": "Horario programado…",
+      "forbidden_interpretation": "Realtime or observed punctuality",
+      "safe_next_action": "Check operator realtime externally"
+    },
+    {
+      "capability": "return_slack",
+      "status": "DERIVABLE_EXACT",
+      "required_inputs": [
+        "return wait",
+        "boarding margin"
+      ],
+      "source": "GTFS+model+inputs",
+      "reason": "return_wait minus boarding margin",
+      "allowed_wording": "Holgura modelada de regreso…",
+      "forbidden_interpretation": "Return wait itself",
+      "safe_next_action": "Show both quantities"
+    },
+    {
+      "capability": "same_origin_comparison",
+      "status": "DERIVABLE_EXACT",
+      "required_inputs": [
+        "2-32 same-scope requests"
+      ],
+      "source": "provider 0.3.1",
+      "reason": "Formal delta defined",
+      "allowed_wording": "La diferencia entre estos escenarios…",
+      "forbidden_interpretation": "Causality or guaranteed saving",
+      "safe_next_action": "Preserve held constants"
+    },
+    {
+      "capability": "cross_origin_side_by_side",
+      "status": "AVAILABLE_DIRECT",
+      "required_inputs": [
+        "same remaining parameters"
+      ],
+      "source": "individual results",
+      "reason": "Individual scenarios available",
+      "allowed_wording": "Resultados lado a lado…",
+      "forbidden_interpretation": "Formal comparable delta",
+      "safe_next_action": "Avoid ranking/inference"
+    },
+    {
+      "capability": "cross_origin_formal_delta",
+      "status": "UNAVAILABLE",
+      "required_inputs": [
+        "formal metric definition"
+      ],
+      "source": "none",
+      "reason": "Provider declares not comparable",
+      "allowed_wording": "No se ofrece delta formal entre orígenes",
+      "forbidden_interpretation": "Subtract totals as supported comparison",
+      "safe_next_action": "Show side-by-side only"
+    },
+    {
+      "capability": "other_date",
+      "status": "UNAVAILABLE",
+      "required_inputs": [],
+      "source": "none",
+      "reason": "Snapshot date not validated",
+      "allowed_wording": "No disponible en este alcance",
+      "forbidden_interpretation": "Claim other_date as known",
+      "safe_next_action": "Use unknown; obtain validated snapshot"
+    },
+    {
+      "capability": "other_destination",
+      "status": "UNAVAILABLE",
+      "required_inputs": [],
+      "source": "none",
+      "reason": "Outside destination catalog",
+      "allowed_wording": "No disponible en este alcance",
+      "forbidden_interpretation": "Claim other_destination as known",
+      "safe_next_action": "Use unsupported; obtain scoped evidence"
+    },
+    {
+      "capability": "home_to_stop",
+      "status": "UNAVAILABLE",
+      "required_inputs": [],
+      "source": "none",
+      "reason": "Origin begins at stop presence",
+      "allowed_wording": "No disponible en este alcance",
+      "forbidden_interpretation": "Claim home_to_stop as known",
+      "safe_next_action": "Request separate access evidence"
+    },
+    {
+      "capability": "door_to_door",
+      "status": "UNAVAILABLE",
+      "required_inputs": [],
+      "source": "none",
+      "reason": "Physical entrance not verified",
+      "allowed_wording": "No disponible en este alcance",
+      "forbidden_interpretation": "Claim door_to_door as known",
+      "safe_next_action": "Human/field verification"
+    },
+    {
+      "capability": "transfers",
+      "status": "UNAVAILABLE",
+      "required_inputs": [],
+      "source": "none",
+      "reason": "Direct GO01 only",
+      "allowed_wording": "No disponible en este alcance",
+      "forbidden_interpretation": "Claim transfers as known",
+      "safe_next_action": "Use a multimodal planner"
+    },
+    {
+      "capability": "other_operators",
+      "status": "UNAVAILABLE",
+      "required_inputs": [],
+      "source": "none",
+      "reason": "Only fixed Goierrialdea feed",
+      "allowed_wording": "No disponible en este alcance",
+      "forbidden_interpretation": "Claim other_operators as known",
+      "safe_next_action": "Acquire and validate operators"
+    },
+    {
+      "capability": "realtime",
+      "status": "UNAVAILABLE",
+      "required_inputs": [],
+      "source": "none",
+      "reason": "Static schedule only",
+      "allowed_wording": "No disponible en este alcance",
+      "forbidden_interpretation": "Claim realtime as known",
+      "safe_next_action": "Consult authoritative realtime"
+    },
+    {
+      "capability": "delays",
+      "status": "UNAVAILABLE",
+      "required_inputs": [],
+      "source": "none",
+      "reason": "No observed operations",
+      "allowed_wording": "No disponible en este alcance",
+      "forbidden_interpretation": "Claim delays as known",
+      "safe_next_action": "Consult realtime/operator"
+    },
+    {
+      "capability": "appointment_availability",
+      "status": "OUT_OF_SCOPE",
+      "required_inputs": [],
+      "source": "none",
+      "reason": "No appointment system data",
+      "allowed_wording": "No disponible en este alcance",
+      "forbidden_interpretation": "Claim appointment_availability as known",
+      "safe_next_action": "Consult Osakidetza"
+    },
+    {
+      "capability": "centre_assignment",
+      "status": "OUT_OF_SCOPE",
+      "required_inputs": [],
+      "source": "none",
+      "reason": "No patient assignment data",
+      "allowed_wording": "No disponible en este alcance",
+      "forbidden_interpretation": "Claim centre_assignment as known",
+      "safe_next_action": "Consult Osakidetza"
+    },
+    {
+      "capability": "health_capacity",
+      "status": "OUT_OF_SCOPE",
+      "required_inputs": [],
+      "source": "none",
+      "reason": "No capacity data",
+      "allowed_wording": "No disponible en este alcance",
+      "forbidden_interpretation": "Claim health_capacity as known",
+      "safe_next_action": "Obtain official capacity dataset"
+    },
+    {
+      "capability": "quality_of_care",
+      "status": "OUT_OF_SCOPE",
+      "required_inputs": [],
+      "source": "none",
+      "reason": "No quality evidence",
+      "allowed_wording": "No disponible en este alcance",
+      "forbidden_interpretation": "Claim quality_of_care as known",
+      "safe_next_action": "Use appropriate official indicators"
+    },
+    {
+      "capability": "verified_physical_entrance",
+      "status": "UNAVAILABLE",
+      "required_inputs": [],
+      "source": "none",
+      "reason": "Anchor is not verified entrance",
+      "allowed_wording": "No disponible en este alcance",
+      "forbidden_interpretation": "Claim verified_physical_entrance as known",
+      "safe_next_action": "Human/field verification"
+    },
+    {
+      "capability": "universal_accessibility",
+      "status": "UNAVAILABLE",
+      "required_inputs": [],
+      "source": "none",
+      "reason": "Network model is not accessibility audit",
+      "allowed_wording": "No disponible en este alcance",
+      "forbidden_interpretation": "Claim universal_accessibility as known",
+      "safe_next_action": "Obtain accessibility audit"
+    },
+    {
+      "capability": "individual_elderly_walking_behaviour",
+      "status": "OUT_OF_SCOPE",
+      "required_inputs": [],
+      "source": "none",
+      "reason": "Generic walking assumption only",
+      "allowed_wording": "No disponible en este alcance",
+      "forbidden_interpretation": "Claim individual_elderly_walking_behaviour as known",
+      "safe_next_action": "Do not individualize; collect consented assessment"
+    }
+  ]
+}

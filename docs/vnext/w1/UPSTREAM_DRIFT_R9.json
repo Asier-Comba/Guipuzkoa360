@@ -1,0 +1,208 @@
+{
+  "audit_version": "r9.0",
+  "mode": "online",
+  "checked_at_utc": "2026-09-30T08:30:04.683125+00:00",
+  "runtime_changed": false,
+  "automatic_pin_replacement": false,
+  "sources": [
+    {
+      "source_id": "GTFS",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip",
+      "pinned_acquisition_timestamp": "2026-09-29",
+      "pinned_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+      "pinned_local_artifact_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+      "used_fields": [
+        "GO01",
+        "used trip/stop IDs",
+        "stop names",
+        "2026-09-29 calendar",
+        "arrival/departure",
+        "pickup/dropoff",
+        "timepoint"
+      ],
+      "consequence": "No silent pin replacement.",
+      "whether_runtime_rebuild_is_required": false,
+      "whether_human_review_is_required": false,
+      "online_observation": {
+        "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip",
+        "checked_at_utc": "2026-09-30T08:30:04.686124+00:00",
+        "status": "FETCHED",
+        "http_status": 200,
+        "bytes": 811289,
+        "sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+        "output": "work/r9-upstream-20260930T1040Z/gtfs.zip"
+      },
+      "current_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+      "pinned_table_hashes": {
+        "agency.txt": "95d0af6e7a24b4d3806ee269fb8f05370e9e2737fa24db9348084a56acd4a241",
+        "routes.txt": "991d16baec528c2bb5c65aef56120b654e941192d7f8e68bb409a542ba5fa926",
+        "trips.txt": "137b36b71da9a7b39786aeea85c6f8f3b153c7f83c7f25faca20a5a1236f8a7c",
+        "stops.txt": "a74ca47cec9760f073825b3d6a69f14f9398043364795572417bda3ec9c71fbd",
+        "stop_times.txt": "c9a32101f714b579b2bfa3c228ead55e0a01caa458772c50b0f736a1e68f74f2",
+        "calendar.txt": "5737be35ccad2e136579bde2b1d1385e338c0e7587f540a742a0e2cea358dfef",
+        "calendar_dates.txt": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "current_table_hashes": {
+        "agency.txt": "95d0af6e7a24b4d3806ee269fb8f05370e9e2737fa24db9348084a56acd4a241",
+        "routes.txt": "991d16baec528c2bb5c65aef56120b654e941192d7f8e68bb409a542ba5fa926",
+        "trips.txt": "137b36b71da9a7b39786aeea85c6f8f3b153c7f83c7f25faca20a5a1236f8a7c",
+        "stops.txt": "a74ca47cec9760f073825b3d6a69f14f9398043364795572417bda3ec9c71fbd",
+        "stop_times.txt": "c9a32101f714b579b2bfa3c228ead55e0a01caa458772c50b0f736a1e68f74f2",
+        "calendar.txt": "5737be35ccad2e136579bde2b1d1385e338c0e7587f540a742a0e2cea358dfef",
+        "calendar_dates.txt": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "pinned_used_fields_sha256": "92a3501c3e78a0ca3d3ff76e561ed41c34aa99180f0b8d6c10c0e2a68548b633",
+      "current_used_fields_sha256": "92a3501c3e78a0ca3d3ff76e561ed41c34aa99180f0b8d6c10c0e2a68548b633",
+      "classification": "UNCHANGED_BYTES",
+      "semantic_comparison": "Canonical used-field signature compared; ZIP metadata ignored for table hashes."
+    },
+    {
+      "source_id": "HEALTH_REGISTRY",
+      "url": "https://opendata.euskadi.eus/contenidos/ds_localizaciones/centros_salud_en_euskadi/opendata/centros-salud.xlsx",
+      "pinned_acquisition_timestamp": "2026-09-24",
+      "pinned_sha256": "87a2b8ea3309678ff743e2f267320b94216c3d1e4f52b578bdd0a77bd8bf29ab",
+      "pinned_local_artifact_sha256": "87a2b8ea3309678ff743e2f267320b94216c3d1e4f52b578bdd0a77bd8bf29ab",
+      "used_fields": [
+        "entity_id",
+        "name",
+        "address",
+        "latitude",
+        "longitude",
+        "telephone"
+      ],
+      "consequence": "No silent pin replacement.",
+      "whether_runtime_rebuild_is_required": false,
+      "whether_human_review_is_required": false,
+      "online_observation": {
+        "url": "https://opendata.euskadi.eus/contenidos/ds_localizaciones/centros_salud_en_euskadi/opendata/centros-salud.xlsx",
+        "checked_at_utc": "2026-09-30T08:30:05.691832+00:00",
+        "status": "FETCHED",
+        "http_status": 200,
+        "bytes": 88466,
+        "sha256": "4680c86f8f2d9befa7ee964dfbb219138c764872170b18e1949fdce2edb8609f",
+        "output": "work/r9-upstream-20260930T1040Z/health_registry.xlsx"
+      },
+      "current_sha256": "4680c86f8f2d9befa7ee964dfbb219138c764872170b18e1949fdce2edb8609f",
+      "pinned_used_fields": {
+        "entity_id": "entityBC631DA5",
+        "name": "Ambulatorio de Beasain",
+        "address": "Bernedo Enea, 1, 20200 Beasain (Gipuzkoa)",
+        "latitude": "43.04527740634045",
+        "longitude": "-2.1977014177917447",
+        "telephone": "943027700"
+      },
+      "current_used_fields": {
+        "entity_id": "entityBC631DA5",
+        "name": "Ambulatorio de Beasain",
+        "address": "Bernedo Enea, 1, 20200 Beasain (Gipuzkoa)",
+        "latitude": "43.04527740634045",
+        "longitude": "-2.1977014177917447",
+        "telephone": "943027700"
+      },
+      "classification": "CHANGED_BYTES_SEMANTICALLY_EQUIVALENT_USED_FIELDS",
+      "semantic_comparison": "entityBC631DA5 identity/name/address/coordinates/telephone compared."
+    },
+    {
+      "source_id": "HEALTH_PAGE",
+      "url": "https://www.osakidetza.euskadi.eus/ambulatorio-de-beasain/webosk00-cercon/es/",
+      "pinned_acquisition_timestamp": "2026-09-29",
+      "pinned_sha256": "7ba21b4f78f79b55d5761f427582daaef48097245142c9cb259288dc923f3160",
+      "pinned_local_artifact_sha256": "7ba21b4f78f79b55d5761f427582daaef48097245142c9cb259288dc923f3160",
+      "used_fields": [
+        "name",
+        "address",
+        "telephone"
+      ],
+      "consequence": "No silent pin replacement.",
+      "whether_runtime_rebuild_is_required": false,
+      "whether_human_review_is_required": false,
+      "online_observation": {
+        "url": "https://www.osakidetza.euskadi.eus/ambulatorio-de-beasain/webosk00-cercon/es/",
+        "checked_at_utc": "2026-09-30T08:30:05.898081+00:00",
+        "status": "FETCHED",
+        "http_status": 200,
+        "bytes": 206932,
+        "sha256": "5ea49c2cc0dbbf8c77d550c7b6117249c08568d8e8b5d50ad87ae87c4ad738c1",
+        "output": "work/r9-upstream-20260930T1040Z/health_page.html"
+      },
+      "current_sha256": "5ea49c2cc0dbbf8c77d550c7b6117249c08568d8e8b5d50ad87ae87c4ad738c1",
+      "pinned_used_fields": {
+        "name": true,
+        "address": true,
+        "telephone": true
+      },
+      "current_used_fields": {
+        "name": true,
+        "address": true,
+        "telephone": true
+      },
+      "classification": "CHANGED_BYTES_SEMANTICALLY_EQUIVALENT_USED_FIELDS",
+      "semantic_comparison": "Centre name/address/telephone presence compared; cosmetic HTML ignored."
+    },
+    {
+      "source_id": "PADI_2026",
+      "url": "https://www.osakidetza.euskadi.eus/contenidos/informacion/salud_padi/es_def/adjuntos/padi-kontsultak-gipuzkoa.pdf",
+      "pinned_acquisition_timestamp": "2026-09-29",
+      "pinned_sha256": "6cf5d40245eb29c9c98785d03aba518c44677104b71625db36c3f2801455ac10",
+      "pinned_local_artifact_sha256": "6cf5d40245eb29c9c98785d03aba518c44677104b71625db36c3f2801455ac10",
+      "used_fields": [
+        "Beasain PADI row/address/telephone"
+      ],
+      "consequence": "No silent pin replacement.",
+      "whether_runtime_rebuild_is_required": false,
+      "whether_human_review_is_required": false,
+      "online_observation": {
+        "url": "https://www.osakidetza.euskadi.eus/contenidos/informacion/salud_padi/es_def/adjuntos/padi-kontsultak-gipuzkoa.pdf",
+        "checked_at_utc": "2026-09-30T08:30:06.329746+00:00",
+        "status": "FETCHED",
+        "http_status": 200,
+        "bytes": 778758,
+        "sha256": "6cf5d40245eb29c9c98785d03aba518c44677104b71625db36c3f2801455ac10",
+        "output": "work/r9-upstream-20260930T1040Z/padi_2026.pdf"
+      },
+      "current_sha256": "6cf5d40245eb29c9c98785d03aba518c44677104b71625db36c3f2801455ac10",
+      "classification": "UNCHANGED_BYTES",
+      "semantic_comparison": "Byte identity checked; changed PDF requires controlled row extraction/human review."
+    },
+    {
+      "source_id": "OSM",
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-2.203,43.041,-2.190,43.052",
+      "pinned_acquisition_timestamp": "2026-09-29",
+      "pinned_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+      "pinned_local_artifact_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+      "used_fields": [
+        "used node IDs",
+        "used way IDs",
+        "coordinates",
+        "topology",
+        "relevant tags"
+      ],
+      "consequence": "No silent pin replacement.",
+      "whether_runtime_rebuild_is_required": false,
+      "whether_human_review_is_required": false,
+      "online_observation": {
+        "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-2.203,43.041,-2.190,43.052",
+        "checked_at_utc": "2026-09-30T08:30:06.828253+00:00",
+        "status": "FETCHED",
+        "http_status": 200,
+        "bytes": 2074401,
+        "sha256": "46b00fe02d550308eebc5c99be457617cc154b04de7388eb10570292bc76d4d0",
+        "output": "work/r9-upstream-20260930T1040Z/osm.osm"
+      },
+      "current_sha256": "46b00fe02d550308eebc5c99be457617cc154b04de7388eb10570292bc76d4d0",
+      "pinned_used_fields_sha256": "a7cf6cbab9e29a083e7e4dcc354202b85ef39c25d874cedcf71c67a1c45da9de",
+      "current_used_fields_sha256": "a7cf6cbab9e29a083e7e4dcc354202b85ef39c25d874cedcf71c67a1c45da9de",
+      "classification": "CHANGED_BYTES_SEMANTICALLY_EQUIVALENT_USED_FIELDS",
+      "semantic_comparison": "Pinned route node/way topology compared; all used IDs present=True."
+    }
+  ],
+  "summary": {
+    "CHANGED_BYTES_SEMANTICALLY_EQUIVALENT_USED_FIELDS": 3,
+    "CHANGED_METADATA_ONLY": 0,
+    "CHANGED_USED_FIELDS": 0,
+    "INDETERMINATE": 0,
+    "SOURCE_UNAVAILABLE": 0,
+    "UNCHANGED_BYTES": 2
+  },
+  "human_review_required": false
+}

@@ -1,0 +1,23 @@
+{
+  "manifest_version": "0.1.0",
+  "provider_id": "ir_y_volver",
+  "contract_version": "0.1.0",
+  "total_bytes": 825670,
+  "files": [
+    {"path": "prototypes/ir_y_volver/__init__.py", "bytes": 210, "sha256": "4173adabd908dcca574d4cd3aebefb5017fb6cd23c92f40cf3d0c1db142bce21"},
+    {"path": "prototypes/ir_y_volver/provider.py", "bytes": 17315, "sha256": "4cf6b5645c63bdf2bb6c26f0d125c3669ca187d57461b8f59417de9f4acb2678"},
+    {"path": "prototypes/ir_y_volver/contracts/README.md", "bytes": 736, "sha256": "7711604c83cb51de672b855da41f53db919c1aea957605ed3fcefe071b57d028"},
+    {"path": "prototypes/ir_y_volver/contracts/capabilities.schema.json", "bytes": 688, "sha256": "ecbb5f012818528ebf4efd51fb7b95720a37fa91ff8da1d105905f22fd50b9d9"},
+    {"path": "prototypes/ir_y_volver/contracts/round_trip_request.schema.json", "bytes": 962, "sha256": "60e9c0f6bbc1a8ee7e254a36dc6ffd1e4d1c7b22d78178b4b85890b328e41c44"},
+    {"path": "prototypes/ir_y_volver/contracts/round_trip_result.schema.json", "bytes": 1108, "sha256": "2b2034999e887e89ed9252b02d1fdbb5efeb8763789add3fb65e9ffff9f6ff1d"},
+    {"path": "prototypes/ir_y_volver/contracts/examples/request.json", "bytes": 303, "sha256": "8bb01a4d3b548de07711809501d92b984280c665532d6ac70a0f970d5452bb02"},
+    {"path": "prototypes/ir_y_volver/snapshots/official-goierrialdea-go01-20260928.json", "bytes": 804348, "sha256": "30fc9d638f3576ae0e1084ee1e0c7b0268469bffc8af1dd15fd12430019d968b"}
+  ],
+  "excluded": [
+    "tests/mobility/**",
+    "scripts/mobility/**",
+    "docs/vnext/w1/**",
+    "raw GTFS ZIP"
+  ],
+  "runtime_network_required": false
+}

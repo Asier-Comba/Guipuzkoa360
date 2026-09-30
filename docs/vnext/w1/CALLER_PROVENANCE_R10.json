@@ -1,0 +1,54 @@
+{
+  "cases": [
+    {
+      "boarding_margin_origin": "model_default",
+      "case_id": "default_omitted",
+      "initial_wait_s": 180,
+      "request": {
+        "appointment_time": "09:45",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops"
+      },
+      "status": "ok",
+      "total_s": 8591
+    },
+    {
+      "boarding_margin_origin": "human_explicit",
+      "case_id": "default_explicit_same_value",
+      "initial_wait_s": 180,
+      "request": {
+        "appointment_time": "09:45",
+        "boarding_margin_minutes": 3,
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops"
+      },
+      "status": "ok",
+      "total_s": 8591
+    },
+    {
+      "boarding_margin_origin": "human_explicit",
+      "case_id": "explicit_distinct_value",
+      "initial_wait_s": 480,
+      "request": {
+        "appointment_time": "09:45",
+        "boarding_margin_minutes": 8,
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops"
+      },
+      "status": "ok",
+      "total_s": 8891
+    }
+  ],
+  "consumer_wording": "Use caller-supplied or default-applied unless human authorship is independently established.",
+  "preserve_original_provenance": true,
+  "rule": "human_explicit means supplied by the caller. In an agent the caller may be an LLM; it does not prove human authorship.",
+  "runtime_changed": false,
+  "same_arithmetic_different_provenance": true,
+  "version": "r10.0"
+}

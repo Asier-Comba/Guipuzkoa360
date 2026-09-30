@@ -1,0 +1,14 @@
+{
+  "classification": "LOCAL_PYTHON_NOT_PORTAL",
+  "warm_process_calls": 30,
+  "warm_process_median_ms": 163.3288,
+  "warm_process_p95_ms": 175.457,
+  "fresh_process_first_call_ms": [
+    74.2298,
+    77.6218,
+    76.2252
+  ],
+  "peak_python_allocated_bytes": 5193955,
+  "payload_bytes": 4451,
+  "note": "No provider cache. Cold means fresh interpreter, not OS disk-cache flush. Tracemalloc measures Python allocations, not RSS."
+}

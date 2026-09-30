@@ -1,0 +1,431 @@
+{
+  "classification": "SYNTHETIC_CONTRACT_ONLY",
+  "viable": {
+    "schema_version": "0.2.0",
+    "normalized_request": {
+      "origin_id": "TEST_A",
+      "destination_id": "TEST_B",
+      "date": "2026-09-29",
+      "appointment_time": "10:00:00",
+      "duration_minutes": 30,
+      "arrival_margin_minutes": 10,
+      "boarding_margin_minutes": 3,
+      "walking_profile_id": "stop_only",
+      "snapshot_id": "TEST_CONTRACT",
+      "timezone": "Europe/Madrid",
+      "return_deadline": null
+    },
+    "status": "ok",
+    "scenario_kind": "stop_only",
+    "time_basis": "scheduled",
+    "scope": "origin_stop_presence_to_return_stop_arrival",
+    "snapshot_id": "TEST_CONTRACT",
+    "itinerary": {
+      "start_s": 32220,
+      "end_s": 40800,
+      "total_s": 8580,
+      "vehicle_span_s": 8400,
+      "return_slack_s": 420,
+      "origin_stop_id": "TEST_A",
+      "return_stop_id": "TEST_A",
+      "outbound": {},
+      "return": {}
+    },
+    "components_s": {
+      "initial_wait_s": 180,
+      "outbound_vehicle_s": 2400,
+      "destination_walk_outbound_s": 0,
+      "pre_appointment_wait_s": 1200,
+      "appointment_s": 1800,
+      "destination_walk_return_s": 0,
+      "return_wait_s": 600,
+      "return_vehicle_s": 2400
+    },
+    "components": [
+      {
+        "kind": "initial_wait",
+        "start_s": 32220,
+        "end_s": 32400,
+        "seconds": 180,
+        "basis": "SYNTHETIC",
+        "derivation": "end_s - start_s"
+      },
+      {
+        "kind": "outbound_vehicle",
+        "start_s": 32400,
+        "end_s": 34800,
+        "seconds": 2400,
+        "basis": "SYNTHETIC",
+        "derivation": "end_s - start_s"
+      },
+      {
+        "kind": "destination_walk_outbound",
+        "start_s": 34800,
+        "end_s": 34800,
+        "seconds": 0,
+        "basis": "SYNTHETIC",
+        "derivation": "end_s - start_s"
+      },
+      {
+        "kind": "pre_appointment_wait",
+        "start_s": 34800,
+        "end_s": 36000,
+        "seconds": 1200,
+        "basis": "SYNTHETIC",
+        "derivation": "end_s - start_s"
+      },
+      {
+        "kind": "appointment",
+        "start_s": 36000,
+        "end_s": 37800,
+        "seconds": 1800,
+        "basis": "SYNTHETIC",
+        "derivation": "end_s - start_s"
+      },
+      {
+        "kind": "destination_walk_return",
+        "start_s": 37800,
+        "end_s": 37800,
+        "seconds": 0,
+        "basis": "SYNTHETIC",
+        "derivation": "end_s - start_s"
+      },
+      {
+        "kind": "return_wait",
+        "start_s": 37800,
+        "end_s": 38400,
+        "seconds": 600,
+        "basis": "SYNTHETIC",
+        "derivation": "end_s - start_s"
+      },
+      {
+        "kind": "return_vehicle",
+        "start_s": 38400,
+        "end_s": 40800,
+        "seconds": 2400,
+        "basis": "SYNTHETIC",
+        "derivation": "end_s - start_s"
+      }
+    ],
+    "sources": [
+      {
+        "classification": "SYNTHETIC"
+      }
+    ],
+    "assumptions": [
+      "Synthetic consumer fixture only"
+    ],
+    "limitations": [
+      "Not runtime data"
+    ],
+    "error": null
+  },
+  "no_viable": {
+    "schema_version": "0.2.0",
+    "normalized_request": {
+      "origin_id": "TEST_A",
+      "destination_id": "TEST_B",
+      "date": "2026-09-29",
+      "appointment_time": "10:00:00",
+      "duration_minutes": 500,
+      "arrival_margin_minutes": 10,
+      "boarding_margin_minutes": 3,
+      "walking_profile_id": "stop_only",
+      "snapshot_id": "TEST_CONTRACT",
+      "timezone": "Europe/Madrid",
+      "return_deadline": null
+    },
+    "status": "no_feasible_journey",
+    "scenario_kind": "stop_only",
+    "time_basis": "scheduled",
+    "scope": "origin_stop_presence_to_return_stop_arrival",
+    "snapshot_id": "TEST_CONTRACT",
+    "itinerary": null,
+    "components_s": null,
+    "components": null,
+    "sources": [
+      {
+        "classification": "SYNTHETIC"
+      }
+    ],
+    "assumptions": [
+      "Synthetic consumer fixture only"
+    ],
+    "limitations": [
+      "Not runtime data"
+    ],
+    "error": {
+      "code": "no_pair_in_complete_direct_search",
+      "message": "No ordinary direct pair in synthetic coverage"
+    }
+  },
+  "unknown": {
+    "schema_version": "0.2.0",
+    "normalized_request": null,
+    "status": "unknown",
+    "scenario_kind": null,
+    "time_basis": "scheduled",
+    "scope": "origin_stop_presence_to_return_stop_arrival",
+    "snapshot_id": "TEST_CONTRACT",
+    "itinerary": null,
+    "components_s": null,
+    "components": null,
+    "sources": [
+      {
+        "classification": "SYNTHETIC"
+      }
+    ],
+    "assumptions": [
+      "Synthetic consumer fixture only"
+    ],
+    "limitations": [
+      "Not runtime data"
+    ],
+    "error": {
+      "code": "snapshot_not_found",
+      "message": "Synthetic unknown example"
+    }
+  },
+  "mixed_comparison": {
+    "schema_version": "0.2.0",
+    "status": "ok",
+    "results": [
+      {
+        "schema_version": "0.2.0",
+        "normalized_request": {
+          "origin_id": "TEST_A",
+          "destination_id": "TEST_B",
+          "date": "2026-09-29",
+          "appointment_time": "10:00:00",
+          "duration_minutes": 30,
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "stop_only",
+          "snapshot_id": "TEST_CONTRACT",
+          "timezone": "Europe/Madrid",
+          "return_deadline": null
+        },
+        "status": "ok",
+        "scenario_kind": "stop_only",
+        "time_basis": "scheduled",
+        "scope": "origin_stop_presence_to_return_stop_arrival",
+        "snapshot_id": "TEST_CONTRACT",
+        "itinerary": {
+          "start_s": 32220,
+          "end_s": 40800,
+          "total_s": 8580,
+          "vehicle_span_s": 8400,
+          "return_slack_s": 420,
+          "origin_stop_id": "TEST_A",
+          "return_stop_id": "TEST_A",
+          "outbound": {},
+          "return": {}
+        },
+        "components_s": {
+          "initial_wait_s": 180,
+          "outbound_vehicle_s": 2400,
+          "destination_walk_outbound_s": 0,
+          "pre_appointment_wait_s": 1200,
+          "appointment_s": 1800,
+          "destination_walk_return_s": 0,
+          "return_wait_s": 600,
+          "return_vehicle_s": 2400
+        },
+        "components": [
+          {
+            "kind": "initial_wait",
+            "start_s": 32220,
+            "end_s": 32400,
+            "seconds": 180,
+            "basis": "SYNTHETIC",
+            "derivation": "end_s - start_s"
+          },
+          {
+            "kind": "outbound_vehicle",
+            "start_s": 32400,
+            "end_s": 34800,
+            "seconds": 2400,
+            "basis": "SYNTHETIC",
+            "derivation": "end_s - start_s"
+          },
+          {
+            "kind": "destination_walk_outbound",
+            "start_s": 34800,
+            "end_s": 34800,
+            "seconds": 0,
+            "basis": "SYNTHETIC",
+            "derivation": "end_s - start_s"
+          },
+          {
+            "kind": "pre_appointment_wait",
+            "start_s": 34800,
+            "end_s": 36000,
+            "seconds": 1200,
+            "basis": "SYNTHETIC",
+            "derivation": "end_s - start_s"
+          },
+          {
+            "kind": "appointment",
+            "start_s": 36000,
+            "end_s": 37800,
+            "seconds": 1800,
+            "basis": "SYNTHETIC",
+            "derivation": "end_s - start_s"
+          },
+          {
+            "kind": "destination_walk_return",
+            "start_s": 37800,
+            "end_s": 37800,
+            "seconds": 0,
+            "basis": "SYNTHETIC",
+            "derivation": "end_s - start_s"
+          },
+          {
+            "kind": "return_wait",
+            "start_s": 37800,
+            "end_s": 38400,
+            "seconds": 600,
+            "basis": "SYNTHETIC",
+            "derivation": "end_s - start_s"
+          },
+          {
+            "kind": "return_vehicle",
+            "start_s": 38400,
+            "end_s": 40800,
+            "seconds": 2400,
+            "basis": "SYNTHETIC",
+            "derivation": "end_s - start_s"
+          }
+        ],
+        "sources": [
+          {
+            "classification": "SYNTHETIC"
+          }
+        ],
+        "assumptions": [
+          "Synthetic consumer fixture only"
+        ],
+        "limitations": [
+          "Not runtime data"
+        ],
+        "error": null
+      },
+      {
+        "schema_version": "0.2.0",
+        "normalized_request": {
+          "origin_id": "TEST_A",
+          "destination_id": "TEST_B",
+          "date": "2026-09-29",
+          "appointment_time": "10:00:00",
+          "duration_minutes": 500,
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "stop_only",
+          "snapshot_id": "TEST_CONTRACT",
+          "timezone": "Europe/Madrid",
+          "return_deadline": null
+        },
+        "status": "no_feasible_journey",
+        "scenario_kind": "stop_only",
+        "time_basis": "scheduled",
+        "scope": "origin_stop_presence_to_return_stop_arrival",
+        "snapshot_id": "TEST_CONTRACT",
+        "itinerary": null,
+        "components_s": null,
+        "components": null,
+        "sources": [
+          {
+            "classification": "SYNTHETIC"
+          }
+        ],
+        "assumptions": [
+          "Synthetic consumer fixture only"
+        ],
+        "limitations": [
+          "Not runtime data"
+        ],
+        "error": {
+          "code": "no_pair_in_complete_direct_search",
+          "message": "No ordinary direct pair in synthetic coverage"
+        }
+      },
+      {
+        "schema_version": "0.2.0",
+        "normalized_request": null,
+        "status": "unknown",
+        "scenario_kind": null,
+        "time_basis": "scheduled",
+        "scope": "origin_stop_presence_to_return_stop_arrival",
+        "snapshot_id": "TEST_CONTRACT",
+        "itinerary": null,
+        "components_s": null,
+        "components": null,
+        "sources": [
+          {
+            "classification": "SYNTHETIC"
+          }
+        ],
+        "assumptions": [
+          "Synthetic consumer fixture only"
+        ],
+        "limitations": [
+          "Not runtime data"
+        ],
+        "error": {
+          "code": "snapshot_not_found",
+          "message": "Synthetic unknown example"
+        }
+      }
+    ],
+    "comparisons": [
+      {
+        "left_index": 0,
+        "right_index": 1,
+        "comparability": "not_comparable",
+        "requested_changes": {
+          "duration_minutes": {
+            "left": 30,
+            "right": 500
+          }
+        },
+        "held_constant": {
+          "origin_id": "TEST_A",
+          "destination_id": "TEST_B",
+          "date": "2026-09-29",
+          "appointment_time": "10:00:00",
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "walking_profile_id": "stop_only",
+          "snapshot_id": "TEST_CONTRACT",
+          "timezone": "Europe/Madrid",
+          "return_deadline": null
+        },
+        "limitations": [
+          "At least one outcome is not ok; no delta or favourable averaging."
+        ]
+      },
+      {
+        "left_index": 0,
+        "right_index": 2,
+        "comparability": "not_comparable",
+        "requested_changes": {},
+        "held_constant": {},
+        "limitations": [
+          "At least one outcome is not ok; no delta or favourable averaging."
+        ]
+      },
+      {
+        "left_index": 1,
+        "right_index": 2,
+        "comparability": "not_comparable",
+        "requested_changes": {},
+        "held_constant": {},
+        "limitations": [
+          "At least one outcome is not ok; no delta or favourable averaging."
+        ]
+      }
+    ],
+    "differences_s": [],
+    "error": null
+  }
+}

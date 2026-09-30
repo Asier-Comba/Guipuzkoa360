@@ -1,0 +1,2418 @@
+{
+  "source_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+  "acquisition_sha256": "d70452469ac23b81839417aabda5289f4148d428d2c2b5762347c4f90320a652",
+  "identity_transformation": "R4 public XML canonical LF bytes; original acquisition and working copy unmodified",
+  "bbox": [
+    43.041,
+    -2.203,
+    43.052,
+    -2.19
+  ],
+  "nodes": 6400,
+  "admitted_ways": 378,
+  "tags": {
+    "highway": {
+      "secondary": 46,
+      "residential": 137,
+      "footway": 58,
+      "steps": 24,
+      "cycleway": 23,
+      "motorway_link": 26,
+      "unclassified": 25,
+      "path": 10,
+      "service": 48,
+      "pedestrian": 28,
+      "living_street": 3,
+      "motorway": 16,
+      "track": 3,
+      "tertiary": 11
+    },
+    "area": {
+      "yes": 11
+    },
+    "foot": {
+      "designated": 4,
+      "yes": 1
+    },
+    "access": {
+      "yes": 13,
+      "destination": 3,
+      "no": 2,
+      "permissive": 1,
+      "designated": 2,
+      "private": 1,
+      "customers": 1
+    },
+    "oneway": {
+      "yes": 150,
+      "no": 19
+    },
+    "oneway:foot": {},
+    "foot:forward": {},
+    "foot:backward": {},
+    "tunnel": {
+      "yes": 10
+    },
+    "bridge": {
+      "yes": 25
+    },
+    "layer": {
+      "-1": 12,
+      "1": 27,
+      "2": 6
+    },
+    "indoor": {},
+    "crossing": {
+      "uncontrolled": 2
+    },
+    "sidewalk": {
+      "yes": 3
+    },
+    "incline": {
+      "up": 1,
+      "10%": 2,
+      "down": 3
+    }
+  },
+  "candidates": [
+    {
+      "stop_id": "7200",
+      "name": "Beasain - Oriamendi 32- Zelaeta Berri Plaza",
+      "coordinates": [
+        43.04734085520361,
+        -2.2031646128874423
+      ],
+      "included": false,
+      "directions": {
+        "outbound": {
+          "status": "unknown",
+          "reason": "outside_network_bbox"
+        },
+        "return": {
+          "status": "unknown",
+          "reason": "outside_network_bbox"
+        }
+      }
+    },
+    {
+      "stop_id": "7203",
+      "name": "Beasain - Ezkiaga 1",
+      "coordinates": [
+        43.05179579648686,
+        -2.189980777348588
+      ],
+      "included": false,
+      "directions": {
+        "outbound": {
+          "status": "unknown",
+          "reason": "outside_network_bbox"
+        },
+        "return": {
+          "status": "unknown",
+          "reason": "outside_network_bbox"
+        }
+      }
+    },
+    {
+      "stop_id": "7206",
+      "name": "Beasain - Igartza Oleta 2",
+      "coordinates": [
+        43.04779192682717,
+        -2.2097766802764958
+      ],
+      "included": false,
+      "directions": {
+        "outbound": {
+          "status": "unknown",
+          "reason": "outside_network_bbox"
+        },
+        "return": {
+          "status": "unknown",
+          "reason": "outside_network_bbox"
+        }
+      }
+    },
+    {
+      "stop_id": "7207",
+      "name": "Beasain - Igartza Oleta 14-  Loinazpe Institutua",
+      "coordinates": [
+        43.04633768439257,
+        -2.214362701221604
+      ],
+      "included": false,
+      "directions": {
+        "outbound": {
+          "status": "unknown",
+          "reason": "outside_network_bbox"
+        },
+        "return": {
+          "status": "unknown",
+          "reason": "outside_network_bbox"
+        }
+      }
+    },
+    {
+      "stop_id": "7208",
+      "name": "Beasain - Ezkiaga 1 Parean",
+      "coordinates": [
+        43.0518125878968,
+        -2.1898086515043342
+      ],
+      "included": false,
+      "directions": {
+        "outbound": {
+          "status": "unknown",
+          "reason": "outside_network_bbox"
+        },
+        "return": {
+          "status": "unknown",
+          "reason": "outside_network_bbox"
+        }
+      }
+    },
+    {
+      "stop_id": "7209",
+      "name": "Beasain - Igartza – Usategi Aparkalekua",
+      "coordinates": [
+        43.04682566265959,
+        -2.210685372986444
+      ],
+      "included": false,
+      "directions": {
+        "outbound": {
+          "status": "unknown",
+          "reason": "outside_network_bbox"
+        },
+        "return": {
+          "status": "unknown",
+          "reason": "outside_network_bbox"
+        }
+      }
+    },
+    {
+      "stop_id": "7213",
+      "name": "Beasain - Igartza Oleta 3- Antzizar Kiroldegia",
+      "coordinates": [
+        43.046219955902295,
+        -2.2142659812345364
+      ],
+      "included": false,
+      "directions": {
+        "outbound": {
+          "status": "unknown",
+          "reason": "outside_network_bbox"
+        },
+        "return": {
+          "status": "unknown",
+          "reason": "outside_network_bbox"
+        }
+      }
+    },
+    {
+      "stop_id": "7214",
+      "name": "Beasain - Zaldizurreta 7",
+      "coordinates": [
+        43.046504610749516,
+        -2.194335377537534
+      ],
+      "included": false,
+      "directions": {
+        "outbound": {
+          "start_coordinates": [
+            43.046504610749516,
+            -2.194335377537534
+          ],
+          "end_coordinates": [
+            43.04527740634045,
+            -2.1977014177917447
+          ],
+          "start_node_id": "10542483955",
+          "end_node_id": "537657326",
+          "connector_metres": [
+            8.448411082890416,
+            13.232397049117077
+          ],
+          "connector_threshold_m": 100,
+          "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+          "builder_version": "r5.1",
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "entrance_verified": false,
+          "modelled_access": true,
+          "status": "unknown",
+          "reason": "disconnected_network"
+        },
+        "return": {
+          "start_coordinates": [
+            43.04527740634045,
+            -2.1977014177917447
+          ],
+          "end_coordinates": [
+            43.046504610749516,
+            -2.194335377537534
+          ],
+          "start_node_id": "537657326",
+          "end_node_id": "10542483955",
+          "connector_metres": [
+            13.232397049117077,
+            8.448411082890416
+          ],
+          "connector_threshold_m": 100,
+          "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+          "builder_version": "r5.1",
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "entrance_verified": false,
+          "modelled_access": true,
+          "status": "unknown",
+          "reason": "disconnected_network"
+        }
+      }
+    },
+    {
+      "stop_id": "7215",
+      "name": "Beasain - Barrendain Plaza 1, Renfe Geltokia",
+      "coordinates": [
+        43.04634509699518,
+        -2.2024162767957116
+      ],
+      "included": true,
+      "directions": {
+        "outbound": {
+          "start_coordinates": [
+            43.04634509699518,
+            -2.2024162767957116
+          ],
+          "end_coordinates": [
+            43.04527740634045,
+            -2.1977014177917447
+          ],
+          "start_node_id": "13424352440",
+          "end_node_id": "537657326",
+          "connector_metres": [
+            11.031046771956861,
+            13.232397049117077
+          ],
+          "connector_threshold_m": 100,
+          "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+          "builder_version": "r5.1",
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "entrance_verified": false,
+          "modelled_access": true,
+          "status": "ok",
+          "reason": null,
+          "node_ids": [
+            "13424352440",
+            "11472569375",
+            "13424352439",
+            "11472569378",
+            "537823339",
+            "13424352435",
+            "13424352436",
+            "11472569374",
+            "13278517867",
+            "537824673",
+            "537790797",
+            "11472569373",
+            "537790799",
+            "537790800",
+            "537790802",
+            "537790803",
+            "537790805",
+            "537831013",
+            "537790807",
+            "537790808",
+            "537790809",
+            "537790810",
+            "4601506789",
+            "11987784843",
+            "11987784842",
+            "4601506790",
+            "537657333",
+            "537657331",
+            "4601506488",
+            "13424352447",
+            "537657330",
+            "537657324",
+            "13536940929",
+            "537657325",
+            "537657326"
+          ],
+          "way_ids": [
+            "883754565",
+            "883754565",
+            "883754565",
+            "883754565",
+            "42936453",
+            "42936453",
+            "42936453",
+            "42936453",
+            "1447248561",
+            "1447248561",
+            "1447248561",
+            "1447248561",
+            "1447248561",
+            "1293110956",
+            "1293110956",
+            "1293110956",
+            "1293110956",
+            "1456700137",
+            "1456700137",
+            "1456700137",
+            "1456700137",
+            "1456700137",
+            "1293110957",
+            "1293110957",
+            "1388315721",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120"
+          ],
+          "network_metres": 614.4415202577336,
+          "total_metres": 638.7049640788075,
+          "seconds": 900,
+          "geometry": [
+            [
+              43.04634509699518,
+              -2.2024162767957116
+            ],
+            [
+              43.046444,
+              -2.2024057
+            ],
+            [
+              43.0464474,
+              -2.2023477
+            ],
+            [
+              43.046444,
+              -2.202287
+            ],
+            [
+              43.0464465,
+              -2.2022397
+            ],
+            [
+              43.0464567,
+              -2.2022054
+            ],
+            [
+              43.0464201,
+              -2.2021332
+            ],
+            [
+              43.0464048,
+              -2.2021002
+            ],
+            [
+              43.0463925,
+              -2.202057
+            ],
+            [
+              43.0463798,
+              -2.202014
+            ],
+            [
+              43.0463105,
+              -2.2016682
+            ],
+            [
+              43.0462813,
+              -2.2015538
+            ],
+            [
+              43.0462408,
+              -2.2013388
+            ],
+            [
+              43.0462232,
+              -2.2011002
+            ],
+            [
+              43.0461749,
+              -2.1997815
+            ],
+            [
+              43.0461649,
+              -2.1994711
+            ],
+            [
+              43.0461056,
+              -2.1990189
+            ],
+            [
+              43.0460594,
+              -2.1985475
+            ],
+            [
+              43.0460414,
+              -2.1979901
+            ],
+            [
+              43.0460404,
+              -2.197829
+            ],
+            [
+              43.0460427,
+              -2.1976485
+            ],
+            [
+              43.0460412,
+              -2.1971506
+            ],
+            [
+              43.0460541,
+              -2.1970117
+            ],
+            [
+              43.0460975,
+              -2.1968001
+            ],
+            [
+              43.0460705,
+              -2.1967155
+            ],
+            [
+              43.0460628,
+              -2.1966674
+            ],
+            [
+              43.0459481,
+              -2.1966502
+            ],
+            [
+              43.0458338,
+              -2.1967223
+            ],
+            [
+              43.0455658,
+              -2.1968727
+            ],
+            [
+              43.0454766,
+              -2.1969502
+            ],
+            [
+              43.0454351,
+              -2.1970107
+            ],
+            [
+              43.0454057,
+              -2.1970536
+            ],
+            [
+              43.0453143,
+              -2.1972141
+            ],
+            [
+              43.0452571,
+              -2.1973357
+            ],
+            [
+              43.0452086,
+              -2.197472
+            ],
+            [
+              43.0451594,
+              -2.1976804
+            ],
+            [
+              43.04527740634045,
+              -2.1977014177917447
+            ]
+          ],
+          "way_tags": [
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "no"
+            },
+            {
+              "highway": "residential",
+              "oneway": "no"
+            },
+            {
+              "highway": "residential",
+              "oneway": "no"
+            },
+            {
+              "highway": "residential",
+              "oneway": "no"
+            },
+            {
+              "highway": "residential",
+              "oneway": "no"
+            },
+            {
+              "highway": "residential",
+              "oneway": "no"
+            },
+            {
+              "highway": "residential",
+              "oneway": "no"
+            },
+            {
+              "highway": "residential",
+              "oneway": "no"
+            },
+            {
+              "highway": "residential",
+              "oneway": "no"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            }
+          ],
+          "source_refs": [
+            "GTFS",
+            "HEALTH_REGISTRY",
+            "OSM",
+            "MODEL"
+          ]
+        },
+        "return": {
+          "start_coordinates": [
+            43.04527740634045,
+            -2.1977014177917447
+          ],
+          "end_coordinates": [
+            43.04634509699518,
+            -2.2024162767957116
+          ],
+          "start_node_id": "537657326",
+          "end_node_id": "13424352440",
+          "connector_metres": [
+            13.232397049117077,
+            11.031046771956861
+          ],
+          "connector_threshold_m": 100,
+          "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+          "builder_version": "r5.1",
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "entrance_verified": false,
+          "modelled_access": true,
+          "status": "ok",
+          "reason": null,
+          "node_ids": [
+            "537657326",
+            "537657325",
+            "13536940929",
+            "537657324",
+            "537657330",
+            "13424352447",
+            "4601506488",
+            "537657331",
+            "537657333",
+            "4601506790",
+            "11987784842",
+            "11987784843",
+            "4601506789",
+            "537790810",
+            "537790809",
+            "537790808",
+            "537790807",
+            "537831013",
+            "537790805",
+            "537790803",
+            "537790802",
+            "537790800",
+            "537790799",
+            "11472569373",
+            "537790797",
+            "537824673",
+            "13278517867",
+            "11472569374",
+            "13424352436",
+            "13424352435",
+            "537823339",
+            "11472569378",
+            "13424352439",
+            "11472569375",
+            "13424352440"
+          ],
+          "way_ids": [
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "1388315721",
+            "1293110957",
+            "1293110957",
+            "1456700137",
+            "1456700137",
+            "1456700137",
+            "1456700137",
+            "1456700137",
+            "1293110956",
+            "1293110956",
+            "1293110956",
+            "1293110956",
+            "1447248561",
+            "1447248561",
+            "1447248561",
+            "1447248561",
+            "1447248561",
+            "42936453",
+            "42936453",
+            "42936453",
+            "42936453",
+            "883754565",
+            "883754565",
+            "883754565",
+            "883754565"
+          ],
+          "network_metres": 614.4415202577335,
+          "total_metres": 638.7049640788074,
+          "seconds": 900,
+          "geometry": [
+            [
+              43.04527740634045,
+              -2.1977014177917447
+            ],
+            [
+              43.0451594,
+              -2.1976804
+            ],
+            [
+              43.0452086,
+              -2.197472
+            ],
+            [
+              43.0452571,
+              -2.1973357
+            ],
+            [
+              43.0453143,
+              -2.1972141
+            ],
+            [
+              43.0454057,
+              -2.1970536
+            ],
+            [
+              43.0454351,
+              -2.1970107
+            ],
+            [
+              43.0454766,
+              -2.1969502
+            ],
+            [
+              43.0455658,
+              -2.1968727
+            ],
+            [
+              43.0458338,
+              -2.1967223
+            ],
+            [
+              43.0459481,
+              -2.1966502
+            ],
+            [
+              43.0460628,
+              -2.1966674
+            ],
+            [
+              43.0460705,
+              -2.1967155
+            ],
+            [
+              43.0460975,
+              -2.1968001
+            ],
+            [
+              43.0460541,
+              -2.1970117
+            ],
+            [
+              43.0460412,
+              -2.1971506
+            ],
+            [
+              43.0460427,
+              -2.1976485
+            ],
+            [
+              43.0460404,
+              -2.197829
+            ],
+            [
+              43.0460414,
+              -2.1979901
+            ],
+            [
+              43.0460594,
+              -2.1985475
+            ],
+            [
+              43.0461056,
+              -2.1990189
+            ],
+            [
+              43.0461649,
+              -2.1994711
+            ],
+            [
+              43.0461749,
+              -2.1997815
+            ],
+            [
+              43.0462232,
+              -2.2011002
+            ],
+            [
+              43.0462408,
+              -2.2013388
+            ],
+            [
+              43.0462813,
+              -2.2015538
+            ],
+            [
+              43.0463105,
+              -2.2016682
+            ],
+            [
+              43.0463798,
+              -2.202014
+            ],
+            [
+              43.0463925,
+              -2.202057
+            ],
+            [
+              43.0464048,
+              -2.2021002
+            ],
+            [
+              43.0464201,
+              -2.2021332
+            ],
+            [
+              43.0464567,
+              -2.2022054
+            ],
+            [
+              43.0464465,
+              -2.2022397
+            ],
+            [
+              43.046444,
+              -2.202287
+            ],
+            [
+              43.0464474,
+              -2.2023477
+            ],
+            [
+              43.046444,
+              -2.2024057
+            ],
+            [
+              43.04634509699518,
+              -2.2024162767957116
+            ]
+          ],
+          "way_tags": [
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential",
+              "oneway": "no"
+            },
+            {
+              "highway": "residential",
+              "oneway": "no"
+            },
+            {
+              "highway": "residential",
+              "oneway": "no"
+            },
+            {
+              "highway": "residential",
+              "oneway": "no"
+            },
+            {
+              "highway": "residential",
+              "oneway": "no"
+            },
+            {
+              "highway": "residential",
+              "oneway": "no"
+            },
+            {
+              "highway": "residential",
+              "oneway": "no"
+            },
+            {
+              "highway": "residential",
+              "oneway": "no"
+            },
+            {
+              "highway": "residential",
+              "oneway": "no"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            }
+          ],
+          "source_refs": [
+            "GTFS",
+            "HEALTH_REGISTRY",
+            "OSM",
+            "MODEL"
+          ]
+        }
+      }
+    },
+    {
+      "stop_id": "7218",
+      "name": "Beasain - San Inazio 10",
+      "coordinates": [
+        43.04730234019161,
+        -2.1976522802175604
+      ],
+      "included": true,
+      "directions": {
+        "outbound": {
+          "start_coordinates": [
+            43.04730234019161,
+            -2.1976522802175604
+          ],
+          "end_coordinates": [
+            43.04527740634045,
+            -2.1977014177917447
+          ],
+          "start_node_id": "537835620",
+          "end_node_id": "537657326",
+          "connector_metres": [
+            4.4204180797501005,
+            13.232397049117077
+          ],
+          "connector_threshold_m": 100,
+          "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+          "builder_version": "r5.1",
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "entrance_verified": false,
+          "modelled_access": true,
+          "status": "ok",
+          "reason": null,
+          "node_ids": [
+            "537835620",
+            "537824871",
+            "537817930",
+            "13282166515",
+            "12504287624",
+            "12504287623",
+            "12504287622",
+            "12504287621",
+            "12504287620",
+            "12504287632",
+            "12504287630",
+            "3443175090",
+            "12504287631",
+            "12504287627",
+            "12504287626",
+            "12504287625",
+            "12504287633",
+            "12504287634",
+            "12504287628",
+            "537817922",
+            "13359626656",
+            "2919607168",
+            "537831030",
+            "13424547712",
+            "13282166540",
+            "537831013",
+            "537790807",
+            "537790808",
+            "537790809",
+            "537790810",
+            "4601506789",
+            "11987784843",
+            "11987784842",
+            "4601506790",
+            "537657333",
+            "537657331",
+            "4601506488",
+            "13424352447",
+            "537657330",
+            "537657324",
+            "13536940929",
+            "537657325",
+            "537657326"
+          ],
+          "way_ids": [
+            "42944983",
+            "42944983",
+            "42935961",
+            "42935961",
+            "42935961",
+            "42935961",
+            "42935961",
+            "42935961",
+            "42935961",
+            "1351545716",
+            "1351545716",
+            "42936194",
+            "42936194",
+            "42936194",
+            "42936194",
+            "42936194",
+            "42937242",
+            "42936319",
+            "42936319",
+            "42936319",
+            "42936319",
+            "42936319",
+            "42936320",
+            "42936320",
+            "42936320",
+            "1456700137",
+            "1456700137",
+            "1456700137",
+            "1456700137",
+            "1456700137",
+            "1293110957",
+            "1293110957",
+            "1388315721",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120"
+          ],
+          "network_metres": 668.4629477207395,
+          "total_metres": 686.1157628496067,
+          "seconds": 960,
+          "geometry": [
+            [
+              43.04730234019161,
+              -2.1976522802175604
+            ],
+            [
+              43.0472821,
+              -2.1976991
+            ],
+            [
+              43.0470621,
+              -2.1985246
+            ],
+            [
+              43.0470415,
+              -2.1986508
+            ],
+            [
+              43.046971,
+              -2.1986543
+            ],
+            [
+              43.0467639,
+              -2.1986444
+            ],
+            [
+              43.0466933,
+              -2.1986615
+            ],
+            [
+              43.0466729,
+              -2.1986958
+            ],
+            [
+              43.0466683,
+              -2.198744
+            ],
+            [
+              43.046674,
+              -2.198797
+            ],
+            [
+              43.0466917,
+              -2.1988148
+            ],
+            [
+              43.0466316,
+              -2.1988621
+            ],
+            [
+              43.0465664,
+              -2.1988576
+            ],
+            [
+              43.0465324,
+              -2.1988769
+            ],
+            [
+              43.0465218,
+              -2.1989139
+            ],
+            [
+              43.0465193,
+              -2.1989582
+            ],
+            [
+              43.0465133,
+              -2.1990444
+            ],
+            [
+              43.0465446,
+              -2.1997342
+            ],
+            [
+              43.0465048,
+              -2.1997353
+            ],
+            [
+              43.0464993,
+              -2.199581
+            ],
+            [
+              43.046482,
+              -2.1989535
+            ],
+            [
+              43.0464962,
+              -2.1987992
+            ],
+            [
+              43.0465144,
+              -2.1986017
+            ],
+            [
+              43.0465628,
+              -2.1981304
+            ],
+            [
+              43.0463843,
+              -2.1980824
+            ],
+            [
+              43.0461923,
+              -2.1980307
+            ],
+            [
+              43.0460414,
+              -2.1979901
+            ],
+            [
+              43.0460404,
+              -2.197829
+            ],
+            [
+              43.0460427,
+              -2.1976485
+            ],
+            [
+              43.0460412,
+              -2.1971506
+            ],
+            [
+              43.0460541,
+              -2.1970117
+            ],
+            [
+              43.0460975,
+              -2.1968001
+            ],
+            [
+              43.0460705,
+              -2.1967155
+            ],
+            [
+              43.0460628,
+              -2.1966674
+            ],
+            [
+              43.0459481,
+              -2.1966502
+            ],
+            [
+              43.0458338,
+              -2.1967223
+            ],
+            [
+              43.0455658,
+              -2.1968727
+            ],
+            [
+              43.0454766,
+              -2.1969502
+            ],
+            [
+              43.0454351,
+              -2.1970107
+            ],
+            [
+              43.0454057,
+              -2.1970536
+            ],
+            [
+              43.0453143,
+              -2.1972141
+            ],
+            [
+              43.0452571,
+              -2.1973357
+            ],
+            [
+              43.0452086,
+              -2.197472
+            ],
+            [
+              43.0451594,
+              -2.1976804
+            ],
+            [
+              43.04527740634045,
+              -2.1977014177917447
+            ]
+          ],
+          "way_tags": [
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "pedestrian"
+            },
+            {
+              "foot": "yes",
+              "highway": "pedestrian"
+            },
+            {
+              "foot": "yes",
+              "highway": "pedestrian"
+            },
+            {
+              "foot": "yes",
+              "highway": "pedestrian"
+            },
+            {
+              "foot": "yes",
+              "highway": "pedestrian"
+            },
+            {
+              "foot": "yes",
+              "highway": "pedestrian"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            }
+          ],
+          "source_refs": [
+            "GTFS",
+            "HEALTH_REGISTRY",
+            "OSM",
+            "MODEL"
+          ]
+        },
+        "return": {
+          "start_coordinates": [
+            43.04527740634045,
+            -2.1977014177917447
+          ],
+          "end_coordinates": [
+            43.04730234019161,
+            -2.1976522802175604
+          ],
+          "start_node_id": "537657326",
+          "end_node_id": "537835620",
+          "connector_metres": [
+            13.232397049117077,
+            4.4204180797501005
+          ],
+          "connector_threshold_m": 100,
+          "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+          "builder_version": "r5.1",
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "entrance_verified": false,
+          "modelled_access": true,
+          "status": "ok",
+          "reason": null,
+          "node_ids": [
+            "537657326",
+            "537657325",
+            "13536940929",
+            "537657324",
+            "537657330",
+            "13424352447",
+            "4601506488",
+            "537657331",
+            "537657333",
+            "4601506790",
+            "11987784842",
+            "11987784843",
+            "4601506789",
+            "537790810",
+            "537790809",
+            "537790808",
+            "537790807",
+            "537831013",
+            "13282166540",
+            "13424547712",
+            "537831030",
+            "2919607168",
+            "13359626656",
+            "537817922",
+            "12504287628",
+            "12504287634",
+            "12504287633",
+            "12504287625",
+            "12504287626",
+            "12504287627",
+            "12504287631",
+            "3443175090",
+            "12504287630",
+            "12504287632",
+            "12504287620",
+            "12504287621",
+            "12504287622",
+            "12504287623",
+            "12504287624",
+            "13282166515",
+            "537817930",
+            "537824871",
+            "537835620"
+          ],
+          "way_ids": [
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "1388315721",
+            "1293110957",
+            "1293110957",
+            "1456700137",
+            "1456700137",
+            "1456700137",
+            "1456700137",
+            "1456700137",
+            "42936320",
+            "42936320",
+            "42936320",
+            "42936319",
+            "42936319",
+            "42936319",
+            "42936319",
+            "42936319",
+            "42937242",
+            "42936194",
+            "42936194",
+            "42936194",
+            "42936194",
+            "42936194",
+            "1351545716",
+            "1351545716",
+            "42935961",
+            "42935961",
+            "42935961",
+            "42935961",
+            "42935961",
+            "42935961",
+            "42935961",
+            "42944983",
+            "42944983"
+          ],
+          "network_metres": 668.4629477207395,
+          "total_metres": 686.1157628496067,
+          "seconds": 960,
+          "geometry": [
+            [
+              43.04527740634045,
+              -2.1977014177917447
+            ],
+            [
+              43.0451594,
+              -2.1976804
+            ],
+            [
+              43.0452086,
+              -2.197472
+            ],
+            [
+              43.0452571,
+              -2.1973357
+            ],
+            [
+              43.0453143,
+              -2.1972141
+            ],
+            [
+              43.0454057,
+              -2.1970536
+            ],
+            [
+              43.0454351,
+              -2.1970107
+            ],
+            [
+              43.0454766,
+              -2.1969502
+            ],
+            [
+              43.0455658,
+              -2.1968727
+            ],
+            [
+              43.0458338,
+              -2.1967223
+            ],
+            [
+              43.0459481,
+              -2.1966502
+            ],
+            [
+              43.0460628,
+              -2.1966674
+            ],
+            [
+              43.0460705,
+              -2.1967155
+            ],
+            [
+              43.0460975,
+              -2.1968001
+            ],
+            [
+              43.0460541,
+              -2.1970117
+            ],
+            [
+              43.0460412,
+              -2.1971506
+            ],
+            [
+              43.0460427,
+              -2.1976485
+            ],
+            [
+              43.0460404,
+              -2.197829
+            ],
+            [
+              43.0460414,
+              -2.1979901
+            ],
+            [
+              43.0461923,
+              -2.1980307
+            ],
+            [
+              43.0463843,
+              -2.1980824
+            ],
+            [
+              43.0465628,
+              -2.1981304
+            ],
+            [
+              43.0465144,
+              -2.1986017
+            ],
+            [
+              43.0464962,
+              -2.1987992
+            ],
+            [
+              43.046482,
+              -2.1989535
+            ],
+            [
+              43.0464993,
+              -2.199581
+            ],
+            [
+              43.0465048,
+              -2.1997353
+            ],
+            [
+              43.0465446,
+              -2.1997342
+            ],
+            [
+              43.0465133,
+              -2.1990444
+            ],
+            [
+              43.0465193,
+              -2.1989582
+            ],
+            [
+              43.0465218,
+              -2.1989139
+            ],
+            [
+              43.0465324,
+              -2.1988769
+            ],
+            [
+              43.0465664,
+              -2.1988576
+            ],
+            [
+              43.0466316,
+              -2.1988621
+            ],
+            [
+              43.0466917,
+              -2.1988148
+            ],
+            [
+              43.046674,
+              -2.198797
+            ],
+            [
+              43.0466683,
+              -2.198744
+            ],
+            [
+              43.0466729,
+              -2.1986958
+            ],
+            [
+              43.0466933,
+              -2.1986615
+            ],
+            [
+              43.0467639,
+              -2.1986444
+            ],
+            [
+              43.046971,
+              -2.1986543
+            ],
+            [
+              43.0470415,
+              -2.1986508
+            ],
+            [
+              43.0470621,
+              -2.1985246
+            ],
+            [
+              43.0472821,
+              -2.1976991
+            ],
+            [
+              43.04730234019161,
+              -2.1976522802175604
+            ]
+          ],
+          "way_tags": [
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "foot": "yes",
+              "highway": "pedestrian"
+            },
+            {
+              "foot": "yes",
+              "highway": "pedestrian"
+            },
+            {
+              "foot": "yes",
+              "highway": "pedestrian"
+            },
+            {
+              "foot": "yes",
+              "highway": "pedestrian"
+            },
+            {
+              "foot": "yes",
+              "highway": "pedestrian"
+            },
+            {
+              "highway": "pedestrian"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "cycleway"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            }
+          ],
+          "source_refs": [
+            "GTFS",
+            "HEALTH_REGISTRY",
+            "OSM",
+            "MODEL"
+          ]
+        }
+      }
+    },
+    {
+      "stop_id": "7219",
+      "name": "Beasain - Lokomotora Biribilgunea",
+      "coordinates": [
+        43.04626553099556,
+        -2.1961924562286215
+      ],
+      "included": true,
+      "directions": {
+        "outbound": {
+          "start_coordinates": [
+            43.04626553099556,
+            -2.1961924562286215
+          ],
+          "end_coordinates": [
+            43.04527740634045,
+            -2.1977014177917447
+          ],
+          "start_node_id": "12388562316",
+          "end_node_id": "537657326",
+          "connector_metres": [
+            3.8689597780987146,
+            13.232397049117077
+          ],
+          "connector_threshold_m": 100,
+          "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+          "builder_version": "r5.1",
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "entrance_verified": false,
+          "modelled_access": true,
+          "status": "ok",
+          "reason": null,
+          "node_ids": [
+            "12388562316",
+            "11987784838",
+            "537660297",
+            "13424352459",
+            "537657332",
+            "11987784840",
+            "11987784844",
+            "4601506790",
+            "537657333",
+            "537657331",
+            "4601506488",
+            "13424352447",
+            "537657330",
+            "537657324",
+            "13536940929",
+            "537657325",
+            "537657326"
+          ],
+          "way_ids": [
+            "1293110953",
+            "1293110953",
+            "42928253",
+            "42928253",
+            "1388315723",
+            "1388315723",
+            "1293110954",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120"
+          ],
+          "network_metres": 187.97829058313837,
+          "total_metres": 205.07964741035417,
+          "seconds": 420,
+          "geometry": [
+            [
+              43.04626553099556,
+              -2.1961924562286215
+            ],
+            [
+              43.0462956,
+              -2.1961685
+            ],
+            [
+              43.0463028,
+              -2.1962115
+            ],
+            [
+              43.0462808,
+              -2.1963513
+            ],
+            [
+              43.0462545,
+              -2.196396
+            ],
+            [
+              43.046223,
+              -2.1964495
+            ],
+            [
+              43.0461686,
+              -2.196487
+            ],
+            [
+              43.0460541,
+              -2.1965717
+            ],
+            [
+              43.0459481,
+              -2.1966502
+            ],
+            [
+              43.0458338,
+              -2.1967223
+            ],
+            [
+              43.0455658,
+              -2.1968727
+            ],
+            [
+              43.0454766,
+              -2.1969502
+            ],
+            [
+              43.0454351,
+              -2.1970107
+            ],
+            [
+              43.0454057,
+              -2.1970536
+            ],
+            [
+              43.0453143,
+              -2.1972141
+            ],
+            [
+              43.0452571,
+              -2.1973357
+            ],
+            [
+              43.0452086,
+              -2.197472
+            ],
+            [
+              43.0451594,
+              -2.1976804
+            ],
+            [
+              43.04527740634045,
+              -2.1977014177917447
+            ]
+          ],
+          "way_tags": [
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            }
+          ],
+          "source_refs": [
+            "GTFS",
+            "HEALTH_REGISTRY",
+            "OSM",
+            "MODEL"
+          ]
+        },
+        "return": {
+          "start_coordinates": [
+            43.04527740634045,
+            -2.1977014177917447
+          ],
+          "end_coordinates": [
+            43.04626553099556,
+            -2.1961924562286215
+          ],
+          "start_node_id": "537657326",
+          "end_node_id": "12388562316",
+          "connector_metres": [
+            13.232397049117077,
+            3.8689597780987146
+          ],
+          "connector_threshold_m": 100,
+          "network_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+          "builder_version": "r5.1",
+          "walking_profile_id": "poc_reference_50m_min_plus_120s",
+          "entrance_verified": false,
+          "modelled_access": true,
+          "status": "ok",
+          "reason": null,
+          "node_ids": [
+            "537657326",
+            "537657325",
+            "13536940929",
+            "537657324",
+            "537657330",
+            "13424352447",
+            "4601506488",
+            "537657331",
+            "537657333",
+            "4601506790",
+            "11987784844",
+            "11987784840",
+            "537657332",
+            "13424352459",
+            "537660297",
+            "11987784838",
+            "12388562316"
+          ],
+          "way_ids": [
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "42935120",
+            "1293110954",
+            "1388315723",
+            "1388315723",
+            "42928253",
+            "42928253",
+            "1293110953",
+            "1293110953"
+          ],
+          "network_metres": 187.97829058313835,
+          "total_metres": 205.07964741035414,
+          "seconds": 420,
+          "geometry": [
+            [
+              43.04527740634045,
+              -2.1977014177917447
+            ],
+            [
+              43.0451594,
+              -2.1976804
+            ],
+            [
+              43.0452086,
+              -2.197472
+            ],
+            [
+              43.0452571,
+              -2.1973357
+            ],
+            [
+              43.0453143,
+              -2.1972141
+            ],
+            [
+              43.0454057,
+              -2.1970536
+            ],
+            [
+              43.0454351,
+              -2.1970107
+            ],
+            [
+              43.0454766,
+              -2.1969502
+            ],
+            [
+              43.0455658,
+              -2.1968727
+            ],
+            [
+              43.0458338,
+              -2.1967223
+            ],
+            [
+              43.0459481,
+              -2.1966502
+            ],
+            [
+              43.0460541,
+              -2.1965717
+            ],
+            [
+              43.0461686,
+              -2.196487
+            ],
+            [
+              43.046223,
+              -2.1964495
+            ],
+            [
+              43.0462545,
+              -2.196396
+            ],
+            [
+              43.0462808,
+              -2.1963513
+            ],
+            [
+              43.0463028,
+              -2.1962115
+            ],
+            [
+              43.0462956,
+              -2.1961685
+            ],
+            [
+              43.04626553099556,
+              -2.1961924562286215
+            ]
+          ],
+          "way_tags": [
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            },
+            {
+              "highway": "residential",
+              "oneway": "yes"
+            }
+          ],
+          "source_refs": [
+            "GTFS",
+            "HEALTH_REGISTRY",
+            "OSM",
+            "MODEL"
+          ]
+        }
+      }
+    }
+  ],
+  "node_tag_counts": {
+    "highway=motorway_junction": 5,
+    "crossing=uncontrolled": 73,
+    "highway=crossing": 83,
+    "highway=bus_stop": 4,
+    "access=yes": 5,
+    "highway=give_way": 11,
+    "highway=stop": 4,
+    "barrier=gate": 3,
+    "foot=yes": 1,
+    "crossing=traffic_signals": 1,
+    "highway=elevator": 2,
+    "entrance=main": 1,
+    "barrier=jersey_barrier": 3
+  },
+  "corridor_node_tags": [
+    {
+      "node_id": "11987784843",
+      "tags": {
+        "highway": "give_way"
+      }
+    },
+    {
+      "node_id": "12388562316",
+      "tags": {
+        "crossing": "uncontrolled",
+        "highway": "crossing"
+      }
+    },
+    {
+      "node_id": "13278517867",
+      "tags": {
+        "crossing": "uncontrolled",
+        "highway": "crossing"
+      }
+    },
+    {
+      "node_id": "13282166515",
+      "tags": {
+        "crossing": "uncontrolled",
+        "highway": "crossing"
+      }
+    },
+    {
+      "node_id": "13282166540",
+      "tags": {
+        "crossing": "uncontrolled",
+        "highway": "crossing"
+      }
+    }
+  ],
+  "policy": "Vehicle oneway does not restrict pedestrians. Explicit foot directions supported. No indoor/steps. Bridge/layer topology retained, no artificial crossings. Incline is not a speed/accessibility model."
+}

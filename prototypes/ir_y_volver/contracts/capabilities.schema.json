@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gipuzkoa360.local/contracts/capabilities.schema.json",
+  "title": "RoundTripCapabilities",
+  "type": "object",
+  "required": ["schema_version", "provider_id", "time_basis", "scope", "statuses", "snapshots"],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "provider_id": {"const": "ir_y_volver"},
+    "time_basis": {"const": "scheduled"},
+    "scope": {"const": "stop_to_stop_with_destination_walk"},
+    "statuses": {"type": "array", "items": {"enum": ["ok", "no_feasible_journey", "unsupported", "unknown", "error"]}},
+    "snapshots": {"type": "array", "items": {"type": "object"}}
+  }
+}

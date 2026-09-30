@@ -1,0 +1,51 @@
+{
+  "check": "SOURCE_HYGIENE_CHECK",
+  "not_complete_security_audit": true,
+  "critical_high": 0,
+  "personal_editor_metadata": "NONE_DETECTED_IN_PUBLIC_OSM_DERIVATIVE; contributor account/contact attributes were removed before commit",
+  "public_contact_data": "Official centre/PADI contact values are published source evidence, not unexpected personal data.",
+  "temporary_or_cache_files_committed": false,
+  "files": [
+    {
+      "path": "datos_originales/movilidad/goierrialdea-3276fcae.zip",
+      "secret_pattern": false,
+      "local_absolute_path": false,
+      "bytes": 811289,
+      "sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+      "hash_basis": "exact_bytes"
+    },
+    {
+      "path": "datos_originales/centros-salud.xlsx",
+      "secret_pattern": false,
+      "local_absolute_path": false,
+      "bytes": 88479,
+      "sha256": "87a2b8ea3309678ff743e2f267320b94216c3d1e4f52b578bdd0a77bd8bf29ab",
+      "hash_basis": "exact_bytes"
+    },
+    {
+      "path": "datos_originales/movilidad/r5/beasain-official.html",
+      "secret_pattern": false,
+      "local_absolute_path": false,
+      "bytes": 206930,
+      "sha256": "7ba21b4f78f79b55d5761f427582daaef48097245142c9cb259288dc923f3160",
+      "hash_basis": "exact_bytes"
+    },
+    {
+      "path": "datos_originales/movilidad/r5/padi-2026.pdf",
+      "secret_pattern": false,
+      "local_absolute_path": false,
+      "bytes": 778758,
+      "sha256": "6cf5d40245eb29c9c98785d03aba518c44677104b71625db36c3f2801455ac10",
+      "hash_basis": "exact_bytes"
+    },
+    {
+      "path": "datos_originales/movilidad/beasain-network-r4-public.osm",
+      "secret_pattern": false,
+      "local_absolute_path": false,
+      "bytes": 1722570,
+      "sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+      "hash_basis": "canonical_lf"
+    }
+  ],
+  "status": "PASS"
+}

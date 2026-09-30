@@ -1,0 +1,36 @@
+{
+  "files": [
+    {
+      "bytes": 12521,
+      "hash_basis": "exact_bytes",
+      "path": "docs/vnext/w1/integration_r11/W1_HANDSHAKE_R11.json",
+      "role": "handshake",
+      "sha256": "7cd86bae4699c0fcc50e85841585ee74534f19da6972e10be04f1971168a7643"
+    },
+    {
+      "bytes": 19086,
+      "hash_basis": "exact_bytes",
+      "path": "docs/vnext/w1/MODEL_VIEW_REQUIREMENTS_R11.json",
+      "role": "model_view_oracle",
+      "sha256": "cee2a75e3bc5f1cbe86c1e4bd4e08989373fe25df7a814364fc011a6f0bdd905"
+    },
+    {
+      "bytes": 5977,
+      "hash_basis": "exact_bytes",
+      "path": "docs/vnext/w1/DETERMINISTIC_GOLD_R11.json",
+      "role": "public_deterministic_gold",
+      "sha256": "cb41c25b836deaecd0d3ab4de12160c7c5ec20cf80f10824f82912b68b9b16fb"
+    },
+    {
+      "bytes": 22389,
+      "hash_basis": "exact_bytes",
+      "path": "scripts/mobility/intake_candidate_r11.py",
+      "role": "candidate_intake",
+      "sha256": "aa4caf434f9d5a1a45e7dbd82b2eabb5cf22f727051c9dd7d62adedd685607a3"
+    }
+  ],
+  "manifest_version": "r11.0",
+  "runtime_inclusion": false,
+  "runtime_package_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+  "runtime_tested_pin": "cb061a97e78d6b5c967104fef6b935132fdc450f"
+}

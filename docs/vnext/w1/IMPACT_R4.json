@@ -1,0 +1,32 @@
+{
+  "raw_rows": 20404,
+  "go01_rows": 6309,
+  "go01_trips": 162,
+  "go01_counts": {
+    "pickup_type": {
+      "0": 6147,
+      "1": 162
+    },
+    "drop_off_type": {
+      "1": 162,
+      "0": 6147
+    },
+    "timepoint": {
+      "0": 6309
+    }
+  },
+  "feed_counts": {
+    "pickup_type": {
+      "0": 19059,
+      "1": 1345
+    },
+    "drop_off_type": {
+      "1": 1340,
+      "0": 19064
+    },
+    "timepoint": {
+      "0": 20404
+    }
+  },
+  "go01_conditioned_trips": 0
+}

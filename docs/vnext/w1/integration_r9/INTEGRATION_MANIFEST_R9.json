@@ -1,0 +1,77 @@
+{
+  "manifest_version": "r9.0",
+  "runtime_inclusion": false,
+  "runtime_package_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+  "files": [
+    {
+      "path": "docs/vnext/w1/integration_r9/W1_HANDSHAKE_R9.json",
+      "sha256": "090335ab9e18b76a0dea311408aeff2a913289c7368f0801ac02a70031f056d6",
+      "bytes": 9891,
+      "hash_basis": "exact_bytes",
+      "role": "handshake"
+    },
+    {
+      "path": "docs/vnext/w1/DATA_FREEZE_R9.json",
+      "sha256": "bc1f87684a66cfbeb138e582e7312af447a9be0232ba71a967fc9e4e93775b32",
+      "bytes": 3390,
+      "hash_basis": "exact_bytes",
+      "role": "data_freeze"
+    },
+    {
+      "path": "docs/vnext/w1/CLEAN_ROOM_REPRO_R9.json",
+      "sha256": "d42b1394d1fc052f8b170a097c44a575291d5b16a24261a8bf832f4f7c502ec2",
+      "bytes": 6701,
+      "hash_basis": "exact_bytes",
+      "role": "clean_room"
+    },
+    {
+      "path": "docs/vnext/w1/UPSTREAM_DRIFT_R9.json",
+      "sha256": "b75a9831347d1e0952eaa14755026fcf9f19b2b902abfdb514551f25083bc426",
+      "bytes": 10045,
+      "hash_basis": "exact_bytes",
+      "role": "upstream_drift"
+    },
+    {
+      "path": "docs/vnext/w1/SOURCE_LICENSE_R9.json",
+      "sha256": "7ed1416edd1326be7067dea8b8c1422e686edcf8d540293d84ee4e07f6966611",
+      "bytes": 4475,
+      "hash_basis": "exact_bytes",
+      "role": "source_license"
+    },
+    {
+      "path": "docs/vnext/w1/SOURCE_DISTRIBUTION_R9.json",
+      "sha256": "673d2e6e8a64ab96067548fd0c360cd895dce2b2b326e3e59da5c343db3d296e",
+      "bytes": 2493,
+      "hash_basis": "exact_bytes",
+      "role": "distribution"
+    },
+    {
+      "path": "docs/vnext/w1/CLAIM_SEMANTICS_R9.json",
+      "sha256": "0879fac769d591f4edb7aa056cdec9ae7e1b72e90397773bdd4d18d79b46cb69",
+      "bytes": 15215,
+      "hash_basis": "exact_bytes",
+      "role": "claim_semantics"
+    },
+    {
+      "path": "docs/vnext/w1/SOURCE_HYGIENE_R9.json",
+      "sha256": "e564a606a28a51d93b0ab003008c48896981c29417c9b8887333ca6dd91455aa",
+      "bytes": 1880,
+      "hash_basis": "exact_bytes",
+      "role": "source_hygiene"
+    },
+    {
+      "path": "docs/vnext/w1/RELEASE_CONTENT_ADVICE_R9.json",
+      "sha256": "e8c9fa798e866f9815f58cbd0a0ac0c77acc1387c80c185338c0707997cfe1b1",
+      "bytes": 755,
+      "hash_basis": "exact_bytes",
+      "role": "release_advice"
+    },
+    {
+      "path": "docs/vnext/w1/SOURCE_CHANGE_PLAYBOOK_R9.md",
+      "sha256": "1ed5bb97dac79d01152c8f4a7560e24e4ba9699beef63fad14bf54841b553f8a",
+      "bytes": 1983,
+      "hash_basis": "exact_bytes",
+      "role": "playbook"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "status": "PASS_WITH_EXPLICIT_FINDING",
+  "nodes": [
+    "GTFS",
+    "HEALTH_REGISTRY",
+    "HEALTH_PAGE",
+    "PADI_2026",
+    "OSM",
+    "MODEL",
+    "USER",
+    "MODEL_DEFAULTS",
+    "DERIVED"
+  ],
+  "source_ref_integrity": "PASS",
+  "parameter_provenance": "PASS",
+  "human_vs_default_partition": "PASS",
+  "component_semantics": "PASS",
+  "findings": [
+    {
+      "id": "W1-R7-F01",
+      "severity": "MEDIUM",
+      "title": "DERIVED is a conceptually circular component reference",
+      "components": [
+        "pre_appointment_wait",
+        "return_wait"
+      ],
+      "impact": "No arithmetic or source hash corruption; the graph is not a strict explanatory DAG.",
+      "proposal": "In a future coordinated contract, model derivation as an edge/operation rather than a source_ref from a component to the aggregate derived metric.",
+      "contract_change_required_now": false
+    }
+  ]
+}

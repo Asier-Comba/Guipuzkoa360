@@ -1,0 +1,50 @@
+{
+  "files": [
+    {
+      "bytes": 11842,
+      "hash_basis": "exact_bytes",
+      "path": "docs/vnext/w1/integration_r10/W1_HANDSHAKE_R10.json",
+      "role": "handshake",
+      "sha256": "ac2657cede8dfdf2487fe71d53c245700c8a259dac688df852eb6f4c857f151c"
+    },
+    {
+      "bytes": 1613,
+      "hash_basis": "exact_bytes",
+      "path": "docs/vnext/w1/integration_r10/W1_HANDSHAKE_R10.schema.json",
+      "role": "schema",
+      "sha256": "74d1ce15f9a89f2a734c9ff3d469abe46776de2ee4677a00548063877d7dd95d"
+    },
+    {
+      "bytes": 1464,
+      "hash_basis": "exact_bytes",
+      "path": "docs/vnext/w1/ERRATA_R9_R10.json",
+      "role": "errata",
+      "sha256": "ab05e7dcb4bd4f3ec1f9a8461b16222704d7c7775eff1cd934a90ac163af94f4"
+    },
+    {
+      "bytes": 4196,
+      "hash_basis": "exact_bytes",
+      "path": "docs/vnext/w1/STATUS_ERROR_SEMANTICS_R10.json",
+      "role": "status_error_semantics",
+      "sha256": "ff36df219d2ddae181d17e3aa66e132a694e7e4a88c4b308ebaa69c8f388d118"
+    },
+    {
+      "bytes": 1709,
+      "hash_basis": "exact_bytes",
+      "path": "docs/vnext/w1/CALLER_PROVENANCE_R10.json",
+      "role": "caller_provenance",
+      "sha256": "2c2cadfa0bc72da09c2871dded1cc3d11783801c76fdeb13d5f7b928d8a6508c"
+    },
+    {
+      "bytes": 11168,
+      "hash_basis": "exact_bytes",
+      "path": "scripts/mobility/verify_candidate_parity_r10.py",
+      "role": "parity_runner",
+      "sha256": "4fb7b2a0485a4b34b6ff46944aa84d219591615211e1a10f9408a0506376c976"
+    }
+  ],
+  "manifest_version": "r10.0",
+  "runtime_inclusion": false,
+  "runtime_package_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+  "runtime_tested_pin": "cb061a97e78d6b5c967104fef6b935132fdc450f"
+}

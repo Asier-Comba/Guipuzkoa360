@@ -1,0 +1,90 @@
+{
+  "catalog_version": "r6.0",
+  "provider_entrypoint": "prototypes.ir_y_volver.provider_r6",
+  "contract_version": "0.3.1",
+  "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+  "snapshot_sha256": "59fcded9e4236ee094eeb0881c4eb94f521b96fb6c8c89c881c3e9f6d5140901",
+  "scenario_kind": "health_visit",
+  "validated_date": "2026-09-29",
+  "origins": [
+    {
+      "origin_id": "idiazabal_center_stops",
+      "name": "Paradas centrales de Idiazabal",
+      "municipality_code": "20043",
+      "municipality_name": "Idiazabal",
+      "stop_ids": [
+        "7903",
+        "7906"
+      ]
+    },
+    {
+      "origin_id": "segura_herriko_plaza_stops",
+      "name": "Paradas Herriko Plaza de Segura",
+      "municipality_code": "20070",
+      "municipality_name": "Segura",
+      "stop_ids": [
+        "7801",
+        "7813"
+      ]
+    },
+    {
+      "origin_id": "zegama_center_stops",
+      "name": "Paradas centrales de Zegama",
+      "municipality_code": "20025",
+      "municipality_name": "Zegama",
+      "stop_ids": [
+        "8305",
+        "8309"
+      ]
+    }
+  ],
+  "destination": {
+    "destination_id": "beasain_official_centre_anchor",
+    "name": "Ambulatorio de Beasain",
+    "centre_id": "entityBC631DA5",
+    "reference_point_meaning": "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+    "verification": {
+      "centre_identity": "CONFIRMED",
+      "centre_anchor": "CONFIRMED_OFFICIAL_POINT",
+      "entrance_verified": false,
+      "modelled_access": true
+    }
+  },
+  "walking": {
+    "profile_id": "poc_reference_50m_min_plus_120s",
+    "distance_unit": "metre",
+    "time_unit": "second",
+    "formula": "ceil(total_metres/50)*60+120"
+  },
+  "defaults": {
+    "arrival_margin_minutes": 10,
+    "boarding_margin_minutes": 3,
+    "walking_profile_id": "poc_reference_50m_min_plus_120s",
+    "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+    "return_deadline": null,
+    "timezone": "Europe/Madrid"
+  },
+  "ranges": {
+    "duration_minutes": {
+      "minimum": 1,
+      "maximum": 720
+    },
+    "arrival_margin_minutes": {
+      "minimum": 0,
+      "maximum": 240
+    },
+    "boarding_margin_minutes": {
+      "minimum": 0,
+      "maximum": 120
+    }
+  },
+  "restrictions": [
+    "GO01 direct only",
+    "static schedule; not realtime",
+    "same civil day",
+    "origin stop presence to return stop arrival",
+    "validated date only",
+    "not assigned centre, appointment availability, universal accessibility or verified entrance"
+  ],
+  "cross_origin_comparison": "side_by_side_only; numeric delta is not supported across origins"
+}

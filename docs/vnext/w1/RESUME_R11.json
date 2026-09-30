@@ -1,0 +1,76 @@
+{
+  "work_id": "W1",
+  "round": "G360-R11",
+  "start_sha": "6e284aff347cfcf5fbb3d7eb9cb89a227b83e0d5",
+  "tested_head": "99ad907ff1515174ac9823bf4cef2b4c928495b9",
+  "published_head": "RECORDED_EXTERNALLY_AFTER_DOCUMENTATION_COMMIT",
+  "w2_head_first_seen": "8272988566f5bca2d65d3119732bf831d11382dc",
+  "w2_head_final_seen": "2321e03e3d994b488db9723560383d9defedcac7",
+  "w3_head_final_seen": "281f92a25170c5082c5772c0130d2275e57edaaf",
+  "runtime_changed": false,
+  "r6_package_preserved": {
+    "bytes": 129365,
+    "sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+    "tested_pin": "cb061a97e78d6b5c967104fef6b935132fdc450f"
+  },
+  "handshake": {
+    "version": "r11.0-support",
+    "path": "docs/vnext/w1/integration_r11/W1_HANDSHAKE_R11.json",
+    "bytes": 12521,
+    "sha256": "7cd86bae4699c0fcc50e85841585ee74534f19da6972e10be04f1971168a7643"
+  },
+  "unknown_semantics_fixed": true,
+  "model_view_gate": "READY_REAL_CANDIDATE_TOOLS_PUBLIC_RESULT",
+  "model_view_requirements": {
+    "count": 38,
+    "sha256": "cee2a75e3bc5f1cbe86c1e4bd4e08989373fe25df7a814364fc011a6f0bdd905"
+  },
+  "strict_gate": {"pass_exit": 0, "not_run_exit": "NONZERO", "fail_exit": "NONZERO", "tested": true},
+  "diagnostic_gate": {"pass_exit": 0, "not_run_exit": 0, "fail_exit": "NONZERO", "tested": true},
+  "candidate_package": {
+    "path": "scripts/vnext_agent/dist/gipuzkoa360-vnext-w2.zip",
+    "bytes": 219354,
+    "sha256": "b4feb978b625b34f9d7331ce8d376a34a29e84e4783868f83ce48a0c0d1011be"
+  },
+  "candidate_manifest": "scripts/vnext_agent/dist/gipuzkoa360-vnext-w2-manifest.json",
+  "candidate_w1_pin": "EXACT_R6_PACKAGE_SHA256_c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+  "candidate_w1_contract": "0.3.1",
+  "package_integrity": "PASS_24_MEMBERS",
+  "raw_parity": "FAIL_13_OF_14_CASES_PASS_LEGACY_R4_EXPLICIT_FAILS",
+  "model_view_parity": "FAIL_9_OF_14_CASES_PASS_STOP_LABELS_AND_LEGACY_PROJECTION_FAIL",
+  "distribution_gate": "PASS",
+  "w1_parity_pass": "FAIL",
+  "candidate_intake_evidence": {
+    "path": "docs/vnext/w1/candidate_r11/candidate_intake_r11.json",
+    "bytes": 19181,
+    "sha256": "cc1755a72bfc3c80e6b3afcc23c4f0410e0d7ac4b7865cda57e39051bab2fb37",
+    "strict_exit": "NONZERO"
+  },
+  "deterministic_gold": {
+    "cases": 6,
+    "classification": "DETERMINISTIC_PUBLIC_GOLD_NOT_HOLDOUT",
+    "sha256": "cb41c25b836deaecd0d3ab4de12160c7c5ec20cf80f10824f82912b68b9b16fb"
+  },
+  "critical_high": {
+    "w1_producer_or_support": [],
+    "w2_candidate": ["CRITICAL legacy R4 raw parity failure", "CRITICAL legacy public_result projection exception", "HIGH stop labels collapse to IDs in four health cases"]
+  },
+  "medium_low": ["Historical DERIVED explanatory DAG remains external; no new R11 runtime defect."],
+  "not_run": ["LLM/routing/language", "portal", "human release review", "private holdout"],
+  "python": "517/517 PASS; one non-failing openpyxl style warning",
+  "node": "17/17 PASS",
+  "ci": {
+    "run": 36715583373,
+    "tested_head": "99ad907ff1515174ac9823bf4cef2b4c928495b9",
+    "ubuntu": "PASS",
+    "windows": "PASS"
+  },
+  "v4_preservation": "PASS_195b4980fa5998b096c308296a55e452380b0371",
+  "r11_ready": true,
+  "w1_candidate_gate_ready": true,
+  "portal_mutations": 0,
+  "merged_or_published_release": false,
+  "w2_action_required": "Fix stop/route label binding and the sequence-dependent explicit R4/public_result failure; publish a new immutable package+manifest.",
+  "w3_action_required": "Do not test b4feb978 in portal; after W1 strict PASS, independently test routing/language/portal using deterministic gold only as public truth.",
+  "next_exact_action": "Run the same strict R11 intake against W2's minimal patched exact package; publish PASS or remaining structured failures."
+}

@@ -1,0 +1,106 @@
+{
+  "classification": "generated/property stress; not independent tests",
+  "counterexamples": 0,
+  "crashes": 0,
+  "distribution": {
+    "error": 7618,
+    "no_feasible_journey": 3635,
+    "ok": 6465,
+    "unknown": 1382,
+    "unsupported": 900
+  },
+  "families": {
+    "arrival_boundary": 3500,
+    "boarding_boundary": 3500,
+    "duration_boundary": 4000,
+    "empty_text": 500,
+    "explicit_health_snapshot": 500,
+    "extra_field": 500,
+    "invalid_date": 500,
+    "legacy_explicit": 500,
+    "malformed_snapshot": 500,
+    "missing_field": 500,
+    "return_deadline_boundary": 2000,
+    "unexpected_nested_type": 500,
+    "unknown_snapshot": 500,
+    "unvalidated_date": 500,
+    "wrong_deadline": 500,
+    "wrong_numeric_type": 500,
+    "wrong_snapshot_type": 500,
+    "wrong_top_level": 500
+  },
+  "generated_requests": 20000,
+  "hour_distribution": {
+    "00": 682,
+    "01": 732,
+    "02": 688,
+    "03": 720,
+    "04": 701,
+    "05": 720,
+    "06": 690,
+    "07": 723,
+    "08": 664,
+    "09": 2736,
+    "10": 746,
+    "11": 712,
+    "12": 749,
+    "13": 722,
+    "14": 710,
+    "15": 686,
+    "16": 697,
+    "17": 743,
+    "18": 732,
+    "19": 707,
+    "20": 684,
+    "21": 708,
+    "22": 714,
+    "23": 726
+  },
+  "llm": "NOT_CLAIMED",
+  "max_wall_budget_s": 2685,
+  "origin_distribution": {
+    "": 120,
+    "idiazabal_center_stops": 6384,
+    "segura_herriko_plaza_stops": 6348,
+    "zegama_center_stops": 6392
+  },
+  "partition": "global generator index modulo shards; no overlapping invocations",
+  "portal": "NOT_CLAIMED",
+  "producer_executions": 40000,
+  "protocol_failure": null,
+  "reports": [
+    {
+      "path": "shard-0.json",
+      "sha256": "055b77e316a4820653566006f7ac7d644469877aae04fbfcc895c7c5c1e708e2"
+    },
+    {
+      "path": "shard-1.json",
+      "sha256": "273036b8b00bd7f62dd27eff0af183f1f7b4f0a7d2d749929dfd290bfe9bb264"
+    },
+    {
+      "path": "shard-2.json",
+      "sha256": "4e7b59dfa4768817bf2a23fe835b69bc94c71c70b5b75642b8b400caffb4c87d"
+    },
+    {
+      "path": "shard-3.json",
+      "sha256": "af3717dc75a221c252933210fe4fda6482165ca70fb8e865144d60cc8c264658"
+    }
+  ],
+  "seed": 360013,
+  "shards": 4,
+  "status": "PASS",
+  "support_identity": {
+    "r13_properties.py": "6e269d5c078afa718c45674bca01ea41eaf7e90ebd9acbcf19eaf37c4f9a95cc",
+    "run_stress_r13.py": "06da3fac8380cb87a6ad003a4f0f476702ce23ab8cb8c160851e77cc1561b21f",
+    "stress_r13.py": "ffb150d605c7308bd500bd5f622531348d8aeb1db9a8f37fa85dde524dcbaf67"
+  },
+  "target": 20000,
+  "unique_request_bytes": 17222,
+  "wall_runtime_s": 1121.863,
+  "worker_exit_codes": [
+    0,
+    0,
+    0,
+    0
+  ]
+}

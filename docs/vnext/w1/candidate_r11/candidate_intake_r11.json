@@ -1,0 +1,559 @@
+{
+  "CANDIDATE_IDENTITY": {
+    "bytes": 219354,
+    "expected_w1_pin": "cb061a97e78d6b5c967104fef6b935132fdc450f",
+    "manifest": "gipuzkoa360-vnext-w2-manifest.json",
+    "package": "gipuzkoa360-vnext-w2.zip",
+    "package_w1_contract": "0.3.1",
+    "package_w1_pin": null,
+    "sha256": "b4feb978b625b34f9d7331ce8d376a34a29e84e4783868f83ce48a0c0d1011be"
+  },
+  "FINAL_STATUS": "FAIL",
+  "MODEL_VIEW_PARITY": {
+    "cases": [
+      {
+        "case_id": "health_defaults_omitted",
+        "findings": [
+          {
+            "category": "MODEL_VIEW_MISSING",
+            "detail": "boarding stop label absent",
+            "evidence": "tools.public_result(envelope)",
+            "expected": "Zegama - Elizalde 6 - Plaza",
+            "owner": "W2",
+            "requirement_id": "MV-OUT-FROM-LABEL",
+            "safe_next_action": "Expose the required verified fact to the model.",
+            "severity": "high"
+          },
+          {
+            "category": "MODEL_VIEW_MISSING",
+            "detail": "arrival stop label absent",
+            "evidence": "tools.public_result(envelope)",
+            "expected": "Beasain - Lokomotora Biribilgunea",
+            "owner": "W2",
+            "requirement_id": "MV-OUT-TO-LABEL",
+            "safe_next_action": "Expose the required verified fact to the model.",
+            "severity": "high"
+          },
+          {
+            "category": "MODEL_VIEW_MISSING",
+            "detail": "return boarding label absent",
+            "evidence": "tools.public_result(envelope)",
+            "expected": "Beasain - San Inazio 10",
+            "owner": "W2",
+            "requirement_id": "MV-RET-FROM-LABEL",
+            "safe_next_action": "Expose the required verified fact to the model.",
+            "severity": "high"
+          },
+          {
+            "category": "MODEL_VIEW_MISSING",
+            "detail": "return arrival label absent",
+            "evidence": "tools.public_result(envelope)",
+            "expected": "Zegama - Elizalde Kalea 4",
+            "owner": "W2",
+            "requirement_id": "MV-RET-TO-LABEL",
+            "safe_next_action": "Expose the required verified fact to the model.",
+            "severity": "high"
+          }
+        ],
+        "status": "FAIL"
+      },
+      {
+        "case_id": "health_defaults_explicit",
+        "findings": [
+          {
+            "category": "MODEL_VIEW_MISSING",
+            "detail": "boarding stop label absent",
+            "evidence": "tools.public_result(envelope)",
+            "expected": "Zegama - Elizalde 6 - Plaza",
+            "owner": "W2",
+            "requirement_id": "MV-OUT-FROM-LABEL",
+            "safe_next_action": "Expose the required verified fact to the model.",
+            "severity": "high"
+          },
+          {
+            "category": "MODEL_VIEW_MISSING",
+            "detail": "arrival stop label absent",
+            "evidence": "tools.public_result(envelope)",
+            "expected": "Beasain - Lokomotora Biribilgunea",
+            "owner": "W2",
+            "requirement_id": "MV-OUT-TO-LABEL",
+            "safe_next_action": "Expose the required verified fact to the model.",
+            "severity": "high"
+          },
+          {
+            "category": "MODEL_VIEW_MISSING",
+            "detail": "return boarding label absent",
+            "evidence": "tools.public_result(envelope)",
+            "expected": "Beasain - San Inazio 10",
+            "owner": "W2",
+            "requirement_id": "MV-RET-FROM-LABEL",
+            "safe_next_action": "Expose the required verified fact to the model.",
+            "severity": "high"
+          },
+          {
+            "category": "MODEL_VIEW_MISSING",
+            "detail": "return arrival label absent",
+            "evidence": "tools.public_result(envelope)",
+            "expected": "Zegama - Elizalde Kalea 4",
+            "owner": "W2",
+            "requirement_id": "MV-RET-TO-LABEL",
+            "safe_next_action": "Expose the required verified fact to the model.",
+            "severity": "high"
+          }
+        ],
+        "status": "FAIL"
+      },
+      {
+        "case_id": "health_nondefault_margins",
+        "findings": [
+          {
+            "category": "MODEL_VIEW_MISSING",
+            "detail": "boarding stop label absent",
+            "evidence": "tools.public_result(envelope)",
+            "expected": "Zegama - Elizalde 6 - Plaza",
+            "owner": "W2",
+            "requirement_id": "MV-OUT-FROM-LABEL",
+            "safe_next_action": "Expose the required verified fact to the model.",
+            "severity": "high"
+          },
+          {
+            "category": "MODEL_VIEW_MISSING",
+            "detail": "arrival stop label absent",
+            "evidence": "tools.public_result(envelope)",
+            "expected": "Beasain - Lokomotora Biribilgunea",
+            "owner": "W2",
+            "requirement_id": "MV-OUT-TO-LABEL",
+            "safe_next_action": "Expose the required verified fact to the model.",
+            "severity": "high"
+          },
+          {
+            "category": "MODEL_VIEW_MISSING",
+            "detail": "return boarding label absent",
+            "evidence": "tools.public_result(envelope)",
+            "expected": "Beasain - San Inazio 10",
+            "owner": "W2",
+            "requirement_id": "MV-RET-FROM-LABEL",
+            "safe_next_action": "Expose the required verified fact to the model.",
+            "severity": "high"
+          },
+          {
+            "category": "MODEL_VIEW_MISSING",
+            "detail": "return arrival label absent",
+            "evidence": "tools.public_result(envelope)",
+            "expected": "Zegama - Elizalde Kalea 4",
+            "owner": "W2",
+            "requirement_id": "MV-RET-TO-LABEL",
+            "safe_next_action": "Expose the required verified fact to the model.",
+            "severity": "high"
+          }
+        ],
+        "status": "FAIL"
+      },
+      {
+        "case_id": "health_duration_changes_return",
+        "findings": [
+          {
+            "category": "MODEL_VIEW_MISSING",
+            "detail": "boarding stop label absent",
+            "evidence": "tools.public_result(envelope)",
+            "expected": "Zegama - Elizalde 6 - Plaza",
+            "owner": "W2",
+            "requirement_id": "MV-OUT-FROM-LABEL",
+            "safe_next_action": "Expose the required verified fact to the model.",
+            "severity": "high"
+          },
+          {
+            "category": "MODEL_VIEW_MISSING",
+            "detail": "arrival stop label absent",
+            "evidence": "tools.public_result(envelope)",
+            "expected": "Beasain - Lokomotora Biribilgunea",
+            "owner": "W2",
+            "requirement_id": "MV-OUT-TO-LABEL",
+            "safe_next_action": "Expose the required verified fact to the model.",
+            "severity": "high"
+          },
+          {
+            "category": "MODEL_VIEW_MISSING",
+            "detail": "return boarding label absent",
+            "evidence": "tools.public_result(envelope)",
+            "expected": "Beasain - San Inazio 10",
+            "owner": "W2",
+            "requirement_id": "MV-RET-FROM-LABEL",
+            "safe_next_action": "Expose the required verified fact to the model.",
+            "severity": "high"
+          },
+          {
+            "category": "MODEL_VIEW_MISSING",
+            "detail": "return arrival label absent",
+            "evidence": "tools.public_result(envelope)",
+            "expected": "Zegama - Elizalde Kalea 4",
+            "owner": "W2",
+            "requirement_id": "MV-RET-TO-LABEL",
+            "safe_next_action": "Expose the required verified fact to the model.",
+            "severity": "high"
+          }
+        ],
+        "status": "FAIL"
+      },
+      {
+        "case_id": "health_no_feasible",
+        "findings": [],
+        "status": "PASS"
+      },
+      {
+        "case_id": "health_date_not_validated",
+        "findings": [],
+        "status": "PASS"
+      },
+      {
+        "case_id": "health_destination_unsupported",
+        "findings": [],
+        "status": "PASS"
+      },
+      {
+        "case_id": "health_profile_unsupported",
+        "findings": [],
+        "status": "PASS"
+      },
+      {
+        "case_id": "compare_same_origin_two_hours",
+        "findings": [],
+        "status": "PASS"
+      },
+      {
+        "case_id": "compare_duration",
+        "findings": [],
+        "status": "PASS"
+      },
+      {
+        "case_id": "compare_cross_origin",
+        "findings": [],
+        "status": "PASS"
+      },
+      {
+        "case_id": "legacy_r4_explicit",
+        "findings": [
+          {
+            "category": "MODEL_VIEW_WRONG_VALUE",
+            "detail": "KeyError: 'transformation'",
+            "evidence": "tools.public_result(envelope)",
+            "owner": "W2",
+            "safe_next_action": "Bind the projected value to the producer evidence.",
+            "severity": "critical"
+          }
+        ],
+        "status": "FAIL"
+      },
+      {
+        "case_id": "mixed_r4_r6",
+        "findings": [],
+        "status": "PASS"
+      },
+      {
+        "case_id": "invalid_structural",
+        "findings": [],
+        "status": "PASS"
+      }
+    ],
+    "projection_function": "tools.public_result",
+    "status": "FAIL"
+  },
+  "PACKAGE_INTEGRITY": {
+    "members": 24,
+    "status": "PASS"
+  },
+  "RAW_PARITY": {
+    "cases": [
+      {
+        "case_id": "health_defaults_omitted",
+        "findings": [],
+        "status": "PASS"
+      },
+      {
+        "case_id": "health_defaults_explicit",
+        "findings": [],
+        "status": "PASS"
+      },
+      {
+        "case_id": "health_nondefault_margins",
+        "findings": [],
+        "status": "PASS"
+      },
+      {
+        "case_id": "health_duration_changes_return",
+        "findings": [],
+        "status": "PASS"
+      },
+      {
+        "case_id": "health_no_feasible",
+        "findings": [],
+        "status": "PASS"
+      },
+      {
+        "case_id": "health_date_not_validated",
+        "findings": [],
+        "status": "PASS"
+      },
+      {
+        "case_id": "health_destination_unsupported",
+        "findings": [],
+        "status": "PASS"
+      },
+      {
+        "case_id": "health_profile_unsupported",
+        "findings": [],
+        "status": "PASS"
+      },
+      {
+        "case_id": "compare_same_origin_two_hours",
+        "findings": [],
+        "status": "PASS"
+      },
+      {
+        "case_id": "compare_duration",
+        "findings": [],
+        "status": "PASS"
+      },
+      {
+        "case_id": "compare_cross_origin",
+        "findings": [],
+        "status": "PASS"
+      },
+      {
+        "case_id": "legacy_r4_explicit",
+        "findings": [
+          {
+            "category": "PRODUCER_ADAPTER_PARITY_FAILURE",
+            "detail": "raw_result_json missing",
+            "evidence": "W1 raw result versus adapter raw_result_json",
+            "observed_error": {
+              "available_options": [],
+              "code": "unverified_result",
+              "message": "No se ha podido verificar el proveedor de movilidad.",
+              "origin": "unknown",
+              "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+            },
+            "observed_status": "error",
+            "owner": "W2",
+            "safe_next_action": "Preserve the exact producer facts or explicitly reject the case.",
+            "severity": "critical"
+          }
+        ],
+        "status": "FAIL"
+      },
+      {
+        "case_id": "mixed_r4_r6",
+        "findings": [],
+        "status": "PASS"
+      },
+      {
+        "case_id": "invalid_structural",
+        "findings": [],
+        "status": "PASS"
+      }
+    ],
+    "status": "FAIL"
+  },
+  "SEMANTIC_LIMITS": {
+    "independent_llm_acceptance": "NOT_RUN",
+    "scope": "scheduled modelled health journey; not realtime, appointment availability, verified entrance or universal accessibility"
+  },
+  "SOURCE_POLICY": {
+    "findings": [],
+    "status": "PASS"
+  },
+  "W1_PIN_STATUS": {
+    "binding": "exact_frozen_runtime_package_sha256",
+    "frozen_runtime_package_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+    "observed_runtime_commit": "cb061a9e00a6496c40488a596bd94834bc2c49b2",
+    "required_contract": "0.3.1",
+    "status": "PASS"
+  },
+  "findings": [
+    {
+      "category": "PRODUCER_ADAPTER_PARITY_FAILURE",
+      "detail": "raw_result_json missing",
+      "evidence": "W1 raw result versus adapter raw_result_json",
+      "observed_error": {
+        "available_options": [],
+        "code": "unverified_result",
+        "message": "No se ha podido verificar el proveedor de movilidad.",
+        "origin": "unknown",
+        "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+      },
+      "observed_status": "error",
+      "owner": "W2",
+      "safe_next_action": "Preserve the exact producer facts or explicitly reject the case.",
+      "severity": "critical"
+    },
+    {
+      "category": "MODEL_VIEW_MISSING",
+      "detail": "boarding stop label absent",
+      "evidence": "tools.public_result(envelope)",
+      "expected": "Zegama - Elizalde 6 - Plaza",
+      "owner": "W2",
+      "requirement_id": "MV-OUT-FROM-LABEL",
+      "safe_next_action": "Expose the required verified fact to the model.",
+      "severity": "high"
+    },
+    {
+      "category": "MODEL_VIEW_MISSING",
+      "detail": "arrival stop label absent",
+      "evidence": "tools.public_result(envelope)",
+      "expected": "Beasain - Lokomotora Biribilgunea",
+      "owner": "W2",
+      "requirement_id": "MV-OUT-TO-LABEL",
+      "safe_next_action": "Expose the required verified fact to the model.",
+      "severity": "high"
+    },
+    {
+      "category": "MODEL_VIEW_MISSING",
+      "detail": "return boarding label absent",
+      "evidence": "tools.public_result(envelope)",
+      "expected": "Beasain - San Inazio 10",
+      "owner": "W2",
+      "requirement_id": "MV-RET-FROM-LABEL",
+      "safe_next_action": "Expose the required verified fact to the model.",
+      "severity": "high"
+    },
+    {
+      "category": "MODEL_VIEW_MISSING",
+      "detail": "return arrival label absent",
+      "evidence": "tools.public_result(envelope)",
+      "expected": "Zegama - Elizalde Kalea 4",
+      "owner": "W2",
+      "requirement_id": "MV-RET-TO-LABEL",
+      "safe_next_action": "Expose the required verified fact to the model.",
+      "severity": "high"
+    },
+    {
+      "category": "MODEL_VIEW_MISSING",
+      "detail": "boarding stop label absent",
+      "evidence": "tools.public_result(envelope)",
+      "expected": "Zegama - Elizalde 6 - Plaza",
+      "owner": "W2",
+      "requirement_id": "MV-OUT-FROM-LABEL",
+      "safe_next_action": "Expose the required verified fact to the model.",
+      "severity": "high"
+    },
+    {
+      "category": "MODEL_VIEW_MISSING",
+      "detail": "arrival stop label absent",
+      "evidence": "tools.public_result(envelope)",
+      "expected": "Beasain - Lokomotora Biribilgunea",
+      "owner": "W2",
+      "requirement_id": "MV-OUT-TO-LABEL",
+      "safe_next_action": "Expose the required verified fact to the model.",
+      "severity": "high"
+    },
+    {
+      "category": "MODEL_VIEW_MISSING",
+      "detail": "return boarding label absent",
+      "evidence": "tools.public_result(envelope)",
+      "expected": "Beasain - San Inazio 10",
+      "owner": "W2",
+      "requirement_id": "MV-RET-FROM-LABEL",
+      "safe_next_action": "Expose the required verified fact to the model.",
+      "severity": "high"
+    },
+    {
+      "category": "MODEL_VIEW_MISSING",
+      "detail": "return arrival label absent",
+      "evidence": "tools.public_result(envelope)",
+      "expected": "Zegama - Elizalde Kalea 4",
+      "owner": "W2",
+      "requirement_id": "MV-RET-TO-LABEL",
+      "safe_next_action": "Expose the required verified fact to the model.",
+      "severity": "high"
+    },
+    {
+      "category": "MODEL_VIEW_MISSING",
+      "detail": "boarding stop label absent",
+      "evidence": "tools.public_result(envelope)",
+      "expected": "Zegama - Elizalde 6 - Plaza",
+      "owner": "W2",
+      "requirement_id": "MV-OUT-FROM-LABEL",
+      "safe_next_action": "Expose the required verified fact to the model.",
+      "severity": "high"
+    },
+    {
+      "category": "MODEL_VIEW_MISSING",
+      "detail": "arrival stop label absent",
+      "evidence": "tools.public_result(envelope)",
+      "expected": "Beasain - Lokomotora Biribilgunea",
+      "owner": "W2",
+      "requirement_id": "MV-OUT-TO-LABEL",
+      "safe_next_action": "Expose the required verified fact to the model.",
+      "severity": "high"
+    },
+    {
+      "category": "MODEL_VIEW_MISSING",
+      "detail": "return boarding label absent",
+      "evidence": "tools.public_result(envelope)",
+      "expected": "Beasain - San Inazio 10",
+      "owner": "W2",
+      "requirement_id": "MV-RET-FROM-LABEL",
+      "safe_next_action": "Expose the required verified fact to the model.",
+      "severity": "high"
+    },
+    {
+      "category": "MODEL_VIEW_MISSING",
+      "detail": "return arrival label absent",
+      "evidence": "tools.public_result(envelope)",
+      "expected": "Zegama - Elizalde Kalea 4",
+      "owner": "W2",
+      "requirement_id": "MV-RET-TO-LABEL",
+      "safe_next_action": "Expose the required verified fact to the model.",
+      "severity": "high"
+    },
+    {
+      "category": "MODEL_VIEW_MISSING",
+      "detail": "boarding stop label absent",
+      "evidence": "tools.public_result(envelope)",
+      "expected": "Zegama - Elizalde 6 - Plaza",
+      "owner": "W2",
+      "requirement_id": "MV-OUT-FROM-LABEL",
+      "safe_next_action": "Expose the required verified fact to the model.",
+      "severity": "high"
+    },
+    {
+      "category": "MODEL_VIEW_MISSING",
+      "detail": "arrival stop label absent",
+      "evidence": "tools.public_result(envelope)",
+      "expected": "Beasain - Lokomotora Biribilgunea",
+      "owner": "W2",
+      "requirement_id": "MV-OUT-TO-LABEL",
+      "safe_next_action": "Expose the required verified fact to the model.",
+      "severity": "high"
+    },
+    {
+      "category": "MODEL_VIEW_MISSING",
+      "detail": "return boarding label absent",
+      "evidence": "tools.public_result(envelope)",
+      "expected": "Beasain - San Inazio 10",
+      "owner": "W2",
+      "requirement_id": "MV-RET-FROM-LABEL",
+      "safe_next_action": "Expose the required verified fact to the model.",
+      "severity": "high"
+    },
+    {
+      "category": "MODEL_VIEW_MISSING",
+      "detail": "return arrival label absent",
+      "evidence": "tools.public_result(envelope)",
+      "expected": "Zegama - Elizalde Kalea 4",
+      "owner": "W2",
+      "requirement_id": "MV-RET-TO-LABEL",
+      "safe_next_action": "Expose the required verified fact to the model.",
+      "severity": "high"
+    },
+    {
+      "category": "MODEL_VIEW_WRONG_VALUE",
+      "detail": "KeyError: 'transformation'",
+      "evidence": "tools.public_result(envelope)",
+      "owner": "W2",
+      "safe_next_action": "Bind the projected value to the producer evidence.",
+      "severity": "critical"
+    }
+  ],
+  "mode": "strict"
+}

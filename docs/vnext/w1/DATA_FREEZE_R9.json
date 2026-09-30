@@ -1,0 +1,101 @@
+{
+  "freeze_version": "r9.0",
+  "runtime_package": {
+    "sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+    "bytes": 129365,
+    "tested_pin": "cb061a97e78d6b5c967104fef6b935132fdc450f"
+  },
+  "source_audit_date": "2026-09-30T08:30:04.683125+00:00",
+  "upstream_drift_status": {
+    "CHANGED_BYTES_SEMANTICALLY_EQUIVALENT_USED_FIELDS": 3,
+    "CHANGED_METADATA_ONLY": 0,
+    "CHANGED_USED_FIELDS": 0,
+    "INDETERMINATE": 0,
+    "SOURCE_UNAVAILABLE": 0,
+    "UNCHANGED_BYTES": 2
+  },
+  "license_reuse_status": {
+    "GTFS": "VERIFIED_GENERAL_TERMS_APPLY",
+    "HEALTH_REGISTRY": "VERIFIED_GENERAL_TERMS_APPLY",
+    "HEALTH_PAGE": "NOT_VERIFIED",
+    "PADI_2026": "NOT_VERIFIED",
+    "OSM": "VERIFIED_SPECIFIC"
+  },
+  "human_review_flags": [
+    "HEALTH_PAGE_LICENSE",
+    "PADI_2026_LICENSE"
+  ],
+  "automatic_update": false,
+  "files": [
+    {
+      "path": "prototypes/ir_y_volver/provider_r6.py",
+      "sha256": "c9fe7e4c8078ba7f9bf2eb2a51e050b729d9f01e6021dbcc6909f951d2e936e8",
+      "bytes": 5166,
+      "hash_basis": "exact_bytes",
+      "role": "provider"
+    },
+    {
+      "path": "prototypes/ir_y_volver/contracts/v0.3.1/result.schema.json",
+      "sha256": "5408f0869cc243f901ce5d142865af968bac00b02113cfa0e793ed2b1a96226a",
+      "bytes": 36576,
+      "hash_basis": "exact_bytes",
+      "role": "contract"
+    },
+    {
+      "path": "datos_originales/movilidad/goierrialdea-3276fcae.zip",
+      "sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+      "bytes": 811289,
+      "hash_basis": "exact_bytes",
+      "role": "gtfs"
+    },
+    {
+      "path": "prototypes/ir_y_volver/snapshots/official-goierrialdea-go01-health-r5-20260929.json",
+      "sha256": "59fcded9e4236ee094eeb0881c4eb94f521b96fb6c8c89c881c3e9f6d5140901",
+      "bytes": 103969,
+      "hash_basis": "exact_bytes",
+      "role": "health_snapshot"
+    },
+    {
+      "path": "datos_originales/movilidad/beasain-network-r4-public.osm",
+      "sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+      "bytes": 1722570,
+      "hash_basis": "canonical_lf",
+      "role": "osm_local_artifact"
+    },
+    {
+      "path": "datos_preparados/movilidad/operational_catalog_r6.json",
+      "sha256": "c7bd3cc8ffe50956ce839bec0ef90a13578160a4d5b4053b09673d2dc4c4ec17",
+      "bytes": 2651,
+      "hash_basis": "exact_bytes",
+      "role": "catalog"
+    },
+    {
+      "path": "datos_preparados/movilidad/consumer_labels_r7.json",
+      "sha256": "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799",
+      "bytes": 3152,
+      "hash_basis": "exact_bytes",
+      "role": "labels"
+    },
+    {
+      "path": "docs/vnext/w1/DELIVERY_EVIDENCE_R8.json",
+      "sha256": "578fbd5140185fde07771f3adc9f61353cce1c83074fe574862300eff1d8b87b",
+      "bytes": 259756,
+      "hash_basis": "exact_bytes",
+      "role": "canonical_evidence"
+    },
+    {
+      "path": "docs/vnext/w1/CLAIM_SEMANTICS_R9.json",
+      "sha256": "0879fac769d591f4edb7aa056cdec9ae7e1b72e90397773bdd4d18d79b46cb69",
+      "bytes": 15215,
+      "hash_basis": "exact_bytes",
+      "role": "claim_semantics"
+    },
+    {
+      "path": "docs/vnext/w1/integration_r9/W1_HANDSHAKE_R9.json",
+      "sha256": "090335ab9e18b76a0dea311408aeff2a913289c7368f0801ac02a70031f056d6",
+      "bytes": 9891,
+      "hash_basis": "exact_bytes",
+      "role": "handshake"
+    }
+  ]
+}

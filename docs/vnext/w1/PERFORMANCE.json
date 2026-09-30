@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1.0",
+  "environment": "local; network disabled by design; warm cache",
+  "iterations": 200,
+  "latency_ms": {
+    "min": 22.976,
+    "median": 41.679,
+    "p95_nearest_rank": 53.386,
+    "max": 65.113
+  },
+  "snapshot": {
+    "bytes": 804348,
+    "sha256": "30fc9d638f3576ae0e1084ee1e0c7b0268469bffc8af1dd15fd12430019d968b"
+  },
+  "response_payload_bytes": {
+    "min": 2548,
+    "max": 2559
+  },
+  "contract_sha256": {
+    "capabilities.schema.json": "ecbb5f012818528ebf4efd51fb7b95720a37fa91ff8da1d105905f22fd50b9d9",
+    "README.md": "7711604c83cb51de672b855da41f53db919c1aea957605ed3fcefe071b57d028",
+    "round_trip_request.schema.json": "60e9c0f6bbc1a8ee7e254a36dc6ffd1e4d1c7b22d78178b4b85890b328e41c44",
+    "round_trip_result.schema.json": "2b2034999e887e89ed9252b02d1fdbb5efeb8763789add3fb65e9ffff9f6ff1d"
+  },
+  "note": "Mide ejecución Python local, no latencia del portal ni del transporte real."
+}

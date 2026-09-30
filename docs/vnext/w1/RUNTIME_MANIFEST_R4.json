@@ -1,0 +1,57 @@
+{
+  "contract_version": "0.2.0",
+  "runtime_network_required": false,
+  "files": [
+    {
+      "path": "prototypes/__init__.py",
+      "bytes": 73,
+      "sha256": "da32847820b8ce0bc5963eb3aa2c0e5a71946243dbc92b7546b19431d18bb8eb"
+    },
+    {
+      "path": "prototypes/ir_y_volver/__init__.py",
+      "bytes": 210,
+      "sha256": "4173adabd908dcca574d4cd3aebefb5017fb6cd23c92f40cf3d0c1db142bce21"
+    },
+    {
+      "path": "prototypes/ir_y_volver/provider.py",
+      "bytes": 21982,
+      "sha256": "c97842617f3077c2eec1892653361b4471a18e1c64f8127b808b9968401cb834"
+    },
+    {
+      "path": "prototypes/ir_y_volver/snapshot_validation.py",
+      "bytes": 7846,
+      "sha256": "0773a1a612b366f59ea01f80ea1dc4fc0a4650ebbd339f6b99869c4061a16d42"
+    },
+    {
+      "path": "prototypes/ir_y_volver/snapshots/allowlist.json",
+      "bytes": 1435,
+      "sha256": "80d67a0a10da8f4aa6f7d3a30629a35dd861da9e419ede2e7fd5c907b8217cff"
+    },
+    {
+      "path": "prototypes/ir_y_volver/snapshots/official-goierrialdea-go01-r4-20260929.json",
+      "bytes": 812758,
+      "sha256": "62e00c04edb96ccde0a5ce4fe81574452ddcacdb4c173b030ca49b000f5a084b"
+    },
+    {
+      "path": "prototypes/ir_y_volver/contracts/v0.2.0/capabilities.schema.json",
+      "bytes": 782,
+      "sha256": "b28ce4ef94a266ccdad5e4cb9603d486cba0d2259826a0a5bf5ecce362297d46"
+    },
+    {
+      "path": "prototypes/ir_y_volver/contracts/v0.2.0/comparison.schema.json",
+      "bytes": 5457,
+      "sha256": "6368ff668ce46bd7cc97447e05d4d2036c1321c63c47e91e5db9cfb141f2f942"
+    },
+    {
+      "path": "prototypes/ir_y_volver/contracts/v0.2.0/request.schema.json",
+      "bytes": 1345,
+      "sha256": "16f65e95dd26e09e65829331739bea4ebb59c9a2ffd12434910663365ba36f0b"
+    },
+    {
+      "path": "prototypes/ir_y_volver/contracts/v0.2.0/result.schema.json",
+      "bytes": 3525,
+      "sha256": "8fde2a90c42e0cf20c950bb81902d797f26a8a7a3ff1b9cb5704cf7baf48141e"
+    }
+  ],
+  "total_bytes": 855413
+}

@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "scope": "package integrity and portability; not a complete security audit",
+  "package_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+  "package_bytes": 129365,
+  "uncompressed_bytes": 1252907,
+  "members": 26,
+  "double_build_byte_identical": true,
+  "clean_offline_import": true,
+  "no_repo_parent_or_pythonpath": true,
+  "checks": {
+    "relative_paths": true,
+    "no_parent_segments": true,
+    "no_duplicates": true,
+    "no_casefold_collisions": true,
+    "no_symlinks": true,
+    "no_unexpected_executables": true,
+    "no_git_cache_temporaries_holdout": true,
+    "no_secret_markers": true,
+    "declared_bytes_hashes": true
+  }
+}

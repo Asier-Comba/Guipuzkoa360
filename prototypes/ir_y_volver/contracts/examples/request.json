@@ -1,0 +1,11 @@
+{
+  "origin_id": "zegama_plaza",
+  "destination_id": "beasain_osasun_zentro",
+  "date": "2026-09-29",
+  "appointment_time": "10:00",
+  "duration_minutes": 30,
+  "arrival_margin_minutes": 10,
+  "boarding_margin_minutes": 3,
+  "walking_profile_id": "stop_only",
+  "snapshot_id": "synthetic-contract-v1"
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "0.2.0",
+  "provider_id": "ir_y_volver",
+  "entrypoints": ["get_capabilities", "plan_visit", "compare_visits"],
+  "time_basis": "scheduled",
+  "scope": "origin_stop_presence_to_return_stop_arrival",
+  "scenario_kind": "stop_only",
+  "health_destination_status": "BLOCKED",
+  "default_snapshot_id": "official-goierrialdea-go01-r4-20260929",
+  "validated_dates": ["2026-09-29"],
+  "origins": ["zegama_center_stops", "segura_herriko_plaza_stops", "idiazabal_center_stops"],
+  "destinations": ["beasain_center_stop_pair"],
+  "walking_profiles": ["stop_only"],
+  "schema_directory": "prototypes/ir_y_volver/contracts/v0.2.0",
+  "runtime_manifest": "docs/vnext/w1/RUNTIME_MANIFEST_R4.json",
+  "consumer_notes": "docs/vnext/w1/CONSUMER_R4.md",
+  "unsupported": ["healthcare walking route", "door-to-door", "multiday", "DST transition day", "realtime", "transfers", "capacity", "appointment availability"],
+  "consumer_rules": [
+    "Only ok has numeric itinerary; preserve all other statuses.",
+    "The total includes initial boarding presence exactly once.",
+    "Use comparison changes and held_constant; never attribute multiple changes to one parameter.",
+    "A new contract and snapshot pin requires W2/W3 consumers to be updated and retested."
+  ]
+}

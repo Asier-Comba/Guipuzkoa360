@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "provider_id",
+    "time_basis",
+    "scope",
+    "statuses",
+    "snapshots"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.2.0"
+    },
+    "provider_id": {
+      "const": "ir_y_volver"
+    },
+    "time_basis": {
+      "const": "scheduled"
+    },
+    "scope": {
+      "const": "origin_stop_presence_to_return_stop_arrival"
+    },
+    "statuses": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "snapshots": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:g360:mobility:0.2.0:capabilities"
+}

@@ -1,0 +1,61 @@
+{
+  "classification": "SOURCE_INSPECTION_NOT_COMPLETED_WALKING_ROUTE",
+  "ORIGINAL_ARCHIVE": "NOT_AVAILABLE",
+  "OSM_ORIGINAL_COMPONENT": "NOT_AVAILABLE",
+  "OSM_NEW_ACQUISITION": {
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-2.203,43.041,-2.190,43.052",
+    "retrieved_date": "2026-09-29",
+    "bytes": 2075625,
+    "sha256": "d70452469ac23b81839417aabda5289f4148d428d2c2b5762347c4f90320a652",
+    "license": "OpenStreetMap contributors, ODbL 1.0",
+    "license_url": "https://www.openstreetmap.org/copyright",
+    "nodes": 6400,
+    "ways": 867,
+    "admissible_highway_ways": 389,
+    "excluded_ways": 69
+  },
+  "centre": {
+    "service_id": "entityBC631DA5",
+    "service_name": "Ambulatorio de Beasain",
+    "service_category": "primary_care",
+    "service_type_original": "Ambulatorio",
+    "municipality_code": "20019",
+    "municipality_name": "Beasain",
+    "latitude": "43.04527740634045",
+    "longitude": "-2.1977014177917447",
+    "address": "Bernedo Enea, 1, 20200 Beasain (Gipuzkoa)",
+    "reference_period": "2026-09-20",
+    "source_id": "ODE_HEALTH_CENTRES_2026"
+  },
+  "official_confirmation_url": "https://www.osakidetza.euskadi.eus/ambulatorio-de-beasain/centro-salud/webosk00-cercon/es/",
+  "official_confirmation_date": "2026-09-29",
+  "source_xlsx_sha256": "87a2b8ea3309678ff743e2f267320b94216c3d1e4f52b578bdd0a77bd8bf29ab",
+  "osm_centre": {
+    "way_id": "42927929",
+    "version": "8",
+    "timestamp": "2026-06-20T16:13:20Z",
+    "ref:osakidetza": "ambulat_beasain",
+    "node_ids": [
+      "537656340",
+      "537791461",
+      "537656341",
+      "537656342",
+      "537656343",
+      "537791454",
+      "537791458",
+      "537656340"
+    ],
+    "entrance_node_ids": [],
+    "connections": []
+  },
+  "HEALTH_DESTINATION_GO_NO_GO": "BLOCKED",
+  "reason": "No mapped verified entrance connected to admissible pedestrian network",
+  "walking_seconds": null,
+  "next_action": "Obtain a documented entrance and bounded stop-to-network connectors; validate both directions on the observed network. Do not snap across disconnected components.",
+  "limitations": [
+    "An address/building polygon is not the pedestrian entrance.",
+    "No assignments, capacity, appointment availability or universal accessibility inferred.",
+    "7214/7218 remain a stop-only destination; neither is promoted to a healthcare access link.",
+    "Excluding steps is not wheelchair certification. New OSM acquisition does not recover historical OSM."
+  ]
+}

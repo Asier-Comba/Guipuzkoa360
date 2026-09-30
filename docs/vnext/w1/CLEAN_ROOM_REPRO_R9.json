@@ -1,0 +1,197 @@
+{
+  "drill_version": "r9.0",
+  "network_used": false,
+  "workspace_parent_on_pythonpath": false,
+  "temporary_layout": [
+    "datos_originales/",
+    "docs/vnext/w1/HEALTH_DESTINATION_R4.json",
+    "prototypes/",
+    "scripts/mobility/",
+    "work/"
+  ],
+  "inputs": [
+    {
+      "path": "scripts/mobility/build_goierrialdea_snapshot.py",
+      "sha256": "6d6fd057acdd839e64f1fb9e39be0a899598e476853376f17278251f4cec9a57",
+      "bytes": 7157,
+      "hash_basis": "exact_bytes"
+    },
+    {
+      "path": "scripts/mobility/build_health_r5.py",
+      "sha256": "bc1fd930ae6688bc82330574b8a5e68d266bba3315e679fe0a5185a8d745c037",
+      "bytes": 9377,
+      "hash_basis": "exact_bytes"
+    },
+    {
+      "path": "datos_originales/movilidad/goierrialdea-3276fcae.zip",
+      "sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+      "bytes": 811289,
+      "hash_basis": "exact_bytes"
+    },
+    {
+      "path": "datos_originales/movilidad/beasain-network-r4-public.osm",
+      "sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+      "bytes": 1722570,
+      "hash_basis": "canonical_lf"
+    },
+    {
+      "path": "datos_originales/centros-salud.xlsx",
+      "sha256": "87a2b8ea3309678ff743e2f267320b94216c3d1e4f52b578bdd0a77bd8bf29ab",
+      "bytes": 88479,
+      "hash_basis": "exact_bytes"
+    },
+    {
+      "path": "datos_originales/movilidad/r5/beasain-official.html",
+      "sha256": "7ba21b4f78f79b55d5761f427582daaef48097245142c9cb259288dc923f3160",
+      "bytes": 206930,
+      "hash_basis": "exact_bytes"
+    },
+    {
+      "path": "datos_originales/movilidad/r5/padi-2026.pdf",
+      "sha256": "6cf5d40245eb29c9c98785d03aba518c44677104b71625db36c3f2801455ac10",
+      "bytes": 778758,
+      "hash_basis": "exact_bytes"
+    },
+    {
+      "path": "docs/vnext/w1/HEALTH_DESTINATION_R4.json",
+      "sha256": "84a745535b48cc2479a9ab35a6c33506a86e548da66bbcb5b6fc118b636e5363",
+      "bytes": 2476,
+      "hash_basis": "exact_bytes"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "python",
+        "-I",
+        "scripts/mobility/build_goierrialdea_snapshot.py",
+        "datos_originales/movilidad/goierrialdea-3276fcae.zip",
+        "prototypes/ir_y_volver/snapshots/official-goierrialdea-go01-r4-20260929.json",
+        "--metadata",
+        "work/metadata.json"
+      ],
+      "returncode": 0,
+      "stdout": "{\"snapshot_id\": \"official-goierrialdea-go01-r4-20260929\", \"trips\": 162, \"output\": \"prototypes\\\\ir_y_volver\\\\snapshots\\\\official-goierrialdea-go01-r4-20260929.json\"}",
+      "network": "DISABLED_BY_PROCEDURE_NO_NETWORK_CALLS"
+    },
+    {
+      "argv": [
+        "python",
+        "-I",
+        "-c",
+        "import sys;from pathlib import Path;sys.path.insert(0,'.');from scripts.mobility.build_health_r5 import build;build(Path('work/generated-health.json'))"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "network": "DISABLED_BY_PROCEDURE_NO_NETWORK_CALLS"
+    },
+    {
+      "argv": [
+        "python",
+        "-I",
+        "-c",
+        "import json,sys;sys.path.insert(0,'.');from prototypes.ir_y_volver.provider_r6 import plan_visit;q=json.load(open('work/requests.json',encoding='utf-8'));out={k:plan_visit(v) for k,v in q.items()};open('work/results.json','w',encoding='utf-8',newline='\\n').write(json.dumps(out,ensure_ascii=False,sort_keys=True,separators=(',',':'),allow_nan=False)+'\\n')"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "network": "DISABLED_BY_PROCEDURE_NO_NETWORK_CALLS"
+    }
+  ],
+  "output_hashes": {
+    "r4_snapshot": "62e00c04edb96ccde0a5ce4fe81574452ddcacdb4c173b030ca49b000f5a084b",
+    "health_snapshot": "59fcded9e4236ee094eeb0881c4eb94f521b96fb6c8c89c881c3e9f6d5140901",
+    "provider_results": "6dc09992ea7358921c41ec54dd371c6fcadda3e634a498fe3d9dd7430a5e625f"
+  },
+  "comparisons": {
+    "r4_snapshot": {
+      "generated_sha256": "62e00c04edb96ccde0a5ce4fe81574452ddcacdb4c173b030ca49b000f5a084b",
+      "canonical_sha256": "62e00c04edb96ccde0a5ce4fe81574452ddcacdb4c173b030ca49b000f5a084b",
+      "identical": true
+    },
+    "health_snapshot": {
+      "generated_sha256": "59fcded9e4236ee094eeb0881c4eb94f521b96fb6c8c89c881c3e9f6d5140901",
+      "canonical_sha256": "59fcded9e4236ee094eeb0881c4eb94f521b96fb6c8c89c881c3e9f6d5140901",
+      "identical": true
+    },
+    "canonical_claims": {
+      "observed": {
+        "LIMIT_DATE": {
+          "status": "unknown",
+          "total_s": null
+        },
+        "LIMIT_SCOPE": {
+          "status": "unsupported",
+          "total_s": null
+        },
+        "MAIN": {
+          "status": "ok",
+          "total_s": 10691
+        },
+        "VARIATION_DURATION": {
+          "status": "ok",
+          "total_s": 10372
+        },
+        "VARIATION_TIME": {
+          "status": "ok",
+          "total_s": 8591
+        }
+      },
+      "expected": {
+        "MAIN": {
+          "status": "ok",
+          "total_s": 10691
+        },
+        "VARIATION_TIME": {
+          "status": "ok",
+          "total_s": 8591
+        },
+        "VARIATION_DURATION": {
+          "status": "ok",
+          "total_s": 10372
+        },
+        "LIMIT_DATE": {
+          "status": "unknown",
+          "total_s": null
+        },
+        "LIMIT_SCOPE": {
+          "status": "unsupported",
+          "total_s": null
+        }
+      },
+      "identical": true,
+      "delta_s": -2100,
+      "expected_delta_s": -2100,
+      "identical_delta": true
+    }
+  },
+  "stages": [
+    {
+      "stage": "GTFS raw → R4 snapshot",
+      "classification": "REPRODUCED_FROM_PINNED_RAW"
+    },
+    {
+      "stage": "Pinned OSM current-model extract → walking links",
+      "classification": "REPRODUCED_FROM_PINNED_RAW"
+    },
+    {
+      "stage": "Health reconciliation → R5 snapshot",
+      "classification": "REPRODUCED_FROM_PINNED_DERIVED",
+      "reason": "Builder consumes HEALTH_DESTINATION_R4 plus pinned external bytes; it does not re-extract every semantic field from XLSX/HTML/PDF."
+    },
+    {
+      "stage": "R6 provider → canonical claims",
+      "classification": "REPRODUCED_FROM_PINNED_DERIVED"
+    },
+    {
+      "stage": "Historical PoC OSM identity",
+      "classification": "SOURCE_BYTES_NOT_AVAILABLE",
+      "reason": "The current-model OSM acquisition is pinned; this is not an exact reproduction of the earlier PoC historical network."
+    }
+  ],
+  "missing_links": [
+    "Historical PoC OSM bytes are unavailable and are not claimed as R6 input.",
+    "Health semantic extraction is preserved as a pinned derived input rather than reimplemented clean-room."
+  ],
+  "source_to_claim_fully_raw_reproducible": false,
+  "candidate_reproducible_from_pinned_raw_and_pinned_derived": true
+}

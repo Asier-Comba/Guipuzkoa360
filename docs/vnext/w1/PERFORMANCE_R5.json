@@ -1,0 +1,16 @@
+{
+  "warm_calls": 30,
+  "p50_ms": 125.93139999989944,
+  "p95_ms": 179.37549999987823,
+  "first_call_fresh_interpreter_ms": [
+    62.888399999792455,
+    59.641699999701814,
+    61.00429999969492
+  ],
+  "python_allocations_peak_bytes": 5554194,
+  "not_rss": true,
+  "not_portal_latency": true,
+  "payload_bytes": 14897,
+  "snapshot_bytes": 103969,
+  "walking_links": 6
+}

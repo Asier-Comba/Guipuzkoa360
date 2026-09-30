@@ -1,0 +1,170 @@
+{
+  "contract_versions": [
+    "0.2.0",
+    "0.3.0",
+    "0.3.1"
+  ],
+  "entrypoint": "prototypes.ir_y_volver.provider_r6",
+  "runtime_network_required": false,
+  "files": [
+    {
+      "path": "datos_preparados/movilidad/operational_catalog_r6.json",
+      "bytes": 2651,
+      "sha256": "c7bd3cc8ffe50956ce839bec0ef90a13578160a4d5b4053b09673d2dc4c4ec17",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/__init__.py",
+      "bytes": 73,
+      "sha256": "da32847820b8ce0bc5963eb3aa2c0e5a71946243dbc92b7546b19431d18bb8eb",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/__init__.py",
+      "bytes": 210,
+      "sha256": "4173adabd908dcca574d4cd3aebefb5017fb6cd23c92f40cf3d0c1db142bce21",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/contracts/v0.2.0/capabilities.schema.json",
+      "bytes": 782,
+      "sha256": "b28ce4ef94a266ccdad5e4cb9603d486cba0d2259826a0a5bf5ecce362297d46",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/contracts/v0.2.0/comparison.schema.json",
+      "bytes": 5457,
+      "sha256": "6368ff668ce46bd7cc97447e05d4d2036c1321c63c47e91e5db9cfb141f2f942",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/contracts/v0.2.0/request.schema.json",
+      "bytes": 1345,
+      "sha256": "16f65e95dd26e09e65829331739bea4ebb59c9a2ffd12434910663365ba36f0b",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/contracts/v0.2.0/result.schema.json",
+      "bytes": 3525,
+      "sha256": "8fde2a90c42e0cf20c950bb81902d797f26a8a7a3ff1b9cb5704cf7baf48141e",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/contracts/v0.3.0/capabilities.schema.json",
+      "bytes": 30729,
+      "sha256": "530d27225509f38960c7224fab2a31a65096f3d3e1ba696d98b8e660dab9e672",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/contracts/v0.3.0/comparison.schema.json",
+      "bytes": 30994,
+      "sha256": "dd78e711a226222d03d36284817e77c0ff8ab9e3b2f7974d038dc100c53784c2",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/contracts/v0.3.0/request.schema.json",
+      "bytes": 31414,
+      "sha256": "d4a3c8bdf33f084e2ef2c60482db1694ede8a8886df6a53cab65f746990b0a07",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/contracts/v0.3.0/result.schema.json",
+      "bytes": 34757,
+      "sha256": "db535eb2a335e3c90c791c5af5a0886ebeea59e86db9a9edf206dadcac642b85",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/contracts/v0.3.1/capabilities.schema.json",
+      "bytes": 31731,
+      "sha256": "718448ca007258c031820c13061c9c9d600fb2549c05f167218257e324dfad17",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/contracts/v0.3.1/catalog.schema.json",
+      "bytes": 2213,
+      "sha256": "6bb7b60a0e9de5f54100d845a33a046f7c3f7ab8611f74cd15cd3fe70e384a93",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/contracts/v0.3.1/comparison.schema.json",
+      "bytes": 31996,
+      "sha256": "4e03b03f99622aa799aa62f5674827d2b1df86ac9d5a54a12ea40362cf117728",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/contracts/v0.3.1/request.schema.json",
+      "bytes": 32416,
+      "sha256": "911bbbb6ef91f55f310ac4b60d9b49e4c3d904f5d8a4c234f4564d61530dfb74",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/contracts/v0.3.1/result.schema.json",
+      "bytes": 36576,
+      "sha256": "5408f0869cc243f901ce5d142865af968bac00b02113cfa0e793ed2b1a96226a",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/provider.py",
+      "bytes": 21982,
+      "sha256": "c97842617f3077c2eec1892653361b4471a18e1c64f8127b808b9968401cb834",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/provider_r5.py",
+      "bytes": 13494,
+      "sha256": "7a775dfd6f7ba2cb19a1e9a40b531ee626e26462f726226fbf62a1a1dd34f013",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/provider_r6.py",
+      "bytes": 5166,
+      "sha256": "c9fe7e4c8078ba7f9bf2eb2a51e050b729d9f01e6021dbcc6909f951d2e936e8",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/schema_r5.py",
+      "bytes": 2770,
+      "sha256": "370f9d2fd7d0bf5f8c2f4237741bb5ce9972f813e65c09f965021f52285373d8",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/snapshot_validation.py",
+      "bytes": 7846,
+      "sha256": "0773a1a612b366f59ea01f80ea1dc4fc0a4650ebbd339f6b99869c4061a16d42",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/snapshots/allowlist.json",
+      "bytes": 1435,
+      "sha256": "80d67a0a10da8f4aa6f7d3a30629a35dd861da9e419ede2e7fd5c907b8217cff",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/snapshots/allowlist_r5.json",
+      "bytes": 242,
+      "sha256": "0427594793c39a72db3a28cdd47f291c4c3ab0f5be903082f710ba1c51434c82",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/snapshots/official-goierrialdea-go01-health-r5-20260929.json",
+      "bytes": 103969,
+      "sha256": "59fcded9e4236ee094eeb0881c4eb94f521b96fb6c8c89c881c3e9f6d5140901",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/snapshots/official-goierrialdea-go01-r4-20260929.json",
+      "bytes": 812758,
+      "sha256": "62e00c04edb96ccde0a5ce4fe81574452ddcacdb4c173b030ca49b000f5a084b",
+      "role": "runtime"
+    },
+    {
+      "path": "prototypes/ir_y_volver/walking_r5.py",
+      "bytes": 6376,
+      "sha256": "0f3a02e69f8065f892ce19a0115ae7e3c661c32725bd37a423f3d283ae1a2a7d",
+      "role": "runtime"
+    }
+  ],
+  "total_bytes": 1252907,
+  "package_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+  "package_bytes": 129365
+}

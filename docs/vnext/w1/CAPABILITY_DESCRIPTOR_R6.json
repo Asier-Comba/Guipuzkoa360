@@ -1,0 +1,49 @@
+{
+  "schema_version": "0.3.1",
+  "provider_id": "ir_y_volver_r6",
+  "snapshots": [
+    {
+      "snapshot_id": "official-goierrialdea-go01-r4-20260929",
+      "contract_version": "0.2.0",
+      "scenario_kind": "stop_only",
+      "scope": "origin_stop_presence_to_return_stop_arrival",
+      "destination_semantics": "stop_only",
+      "modelled_access": false,
+      "entrance_verified": false,
+      "origins": [
+        "idiazabal_center_stops",
+        "segura_herriko_plaza_stops",
+        "zegama_center_stops"
+      ],
+      "destinations": [
+        "beasain_center_stop_pair"
+      ],
+      "validated_dates": [
+        "2026-09-29"
+      ],
+      "walking_profile_id": "stop_only"
+    },
+    {
+      "snapshot_id": "official-goierrialdea-go01-health-r5-20260929",
+      "contract_version": "0.3.1",
+      "scenario_kind": "health_visit",
+      "scope": "origin_stop_presence_to_return_stop_arrival",
+      "destination_semantics": "official_centre_point_not_verified_entrance",
+      "modelled_access": true,
+      "entrance_verified": false,
+      "origins": [
+        "idiazabal_center_stops",
+        "segura_herriko_plaza_stops",
+        "zegama_center_stops"
+      ],
+      "destinations": [
+        "beasain_official_centre_anchor"
+      ],
+      "validated_dates": [
+        "2026-09-29"
+      ],
+      "walking_profile_id": "poc_reference_50m_min_plus_120s"
+    }
+  ],
+  "error": null
+}

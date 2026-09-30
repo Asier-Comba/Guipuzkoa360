@@ -1,0 +1,80 @@
+{
+  "guidance_version": "r8.0",
+  "source": "docs/vnext/w1/PERFORMANCE_R7.json",
+  "source_sha256": "60888880c08f8194ef1c4011a5e9d1a9a748d8d132cc4ee149d6b2aaa913e6dd",
+  "evidence": {
+    "1": {
+      "operation": "plan_visit",
+      "samples": 7,
+      "median_ms": 101.8771999999899,
+      "p95_ms": 125.7348000001457,
+      "minimum_ms": 85.35480000000462,
+      "maximum_ms": 125.7348000001457,
+      "payload_bytes": 16561,
+      "python_peak_allocation_bytes": 5554013,
+      "not_rss": true
+    },
+    "2": {
+      "operation": "compare_visits",
+      "samples": 7,
+      "median_ms": 439.2588999999134,
+      "p95_ms": 636.8626999999378,
+      "minimum_ms": 421.5855999998439,
+      "maximum_ms": 636.8626999999378,
+      "payload_bytes": 33708,
+      "python_peak_allocation_bytes": 5743790,
+      "not_rss": true
+    },
+    "4": {
+      "operation": "compare_visits",
+      "samples": 7,
+      "median_ms": 731.5410999999585,
+      "p95_ms": 932.4745000001258,
+      "minimum_ms": 626.4713999999003,
+      "maximum_ms": 932.4745000001258,
+      "payload_bytes": 69236,
+      "python_peak_allocation_bytes": 5974641,
+      "not_rss": true
+    },
+    "8": {
+      "operation": "compare_visits",
+      "samples": 7,
+      "median_ms": 4113.856599999963,
+      "p95_ms": 4158.934399999907,
+      "minimum_ms": 4069.4735000001856,
+      "maximum_ms": 4158.934399999907,
+      "payload_bytes": 146016,
+      "python_peak_allocation_bytes": 6489452,
+      "not_rss": true
+    },
+    "16": {
+      "operation": "compare_visits",
+      "samples": 7,
+      "median_ms": 8046.927099999948,
+      "p95_ms": 8113.860100000011,
+      "minimum_ms": 7686.233099999981,
+      "maximum_ms": 8113.860100000011,
+      "payload_bytes": 322562,
+      "python_peak_allocation_bytes": 7452182,
+      "not_rss": true
+    },
+    "32": {
+      "operation": "compare_visits",
+      "samples": 7,
+      "median_ms": 16005.40490000003,
+      "p95_ms": 16120.965800000022,
+      "minimum_ms": 14902.328600000146,
+      "maximum_ms": 16120.965800000022,
+      "payload_bytes": 767650,
+      "python_peak_allocation_bytes": 9500069,
+      "not_rss": true
+    }
+  },
+  "interpretation": [
+    "Two scenarios are the natural comparison case.",
+    "Eight or more scenarios materially increase local cost and payload.",
+    "Contract permits at most 32; W2 chooses exposed limits based on UX/context.",
+    "Never silently truncate requests.",
+    "These are not portal latency, SLA, RSS or network throughput."
+  ]
+}
