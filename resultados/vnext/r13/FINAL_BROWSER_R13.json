@@ -8,7 +8,7 @@
         "width": 320,
         "height": 780
       },
-      "zoom": "100% viewport override",
+      "zoom": "Native zoom NOT_OBSERVED; viewport override",
       "measurement": {
         "identity": "Proveedor cb061a9e00a6496c40488a596bd94834bc2c49b2 · paquete 3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616 · ZIP productor c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910 · contrato 0.3.1 · snapshot 59fcded9e4236ee094eeb0881c4eb94f521b96fb6c8c89c881c3e9f6d5140901",
         "page": {
@@ -203,7 +203,8 @@
     "comparison": "PASS; -2100 s provider delta; fixed assumptions"
   },
   "console": [],
-  "zoom": "100% only; R13 did not request zoom certification",
+  "zoom": "NOT_OBSERVED native zoom; no zoom control changed; CSS viewport sizes measured with overrides",
   "chat_vs_html": "No health figure comparison possible: agent M04 failed. Offline viewer truth remains separately labelled; M03 scope agrees.",
-  "result": "PASS_TARGETED_OFFLINE_VIEWER; REAL_AGENT_FAIL_REMAINS_VISIBLE"
+  "result": "PASS_TARGETED_OFFLINE_VIEWER; REAL_AGENT_FAIL_REMAINS_VISIBLE",
+  "measurement_note": "For unknown/no-feasible, total text may remain in hidden DOM; itinerary/timeline are not rendered. Table internal overflow measured; no keyboard table-scroll certification."
 }

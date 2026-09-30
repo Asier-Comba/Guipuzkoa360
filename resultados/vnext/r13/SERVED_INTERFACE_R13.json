@@ -437,5 +437,14 @@
   "internet_visible": false,
   "iterations_code": 8,
   "full_served_schema": "NOT_OBSERVED",
-  "basis": "studio_preparation.txt lists nine names and parameter lists. Annotations in editor are code, not observed serialized schema."
+  "basis": "studio_preparation.txt lists nine names and parameter lists. Annotations in editor are code, not observed serialized schema.",
+  "real_observed_request": {
+    "evidence": "M04.json",
+    "tool": "plan_visit",
+    "request_type": "string",
+    "attempts": 2,
+    "expected_representation": "object or list of objects",
+    "binding": "FAIL",
+    "full_schema_causation": "NOT_OBSERVED; actual argument does not prove served schema type"
+  }
 }
