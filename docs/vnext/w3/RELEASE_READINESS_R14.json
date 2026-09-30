@@ -2,6 +2,22 @@
   "READY_FOR_FEEDBACK": "NO",
   "RELEASE_GO": "NO",
   "budget": 4,
+  "ci": {
+    "evaluator": {
+      "conclusion": "SUCCESS",
+      "head": "9a49672672388a871874c93f23300283477d9483",
+      "run": 36765616561,
+      "ubuntu": "PASS",
+      "windows": "PASS"
+    },
+    "hotfix": {
+      "conclusion": "SUCCESS",
+      "head": "094745b26bc57aee5cc1a5e003401743d96a914f",
+      "run": 36765784442,
+      "ubuntu": "PASS",
+      "windows": "PASS"
+    }
+  },
   "critical": 0,
   "findings": [
     {
@@ -58,6 +74,12 @@
   "next_exact_action": "W1 independently accepts HOTFIX_SHA and ZIP_SHA; only then create separate private version and execute frozen M05–M12 with stop-on-High",
   "portal_smoke": "NOT_RUN",
   "product": "UNCHANGED_OFFLINE; REAL_AGENT_VERIFIED not granted",
+  "publication": {
+    "evaluator_pr": "https://github.com/Asier-Comba/Guipuzkoa360/pull/14#issuecomment-5918173332",
+    "hotfix_pr": "https://github.com/Asier-Comba/Guipuzkoa360/pull/18",
+    "issue": "https://github.com/Asier-Comba/Guipuzkoa360/issues/16#issuecomment-5918172714",
+    "w1_pr": "https://github.com/Asier-Comba/Guipuzkoa360/pull/15#issuecomment-5918173041"
+  },
   "round": "R14",
   "state": "PORTAL_BINDING_HOTFIX_READY_WAIT_W1",
   "v4_identity": "PASS_UNCHANGED",

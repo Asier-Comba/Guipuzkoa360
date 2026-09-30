@@ -40,3 +40,12 @@ El usuario exige PASS independiente W1 sobre SHA y ZIP exactos antes de cargar S
 5. Con 0 Critical/High y gates clave PASS: READY_FOR_FEEDBACK=YES y STOP. Benchmark/holdout/release requieren alcance posterior.
 
 Para W1: ZIP/manifest R14, constructor build_r14_binding.py, verify_r14_binding.py, parity.json, fuzz.json, truth_pack_contrast.json, historical_m04_replay.json y firma esperada. Reproducción: python -m scripts.vnext_agent.verify_r14_binding --oracle docs/vnext/w3/r14/FINAL_ORACLE_R13.json --output resultados/vnext/r14. No necesita credenciales ni red ni framework/modelo. No benchmark completo ejecutado.
+
+## Publicación y CI confirmadas
+
+- Hotfix draft PR18: https://github.com/Asier-Comba/Guipuzkoa360/pull/18 . CI36765784442 SUCCESS, Ubuntu y Windows, exacto094745b26bc57aee5cc1a5e003401743d96a914f.
+- Evaluador PR14: CI36765616561 SUCCESS, Ubuntu y Windows, exacto9a49672672388a871874c93f23300283477d9483. El commit posterior solo incorpora este estado documental de publicación/CI.
+- Issue16: https://github.com/Asier-Comba/Guipuzkoa360/issues/16#issuecomment-5918172714 . W1 PR15: https://github.com/Asier-Comba/Guipuzkoa360/pull/15#issuecomment-5918173041 . PR14: https://github.com/Asier-Comba/Guipuzkoa360/pull/14#issuecomment-5918173332 .
+- Confirmación de último fetch/lectura: no PASS independiente W1 R14 publicado aún. No equivalencia entre CI y aceptación W1/LLM. HOTFIX_SHA/ZIP/manifest no cambian al publicar este cierre del evaluador.
+- Trece tests finales package/flat/recorder PASS tras guard de constructor y cambio de recorder. 5.000 combinaciones aleatorias eran errores controlados; no equivalen a viajes válidos. Los 18 probes explícitos cubren respuestas positivas y negativas.
+- Reconciliación reproducible adicional: python -m scripts.vnext_agent.reconcile_r14_reports. Constructor requiere CPython3.12; no usar la identidad comprimida3.14 experimental.
