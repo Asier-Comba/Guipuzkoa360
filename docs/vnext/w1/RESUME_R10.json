@@ -1,0 +1,76 @@
+{
+  "work_id": "W1",
+  "round": "G360-R10",
+  "start_sha": "6ebf41e2f1fe24f1c3678c4be13c6c44cf8cb62b",
+  "tested_head": "3399cce4d69fd48ad56176970986a7ed806c394e",
+  "published_head": "RECORDED_EXTERNALLY_AFTER_DOCUMENTATION_COMMIT",
+  "runtime_changed": false,
+  "runtime_version": "0.3.1",
+  "r6_package_preserved": {
+    "bytes": 129365,
+    "sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910"
+  },
+  "consumed_heads": {
+    "w2": "8272988566f5bca2d65d3119732bf831d11382dc",
+    "w3": "e821341ba1ffd8ed7947cdb97802348919ef502a"
+  },
+  "support_errata": "FIXED",
+  "handshake": {
+    "version": "r10.0-support",
+    "path": "docs/vnext/w1/integration_r10/W1_HANDSHAKE_R10.json",
+    "bytes": 11842,
+    "sha256": "ac2657cede8dfdf2487fe71d53c245700c8a259dac688df852eb6f4c857f151c",
+    "answerability": {
+      "described_entries": 25,
+      "available": 9,
+      "unavailable": 11,
+      "out_of_scope": 5
+    },
+    "producer_interfaces": 3
+  },
+  "parity_runner": "scripts/mobility/verify_candidate_parity_r10.py",
+  "candidate_package_tested": {
+    "scope": "identity_integrity_distribution_only",
+    "sha256": "366cdc7d160ee6743cb125c6709f57e48f6ddfb91ead812a92eb881570233357",
+    "bytes": 153456,
+    "w1_contract": "0.2.0",
+    "w1_pin": "725a7b73ae0381092cd80edc41b8a25432d75fcd"
+  },
+  "parity_results": "NOT_RUN",
+  "test_commands": {
+    "r10": "8/8 PASS",
+    "python_full": "508/508 PASS",
+    "node": "17/17 PASS",
+    "runtime_identity": "PASS",
+    "jury_gate": "PASS",
+    "artifact_gate": "PASS",
+    "deterministic_support_build": "PASS",
+    "diff_check": "PASS"
+  },
+  "known_fail": [],
+  "not_run": [
+    "producer-to-adapter parity against a W2 R6 DEPLOYABLE_PACKAGE_READY candidate",
+    "LLM/model conversation",
+    "portal",
+    "independent W3 acceptance"
+  ],
+  "source_limits": [
+    "raw plus fixed health derivative, not fully raw",
+    "not exact reproduction of historical PoC OSM",
+    "static scheduled snapshot, not realtime",
+    "physical entrance not verified",
+    "no door-to-door claim",
+    "do not bundle Osakidetza HTML or PADI PDF without reuse review"
+  ],
+  "v4_preservation": "PASS",
+  "ci": {
+    "tested_head_run": 36696885312,
+    "ubuntu": "PASS",
+    "windows": "PASS"
+  },
+  "w1_r10_ready": true,
+  "w1_parity_pass": "NOT_RUN",
+  "merged_or_published_release": false,
+  "portal_mutations": 0,
+  "next_exact_action": "W2 consumes W1_HANDSHAKE_R10.json and publishes DEPLOYABLE_PACKAGE_READY with exact SHA/hash; W1 then runs parity without changing runtime."
+}
