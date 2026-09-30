@@ -1,0 +1,333 @@
+{
+  "package_sha256": "3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616",
+  "w1_support_pin": "c9cb37f6c65e77149e18cd883eeaff40d1c1bb8e",
+  "classification": "OFFLINE_TOOL_DIAGNOSTIC_NOT_LLM_NOT_INDEPENDENT_ACCEPTANCE",
+  "private_diagnostic_locator": "g360-w2-r12-diagnostics-ji2e53rx/baseline under host temporary directory",
+  "controls": {
+    "A_clean_extraction": {
+      "same_candidate_root_for_all_calls": true,
+      "case_count": 14,
+      "public_status_matches_envelope": true,
+      "tools_module": "tools.py in extraction",
+      "adapters": {
+        "health_adapter": "<verified W2 bundled health_adapter>",
+        "mobility_adapter": "<verified W2 bundled mobility_adapter>"
+      },
+      "asset_hashes": {
+        "contracts/vnext/evidence-v1.1.schema.json": "6fbd22a567cc5a8d8ce17fd1968c52fc92448526bf81103e2768486d724d9ad0",
+        "datos_preparados/vnext/consumer_labels_r7.json": "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799",
+        "datos_preparados/vnext/operational_catalog_r6.json": "c7bd3cc8ffe50956ce839bec0ef90a13578160a4d5b4053b09673d2dc4c4ec17"
+      },
+      "private_report_sha256": "ff92f9f806959948455dbafb7185ed799ac04139fac660897d81e46876fa57d5",
+      "cases": [
+        {
+          "case_id": "health_defaults_omitted",
+          "envelope_status": "valid",
+          "public_status": "valid",
+          "input_sha256": "0f0b0af1365499ab56d9d178f81bfd524589104ca3b993f7bf06751dabe17131",
+          "raw_result_sha256": "fb23e6dccded434e448681261f986bc4824004295992b97e72b01062ed3cb5c5",
+          "public_result_sha256": "53636f298523e3bda1340141a872a406014b81b01008c1715fe98cedd33bd5fd",
+          "w1_r11_health_applicable_requirements_findings": [],
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "health_defaults_explicit",
+          "envelope_status": "valid",
+          "public_status": "valid",
+          "input_sha256": "9cf05613279dd94a59092584158ebb643281e6d527cb4502dd62353904697803",
+          "raw_result_sha256": "24d17e6a19932b0bf50a6aa5ef7cc6fceb40535343f2f9429318c0d29b85b989",
+          "public_result_sha256": "9a058c48eaf9bc62cf725034127076a559796e4fcae59dcf71dedc63a7116cf0",
+          "w1_r11_health_applicable_requirements_findings": [],
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "health_nondefault_margins",
+          "envelope_status": "valid",
+          "public_status": "valid",
+          "input_sha256": "3f171abd766548842548f53d90a0a7386a3faffc23fdbc9c41a6559ea3e36ab4",
+          "raw_result_sha256": "6678c2ce01de8bc69da607383550bd4a111be8e868585665e1756b53be8305e3",
+          "public_result_sha256": "e9f03695ea6c686d37f6cf714878778005c0c78b75257818ce0416d55f85bb3b",
+          "w1_r11_health_applicable_requirements_findings": [],
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "health_duration_changes_return",
+          "envelope_status": "valid",
+          "public_status": "valid",
+          "input_sha256": "4d0547c70428a145c567d54db398d6354fb4e3d30f5a1355f9f8a915ab8bee98",
+          "raw_result_sha256": "97315adacb6dadb975e535dae13737e53ef02a1c0676c8efe359e23cc0ea9ee0",
+          "public_result_sha256": "622fae8c153e6142e0b39827276daf8f2a96caa30142f5943908442622fba995",
+          "w1_r11_health_applicable_requirements_findings": [],
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "health_no_feasible",
+          "envelope_status": "no_data",
+          "public_status": "no_data",
+          "input_sha256": "80ca32d86c3858d17367b9ac52648cd210a757286c36b540525934137030e421",
+          "raw_result_sha256": "53b805afaf295dd580d8bfa3d81cf3fb1b4fcdd2835fda0aa508a1b16942d319",
+          "public_result_sha256": "89d21e90ffb7e41d127fdc035718ddc6589677acd018496e22111979c024c37a",
+          "w1_r11_health_applicable_requirements_findings": [],
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "health_date_not_validated",
+          "envelope_status": "error",
+          "public_status": "error",
+          "input_sha256": "f586e08cd772db14f97aabf93fece029b266dc0fd06039840d351dba20f37705",
+          "raw_result_sha256": "b7972f20eb86872ce2f8431b6ce2183a2a392a9e33f4676bc1a39dbb3dd0ddad",
+          "public_result_sha256": "dc978ec89309f3b6d360b7374747f6d4cf63880114c8c8c39eed21166e9323ff",
+          "w1_r11_health_applicable_requirements_findings": [],
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "health_destination_unsupported",
+          "envelope_status": "unsupported",
+          "public_status": "unsupported",
+          "input_sha256": "5aa4b4f0b17d53135a7293a6473642828c503af1ddba5a8f3b3e3372567a14ce",
+          "raw_result_sha256": "a0b3ce824ec39796a93e6ffc9077938d2baee37e25571e09b6b289e2c5a16640",
+          "public_result_sha256": "9bbf1537dd015df576a98d1537a227b8c215d66e91a930faca7a7252eafae512",
+          "w1_r11_health_applicable_requirements_findings": [],
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "health_profile_unsupported",
+          "envelope_status": "error",
+          "public_status": "error",
+          "input_sha256": "e16eb2b017c40fb7027e084bff704d59b90f1edd86bb8330ee437fbc4d387faf",
+          "raw_result_sha256": "8aa916c2733eb646fe4181074f7c5fc8f22e63befb56cdc1bb6a5a9980af09f8",
+          "public_result_sha256": "919daf9ffd78e5ca3b2a8a6c33ca8e3f7cf54294504c23a041f60f87bf4c291a",
+          "w1_r11_health_applicable_requirements_findings": [],
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "compare_same_origin_two_hours",
+          "envelope_status": "valid",
+          "public_status": "valid",
+          "input_sha256": "eaf7e189b76fc7b1d7f808bd8b563c7b6bb71aab7e1cf4dc1b797ba743e555e0",
+          "raw_result_sha256": "5226b3f131c791b04e0a2429ce95f5e816309e812a5565b1c733d7b303d9316b",
+          "public_result_sha256": "40fd29de8d4a462a221f8d2d9940212f9a0f9555b485dda324d53d10464aceb0",
+          "w1_r11_health_applicable_requirements_findings": null,
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "compare_duration",
+          "envelope_status": "valid",
+          "public_status": "valid",
+          "input_sha256": "afbea7bc722097399b86fdfa747b92ab453268ea51a9afb29fddf4ee63552393",
+          "raw_result_sha256": "384e928f41c0b559c69cdedb80bb53d867550595e40b60fa6eb871cb734d1e06",
+          "public_result_sha256": "9a3884d1cba5b5da64c2d32c8f2c93010a7a8b00154f986e129123d0b8e439a7",
+          "w1_r11_health_applicable_requirements_findings": null,
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "compare_cross_origin",
+          "envelope_status": "valid",
+          "public_status": "valid",
+          "input_sha256": "78dbbdb67e05cb38099abb54465173bd4b02839255688caa1a480707519f934f",
+          "raw_result_sha256": "c19644475868eba2f7f51f776ebef0c772e69def11d9f2ef0d0e780e0c7a9287",
+          "public_result_sha256": "d488d471082269fb10e82d96b5d4a6161f9f2a259028067631ea2aaffcab2dcb",
+          "w1_r11_health_applicable_requirements_findings": null,
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "legacy_r4_explicit",
+          "envelope_status": "valid",
+          "public_status": "valid",
+          "input_sha256": "aa40cbd1a9d180cc9a6794cb2f6671b7de5f93b0d7b288477e0d8aa93500c9d1",
+          "raw_result_sha256": "cf70bb03a15be882688fcb64101b2a5fa61f3867728a8cb47313e6a83aa66b5a",
+          "public_result_sha256": "2f66cebd0da29bff677bc16024c00aa9874794b2eb8ad3913a9ee6f04b716ad5",
+          "w1_r11_health_applicable_requirements_findings": null,
+          "legacy_r11_evaluator_exception": "'transformation'"
+        },
+        {
+          "case_id": "mixed_r4_r6",
+          "envelope_status": "valid",
+          "public_status": "valid",
+          "input_sha256": "53f33e4fa4dd7cbc51203e7ebd8410f994468316a2599f813b3c4399de1d868f",
+          "raw_result_sha256": "a7744b29ba9d1f3b90c1cbe57a6b327c38e0d1a419b3270c84485bb6ff41e2b2",
+          "public_result_sha256": "a112d13202c49e643710929b7eb2608eefc24f672661f521f645c47666c3a29c",
+          "w1_r11_health_applicable_requirements_findings": null,
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "invalid_structural",
+          "envelope_status": "error",
+          "public_status": "error",
+          "input_sha256": "d1897d6e0d3ddc8581205e9d62dc1fb279cdb7ff461a266c2bdbbd8b8fff1380",
+          "raw_result_sha256": null,
+          "public_result_sha256": "84e2dd2bec42f03acdca3fa53ec1a0f93d84417bd07431d14696dddd60258d17",
+          "w1_r11_health_applicable_requirements_findings": null,
+          "legacy_r11_evaluator_exception": null
+        }
+      ]
+    },
+    "B_foreign_data_cwd": {
+      "same_candidate_root_for_all_calls": true,
+      "case_count": 14,
+      "public_status_matches_envelope": true,
+      "tools_module": "tools.py in extraction",
+      "adapters": {
+        "health_adapter": "<verified W2 bundled health_adapter>",
+        "mobility_adapter": "<verified W2 bundled mobility_adapter>"
+      },
+      "asset_hashes": {
+        "contracts/vnext/evidence-v1.1.schema.json": "6fbd22a567cc5a8d8ce17fd1968c52fc92448526bf81103e2768486d724d9ad0",
+        "datos_preparados/vnext/consumer_labels_r7.json": "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799",
+        "datos_preparados/vnext/operational_catalog_r6.json": "c7bd3cc8ffe50956ce839bec0ef90a13578160a4d5b4053b09673d2dc4c4ec17"
+      },
+      "private_report_sha256": "6c6675f0af8b9d3709f626cb929ada63d95b4b41f9533c2297adf92127169d1f",
+      "cases": [
+        {
+          "case_id": "health_defaults_omitted",
+          "envelope_status": "valid",
+          "public_status": "valid",
+          "input_sha256": "0f0b0af1365499ab56d9d178f81bfd524589104ca3b993f7bf06751dabe17131",
+          "raw_result_sha256": "fb23e6dccded434e448681261f986bc4824004295992b97e72b01062ed3cb5c5",
+          "public_result_sha256": "53636f298523e3bda1340141a872a406014b81b01008c1715fe98cedd33bd5fd",
+          "w1_r11_health_applicable_requirements_findings": [],
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "health_defaults_explicit",
+          "envelope_status": "valid",
+          "public_status": "valid",
+          "input_sha256": "9cf05613279dd94a59092584158ebb643281e6d527cb4502dd62353904697803",
+          "raw_result_sha256": "24d17e6a19932b0bf50a6aa5ef7cc6fceb40535343f2f9429318c0d29b85b989",
+          "public_result_sha256": "9a058c48eaf9bc62cf725034127076a559796e4fcae59dcf71dedc63a7116cf0",
+          "w1_r11_health_applicable_requirements_findings": [],
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "health_nondefault_margins",
+          "envelope_status": "valid",
+          "public_status": "valid",
+          "input_sha256": "3f171abd766548842548f53d90a0a7386a3faffc23fdbc9c41a6559ea3e36ab4",
+          "raw_result_sha256": "6678c2ce01de8bc69da607383550bd4a111be8e868585665e1756b53be8305e3",
+          "public_result_sha256": "e9f03695ea6c686d37f6cf714878778005c0c78b75257818ce0416d55f85bb3b",
+          "w1_r11_health_applicable_requirements_findings": [],
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "health_duration_changes_return",
+          "envelope_status": "valid",
+          "public_status": "valid",
+          "input_sha256": "4d0547c70428a145c567d54db398d6354fb4e3d30f5a1355f9f8a915ab8bee98",
+          "raw_result_sha256": "97315adacb6dadb975e535dae13737e53ef02a1c0676c8efe359e23cc0ea9ee0",
+          "public_result_sha256": "622fae8c153e6142e0b39827276daf8f2a96caa30142f5943908442622fba995",
+          "w1_r11_health_applicable_requirements_findings": [],
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "health_no_feasible",
+          "envelope_status": "no_data",
+          "public_status": "no_data",
+          "input_sha256": "80ca32d86c3858d17367b9ac52648cd210a757286c36b540525934137030e421",
+          "raw_result_sha256": "53b805afaf295dd580d8bfa3d81cf3fb1b4fcdd2835fda0aa508a1b16942d319",
+          "public_result_sha256": "89d21e90ffb7e41d127fdc035718ddc6589677acd018496e22111979c024c37a",
+          "w1_r11_health_applicable_requirements_findings": [],
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "health_date_not_validated",
+          "envelope_status": "error",
+          "public_status": "error",
+          "input_sha256": "f586e08cd772db14f97aabf93fece029b266dc0fd06039840d351dba20f37705",
+          "raw_result_sha256": "b7972f20eb86872ce2f8431b6ce2183a2a392a9e33f4676bc1a39dbb3dd0ddad",
+          "public_result_sha256": "dc978ec89309f3b6d360b7374747f6d4cf63880114c8c8c39eed21166e9323ff",
+          "w1_r11_health_applicable_requirements_findings": [],
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "health_destination_unsupported",
+          "envelope_status": "unsupported",
+          "public_status": "unsupported",
+          "input_sha256": "5aa4b4f0b17d53135a7293a6473642828c503af1ddba5a8f3b3e3372567a14ce",
+          "raw_result_sha256": "a0b3ce824ec39796a93e6ffc9077938d2baee37e25571e09b6b289e2c5a16640",
+          "public_result_sha256": "9bbf1537dd015df576a98d1537a227b8c215d66e91a930faca7a7252eafae512",
+          "w1_r11_health_applicable_requirements_findings": [],
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "health_profile_unsupported",
+          "envelope_status": "error",
+          "public_status": "error",
+          "input_sha256": "e16eb2b017c40fb7027e084bff704d59b90f1edd86bb8330ee437fbc4d387faf",
+          "raw_result_sha256": "8aa916c2733eb646fe4181074f7c5fc8f22e63befb56cdc1bb6a5a9980af09f8",
+          "public_result_sha256": "919daf9ffd78e5ca3b2a8a6c33ca8e3f7cf54294504c23a041f60f87bf4c291a",
+          "w1_r11_health_applicable_requirements_findings": [],
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "compare_same_origin_two_hours",
+          "envelope_status": "valid",
+          "public_status": "valid",
+          "input_sha256": "eaf7e189b76fc7b1d7f808bd8b563c7b6bb71aab7e1cf4dc1b797ba743e555e0",
+          "raw_result_sha256": "5226b3f131c791b04e0a2429ce95f5e816309e812a5565b1c733d7b303d9316b",
+          "public_result_sha256": "40fd29de8d4a462a221f8d2d9940212f9a0f9555b485dda324d53d10464aceb0",
+          "w1_r11_health_applicable_requirements_findings": null,
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "compare_duration",
+          "envelope_status": "valid",
+          "public_status": "valid",
+          "input_sha256": "afbea7bc722097399b86fdfa747b92ab453268ea51a9afb29fddf4ee63552393",
+          "raw_result_sha256": "384e928f41c0b559c69cdedb80bb53d867550595e40b60fa6eb871cb734d1e06",
+          "public_result_sha256": "9a3884d1cba5b5da64c2d32c8f2c93010a7a8b00154f986e129123d0b8e439a7",
+          "w1_r11_health_applicable_requirements_findings": null,
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "compare_cross_origin",
+          "envelope_status": "valid",
+          "public_status": "valid",
+          "input_sha256": "78dbbdb67e05cb38099abb54465173bd4b02839255688caa1a480707519f934f",
+          "raw_result_sha256": "c19644475868eba2f7f51f776ebef0c772e69def11d9f2ef0d0e780e0c7a9287",
+          "public_result_sha256": "d488d471082269fb10e82d96b5d4a6161f9f2a259028067631ea2aaffcab2dcb",
+          "w1_r11_health_applicable_requirements_findings": null,
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "legacy_r4_explicit",
+          "envelope_status": "valid",
+          "public_status": "valid",
+          "input_sha256": "aa40cbd1a9d180cc9a6794cb2f6671b7de5f93b0d7b288477e0d8aa93500c9d1",
+          "raw_result_sha256": "cf70bb03a15be882688fcb64101b2a5fa61f3867728a8cb47313e6a83aa66b5a",
+          "public_result_sha256": "2f66cebd0da29bff677bc16024c00aa9874794b2eb8ad3913a9ee6f04b716ad5",
+          "w1_r11_health_applicable_requirements_findings": null,
+          "legacy_r11_evaluator_exception": "'transformation'"
+        },
+        {
+          "case_id": "mixed_r4_r6",
+          "envelope_status": "valid",
+          "public_status": "valid",
+          "input_sha256": "53f33e4fa4dd7cbc51203e7ebd8410f994468316a2599f813b3c4399de1d868f",
+          "raw_result_sha256": "a7744b29ba9d1f3b90c1cbe57a6b327c38e0d1a419b3270c84485bb6ff41e2b2",
+          "public_result_sha256": "a112d13202c49e643710929b7eb2608eefc24f672661f521f645c47666c3a29c",
+          "w1_r11_health_applicable_requirements_findings": null,
+          "legacy_r11_evaluator_exception": null
+        },
+        {
+          "case_id": "invalid_structural",
+          "envelope_status": "error",
+          "public_status": "error",
+          "input_sha256": "d1897d6e0d3ddc8581205e9d62dc1fb279cdb7ff461a266c2bdbbd8b8fff1380",
+          "raw_result_sha256": null,
+          "public_result_sha256": "84e2dd2bec42f03acdca3fa53ec1a0f93d84417bd07431d14696dddd60258d17",
+          "w1_r11_health_applicable_requirements_findings": null,
+          "legacy_r11_evaluator_exception": null
+        }
+      ]
+    }
+  },
+  "additional_layout_proofs": {
+    "command": "py -3.12 -m pytest tests/vnext_agent/test_r12_generated.py -q -o addopts= --maxfail=1 -s",
+    "result": "6 PASS",
+    "seconds": 344.79,
+    "declared_only_flat": "PASS",
+    "declared_only_agentes_candidate_nested": "PASS",
+    "tests_and_gold_absent_in_both_declared_layouts": true,
+    "foreign_observer_cwd_and_foreign_GIPUZKOA360_DATA_DIR": "PASS"
+  }
+}
