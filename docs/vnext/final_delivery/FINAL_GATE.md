@@ -1,4 +1,35 @@
-# Gate final — borrador, no publicar
+# Gate vigente R16 — borrador privado; no publicar
+
+R16_AUTHOR_DELTA_CHECK=PASS. No es una aceptación independiente del autor.
+R16_FINAL_CANDIDATE=FAIL según el protocolo completo real: M1–M4 PASS; M5 FAIL por un primer periodo vacío, recuperado sin repetir la llamada. REAL_CRITICAL=0, REAL_HIGH=0, REAL_MEDIUM=1, REAL_LOW=2. H-01 cerrado en dos sesiones limpias. No se abre otra ronda ni se cambia runtime para cosmética.
+
+Runtime probado: d4dd2e65434c6c7f9f33c74ef1041b0f136cde69. ZIP 374af43fa6ce58b513a10477fc216215c7472f54bd28eada4fc0908da6f3dd6c; manifiesto a46415845f86c5c22ad648965b45e5bd109c839e9cb6cc14daee0ef37d7f788e. Un commit documental posterior no crea otro candidato runtime: su SHA/CI final se fija en PR21 conservando esos mismos bytes.
+
+Versión privada: agentv_f4ca979c0c5b415da187711e96ba2c4d, GIPUZKOA 360 · Visita sanitaria · v2. Cinco mensajes R16 consumidos (5/5), separados del histórico R15 12/12. Sin más prompts. Internet desactivado, memoria activa, modelo visible openai:gpt-5.6-luna, nueve herramientas, cinco campos públicos de plan_visit. main/tools y quince assets descargados desde UI: 17/17 hashes coinciden. El portal incluye su archivo de ejecución generado, no importado ni registrado como herramienta; no se afirma identidad byte a byte entre la carpeta completa del portal y el ZIP.
+
+CI del SHA probado: [36892707817](https://github.com/Asier-Comba/Guipuzkoa360/actions/runs/36892707817), Ubuntu 668/668 y Windows 668/668; Node 17/17; parity 333/333; oráculo 7/7; identity 14/14; jury/artifacts PASS. Fast CI [36892707797](https://github.com/Asier-Comba/Guipuzkoa360/actions/runs/36892707797). La suite local completa se ejecutó una vez: 667 PASS y un timeout histórico; solo ese test se repitió y pasó. No se borra el primer resultado ni se llama a ese recorrido «668 PASS en una sola ejecución local».
+
+DELIVERY_CONTENT_COMPLETE=YES: copy humano completo, sin placeholders públicos. Borrador guardado con v2, conversación A de tres turnos y solo demo territorial + repositorio; sin archivos históricos seleccionados. Resumen actualizado y vista previa revisada. El portal conserva «sin evaluar»: revisión/selección de contenido no equivale a evaluación oficial de plataforma.
+
+TECHNICAL_RELEASE_READY=NO: el protocolo completo no está verde; falta decisión humana sobre el Medium recuperado y los Low documentados, además de la revisión independiente del delta. PORTAL_REAL_AGENT=FAIL (criterio estricto), no fallo de las cifras principales ni del motor. HOLDOUT=SEALED_NOT_EXECUTED, no abierto/reconstruido; no es requisito oficial de publicación.
+
+TRACK=PENDING_HUMAN_SELECTION. PUBLICATION=PENDING_HUMAN_GATE. RELEASE_GO=NO.
+
+NEXT_EXACT_ACTION=Revisión coordinadora del delta y decisión humana explícita sobre el Medium recuperado de Aduna; después revisión final de la vista previa, elección de track y confirmación/publicación exclusivamente humanas.
+
+## Checklist de jurado, sin puntuación inventada
+
+- Utilidad (25 %): destinatarios y pregunta sobre tiempo completo de visita; alcance territorial y sanitario diferenciados.
+- Análisis/fuentes/trazabilidad (25 %): 10.691/8.591 s contrastados, componentes, fuentes/periodos; atribución OSM y conflicto de dirección conservados.
+- Agente/herramientas (25 %): conversación A real muestra capacidades, dos plan_visit y resultados observados. El error recuperado de Aduna se registra aparte, no se selecciona como demostración sin errores.
+- Claridad (15 %): título, pregunta, explicación y defensa humana; sin hashes, nombres internos ni fallos históricos en copy público.
+- Fiabilidad/límites (10 %): no realtime, domicilio, entrada verificada, capacidad/citas, causalidad, predicción ni mejor hora. Segunda revisión sin contradicción de duración; sí primer periodo vacío M5 y límites de metadata/explicación.
+
+## Histórico superseded: gate documental importado de R15
+
+El texto siguiente es procedencia, no estado vigente. Sus presupuestos, acciones pendientes y referencias al «último» agente eran los de ese documento histórico. R16 no convierte retrospectivamente intentos R14/R15 en PASS.
+
+# Histórico: Gate final — borrador, no publicar
 
 Estado global: RELEASE_GO=NO. Auditoría offline no cierra el High real del agente.
 

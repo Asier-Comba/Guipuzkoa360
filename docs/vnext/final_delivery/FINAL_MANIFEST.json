@@ -1,15 +1,26 @@
 {
-  "PORTAL_LLM": "R14_FAIL_M05_R15_NOT_RETESTED",
+  "PORTAL_LLM": "R16_REAL_MAIN_A_VARIATION_SOURCE_LIMIT_MAIN_B_PASS_ADUNA_STRICT_FAIL_RECOVERED",
   "RELEASE_GO": "NO",
   "V4_PRESERVED": "YES",
   "W1_RUNTIME_CHANGED": "NO",
-  "audit_base": "094745b26bc57aee5cc1a5e003401743d96a914f",
-  "audit_head": "EXACT_FINAL_HEAD_AND_SAME_SHA_CI_ARE_IN_FINAL_R15_PR_HANDOFF",
-  "candidate": "R15_PENDING_INDEPENDENT_ACCEPTANCE_AND_REAL_AGENT_RETEST",
+  "audit_base": "69bcc6ead9ce444a884aa2b15469bd3b519775f5",
+  "audit_head": "FINAL_DOCUMENTARY_HEAD_AND_SAME_SHA_CI_IN_PR21_CHECKPOINT",
+  "candidate": "R16_PRESENTATION_ONLY_REAL_C0_H0_WITH_RECOVERED_MEDIUM_STRICT_PROTOCOL_NOT_ALL_GREEN",
   "ci": {
-    "ubuntu": "REQUIRES_EXACT_HEAD_CI_IN_FINAL_HANDOFF",
-    "windows": "REQUIRES_EXACT_HEAD_CI_IN_FINAL_HANDOFF",
-    "status": "NOT_TRANSFERRED_FROM_R14"
+    "runtime_tested_head": "d4dd2e65434c6c7f9f33c74ef1041b0f136cde69",
+    "r16_run": 36892707817,
+    "fast_run": 36892707797,
+    "ubuntu": {
+      "status": "PASS",
+      "python": 668,
+      "node": 17
+    },
+    "windows": {
+      "status": "PASS",
+      "python": 668,
+      "node": 17
+    },
+    "final_documentary_head": "Exact head and corresponding runs fixed in PR21 checkpoint; runtime/package identical"
   },
   "contrast": {
     "interpretation": "Conditional difference between two scheduled/modelled scenarios with other inputs held constant; not observed saving, prediction or recommendation",
@@ -22,31 +33,75 @@
     "verification": "Two independent raw-source reconstructions, then right minus left"
   },
   "current_agent": {
+    "version_id": "agentv_f4ca979c0c5b415da187711e96ba2c4d",
+    "name": "GIPUZKOA 360 · Visita sanitaria · v2",
+    "model": "openai:gpt-5.6-luna",
+    "memory": true,
+    "internet": false,
+    "tools": 9,
     "critical": 0,
-    "high": 1,
-    "medium": 3,
-    "status": "LAST_OBSERVED_R14_HIGH_AND_MEDIUM_OPEN_REAL_AGENT_NOT_RETESTED"
+    "high": 0,
+    "medium": 1,
+    "low": 2,
+    "status": "M1_M4_PASS_M5_STRICT_FAIL_INVALID_EMPTY_PERIOD_RECOVERED_NO_IDENTICAL_RETRY",
+    "results": {
+      "main_A": "PASS",
+      "variation": "PASS",
+      "source_limit_coverage": "PASS",
+      "main_B_clean": "PASS",
+      "aduna": "FAIL"
+    },
+    "real_tranche": {
+      "used": 5,
+      "maximum": 5,
+      "remaining": 0
+    },
+    "latencies": {
+      "unit": "seconds",
+      "measurement": "upper_bounds_send_to_observed_final_not_exact",
+      "main_A": 85.89,
+      "variation": 36.992,
+      "source_limit_coverage": 76.004,
+      "main_B_clean": 81.352,
+      "aduna": 114.682,
+      "time_to_tool": "NOT_OBSERVED",
+      "time_to_output": "NOT_OBSERVED"
+    },
+    "findings": [
+      {
+        "severity": "Medium",
+        "description": "First Aduna call sends periodo empty; bounded recovery yields correct 36/507 and 7.101%; no identical invalid retry."
+      },
+      {
+        "severity": "Low",
+        "description": "Residual Rxx/W1/provider nomenclature in source provenance metadata, not observed final answers."
+      },
+      {
+        "severity": "Low",
+        "description": "75+ final explains birth-year derivation but omits <=1949 cutoff; compact source attribution completed in delivery copy."
+      }
+    ]
   },
   "distribution": {
     "OSM": "OpenStreetMap contributors; ODbL1.0",
     "health_derivative": "PINNED_DERIVED_NOT_RAW",
     "raw_HTML_PADI": "EXCLUDED_NOT_VERIFIED"
   },
-  "holdout": "SEALED_NOT_OPENED; custody not physically verified by W1",
+  "holdout": "SEALED_NOT_EXECUTED",
   "links": [
     "https://asier-comba.github.io/Guipuzkoa360/",
     "https://github.com/Asier-Comba/Guipuzkoa360"
   ],
-  "manifest_sha256": "95c78e2a26ae8a55e0e6ec772905e04a74620d2c18b282a605522ff0154eed76",
+  "manifest_sha256": "a46415845f86c5c22ad648965b45e5bd109c839e9cb6cc14daee0ef37d7f788e",
   "members": [
     "Oier Duñabeitia Berezo",
     "Asier Comba Lopez",
     "Hugo Fernández Díez"
   ],
-  "next_exact_action": "W1 accepts exact R15 bytes independently; then Hugo/W3 performs the bounded real Studio retest.",
-  "package_bytes": 228025,
-  "package_path": "scripts/vnext_agent/dist/r15/gipuzkoa360-r15-final-agent.zip",
-  "package_sha256": "f937ed8124ba1107c78d2a516c5404626a97b9efe38b576a03b6cd98f781efd0",
+  "next_exact_action": "Coordinator delta review and explicit human decision on recovered Aduna Medium; then human preview, track selection, confirmation and publication.",
+  "package_bytes": 229844,
+  "package_path": "scripts/vnext_agent/dist/r16/gipuzkoa360-r16-final-agent.zip",
+  "package_sha256": "374af43fa6ce58b513a10477fc216215c7472f54bd28eada4fc0908da6f3dd6c",
   "project": "GIPUZKOA 360",
   "publication": "PENDING_HUMAN_GATE",
   "sources": {
@@ -259,9 +314,9 @@
   "track": "PENDING_HUMAN_SELECTION",
   "v4": "195b4980fa5998b096c308296a55e452380b0371",
   "w1_historical_medium": 3,
-  "identity_status": "EXACT_PACKAGE_HASHES_FIXED_LOCAL_GATES_PASS_CI_BOUND_IN_FINAL_HANDOFF",
-  "manifest_path": "scripts/vnext_agent/dist/r15/gipuzkoa360-r15-final-agent-manifest.json",
-  "handoff_path": "docs/vnext/w2/HANDOFF_R15.md",
+  "identity_status": "17_UI_DOWNLOADED_FILES_MATCH_CANONICAL_PACKAGE_15_ASSETS_W1_AND_V4_PRESERVED",
+  "manifest_path": "scripts/vnext_agent/dist/r16/gipuzkoa360-r16-final-agent-manifest.json",
+  "handoff_path": "docs/vnext/w2/HANDOFF_R16.md",
   "historical_r14": {
     "source_commit": "3a8e2b0948bb06df87af7a0f5769a369da568eff",
     "audit_base": "4bf975511ecea46c25662becfccb65713d381aa0",
@@ -369,30 +424,25 @@
   },
   "document_provenance": {
     "imported_from": "3a8e2b0948bb06df87af7a0f5769a369da568eff",
-    "w3_evidence_commit": "f4fd0a3c79ff2827c19a1200c0c76f7c5815eab7",
-    "changes": "Technical contract/identity reconciliation only; product copy preserved except concrete technical contradictions",
-    "portal_budget": {
-      "used": 5,
-      "total": 12,
-      "remaining": 7
-    },
-    "r15_real_agent": "NOT_RETESTED",
-    "full_served_r14_schema": "NOT_OBSERVED"
+    "current_scope": "R16 real validation evidence and human delivery copy; historic R14/R15 preserved separately",
+    "author_delta_check": "PASS_NOT_INDEPENDENT_ACCEPTANCE",
+    "capture_directory": "outputs/r16/portal",
+    "local_reports_directory": "outputs/r16/local"
   },
   "package_identity": {
-    "main_sha256": "5d08e34bfefc9a5cca43f6ea9af09d4e71f0b0f64cad0b38449bbfb19640fb34",
-    "main_bytes": 10653,
-    "tools_sha256": "49b0fb3f0e09c7d10132ba803a0e8274f9188ffcff7b466f6f6775f577cce3de",
-    "tools_bytes": 178863,
-    "uncompressed_bytes": 789207,
+    "main_sha256": "0c78ef33de07a403f35b2d6016fe78a8fb84012ef7edd0e8f5bfeac00065550a",
+    "main_bytes": 11744,
+    "tools_sha256": "15809478a34813298e48702a3241fa830e5499b30cc16c8d385deddadd8cd6d7",
+    "tools_bytes": 183540,
+    "uncompressed_bytes": 794975,
     "members_count": 25,
-    "inventory_vs_r14": "IDENTICAL",
-    "changed_members_vs_r14": [
+    "inventory_vs_r15": "IDENTICAL",
+    "changed_members_vs_r15": [
       "main.py",
       "tools.py"
     ],
     "context_asset_count": 15,
-    "context_assets_vs_r14": "BYTE_IDENTICAL",
+    "context_assets_vs_r15": "BYTE_IDENTICAL",
     "context_assets_sha256": {
       "contracts/vnext/capability-v1.1.schema.json": "66ab0036ce3a529dad3d51d193fa05970fd795bbefcab477281e5df055ff2f0b",
       "contracts/vnext/evidence-v1.1.schema.json": "6fbd22a567cc5a8d8ce17fd1968c52fc92448526bf81103e2768486d724d9ad0",
@@ -410,7 +460,118 @@
       "docs/METODOLOGIA.md": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7",
       "FUENTES.md": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de"
     },
-    "member_inventory_and_diff": "See members and member_diff_vs_r14 in hash-pinned package manifest",
-    "r14_overwritten": false
+    "member_inventory_and_diff": "Hash-pinned canonical R16 package manifest",
+    "w1_zip_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+    "r15_overwritten": false,
+    "portal_extra_file": "Generated execution scaffold; unused by imports/tools; not included in canonical ZIP"
+  },
+  "historical_r15": {
+    "head": "69bcc6ead9ce444a884aa2b15469bd3b519775f5",
+    "zip_sha256": "f937ed8124ba1107c78d2a516c5404626a97b9efe38b576a03b6cd98f781efd0",
+    "manifest_sha256": "95c78e2a26ae8a55e0e6ec772905e04a74620d2c18b282a605522ff0154eed76",
+    "bytes": 228025,
+    "real_version_id": "agentv_01e227c426b24d5dab43473d3d5bd8eb",
+    "real_counts": {
+      "critical": 0,
+      "high": 1,
+      "medium": 2,
+      "low": 1
+    },
+    "budget": {
+      "used": 12,
+      "total": 12
+    },
+    "package_identity": {
+      "main_sha256": "5d08e34bfefc9a5cca43f6ea9af09d4e71f0b0f64cad0b38449bbfb19640fb34",
+      "main_bytes": 10653,
+      "tools_sha256": "49b0fb3f0e09c7d10132ba803a0e8274f9188ffcff7b466f6f6775f577cce3de",
+      "tools_bytes": 178863,
+      "uncompressed_bytes": 789207,
+      "members_count": 25,
+      "inventory_vs_r14": "IDENTICAL",
+      "changed_members_vs_r14": [
+        "main.py",
+        "tools.py"
+      ],
+      "context_asset_count": 15,
+      "context_assets_vs_r14": "BYTE_IDENTICAL",
+      "context_assets_sha256": {
+        "contracts/vnext/capability-v1.1.schema.json": "66ab0036ce3a529dad3d51d193fa05970fd795bbefcab477281e5df055ff2f0b",
+        "contracts/vnext/evidence-v1.1.schema.json": "6fbd22a567cc5a8d8ce17fd1968c52fc92448526bf81103e2768486d724d9ad0",
+        "datos_preparados/data_contract.json": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae",
+        "datos_preparados/demografia.csv": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96",
+        "datos_preparados/metadata_sources.json": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
+        "datos_preparados/municipios.csv": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
+        "datos_preparados/runtime_municipality_points.csv": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11",
+        "datos_preparados/runtime_servicios.csv": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece",
+        "datos_preparados/vnext/capabilities.json": "d51c17a5ab9b2902382991abe215b77c879eb73a63df0a1ae5affb317c8e5b89",
+        "datos_preparados/vnext/consumer_labels_r7.json": "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799",
+        "datos_preparados/vnext/mobility_sources.json": "a5ba0b7a9ee0ad85366e89ee888de2635013c148d005dcf9ecb94d24215bc445",
+        "datos_preparados/vnext/operational_catalog_r6.json": "c7bd3cc8ffe50956ce839bec0ef90a13578160a4d5b4053b09673d2dc4c4ec17",
+        "datos_preparados/vnext/w1_r6_runtime.zip": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+        "docs/METODOLOGIA.md": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7",
+        "FUENTES.md": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de"
+      },
+      "member_inventory_and_diff": "See members and member_diff_vs_r14 in hash-pinned package manifest",
+      "r14_overwritten": false
+    },
+    "document_provenance": {
+      "imported_from": "3a8e2b0948bb06df87af7a0f5769a369da568eff",
+      "w3_evidence_commit": "f4fd0a3c79ff2827c19a1200c0c76f7c5815eab7",
+      "changes": "Technical contract/identity reconciliation only; product copy preserved except concrete technical contradictions",
+      "portal_budget": {
+        "used": 5,
+        "total": 12,
+        "remaining": 7
+      },
+      "r15_real_agent": "NOT_RETESTED",
+      "full_served_r14_schema": "NOT_OBSERVED"
+    },
+    "evidence_scope": "Historical R15; not retrospectively changed by R16"
+  },
+  "runtime_tested_head": "d4dd2e65434c6c7f9f33c74ef1041b0f136cde69",
+  "offline_validation": {
+    "focused": 116,
+    "author_cases": 333,
+    "raw_parity": 333,
+    "oracle": 7,
+    "invalid": 231,
+    "time_summaries": 41,
+    "findings": 0,
+    "local_full": {
+      "pass": 667,
+      "fail": 1,
+      "failure": "Historical R12 subprocess timeout with negative remaining time; cause not demonstrated; original retained"
+    },
+    "targeted_recheck": {
+      "pass": 1,
+      "fail": 0
+    },
+    "node": 17,
+    "identity": 14,
+    "jury": "PASS",
+    "artifacts": "PASS",
+    "two_builds_identical": true,
+    "independent_acceptance": "NOT_CLAIMED"
+  },
+  "delivery": {
+    "content_complete": true,
+    "portal_copy_final": true,
+    "preview_reviewed": true,
+    "portal_status": "PRIVATE_DRAFT_SAVED",
+    "selected_version": "agentv_f4ca979c0c5b415da187711e96ba2c4d",
+    "conversation": "Session A, three completed turns, reviewed before selection",
+    "selected_files": [],
+    "selected_links": [
+      "https://asier-comba.github.io/Guipuzkoa360/",
+      "https://github.com/Asier-Comba/Guipuzkoa360"
+    ],
+    "track": null,
+    "final_confirmation": false,
+    "published": false,
+    "portal_evaluation_label": "sin evaluar",
+    "technical_release_ready": false,
+    "strict_protocol": "FAIL_M5",
+    "public_copy": "docs/vnext/final_delivery/DELIVERY_COPY.md"
   }
 }

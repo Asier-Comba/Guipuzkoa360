@@ -1,0 +1,133 @@
+GIPUZKOA 360
+Territorio
+Gipuzkoa; visitas sanitarias en el corredor Zegama–Segura–Idiazabal–Beasain.
+Pregunta de investigación
+¿Cómo cambia la carga temporal de una visita sanitaria para personas que dependen del transporte público cuando cambia el municipio de origen, la hora de la cita o su duración?
+Quién utilizará el resultado
+Equipos técnicos de movilidad, cuidados y planificación territorial que necesitan estudiar el acceso sanitario.
+Para qué servirá
+GIPUZKOA 360 ayuda a equipos técnicos de movilidad, cuidados y planificación territorial a detectar dónde merece estudiar el acceso sanitario y, en corredores con datos disponibles, explorar cómo cambia la carga temporal de una visita sanitaria completa según el origen, la hora de cita y su duración.
+
+Categoría por elegir
+
+GIPUZKOA 360 · Visita sanitaria · v2
+
+Una consulta de 20 minutos puede ocupar casi tres horas si dependemos del autobús. Desde las paradas centrales de Zegama al punto oficial del Ambulatorio de Beasain, el 29 de septiembre de 2026, la cita de las 09:30 supone 2 h 58 min 11 s (10.691 s), desde las 08:09:37 hasta el regreso a las 11:07:48. Cambiar solo la cita a las 09:45 da 2 h 23 min 11 s (8.591 s): 35 minutos menos entre dos escenarios calculados, no un ahorro observado ni una recomendación. La conversación seleccionada muestra el cálculo, la variación y sus límites. Usa horarios oficiales programados y paseos modelados; no mide tiempo real ni viajes desde el domicilio, y no verifica entradas, citas o capacidad sanitaria. El análisis de visitas admite actualmente Zegama, Segura e Idiazabal. La demo enlazada es una visualización territorial de los 88 municipios, no una prueba del nuevo agente de visitas sanitarias. Fuentes: Moveuskadi/Goierrialdea (horarios del 28/09 al 27/12/2026), Open Data Euskadi (centros, 20/09/2026), Osakidetza (ficha consultada el 29/09/2026) y © OpenStreetMap contributors, ODbL 1.0 (red obtenida el 29/09/2026).
+
+https://asier-comba.github.io/Guipuzkoa360/
+https://github.com/Asier-Comba/Guipuzkoa360
+Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+Pregunta
+
+Desde las paradas del centro de Zegama, quiero ir al Ambulatorio de Beasain el 29 de septiembre de 2026 para una consulta a las 09:30 que dura 20 minutos y regresar. ¿Qué carga temporal completa resultaría con los datos disponibles?
+
+Respuesta
+
+Respuesta
+
+Respuesta
+
+Para el **29 de septiembre de 2026**, desde las **paradas centrales de Zegama** al **Ambulatorio de Beasain**, con consulta a las **09:30** de **20 minutos**, la carga temporal completa modelada sería:
+
+- **Total:** `10691 s`
+- **Duración:** `2 h 58 min 11 s`
+- **Intervalo completo:** `08:09:37 -> 11:07:48`
+- **Alcance:** desde la presencia en la parada de origen hasta la llegada a la parada de regreso.
+
+**Desglose:**
+
+- Espera inicial: 180 s
+- Vehículo de ida: 1651 s
+- Paseo modelado hasta el centro: 420 s
+- Espera antes de la consulta: 2572 s
+- Consulta: 1200 s
+- Paseo modelado de regreso: 960 s
+- Espera del regreso: 1430 s
+- Vehículo de regreso: 2278 s
+
+El servicio de ida sale a las **08:12:37** y llega a la parada de Beasain a las **08:40:08**. El regreso sale a las **10:29:50** y llega a Zegama a las **11:07:48**.
+
+Es un cálculo con **horario GTFS programado**, no información en tiempo real. Los paseos son modelados y terminan en un punto oficial del ambulatorio, no en una entrada física verificada; por tanto, no es un tiempo puerta a puerta. La referencia del horario cubre **2026-09-28/2026-12-27**; el centro sanitario figura con referencia **2026-09-20** y el modelo de paseo es un supuesto, no un tiempo observado.
+
+Pregunta
+
+Mantén todo igual pero cambia la cita a las 09:45. Recalcula y compara ambos escenarios.
+
+Respuesta
+
+Respuesta
+
+Se recalculó manteniendo origen, destino, fecha, duración y supuestos. Ambos resultados son válidos y comparables.
+
+| Parámetro | Cita 09:30 | Cita 09:45 |
+|---|---:|---:|
+| **Carga temporal total** | **10691 s — 2 h 58 min 11 s** | **8591 s — 2 h 23 min 11 s** |
+| **Intervalo completo** | **08:09:37 -> 11:07:48** | **08:44:37 -> 11:07:48** |
+| Salida de ida | 08:12:37 | 08:47:37 |
+| Llegada a la parada de Beasain | 08:40:08 | 09:17:06 |
+| Espera antes de la consulta | 2572 s | 1254 s |
+| Salida de regreso | 10:29:50 | 10:29:50 |
+| Llegada a Zegama | 11:07:48 | 11:07:48 |
+
+La cita de las **09:45**, bajo estos parámetros, produce una carga temporal modelada **35 minutos menor**: cambia el servicio de ida y reduce la espera previa; el regreso es el mismo en ambos escenarios.
+
+Desglose que cambia:
+
+- Vehículo de ida: **1651 s** a las 09:30 frente a **1769 s** a las 09:45.
+- Espera previa: **2572 s** frente a **1254 s**.
+- Espera del regreso: **1430 s** frente a **530 s**.
+
+Los paseos modelados, la consulta de 20 minutos, el regreso y la llegada final permanecen iguales. Es una comparación condicional basada en **horario GTFS estático**, no en tiempo real ni en tiempos observados. El alcance es literalmente **`08:09:37 -> 11:07:48`** y **`08:44:37 -> 11:07:48`**, desde la presencia en la parada de origen hasta la llegada a la parada de regreso. Fuente del horario: **GTFS, 2026-09-28/2026-12-27**; centro sanitario: **registro con referencia 2026-09-20**; paseos: modelo de referencia, no periodo observado.
+
+Pregunta
+
+¿Qué fuentes y periodos sostienen estos cálculos, qué partes son modeladas o no verificadas y qué otros orígenes admite actualmente el análisis? ¿Puedes además decirme en tiempo real cuál es la mejor hora de cita desde mi casa?
+
+Respuesta
+
+Respuesta
+
+### Fuentes y periodos
+
+Los cálculos se sostienen principalmente en:
+
+- **GTFS — Moveuskadi / Goierrialdea**, horario oficial de la línea **GO01**: **2026-09-28/2026-12-27**. Aporta las salidas, llegadas y duraciones programadas. Es horario estático, no tiempo real.
+- **Registro oficial de centros sanitarios — Open Data Euskadi**: referencia **2026-09-20**. Aporta la identidad y el punto oficial modelado del Ambulatorio de Beasain.
+- **Ficha del Ambulatorio de Beasain — Osakidetza**: observada **2026-09-29**. Aporta la ficha específica del centro.
+- **Red peatonal de OpenStreetMap**: adquirida **2026-09-29**. Se utilizó para calcular los recorridos a pie.
+- **Modelo de paseo**: supuesto no observado, a **50 m/min**, más **120 segundos por enlace completo**.
+- **Parámetros de la petición**: fecha **2026-09-29**, cita y duración de 20 minutos.
+- **Supuestos del cálculo**: margen de llegada de 10 minutos y margen de subida de 3 minutos. Son valores aplicados por el modelo, no decisiones observadas del usuario.
+
+### Partes modeladas o no verificadas
+
+- Los horarios y duraciones son **programados**, no llegadas reales ni información en tiempo real.
+- El paseo está **modelado**; no acredita el tiempo real de una persona ni accesibilidad garantizada.
+- El origen y el final son paradas: el cálculo no es puerta a puerta.
+- El destino termina en un **punto oficial modelado**, no en una entrada física verificada.
+- La dirección del centro conserva un conflicto entre fuentes: aparece **Bernedo Enea 1** y también **Zaldizurreta 2** en otro listado; no se ha resuelto mediante una visita de campo.
+- No se verifica disponibilidad de cita, asignación de centro, médico, accesibilidad universal ni condiciones temporales del trayecto.
+- El alcance temporal es desde la presencia en la parada de origen hasta la llegada a la parada de regreso.
+
+### Otros orígenes admitidos actualmente
+
+El catálogo admite actualmente estos tres orígenes:
+
+1. **Paradas centrales de Zegama**
+2. **Paradas Herriko Plaza de Segura**
+3. **Paradas centrales de Idiazabal**
+
+El análisis público es de una visita por llamada; para comparar orígenes habría que ejecutar escenarios individuales y mostrarlos lado a lado. La cobertura está limitada al trayecto directo **GO01** y al mismo día validado.
+
+### Sobre la mejor hora desde tu casa y en tiempo real
+
+No puedo decirlo en tiempo real ni calcularlo desde tu casa con este análisis:
+
+- No hay datos de tráfico, incidencias ni posiciones en tiempo real.
+- El origen público no es una dirección particular, sino una de las opciones de paradas del catálogo.
+- La herramienta no busca automáticamente la “mejor hora”; requiere que se indique una hora concreta y calcula ese escenario.
+- Tampoco verifica disponibilidad real de citas.
+
+Sí se pueden comparar horas concretas desde una de las tres opciones de origen admitidas, bajo horarios programados y supuestos modelados. Eso permitiría una comparación condicional, no una recomendación ni una “mejor hora” observada en tiempo real.
+
+La ficha pública mostrará la definición, el nombre de la versión y estos materiales. El código y los datos de la versión podrán ser inspeccionados por la organización desde su acceso autorizado.
