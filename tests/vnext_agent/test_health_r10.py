@@ -14,7 +14,7 @@ from pathlib import Path
 import pytest
 
 from agentes.gipuzkoa360_vnext import health_adapter, tools
-from scripts.vnext_agent.build_r14_binding import MANIFEST, ROOT, ZIP, build as build_package
+from scripts.vnext_agent.build_r15 import MANIFEST, ROOT, ZIP, build as build_package
 from scripts.vnext_agent.w1_r6_bundle import published_runtime
 
 
@@ -27,7 +27,8 @@ import main
 data=json.loads(sys.stdin.read())
 if data['operation']=='plan_visit':
     request=data['payload']['request']
-    print(main._run('plan_visit', {'request':request}) if isinstance(request,list) else main.plan_visit(**request))
+    # Engine conformance includes legacy, optional parameters and internal batch.
+    print(main._run('plan_visit', {'request':request}))
 else:
     print(getattr(main,data['operation'])(**data['payload']))
 """
@@ -47,7 +48,8 @@ def test_health_provider_and_model_view(tmp_path):
     catalog = _isolated(directory, "consultar_capacidades", {"pregunta_o_dimension": "plan_visit"})
     assert catalog["status"] == "valid", catalog
     assert catalog["mobility_catalog"]["destination"]["destination_id"] == "beasain_official_centre_anchor"
-    assert catalog["mobility_catalog"]["comparison_size"]["maximum"] == 4
+    assert catalog["mobility_catalog"]["comparison"]["batch_supported"] is False
+    assert catalog["mobility_catalog"]["comparison"]["mode"] == "individual_calls"
     request = {"origin_id": "zegama_center_stops", "destination_id": "beasain_official_centre_anchor", "date": "2026-09-29", "appointment_time": "09:45", "duration_minutes": 20}
     response = _isolated(directory, "plan_visit", {"request": request})
     assert response["status"] == "valid", response

@@ -980,12 +980,29 @@ def _validate_arguments(args: Any, capability: dict[str, Any]) -> dict[str, Any]
         raise ContractViolation(f'arguments:missing={sorted(missing)}:unexpected={sorted(unexpected)}')
     for name, value in args.items():
         field = fields[name]
-        if value is None and (not field['required']):
+        if value is None and (not field['required']) and (name in {'periodo', 'categoria_servicio', 'municipios', 'latitud', 'longitud', 'service_id', 'nuevo_umbral_km', 'source_id', 'pregunta_o_dimension'}):
             continue
         kind = field['type']
-        valid = {'string': lambda v: type(v) is str and bool(v), 'number': lambda v: type(v) in (int, float) and math.isfinite(v), 'integer': lambda v: type(v) is int, 'boolean': lambda v: type(v) is bool, 'string_array': lambda v: type(v) is list and bool(v) and all((type(x) is str and bool(x) for x in v)), 'object_or_array': lambda v: type(v) is dict or (type(v) is list and 2 <= len(v) <= 4 and all((type(x) is dict for x in v)))}[kind](value)
+        valid = {'string': lambda v: type(v) is str and bool(v.strip()), 'number': lambda v: type(v) in (int, float) and math.isfinite(v), 'integer': lambda v: type(v) is int, 'boolean': lambda v: type(v) is bool, 'string_array': lambda v: type(v) is list and bool(v) and all((type(x) is str and bool(x.strip()) for x in v)), 'object_or_array': lambda v: type(v) is dict or (type(v) is list and 2 <= len(v) <= 4 and all((type(x) is dict for x in v)))}[kind](value)
         if not valid or (field['allowed_values'] and value not in field['allowed_values']):
             raise ContractViolation(f'arguments:{name}:invalid_value')
+        if name in {'umbral_km', 'nuevo_umbral_km'} and (not 0 < value <= 100):
+            raise ContractViolation(f'arguments:{name}:out_of_range:(0,100]')
+        if name == 'top_n' and (not 1 <= value <= 100):
+            raise ContractViolation('arguments:top_n:out_of_range:[1,100]')
+        if name == 'cuantil' and (not 0.5 <= value <= 0.95):
+            raise ContractViolation('arguments:cuantil:out_of_range:[0.5,0.95]')
+    if capability['id'] in {'analizar_acceso_servicios', 'simular_escenario'}:
+        period = args.get('periodo')
+        if period is not None and period not in capability['coverage']['periods']:
+            raise ContractViolation(f"arguments:periodo:unsupported_period:available={capability['coverage']['periods']}")
+    if capability['id'] == 'simular_escenario':
+        required, optional = {'add_service': ({'latitud', 'longitud'}, {'service_id'}), 'remove_service': ({'service_id'}, set()), 'change_threshold': ({'nuevo_umbral_km'}, set())}[args['accion']]
+        explicit = {name for name in ('latitud', 'longitud', 'service_id', 'nuevo_umbral_km') if args.get(name) is not None}
+        missing = required - explicit
+        unused = explicit - required - optional
+        if missing or unused:
+            raise ContractViolation(f'arguments:accion:missing={sorted(missing)}:not_applicable={sorted(unused)}')
     return dict(args)
 
 def _repair_once(args: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
@@ -1061,7 +1078,12 @@ def _effective_request(handler: Callable[..., Any], arguments: dict[str, Any], r
             raise ContractViolation('request:duplicate_municipality')
     period = parameters.get('periodo')
     if operation in {'obtener_resumen_territorial', 'comparar_municipios', 'analizar_envejecimiento', 'analizar_coincidencia'}:
-        period = territorial.DataRepository(root / 'datos_preparados').choose_period(period)
+        try:
+            period = territorial.DataRepository(root / 'datos_preparados').choose_period(period)
+        except ValueError as exc:
+            if getattr(exc, 'code', None) not in {'period_not_found', 'period_required'}:
+                raise
+            raise ContractViolation(f'arguments:periodo:{exc.code}:available={exc.available_options}') from exc
     return {'operation': operation, 'municipality_codes': codes, 'municipality_labels': labels, 'effective_period': period, 'parameters': parameters, 'defaults_applied': sorted(set(parameters) - set(arguments)), 'snapshot_id': None, 'contracts': {'evidence': VERSION, 'capability': CAPABILITY_VERSION}}
 
 def _same(observed: Any, expected: Any, field: str) -> None:
@@ -1576,7 +1598,7 @@ def _mobility_catalog_view(root: Path) -> dict[str, Any] | None:
         raise ContractViolation('mobility:catalog_or_labels_changed')
     catalog = strict_loads(catalog_path.read_text(encoding='utf-8'))
     labels = strict_loads(labels_path.read_text(encoding='utf-8'))
-    return {'scenario_kind': 'health_visit', 'contract_version': '0.3.1', 'origin_options': [{'origin_id': item['origin_id'], 'municipality_name': item['municipality_name'], 'name': item['name']} for item in catalog['origins']], 'destination': catalog['destination'], 'validated_date': catalog['validated_date'], 'walking_profile': labels['walking_profile'], 'defaults': catalog['defaults'], 'ranges': catalog['ranges'], 'restrictions': catalog['restrictions'], 'request_fields': ['origin_id', 'destination_id', 'date', 'appointment_time', 'duration_minutes', 'arrival_margin_minutes', 'boarding_margin_minutes', 'walking_profile_id', 'snapshot_id', 'return_deadline'], 'required_fields': ['origin_id', 'destination_id', 'date', 'appointment_time', 'duration_minutes'], 'comparison_size': {'minimum': 2, 'maximum': 4}, 'legacy_stop_only': {'snapshot_id': 'official-goierrialdea-go01-r4-20260929', 'contract_version': '0.2.0', 'must_be_explicit': True}}
+    return {'contract_scope': 'PUBLIC_AGENT_CONTRACT', 'public_contract_version': 'R15', 'scenario_kind': 'health_visit', 'contract_version': '0.3.1', 'origin_options': [{'origin_id': item['origin_id'], 'municipality_name': item['municipality_name'], 'name': item['name']} for item in catalog['origins']], 'destination': catalog['destination'], 'validated_date': catalog['validated_date'], 'walking_profile': labels['walking_profile'], 'provider_defaults': catalog['defaults'], 'defaults_policy': 'Informational producer defaults, not public arguments or evidence of human choice. Do not copy them into the tool call.', 'ranges': {'duration_minutes': catalog['ranges']['duration_minutes']}, 'restrictions': catalog['restrictions'], 'request_fields': ['origin_id', 'destination_id', 'date', 'appointment_time', 'duration_minutes'], 'required_fields': ['origin_id', 'destination_id', 'date', 'appointment_time', 'duration_minutes'], 'comparison': {'mode': 'individual_calls', 'batch_supported': False, 'cross_origin_comparison': catalog['cross_origin_comparison'], 'procedure': 'Execute one plan_visit per scenario, observe every output, then compare only valid compatible results. Differences are conditional, not observed savings or recommendations.'}, 'engine_contract': {'scope': 'internal_only', 'legacy_stop_only': 'preserved, not exposed by the public tool', 'optional_parameters': 'producer defaults; not public caller decisions'}}
 
 def _mobility_view(raw: dict[str, Any], root: Path, arguments: dict[str, Any]) -> dict[str, Any]:
     labels_path = root / 'datos_preparados/vnext/consumer_labels_r7.json'
@@ -1679,12 +1701,26 @@ def _public_result(evidence: dict[str, Any], root: Path) -> str:
     selection = {'total_entities': len(municipality_ids), 'returned_entities': len(claim_entities), 'omitted_entities': len(municipality_ids) - len(claim_entities), 'criterion': 'Todas las entidades solicitadas explícitamente' if explicit_entities else 'Primeras entidades en el orden validado de la herramienta', 'detail_mechanism': 'Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.'}
     view = {'schema_version': evidence['schema_version'], 'request_id': evidence['request_id'], 'capability_id': evidence['capability_id'], 'normalized_input': evidence['normalized_input'], 'effective_request': evidence['effective_request'], 'execution': evidence['execution'], 'status': evidence['status'], 'outcomes': evidence['outcomes'], 'claims': selected, 'selection': selection, 'method': evidence['method'], 'assumptions': evidence['assumptions'], 'limitations': evidence['limitations'], 'error': evidence['error'], 'versions': evidence['versions'], 'raw_result_sha256': evidence['raw_result_sha256']}
     if evidence['capability_id'] == 'consultar_capacidades' and type(raw.get('data')) is list:
-        view['capabilities'] = [{key: item[key] for key in ('id', 'description', 'enabled', 'validation_status', 'derivation', 'coverage', 'semantic_limits') if key in item} for item in raw['data'] if type(item) is dict]
+        view['capabilities'] = [{key: item[key] for key in ('id', 'description', 'enabled', 'validation_status', 'derivation', 'coverage', 'semantic_limits', 'input_fields') if key in item} for item in raw['data'] if type(item) is dict]
+        for item in view['capabilities']:
+            item['input_fields'] = [dict(field) for field in item.get('input_fields', [])]
+            period_field = next((field for field in item['input_fields'] if field['name'] == 'periodo'), None)
+            if period_field is not None:
+                demographic = item['id'] in {'obtener_resumen_territorial', 'comparar_municipios', 'analizar_envejecimiento', 'analizar_coincidencia'}
+                allowed_periods = territorial.DataRepository(root / 'datos_preparados').available_periods() if demographic else item['coverage']['periods']
+                period_field['allowed_values'] = list(allowed_periods)
+                period_field['nullable'] = True
+                item['period_policy'] = {'allowed_values': list(allowed_periods), 'meaning': 'demographic_selector' if demographic else 'source_reference_only_not_historical_filter', 'omitted_or_null': 'single_available_period_else_request_period' if demographic else 'current_sources_with_their_distinct_periods', 'explicit_invalid': 'reject_without_numeric_claims'}
+            if item['id'] == 'plan_visit':
+                item['description'] = 'Una visita sanitaria programada/modelada por llamada; comparar mediante llamadas individuales y sus resultados válidos. Sin batch público.'
+                item['coverage'] = {**item['coverage'], 'scope': 'health_visit modelled; validated date only; origin_stop_presence_to_return_stop_arrival; public single visit'}
+                item['contract_scope'] = 'PUBLIC_AGENT_CONTRACT'
+                item['input_fields'] = [{'name': name, 'type': 'integer' if name == 'duration_minutes' else 'string', 'required': True, 'allowed_values': []} for name in ('origin_id', 'destination_id', 'date', 'appointment_time', 'duration_minutes')]
         mobility_catalog = _mobility_catalog_view(root)
         if mobility_catalog is not None:
             view['mobility_catalog'] = mobility_catalog
     if evidence['capability_id'] == 'consultar_fuente' and type(raw.get('data')) is list:
-        view['source_metadata'] = [{key: item[key] for key in ('source_id', 'title', 'institution', 'reference_period', 'unit', 'url', 'limitations') if key in item} for item in raw['data'] if type(item) is dict]
+        view['source_metadata'] = [{key: item[key] for key in ('source_id', 'title', 'institution', 'reference_period', 'unit', 'url', 'limitations', 'method') if key in item} for item in raw['data'] if type(item) is dict]
     if evidence['capability_id'] == 'plan_visit' and raw:
         view['mobility'] = _mobility_view(raw, root, args)
     if explicit_entities and len(claim_entities) != len(municipality_ids):

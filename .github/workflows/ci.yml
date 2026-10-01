@@ -24,6 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
@@ -44,6 +45,11 @@ jobs:
           node --check scripts/jury_view.js
           node --check scripts/build_jury.mjs
           node --check scripts/build_results.mjs
+      - name: Exact R15 public contract and bounded parity audit
+        run: |
+          python -m scripts.vnext_agent.build_r15
+          python -m scripts.vnext_agent.verify_r15 --output work/r15-audit.json
+          git diff --exit-code -- agentes/gipuzkoa360_vnext/portal scripts/vnext_agent/dist/r15
       - name: Jury and artifact gates
         run: |
           python scripts/benchmark/verify_jury_results.py --output work/jury-gate.json
@@ -63,6 +69,7 @@ jobs:
           name: fast-evidence-${{ matrix.os }}
           path: |
             work/pytest.xml
+            work/r15-audit.json
             work/jury-gate.json
             work/package-gate.json
             work/source-health.json

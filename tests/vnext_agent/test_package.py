@@ -11,12 +11,12 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-ZIP = ROOT / "scripts/vnext_agent/dist/r14/gipuzkoa360-r14-binding.zip"
-MANIFEST = ROOT / "scripts/vnext_agent/dist/r14/gipuzkoa360-r14-binding-manifest.json"
+ZIP = ROOT / "scripts/vnext_agent/dist/r15/gipuzkoa360-r15-final-agent.zip"
+MANIFEST = ROOT / "scripts/vnext_agent/dist/r15/gipuzkoa360-r15-final-agent-manifest.json"
 
 
 def build():
-    subprocess.run([sys.executable, "-m", "scripts.vnext_agent.build_r14_binding"], cwd=ROOT, check=True, capture_output=True, text=True)
+    subprocess.run([sys.executable, "-m", "scripts.vnext_agent.build_r15"], cwd=ROOT, check=True, capture_output=True, text=True)
     return ZIP.read_bytes()
 
 
