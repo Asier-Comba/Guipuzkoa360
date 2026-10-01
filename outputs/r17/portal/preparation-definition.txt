@@ -1,0 +1,315 @@
+- region "Notifications alt+T"
+- generic "Connection Error:"
+- link "Saltar al contenido":
+  - /url: "#platform-main"
+- banner:
+  - link "Gipuzkoa AI Hackathon · MIT Media Lab City Science":
+    - /url: /area/
+    - strong: GIPUZKOA AI HACKATHON
+    - generic: MIT MEDIA LAB · CITY SCIENCE
+  - navigation "Áreas de la plataforma":
+    - link "Inicio":
+      - /url: /area/
+    - link "Formación":
+      - /url: /area/formacion/
+    - link "Equipo":
+      - /url: /hackathon/area/equipo/
+    - generic "Abrir secciones de Urban Challenge":
+      - generic: Urban Challenge
+      - generic: ⌄
+    - generic "Disponible para los equipos clasificados":
+      - generic: ◇
+      - generic: Final
+  - generic "Abrir menú de cuenta":
+    - generic: O
+    - strong: Oier Duñabeitia Berezo
+    - generic: Participante
+    - generic: ⌄
+- main:
+  - button "Proyecto GIPUZKOA 360":
+    - generic: Proyecto
+    - strong: GIPUZKOA 360
+  - tablist "Secciones del espacio de trabajo":
+    - 'tab "Resumen: Estado del proyecto y siguiente acción"':
+      - strong: Resumen
+    - 'tab "Datos: Archivos, mapas y procesamiento"':
+      - strong: Datos
+      - generic: "47"
+    - 'tab "Agentes: Construcción con Python o Langflow" [selected]':
+      - strong: Agentes
+      - generic: "10"
+    - 'tab "Pruebas: Verificación con versiones creadas"':
+      - strong: Pruebas
+      - generic: "8"
+    - 'tab "Entrega: Revisión y publicación del proyecto"':
+      - strong: Entrega
+    - 'tab "Asistente IA: Ayuda para analizar, editar y ejecutar el proyecto"':
+      - strong: Asistente IA
+  - generic "Estado del workspace":
+    - generic "Ver estado y actividad del workspace":
+      - generic: 1 persona
+    - button "Reiniciar el entorno del equipo":
+      - generic: ↻
+    - button "Ayuda de Agentes · Python": Ayuda
+    - button "Ejemplo resuelto"
+    - button "?"
+  - 'tabpanel "Agentes: Construcción con Python o Langflow"':
+    - region "Construcción de agentes":
+      - toolbar "Modo y contexto del agente":
+        - navigation "Forma de construir agentes":
+          - button "Python 10" [pressed]:
+            - generic: </>
+            - strong: Python
+            - emphasis: "10"
+          - button "Langflow 0":
+            - generic: ◇
+            - strong: Langflow
+            - emphasis: "0"
+        - generic: Agente activo
+        - combobox "Agente Python activo":
+          - option "Agente principal · borrador"
+          - option "GIPUZKOA 360 · Visita sanitaria · v2" [selected]
+          - option "GIPUZKOA 360 vNext R14 binding 094745b · v1"
+          - option "GIPUZKOA 360 vNext R13 patch3 3951b290 · v1"
+          - option "GIPUZKOA 360 vNext R12 b4feb978 · borrador"
+          - option "GIPUZKOA 360 · Versión final · v6"
+          - option "GIPUZKOA 360 · RC2 compact · v1"
+          - option "GIPUZKOA 360 · RC2 runtime · v1"
+          - option "GIPUZKOA 360 · RC1 exacto · v1"
+          - option "GIPUZKOA 360 · integración jurado · v3"
+        - button "Ocultar agentes y archivos" [expanded]:
+          - generic: ▤
+          - generic: Archivos
+        - button "Nuevo agente":
+          - generic: +
+          - text: Nuevo agente
+        - button "Preparar con IA"
+        - button "Cerrar preparación" [expanded]
+      - complementary "Agentes Python y sus archivos":
+        - generic: PYTHON
+        - strong: Agentes del equipo
+        - article:
+          - button "Agente principal raíz · borrador":
+            - generic: A
+            - strong: Agente principal
+            - generic: raíz · borrador
+        - article:
+          - button "GIPUZKOA 360 · Visita sanitaria agentes/gipuzkoa_360_visita_sanitaria · versión v2":
+            - generic: A
+            - strong: GIPUZKOA 360 · Visita sanitaria
+            - generic: agentes/gipuzkoa_360_visita_sanitaria · versión v2
+          - generic "Acciones de GIPUZKOA 360 · Visita sanitaria": •••
+        - article:
+          - button "GIPUZKOA 360 vNext R14 binding 094745b agentes/gipuzkoa_360_vnext_r14_binding_094745b · versión v1":
+            - generic: A
+            - strong: GIPUZKOA 360 vNext R14 binding 094745b
+            - generic: agentes/gipuzkoa_360_vnext_r14_binding_094745b · versión v1
+          - generic "Acciones de GIPUZKOA 360 vNext R14 binding 094745b": •••
+        - article:
+          - button "GIPUZKOA 360 vNext R13 patch3 3951b290 agentes/gipuzkoa_360_vnext_r13_patch3_3951b290 · versión v1":
+            - generic: A
+            - strong: GIPUZKOA 360 vNext R13 patch3 3951b290
+            - generic: agentes/gipuzkoa_360_vnext_r13_patch3_3951b290 · versión v1
+          - generic "Acciones de GIPUZKOA 360 vNext R13 patch3 3951b290": •••
+        - article:
+          - button "GIPUZKOA 360 vNext R12 b4feb978 agentes/gipuzkoa_360_vnext_r12_b4feb978 · borrador":
+            - generic: A
+            - strong: GIPUZKOA 360 vNext R12 b4feb978
+            - generic: agentes/gipuzkoa_360_vnext_r12_b4feb978 · borrador
+          - generic "Acciones de GIPUZKOA 360 vNext R12 b4feb978": •••
+        - article:
+          - button "GIPUZKOA 360 · Versión final agentes/gipuzkoa_360_integracion_work_2 · versión v6":
+            - generic: A
+            - strong: GIPUZKOA 360 · Versión final
+            - generic: agentes/gipuzkoa_360_integracion_work_2 · versión v6
+          - generic "Acciones de GIPUZKOA 360 · Versión final": •••
+        - article:
+          - button "GIPUZKOA 360 · RC2 compact agentes/gipuzkoa_360_rc2_compact · versión v1":
+            - generic: A
+            - strong: GIPUZKOA 360 · RC2 compact
+            - generic: agentes/gipuzkoa_360_rc2_compact · versión v1
+          - generic "Acciones de GIPUZKOA 360 · RC2 compact": •••
+        - article:
+          - button "GIPUZKOA 360 · RC2 runtime agentes/gipuzkoa_360_rc2_runtime · versión v1":
+            - generic: A
+            - strong: GIPUZKOA 360 · RC2 runtime
+            - generic: agentes/gipuzkoa_360_rc2_runtime · versión v1
+          - generic "Acciones de GIPUZKOA 360 · RC2 runtime": •••
+        - article:
+          - button "GIPUZKOA 360 · RC1 exacto agentes/gipuzkoa_360_rc1_exacto · versión v1":
+            - generic: A
+            - strong: GIPUZKOA 360 · RC1 exacto
+            - generic: agentes/gipuzkoa_360_rc1_exacto · versión v1
+          - generic "Acciones de GIPUZKOA 360 · RC1 exacto": •••
+        - article:
+          - button "GIPUZKOA 360 · integración jurado agentes/gipuzkoa_360_integracion_jurado · versión v3":
+            - generic: A
+            - strong: GIPUZKOA 360 · integración jurado
+            - generic: agentes/gipuzkoa_360_integracion_jurado · versión v3
+          - generic "Acciones de GIPUZKOA 360 · integración jurado": •••
+        - generic: ARCHIVOS DEL AGENTE
+        - strong: agentes/gipuzkoa_360_visita_sanitaria
+        - button "PY ejecucion.py Funciones que puede ejecutar":
+          - generic: PY
+          - strong: ejecucion.py
+          - generic: Funciones que puede ejecutar
+        - button "PY main.py Prompt, modelo y configuración":
+          - generic: PY
+          - strong: main.py
+          - generic: Prompt, modelo y configuración
+        - button "PY tools.py Funciones que puede ejecutar":
+          - generic: PY
+          - strong: tools.py
+          - generic: Funciones que puede ejecutar
+      - toolbar "Acciones del archivo activo":
+        - generic: agentes/gipuzkoa_360_visita_sanitaria/main.py
+        - generic: Guardado
+        - link "Descargar":
+          - /url: https://app.gipuzkoa-ai-hackathon.com/api/studio/files/file_e4b4b2a7d7044a44ad29c2c9ce8acb28/content?download=1
+        - button "Detener"
+        - button "▶ Comprobar preparación" [disabled]
+      - generic "Editor de agentes/gipuzkoa_360_visita_sanitaria/main.py":
+        - generic: "122"
+        - generic: "123"
+        - generic: "124"
+        - generic: "125"
+        - generic: "126"
+        - generic: "127"
+        - generic: "128"
+        - generic: "129"
+        - generic: "130"
+        - generic: "131"
+        - generic: "132"
+        - generic: "133"
+        - generic: "134"
+        - generic: "135"
+        - generic: "136"
+        - generic: "137"
+        - generic: "138"
+        - generic: "139"
+        - generic: "140"
+        - generic: "141"
+        - generic: "142"
+        - generic: "143"
+        - generic: "144"
+        - generic: "145"
+        - generic: "146"
+        - generic: "147"
+        - generic: "148"
+        - generic: "149"
+        - generic: "150"
+        - generic: "151"
+        - generic: "152"
+        - generic: "153"
+        - generic: "154"
+        - generic: "155"
+        - generic: "156"
+        - generic: "157"
+        - generic: "158"
+        - generic: "159"
+        - generic: "160"
+        - generic: "161"
+        - generic: "162"
+        - generic: "163"
+        - generic: "164"
+        - generic: "165"
+        - generic: "166"
+        - generic: "167"
+        - generic: "168"
+        - generic: "169"
+        - generic: "170"
+        - generic: "171"
+        - generic: "172"
+        - generic: "173"
+        - generic: "174"
+        - generic: "175"
+        - generic: "176"
+        - generic: "177"
+        - generic: "178"
+        - generic: "179"
+        - generic: "180"
+        - generic: "181"
+        - generic: "182"
+        - generic: "183"
+        - generic: "184"
+        - generic: "185"
+        - generic: "186"
+        - generic: "187"
+        - generic: "188"
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - textbox:
+          - generic: "def analizar_envejecimiento(grupo_edad: str = \"65\", medida: str = \"percentage\", periodo: str | None = None, top_n: int = 10) -> str:"
+          - generic: "\"\"\"Ranking observado. grupo_edad: string '65' o '75'; medida: 'percentage' o 'count'; top_n: entero 1–100. periodo demográfico del catálogo; omitido/null usa el único disponible, si hay varios pide periodo. No deriva edades arbitrarias.\"\"\""
+          - generic: return _run("analizar_envejecimiento", locals())
+          - generic: "@tool"
+          - generic: "def analizar_acceso_servicios(categoria_servicio: str, umbral_km: float = 1.0, periodo: str | None = None, municipios: list[str] | None = None) -> str:"
+          - generic: "\"\"\"Distancia geométrica a registros, no viaje ni accesibilidad. categoria_servicio: primary_care, hospital, mental_health u other_health. umbral_km: número >0 y <=100 km. municipios: lista de strings u omitido/null para todos. periodo: fecha de fuente cubierta u omitido/null; no filtra una serie histórica ni unifica los periodos de servicios/geografía.\"\"\""
+          - generic: return _run("analizar_acceso_servicios", locals())
+          - generic: "@tool"
+          - generic: "def analizar_coincidencia(categoria_servicio: str, grupo_edad: str = \"65\", umbral_km: float = 1.0, periodo: str | None = None, cuantil: float = 0.75) -> str:"
+          - generic: "\"\"\"Cruce descriptivo, no causalidad. Categoría: primary_care, hospital, mental_health u other_health; edad: string '65' o '75'; umbral_km: >0 y <=100 km; cuantil: número entre 0.5 y 0.95 inclusive, no porcentaje. periodo demográfico del catálogo; omitido/null usa el único disponible, si hay varios pide periodo.\"\"\""
+          - generic: return _run("analizar_coincidencia", locals())
+          - generic: "@tool"
+          - generic: "def simular_escenario(accion: str, categoria_servicio: str, umbral_km: float = 1.0, periodo: str | None = None, latitud: float | None = None, longitud: float | None = None, service_id: str | None = None, nuevo_umbral_km: float | None = None) -> str:"
+          - generic: "\"\"\"Escenario hipotético, no predicción/recomendación. accion: add_service requiere latitud/longitud numéricas WGS84 (service_id hipotético opcional); remove_service requiere service_id existente; change_threshold requiere nuevo_umbral_km. Omite/null los campos de otras acciones. Umbrales: >0 y <=100 km. Categoría: primary_care, hospital, mental_health u other_health. periodo: fecha de fuente cubierta u omitido/null; sin filtro histórico.\"\"\""
+          - generic: return _run("simular_escenario", locals())
+          - generic: "@tool"
+          - generic: "def consultar_fuente(source_id: str | None = None) -> str:"
+          - generic: "\"\"\"Ficha de procedencia por source_id exacto observado en un resultado, no URL ni prosa. Omitido/null lista fuentes; vacío no equivale a omisión.\"\"\""
+          - generic: "return _run(\"consultar_fuente\", {\"source_id\": source_id})"
+          - generic: "@tool"
+          - generic: "def consultar_capacidades(pregunta_o_dimension: str | None = None) -> str:"
+          - generic: "\"\"\"Consulta operaciones públicas, cobertura, periodos, enums y límites. pregunta_o_dimension es texto de búsqueda o nombre de tool; omitido/null lista el catálogo. No ejecuta ni añade capacidades.\"\"\""
+          - generic: "return _run(\"consultar_capacidades\", {\"pregunta_o_dimension\": pregunta_o_dimension})"
+          - generic: "@tool"
+          - generic: def plan_visit(
+          - generic: "origin_id: str,"
+          - generic: "destination_id: str,"
+          - generic: "date: str,"
+          - generic: "appointment_time: str,"
+          - generic: "duration_minutes: int,"
+          - generic: ") -> str:"
+          - generic: "\"\"\"Plan one scheduled/modelled health visit using exactly five required fields. Get IDs, validated date and duration bounds from consultar_capacidades. date is YYYY-MM-DD, appointment_time is HH:MM, duration_minutes is integer minutes. Calculation assumptions stay internal. To compare, call once per visit and compare observed valid outputs. No realtime, appointment availability, verified entrance or door-to-door.\"\"\""
+          - generic: "request = {"
+          - generic: "\"origin_id\": origin_id,"
+          - generic: "\"destination_id\": destination_id,"
+          - generic: "\"date\": date,"
+          - generic: "\"appointment_time\": appointment_time,"
+          - generic: "\"duration_minutes\": duration_minutes,"
+          - generic: "}"
+          - generic: "return _run(\"plan_visit\", {\"request\": request})"
+          - generic: TOOLS = [
+          - generic: obtener_resumen_territorial, comparar_municipios, analizar_envejecimiento,
+          - generic: analizar_acceso_servicios, analizar_coincidencia, simular_escenario,
+          - generic: consultar_fuente, consultar_capacidades, plan_visit,
+          - generic: "]"
+          - generic: "def build_agent(model):"
+          - generic: "\"\"\"Use the portal-provided model; no extra credentials or agent frameworks.\"\"\""
+          - generic: from langchain.agents import create_agent
+          - generic: return create_agent(model=model, tools=TOOLS, system_prompt=SYSTEM_PROMPT)
+      - separator "Cambiar altura de la consola"
+      - strong: Consola
+      - generic: Analizando agentes/gipuzkoa_360_visita_sanitaria/main.py en el runner privado…
+      - button "Ampliar"
+      - button "Ocultar"
+      - generic: Ejecución completada sin salida.
+      - region "Crear versión del agente":
+        - generic: CREAR VERSIÓN · agentes/gipuzkoa_360_visita_sanitaria/main.py
+        - heading "Crear versión del agente" [level=2]
+        - paragraph: Fija una copia del código y los datos para probarla. La entrega se publica después, desde Entrega.
+        - button "Cerrar preparación de versión": ×
+        - generic: A
+        - generic: EMPIEZA POR EL CÓDIGO
+        - heading "Comprueba la preparación del agente" [level=3]
+        - paragraph: Comprobaremos las instrucciones, las herramientas y los archivos declarados. Después podrás crear una versión y conversar con ella en Pruebas.
+        - code: "def build_agent(model): return create_agent( model=model, tools=[mi_tool], system_prompt=construir_prompt(), )"
+        - button "Comprobando…" [disabled]

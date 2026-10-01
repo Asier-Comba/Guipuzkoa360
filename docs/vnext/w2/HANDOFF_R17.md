@@ -75,3 +75,43 @@ Solo si real C0/H0/M0: copy público en voz del equipo, seleccionar versión y
 conversación sanitaria limpias, guardar borrador y revisar preview completo.
 Track, confirmación y publicación exclusivamente humanas. No merge ni R18.
 HOLDOUT=SEALED_NOT_EXECUTED. RELEASE_GO=NO.
+
+## Cierre posterior al checkpoint inicial
+
+Runtime probado 77ac63d5b68a3ecbf51461e3aaa0de0566d6f2c3; PR22 draft contra R16.
+ZIP 1b263724110c68efab69c14e479f50ed2d101f935c6c83102bb0e5d4c699dc79,
+231758 bytes; manifest246f703e1e1881fe984598fe7b428b1b18380c43e7555c03fca2b53dd1982fee.
+Solo main/tools cambian frente al ZIP R16; ningún cambio posterior a Studio.
+Una suite completa local681/681 en304,04s; Node17, identity14 antes/después,
+jury/artifacts/diff PASS. CI runtime36928182340 Ubuntu/Windows cada uno681,
+Node17,335parity,7oracle,41time summaries,build reproducible,gates PASS.
+Fast36928182347 SUCCESS. No transferencia de resultados al SHA documental:
+el cierre final y sus runs exactos se fijan en PR22 después del push.
+
+Nueva versión privada agentv_64c72bcb772143968038a2f620944bf1, Visita sanitaria v3:
+preparación válida, nueve tools, resumen1campo, plan5campos, memoriaON/InternetOFF.
+main/tools+15assets descargados por UI tras crear versión:17/17 exactos.
+No se afirma exportación ZIP de la versión congelada ni identidad de toda la carpeta.
+Cuatro mensajes reales4/4: Aduna36/507/7,101% a la primera con municipio solo,
+regla<=1949 explícita; main10691s; variación8591s y35minmenos condicionales;
+límites/cobertura rechaza casa/realtime/mejor hora/citas, admite3orígenes.
+Critical0/High0/Medium0/Low1: IDs técnicos/anglicismo en respuesta M4, solo estilo.
+La selección pública es B sanitaria2turnos, no M4. v2 no se modifica.
+
+FINAL_EVIDENCE/FINAL_GATE/FINAL_MANIFEST distinguen R17 vigente y R16 histórico,
+sin borrar aquel Medium recuperado. DELIVERY_COPY en voz del equipo y texto
+literal guardado en Entrega. Capturas y outputs originales en outputs/r17/portal.
+FichaGipuzkoa., utilidad88municipios+visita; equipo3/3 y nombres completos;
+v3 seleccionada, solo demo territorial etiquetada honestamente+repositorio,
+0archivos seleccionados, preview completa y segunda revisión sin contradicción.
+Connection Error genérico y etiquetas Respuesta vacías/Markdown literal de
+preview conservados como observaciones de UI, no atribuibles a fallo matemático.
+Una lectura de status ambigua se corrigió por consulta de todos los status;
+no se reenvió prompt ni se alteró evidencia.
+
+DELIVERY_CONTENT_COMPLETE=YES; R17_FINAL_CANDIDATE=PASS para este protocolo
+acotado, no evaluación oficial ni aceptación independiente del autor.
+TRACK=PENDING_HUMAN_SELECTION; FINAL_CONFIRMATION=PENDING_HUMAN;
+PUBLICATION=PENDING_HUMAN; HOLDOUT=SEALED_NOT_EXECUTED; RELEASE_GO=NO.
+NEXT_EXACT_ACTION=Human chooses preferred track, performs final preview, checks the publication acknowledgement and clicks Publicar entrega.
+STOP: sin R18, features, merges ni publicación automática.

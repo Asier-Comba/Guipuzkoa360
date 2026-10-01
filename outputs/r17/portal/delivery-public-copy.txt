@@ -1,0 +1,92 @@
+GIPUZKOA 360
+Territorio
+Gipuzkoa.
+Pregunta de investigación
+¿Cómo cambia la carga temporal de una visita sanitaria para personas que dependen del transporte público cuando cambia el municipio de origen, la hora de la cita o su duración?
+Quién utilizará el resultado
+Equipos técnicos de movilidad, cuidados y planificación territorial.
+Para qué servirá
+Combinamos un análisis de los 88 municipios para detectar dónde estudiar el acceso sanitario con el cálculo de una visita completa en los trayectos disponibles. Así hacemos visibles el viaje, las esperas, el paseo, la consulta y el regreso, con sus fuentes y límites.
+
+Categoría por elegir
+
+GIPUZKOA 360 · Visita sanitaria · v3
+
+Hemos construido GIPUZKOA 360 para entender cuánto ocupa una visita sanitaria cuando dependemos del autobús: no solo el viaje, también las esperas, el paseo, la consulta y el regreso. Primero exploramos los 88 municipios para detectar dónde merece la pena estudiar el acceso. Después calculamos la visita completa en los trayectos con datos suficientes.
+
+En la conversación seleccionada, una consulta de 20 minutos desde las paradas de Zegama al Ambulatorio de Beasain el 29 de septiembre de 2026, a las 09:30, ocupa 2 h 58 min 11 s (10.691 s): de 08:09:37 a 11:07:48. El autobús sale a las 08:12:37; los tres minutos anteriores son espera inicial. Manteniendo todo igual y cambiando la cita a las 09:45, nuestro agente vuelve a calcular: 2 h 23 min 11 s (8.591 s). Son 35 minutos menos entre dos escenarios programados, no un ahorro observado ni una recomendación.
+
+El cálculo de visitas admite Zegama, Segura e Idiazabal y la fecha indicada. Usamos horarios programados y paseo modelado; empezamos y terminamos en paradas, no en el domicilio. No conocemos disponibilidad de citas ni capacidad asistencial, y no hemos verificado la entrada física del centro: conservamos un conflicto de dirección entre fuentes.
+
+Fuentes: Moveuskadi/Goierrialdea (horarios del 28/09 al 27/12/2026), Open Data Euskadi (centros, 20/09/2026), Osakidetza (ficha consultada el 29/09/2026) y © OpenStreetMap contributors, ODbL 1.0 (red obtenida el 29/09/2026). La población procede de Eustat, a 01/01/2025; son fuentes con fechas distintas, no una fotografía temporal homogénea.
+
+El primer enlace es una visualización del screening territorial, no una demo de la visita sanitaria. El segundo contiene el código y las fuentes. Hemos contrastado las cifras de la conversación con los datos del cálculo.
+
+Somos DeustoAI Labs — Universidad de Deusto: Oier Duñabeitia Berezo, Asier Comba Lopez y Hugo Fernández Díez.
+
+https://asier-comba.github.io/Guipuzkoa360/
+https://github.com/Asier-Comba/Guipuzkoa360
+Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+Pregunta
+
+Desde las paradas del centro de Zegama, quiero ir al Ambulatorio de Beasain el 29 de septiembre de 2026 para una consulta a las 09:30 que dura 20 minutos y regresar. ¿Qué carga temporal completa resultaría con los datos disponibles?
+
+Respuesta
+
+Respuesta
+
+Respuesta
+
+La **carga temporal completa modelada** sería de **2 h 58 min 11 s (10.691 s)**.
+
+- **Intervalo completo:** de **08:09:37 a 11:07:48**
+- **Ámbito:** desde la presencia en la parada de origen hasta la llegada a la parada de regreso.
+- **Salida de Zegama:** GO01 desde **Zegama - Elizalde 6 - Plaza**, 08:12:37.
+- **Llegada prevista a la parada de Beasain:** 08:40:08.
+- **Consulta:** 09:30–09:50.
+- **Regreso:** salida modelada desde **Beasain - San Inazio 10**, 10:29:50; llegada a **Zegama - Elizalde Kalea 4**, 11:07:48.
+
+**Desglose de la carga:**
+
+| Componente | Tiempo |
+|---|---:|
+| Espera inicial | 3 min |
+| Vehículo de ida | 27 min 31 s |
+| Paseo modelado hasta el ambulatorio | 7 min |
+| Espera previa a la consulta | 42 min 52 s |
+| Consulta | 20 min |
+| Paseo modelado de regreso | 16 min |
+| Espera para el regreso | 23 min 50 s |
+| Vehículo de vuelta | 37 min 58 s |
+| **Total** | **2 h 58 min 11 s** |
+
+Es un cálculo con **horario programado GTFS** —periodo **2026-09-28/2026-12-27**— y paseo modelado con el perfil disponible; no es tiempo real ni un trayecto puerta a puerta. El destino es un punto oficial modelado del Ambulatorio de Beasain, no una entrada física verificada. La dirección presenta un conflicto entre fuentes, que queda pendiente de revisión humana.
+
+Pregunta
+
+Mantén todo igual pero cambia la cita a las 09:45. Recalcula y compárala con la anterior.
+
+Respuesta
+
+Respuesta
+
+La nueva carga temporal modelada para la cita de las **09:45** es de **2 h 23 min 11 s (8.591 s)**.
+
+|  | Cita 09:30 | Cita 09:45 |
+|---|---:|---:|
+| Intervalo completo | 08:09:37–11:07:48 | 08:44:37–11:07:48 |
+| Espera inicial | 3 min | 3 min |
+| Vehículo de ida | 27 min 31 s | 29 min 29 s |
+| Paseo hasta el ambulatorio | 7 min | 7 min |
+| Espera previa | 42 min 52 s | 20 min 54 s |
+| Consulta | 20 min | 20 min |
+| Paseo de regreso | 16 min | 16 min |
+| Espera de regreso | 23 min 50 s | 8 min 50 s |
+| Vehículo de vuelta | 37 min 58 s | 37 min 58 s |
+| **Carga total** | **2 h 58 min 11 s** | **2 h 23 min 11 s** |
+
+Con los horarios programados observados, el escenario de las **09:45** abarca **35 minutos menos** que el de las 09:30. La salida de ida sería a las **08:47:37**, llegada a la parada de Beasain a las **09:17:06**, y el regreso mantendría la misma salida, **10:29:50**, con llegada a Zegama a las **11:07:48**.
+
+La comparación es condicional a los mismos parámetros: GO01 estático —periodo **2026-09-28/2026-12-27**—, paseo modelado y ámbito desde la presencia en la parada hasta la llegada a la parada de regreso. No es tiempo real, ni supone una recomendación, disponibilidad de cita o acceso puerta a puerta.
+
+La ficha pública mostrará la definición, el nombre de la versión y estos materiales. El código y los datos de la versión podrán ser inspeccionados por la organización desde su acceso autorizado.

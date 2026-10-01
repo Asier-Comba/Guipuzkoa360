@@ -1,4 +1,47 @@
-# Gate vigente R16 — borrador privado; no publicar
+# Gate vigente R17 — candidato validado, entrega privada
+
+R17_FINAL_CANDIDATE=PASS para el protocolo acotado de cuatro mensajes:
+Aduna primera llamada válida; principal sanitaria; variación recalculada; cobertura/límites.
+REAL_CRITICAL=0; REAL_HIGH=0; REAL_MEDIUM=0; REAL_LOW=1 (estilo de M4, IDs de origen/anglicismo; no selección pública).
+No es una aceptación independiente del autor, benchmark general de LLM ni ejecución de holdout.
+
+Runtime probado 77ac63d5b68a3ecbf51461e3aaa0de0566d6f2c3.
+ZIP 1b263724110c68efab69c14e479f50ed2d101f935c6c83102bb0e5d4c699dc79,
+231758 bytes; manifest 246f703e1e1881fe984598fe7b428b1b18380c43e7555c03fca2b53dd1982fee.
+Base c859a26396838d59a52b8d91f1eda5ef6b69e4cd. Solo main/tools cambian; datos/W1/15assets/v4 byte-idénticos.
+CI runtime exacto R17 36928182340 y fast 36928182347 SUCCESS en Ubuntu/Windows, cada uno 681 Python y17 Node; author335/oracle7/identity14/jury/artifacts PASS.
+El SHA y CI del cierre documental posterior se fijan externamente en PR22; no resultados transferidos.
+Suite local completa una sola vez681/681, Node17; no stress gigante ni más prompts.
+
+DELIVERY_CONTENT_COMPLETE=YES. Ficha y explicación humanas guardadas; versión
+agentv_64c72bcb772143968038a2f620944bf1 (Visita sanitaria v3), conversación B de
+dos turnos sanitarios revisados, demo territorial honestamente etiquetada y
+repositorio, archivos seleccionados0. Preview literal y segunda revisión
+sin contradicción material. Equipo3/3 confirmado y tres nombres preservados.
+La plataforma conserva sin evaluar; no inventamos evaluación oficial.
+Sus etiquetas vacías de tool/Markdown literal son observaciones de renderer,
+no respuestas redactadas por nosotros ni una corrección de UI acreditada.
+
+Checklist oficial sin nota:
+
+- Utilidad25%: destinatarios y problema claro; territorio exploratorio88 frente a tres orígenes sanitarios.
+- Análisis/fuentes/trazabilidad25%:10691/8591s contrastados, -2100s/-35min condicional; fuente/periodo/supuestos y atribución OSM.
+- Agente/tools25%: capacidades y dos plan_visit reales en B; Aduna válida a la primera en A.
+- Claridad15%: voz de equipo, principal/variación/límite, sin ingeniería interna en selección pública.
+- Fiabilidad/límites10%: no domicilio/realtime/mejor hora/recomendación/citas/capacidad/entrada verificada/causalidad; fechas distintas explícitas.
+
+TRACK=PENDING_HUMAN_SELECTION.
+FINAL_CONFIRMATION=PENDING_HUMAN.
+PUBLICATION=PENDING_HUMAN.
+HOLDOUT=SEALED_NOT_EXECUTED.
+RELEASE_GO=NO.
+No merge, publicación, cambio de main, nueva ronda ni desarrollo adicional.
+NEXT_EXACT_ACTION=Human chooses preferred track, performs final preview, checks the publication acknowledgement and clicks Publicar entrega.
+STOP.
+
+## Histórico superseded R16 — no alterar su veredicto
+
+# Histórico R16 — borrador privado; no publicar
 
 R16_AUTHOR_DELTA_CHECK=PASS. No es una aceptación independiente del autor.
 R16_FINAL_CANDIDATE=FAIL según el protocolo completo real: M1–M4 PASS; M5 FAIL por un primer periodo vacío, recuperado sin repetir la llamada. REAL_CRITICAL=0, REAL_HIGH=0, REAL_MEDIUM=1, REAL_LOW=2. H-01 cerrado en dos sesiones limpias. No se abre otra ronda ni se cambia runtime para cosmética.

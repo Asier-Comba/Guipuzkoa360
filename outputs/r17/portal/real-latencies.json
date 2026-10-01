@@ -1,0 +1,14 @@
+{
+  "measurement": "Upper bounds from send to first observation of completed UI output/final, not exact server latency; no p95 or streaming timestamps",
+  "unit": "milliseconds",
+  "observations": {
+    "M1": 37809,
+    "M2": 104501,
+    "M3": 61762,
+    "M4": 56332
+  },
+  "time_to_tool": "NOT_OBSERVED_SEPARATELY",
+  "time_to_output": "NOT_OBSERVED_SEPARATELY",
+  "messages_used": 4,
+  "maximum": 4
+}
