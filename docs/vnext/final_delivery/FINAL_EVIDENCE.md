@@ -1,4 +1,53 @@
-# Evidencia para comprender el resultado
+# Evidencia vigente R16: cálculo, agente real y borrador
+
+Runtime probado d4dd2e65434c6c7f9f33c74ef1041b0f136cde69; ZIP 374af43fa6ce58b513a10477fc216215c7472f54bd28eada4fc0908da6f3dd6c (229.844 bytes); manifiesto a46415845f86c5c22ad648965b45e5bd109c839e9cb6cc14daee0ef37d7f788e. Base R15 exacta 69bcc6ead9ce444a884aa2b15469bd3b519775f5. Solo cambian main.py y tools.py del paquete; otros 23 miembros, quince assets, productor/W1, fuentes/datos y v4 idénticos. Dos builds locales y CI reproducen hashes. [Handoff R16](../w2/HANDOFF_R16.md).
+
+El manifiesto del paquete es inmutable y registra NOT_RUN en el momento del build; el estado posterior real está en FINAL_MANIFEST.json y las trazas, no se reescribe el manifiesto para cambiar su hash después de Studio.
+
+## Prueba real privada, sin transferir resultados históricos
+
+Versión agentv_f4ca979c0c5b415da187711e96ba2c4d, GIPUZKOA 360 · Visita sanitaria · v2; modelo visible openai:gpt-5.6-luna; memoria activa, Internet desactivado. Tramo R16 5/5 mensajes. Sesiones A/B/C verificadas vacías antes de la primera pregunta. Capturas DOM visible y JSON de resultados desplegados, no reconstrucciones ni simulación de LLM. [Inventario descargado 17/17](../../../outputs/r16/portal/file-identity.json). Studio contiene un scaffold de ejecución adicional no importado por main/tools; no se equipara su carpeta completa al ZIP.
+
+| Caso | Tools nuevas en el turno | Resultado observado | Gate estricto | Cota superior envío→final observado |
+|---|---|---|---|---:|
+| M1, A principal | capacidades; plan_visit, Zegama/Beasain/2026-09-29/09:30/20 | valid, 10691 s; 2 h 58 min 11 s; 08:09:37–11:07:48; salida del vehículo 08:12:37 diferenciada | PASS | ≤85,890 s |
+| M2, A variación | plan_visit, mismos inputs salvo 09:45 | valid, 8591 s; 2 h 23 min 11 s; 08:44:37–11:07:48; final 35 min menor, condicional | PASS | ≤36,992 s |
+| M3, A fuentes/límites/cobertura | capacidades | fuentes/periodos, paseo modelado, entrada no verificada; Zegama, Segura e Idiazabal; rechaza realtime/domicilio/mejor hora | PASS | ≤76,004 s |
+| M4, B principal limpio | capacidades; plan_visit, exactamente M1 | valid, 10691 s; 2 h 58 min 11 s; 08:09:37–11:07:48, sin contradicción | PASS | ≤81,352 s |
+| M5, C Aduna 75+ | resumen con periodo vacío (invalid); capacidades; resumen con 2025-01-01 (valid) | 36/507; 7,101 %; EUSTAT_EMH_2025, 2025-01-01; recupera error sin repetir args | FAIL, Medium recuperado | ≤114,682 s |
+
+Cotas desde envío hasta observación del final: no latencias exactas ni p95. Time-to-tool y time-to-output separados: NOT_OBSERVED; no se infieren de capturas sin marcas de streaming. PREs de M2/M3 son acumulativos de A, no llamadas nuevas repetidas. M2 expresa −35 min correctamente; −2100 s consta en totals y contraste determinista, no se atribuye falsamente como cita literal del final.
+
+Trazas con prompts/args/outputs/final: [M1](../../../outputs/r16/portal/M1-session-A.txt), [M2](../../../outputs/r16/portal/M2-session-A.txt), [M3](../../../outputs/r16/portal/M3-session-A.txt), [M4](../../../outputs/r16/portal/M4-session-B.txt), [M5](../../../outputs/r16/portal/M5-session-C.txt); cada una tiene su M*-tool-outputs.json adyacente. Version ID y sesiones vacías en el mismo directorio.
+
+## Hallazgos actuales, no falsa totalidad verde
+
+- Critical 0, High 0: H-01 no reaparece en dos sesiones limpias; scope, duración y componentes concordantes. No se atribuye causa psicológica al modelo.
+- Medium 1: M5 aún envía periodo vacío inicialmente. Backend fail-closed intacto; consulta capacidades una vez y corrige una vez, sin llamada idéntica repetida; cifra final correcta. Cierra la repetición inválida R15, no satisface «no periodo vacío». REAL_ADUNA=FAIL y PORTAL_REAL_AGENT=FAIL según protocolo estricto, aunque su respuesta numérica pasa. No más prompts ni nuevo candidato tras 5/5.
+- Low 1: catálogo principal humanizado y finales observados sin Rxx/defaults del proveedor; persiste jerga interna en algunos campos de linaje de fuente (transformation, institución/título de MODEL_DEFAULTS). L01_PUBLIC_JARGON=LOW, no limpieza completa de toda metadata. No se modifica runtime después de estas pruebas.
+- Low 2: explica 75+ por año de nacimiento sin mostrar el corte exacto ≤1949 en el final; no llama consultar_fuente para completarlo. Source metadata conserva el método. La explicación sanitaria es compacta; copy adjunto completa atribución OSM y referencia PADI sin afirmar que el agente las verbalizó todas.
+
+Problemas operacionales separados: preparación inicial Failed to fetch, recuperada con recarga y nueva preparación antes de crear versión. Descarga opcional de evidencia desde UI agotó tiempo; se conservaron DOM y outputs visibles. No se presenta como fallo matemático ni se oculta. Portal muestra aviso genérico Connection Error pero confirmó borrador guardado; estado guardado y vista previa acreditan las ediciones.
+
+## Validación offline y CI exactos
+
+Focal 116/116. Autoauditoría del autor 333/333 raw parity, siete oracle, 231 inválidos y 41 resúmenes temporales, cero findings; no aceptación independiente. Sin Internet/modelo; sin estrés20k ni holdout.
+
+Suite Python local completa una vez: 667 PASS, 1 timeout histórico de test_generated_r12_end_to_end[declared_nested], con timeout restante negativo −1296,203 s; causa no demostrada. Solo ese test se repitió: 1 PASS en 85,85 s. Reportes originales conservados; no se reescribe el resultado fallido. CI del SHA probado: [36892707817](https://github.com/Asier-Comba/Guipuzkoa360/actions/runs/36892707817), Ubuntu 668/668 en 74,61 s y Windows 668/668 en 79,68 s; Node 17/17, identity 14/14, jury/artifacts PASS, doble build idéntico ambos. Fast CI [36892707797](https://github.com/Asier-Comba/Guipuzkoa360/actions/runs/36892707797) SUCCESS. SHA documental final y su CI en PR21; bytes probados realmente no cambian.
+
+[Auditoría offline](../../../outputs/r16/local/r16-audit.json), [suite local original, comprimida sin editar](../../../outputs/r16/local/r16-pytest.xml.zip), [recheck único](../../../outputs/r16/local/r16-timeout-recheck.xml). La compresión conserva incluso el whitespace del traceback; no se modifica el informe para pasar diff-check.
+
+## Entrega y límites de aceptación
+
+Borrador v2 con conversación A revisada (tres turnos), demo territorial y repositorio. Ficha sanitaria actualizada, contenido listo para pegar y revisión literal de vista previa; sin archivos originales HTML/PADI ni capturas antiguas seleccionadas. Track vacío, confirmación sin marcar, no publicación. DELIVERY_CONTENT_COMPLETE=YES no implica RELEASE_GO. «Sin evaluar» de plataforma no se sustituye por evaluación oficial inventada.
+
+HOLDOUT=SEALED_NOT_EXECUTED: no disponible con custodia verificable, no leído/reconstruido, no requisito oficial. TECHNICAL_RELEASE_READY=NO por M5 y revisión coordinadora pendiente. Siguiente acción: decisión humana sobre Medium recuperado y delta, no más desarrollo automático.
+
+## Histórico superseded: evidencia documental R14/R15
+
+Lo siguiente es procedencia; «último agente», gates y casos no conversacionales corresponden a ese momento. No transfiere PASS/FAIL al candidato actual.
+
+# Histórico: Evidencia para comprender el resultado
 
 Pregunta principal: ¿Cómo cambia la carga temporal de una visita sanitaria para personas que dependen del transporte público cuando cambia el municipio de origen, la hora de la cita o su duración?
 

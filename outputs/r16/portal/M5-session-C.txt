@@ -1,0 +1,118 @@
+- region "Notifications alt+T"
+- generic "Connection Error:"
+- link "Saltar al contenido":
+  - /url: "#platform-main"
+- banner:
+  - link "Gipuzkoa AI Hackathon · MIT Media Lab City Science":
+    - /url: /area/
+    - strong: GIPUZKOA AI HACKATHON
+    - generic: MIT MEDIA LAB · CITY SCIENCE
+  - navigation "Áreas de la plataforma":
+    - link "Inicio":
+      - /url: /area/
+    - link "Formación":
+      - /url: /area/formacion/
+    - link "Equipo":
+      - /url: /hackathon/area/equipo/
+    - generic "Abrir secciones de Urban Challenge":
+      - generic: Urban Challenge
+      - generic: ⌄
+    - generic "Disponible para los equipos clasificados":
+      - generic: ◇
+      - generic: Final
+  - generic "Abrir menú de cuenta":
+    - generic: O
+    - strong: Oier Duñabeitia Berezo
+    - generic: Participante
+    - generic: ⌄
+- main:
+  - button "Proyecto GIPUZKOA 360":
+    - generic: Proyecto
+    - strong: GIPUZKOA 360
+  - tablist "Secciones del espacio de trabajo":
+    - 'tab "Resumen: Estado del proyecto y siguiente acción"':
+      - strong: Resumen
+    - 'tab "Datos: Archivos, mapas y procesamiento"':
+      - strong: Datos
+      - generic: "47"
+    - 'tab "Agentes: Construcción con Python o Langflow"':
+      - strong: Agentes
+      - generic: "10"
+    - 'tab "Pruebas: Verificación con versiones creadas" [selected]':
+      - strong: Pruebas
+      - generic: "8"
+    - 'tab "Entrega: Revisión y publicación del proyecto"':
+      - strong: Entrega
+    - 'tab "Asistente IA: Ayuda para analizar, editar y ejecutar el proyecto"':
+      - strong: Asistente IA
+  - generic "Estado del workspace":
+    - generic "Ver estado y actividad del workspace":
+      - generic: 1 persona
+    - button "Reiniciar el entorno del equipo":
+      - generic: ↻
+    - button "Ejemplo resuelto"
+    - button "?"
+  - 'tabpanel "Pruebas: Verificación con versiones creadas"':
+    - toolbar "Acciones de pruebas de agentes":
+      - heading "Banco de pruebas" [level=2]
+      - button "Mostrar conversaciones"
+      - strong: "8"
+      - generic: versiones
+    - generic: AGENTE PYTHON · VERSIÓN PROBADA · V2
+    - heading "GIPUZKOA 360 · Visita sanitaria" [level=2]
+    - paragraph: Esta conversación mantiene la versión v2. Editar el borrador o crear otra versión no cambia esta prueba.
+    - generic: Memoria activa
+    - generic: Sin Internet
+    - generic: 12931 tokens · 4 llamadas
+    - generic "Revisar evidencia"
+    - log:
+      - article:
+        - generic: Tú
+        - paragraph: En Aduna, ¿cuántas personas tienen 75 años o más y qué porcentaje de la población representan? Indica la fuente, la fecha de referencia, el numerador y el denominador, y explica cómo se obtiene ese grupo de edad.
+      - article:
+        - generic: GIPUZKOA 360 · Visita sanitaria
+        - strong: Tool · obtener_resumen_territorial
+        - code: "{\"municipio\":\"Aduna\",\"periodo\":\"\"}"
+      - generic "Resultado de obtener_resumen_territorial"
+      - generic: "{\"assumptions\":[],\"capability_id\":\"obtener_resumen_territorial\",\"claims\":[],\"effective_request\":null,\"error\":{\"available_options\":[],\"code\":\"invalid_arguments\",\"message\":\"arguments:periodo:invalid_value\",\"origin\":\"domain\",\"safe_next_action\":\"Revisar los valores disponibles; si el fallo persiste, no usar el resultado.\"},\"execution\":{\"request_id\":\"a7836a73183a4f4386dba58caba73ed9\",\"state\":\"failed\",\"tool\":\"obtener_resumen_territorial\"},\"limitations\":[],\"method\":\"\",\"normalized_input\":{\"arguments\":{\"municipio\":\"Aduna\",\"periodo\":\"\"},\"tool\":\"obtener_resumen_territorial\"},\"outcomes\":[],\"request_id\":\"a7836a73183a4f4386dba58caba73ed9\",\"schema_version\":\"1.1.0\",\"selection\":{\"criterion\":\"Todas las entidades solicitadas explícitamente\",\"detail_mechanism\":\"Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.\",\"omitted_entities\":0,\"returned_entities\":0,\"total_entities\":0},\"status\":\"error\"}"
+      - article:
+        - generic: GIPUZKOA 360 · Visita sanitaria
+        - strong: Tool · consultar_capacidades
+        - code: "{\"pregunta_o_dimension\":\"obtener_resumen_territorial\"}"
+      - generic "Resultado de consultar_capacidades" [active]
+      - generic: "{\"assumptions\":[],\"capabilities\":[{\"coverage\":{\"entities\":88,\"periods\":[\"2025-01-01\",\"2026-09-20\",\"2025-05-07\"],\"scope\":\"Un municipio; demografía y cifras de servicio solo cuando tienen fuente ejecutada\",\"territory\":\"Gipuzkoa\"},\"derivation\":\"direct\",\"description\":\"Resumen municipal observado\",\"enabled\":true,\"id\":\"obtener_resumen_territorial\",\"input_fields\":[{\"allowed_values\":[],\"name\":\"municipio\",\"required\":true,\"type\":\"string\"},{\"allowed_values\":[\"2025-01-01\"],\"name\":\"periodo\",\"nullable\":true,\"required\":false,\"type\":\"string\"}],\"period_policy\":{\"allowed_values\":[\"2025-01-01\"],\"explicit_invalid\":\"reject_without_numeric_claims\",\"meaning\":\"demographic_selector\",\"omitted_or_null\":\"single_available_period_else_request_period\"},\"semantic_limits\":[\"La ficha puede contener indicadores de servicios sin todas sus fuentes en la salida; esos valores no se promueven a claims.\",\"Los periodos de fuente no forman una fotografía temporal homogénea.\"],\"validation_status\":\"tested\"}],\"capability_id\":\"consultar_capacidades\",\"claims\":[],\"effective_request\":{\"defaults_applied\":[],\"effective_period\":null,\"municipality_codes\":[],\"municipality_labels\":[],\"operation\":\"consultar_capacidades\",\"parameters\":{\"pregunta_o_dimension\":\"obtener_resumen_territorial\"}},\"error\":null,\"execution\":{\"request_id\":\"131c7144fcbb4e1288d2516d3481a6bf\",\"state\":\"completed\",\"tool\":\"consultar_capacidades\"},\"limitations\":[\"Una capacidad deshabilitada no se puede ejecutar.\",\"El registro no sustituye una prueba conversacional en portal.\"],\"method\":\"Lectura del registro validado contra handlers, fuentes y hashes de datos.\",\"mobility_catalog\":{\"comparison\":{\"batch_supported\":false,\"cross_origin_comparison\":\"side_by_side_only; numeric delta is not supported across origins\",\"mode\":\"individual_calls\",\"procedure\":\"Execute one plan_visit per scenario, observe every output, then compare only valid compatible results. Differences are conditional, not observed savings or recommendations.\"},\"destination\":{\"centre_id\":\"entityBC631DA5\",\"destination_id\":\"beasain_official_centre_anchor\",\"name\":\"Ambulatorio de Beasain\",\"reference_point_meaning\":\"El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.\",\"verification\":{\"centre_anchor\":\"CONFIRMED_OFFICIAL_POINT\",\"centre_identity\":\"CONFIRMED\",\"entrance_verified\":false,\"modelled_access\":true}},\"modelling_assumptions\":{\"arrival_margin_minutes\":10,\"boarding_margin_minutes\":3,\"meaning\":\"Supuestos de cálculo; no son decisiones observadas del usuario ni argumentos públicos.\",\"walking_profile\":\"Paseo modelado de referencia: 50 m/min más 120 s por enlace completo\"},\"origin_options\":[{\"municipality_name\":\"Idiazabal\",\"name\":\"Paradas centrales de Idiazabal\",\"origin_id\":\"idiazabal_center_stops\"},{\"municipality_name\":\"Segura\",\"name\":\"Paradas Herriko Plaza de Segura\",\"origin_id\":\"segura_herriko_plaza_stops\"},{\"municipality_name\":\"Zegama\",\"name\":\"Paradas centrales de Zegama\",\"origin_id\":\"zegama_center_stops\"}],\"ranges\":{\"duration_minutes\":{\"maximum\":720,\"minimum\":1}},\"request_fields\":[\"origin_id\",\"destination_id\",\"date\",\"appointment_time\",\"duration_minutes\"],\"required_fields\":[\"origin_id\",\"destination_id\",\"date\",\"appointment_time\",\"duration_minutes\"],\"restrictions\":[\"GO01 direct only\",\"static schedule; not realtime\",\"same civil day\",\"origin stop presence to return stop arrival\",\"validated date only\",\"not assigned centre, appointment availability, universal accessibility or verified entrance\"],\"scenario_kind\":\"health_visit\",\"validated_date\":\"2026-09-29\",\"walking_profile\":{\"id\":\"poc_reference_50m_min_plus_120s\",\"label\":\"Paseo modelado de referencia: 50 m/min más 120 s por enlace completo\"}},\"normalized_input\":{\"arguments\":{\"pregunta_o_dimension\":\"obtener_resumen_territorial\"},\"tool\":\"consultar_capacidades\"},\"outcomes\":[],\"request_id\":\"131c7144fcbb4e1288d2516d3481a6bf\",\"schema_version\":\"1.1.0\",\"selection\":{\"criterion\":\"Primeras entidades en el orden validado de la herramienta\",\"detail_mechanism\":\"Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.\",\"omitted_entities\":0,\"returned_entities\":0,\"total_entities\":0},\"status\":\"valid\"}"
+      - article:
+        - generic: GIPUZKOA 360 · Visita sanitaria
+        - strong: Tool · obtener_resumen_territorial
+        - code: "{\"municipio\":\"Aduna\",\"periodo\":\"2025-01-01\"}"
+      - generic "Resultado de obtener_resumen_territorial"
+      - generic: "{\"assumptions\":[],\"capability_id\":\"obtener_resumen_territorial\",\"claims\":[{\"assumptions\":[],\"denominator\":{\"data_ref\":{\"field\":\"population_total\",\"municipality_code\":\"20002\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":507},\"derivation\":\"derived_exact\",\"entity_id\":\"20002\",\"entity_label\":\"Aduna\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/pct_65_plus\",\"id\":\"claim-1\",\"label\":\"pct_65_plus\",\"metric_id\":\"pct_65_plus\",\"numerator\":{\"data_ref\":{\"field\":\"population_65_plus\",\"municipality_code\":\"20002\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":75},\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"unit\":\"%\",\"value\":14.793},{\"assumptions\":[\"75+ derivado del año de nacimiento en la fuente demográfica.\"],\"denominator\":{\"data_ref\":{\"field\":\"population_total\",\"municipality_code\":\"20002\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":507},\"derivation\":\"derived_exact\",\"entity_id\":\"20002\",\"entity_label\":\"Aduna\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/pct_75_plus\",\"id\":\"claim-2\",\"label\":\"pct_75_plus\",\"metric_id\":\"pct_75_plus\",\"numerator\":{\"data_ref\":{\"field\":\"population_75_plus\",\"municipality_code\":\"20002\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":36},\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"unit\":\"%\",\"value\":7.101},{\"assumptions\":[],\"denominator\":null,\"derivation\":\"direct\",\"entity_id\":\"20002\",\"entity_label\":\"Aduna\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/population_65_plus\",\"id\":\"claim-3\",\"label\":\"population_65_plus\",\"metric_id\":\"population_65_plus\",\"numerator\":null,\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"unit\":\"personas\",\"value\":75},{\"assumptions\":[],\"denominator\":null,\"derivation\":\"direct\",\"entity_id\":\"20002\",\"entity_label\":\"Aduna\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/population_75_plus\",\"id\":\"claim-4\",\"label\":\"population_75_plus\",\"metric_id\":\"population_75_plus\",\"numerator\":null,\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"unit\":\"personas\",\"value\":36},{\"assumptions\":[],\"denominator\":null,\"derivation\":\"direct\",\"entity_id\":\"20002\",\"entity_label\":\"Aduna\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/population_total\",\"id\":\"claim-5\",\"label\":\"population_total\",\"metric_id\":\"population_total\",\"numerator\":null,\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"unit\":\"personas\",\"value\":507}],\"effective_request\":{\"defaults_applied\":[],\"effective_period\":\"2025-01-01\",\"municipality_codes\":[\"20002\"],\"municipality_labels\":[\"Aduna\"],\"operation\":\"obtener_resumen_territorial\",\"parameters\":{\"municipio\":\"Aduna\",\"periodo\":\"2025-01-01\"}},\"error\":null,\"execution\":{\"request_id\":\"382953305c0a40f9b6f0d490134e0445\",\"state\":\"completed\",\"tool\":\"obtener_resumen_territorial\"},\"limitations\":[\"La presencia de un servicio no acredita capacidad, horario, calidad ni acceso real.\",\"Los periodos de demografía y servicios pueden ser distintos; se muestran en las fuentes.\",\"16 cifras del resultado carecen de atribución por fuente en la salida y no se ofrecen como afirmaciones verificadas.\"],\"method\":\"Selección por código municipal; recuento de registros por categoría; tasas por 10.000 personas del grupo de edad y mínima distancia euclídea EPSG:25830 desde el punto representativo municipal.\",\"normalized_input\":{\"arguments\":{\"municipio\":\"Aduna\",\"periodo\":\"2025-01-01\"},\"tool\":\"obtener_resumen_territorial\"},\"outcomes\":[],\"request_id\":\"382953305c0a40f9b6f0d490134e0445\",\"schema_version\":\"1.1.0\",\"selection\":{\"criterion\":\"Todas las entidades solicitadas explícitamente\",\"detail_mechanism\":\"Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.\",\"omitted_entities\":0,\"returned_entities\":1,\"total_entities\":1},\"status\":\"valid\"}"
+      - article:
+        - generic: GIPUZKOA 360 · Visita sanitaria
+        - paragraph:
+          - text: En
+          - strong: Aduna
+          - text: ", hay"
+          - strong: 36 personas de 75 años o más
+          - text: ", que representan el"
+          - strong: 7,101 % de la población
+          - text: .
+        - list:
+          - strong: "Fuente:"
+          - text: EUSTAT_EMH_2025
+          - strong: "Fecha de referencia:"
+          - text: 1 de enero de 2025
+          - strong: "Numerador:"
+          - text: 36 personas de 75 años o más
+          - strong: "Denominador:"
+          - text: 507 personas de población total
+          - strong: "Cálculo:"
+          - text: (36 / 507 \times 100 = 7,101%)
+        - paragraph:
+          - text: El grupo
+          - strong: 75+
+          - text: se obtiene de forma exacta a partir del
+          - strong: año de nacimiento
+          - text: registrado en la fuente demográfica.
+    - textbox "Escribe un mensaje…"
+    - button "Enviar" [disabled]

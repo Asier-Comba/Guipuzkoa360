@@ -1,0 +1,352 @@
+- link "Saltar al contenido":
+  - /url: "#main"
+- banner:
+  - link "GIPUZKOA 360 Preguntar al territorio. Comprobar la respuesta.":
+    - /url: demo.html
+    - text: GIPUZKOA 360
+    - generic: Preguntar al territorio. Comprobar la respuesta.
+  - navigation "Navegación":
+    - link "Resultado principal":
+      - /url: demo.html
+    - link "Comparar municipios":
+      - /url: informe_principal.html
+    - link "Escenario Aduna":
+      - /url: scenario_comparison.html
+    - link "Cómo se comprueba":
+      - /url: control_center.html
+- generic: Resultados guardados y reproducibles · cada cifra conserva su fuente y sus límites · esta página no es una conversación en vivo
+- main:
+  - paragraph: GIPUZKOA 360
+  - heading "Explora dónde coinciden una población más envejecida y una mayor distancia a servicios sanitarios en Gipuzkoa." [level=1]
+  - paragraph: El mapa muestra el resultado principal y permite cambiar la edad o el nivel de exigencia, consultar un municipio y comprobar de dónde sale cada cifra.
+  - paragraph: Eustat · 01/01/2025 · geoEuskadi · 07/05/2025 · registros sanitarios · 20/09/2026. Las fuentes tienen fechas distintas.
+  - group "Cálculos guardados":
+    - generic: "Cambiar criterio:"
+    - button "✓ Caso principal · 65+" [pressed]
+    - button "Otra consulta · 75+"
+    - button "Criterio más exigente · 65+"
+  - link "Ver cómo se calcula":
+    - /url: "#method-section"
+  - link "Explorar un municipio":
+    - /url: "#municipality"
+  - heading "Dónde se cumple el criterio" [level=2]
+  - generic: Gipuzkoa · Norte ↑
+  - img "Coincidencia territorial en los 88 municipios de Gipuzkoa Los municipios rayados cumplen ambos criterios. La tabla y el selector ofrecen una alternativa textual. No representa rutas, tiempos ni prioridades de inversión.":
+    - 'generic "Abaltzisketa: no cumple ambos criterios"'
+    - 'generic "Aduna: no cumple ambos criterios"'
+    - 'generic "Aizarnazabal: no cumple ambos criterios"'
+    - 'generic "Albiztur: no cumple ambos criterios"'
+    - 'generic "Alegia: no cumple ambos criterios"'
+    - 'generic "Alkiza: no cumple ambos criterios"'
+    - 'generic "Altzo: no cumple ambos criterios"'
+    - 'generic "Amezketa: no cumple ambos criterios"'
+    - 'generic "Andoain: no cumple ambos criterios"'
+    - 'generic "Anoeta: no cumple ambos criterios"'
+    - 'generic "Antzuola: no cumple ambos criterios"'
+    - 'generic "Arama: no cumple ambos criterios"'
+    - 'generic "Aretxabaleta: no cumple ambos criterios"'
+    - 'generic "Asteasu: no cumple ambos criterios"'
+    - 'generic "Ataun: no cumple ambos criterios"'
+    - 'generic "Aia: no cumple ambos criterios"'
+    - 'generic "Azkoitia: no cumple ambos criterios"'
+    - 'generic "Azpeitia: no cumple ambos criterios"'
+    - 'generic "Beasain: no cumple ambos criterios"'
+    - 'generic "Beizama: no cumple ambos criterios"'
+    - 'generic "Belauntza: no cumple ambos criterios"'
+    - 'generic "Berastegi: no cumple ambos criterios"'
+    - 'generic "Berrobi: no cumple ambos criterios"'
+    - 'generic "Bidania-Goiatz: no cumple ambos criterios"'
+    - 'generic "Zegama: no cumple ambos criterios"'
+    - 'generic "Zerain: no cumple ambos criterios"'
+    - 'generic "Zestoa: no cumple ambos criterios"'
+    - 'generic "Zizurkil: no cumple ambos criterios"'
+    - 'generic "Deba: no cumple ambos criterios"'
+    - 'generic "Eibar: no cumple ambos criterios"'
+    - 'generic "Elduain: no cumple ambos criterios"'
+    - 'generic "Elgoibar: no cumple ambos criterios"'
+    - 'generic "Elgeta: no cumple ambos criterios"'
+    - 'generic "Eskoriatza: no cumple ambos criterios"'
+    - 'generic "Ezkio-Itsaso: cumple ambos criterios"'
+    - 'generic "Hondarribia: cumple ambos criterios"'
+    - 'generic "Gaintza: no cumple ambos criterios"'
+    - 'generic "Gabiria: no cumple ambos criterios"'
+    - 'generic "Getaria: no cumple ambos criterios"'
+    - 'generic "Hernani: no cumple ambos criterios"'
+    - 'generic "Hernialde: cumple ambos criterios"'
+    - 'generic "Ibarra: no cumple ambos criterios"'
+    - 'generic "Idiazabal: cumple ambos criterios"'
+    - 'generic "Ikaztegieta: no cumple ambos criterios"'
+    - 'generic "Irun: no cumple ambos criterios"'
+    - 'generic "Irura: no cumple ambos criterios"'
+    - 'generic "Itsasondo: no cumple ambos criterios"'
+    - 'generic "Larraul: no cumple ambos criterios"'
+    - 'generic "Lazkao: no cumple ambos criterios"'
+    - 'generic "Leaburu: no cumple ambos criterios"'
+    - 'generic "Legazpi: cumple ambos criterios"'
+    - 'generic "Legorreta: no cumple ambos criterios"'
+    - 'generic "Lezo: no cumple ambos criterios"'
+    - 'generic "Lizartza: no cumple ambos criterios"'
+    - 'generic "Arrasate/Mondragón: no cumple ambos criterios"'
+    - 'generic "Mutriku: no cumple ambos criterios"'
+    - 'generic "Mutiloa: no cumple ambos criterios"'
+    - 'generic "Olaberria: no cumple ambos criterios"'
+    - 'generic "Oñati: cumple ambos criterios"'
+    - 'generic "Orexa: no cumple ambos criterios"'
+    - 'generic "Orio: no cumple ambos criterios"'
+    - 'generic "Ormaiztegi: no cumple ambos criterios"'
+    - 'generic "Oiartzun: no cumple ambos criterios"'
+    - 'generic "Pasaia: no cumple ambos criterios"'
+    - 'generic "Soraluze-Placencia de las Armas: no cumple ambos criterios"'
+    - 'generic "Errezil: no cumple ambos criterios"'
+    - 'generic "Errenteria: cumple ambos criterios"'
+    - 'generic "Leintz-Gatzaga: no cumple ambos criterios"'
+    - 'generic "Donostia / San Sebastián: no cumple ambos criterios"'
+    - 'generic "Segura: no cumple ambos criterios"'
+    - 'generic "Tolosa: no cumple ambos criterios"'
+    - 'generic "Urnieta: no cumple ambos criterios"'
+    - 'generic "Usurbil: no cumple ambos criterios"'
+    - 'generic "Bergara: no cumple ambos criterios"'
+    - 'generic "Villabona: no cumple ambos criterios"'
+    - 'generic "Ordizia: no cumple ambos criterios"'
+    - 'generic "Urretxu: no cumple ambos criterios"'
+    - 'generic "Zaldibia: no cumple ambos criterios"'
+    - 'generic "Zarautz: no cumple ambos criterios"'
+    - 'generic "Zumarraga: no cumple ambos criterios"'
+    - 'generic "Zumaia: no cumple ambos criterios"'
+    - 'generic "Mendaro: no cumple ambos criterios"'
+    - 'generic "Lasarte-Oria: no cumple ambos criterios"'
+    - 'generic "Astigarraga: no cumple ambos criterios"'
+    - 'generic "Baliarrain: no cumple ambos criterios"'
+    - 'generic "Orendain: no cumple ambos criterios"'
+    - 'generic "Altzaga: no cumple ambos criterios"'
+    - 'generic "Gaztelu: no cumple ambos criterios"'
+  - generic: Cumple ambos criterios
+  - generic: No cumple ambos
+  - generic: Municipio consultado
+  - paragraph: geoEuskadi · contornos simplificados. Sin red viaria. Selector y tabla permiten consultar municipios pequeños.
+  - generic: Consultar un municipio del mapa
+  - combobox "Consultar un municipio del mapa":
+    - option "Abaltzisketa"
+    - option "Aduna"
+    - option "Aia"
+    - option "Aizarnazabal"
+    - option "Albiztur"
+    - option "Alegia"
+    - option "Alkiza"
+    - option "Altzaga"
+    - option "Altzo"
+    - option "Amezketa"
+    - option "Andoain"
+    - option "Anoeta"
+    - option "Antzuola"
+    - option "Arama"
+    - option "Aretxabaleta"
+    - option "Arrasate/Mondragón"
+    - option "Asteasu"
+    - option "Astigarraga"
+    - option "Ataun"
+    - option "Azkoitia"
+    - option "Azpeitia"
+    - option "Baliarrain"
+    - option "Beasain"
+    - option "Beizama"
+    - option "Belauntza"
+    - option "Berastegi"
+    - option "Bergara"
+    - option "Berrobi"
+    - option "Bidania-Goiatz"
+    - option "Deba"
+    - option "Donostia / San Sebastián"
+    - option "Eibar"
+    - option "Elduain"
+    - option "Elgeta"
+    - option "Elgoibar"
+    - option "Errenteria"
+    - option "Errezil"
+    - option "Eskoriatza"
+    - option "Ezkio-Itsaso"
+    - option "Gabiria"
+    - option "Gaintza"
+    - option "Gaztelu"
+    - option "Getaria"
+    - option "Hernani"
+    - option "Hernialde"
+    - option "Hondarribia"
+    - option "Ibarra"
+    - option "Idiazabal"
+    - option "Ikaztegieta"
+    - option "Irun"
+    - option "Irura"
+    - option "Itsasondo"
+    - option "Larraul"
+    - option "Lasarte-Oria"
+    - option "Lazkao"
+    - option "Leaburu"
+    - option "Legazpi" [selected]
+    - option "Legorreta"
+    - option "Leintz-Gatzaga"
+    - option "Lezo"
+    - option "Lizartza"
+    - option "Mendaro"
+    - option "Mutiloa"
+    - option "Mutriku"
+    - option "Oiartzun"
+    - option "Olaberria"
+    - option "Oñati"
+    - option "Ordizia"
+    - option "Orendain"
+    - option "Orexa"
+    - option "Orio"
+    - option "Ormaiztegi"
+    - option "Pasaia"
+    - option "Segura"
+    - option "Soraluze-Placencia de las Armas"
+    - option "Tolosa"
+    - option "Urnieta"
+    - option "Urretxu"
+    - option "Usurbil"
+    - option "Villabona"
+    - option "Zaldibia"
+    - option "Zarautz"
+    - option "Zegama"
+    - option "Zerain"
+    - option "Zestoa"
+    - option "Zizurkil"
+    - option "Zumaia"
+    - option "Zumarraga"
+  - paragraph: Legazpi · 27,170 % de población 65+ · 2.624,8 m · Cumple ambos criterios.
+  - strong: "7"
+  - paragraph:
+    - text: municipios cumplen ambos criterios.
+    - text: Nivel de exigencia intermedio · población de 65 o más
+  - paragraph:
+    - strong: No es un ranking de necesidad sanitaria.
+    - text: Distancia no es tiempo, capacidad ni citas.
+  - heading "Municipios que cumplen el criterio" [level=2]
+  - paragraph: Orden alfabético; no indica prioridad de intervención.
+  - region "Municipios destacados":
+    - table "Nivel de exigencia intermedio · atención primaria":
+      - caption: Nivel de exigencia intermedio · atención primaria
+      - rowgroup:
+        - row "Municipio 65+ (%) Distancia geométrica Dentro de 2 km":
+          - columnheader "Municipio"
+          - columnheader "65+ (%)"
+          - columnheader "Distancia geométrica"
+          - columnheader "Dentro de 2 km"
+      - rowgroup:
+        - row "Errenteria 24,302 % 3.925,5 m No":
+          - rowheader "Errenteria"
+          - cell "24,302 %"
+          - cell "3.925,5 m"
+          - cell "No"
+        - row "Ezkio-Itsaso 25,949 % 2.110,1 m No":
+          - rowheader "Ezkio-Itsaso"
+          - cell "25,949 %"
+          - cell "2.110,1 m"
+          - cell "No"
+        - row "Hernialde 25,387 % 2.192,5 m No":
+          - rowheader "Hernialde"
+          - cell "25,387 %"
+          - cell "2.192,5 m"
+          - cell "No"
+        - row "Hondarribia 25,808 % 2.583,5 m No":
+          - rowheader "Hondarribia"
+          - cell "25,808 %"
+          - cell "2.583,5 m"
+          - cell "No"
+        - row "Idiazabal 24,528 % 2.311,2 m No":
+          - rowheader "Idiazabal"
+          - cell "24,528 %"
+          - cell "2.311,2 m"
+          - cell "No"
+        - row "Legazpi 27,170 % 2.624,8 m No":
+          - rowheader "Legazpi"
+          - cell "27,170 %"
+          - cell "2.624,8 m"
+          - cell "No"
+        - row "Oñati 24,806 % 2.149,6 m No":
+          - rowheader "Oñati"
+          - cell "24,806 %"
+          - cell "2.149,6 m"
+          - cell "No"
+  - paragraph: Los municipios destacados están entre los valores más altos tanto en envejecimiento como en distancia. Los kilómetros son una referencia adicional de proximidad y no deciden por sí solos la selección.
+  - 'generic "Cómo se calcula: tres consultas diferentes"'
+  - heading "La pregunta pone en marcha un cálculo" [level=2]
+  - list "Flujo del agente":
+    - listitem: Pregunta
+    - listitem: → Elige operación
+    - listitem: → Calcula
+    - listitem: → Deja trazabilidad
+    - listitem: → Explica la respuesta
+  - paragraph: Una operación repetible calcula los indicadores. El agente interpreta la consulta y explica la evidencia; su explicación también necesita revisión. En el portal, cada cambio de criterio inicia un cálculo nuevo.
+  - heading "7 operaciones del agente" [level=3]
+  - heading "Resumen territorial" [level=3]
+  - paragraph: ¿Qué población e indicadores tiene Aduna?
+  - heading "Comparación" [level=3]
+  - paragraph: ¿En qué difieren Eibar y Tolosa?
+  - heading "Envejecimiento" [level=3]
+  - paragraph: ¿Qué proporción tiene 65 o más años?
+  - heading "Distancia a registros" [level=3]
+  - paragraph: ¿A qué distancia geométrica está el registro más cercano?
+  - heading "Coincidencia" [level=3]
+  - paragraph: ¿Dónde se alcanzan los dos cortes?
+  - heading "Escenario hipotético" [level=3]
+  - paragraph: ¿Qué cambia al añadir o retirar un registro?
+  - heading "Fuentes" [level=3]
+  - paragraph: ¿De dónde sale esta cifra y qué limita su uso?
+  - generic "Preguntas para seguir explorando"
+  - paragraph: Método y límites
+  - heading "Qué mide la distancia, y qué no" [level=2]
+  - heading "Proporción municipal" [level=3]
+  - paragraph: Personas del grupo de edad / población total × 100. El grupo 75+ se deriva de nacidos hasta 1949 para 01/01/2025.
+  - heading "Distancia geométrica" [level=3]
+  - paragraph: Línea recta desde un punto representativo hasta el registro más cercano, en coordenadas métricas. Sin rutas, tiempo de viaje, capacidad ni citas.
+  - heading "Coincidencia descriptiva" [level=3]
+  - paragraph: Se deben alcanzar los dos cortes. No prueba causalidad ni ordena prioridades. El punto no está ponderado por población.
+  - generic "Ver método exacto y límites del cálculo seleccionado"
+  - paragraph: Origen de los datos
+  - heading "Tres fuentes, tres fechas distintas" [level=2]
+  - paragraph: "Población de 2025 y registros de 2026: no es una fotografía temporal homogénea ni una serie de evolución."
+  - heading "Eustat · 2025" [level=3]
+  - paragraph: Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo · 2025-01-01
+  - link "Consultar fuente original":
+    - /url: https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px
+  - generic "Ficha, transformación y límites"
+  - heading "geoEuskadi · 2025" [level=3]
+  - paragraph: Límites Administrativos del País Vasco - Municipios 1:5.000 · 2025-05-07
+  - link "Consultar fuente original":
+    - /url: https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/
+  - generic "Ficha, transformación y límites"
+  - heading "Open Data Euskadi · 2026" [level=3]
+  - paragraph: Centros de salud, ambulatorios y hospitales públicos de Euskadi · 2026-09-20
+  - link "Consultar fuente original":
+    - /url: https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/
+  - generic "Ficha, transformación y límites"
+  - paragraph: Trazabilidad
+  - heading "Cómo se obtuvo" [level=2]
+  - paragraph: De la operación al dato y sus límites. La salida técnica queda disponible para revisar una afirmación concreta.
+  - generic "Ver operación, parámetros, filas, unidades y fuentes"
+  - option "Pregunta inicial · 65+" [selected]
+  - option "Seguimiento · 75+"
+  - option "Criterio más exigente · 65+"
+  - option "Comparación territorial"
+  - option "Verificación de Donostia"
+  - option "Registros en Aduna"
+  - option "Salud mental en Eibar"
+  - option "Escenario hipotético"
+  - option "Fuente demográfica"
+  - option "Municipio desconocido"
+  - option "Categoría no cargada"
+  - option "Fuente no cargada"
+  - option "Periodo no soportado"
+  - generic "Identidad y huellas de los archivos de entrada"
+  - paragraph:
+    - link "Descargar evidencia de producto":
+      - /url: evidencia/product_evidence.json
+    - text: ·
+    - link "Descargar filas y geometría completas":
+      - /url: evidencia/jury_visual_data.json
+  - generic "Si una pregunta no se puede responder"
+  - text: GIPUZKOA 360 · DeustoAI Labs
+  - text: Oier Duñabeitia · Asier Comba · Hugo Fernández Díez
+  - text: Exploración territorial con revisión humana.
