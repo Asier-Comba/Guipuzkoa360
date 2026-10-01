@@ -11,7 +11,7 @@ import zipfile
 
 import pytest
 
-from scripts.vnext_agent.build_r14_binding import ZIP, build as build_package
+from scripts.vnext_agent.build_r15 import ZIP, build as build_package
 
 
 WORKER = r'''

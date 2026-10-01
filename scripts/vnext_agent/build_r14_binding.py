@@ -26,12 +26,11 @@ def build():
     baseline = blob('scripts/vnext_agent/dist/gipuzkoa360-vnext-w2.zip')
     assert sha(baseline) == '3951b290b6ca59c336886a3f0acee77a68036d4fbcbc06c2cedfe22400c08616'
     report = json.loads(blob('scripts/vnext_agent/dist/gipuzkoa360-vnext-w2-manifest.json'))
-    source = (ROOT / 'agentes/gipuzkoa360_vnext/main.py').read_text(encoding='utf-8')
+    source = subprocess.check_output(['git', 'show', '094745b26bc57aee5cc1a5e003401743d96a914f:agentes/gipuzkoa360_vnext/main.py'], cwd=ROOT).decode('utf-8')
     boundary = 'try:\n    from . import tools as evidence\nexcept ImportError:\n    import tools as evidence'
     assert source.count(boundary) == 1
     main = source.replace(boundary, 'import tools as evidence').encode('utf-8')
-    generated = ROOT / 'agentes/gipuzkoa360_vnext/portal/main.py'
-    generated.write_bytes(main)
+    # Historical R14 reproduction must never overwrite the current R15 editor.
     OUT.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(io.BytesIO(baseline)) as old, zipfile.ZipFile(ZIP, 'w') as new:
         members = {}

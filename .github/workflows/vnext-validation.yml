@@ -1,7 +1,7 @@
 name: vNext W2 candidate validation
 on:
   pull_request:
-    branches: [integration/vnext-2026-10-04]
+    branches: [integration/vnext-2026-10-04, hotfix/r14-portal-binding]
     paths:
       - 'agentes/gipuzkoa360_vnext/**'
       - 'scripts/vnext_agent/**'
@@ -19,6 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
@@ -32,10 +33,9 @@ jobs:
         run: python -m pytest tests/vnext_agent -q -o addopts=
       - name: Rebuild isolated candidate twice
         run: |
-          python scripts/vnext_agent/build_registry.py
-          python -m scripts.vnext_agent.build_package
-          sha256sum scripts/vnext_agent/dist/gipuzkoa360-vnext-w2.zip > /tmp/vnext-first.sha256
-          python -m scripts.vnext_agent.build_package
+          python -m scripts.vnext_agent.build_r15
+          sha256sum scripts/vnext_agent/dist/r15/gipuzkoa360-r15-final-agent.zip > /tmp/vnext-first.sha256
+          python -m scripts.vnext_agent.build_r15
           sha256sum --check /tmp/vnext-first.sha256
           git diff --exit-code -- agentes/gipuzkoa360_vnext/portal datos_preparados/vnext/capabilities.json scripts/vnext_agent/dist
       - name: Protect v4 after candidate regeneration
