@@ -1,0 +1,126 @@
+{
+  "version": "agentv_64c72bcb772143968038a2f620944bf1",
+  "runtime_tested_head": "77ac63d5b68a3ecbf51461e3aaa0de0566d6f2c3",
+  "method": "UI downloads of main/tools and all 15 context assets after version creation; definition freezes these paths. Not a frozen-version ZIP export.",
+  "files": [
+    {
+      "path": "main.py",
+      "download": "C:\\Users\\oier.dunabeitia\\Downloads\\main (2).py",
+      "sha256": "ced461f9473ccf9370170c3301eb52dc5ff1382f1c29ce57557dbd50d9d76450",
+      "bytes": 11850,
+      "expected": "ced461f9473ccf9370170c3301eb52dc5ff1382f1c29ce57557dbd50d9d76450"
+    },
+    {
+      "path": "tools.py",
+      "download": "C:\\Users\\oier.dunabeitia\\Downloads\\tools (2).py",
+      "sha256": "c9bcb26795f01dca925d43bfed4ad0e917496aa4f8d6afe74e14285b881642cb",
+      "bytes": 190080,
+      "expected": "c9bcb26795f01dca925d43bfed4ad0e917496aa4f8d6afe74e14285b881642cb"
+    },
+    {
+      "path": "FUENTES.md",
+      "download": "C:\\Users\\oier.dunabeitia\\Downloads\\FUENTES (2).md",
+      "sha256": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de",
+      "bytes": 6963,
+      "expected": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de"
+    },
+    {
+      "path": "docs/METODOLOGIA.md",
+      "download": "C:\\Users\\oier.dunabeitia\\Downloads\\METODOLOGIA (2).md",
+      "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7",
+      "bytes": 1210,
+      "expected": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7"
+    },
+    {
+      "path": "contracts/vnext/capability-v1.1.schema.json",
+      "download": "C:\\Users\\oier.dunabeitia\\Downloads\\capability-v1.1.schema (2).json",
+      "sha256": "66ab0036ce3a529dad3d51d193fa05970fd795bbefcab477281e5df055ff2f0b",
+      "bytes": 3527,
+      "expected": "66ab0036ce3a529dad3d51d193fa05970fd795bbefcab477281e5df055ff2f0b"
+    },
+    {
+      "path": "contracts/vnext/evidence-v1.1.schema.json",
+      "download": "C:\\Users\\oier.dunabeitia\\Downloads\\evidence-v1.1.schema (2).json",
+      "sha256": "6fbd22a567cc5a8d8ce17fd1968c52fc92448526bf81103e2768486d724d9ad0",
+      "bytes": 7357,
+      "expected": "6fbd22a567cc5a8d8ce17fd1968c52fc92448526bf81103e2768486d724d9ad0"
+    },
+    {
+      "path": "datos_preparados/municipios.csv",
+      "download": "C:\\Users\\oier.dunabeitia\\Downloads\\municipios (2).csv",
+      "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
+      "bytes": 30075,
+      "expected": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
+    },
+    {
+      "path": "datos_preparados/demografia.csv",
+      "download": "C:\\Users\\oier.dunabeitia\\Downloads\\demografia (2).csv",
+      "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96",
+      "bytes": 6161,
+      "expected": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+    },
+    {
+      "path": "datos_preparados/runtime_municipality_points.csv",
+      "download": "C:\\Users\\oier.dunabeitia\\Downloads\\runtime_municipality_points (2).csv",
+      "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11",
+      "bytes": 8689,
+      "expected": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11"
+    },
+    {
+      "path": "datos_preparados/runtime_servicios.csv",
+      "download": "C:\\Users\\oier.dunabeitia\\Downloads\\runtime_servicios (2).csv",
+      "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece",
+      "bytes": 25258,
+      "expected": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
+    },
+    {
+      "path": "datos_preparados/metadata_sources.json",
+      "download": "C:\\Users\\oier.dunabeitia\\Downloads\\metadata_sources (2).json",
+      "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
+      "bytes": 4833,
+      "expected": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+    },
+    {
+      "path": "datos_preparados/data_contract.json",
+      "download": "C:\\Users\\oier.dunabeitia\\Downloads\\data_contract (2).json",
+      "sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae",
+      "bytes": 5274,
+      "expected": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae"
+    },
+    {
+      "path": "datos_preparados/vnext/capabilities.json",
+      "download": "C:\\Users\\oier.dunabeitia\\Downloads\\capabilities (2).json",
+      "sha256": "d51c17a5ab9b2902382991abe215b77c879eb73a63df0a1ae5affb317c8e5b89",
+      "bytes": 26605,
+      "expected": "d51c17a5ab9b2902382991abe215b77c879eb73a63df0a1ae5affb317c8e5b89"
+    },
+    {
+      "path": "datos_preparados/vnext/operational_catalog_r6.json",
+      "download": "C:\\Users\\oier.dunabeitia\\Downloads\\operational_catalog_r6 (2).json",
+      "sha256": "c7bd3cc8ffe50956ce839bec0ef90a13578160a4d5b4053b09673d2dc4c4ec17",
+      "bytes": 2651,
+      "expected": "c7bd3cc8ffe50956ce839bec0ef90a13578160a4d5b4053b09673d2dc4c4ec17"
+    },
+    {
+      "path": "datos_preparados/vnext/consumer_labels_r7.json",
+      "download": "C:\\Users\\oier.dunabeitia\\Downloads\\consumer_labels_r7 (2).json",
+      "sha256": "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799",
+      "bytes": 3152,
+      "expected": "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799"
+    },
+    {
+      "path": "datos_preparados/vnext/mobility_sources.json",
+      "download": "C:\\Users\\oier.dunabeitia\\Downloads\\mobility_sources (2).json",
+      "sha256": "a5ba0b7a9ee0ad85366e89ee888de2635013c148d005dcf9ecb94d24215bc445",
+      "bytes": 5622,
+      "expected": "a5ba0b7a9ee0ad85366e89ee888de2635013c148d005dcf9ecb94d24215bc445"
+    },
+    {
+      "path": "datos_preparados/vnext/w1_r6_runtime.zip",
+      "download": "C:\\Users\\oier.dunabeitia\\Downloads\\w1_r6_runtime (2).zip",
+      "sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+      "bytes": 129365,
+      "expected": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910"
+    }
+  ]
+}

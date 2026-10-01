@@ -1,4 +1,185 @@
 {
+  "project": "GIPUZKOA 360",
+  "candidate": "R17_FINAL_CANDIDATE_PASS_BOUNDED_REAL_PROTOCOL",
+  "base_r16_head": "c859a26396838d59a52b8d91f1eda5ef6b69e4cd",
+  "runtime_tested_head": "77ac63d5b68a3ecbf51461e3aaa0de0566d6f2c3",
+  "documentary_head_binding": "Exact final head and corresponding CI in PR22 checkpoint; no runtime changes after runtime_tested_head",
+  "package_path": "scripts/vnext_agent/dist/r17/gipuzkoa360-r17-final-agent.zip",
+  "package_bytes": 231758,
+  "package_sha256": "1b263724110c68efab69c14e479f50ed2d101f935c6c83102bb0e5d4c699dc79",
+  "manifest_path": "scripts/vnext_agent/dist/r17/gipuzkoa360-r17-final-agent-manifest.json",
+  "manifest_sha256": "246f703e1e1881fe984598fe7b428b1b18380c43e7555c03fca2b53dd1982fee",
+  "changed_members": [
+    "main.py",
+    "tools.py"
+  ],
+  "members_count": 25,
+  "context_assets": 15,
+  "other_members": "23_BYTE_IDENTICAL_TO_R16",
+  "w1_runtime_changed": false,
+  "v4_preserved": true,
+  "v4": "195b4980fa5998b096c308296a55e452380b0371",
+  "public_resumen_fields": [
+    "municipio"
+  ],
+  "demography": {
+    "rows": 88,
+    "only_period": "2025-01-01",
+    "aduna": {
+      "population_75_plus": 36,
+      "population_total": 507,
+      "pct_75_plus": 7.101
+    },
+    "derivation": "Birth year <=1949 incl earlier group; sum by municipality/sex total; percentage=count/total*100,3 decimals; aggregate-year granularity, not exact individual birthdays"
+  },
+  "metadata_audit": {
+    "status": "PASS",
+    "retained_historical_source_ids": "W1_*/W2_* only as traceability identifier values; never free prose/institution titles",
+    "raw_claims_changed": false
+  },
+  "offline_validation": {
+    "classification": "AUTHOR_DELTA_CHECK_NOT_INDEPENDENT",
+    "focused": 13,
+    "cases": 335,
+    "raw_parity": 335,
+    "oracle": 7,
+    "time_summaries": 41,
+    "findings": 0,
+    "local_python": 681,
+    "local_full_runs": 1,
+    "local_elapsed_s": 304.04,
+    "node": 17,
+    "identity": 14,
+    "jury": "PASS",
+    "artifacts": "PASS",
+    "two_builds_identical": true
+  },
+  "ci": {
+    "runtime_tested_head": "77ac63d5b68a3ecbf51461e3aaa0de0566d6f2c3",
+    "r17_run": 36928182340,
+    "fast_run": 36928182347,
+    "ubuntu": {
+      "status": "PASS",
+      "job": 110590589306,
+      "python": 681,
+      "node": 17
+    },
+    "windows": {
+      "status": "PASS",
+      "job": 110590589440,
+      "python": 681,
+      "node": 17
+    },
+    "final_documentary_ci": "Verified after push, exact SHA and run IDs fixed in PR22 checkpoint"
+  },
+  "current_agent": {
+    "version_id": "agentv_64c72bcb772143968038a2f620944bf1",
+    "name": "GIPUZKOA 360 · Visita sanitaria · v3",
+    "model": "openai:gpt-5.6-luna",
+    "memory": true,
+    "internet": false,
+    "tools": 9,
+    "summary_input_fields": [
+      "municipio"
+    ],
+    "visit_input_fields": [
+      "origin_id",
+      "destination_id",
+      "date",
+      "appointment_time",
+      "duration_minutes"
+    ],
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "results": {
+      "aduna": "PASS",
+      "main": "PASS",
+      "variation": "PASS",
+      "limit_coverage": "PASS"
+    },
+    "real_tranche": {
+      "used": 4,
+      "maximum": 4,
+      "remaining": 0
+    },
+    "latencies_ms": {
+      "measurement": "Upper bounds send to observed UI final; no exact server/p95/tool-output streaming timing",
+      "M1": 37809,
+      "M2": 104501,
+      "M3": 61762,
+      "M4": 56332,
+      "time_to_tool": "NOT_OBSERVED_SEPARATELY",
+      "time_to_output": "NOT_OBSERVED_SEPARATELY"
+    },
+    "findings": [
+      {
+        "severity": "Low",
+        "case": "M4",
+        "description": "Origin IDs and English realtime in an otherwise correct limit response; stylistic only, not selected for public delivery; no runtime patch."
+      }
+    ],
+    "r16_v2_untouched": true
+  },
+  "contrast": {
+    "main_s": 10691,
+    "main_hms": "2 h 58 min 11 s",
+    "scope_start": "08:09:37",
+    "scope_end": "11:07:48",
+    "bus_departure": "08:12:37",
+    "variation_s": 8591,
+    "variation_hms": "2 h 23 min 11 s",
+    "variation_start": "08:44:37",
+    "signed_delta_s": -2100,
+    "signed_delta_minutes": -35,
+    "interpretation": "Conditional same-origin scheduled/modelled scenarios, not observed saving or recommendation"
+  },
+  "identity": {
+    "method": "UI download main/tools and 15 context assets after creation, 17 matches; definition freezes context paths; not a frozen version ZIP export",
+    "report": "outputs/r17/portal/workspace-file-identity.json",
+    "main_sha256": "ced461f9473ccf9370170c3301eb52dc5ff1382f1c29ce57557dbd50d9d76450",
+    "tools_sha256": "c9bcb26795f01dca925d43bfed4ad0e917496aa4f8d6afe74e14285b881642cb",
+    "w1_zip_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910"
+  },
+  "delivery": {
+    "content_complete": true,
+    "public_copy_human": true,
+    "public_internal_jargon": 0,
+    "selected_version": "agentv_64c72bcb772143968038a2f620944bf1",
+    "selected_conversation": "Session B, two completed turns, main09:30 and variation09:45, no retries",
+    "selected_files": [],
+    "selected_links": [
+      "https://asier-comba.github.io/Guipuzkoa360/",
+      "https://github.com/Asier-Comba/Guipuzkoa360"
+    ],
+    "demo_label": "visualización del screening territorial",
+    "team_confirmed": 3,
+    "team": "DeustoAI Labs — Universidad de Deusto",
+    "members": [
+      "Oier Duñabeitia Berezo",
+      "Asier Comba Lopez",
+      "Hugo Fernández Díez"
+    ],
+    "portal_status": "PRIVATE_DRAFT_SAVED",
+    "preview_reviewed": true,
+    "second_review": true,
+    "platform_evaluation": "sin evaluar; not claimed as official evaluation",
+    "renderer_observation": "Empty Response labels for tool events and literal Markdown in preview; preserved, not edited",
+    "track": null,
+    "final_confirmation": false,
+    "published": false,
+    "public_copy": "docs/vnext/final_delivery/DELIVERY_COPY.md",
+    "preview": "outputs/r17/portal/delivery-preview.txt"
+  },
+  "PORTAL_REAL_AGENT": "PASS_BOUNDED_FOUR_MESSAGES",
+  "RELEASE_GO": "NO",
+  "TRACK": "PENDING_HUMAN_SELECTION",
+  "FINAL_CONFIRMATION": "PENDING_HUMAN",
+  "PUBLICATION": "PENDING_HUMAN",
+  "HOLDOUT": "SEALED_NOT_EXECUTED",
+  "next_exact_action": "Human chooses preferred track, performs final preview, checks the publication acknowledgement and clicks Publicar entrega.",
+  "historical_r16": {
   "PORTAL_LLM": "R16_REAL_MAIN_A_VARIATION_SOURCE_LIMIT_MAIN_B_PASS_ADUNA_STRICT_FAIL_RECOVERED",
   "RELEASE_GO": "NO",
   "V4_PRESERVED": "YES",
@@ -573,5 +754,6 @@
     "technical_release_ready": false,
     "strict_protocol": "FAIL_M5",
     "public_copy": "docs/vnext/final_delivery/DELIVERY_COPY.md"
+  }
   }
 }

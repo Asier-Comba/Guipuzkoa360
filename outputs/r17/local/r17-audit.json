@@ -1,0 +1,3249 @@
+{
+  "aduna": {
+    "age_group_derivation": {
+      "condition": "año de nacimiento <= 1949, incluido el grupo de años anteriores",
+      "institution": "Eustat - Instituto Vasco de Estadística",
+      "limitation": "Son recuentos municipales agregados, no edades exactas ni circunstancias individuales; el límite por año no identifica a los nacidos el propio 1 de enero de 1950.",
+      "meaning": "A 1 de enero de 2025, quienes nacieron hasta 1949 ya habían cumplido al menos 75 años. La agrupación se basa en el año de nacimiento; no permite identificar cumpleaños individuales de quienes nacieron en 1950.",
+      "method": "Suma de los recuentos por municipio y sexo total de los nacidos hasta 1949; porcentaje = recuento / población total × 100, redondeado a tres decimales.",
+      "output_field": "population_75_plus",
+      "reference_period": "2025-01-01",
+      "source_field": "año de nacimiento",
+      "source_id": "EUSTAT_EMH_2025"
+    },
+    "assumptions": [],
+    "capability_id": "obtener_resumen_territorial",
+    "claims": [
+      {
+        "assumptions": [],
+        "denominator": {
+          "data_ref": {
+            "field": "population_total",
+            "municipality_code": "20002",
+            "path": "datos_preparados/demografia.csv",
+            "reference_period": "2025-01-01"
+          },
+          "evidence_path": null,
+          "period": "2025-01-01",
+          "source_id": "EUSTAT_EMH_2025",
+          "unit": "personas",
+          "value": 507
+        },
+        "derivation": "derived_exact",
+        "entity_id": "20002",
+        "entity_label": "Aduna",
+        "entity_type": "municipality",
+        "evidence_path": "/data/0/pct_65_plus",
+        "id": "claim-1",
+        "label": "pct_65_plus",
+        "metric_id": "pct_65_plus",
+        "numerator": {
+          "data_ref": {
+            "field": "population_65_plus",
+            "municipality_code": "20002",
+            "path": "datos_preparados/demografia.csv",
+            "reference_period": "2025-01-01"
+          },
+          "evidence_path": null,
+          "period": "2025-01-01",
+          "source_id": "EUSTAT_EMH_2025",
+          "unit": "personas",
+          "value": 75
+        },
+        "period": "2025-01-01",
+        "reference_periods": [
+          {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025"
+          }
+        ],
+        "source_ids": [
+          "EUSTAT_EMH_2025"
+        ],
+        "source_refs": [
+          {
+            "role": "demographic_observation",
+            "source_id": "EUSTAT_EMH_2025"
+          }
+        ],
+        "unit": "%",
+        "value": 14.793
+      },
+      {
+        "assumptions": [
+          "75+ derivado del año de nacimiento en la fuente demográfica."
+        ],
+        "denominator": {
+          "data_ref": {
+            "field": "population_total",
+            "municipality_code": "20002",
+            "path": "datos_preparados/demografia.csv",
+            "reference_period": "2025-01-01"
+          },
+          "evidence_path": null,
+          "period": "2025-01-01",
+          "source_id": "EUSTAT_EMH_2025",
+          "unit": "personas",
+          "value": 507
+        },
+        "derivation": "derived_exact",
+        "entity_id": "20002",
+        "entity_label": "Aduna",
+        "entity_type": "municipality",
+        "evidence_path": "/data/0/pct_75_plus",
+        "id": "claim-2",
+        "label": "pct_75_plus",
+        "metric_id": "pct_75_plus",
+        "numerator": {
+          "data_ref": {
+            "field": "population_75_plus",
+            "municipality_code": "20002",
+            "path": "datos_preparados/demografia.csv",
+            "reference_period": "2025-01-01"
+          },
+          "evidence_path": null,
+          "period": "2025-01-01",
+          "source_id": "EUSTAT_EMH_2025",
+          "unit": "personas",
+          "value": 36
+        },
+        "period": "2025-01-01",
+        "reference_periods": [
+          {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025"
+          }
+        ],
+        "source_ids": [
+          "EUSTAT_EMH_2025"
+        ],
+        "source_refs": [
+          {
+            "role": "demographic_observation",
+            "source_id": "EUSTAT_EMH_2025"
+          }
+        ],
+        "unit": "%",
+        "value": 7.101
+      },
+      {
+        "assumptions": [],
+        "denominator": null,
+        "derivation": "direct",
+        "entity_id": "20002",
+        "entity_label": "Aduna",
+        "entity_type": "municipality",
+        "evidence_path": "/data/0/population_65_plus",
+        "id": "claim-3",
+        "label": "population_65_plus",
+        "metric_id": "population_65_plus",
+        "numerator": null,
+        "period": "2025-01-01",
+        "reference_periods": [
+          {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025"
+          }
+        ],
+        "source_ids": [
+          "EUSTAT_EMH_2025"
+        ],
+        "source_refs": [
+          {
+            "role": "demographic_observation",
+            "source_id": "EUSTAT_EMH_2025"
+          }
+        ],
+        "unit": "personas",
+        "value": 75
+      },
+      {
+        "assumptions": [],
+        "denominator": null,
+        "derivation": "direct",
+        "entity_id": "20002",
+        "entity_label": "Aduna",
+        "entity_type": "municipality",
+        "evidence_path": "/data/0/population_75_plus",
+        "id": "claim-4",
+        "label": "population_75_plus",
+        "metric_id": "population_75_plus",
+        "numerator": null,
+        "period": "2025-01-01",
+        "reference_periods": [
+          {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025"
+          }
+        ],
+        "source_ids": [
+          "EUSTAT_EMH_2025"
+        ],
+        "source_refs": [
+          {
+            "role": "demographic_observation",
+            "source_id": "EUSTAT_EMH_2025"
+          }
+        ],
+        "unit": "personas",
+        "value": 36
+      },
+      {
+        "assumptions": [],
+        "denominator": null,
+        "derivation": "direct",
+        "entity_id": "20002",
+        "entity_label": "Aduna",
+        "entity_type": "municipality",
+        "evidence_path": "/data/0/population_total",
+        "id": "claim-5",
+        "label": "population_total",
+        "metric_id": "population_total",
+        "numerator": null,
+        "period": "2025-01-01",
+        "reference_periods": [
+          {
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025"
+          }
+        ],
+        "source_ids": [
+          "EUSTAT_EMH_2025"
+        ],
+        "source_refs": [
+          {
+            "role": "demographic_observation",
+            "source_id": "EUSTAT_EMH_2025"
+          }
+        ],
+        "unit": "personas",
+        "value": 507
+      }
+    ],
+    "effective_request": {
+      "defaults_applied": [
+        "periodo"
+      ],
+      "effective_period": "2025-01-01",
+      "municipality_codes": [
+        "20002"
+      ],
+      "municipality_labels": [
+        "Aduna"
+      ],
+      "operation": "obtener_resumen_territorial",
+      "parameters": {
+        "municipio": "Aduna",
+        "periodo": null
+      }
+    },
+    "error": null,
+    "execution": {
+      "request_id": "R15_AUDIT_FIXED_REQUEST",
+      "state": "completed",
+      "tool": "obtener_resumen_territorial"
+    },
+    "limitations": [
+      "La presencia de un servicio no acredita capacidad, horario, calidad ni acceso real.",
+      "Los periodos de demografía y servicios pueden ser distintos; se muestran en las fuentes.",
+      "16 cifras del resultado carecen de atribución por fuente en la salida y no se ofrecen como afirmaciones verificadas."
+    ],
+    "method": "Selección por código municipal; recuento de registros por categoría; tasas por 10.000 personas del grupo de edad y mínima distancia euclídea EPSG:25830 desde el punto representativo municipal.",
+    "normalized_input": {
+      "arguments": {
+        "municipio": "Aduna"
+      },
+      "tool": "obtener_resumen_territorial"
+    },
+    "outcomes": [],
+    "request_id": "R15_AUDIT_FIXED_REQUEST",
+    "selection": {
+      "criterion": "Todas las entidades solicitadas explícitamente",
+      "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+      "omitted_entities": 0,
+      "returned_entities": 1,
+      "total_entities": 1
+    },
+    "status": "valid"
+  },
+  "base_r16_head": "c859a26396838d59a52b8d91f1eda5ef6b69e4cd",
+  "base_r16_zip_sha256": "374af43fa6ce58b513a10477fc216215c7472f54bd28eada4fc0908da6f3dd6c",
+  "capabilities": {
+    "assumptions": [],
+    "capabilities": [
+      {
+        "coverage": {
+          "entities": 88,
+          "periods": [
+            "2025-01-01",
+            "2026-09-20",
+            "2025-05-07"
+          ],
+          "scope": "Un municipio; demografía y cifras de servicio solo cuando tienen fuente ejecutada",
+          "territory": "Gipuzkoa"
+        },
+        "derivation": "direct",
+        "description": "Resumen municipal observado",
+        "enabled": true,
+        "id": "obtener_resumen_territorial",
+        "input_fields": [
+          {
+            "allowed_values": [],
+            "name": "municipio",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "periodo_demografico_actual": "2025-01-01",
+        "periodo_demografico_explicacion": "La versión actual incorpora una única referencia demográfica disponible. Las fuentes sanitarias conservan sus propias fechas.",
+        "semantic_limits": [
+          "La ficha puede contener indicadores de servicios sin todas sus fuentes en la salida; esos valores no se promueven a claims.",
+          "Los periodos de fuente no forman una fotografía temporal homogénea."
+        ]
+      },
+      {
+        "coverage": {
+          "entities": 88,
+          "periods": [
+            "2025-01-01",
+            "2026-09-20",
+            "2025-05-07"
+          ],
+          "scope": "2–20 municipios explícitos; orden indiferente, identidad por código",
+          "territory": "Gipuzkoa"
+        },
+        "derivation": "derived_exact",
+        "description": "Comparación municipal con criterios explícitos",
+        "enabled": true,
+        "id": "comparar_municipios",
+        "input_fields": [
+          {
+            "allowed_values": [],
+            "name": "municipios",
+            "required": true,
+            "type": "string_array"
+          },
+          {
+            "allowed_values": [
+              "65",
+              "75"
+            ],
+            "name": "grupo_edad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowed_values": [
+              "primary_care",
+              "hospital",
+              "mental_health",
+              "other_health"
+            ],
+            "name": "categoria_servicio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "name": "umbral_km",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "allowed_values": [
+              "2025-01-01"
+            ],
+            "name": "periodo",
+            "nullable": true,
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "period_policy": {
+          "allowed_values": [
+            "2025-01-01"
+          ],
+          "explicit_invalid": "reject_without_numeric_claims",
+          "meaning": "demographic_selector",
+          "omitted_or_null": "single_available_period_else_request_period"
+        },
+        "semantic_limits": [
+          "Los registros sanitarios y la distancia geométrica no acreditan capacidad o recorrido real.",
+          "Los periodos de fuente no forman una fotografía temporal homogénea."
+        ]
+      },
+      {
+        "coverage": {
+          "entities": 88,
+          "periods": [
+            "2025-01-01"
+          ],
+          "scope": "Ranking municipal 65+ o 75+",
+          "territory": "Gipuzkoa"
+        },
+        "derivation": "derived_exact",
+        "description": "Ranking demográfico 65+ o 75+",
+        "enabled": true,
+        "id": "analizar_envejecimiento",
+        "input_fields": [
+          {
+            "allowed_values": [
+              "65",
+              "75"
+            ],
+            "name": "grupo_edad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowed_values": [
+              "percentage",
+              "count"
+            ],
+            "name": "medida",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowed_values": [
+              "2025-01-01"
+            ],
+            "name": "periodo",
+            "nullable": true,
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "name": "top_n",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "period_policy": {
+          "allowed_values": [
+            "2025-01-01"
+          ],
+          "explicit_invalid": "reject_without_numeric_claims",
+          "meaning": "demographic_selector",
+          "omitted_or_null": "single_available_period_else_request_period"
+        },
+        "semantic_limits": [
+          "75+ se deriva de año de nacimiento; el resultado no identifica individuos.",
+          "Los periodos de fuente no forman una fotografía temporal homogénea."
+        ]
+      },
+      {
+        "coverage": {
+          "entities": 88,
+          "periods": [
+            "2026-09-20",
+            "2025-05-07"
+          ],
+          "scope": "88 municipios o subconjunto explícito; distancia geométrica",
+          "territory": "Gipuzkoa"
+        },
+        "derivation": "derived_exact",
+        "description": "Distancia geométrica desde punto representativo",
+        "enabled": true,
+        "id": "analizar_acceso_servicios",
+        "input_fields": [
+          {
+            "allowed_values": [
+              "primary_care",
+              "hospital",
+              "mental_health",
+              "other_health"
+            ],
+            "name": "categoria_servicio",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "name": "umbral_km",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "allowed_values": [
+              "2026-09-20",
+              "2025-05-07"
+            ],
+            "name": "periodo",
+            "nullable": true,
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "name": "municipios",
+            "required": false,
+            "type": "string_array"
+          }
+        ],
+        "period_policy": {
+          "allowed_values": [
+            "2026-09-20",
+            "2025-05-07"
+          ],
+          "explicit_invalid": "reject_without_numeric_claims",
+          "meaning": "source_reference_only_not_historical_filter",
+          "omitted_or_null": "current_sources_with_their_distinct_periods"
+        },
+        "semantic_limits": [
+          "La distancia no es tiempo ni ruta; registro no implica apertura.",
+          "Los periodos de fuente no forman una fotografía temporal homogénea."
+        ]
+      },
+      {
+        "coverage": {
+          "entities": 88,
+          "periods": [
+            "2025-01-01",
+            "2026-09-20",
+            "2025-05-07"
+          ],
+          "scope": "Cruce municipal de edad y distancia; cuantiles explícitos",
+          "territory": "Gipuzkoa"
+        },
+        "derivation": "derived_exact",
+        "description": "Cruce descriptivo de envejecimiento y distancia",
+        "enabled": true,
+        "id": "analizar_coincidencia",
+        "input_fields": [
+          {
+            "allowed_values": [
+              "primary_care",
+              "hospital",
+              "mental_health",
+              "other_health"
+            ],
+            "name": "categoria_servicio",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowed_values": [
+              "65",
+              "75"
+            ],
+            "name": "grupo_edad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "name": "umbral_km",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "allowed_values": [
+              "2025-01-01"
+            ],
+            "name": "periodo",
+            "nullable": true,
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "name": "cuantil",
+            "required": false,
+            "type": "number"
+          }
+        ],
+        "period_policy": {
+          "allowed_values": [
+            "2025-01-01"
+          ],
+          "explicit_invalid": "reject_without_numeric_claims",
+          "meaning": "demographic_selector",
+          "omitted_or_null": "single_available_period_else_request_period"
+        },
+        "semantic_limits": [
+          "Coincidencia descriptiva no demuestra causalidad.",
+          "Los periodos de fuente no forman una fotografía temporal homogénea."
+        ]
+      },
+      {
+        "coverage": {
+          "entities": 88,
+          "periods": [
+            "2026-09-20",
+            "2025-05-07"
+          ],
+          "scope": "Contrafactual geométrico; no es pronóstico",
+          "territory": "Gipuzkoa"
+        },
+        "derivation": "estimated_with_assumptions",
+        "description": "Contrafactual geométrico hipotético",
+        "enabled": true,
+        "id": "simular_escenario",
+        "input_fields": [
+          {
+            "allowed_values": [
+              "add_service",
+              "remove_service",
+              "change_threshold"
+            ],
+            "name": "accion",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowed_values": [
+              "primary_care",
+              "hospital",
+              "mental_health",
+              "other_health"
+            ],
+            "name": "categoria_servicio",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "name": "umbral_km",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "allowed_values": [
+              "2026-09-20",
+              "2025-05-07"
+            ],
+            "name": "periodo",
+            "nullable": true,
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "name": "latitud",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "allowed_values": [],
+            "name": "longitud",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "allowed_values": [],
+            "name": "service_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "name": "nuevo_umbral_km",
+            "required": false,
+            "type": "number"
+          }
+        ],
+        "period_policy": {
+          "allowed_values": [
+            "2026-09-20",
+            "2025-05-07"
+          ],
+          "explicit_invalid": "reject_without_numeric_claims",
+          "meaning": "source_reference_only_not_historical_filter",
+          "omitted_or_null": "current_sources_with_their_distinct_periods"
+        },
+        "semantic_limits": [
+          "Parámetros hipotéticos no son observaciones oficiales.",
+          "Los periodos de fuente no forman una fotografía temporal homogénea."
+        ]
+      },
+      {
+        "coverage": {
+          "entities": 17,
+          "periods": [
+            "2025-01-01",
+            "2026-09-20",
+            "2025-05-07",
+            "demography=2025-01-01;services=2026-09-20;geography=2025-05-07"
+          ],
+          "scope": "Fichas de fuente del catálogo local",
+          "territory": "source_catalog"
+        },
+        "derivation": "direct",
+        "description": "Ficha de procedencia versionada",
+        "enabled": true,
+        "id": "consultar_fuente",
+        "input_fields": [
+          {
+            "allowed_values": [],
+            "name": "source_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "semantic_limits": [
+          "Metadatos de fuente no validan por sí solos cada cifra.",
+          "Los periodos de fuente no forman una fotografía temporal homogénea."
+        ]
+      },
+      {
+        "coverage": {
+          "entities": 9,
+          "periods": [],
+          "scope": "Registro de operaciones disponibles y no disponibles",
+          "territory": "capability_registry"
+        },
+        "derivation": "direct",
+        "description": "Inspección de operaciones habilitadas y límites",
+        "enabled": true,
+        "id": "consultar_capacidades",
+        "input_fields": [
+          {
+            "allowed_values": [],
+            "name": "pregunta_o_dimension",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "semantic_limits": [
+          "La ficha no demuestra calidad conversacional del modelo.",
+          "Los periodos de fuente no forman una fotografía temporal homogénea."
+        ]
+      },
+      {
+        "coverage": {
+          "entities": 3,
+          "periods": [
+            "2026-09-28/2026-12-27",
+            "2026-09-20",
+            "Observed 2026-09-29",
+            "2026-01",
+            "Acquired 2026-09-29",
+            "supuesto del modelo de paseo, no periodo observado",
+            "2026-09-29"
+          ],
+          "scope": "health_visit modelled; validated date only; origin_stop_presence_to_return_stop_arrival; public single visit",
+          "territory": "Goierrialdea"
+        },
+        "derivation": "estimated_with_assumptions",
+        "description": "Una visita sanitaria programada/modelada por llamada; comparar mediante llamadas individuales y sus resultados válidos. Sin batch público.",
+        "enabled": true,
+        "id": "plan_visit",
+        "input_fields": [
+          {
+            "allowed_values": [],
+            "name": "origin_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "name": "destination_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "name": "date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "name": "appointment_time",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "name": "duration_minutes",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "semantic_limits": [
+          "Paseo modelado y tiempo GTFS programado, no llegada real.",
+          "Unknown no significa ausencia de transporte; no viable no es fallo de red.",
+          "Los argumentos de la tool no acreditan autoría humana."
+        ]
+      }
+    ],
+    "capability_id": "consultar_capacidades",
+    "claims": [],
+    "effective_request": {
+      "defaults_applied": [],
+      "effective_period": null,
+      "municipality_codes": [],
+      "municipality_labels": [],
+      "operation": "consultar_capacidades",
+      "parameters": {
+        "pregunta_o_dimension": null
+      }
+    },
+    "error": null,
+    "execution": {
+      "request_id": "R15_AUDIT_FIXED_REQUEST",
+      "state": "completed",
+      "tool": "consultar_capacidades"
+    },
+    "limitations": [
+      "Una capacidad deshabilitada no se puede ejecutar.",
+      "El registro no sustituye una prueba conversacional en portal."
+    ],
+    "method": "Consulta de las operaciones disponibles, sus fuentes y límites.",
+    "mobility_catalog": {
+      "comparison": {
+        "batch_supported": false,
+        "cross_origin_comparison": "side_by_side_only; numeric delta is not supported across origins",
+        "mode": "individual_calls",
+        "procedure": "Execute one plan_visit per scenario, observe every output, then compare only valid compatible results. Differences are conditional, not observed savings or recommendations."
+      },
+      "destination": {
+        "centre_id": "entityBC631DA5",
+        "destination_id": "beasain_official_centre_anchor",
+        "name": "Ambulatorio de Beasain",
+        "reference_point_meaning": "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+        "verification": {
+          "centre_anchor": "CONFIRMED_OFFICIAL_POINT",
+          "centre_identity": "CONFIRMED",
+          "entrance_verified": false,
+          "modelled_access": true
+        }
+      },
+      "modelling_assumptions": {
+        "arrival_margin_minutes": 10,
+        "boarding_margin_minutes": 3,
+        "meaning": "Supuestos de cálculo; no son decisiones observadas del usuario ni argumentos públicos.",
+        "walking_profile": "Paseo modelado de referencia: 50 m/min más 120 s por enlace completo"
+      },
+      "origin_options": [
+        {
+          "municipality_name": "Idiazabal",
+          "name": "Paradas centrales de Idiazabal",
+          "origin_id": "idiazabal_center_stops"
+        },
+        {
+          "municipality_name": "Segura",
+          "name": "Paradas Herriko Plaza de Segura",
+          "origin_id": "segura_herriko_plaza_stops"
+        },
+        {
+          "municipality_name": "Zegama",
+          "name": "Paradas centrales de Zegama",
+          "origin_id": "zegama_center_stops"
+        }
+      ],
+      "ranges": {
+        "duration_minutes": {
+          "maximum": 720,
+          "minimum": 1
+        }
+      },
+      "request_fields": [
+        "origin_id",
+        "destination_id",
+        "date",
+        "appointment_time",
+        "duration_minutes"
+      ],
+      "required_fields": [
+        "origin_id",
+        "destination_id",
+        "date",
+        "appointment_time",
+        "duration_minutes"
+      ],
+      "restrictions": [
+        "GO01 direct only",
+        "static schedule; not realtime",
+        "same civil day",
+        "origin stop presence to return stop arrival",
+        "validated date only",
+        "not assigned centre, appointment availability, universal accessibility or verified entrance"
+      ],
+      "scenario_kind": "health_visit",
+      "validated_date": "2026-09-29",
+      "walking_profile": {
+        "id": "poc_reference_50m_min_plus_120s",
+        "label": "Paseo modelado de referencia: 50 m/min más 120 s por enlace completo"
+      }
+    },
+    "normalized_input": {
+      "arguments": {
+        "pregunta_o_dimension": null
+      },
+      "tool": "consultar_capacidades"
+    },
+    "outcomes": [],
+    "request_id": "R15_AUDIT_FIXED_REQUEST",
+    "selection": {
+      "criterion": "Primeras entidades en el orden validado de la herramienta",
+      "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+      "omitted_entities": 0,
+      "returned_entities": 0,
+      "total_entities": 0
+    },
+    "status": "valid"
+  },
+  "cases": 335,
+  "classification": "R17_AUTHOR_DELTA_CHECK_NOT_INDEPENDENT_NOT_REAL_AGENT",
+  "elapsed_seconds": 108.625,
+  "findings": [],
+  "holdout": "SEALED_NOT_EXECUTED",
+  "model_calls": 0,
+  "network": "socket creation denied in cold workers",
+  "oracle_cases": 7,
+  "r17_manifest_sha256": "246f703e1e1881fe984598fe7b428b1b18380c43e7555c03fca2b53dd1982fee",
+  "r17_zip_sha256": "1b263724110c68efab69c14e479f50ed2d101f935c6c83102bb0e5d4c699dc79",
+  "raw_execution_parity": 335,
+  "records": [
+    {
+      "group": "supported_health",
+      "id": "health:idiazabal_center_stops:09:30:1",
+      "issues": [],
+      "raw_sha256": "bc2587f0470b392707a367b96614c0b202c3be9677e83a0387ca1372dabd062b",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:idiazabal_center_stops:09:30:20",
+      "issues": [],
+      "raw_sha256": "865d0c8a7904c411a6a3ab9284f09cc7817e8b7c370b47b56900b65bc2e63d4f",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:idiazabal_center_stops:09:30:27",
+      "issues": [],
+      "raw_sha256": "19360d6e742ef987e5c3013879ef526ea5f67ea8fcd3af7745d6345b57fd5c21",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:idiazabal_center_stops:09:30:90",
+      "issues": [],
+      "raw_sha256": "c4da05e7c2591ca4338d4a5a1839e2b81bf376f91e1b1b951ad4b0702716390f",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:idiazabal_center_stops:09:30:720",
+      "issues": [],
+      "raw_sha256": "477b09386605ae3c8c06b7b3024f8a48546285518387ff61141aa6b767c48e11",
+      "status": "no_data"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:idiazabal_center_stops:09:45:1",
+      "issues": [],
+      "raw_sha256": "08262181ed8e6c091e53a73ce4c895ade1aad30edfd53a968f3733c9110aa6da",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:idiazabal_center_stops:09:45:20",
+      "issues": [],
+      "raw_sha256": "b6f0e1f6257de675edbad4e177b363e944ea3ea2ae3e4aec99e562ae1fb29621",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:idiazabal_center_stops:09:45:27",
+      "issues": [],
+      "raw_sha256": "1562d092efcc0956d9207f2bc2bb7b9de85bf98dcb381d73dbdc4f9acd4bfab9",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:idiazabal_center_stops:09:45:90",
+      "issues": [],
+      "raw_sha256": "27e3862129a018090a8410fb92523e68ed9a0dba930ece00db2e5039f6e4a289",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:idiazabal_center_stops:09:45:720",
+      "issues": [],
+      "raw_sha256": "e5349d530a2066065b666ad7a81c6b6a779fe887f4d98b60a0dff653b2f6a0e0",
+      "status": "no_data"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:segura_herriko_plaza_stops:09:30:1",
+      "issues": [],
+      "raw_sha256": "938cc275dd070d0a135d0fb0da520c8b45cf36f4732d4c3d3706d452919249a3",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:segura_herriko_plaza_stops:09:30:20",
+      "issues": [],
+      "raw_sha256": "cde0e2e2b2ca3ea2e99873ab9cdd1681a49c7c707f1807e4da304e83376cb478",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:segura_herriko_plaza_stops:09:30:27",
+      "issues": [],
+      "raw_sha256": "60421397263aea16b07c0e3bc517cdca979127f34b515e3a52f8fa669343a92d",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:segura_herriko_plaza_stops:09:30:90",
+      "issues": [],
+      "raw_sha256": "e611b6839810b9239e1e730e5ec122853a4fa2ad2a9a335c89c70ab3ca50b4e6",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:segura_herriko_plaza_stops:09:30:720",
+      "issues": [],
+      "raw_sha256": "d4e09337442c5ec5a8d0502a3e228ed8f2527e722ac7b2ac28205ea32264cf96",
+      "status": "no_data"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:segura_herriko_plaza_stops:09:45:1",
+      "issues": [],
+      "raw_sha256": "c13c7559cc47db9b945d598c40ba05eaed2a6513906b3bda5967f88f6856d0ff",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:segura_herriko_plaza_stops:09:45:20",
+      "issues": [],
+      "raw_sha256": "3ff78b17fd6cad905afa478078d64515346700bcedf6c933d2c2731dfcbde1de",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:segura_herriko_plaza_stops:09:45:27",
+      "issues": [],
+      "raw_sha256": "f1f75b4948a199ca076f220921ac82d24bdf9cfd2c965e4003f40bd565329d1d",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:segura_herriko_plaza_stops:09:45:90",
+      "issues": [],
+      "raw_sha256": "92eb9399ed51666e020f8254f8cd5052c0c589a3b69f70c0387551d3ef51279c",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:segura_herriko_plaza_stops:09:45:720",
+      "issues": [],
+      "raw_sha256": "f5bfb5c28d3230be3a03238af1800704da3478dc5776f778b653f19282c20491",
+      "status": "no_data"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:zegama_center_stops:09:30:1",
+      "issues": [],
+      "raw_sha256": "f8f7401e260240babb4180aa8ea2fb9da3916fea4f1aa7ef912989bb39dd8fea",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:zegama_center_stops:09:30:20",
+      "issues": [],
+      "raw_sha256": "cf0087ddb8fe570bc12d8806c36741d756c9d2fae169a9bd0dffe867896f91ab",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:zegama_center_stops:09:30:27",
+      "issues": [],
+      "raw_sha256": "1712b4663eff6763ff5fd3eb5480831af3a7764e1a585a0054dc43c4a4bf962d",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:zegama_center_stops:09:30:90",
+      "issues": [],
+      "raw_sha256": "e38a4624bf55abca2f4c0ee5645ac0488ebc87374613badf8da19260c358d864",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:zegama_center_stops:09:30:720",
+      "issues": [],
+      "raw_sha256": "aa3d0f65fe5e6232f9f305b26a19ebc4f1fc57cfb943fbf7b41dcb4a17aa3668",
+      "status": "no_data"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:zegama_center_stops:09:45:1",
+      "issues": [],
+      "raw_sha256": "ea8833fca30dda7c18555702016951aa74ed29654696a534c5904f09a9c05c45",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:zegama_center_stops:09:45:20",
+      "issues": [],
+      "raw_sha256": "fb23e6dccded434e448681261f986bc4824004295992b97e72b01062ed3cb5c5",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:zegama_center_stops:09:45:27",
+      "issues": [],
+      "raw_sha256": "a30b8fa751b4735f09d95783dd5341c573f87ebf7b078513a6d3f2487c73e5cc",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:zegama_center_stops:09:45:90",
+      "issues": [],
+      "raw_sha256": "5c25e5f833d9fd5e84382155d25d71894d97f049a3f39330c030720ca104467d",
+      "status": "valid"
+    },
+    {
+      "group": "supported_health",
+      "id": "health:zegama_center_stops:09:45:720",
+      "issues": [],
+      "raw_sha256": "6956b4159e31c5b0b443b29e213199a9afd5d3199363c985cc5a9fcc1f23e566",
+      "status": "no_data"
+    },
+    {
+      "group": "internal_conformance",
+      "id": "conformance:health_defaults_omitted",
+      "issues": [],
+      "raw_sha256": "fb23e6dccded434e448681261f986bc4824004295992b97e72b01062ed3cb5c5",
+      "status": "valid"
+    },
+    {
+      "group": "internal_conformance",
+      "id": "conformance:health_defaults_explicit",
+      "issues": [],
+      "raw_sha256": "24d17e6a19932b0bf50a6aa5ef7cc6fceb40535343f2f9429318c0d29b85b989",
+      "status": "valid"
+    },
+    {
+      "group": "internal_conformance",
+      "id": "conformance:health_nondefault_margins",
+      "issues": [],
+      "raw_sha256": "6678c2ce01de8bc69da607383550bd4a111be8e868585665e1756b53be8305e3",
+      "status": "valid"
+    },
+    {
+      "group": "internal_conformance",
+      "id": "conformance:health_duration_changes_return",
+      "issues": [],
+      "raw_sha256": "97315adacb6dadb975e535dae13737e53ef02a1c0676c8efe359e23cc0ea9ee0",
+      "status": "valid"
+    },
+    {
+      "group": "internal_conformance",
+      "id": "conformance:health_no_feasible",
+      "issues": [],
+      "raw_sha256": "53b805afaf295dd580d8bfa3d81cf3fb1b4fcdd2835fda0aa508a1b16942d319",
+      "status": "no_data"
+    },
+    {
+      "group": "internal_conformance",
+      "id": "conformance:health_date_not_validated",
+      "issues": [],
+      "raw_sha256": "b7972f20eb86872ce2f8431b6ce2183a2a392a9e33f4676bc1a39dbb3dd0ddad",
+      "status": "error"
+    },
+    {
+      "group": "internal_conformance",
+      "id": "conformance:health_destination_unsupported",
+      "issues": [],
+      "raw_sha256": "a0b3ce824ec39796a93e6ffc9077938d2baee37e25571e09b6b289e2c5a16640",
+      "status": "unsupported"
+    },
+    {
+      "group": "internal_conformance",
+      "id": "conformance:health_profile_unsupported",
+      "issues": [],
+      "raw_sha256": "8aa916c2733eb646fe4181074f7c5fc8f22e63befb56cdc1bb6a5a9980af09f8",
+      "status": "error"
+    },
+    {
+      "group": "internal_conformance",
+      "id": "conformance:compare_same_origin_two_hours",
+      "issues": [],
+      "raw_sha256": "5226b3f131c791b04e0a2429ce95f5e816309e812a5565b1c733d7b303d9316b",
+      "status": "valid"
+    },
+    {
+      "group": "internal_conformance",
+      "id": "conformance:compare_duration",
+      "issues": [],
+      "raw_sha256": "384e928f41c0b559c69cdedb80bb53d867550595e40b60fa6eb871cb734d1e06",
+      "status": "valid"
+    },
+    {
+      "group": "internal_conformance",
+      "id": "conformance:compare_cross_origin",
+      "issues": [],
+      "raw_sha256": "c19644475868eba2f7f51f776ebef0c772e69def11d9f2ef0d0e780e0c7a9287",
+      "status": "valid"
+    },
+    {
+      "group": "internal_conformance",
+      "id": "conformance:legacy_r4_explicit",
+      "issues": [],
+      "raw_sha256": "cf70bb03a15be882688fcb64101b2a5fa61f3867728a8cb47313e6a83aa66b5a",
+      "status": "valid"
+    },
+    {
+      "group": "internal_conformance",
+      "id": "conformance:mixed_r4_r6",
+      "issues": [],
+      "raw_sha256": "a7744b29ba9d1f3b90c1cbe57a6b327c38e0d1a419b3270c84485bb6ff41e2b2",
+      "status": "valid"
+    },
+    {
+      "group": "internal_conformance",
+      "id": "conformance:invalid_structural",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "oracle",
+      "id": "oracle:MAIN",
+      "issues": [],
+      "raw_sha256": "cf0087ddb8fe570bc12d8806c36741d756c9d2fae169a9bd0dffe867896f91ab",
+      "status": "valid"
+    },
+    {
+      "group": "oracle",
+      "id": "oracle:VARIATION",
+      "issues": [],
+      "raw_sha256": "fb23e6dccded434e448681261f986bc4824004295992b97e72b01062ed3cb5c5",
+      "status": "valid"
+    },
+    {
+      "group": "oracle",
+      "id": "oracle:DURATION",
+      "issues": [],
+      "raw_sha256": "97315adacb6dadb975e535dae13737e53ef02a1c0676c8efe359e23cc0ea9ee0",
+      "status": "valid"
+    },
+    {
+      "group": "oracle",
+      "id": "oracle:LIMIT_DATE",
+      "issues": [],
+      "raw_sha256": "b7972f20eb86872ce2f8431b6ce2183a2a392a9e33f4676bc1a39dbb3dd0ddad",
+      "status": "error"
+    },
+    {
+      "group": "oracle",
+      "id": "oracle:LIMIT_SCOPE",
+      "issues": [],
+      "raw_sha256": "58e14eada9f45d4a5c699762c5993c221cf9b700b1727d82f4a34d6f77a67973",
+      "status": "unsupported"
+    },
+    {
+      "group": "oracle",
+      "id": "oracle:ERROR",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "oracle",
+      "id": "oracle:UNKNOWN_SNAPSHOT",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "territorial_baseline",
+      "id": "baseline:obtener_resumen_territorial",
+      "issues": [],
+      "raw_sha256": "6e63893818d82d8082a54d97d95a934eaff7c2141d3b99ddb7bedf72069088e7",
+      "status": "valid"
+    },
+    {
+      "group": "territorial_baseline",
+      "id": "baseline:comparar_municipios",
+      "issues": [],
+      "raw_sha256": "99849107955ed9021280f65a300c139955633ab02f870415e8bc79558298b1e0",
+      "status": "valid"
+    },
+    {
+      "group": "territorial_baseline",
+      "id": "baseline:analizar_envejecimiento",
+      "issues": [],
+      "raw_sha256": "ad7dda445b888a60abccbf415eb70a54cf696054f3b48c498f7b6772dbbf8049",
+      "status": "valid"
+    },
+    {
+      "group": "territorial_baseline",
+      "id": "baseline:analizar_acceso_servicios",
+      "issues": [],
+      "raw_sha256": "32d1d856e1029ee28b7e715013d5910cda56bdb530aecd91535806931784c3ea",
+      "status": "valid"
+    },
+    {
+      "group": "territorial_baseline",
+      "id": "baseline:analizar_coincidencia",
+      "issues": [],
+      "raw_sha256": "f9d74cf1aadebfa8b2d34ba341582af627dd6fc4063e6bb5ab8af8e5a78a2f68",
+      "status": "valid"
+    },
+    {
+      "group": "territorial_baseline",
+      "id": "baseline:simular_escenario",
+      "issues": [],
+      "raw_sha256": "0d81969f68f66b4ba22f664cf7aff1c4251914657f4a35424ebaa5f3ad691914",
+      "status": "valid"
+    },
+    {
+      "group": "territorial_baseline",
+      "id": "baseline:consultar_fuente",
+      "issues": [],
+      "raw_sha256": "4a89f10b7358e37c82544b75db59eef7659648682e5cc703ad62aa75be14966a",
+      "status": "valid"
+    },
+    {
+      "group": "territorial_baseline",
+      "id": "baseline:consultar_capacidades",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "group": "source_resolution",
+      "id": "source:EUSTAT_EMH_2025",
+      "issues": [],
+      "raw_sha256": "cedc92d7c63f02b2458aac1a0d6db8795b5d67adef7171ab4ec97f1af5e0e02c",
+      "status": "valid"
+    },
+    {
+      "group": "source_resolution",
+      "id": "source:ODE_HEALTH_CENTRES_2026",
+      "issues": [],
+      "raw_sha256": "15c9b3a44631f9ac14b447228ee230c1949e1a4000ab2f54f965621dbd08cd16",
+      "status": "valid"
+    },
+    {
+      "group": "source_resolution",
+      "id": "source:GEOEUSKADI_MUNICIPIOS_2025",
+      "issues": [],
+      "raw_sha256": "ee341af3522a0fd92986113f55e10b7282b87e02e639e2ac43b08bce8382dda8",
+      "status": "valid"
+    },
+    {
+      "group": "source_resolution",
+      "id": "source:G360_DERIVED_MUNICIPAL_METRICS_V1",
+      "issues": [],
+      "raw_sha256": "dc7a3778c83f8dad66454c12d2f7feefe71494e31b6874d07161e8d79c05e224",
+      "status": "valid"
+    },
+    {
+      "group": "source_resolution",
+      "id": "source:W1_GTFS@2026-09-29",
+      "issues": [],
+      "raw_sha256": "1b75d839538ef1f60d19eccd067496d3c3fc688396275142a2161561b5774fa3",
+      "status": "valid"
+    },
+    {
+      "group": "source_resolution",
+      "id": "source:W2_USER@2026-09-29",
+      "issues": [],
+      "raw_sha256": "15d42daab0e515fa4bf13cce7d51c09eca25ea7239b960fbee0e7f25ed881b5c",
+      "status": "valid"
+    },
+    {
+      "group": "source_resolution",
+      "id": "source:W1_MODEL@2026-09-29",
+      "issues": [],
+      "raw_sha256": "24e55847f7bca38eb8446103f7691328b22a2d10d2dc2cec30ba9ef818b99e86",
+      "status": "valid"
+    },
+    {
+      "group": "source_resolution",
+      "id": "source:W1_DERIVED@2026-09-29",
+      "issues": [],
+      "raw_sha256": "20419466419ff465d66aa07fa678f5a3d4adaca3dc7e4c87d118afca0655ae94",
+      "status": "valid"
+    },
+    {
+      "group": "source_resolution",
+      "id": "source:GTFS",
+      "issues": [],
+      "raw_sha256": "e616bf98231c4afd055097fe395c3851f9604234f5acd92618b381fda5a8d91a",
+      "status": "valid"
+    },
+    {
+      "group": "source_resolution",
+      "id": "source:HEALTH_REGISTRY",
+      "issues": [],
+      "raw_sha256": "4eba440bd65090d5f2a409498e27f3adb177cd9cb121563dd59a7301a139d897",
+      "status": "valid"
+    },
+    {
+      "group": "source_resolution",
+      "id": "source:HEALTH_PAGE",
+      "issues": [],
+      "raw_sha256": "7eb8ee5d79f1e0db1580d2e2b56471dd70a0fad3d30e38305696f9c9c02d1690",
+      "status": "valid"
+    },
+    {
+      "group": "source_resolution",
+      "id": "source:PADI_2026",
+      "issues": [],
+      "raw_sha256": "d1da8e7ed612c9468037cc5aee4106946f43a9fc26ba27f2c71cec0e218e0b6a",
+      "status": "valid"
+    },
+    {
+      "group": "source_resolution",
+      "id": "source:OSM",
+      "issues": [],
+      "raw_sha256": "50cec841bae01560aeed391bd6f14db30cbe4846baf016f81189c1fc0d8ce2c5",
+      "status": "valid"
+    },
+    {
+      "group": "source_resolution",
+      "id": "source:MODEL",
+      "issues": [],
+      "raw_sha256": "fdfdc387a7b09e65deabf59e1fa868cedbc40985e2b4277e2b3f1c65f1ee0029",
+      "status": "valid"
+    },
+    {
+      "group": "source_resolution",
+      "id": "source:USER",
+      "issues": [],
+      "raw_sha256": "9a0d41632b623ce6bbd80b1034d29ab72a41e021d0245b783ed6d7f3d75caa4d",
+      "status": "valid"
+    },
+    {
+      "group": "source_resolution",
+      "id": "source:MODEL_DEFAULTS",
+      "issues": [],
+      "raw_sha256": "b6a8c14ea5457fe26a8877e7666bf8798d12d031220dd4d04d224943ad54bf1d",
+      "status": "valid"
+    },
+    {
+      "group": "source_resolution",
+      "id": "source:DERIVED",
+      "issues": [],
+      "raw_sha256": "6c7b357d16044e53e735b7afe1f80f55a36bcb624310cd5872860425df967a91",
+      "status": "valid"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:obtener_resumen_territorial:municipio:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:obtener_resumen_territorial:municipio:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:obtener_resumen_territorial:municipio:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:obtener_resumen_territorial:municipio:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:obtener_resumen_territorial:municipio:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:obtener_resumen_territorial:periodo:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:obtener_resumen_territorial:periodo:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:obtener_resumen_territorial:periodo:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:obtener_resumen_territorial:periodo:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:obtener_resumen_territorial:periodo:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:municipios:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:municipios:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:municipios:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:municipios:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:municipios:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:grupo_edad:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:grupo_edad:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:grupo_edad:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:grupo_edad:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:grupo_edad:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:categoria_servicio:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:categoria_servicio:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:categoria_servicio:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:categoria_servicio:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:categoria_servicio:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:umbral_km:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:umbral_km:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:umbral_km:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:umbral_km:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:umbral_km:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:periodo:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:periodo:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:periodo:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:periodo:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:comparar_municipios:periodo:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_envejecimiento:grupo_edad:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_envejecimiento:grupo_edad:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_envejecimiento:grupo_edad:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_envejecimiento:grupo_edad:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_envejecimiento:grupo_edad:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_envejecimiento:medida:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_envejecimiento:medida:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_envejecimiento:medida:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_envejecimiento:medida:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_envejecimiento:medida:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_envejecimiento:periodo:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_envejecimiento:periodo:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_envejecimiento:periodo:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_envejecimiento:periodo:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_envejecimiento:periodo:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_envejecimiento:top_n:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_envejecimiento:top_n:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_envejecimiento:top_n:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_envejecimiento:top_n:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_envejecimiento:top_n:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_acceso_servicios:categoria_servicio:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_acceso_servicios:categoria_servicio:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_acceso_servicios:categoria_servicio:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_acceso_servicios:categoria_servicio:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_acceso_servicios:categoria_servicio:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_acceso_servicios:umbral_km:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_acceso_servicios:umbral_km:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_acceso_servicios:umbral_km:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_acceso_servicios:umbral_km:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_acceso_servicios:umbral_km:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_acceso_servicios:periodo:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_acceso_servicios:periodo:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_acceso_servicios:periodo:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_acceso_servicios:periodo:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_acceso_servicios:periodo:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_acceso_servicios:municipios:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_acceso_servicios:municipios:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_acceso_servicios:municipios:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_acceso_servicios:municipios:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_acceso_servicios:municipios:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:categoria_servicio:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:categoria_servicio:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:categoria_servicio:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:categoria_servicio:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:categoria_servicio:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:grupo_edad:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:grupo_edad:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:grupo_edad:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:grupo_edad:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:grupo_edad:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:umbral_km:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:umbral_km:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:umbral_km:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:umbral_km:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:umbral_km:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:periodo:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:periodo:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:periodo:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:periodo:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:periodo:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:cuantil:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:cuantil:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:cuantil:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:cuantil:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:analizar_coincidencia:cuantil:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:accion:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:accion:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:accion:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:accion:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:accion:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:categoria_servicio:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:categoria_servicio:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:categoria_servicio:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:categoria_servicio:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:categoria_servicio:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:umbral_km:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:umbral_km:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:umbral_km:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:umbral_km:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:umbral_km:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:periodo:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:periodo:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:periodo:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:periodo:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:periodo:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:latitud:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:latitud:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:latitud:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:latitud:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:latitud:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:longitud:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:longitud:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:longitud:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:longitud:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:longitud:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:service_id:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:service_id:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:service_id:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:service_id:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:service_id:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:nuevo_umbral_km:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:nuevo_umbral_km:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:nuevo_umbral_km:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:nuevo_umbral_km:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:simular_escenario:nuevo_umbral_km:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:consultar_fuente:source_id:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:consultar_fuente:source_id:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:consultar_fuente:source_id:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:consultar_fuente:source_id:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:consultar_fuente:source_id:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:consultar_capacidades:pregunta_o_dimension:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:consultar_capacidades:pregunta_o_dimension:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:consultar_capacidades:pregunta_o_dimension:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:consultar_capacidades:pregunta_o_dimension:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:consultar_capacidades:pregunta_o_dimension:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:origin_id:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:origin_id:1",
+      "issues": [],
+      "raw_sha256": "bc539620f5706116d228a22abca56429786d164513b683783705ab1a015f30e6",
+      "status": "unsupported"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:origin_id:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:origin_id:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:origin_id:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:origin_id:5",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:origin_id:6",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:destination_id:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:destination_id:1",
+      "issues": [],
+      "raw_sha256": "631b00347c453740e2531c2e83938819e82c398dd5c67a7bcaf78a7fd4437c48",
+      "status": "unsupported"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:destination_id:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:destination_id:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:destination_id:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:destination_id:5",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:destination_id:6",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:date:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:date:1",
+      "issues": [],
+      "raw_sha256": "c28971dceaecae25a7b9260edb2eecbc0105ec6e4f9d757b8b7b123e2bf106e8",
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:date:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:date:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:date:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:date:5",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:date:6",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:appointment_time:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:appointment_time:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:appointment_time:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:appointment_time:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:appointment_time:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:appointment_time:5",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:appointment_time:6",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:duration_minutes:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:duration_minutes:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:duration_minutes:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:duration_minutes:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:duration_minutes:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:duration_minutes:5",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "malformed",
+      "id": "malformed:plan_visit:duration_minutes:6",
+      "issues": [],
+      "raw_sha256": "1c5344723d0d8354da06927891bc03edc3d21e52ecff56a6ddd87c6e8081b7d9",
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:obtener_resumen_territorial:omitted",
+      "issues": [],
+      "raw_sha256": "6e63893818d82d8082a54d97d95a934eaff7c2141d3b99ddb7bedf72069088e7",
+      "status": "valid"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:obtener_resumen_territorial:none",
+      "issues": [],
+      "raw_sha256": "6e63893818d82d8082a54d97d95a934eaff7c2141d3b99ddb7bedf72069088e7",
+      "status": "valid"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:obtener_resumen_territorial:valid",
+      "issues": [],
+      "raw_sha256": "6e63893818d82d8082a54d97d95a934eaff7c2141d3b99ddb7bedf72069088e7",
+      "status": "valid"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:obtener_resumen_territorial:empty",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:obtener_resumen_territorial:whitespace",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:obtener_resumen_territorial:wrong_type",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:obtener_resumen_territorial:unsupported",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:comparar_municipios:omitted",
+      "issues": [],
+      "raw_sha256": "99849107955ed9021280f65a300c139955633ab02f870415e8bc79558298b1e0",
+      "status": "valid"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:comparar_municipios:none",
+      "issues": [],
+      "raw_sha256": "99849107955ed9021280f65a300c139955633ab02f870415e8bc79558298b1e0",
+      "status": "valid"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:comparar_municipios:valid",
+      "issues": [],
+      "raw_sha256": "99849107955ed9021280f65a300c139955633ab02f870415e8bc79558298b1e0",
+      "status": "valid"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:comparar_municipios:empty",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:comparar_municipios:whitespace",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:comparar_municipios:wrong_type",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:comparar_municipios:unsupported",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_envejecimiento:omitted",
+      "issues": [],
+      "raw_sha256": "ad7dda445b888a60abccbf415eb70a54cf696054f3b48c498f7b6772dbbf8049",
+      "status": "valid"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_envejecimiento:none",
+      "issues": [],
+      "raw_sha256": "ad7dda445b888a60abccbf415eb70a54cf696054f3b48c498f7b6772dbbf8049",
+      "status": "valid"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_envejecimiento:valid",
+      "issues": [],
+      "raw_sha256": "ad7dda445b888a60abccbf415eb70a54cf696054f3b48c498f7b6772dbbf8049",
+      "status": "valid"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_envejecimiento:empty",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_envejecimiento:whitespace",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_envejecimiento:wrong_type",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_envejecimiento:unsupported",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_acceso_servicios:omitted",
+      "issues": [],
+      "raw_sha256": "32d1d856e1029ee28b7e715013d5910cda56bdb530aecd91535806931784c3ea",
+      "status": "valid"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_acceso_servicios:none",
+      "issues": [],
+      "raw_sha256": "32d1d856e1029ee28b7e715013d5910cda56bdb530aecd91535806931784c3ea",
+      "status": "valid"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_acceso_servicios:valid",
+      "issues": [],
+      "raw_sha256": "c9e0c39644f604b8bad9d3d82b14e7766ba071f81ba30a6557473f023d622879",
+      "status": "valid"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_acceso_servicios:empty",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_acceso_servicios:whitespace",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_acceso_servicios:wrong_type",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_acceso_servicios:unsupported",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_coincidencia:omitted",
+      "issues": [],
+      "raw_sha256": "f9d74cf1aadebfa8b2d34ba341582af627dd6fc4063e6bb5ab8af8e5a78a2f68",
+      "status": "valid"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_coincidencia:none",
+      "issues": [],
+      "raw_sha256": "f9d74cf1aadebfa8b2d34ba341582af627dd6fc4063e6bb5ab8af8e5a78a2f68",
+      "status": "valid"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_coincidencia:valid",
+      "issues": [],
+      "raw_sha256": "f9d74cf1aadebfa8b2d34ba341582af627dd6fc4063e6bb5ab8af8e5a78a2f68",
+      "status": "valid"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_coincidencia:empty",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_coincidencia:whitespace",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_coincidencia:wrong_type",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:analizar_coincidencia:unsupported",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:simular_escenario:omitted",
+      "issues": [],
+      "raw_sha256": "0d81969f68f66b4ba22f664cf7aff1c4251914657f4a35424ebaa5f3ad691914",
+      "status": "valid"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:simular_escenario:none",
+      "issues": [],
+      "raw_sha256": "0d81969f68f66b4ba22f664cf7aff1c4251914657f4a35424ebaa5f3ad691914",
+      "status": "valid"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:simular_escenario:valid",
+      "issues": [],
+      "raw_sha256": "604097eea3c27f7844094de67c9451f132043a9f5d3df7507465d65dea5e4134",
+      "status": "valid"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:simular_escenario:empty",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:simular_escenario:whitespace",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:simular_escenario:wrong_type",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "period_matrix",
+      "id": "period:simular_escenario:unsupported",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "boundaries",
+      "id": "boundary:threshold_zero",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "boundaries",
+      "id": "boundary:threshold_none",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "boundaries",
+      "id": "boundary:threshold_above",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "boundaries",
+      "id": "boundary:threshold_limit",
+      "issues": [],
+      "raw_sha256": "a4ec08d712e6cb37b64bff8f4384f86261c178fe8c946986df715ccde044845a",
+      "status": "valid"
+    },
+    {
+      "group": "boundaries",
+      "id": "boundary:top_zero",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "boundaries",
+      "id": "boundary:top_none",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "boundaries",
+      "id": "boundary:top_limit",
+      "issues": [],
+      "raw_sha256": "9612f2fff3e033e92547adfdb7706ab00de3458f0cc24873aaa81d4bc62556c2",
+      "status": "valid"
+    },
+    {
+      "group": "boundaries",
+      "id": "boundary:quantile_zero",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "boundaries",
+      "id": "boundary:quantile_limit",
+      "issues": [],
+      "raw_sha256": "55c56c603e241832814eccd8ede191b0fb0cb1a3bfb7057cf132adefb18d9f8c",
+      "status": "valid"
+    },
+    {
+      "group": "boundaries",
+      "id": "boundary:unknown_municipality",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "boundaries",
+      "id": "boundary:array_whitespace",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "boundaries",
+      "id": "boundary:array_prose",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "boundaries",
+      "id": "boundary:unsupported_category",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "boundaries",
+      "id": "boundary:unsupported_source",
+      "issues": [],
+      "raw_sha256": "f65132076462054c5cf8a350770e79c63bb12aef6e513b1d6434d125c7ad0bca",
+      "status": "error"
+    },
+    {
+      "group": "boundaries",
+      "id": "boundary:add_id_whitespace",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "boundaries",
+      "id": "boundary:unused_coordinates",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "boundaries",
+      "id": "boundary:unused_invalid_coordinates",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "boundaries",
+      "id": "boundary:valid_add",
+      "issues": [],
+      "raw_sha256": "e440bab5ddac97a2501a350df24d7d19e086906631e1029a3e0215ccf0aa3ad2",
+      "status": "valid"
+    },
+    {
+      "group": "binding_regression",
+      "id": "regression:R13_nested",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "binding_rejected"
+    },
+    {
+      "group": "binding_regression",
+      "id": "regression:R13_prose",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "binding_rejected"
+    },
+    {
+      "group": "binding_regression",
+      "id": "regression:R14_public:return_deadline",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "binding_rejected"
+    },
+    {
+      "group": "binding_regression",
+      "id": "regression:R14_public:snapshot_id",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "binding_rejected"
+    },
+    {
+      "group": "binding_regression",
+      "id": "regression:R14_public:walking_profile_id",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "binding_rejected"
+    },
+    {
+      "group": "binding_regression",
+      "id": "regression:R14_public:arrival_margin_minutes",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "binding_rejected"
+    },
+    {
+      "group": "binding_regression",
+      "id": "regression:R14_public:boarding_margin_minutes",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "binding_rejected"
+    },
+    {
+      "group": "historical_engine_rejection",
+      "id": "regression:M05_internal",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "group": "failure_recovery",
+      "id": "recovery:consultar_capacidades",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "group": "failure_recovery",
+      "id": "recovery:consultar_fuente",
+      "issues": [],
+      "raw_sha256": "4a89f10b7358e37c82544b75db59eef7659648682e5cc703ad62aa75be14966a",
+      "status": "valid"
+    },
+    {
+      "group": "failure_recovery",
+      "id": "recovery:obtener_resumen_territorial",
+      "issues": [],
+      "raw_sha256": "6e63893818d82d8082a54d97d95a934eaff7c2141d3b99ddb7bedf72069088e7",
+      "status": "valid"
+    },
+    {
+      "group": "failure_recovery",
+      "id": "recovery:plan_visit",
+      "issues": [],
+      "raw_sha256": "cf0087ddb8fe570bc12d8806c36741d756c9d2fae169a9bd0dffe867896f91ab",
+      "status": "valid"
+    },
+    {
+      "group": "aduna",
+      "id": "aduna:public",
+      "issues": [],
+      "raw_sha256": "379a0c368db3ec1a56728d72b946d43718c4c6eb8c1307c9b70a310e0789dbca",
+      "status": "valid"
+    },
+    {
+      "group": "aduna",
+      "id": "aduna:engine",
+      "issues": [],
+      "raw_sha256": "379a0c368db3ec1a56728d72b946d43718c4c6eb8c1307c9b70a310e0789dbca",
+      "status": "valid"
+    }
+  ],
+  "status": "PASS",
+  "time_summaries_checked": 41
+}

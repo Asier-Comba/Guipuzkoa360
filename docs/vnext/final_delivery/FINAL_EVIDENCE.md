@@ -1,4 +1,86 @@
-# Evidencia vigente R16: cálculo, agente real y borrador
+# Evidencia vigente R17 — cierre privado del agente y de Entrega
+
+Runtime probado: 77ac63d5b68a3ecbf51461e3aaa0de0566d6f2c3. Base R16 exacta:
+c859a26396838d59a52b8d91f1eda5ef6b69e4cd. [PR22](https://github.com/Asier-Comba/Guipuzkoa360/pull/22), draft contra R16; main no modificado.
+ZIP: 1b263724110c68efab69c14e479f50ed2d101f935c6c83102bb0e5d4c699dc79,
+231.758 bytes; manifiesto: 246f703e1e1881fe984598fe7b428b1b18380c43e7555c03fca2b53dd1982fee.
+Solo cambian main.py y tools.py: otros 23 miembros, quince assets y ZIP W1 byte-idénticos.
+Datos, fuentes, GTFS, paseo, fórmulas, productor y v4 preservados. Dos builds locales idénticos.
+El manifiesto del build conserva NOT_RUN histórico: el estado real posterior está aquí y en las trazas, sin cambiar el paquete después de Studio.
+
+## Qué se cerró y alcance de la limpieza
+
+Resumen territorial público: un único campo obligatorio municipio: str, sin periodo.
+Las 88 filas demográficas solo contienen 2025-01-01; el motor interno conserva selección de periodo y el catálogo público informa de esa referencia sin anunciarla como input.
+Tres intentos de periodo extra se rechazan antes de ejecutar. Las otras cinco tools de periodo no cambian.
+75+: selección de año de nacimiento <=1949 en scripts/data/01_download_sources.py, suma por municipio y sexo total en 03_prepare_demography.py, porcentaje a tres decimales. Datos agregados por año, no cumpleaños individuales; no identifica nacidos el propio 01/01/1950.
+
+Metadata interpretativa humanizada sin alterar claims/resultados. Source IDs históricos W1_*/W2_* se conservan como claves de trazabilidad, no como títulos, instituciones ni nombres públicos. El auditor excluye únicamente esas claves de identificador, no frases libres ni instituciones. No se afirma ausencia de las claves técnicas necesarias para consumir JSON.
+
+## Cuatro mensajes reales, nueva versión privada
+
+agentv_64c72bcb772143968038a2f620944bf1, GIPUZKOA 360 · Visita sanitaria · v3.
+Modelo observado openai:gpt-5.6-luna, memoria ON, Internet OFF, nueve tools.
+Preparación y firma pública comprobadas antes de crear versión; v2 R16 intacta.
+[Identidad por descargas UI](../../../outputs/r17/portal/workspace-file-identity.json):
+main/tools y quince assets 17/17 coinciden con el manifiesto tras crear la versión.
+La definición congela esos paths. No es una exportación ZIP de la versión congelada ni identidad de la carpeta completa; scaffold del portal adicional no consumido.
+
+| Caso y sesión | Llamadas reales nuevas | Resultado / criterio | PASS/FAIL | Envío → final observado |
+|---|---|---|---|---:|
+| M1 Aduna, A vacía | obtener_resumen_territorial, municipio=Aduna, ningún otro argumento | valid a la primera, sin invalid_arguments/recovery: 36/507, 7,101 %, Eustat, 01/01/2025; explica nacidos hasta 1949 y recuentos agregados | PASS | <=37,809 s |
+| M2 sanitaria, B vacía | consultar_capacidades(plan_visit); plan_visit(Zegama, punto Beasain, 2026-09-29, 09:30, 20) | 10691 s, 2 h 58 min 11 s; 08:09:37–11:07:48; bus 08:12:37 diferenciado; componentes suman 10691 | PASS | <=104,501 s |
+| M3 seguimiento, misma B | nuevo plan_visit, solo cambia appointment_time=09:45 | 8591 s, 2 h 23 min 11 s; 08:44:37–11:07:48; 35 min menos, comparación condicional, no recomendación | PASS | <=61,762 s |
+| M4 límites, C vacía | consultar_capacidades(plan_visit) | Zegama/Segura/Idiazabal; rechaza domicilio, realtime, mejor hora y disponibilidad de cita; fecha validada 29/09/2026 | PASS | <=56,332 s |
+
+Trazas literales: [M1](../../../outputs/r17/portal/M1-session-A.txt),
+[M2](../../../outputs/r17/portal/M2-session-B.txt),
+[M3](../../../outputs/r17/portal/M3-session-B.txt),
+[M4](../../../outputs/r17/portal/M4-session-C.txt).
+Outputs originales desplegados en archivos M*-tool-outputs.json adyacentes.
+M3 incluye acumulados de B: son capacidades y dos visitas, no nuevas repeticiones.
+La respuesta M3 verbaliza 35 minutos; -2100 s se contrasta por 8591-10691, no se finge una cita literal del final.
+[Cotas de latencia](../../../outputs/r17/portal/real-latencies.json): observación UI, no tiempo exacto de servidor, p95 ni medición separada de tool/output (NOT_OBSERVED). Ningún quinto mensaje ni evaluador LLM ejecutado.
+
+## Findings actuales y observaciones no ocultadas
+
+REAL_CRITICAL=0, REAL_HIGH=0, REAL_MEDIUM=0, REAL_LOW=1.
+Low estilístico M4: enumera IDs internos de origen y usa el término inglés realtime; sus límites son correctos.
+No se cambia runtime ni se abre R18 por estilo. Se selecciona únicamente B sanitaria limpia; M4 no se comparte.
+M1 cierra el primer periodo vacío R16 con nueva evidencia, no modifica retrospectivamente aquel FAIL.
+El corte 1949 aparece ahora explícitamente; la explicación no atribuye edades individuales exactas.
+
+Persisten aviso genérico Connection Error y renderer de preview que deja etiquetas Respuesta vacías en eventos de tools y muestra Markdown literal. Las ejecuciones y el guardado sí concluyen; no se editan respuestas ni se afirma que esas limitaciones de UI se hayan corregido.
+Un selector de status fue ambiguo después del guardado (dos notificaciones); leído luego confirmó Borrador guardado. No fue fallo del agente ni se reenvió prompt.
+
+## Validación exacta, sin transferencia de CI
+
+Una sola suite local completa: 681/681, 304,04 s (XML 303,874 s), cero fallos/errores/skips.
+Focal corregido 13/13; autoauditoría del autor 335/335 raw parity, siete oracle y 41 resúmenes temporales, cero findings; no aceptación independiente.
+Primera auditoría de lenguaje fallida y focal inicial 12/13 conservados en attempts; cifras raw ya coincidían, se corrigieron solo etiquetas antes del checkpoint y Studio.
+Node 17/17, identity 14/14 antes/después, jury y artifacts PASS, diff-check PASS.
+[CI R17 del runtime](https://github.com/Asier-Comba/Guipuzkoa360/actions/runs/36928182340): Ubuntu job110590589306, 681 en 99,09 s; Windows job110590589440, 681 en 120,94 s; ambos Node17/audit335/oracle7/identity/gates/rebuild PASS y artefactos generados.
+[Fast CI del runtime](https://github.com/Asier-Comba/Guipuzkoa360/actions/runs/36928182347): SUCCESS.
+El cierre posterior es documental; su SHA y CI exactos se fijan en el checkpoint PR22 tras el push, sin atribuirle los runs anteriores.
+No se repite la suite completa local, estrés20k ni holdout.
+
+## Entrega guardada y dos revisiones del jurado
+
+DELIVERY_CONTENT_COMPLETE=YES, copy público en voz del equipo; [DELIVERY_COPY](DELIVERY_COPY.md) coincide literalmente con la explicación guardada.
+Ficha: Gipuzkoa.; destinatarios breves; utilidad en dos niveles (88 municipios / visita completa).
+Versión seleccionada v3 exacta; una conversación B de dos turnos revisada, sin retries.
+Solo demo territorial y repositorio; archivos seleccionados 0. Demo leída sin cambios, identificada como visualización del screening territorial, no agente sanitario en vivo.
+Equipo 3/3 confirmado por el gate del portal; nombres oficiales completos conservados en la explicación.
+[Preview completo](../../../outputs/r17/portal/delivery-preview.txt) leído literalmente incluyendo ambas respuestas; segunda revisión activa de números, fechas, alcance, atribución, supuestos, realtime/domicilio/citas/mejor hora, enlaces y jerga interna: sin contradicción material.
+No nombres Works/Rxx/hashes/CI/debug en el contenido público seleccionado. Dropdown privado conserva versiones históricas, no se borran.
+Estado observado Borrador privado / Borrador guardado; versión sin evaluar no equivale a evaluación oficial. Track sin seleccionar, acknowledgement sin marcar/deshabilitado, Publicar entrega deshabilitado.
+HOLDOUT=SEALED_NOT_EXECUTED, RELEASE_GO=NO. Siguiente paso exclusivamente humano: track, preview final, confirmación y publicación.
+
+## Histórico superseded R16 — conservar resultado original
+
+El texto siguiente describe R16 y no es el estado vigente. Su Medium recuperado y sus Low no se borran ni se convierten retrospectivamente en PASS.
+
+# Histórico R16: cálculo, agente real y borrador
 
 Runtime probado d4dd2e65434c6c7f9f33c74ef1041b0f136cde69; ZIP 374af43fa6ce58b513a10477fc216215c7472f54bd28eada4fc0908da6f3dd6c (229.844 bytes); manifiesto a46415845f86c5c22ad648965b45e5bd109c839e9cb6cc14daee0ef37d7f788e. Base R15 exacta 69bcc6ead9ce444a884aa2b15469bd3b519775f5. Solo cambian main.py y tools.py del paquete; otros 23 miembros, quince assets, productor/W1, fuentes/datos y v4 idénticos. Dos builds locales y CI reproducen hashes. [Handoff R16](../w2/HANDOFF_R16.md).
 
