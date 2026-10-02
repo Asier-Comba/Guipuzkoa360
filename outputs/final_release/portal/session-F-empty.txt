@@ -1,0 +1,297 @@
+- region "Notifications alt+T"
+- generic "Connection Error:"
+- link "Saltar al contenido":
+  - /url: "#platform-main"
+- banner:
+  - link "Gipuzkoa AI Hackathon · MIT Media Lab City Science":
+    - /url: /area/
+    - strong: GIPUZKOA AI HACKATHON
+    - generic: MIT MEDIA LAB · CITY SCIENCE
+  - navigation "Áreas de la plataforma":
+    - link "Inicio":
+      - /url: /area/
+    - link "Formación":
+      - /url: /area/formacion/
+    - link "Equipo":
+      - /url: /hackathon/area/equipo/
+    - generic "Abrir secciones de Urban Challenge":
+      - generic: Urban Challenge
+      - generic: ⌄
+    - generic "Disponible para los equipos clasificados":
+      - generic: ◇
+      - generic: Final
+  - generic "Abrir menú de cuenta":
+    - generic: O
+    - strong: Oier Duñabeitia Berezo
+    - generic: Participante
+    - generic: ⌄
+- main:
+  - button "Proyecto GIPUZKOA 360":
+    - generic: Proyecto
+    - strong: GIPUZKOA 360
+  - tablist "Secciones del espacio de trabajo":
+    - 'tab "Resumen: Estado del proyecto y siguiente acción"':
+      - strong: Resumen
+    - 'tab "Datos: Archivos, mapas y procesamiento"':
+      - strong: Datos
+      - generic: "47"
+    - 'tab "Agentes: Construcción con Python o Langflow"':
+      - strong: Agentes
+      - generic: "10"
+    - 'tab "Pruebas: Verificación con versiones creadas" [selected]':
+      - strong: Pruebas
+      - generic: "8"
+    - 'tab "Entrega: Revisión y publicación del proyecto"':
+      - strong: Entrega
+    - 'tab "Asistente IA: Ayuda para analizar, editar y ejecutar el proyecto"':
+      - strong: Asistente IA
+  - generic "Estado del workspace":
+    - generic "Ver estado y actividad del workspace":
+      - generic: 1 persona
+    - button "Reiniciar el entorno del equipo":
+      - generic: ↻
+    - button "Ejemplo resuelto"
+    - button "?"
+  - 'tabpanel "Pruebas: Verificación con versiones creadas"':
+    - toolbar "Acciones de pruebas de agentes":
+      - heading "Banco de pruebas" [level=2]
+      - button "Ocultar conversaciones" [pressed]
+      - strong: "8"
+      - generic: versiones
+    - complementary:
+      - generic: CASOS GUARDADOS
+      - strong: Banco de pruebas
+      - generic: Probar versión
+      - combobox "Probar versión":
+        - option "Selecciona una versión para probar…" [selected]
+        - option "Python · GIPUZKOA 360 · Visita sanitaria · v3"
+        - option "Python · GIPUZKOA 360 vNext R14 binding 094745b · v1"
+        - option "Python · GIPUZKOA 360 vNext R13 patch3 3951b290 · v1"
+        - option "Python · GIPUZKOA 360 · Versión final · v6"
+        - option "Python · GIPUZKOA 360 · Final · v5"
+        - option "Python · urban-challenge-rc2-195b498 · v4"
+        - option "Python · urban-challenge-rc2-ae62080 · v3"
+        - option "Python · urban-challenge-rc2-d8ec018 · v2"
+        - option "Python · GIPUZKOA 360 integración Work 2 · v1"
+        - option "Python · GIPUZKOA 360 · RC2 compact · v1"
+        - option "Python · GIPUZKOA 360 · RC2 runtime · v1"
+        - option "Python · GIPUZKOA 360 · RC1 exacto · v1"
+        - option "Python · GIPUZKOA 360 · integración jurado · v3"
+        - option "Python · GIPUZKOA 360 · integración jurado · v2"
+        - option "Python · GIPUZKOA 360 · integración jurado · v1"
+      - button "Nueva conversación Python · GIPUZKOA 360 · Visita sanitaria · v3 Sin ejecutar":
+        - strong: Nueva conversación
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Sin ejecutar
+      - button "Mañana salgo desde mi casa. Dime a qué hora debería pedir ci… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Mañana salgo desde mi casa. Dime a qué hora debería pedir ci…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Salgo desde las paradas de Segura y tengo una consulta de 30… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Salgo desde las paradas de Segura y tengo una consulta de 30…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Compara Eibar y Tolosa para población de 75 o más años y exp… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Compara Eibar y Tolosa para población de 75 o más años y exp…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Cuéntame qué muestran los datos de Tolosa sobre población ma… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Cuéntame qué muestran los datos de Tolosa sobre población ma…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Hola. Estoy estudiando el acceso sanitario en Gipuzkoa pero … Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Hola. Estoy estudiando el acceso sanitario en Gipuzkoa pero …
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué otros orígenes admite este análisis y puedes decirme en… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: ¿Qué otros orígenes admite este análisis y puedes decirme en…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "En Aduna, ¿cuántas personas tienen 75 años o más y qué porce… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: En Aduna, ¿cuántas personas tienen 75 años o más y qué porce…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "En Aduna, ¿cuántas personas tienen 75 años o más y qué porce… Python · GIPUZKOA 360 · Visita sanitaria · v2 Terminada · pendiente de revisar":
+        - strong: En Aduna, ¿cuántas personas tienen 75 años o más y qué porce…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 · Visita sanitaria · v2 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 · Visita sanitaria · v2 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 · Visita sanitaria · v1 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 · Visita sanitaria · v1 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 vNext R14 binding 094745b · v1 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 vNext R14 binding 094745b · v1
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué muestran los datos de Aduna sobre población mayor y pre… Python · GIPUZKOA 360 vNext R13 patch3 3951b290 · v1 Terminada · pendiente de revisar":
+        - strong: ¿Qué muestran los datos de Aduna sobre población mayor y pre…
+        - generic: Python · GIPUZKOA 360 vNext R13 patch3 3951b290 · v1
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v4 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v4
+        - generic: Terminada · pendiente de revisar
+      - button "Explícame el caso de Aduna. Python · GIPUZKOA 360 · Versión final · v6 Terminada · pendiente de revisar":
+        - strong: Explícame el caso de Aduna.
+        - generic: Python · GIPUZKOA 360 · Versión final · v6
+        - generic: Terminada · pendiente de revisar
+      - button "¿En qué municipios de Gipuzkoa coinciden una mayor proporció… Python · GIPUZKOA 360 · Versión final · v6 Terminada · pendiente de revisar":
+        - strong: ¿En qué municipios de Gipuzkoa coinciden una mayor proporció…
+        - generic: Python · GIPUZKOA 360 · Versión final · v6
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v4 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v4
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v4 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v4
+        - generic: Terminada · pendiente de revisar
+      - button "que municipios de guipuzkoa tienen menos servicios sanitario… Python · GIPUZKOA 360 · integración jurado · v3 Terminada · pendiente de revisar":
+        - strong: que municipios de guipuzkoa tienen menos servicios sanitario…
+        - generic: Python · GIPUZKOA 360 · integración jurado · v3
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v4 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v4
+        - generic: Terminada · pendiente de revisar
+      - 'button "Simula un ESCENARIO HIPOTÉTICO: añadir un servicio de atenci… Python · GIPUZKOA 360 · Versión final · v4 Terminada · pendiente de revisar"':
+        - strong: "Simula un ESCENARIO HIPOTÉTICO: añadir un servicio de atenci…"
+        - generic: Python · GIPUZKOA 360 · Versión final · v4
+        - generic: Terminada · pendiente de revisar
+      - button "dame los datos de Aginaga Python · GIPUZKOA 360 · Versión final · v3 Terminada · pendiente de revisar":
+        - strong: dame los datos de Aginaga
+        - generic: Python · GIPUZKOA 360 · Versión final · v3
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v3 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Responde por separado y de forma breve a estos ocho intentos… Python · GIPUZKOA 360 · Versión final · v3 Terminada · pendiente de revisar":
+        - strong: Responde por separado y de forma breve a estos ocho intentos…
+        - generic: Python · GIPUZKOA 360 · Versión final · v3
+        - generic: Terminada · pendiente de revisar
+      - button "¿Cuáles son los 5 municipios con mayor porcentaje de poblaci… Python · GIPUZKOA 360 · Versión final · v3 Terminada · pendiente de revisar":
+        - strong: ¿Cuáles son los 5 municipios con mayor porcentaje de poblaci…
+        - generic: Python · GIPUZKOA 360 · Versión final · v3
+        - generic: Terminada · pendiente de revisar
+      - button "¿Cuáles son los 5 municipios con mayor porcentaje de poblaci… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: ¿Cuáles son los 5 municipios con mayor porcentaje de poblaci…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "¿Cuáles son los 5 municipios con mayor porcentaje de poblaci… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: ¿Cuáles son los 5 municipios con mayor porcentaje de poblaci…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Analiza la coincidencia usando “atención primaria” y “65+”, … Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: Analiza la coincidencia usando “atención primaria” y “65+”, …
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Compara Eibar y Tolosa para 75+ y atención primaria con umbr… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: Compara Eibar y Tolosa para 75+ y atención primaria con umbr…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Dame el resumen territorial de Donostia / San Sebastián para… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: Dame el resumen territorial de Donostia / San Sebastián para…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Consulta la fuente EUSTAT_EMH_2025. Indica institución, títu… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: Consulta la fuente EUSTAT_EMH_2025. Indica institución, títu…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v1 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v1
+        - generic: Terminada · pendiente de revisar
+      - 'button "Para Eibar, verifica salud mental con datos reales: número d… Python · GIPUZKOA 360 · RC2 compact · v1 Terminada · pendiente de revisar"':
+        - strong: "Para Eibar, verifica salud mental con datos reales: número d…"
+        - generic: Python · GIPUZKOA 360 · RC2 compact · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Analiza la coincidencia para 65+, atencion primaria, cuantil… Python · GIPUZKOA 360 · RC2 compact · v1 Terminada · pendiente de revisar":
+        - strong: Analiza la coincidencia para 65+, atencion primaria, cuantil…
+        - generic: Python · GIPUZKOA 360 · RC2 compact · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Dame el resumen territorial de Donostia / San Sebastián para… Python · GIPUZKOA 360 · RC2 compact · v1 Terminada · pendiente de revisar":
+        - strong: Dame el resumen territorial de Donostia / San Sebastián para…
+        - generic: Python · GIPUZKOA 360 · RC2 compact · v1
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · RC2 compact · v1 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · RC2 compact · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Consulta la fuente EUSTAT_EMH_2025. Indica institución, peri… Python · GIPUZKOA 360 · RC2 runtime · v1 Cancelada":
+        - strong: Consulta la fuente EUSTAT_EMH_2025. Indica institución, peri…
+        - generic: Python · GIPUZKOA 360 · RC2 runtime · v1
+        - generic: Cancelada
+      - button "Compara Eibar y Tolosa para 75+ y atención primaria con umbr… Python · GIPUZKOA 360 · RC2 runtime · v1 Cancelada":
+        - strong: Compara Eibar y Tolosa para 75+ y atención primaria con umbr…
+        - generic: Python · GIPUZKOA 360 · RC2 runtime · v1
+        - generic: Cancelada
+      - button "Consulta la fuente EUSTAT_EMH_2025 y resume institución, per… Python · GIPUZKOA 360 · RC2 runtime · v1 Terminada · pendiente de revisar":
+        - strong: Consulta la fuente EUSTAT_EMH_2025 y resume institución, per…
+        - generic: Python · GIPUZKOA 360 · RC2 runtime · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Consulta la fuente EUSTAT_EMH_2025. Indica institución, peri… Python · GIPUZKOA 360 · RC1 exacto · v1 Cancelada":
+        - strong: Consulta la fuente EUSTAT_EMH_2025. Indica institución, peri…
+        - generic: Python · GIPUZKOA 360 · RC1 exacto · v1
+        - generic: Cancelada
+      - button "Nueva conversación Python · GIPUZKOA 360 · integración jurado · v3 Sin ejecutar":
+        - strong: Nueva conversación
+        - generic: Python · GIPUZKOA 360 · integración jurado · v3
+        - generic: Sin ejecutar
+      - button "¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de … Python · GIPUZKOA 360 · integración jurado · v3 Fallida":
+        - strong: ¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de …
+        - generic: Python · GIPUZKOA 360 · integración jurado · v3
+        - generic: Fallida
+      - button "¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de … Python · GIPUZKOA 360 · integración jurado · v2 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de …
+        - generic: Python · GIPUZKOA 360 · integración jurado · v2
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de … Python · GIPUZKOA 360 · integración jurado · v1 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de …
+        - generic: Python · GIPUZKOA 360 · integración jurado · v1
+        - generic: Terminada · pendiente de revisar
+      - strong: Comparar versiones
+      - generic: Conserva esta prueba, crea una versión nueva y repite la misma pregunta en otra conversación.
+    - generic: AGENTE PYTHON · VERSIÓN PROBADA · V3
+    - heading "GIPUZKOA 360 · Visita sanitaria" [level=2]
+    - paragraph: Esta conversación mantiene la versión v3. Editar el borrador o crear otra versión no cambia esta prueba.
+    - generic: Memoria activa
+    - generic: Sin Internet
+    - generic: 5549 tokens · 2 llamadas
+    - generic "Revisar evidencia"
+    - log:
+      - generic: ✦
+      - strong: Comprueba qué hace con tus datos
+      - paragraph: El chat utiliza la versión fija de este agente y ejecuta sus herramientas en un entorno aislado. Esta versión no tiene acceso a Internet. Empieza con una pregunta que permita revisar fuentes, incertidumbre y límites.
+      - generic "Pruebas recomendadas":
+        - button "Explica qué muestran los datos y cita las fuentes utilizadas."
+        - button "¿Qué incertidumbres cambian la interpretación del resultado?"
+        - button "Contrasta dos explicaciones posibles y busca un caso que contradiga la primera."
+        - button "Indica cuándo necesitarías validación humana."
+    - textbox "Escribe un mensaje…"
+    - button "Enviar" [disabled]

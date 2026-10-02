@@ -1,0 +1,346 @@
+- region "Notifications alt+T"
+- generic "Connection Error:"
+- link "Saltar al contenido":
+  - /url: "#platform-main"
+- banner:
+  - link "Gipuzkoa AI Hackathon · MIT Media Lab City Science":
+    - /url: /area/
+    - strong: GIPUZKOA AI HACKATHON
+    - generic: MIT MEDIA LAB · CITY SCIENCE
+  - navigation "Áreas de la plataforma":
+    - link "Inicio":
+      - /url: /area/
+    - link "Formación":
+      - /url: /area/formacion/
+    - link "Equipo":
+      - /url: /hackathon/area/equipo/
+    - generic "Abrir secciones de Urban Challenge":
+      - generic: Urban Challenge
+      - generic: ⌄
+    - generic "Disponible para los equipos clasificados":
+      - generic: ◇
+      - generic: Final
+  - generic "Abrir menú de cuenta":
+    - generic: O
+    - strong: Oier Duñabeitia Berezo
+    - generic: Participante
+    - generic: ⌄
+- main:
+  - button "Proyecto GIPUZKOA 360":
+    - generic: Proyecto
+    - strong: GIPUZKOA 360
+  - tablist "Secciones del espacio de trabajo":
+    - 'tab "Resumen: Estado del proyecto y siguiente acción"':
+      - strong: Resumen
+    - 'tab "Datos: Archivos, mapas y procesamiento"':
+      - strong: Datos
+      - generic: "47"
+    - 'tab "Agentes: Construcción con Python o Langflow"':
+      - strong: Agentes
+      - generic: "10"
+    - 'tab "Pruebas: Verificación con versiones creadas" [selected]':
+      - strong: Pruebas
+      - generic: "8"
+    - 'tab "Entrega: Revisión y publicación del proyecto"':
+      - strong: Entrega
+    - 'tab "Asistente IA: Ayuda para analizar, editar y ejecutar el proyecto"':
+      - strong: Asistente IA
+  - generic "Estado del workspace":
+    - generic "Ver estado y actividad del workspace":
+      - generic: 1 persona
+    - button "Reiniciar el entorno del equipo":
+      - generic: ↻
+    - button "Ejemplo resuelto"
+    - button "?"
+  - 'tabpanel "Pruebas: Verificación con versiones creadas"':
+    - toolbar "Acciones de pruebas de agentes":
+      - heading "Banco de pruebas" [level=2]
+      - button "Ocultar conversaciones" [pressed]
+      - strong: "8"
+      - generic: versiones
+    - complementary:
+      - generic: CASOS GUARDADOS
+      - strong: Banco de pruebas
+      - generic: Probar versión
+      - combobox "Probar versión":
+        - option "Selecciona una versión para probar…" [selected]
+        - option "Python · GIPUZKOA 360 · Visita sanitaria · v3"
+        - option "Python · GIPUZKOA 360 vNext R14 binding 094745b · v1"
+        - option "Python · GIPUZKOA 360 vNext R13 patch3 3951b290 · v1"
+        - option "Python · GIPUZKOA 360 · Versión final · v6"
+        - option "Python · GIPUZKOA 360 · Final · v5"
+        - option "Python · urban-challenge-rc2-195b498 · v4"
+        - option "Python · urban-challenge-rc2-ae62080 · v3"
+        - option "Python · urban-challenge-rc2-d8ec018 · v2"
+        - option "Python · GIPUZKOA 360 integración Work 2 · v1"
+        - option "Python · GIPUZKOA 360 · RC2 compact · v1"
+        - option "Python · GIPUZKOA 360 · RC2 runtime · v1"
+        - option "Python · GIPUZKOA 360 · RC1 exacto · v1"
+        - option "Python · GIPUZKOA 360 · integración jurado · v3"
+        - option "Python · GIPUZKOA 360 · integración jurado · v2"
+        - option "Python · GIPUZKOA 360 · integración jurado · v1"
+      - button "Compara Eibar y Tolosa para población de 75 o más años y exp… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Compara Eibar y Tolosa para población de 75 o más años y exp…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Cuéntame qué muestran los datos de Tolosa sobre población ma… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Cuéntame qué muestran los datos de Tolosa sobre población ma…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Hola. Estoy estudiando el acceso sanitario en Gipuzkoa pero … Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Hola. Estoy estudiando el acceso sanitario en Gipuzkoa pero …
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué otros orígenes admite este análisis y puedes decirme en… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: ¿Qué otros orígenes admite este análisis y puedes decirme en…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "En Aduna, ¿cuántas personas tienen 75 años o más y qué porce… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: En Aduna, ¿cuántas personas tienen 75 años o más y qué porce…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "En Aduna, ¿cuántas personas tienen 75 años o más y qué porce… Python · GIPUZKOA 360 · Visita sanitaria · v2 Terminada · pendiente de revisar":
+        - strong: En Aduna, ¿cuántas personas tienen 75 años o más y qué porce…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 · Visita sanitaria · v2 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 · Visita sanitaria · v2 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 · Visita sanitaria · v1 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 · Visita sanitaria · v1 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 vNext R14 binding 094745b · v1 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 vNext R14 binding 094745b · v1
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué muestran los datos de Aduna sobre población mayor y pre… Python · GIPUZKOA 360 vNext R13 patch3 3951b290 · v1 Terminada · pendiente de revisar":
+        - strong: ¿Qué muestran los datos de Aduna sobre población mayor y pre…
+        - generic: Python · GIPUZKOA 360 vNext R13 patch3 3951b290 · v1
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v4 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v4
+        - generic: Terminada · pendiente de revisar
+      - button "Explícame el caso de Aduna. Python · GIPUZKOA 360 · Versión final · v6 Terminada · pendiente de revisar":
+        - strong: Explícame el caso de Aduna.
+        - generic: Python · GIPUZKOA 360 · Versión final · v6
+        - generic: Terminada · pendiente de revisar
+      - button "¿En qué municipios de Gipuzkoa coinciden una mayor proporció… Python · GIPUZKOA 360 · Versión final · v6 Terminada · pendiente de revisar":
+        - strong: ¿En qué municipios de Gipuzkoa coinciden una mayor proporció…
+        - generic: Python · GIPUZKOA 360 · Versión final · v6
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v4 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v4
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v4 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v4
+        - generic: Terminada · pendiente de revisar
+      - button "que municipios de guipuzkoa tienen menos servicios sanitario… Python · GIPUZKOA 360 · integración jurado · v3 Terminada · pendiente de revisar":
+        - strong: que municipios de guipuzkoa tienen menos servicios sanitario…
+        - generic: Python · GIPUZKOA 360 · integración jurado · v3
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v4 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v4
+        - generic: Terminada · pendiente de revisar
+      - 'button "Simula un ESCENARIO HIPOTÉTICO: añadir un servicio de atenci… Python · GIPUZKOA 360 · Versión final · v4 Terminada · pendiente de revisar"':
+        - strong: "Simula un ESCENARIO HIPOTÉTICO: añadir un servicio de atenci…"
+        - generic: Python · GIPUZKOA 360 · Versión final · v4
+        - generic: Terminada · pendiente de revisar
+      - button "dame los datos de Aginaga Python · GIPUZKOA 360 · Versión final · v3 Terminada · pendiente de revisar":
+        - strong: dame los datos de Aginaga
+        - generic: Python · GIPUZKOA 360 · Versión final · v3
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v3 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Responde por separado y de forma breve a estos ocho intentos… Python · GIPUZKOA 360 · Versión final · v3 Terminada · pendiente de revisar":
+        - strong: Responde por separado y de forma breve a estos ocho intentos…
+        - generic: Python · GIPUZKOA 360 · Versión final · v3
+        - generic: Terminada · pendiente de revisar
+      - button "¿Cuáles son los 5 municipios con mayor porcentaje de poblaci… Python · GIPUZKOA 360 · Versión final · v3 Terminada · pendiente de revisar":
+        - strong: ¿Cuáles son los 5 municipios con mayor porcentaje de poblaci…
+        - generic: Python · GIPUZKOA 360 · Versión final · v3
+        - generic: Terminada · pendiente de revisar
+      - button "¿Cuáles son los 5 municipios con mayor porcentaje de poblaci… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: ¿Cuáles son los 5 municipios con mayor porcentaje de poblaci…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "¿Cuáles son los 5 municipios con mayor porcentaje de poblaci… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: ¿Cuáles son los 5 municipios con mayor porcentaje de poblaci…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Analiza la coincidencia usando “atención primaria” y “65+”, … Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: Analiza la coincidencia usando “atención primaria” y “65+”, …
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Compara Eibar y Tolosa para 75+ y atención primaria con umbr… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: Compara Eibar y Tolosa para 75+ y atención primaria con umbr…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Dame el resumen territorial de Donostia / San Sebastián para… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: Dame el resumen territorial de Donostia / San Sebastián para…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Consulta la fuente EUSTAT_EMH_2025. Indica institución, títu… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: Consulta la fuente EUSTAT_EMH_2025. Indica institución, títu…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v1 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v1
+        - generic: Terminada · pendiente de revisar
+      - 'button "Para Eibar, verifica salud mental con datos reales: número d… Python · GIPUZKOA 360 · RC2 compact · v1 Terminada · pendiente de revisar"':
+        - strong: "Para Eibar, verifica salud mental con datos reales: número d…"
+        - generic: Python · GIPUZKOA 360 · RC2 compact · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Analiza la coincidencia para 65+, atencion primaria, cuantil… Python · GIPUZKOA 360 · RC2 compact · v1 Terminada · pendiente de revisar":
+        - strong: Analiza la coincidencia para 65+, atencion primaria, cuantil…
+        - generic: Python · GIPUZKOA 360 · RC2 compact · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Dame el resumen territorial de Donostia / San Sebastián para… Python · GIPUZKOA 360 · RC2 compact · v1 Terminada · pendiente de revisar":
+        - strong: Dame el resumen territorial de Donostia / San Sebastián para…
+        - generic: Python · GIPUZKOA 360 · RC2 compact · v1
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · RC2 compact · v1 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · RC2 compact · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Consulta la fuente EUSTAT_EMH_2025. Indica institución, peri… Python · GIPUZKOA 360 · RC2 runtime · v1 Cancelada":
+        - strong: Consulta la fuente EUSTAT_EMH_2025. Indica institución, peri…
+        - generic: Python · GIPUZKOA 360 · RC2 runtime · v1
+        - generic: Cancelada
+      - button "Compara Eibar y Tolosa para 75+ y atención primaria con umbr… Python · GIPUZKOA 360 · RC2 runtime · v1 Cancelada":
+        - strong: Compara Eibar y Tolosa para 75+ y atención primaria con umbr…
+        - generic: Python · GIPUZKOA 360 · RC2 runtime · v1
+        - generic: Cancelada
+      - button "Consulta la fuente EUSTAT_EMH_2025 y resume institución, per… Python · GIPUZKOA 360 · RC2 runtime · v1 Terminada · pendiente de revisar":
+        - strong: Consulta la fuente EUSTAT_EMH_2025 y resume institución, per…
+        - generic: Python · GIPUZKOA 360 · RC2 runtime · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Consulta la fuente EUSTAT_EMH_2025. Indica institución, peri… Python · GIPUZKOA 360 · RC1 exacto · v1 Cancelada":
+        - strong: Consulta la fuente EUSTAT_EMH_2025. Indica institución, peri…
+        - generic: Python · GIPUZKOA 360 · RC1 exacto · v1
+        - generic: Cancelada
+      - button "Nueva conversación Python · GIPUZKOA 360 · integración jurado · v3 Sin ejecutar":
+        - strong: Nueva conversación
+        - generic: Python · GIPUZKOA 360 · integración jurado · v3
+        - generic: Sin ejecutar
+      - button "¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de … Python · GIPUZKOA 360 · integración jurado · v3 Fallida":
+        - strong: ¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de …
+        - generic: Python · GIPUZKOA 360 · integración jurado · v3
+        - generic: Fallida
+      - button "¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de … Python · GIPUZKOA 360 · integración jurado · v2 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de …
+        - generic: Python · GIPUZKOA 360 · integración jurado · v2
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de … Python · GIPUZKOA 360 · integración jurado · v1 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de …
+        - generic: Python · GIPUZKOA 360 · integración jurado · v1
+        - generic: Terminada · pendiente de revisar
+      - strong: Comparar versiones
+      - generic: Conserva esta prueba, crea una versión nueva y repite la misma pregunta en otra conversación.
+    - generic: AGENTE PYTHON · VERSIÓN PROBADA · V3
+    - heading "GIPUZKOA 360 · Visita sanitaria" [level=2]
+    - paragraph: Esta conversación mantiene la versión v3. Editar el borrador o crear otra versión no cambia esta prueba.
+    - generic: Memoria activa
+    - generic: Sin Internet
+    - generic: 14829 tokens · 2 llamadas
+    - generic "Revisar evidencia"
+    - log:
+      - article:
+        - generic: Tú
+        - paragraph: Compara Eibar y Tolosa para población de 75 o más años y explícame lo importante sin sacar conclusiones causales.
+      - article:
+        - generic: GIPUZKOA 360 · Visita sanitaria
+        - strong: Tool · obtener_resumen_territorial
+        - code: "{\"municipio\":\"Eibar\"}"
+        - strong: Tool · obtener_resumen_territorial
+        - code: "{\"municipio\":\"Tolosa\"}"
+      - generic "Resultado de obtener_resumen_territorial" [active]
+      - generic: "{\"age_group_derivation\":{\"condition\":\"año de nacimiento <= 1949, incluido el grupo de años anteriores\",\"institution\":\"Eustat - Instituto Vasco de Estadística\",\"limitation\":\"Son recuentos municipales agregados, no edades exactas ni circunstancias individuales; el límite por año no identifica a los nacidos el propio 1 de enero de 1950.\",\"meaning\":\"A 1 de enero de 2025, quienes nacieron hasta 1949 ya habían cumplido al menos 75 años. La agrupación se basa en el año de nacimiento; no permite identificar cumpleaños individuales de quienes nacieron en 1950.\",\"method\":\"Suma de los recuentos por municipio y sexo total de los nacidos hasta 1949; porcentaje = recuento / población total × 100, redondeado a tres decimales.\",\"output_field\":\"population_75_plus\",\"reference_period\":\"2025-01-01\",\"source_field\":\"año de nacimiento\",\"source_id\":\"EUSTAT_EMH_2025\"},\"assumptions\":[],\"capability_id\":\"obtener_resumen_territorial\",\"claims\":[{\"assumptions\":[],\"denominator\":{\"data_ref\":{\"field\":\"population_total\",\"municipality_code\":\"20030\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":27118},\"derivation\":\"derived_exact\",\"entity_id\":\"20030\",\"entity_label\":\"Eibar\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/pct_65_plus\",\"id\":\"claim-1\",\"label\":\"pct_65_plus\",\"metric_id\":\"pct_65_plus\",\"numerator\":{\"data_ref\":{\"field\":\"population_65_plus\",\"municipality_code\":\"20030\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":7101},\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"unit\":\"%\",\"value\":26.186},{\"assumptions\":[\"75+ derivado del año de nacimiento en la fuente demográfica.\"],\"denominator\":{\"data_ref\":{\"field\":\"population_total\",\"municipality_code\":\"20030\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":27118},\"derivation\":\"derived_exact\",\"entity_id\":\"20030\",\"entity_label\":\"Eibar\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/pct_75_plus\",\"id\":\"claim-2\",\"label\":\"pct_75_plus\",\"metric_id\":\"pct_75_plus\",\"numerator\":{\"data_ref\":{\"field\":\"population_75_plus\",\"municipality_code\":\"20030\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":3727},\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"unit\":\"%\",\"value\":13.744},{\"assumptions\":[],\"denominator\":null,\"derivation\":\"direct\",\"entity_id\":\"20030\",\"entity_label\":\"Eibar\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/population_65_plus\",\"id\":\"claim-3\",\"label\":\"population_65_plus\",\"metric_id\":\"population_65_plus\",\"numerator\":null,\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"unit\":\"personas\",\"value\":7101},{\"assumptions\":[],\"denominator\":null,\"derivation\":\"direct\",\"entity_id\":\"20030\",\"entity_label\":\"Eibar\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/population_75_plus\",\"id\":\"claim-4\",\"label\":\"population_75_plus\",\"metric_id\":\"population_75_plus\",\"numerator\":null,\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"unit\":\"personas\",\"value\":3727},{\"assumptions\":[],\"denominator\":null,\"derivation\":\"direct\",\"entity_id\":\"20030\",\"entity_label\":\"Eibar\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/population_total\",\"id\":\"claim-5\",\"label\":\"population_total\",\"metric_id\":\"population_total\",\"numerator\":null,\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"unit\":\"personas\",\"value\":27118},{\"assumptions\":[],\"denominator\":{\"data_ref\":null,\"evidence_path\":\"/data/0/population_65_plus\",\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":7101},\"derivation\":\"derived_exact\",\"entity_id\":\"20030\",\"entity_label\":\"Eibar\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/service_indicators/hospital/rate_per_10000_65_plus\",\"id\":\"claim-6\",\"label\":\"rate_per_10000_65_plus\",\"metric_id\":\"rate_per_10000_65_plus\",\"numerator\":{\"data_ref\":null,\"evidence_path\":\"/data/0/service_indicators/hospital/registered_service_count\",\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\",\"unit\":\"registros\",\"value\":1},\"period\":\"2025-01-01;2026-09-20\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"},{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"EUSTAT_EMH_2025\",\"ODE_HEALTH_CENTRES_2026\"],\"source_refs\":[{\"role\":\"denominator\",\"source_id\":\"EUSTAT_EMH_2025\"},{\"role\":\"numerator\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"unit\":\"registros/10000 personas\",\"value\":1.408},{\"assumptions\":[],\"denominator\":{\"data_ref\":null,\"evidence_path\":\"/data/0/population_75_plus\",\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":3727},\"derivation\":\"derived_exact\",\"entity_id\":\"20030\",\"entity_label\":\"Eibar\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/service_indicators/hospital/rate_per_10000_75_plus\",\"id\":\"claim-7\",\"label\":\"rate_per_10000_75_plus\",\"metric_id\":\"rate_per_10000_75_plus\",\"numerator\":{\"data_ref\":null,\"evidence_path\":\"/data/0/service_indicators/hospital/registered_service_count\",\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\",\"unit\":\"registros\",\"value\":1},\"period\":\"2025-01-01;2026-09-20\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"},{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"EUSTAT_EMH_2025\",\"ODE_HEALTH_CENTRES_2026\"],\"source_refs\":[{\"role\":\"denominator\",\"source_id\":\"EUSTAT_EMH_2025\"},{\"role\":\"numerator\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"unit\":\"registros/10000 personas\",\"value\":2.683},{\"assumptions\":[],\"denominator\":null,\"derivation\":\"direct\",\"entity_id\":\"20030\",\"entity_label\":\"Eibar\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/service_indicators/hospital/registered_service_count\",\"id\":\"claim-8\",\"label\":\"registered_service_count\",\"metric_id\":\"registered_service_count\",\"numerator\":null,\"period\":\"2026-09-20\",\"reference_periods\":[{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\"],\"source_refs\":[{\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"unit\":\"registros\",\"value\":1},{\"assumptions\":[],\"denominator\":{\"data_ref\":null,\"evidence_path\":\"/data/0/population_65_plus\",\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":7101},\"derivation\":\"derived_exact\",\"entity_id\":\"20030\",\"entity_label\":\"Eibar\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/service_indicators/mental_health/rate_per_10000_65_plus\",\"id\":\"claim-9\",\"label\":\"rate_per_10000_65_plus\",\"metric_id\":\"rate_per_10000_65_plus\",\"numerator\":{\"data_ref\":null,\"evidence_path\":\"/data/0/service_indicators/mental_health/registered_service_count\",\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\",\"unit\":\"registros\",\"value\":1},\"period\":\"2025-01-01;2026-09-20\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"},{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"EUSTAT_EMH_2025\",\"ODE_HEALTH_CENTRES_2026\"],\"source_refs\":[{\"role\":\"denominator\",\"source_id\":\"EUSTAT_EMH_2025\"},{\"role\":\"numerator\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"unit\":\"registros/10000 personas\",\"value\":1.408},{\"assumptions\":[],\"denominator\":{\"data_ref\":null,\"evidence_path\":\"/data/0/population_75_plus\",\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":3727},\"derivation\":\"derived_exact\",\"entity_id\":\"20030\",\"entity_label\":\"Eibar\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/service_indicators/mental_health/rate_per_10000_75_plus\",\"id\":\"claim-10\",\"label\":\"rate_per_10000_75_plus\",\"metric_id\":\"rate_per_10000_75_plus\",\"numerator\":{\"data_ref\":null,\"evidence_path\":\"/data/0/service_indicators/mental_health/registered_service_count\",\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\",\"unit\":\"registros\",\"value\":1},\"period\":\"2025-01-01;2026-09-20\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"},{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"EUSTAT_EMH_2025\",\"ODE_HEALTH_CENTRES_2026\"],\"source_refs\":[{\"role\":\"denominator\",\"source_id\":\"EUSTAT_EMH_2025\"},{\"role\":\"numerator\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"unit\":\"registros/10000 personas\",\"value\":2.683},{\"assumptions\":[],\"denominator\":null,\"derivation\":\"direct\",\"entity_id\":\"20030\",\"entity_label\":\"Eibar\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/service_indicators/mental_health/registered_service_count\",\"id\":\"claim-11\",\"label\":\"registered_service_count\",\"metric_id\":\"registered_service_count\",\"numerator\":null,\"period\":\"2026-09-20\",\"reference_periods\":[{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\"],\"source_refs\":[{\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"unit\":\"registros\",\"value\":1},{\"assumptions\":[],\"denominator\":{\"data_ref\":null,\"evidence_path\":\"/data/0/population_65_plus\",\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":7101},\"derivation\":\"derived_exact\",\"entity_id\":\"20030\",\"entity_label\":\"Eibar\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/service_indicators/other_health/rate_per_10000_65_plus\",\"id\":\"claim-12\",\"label\":\"rate_per_10000_65_plus\",\"metric_id\":\"rate_per_10000_65_plus\",\"numerator\":{\"data_ref\":null,\"evidence_path\":\"/data/0/service_indicators/other_health/registered_service_count\",\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\",\"unit\":\"registros\",\"value\":0},\"period\":\"2025-01-01;2026-09-20\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"},{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"EUSTAT_EMH_2025\",\"ODE_HEALTH_CENTRES_2026\"],\"source_refs\":[{\"role\":\"denominator\",\"source_id\":\"EUSTAT_EMH_2025\"},{\"role\":\"numerator\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"unit\":\"registros/10000 personas\",\"value\":0.0},{\"assumptions\":[],\"denominator\":{\"data_ref\":null,\"evidence_path\":\"/data/0/population_75_plus\",\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":3727},\"derivation\":\"derived_exact\",\"entity_id\":\"20030\",\"entity_label\":\"Eibar\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/service_indicators/other_health/rate_per_10000_75_plus\",\"id\":\"claim-13\",\"label\":\"rate_per_10000_75_plus\",\"metric_id\":\"rate_per_10000_75_plus\",\"numerator\":{\"data_ref\":null,\"evidence_path\":\"/data/0/service_indicators/other_health/registered_service_count\",\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\",\"unit\":\"registros\",\"value\":0},\"period\":\"2025-01-01;2026-09-20\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"},{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"EUSTAT_EMH_2025\",\"ODE_HEALTH_CENTRES_2026\"],\"source_refs\":[{\"role\":\"denominator\",\"source_id\":\"EUSTAT_EMH_2025\"},{\"role\":\"numerator\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"unit\":\"registros/10000 personas\",\"value\":0.0},{\"assumptions\":[],\"denominator\":null,\"derivation\":\"direct\",\"entity_id\":\"20030\",\"entity_label\":\"Eibar\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/service_indicators/other_health/registered_service_count\",\"id\":\"claim-14\",\"label\":\"registered_service_count\",\"metric_id\":\"registered_service_count\",\"numerator\":null,\"period\":\"2026-09-20\",\"reference_periods\":[{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\"],\"source_refs\":[{\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"unit\":\"registros\",\"value\":0},{\"assumptions\":[],\"denominator\":{\"data_ref\":null,\"evidence_path\":\"/data/0/population_65_plus\",\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":7101},\"derivation\":\"derived_exact\",\"entity_id\":\"20030\",\"entity_label\":\"Eibar\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/service_indicators/primary_care/rate_per_10000_65_plus\",\"id\":\"claim-15\",\"label\":\"rate_per_10000_65_plus\",\"metric_id\":\"rate_per_10000_65_plus\",\"numerator\":{\"data_ref\":null,\"evidence_path\":\"/data/0/service_indicators/primary_care/registered_service_count\",\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\",\"unit\":\"registros\",\"value\":4},\"period\":\"2025-01-01;2026-09-20\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"},{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"EUSTAT_EMH_2025\",\"ODE_HEALTH_CENTRES_2026\"],\"source_refs\":[{\"role\":\"denominator\",\"source_id\":\"EUSTAT_EMH_2025\"},{\"role\":\"numerator\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"unit\":\"registros/10000 personas\",\"value\":5.633},{\"assumptions\":[],\"denominator\":{\"data_ref\":null,\"evidence_path\":\"/data/0/population_75_plus\",\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":3727},\"derivation\":\"derived_exact\",\"entity_id\":\"20030\",\"entity_label\":\"Eibar\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/service_indicators/primary_care/rate_per_10000_75_plus\",\"id\":\"claim-16\",\"label\":\"rate_per_10000_75_plus\",\"metric_id\":\"rate_per_10000_75_plus\",\"numerator\":{\"data_ref\":null,\"evidence_path\":\"/data/0/service_indicators/primary_care/registered_service_count\",\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\",\"unit\":\"registros\",\"value\":4},\"period\":\"2025-01-01;2026-09-20\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"},{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"EUSTAT_EMH_2025\",\"ODE_HEALTH_CENTRES_2026\"],\"source_refs\":[{\"role\":\"denominator\",\"source_id\":\"EUSTAT_EMH_2025\"},{\"role\":\"numerator\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"unit\":\"registros/10000 personas\",\"value\":10.732},{\"assumptions\":[],\"denominator\":null,\"derivation\":\"direct\",\"entity_id\":\"20030\",\"entity_label\":\"Eibar\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/service_indicators/primary_care/registered_service_count\",\"id\":\"claim-17\",\"label\":\"registered_service_count\",\"metric_id\":\"registered_service_count\",\"numerator\":null,\"period\":\"2026-09-20\",\"reference_periods\":[{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\"],\"source_refs\":[{\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"unit\":\"registros\",\"value\":4}],\"effective_request\":{\"defaults_applied\":[\"periodo\"],\"effective_period\":\"2025-01-01\",\"municipality_codes\":[\"20030\"],\"municipality_labels\":[\"Eibar\"],\"operation\":\"obtener_resumen_territorial\",\"parameters\":{\"municipio\":\"Eibar\",\"periodo\":null}},\"error\":null,\"execution\":{\"request_id\":\"a5a0063ef52c468eb9dce563e9d1419c\",\"state\":\"completed\",\"tool\":\"obtener_resumen_territorial\"},\"limitations\":[\"La presencia de un servicio no acredita capacidad, horario, calidad ni acceso real.\",\"Los periodos de demografía y servicios pueden ser distintos; se muestran en las fuentes.\",\"4 cifras del resultado carecen de atribución por fuente en la salida y no se ofrecen como afirmaciones verificadas.\"],\"method\":\"Selección por código municipal; recuento de registros por categoría; tasas por 10.000 personas del grupo de edad y mínima distancia euclídea EPSG:25830 desde el punto representativo municipal.\",\"normalized_input\":{\"arguments\":{\"municipio\":\"Eibar\"},\"tool\":\"obtener_resumen_territorial\"},\"outcomes\":[],\"request_id\":\"a5a0063ef52c468eb9dce563e9d1419c\",\"selection\":{\"criterion\":\"Todas las entidades solicitadas explícitamente\",\"detail_mechanism\":\"Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.\",\"omitted_entities\":0,\"returned_entities\":1,\"total_entities\":1},\"status\":\"valid\"}"
+      - generic "Resultado de obtener_resumen_territorial"
+      - article:
+        - generic: GIPUZKOA 360 · Visita sanitaria
+        - heading "Población de 75 o más años" [level=3]
+        - table:
+          - rowgroup:
+            - row "Municipio Población total Personas de 75+ Porcentaje":
+              - columnheader "Municipio"
+              - columnheader "Población total"
+              - columnheader "Personas de 75+"
+              - columnheader "Porcentaje"
+          - rowgroup:
+            - row "Eibar 27.118 3.727 13,744 %":
+              - cell "Eibar":
+                - strong: Eibar
+              - cell "27.118"
+              - cell "3.727":
+                - strong: "3.727"
+              - cell "13,744 %":
+                - strong: 13,744 %
+            - row "Tolosa 20.048 2.432 12,131 %":
+              - cell "Tolosa":
+                - strong: Tolosa
+              - cell "20.048"
+              - cell "2.432":
+                - strong: "2.432"
+              - cell "12,131 %":
+                - strong: 12,131 %
+        - paragraph:
+          - strong: "Lo más importante:"
+        - list:
+          - strong: Eibar tiene más personas de 75 o más años en términos absolutos
+          - text: ": 3.727 frente a 2.432, es decir,"
+          - strong: 1.295 personas más
+          - text: .
+          - strong: También tiene una proporción algo mayor
+          - text: ":"
+          - strong: 13,744 % frente a 12,131 %
+          - text: ", una diferencia de"
+          - strong: 1,613 puntos porcentuales
+          - text: .
+          - listitem: "La diferencia de recuento debe interpretarse teniendo en cuenta que Eibar también tiene una población total mayor: 27.118 frente a 20.048 habitantes."
+          - text: En ambos casos se trata de
+          - strong: recuentos municipales agregados
+          - text: ", no de edades individuales ni de circunstancias personales."
+        - paragraph:
+          - strong: "Fuente y periodo:"
+          - text: Eustat,
+          - strong: 1 de enero de 2025
+          - text: . El grupo de 75 o más se deriva del campo
+          - emphasis: año de nacimiento
+          - text: ": personas nacidas en"
+          - strong: 1949 o antes
+          - text: . El porcentaje es el recuento de 75+ dividido por la población total del municipio.
+        - paragraph:
+          - text: Estos datos describen una diferencia demográfica observada;
+          - strong: no permiten establecer causas
+          - text: ni explicar por qué difieren ambos municipios.
+    - textbox "Escribe un mensaje…"
+    - button "Enviar" [disabled]

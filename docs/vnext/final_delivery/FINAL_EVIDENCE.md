@@ -1,4 +1,33 @@
-# Evidencia vigente R17 — cierre privado del agente y de Entrega
+# Evidencia vigente R18 — offline cerrado; CI y conversación real pendientes
+
+R18 parte del SHA exacto8f3ee977cea3295f8f5a92b776e44a598d897016, no del
+checkout R17 con auditoría sin commit. [Handoff](../w2/HANDOFF_R18.md).
+ZIP57fe8ccab8ab3613c0729aa9a4b25702dbaead5d74bfb6216e8bbe117c421256,
+235611bytes; manifiesto d2eee50d906be5056c227102c8c2005b9cb93c3916d8fbf6a3df35571ec4af74.
+Solo main/tools cambian;23otrosmiembros/15assets/W1/v4 conservados.
+28focales;709Python completos una vez local675,06s;17Node; identidad14/14
+antes/después;jury y artifacts7/7 PASS. Builds byte-idénticos.
+Matriz inicial489/489raw,7oracle,53time summaries,0findings tras corregir el
+verificador de proyección no válida; primer fallo conservado, no drift raw.
+Corpus ampliado156/156structural independiente,12time summaries,0findings,
+SHAc98ab497aed72b2b18c63f7c652d4c220a156e9846cb9b7aa9393f807ffd81e4.
+No sumar ambas matrices como645casos únicos ni afirmar que el segundo informe
+tiene oráculos (0; los7 pertenecen al primero). CI exacto ejecutará matriz
+combinada489 con el corpus ampliado; ambos reports actuales conservados.
+La ampliación fue adversarial de corpus/harness, no cambio de paquete ni de
+pruebas del motor. Modelo llamado0;real R18 NOT_RUN;holdout cerrado.
+No declarar generalización LLM por estas pruebas deterministas.
+
+R17 general audit posterior:Critical0/High0/Medium1/Low3,FAIL. Nunca transferir
+su anterior aceptación de4mensajes aR18 ni borrar el hallazgo de población
+dentro de radio. Capturas originales en outputs/final_release.
+El nuevo semantic firewall tipa evidencia, no verifica matemáticamente prosa
+final del LLM: queda aceptación real sobre versión privada exacta.
+READY_FOR_HUMAN_FINAL_GATE=NO;track/confirmación/publicación HUMAN ONLY.
+
+## Histórico R17 — no estado ni aceptación de R18
+
+# Evidencia histórica R17 — cierre privado del agente y de Entrega
 
 Runtime probado: 77ac63d5b68a3ecbf51461e3aaa0de0566d6f2c3. Base R16 exacta:
 c859a26396838d59a52b8d91f1eda5ef6b69e4cd. [PR22](https://github.com/Asier-Comba/Guipuzkoa360/pull/22), draft contra R16; main no modificado.

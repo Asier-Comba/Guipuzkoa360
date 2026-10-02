@@ -24,11 +24,11 @@ Equipos técnicos de movilidad, cuidados y planificación territorial.
 
 ## Para qué servirá el resultado
 
-Combinamos un análisis de los 88 municipios para detectar dónde estudiar el acceso sanitario con el cálculo de una visita completa en los trayectos disponibles. Así hacemos visibles el viaje, las esperas, el paseo, la consulta y el regreso, con sus fuentes y límites.
+Exploramos los 88 municipios y calculamos visitas completas donde hay datos suficientes. Una consulta de 20 minutos desde Zegama ocupa 2 h 58 min 11 s en el ejemplo calculado. Incluye viaje, esperas, paseo y regreso; usamos horarios programados, no tiempos reales desde casa.
 
 ## Explicación breve para Entrega
 
-Hemos construido GIPUZKOA 360 para entender cuánto ocupa una visita sanitaria cuando dependemos del autobús: no solo el viaje, también las esperas, el paseo, la consulta y el regreso. Primero exploramos los 88 municipios para detectar dónde merece la pena estudiar el acceso. Después calculamos la visita completa en los trayectos con datos suficientes.
+Hemos construido GIPUZKOA 360 para entender cuánto ocupa una visita sanitaria cuando dependemos del autobús: no solo el viaje, también las esperas, el paseo, la consulta y el regreso. Primero exploramos los 88 municipios para detectar dónde merece la pena estudiar el acceso. Después calculamos la visita completa en los trayectos con datos suficientes. La distancia desde un punto municipal no permite saber qué proporción de vecinos vive cerca de un servicio.
 
 En la conversación seleccionada, una consulta de 20 minutos desde las paradas de Zegama al Ambulatorio de Beasain el 29 de septiembre de 2026, a las 09:30, ocupa 2 h 58 min 11 s (10.691 s): de 08:09:37 a 11:07:48. El autobús sale a las 08:12:37; los tres minutos anteriores son espera inicial. Manteniendo todo igual y cambiando la cita a las 09:45, nuestro agente vuelve a calcular: 2 h 23 min 11 s (8.591 s). Son 35 minutos menos entre dos escenarios programados, no un ahorro observado ni una recomendación.
 
@@ -36,7 +36,7 @@ El cálculo de visitas admite Zegama, Segura e Idiazabal y la fecha indicada. Us
 
 Fuentes: Moveuskadi/Goierrialdea (horarios del 28/09 al 27/12/2026), Open Data Euskadi (centros, 20/09/2026), Osakidetza (ficha consultada el 29/09/2026) y © OpenStreetMap contributors, ODbL 1.0 (red obtenida el 29/09/2026). La población procede de Eustat, a 01/01/2025; son fuentes con fechas distintas, no una fotografía temporal homogénea.
 
-El primer enlace es una visualización del screening territorial, no una demo de la visita sanitaria. El segundo contiene el código y las fuentes. Hemos contrastado las cifras de la conversación con los datos del cálculo.
+El primer enlace es una visualización del análisis territorial inicial, no una demo de la visita sanitaria. El segundo contiene el código y las fuentes. Hemos contrastado las cifras de la conversación con los datos del cálculo.
 
 Somos DeustoAI Labs — Universidad de Deusto: Oier Duñabeitia Berezo, Asier Comba Lopez y Hugo Fernández Díez.
 
