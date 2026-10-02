@@ -1,0 +1,29 @@
+{
+  "status": "FAIL_STOP",
+  "tested_runtime_sha": "e501b45745fd7cc283ca0fa559d9965ca6fda9ee",
+  "version_id": "agentv_cafd8f750b5741959fb29c4045743da1",
+  "gates": {
+    "A": "PASS",
+    "B": "PASS",
+    "C": "PASS"
+  },
+  "general_completed_pass": 7,
+  "general_failed": 1,
+  "general_not_run": 10,
+  "followups_not_run": 2,
+  "user_messages": 11,
+  "critical": 0,
+  "high": 0,
+  "medium": 2,
+  "low": 0,
+  "unsupported_material_claims": 0,
+  "unsupported_claim_scope": "observed completed responses only; incomplete benchmark not accepted",
+  "identical_invalid_retries": 3,
+  "scenario_portal_error": 503,
+  "portal_error_cause": "NOT_PROVEN",
+  "new_prompt_after_failure": false,
+  "runtime_changed_after_freeze": false,
+  "delivery_work": "NOT_STARTED",
+  "presentation_work": "NOT_STARTED",
+  "stop": true
+}
