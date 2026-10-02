@@ -1,0 +1,9 @@
+{
+  "runtime_sha": "81c42da2e8ab7074074d9f114d4ac7990e715da4",
+  "main_sha256": "42f0ff0a0fe5f316c1418b7bc016c849be56fcd0387782cc7523aef5c164bf3f",
+  "tools_sha256": "b6354a28a730b3286f960c40c63a21c8bcc265af9ab4bec0e14f34892be1250c",
+  "main_identical": true,
+  "tools_identical": true,
+  "source_folder": "agentes/gipuzkoa_360_2",
+  "verification": "visible editor clipboard readback"
+}
