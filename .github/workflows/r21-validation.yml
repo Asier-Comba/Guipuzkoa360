@@ -1,0 +1,59 @@
+name: R21 ten-tool final-agent validation
+on:
+  push:
+    branches: [hotfix/r21-final-10-tool-agent]
+  pull_request:
+    branches: [hotfix/r20-final-agent-surface]
+  workflow_dispatch:
+permissions:
+  contents: read
+env:
+  PYTHONUTF8: '1'
+jobs:
+  agent-surface:
+    name: R21-${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12.10'
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+        with:
+          node-version: '24.12.0'
+      - run: python -m pip install --no-cache-dir -r requirements.txt
+      - run: python scripts/ops/verify_runtime_identity.py
+      - run: python -m scripts.vnext_agent.build_r21
+      - run: python -m scripts.vnext_agent.eval_r21
+      - run: python -m pytest -q -o addopts= -p no:cacheprovider --junitxml=work/r21-pytest.xml
+      - run: python -m scripts.vnext_agent.verify_r21 --output work/r21-audit.json
+      - run: node --test tests/e2e/contract_flow.test.mjs
+      - run: python scripts/benchmark/verify_jury_results.py --output work/r21-jury.json
+      - run: python scripts/release/verify_final_artifacts.py
+      - run: python -m scripts.vnext_agent.build_r21
+      - run: git diff --exit-code -- agentes/gipuzkoa360_vnext/portal_r21 scripts/vnext_agent/dist/r21 outputs/r21/generated-corpus.json outputs/r21/real-protocol.json
+      - run: git diff --check
+      - if: always()
+        run: python scripts/ops/verify_runtime_identity.py
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        if: always()
+        with:
+          name: r21-evidence-${{ matrix.os }}
+          path: |
+            work/r21-*.json
+            work/r21-pytest.xml
+            work/catalog-observed.json
+            scripts/vnext_agent/dist/r21/*
+          retention-days: 14

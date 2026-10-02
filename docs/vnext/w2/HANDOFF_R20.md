@@ -1,4 +1,8 @@
-# R20 narrow public surface — acceptance pending
+# R20 narrow public surface — Studio preparation blocked
+
+Current closure: [R20_PORTAL_GATE](R20_PORTAL_GATE.md). Exact-SHA Ubuntu and
+Windows CI are green, but Studio rejects12 tools against a hard10-tool limit.
+No R20 version or real model message exists; no real acceptance is claimed.
 
 Base is tested R19 runtime `e501b45745fd7cc283ca0fa559d9965ca6fda9ee`,
 not evidence-only `767a5ab343e5094546a556935c3002db5cd3b0c6`.
@@ -88,7 +92,9 @@ artifact7/7 gates PASS. Two builds match ZIP
 `0362aa249756275f6377cf9b3d3e4859f1f01ad856e0e5663e5cc12150030081`.
 The full local attempt was757PASS/5encodingFAIL, followed by5/5 targeted
 rechecks with inherited UTF-8. This is not claimed as a clean full-suite run.
-Exact-SHA fresh complete CI on both operating systems is pending.
+Exact-SHA fresh complete CI on both operating systems completed PASS:
+R20 validation37046444655 and Release fast CI37046444701,763 Python/17 Node.
+These results do not override the observed portal preparation blocker.
 Local results are separate from real-agent acceptance. Real evidence must
 record actual prompt/tool/args/output/final/material-claim scorecard and observed
 time-to-tool/output/final (missing timestamps NOT_OBSERVED). Any new reproducible

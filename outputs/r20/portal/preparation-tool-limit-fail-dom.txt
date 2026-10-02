@@ -1,0 +1,300 @@
+- region "Notifications alt+T"
+- generic "Connection Error:"
+- link "Saltar al contenido":
+  - /url: "#platform-main"
+- banner:
+  - link "Gipuzkoa AI Hackathon · MIT Media Lab City Science":
+    - /url: /area/
+    - strong: GIPUZKOA AI HACKATHON
+    - generic: MIT MEDIA LAB · CITY SCIENCE
+  - navigation "Áreas de la plataforma":
+    - link "Inicio":
+      - /url: /area/
+    - link "Formación":
+      - /url: /area/formacion/
+    - link "Equipo":
+      - /url: /hackathon/area/equipo/
+    - generic "Abrir secciones de Urban Challenge":
+      - generic: Urban Challenge
+      - generic: ⌄
+    - generic "Disponible para los equipos clasificados":
+      - generic: ◇
+      - generic: Final
+  - generic "Abrir menú de cuenta":
+    - generic: O
+    - strong: Oier Duñabeitia Berezo
+    - generic: Participante
+    - generic: ⌄
+- main:
+  - button "Proyecto GIPUZKOA 360":
+    - generic: Proyecto
+    - strong: GIPUZKOA 360
+  - tablist "Secciones del espacio de trabajo":
+    - 'tab "Resumen: Estado del proyecto y siguiente acción"':
+      - strong: Resumen
+    - 'tab "Datos: Archivos, mapas y procesamiento"':
+      - strong: Datos
+      - generic: "47"
+    - 'tab "Agentes: Construcción con Python o Langflow" [selected]':
+      - strong: Agentes
+      - generic: "12"
+    - 'tab "Pruebas: Verificación con versiones creadas"':
+      - strong: Pruebas
+      - generic: "9"
+    - 'tab "Entrega: Revisión y publicación del proyecto"':
+      - strong: Entrega
+    - 'tab "Asistente IA: Ayuda para analizar, editar y ejecutar el proyecto"':
+      - strong: Asistente IA
+  - generic "Estado del workspace":
+    - generic "Ver estado y actividad del workspace":
+      - generic: 1 persona
+    - button "Reiniciar el entorno del equipo":
+      - generic: ↻
+    - button "Ayuda de Agentes · Python": Ayuda
+    - button "Ejemplo resuelto"
+    - button "?"
+  - 'tabpanel "Agentes: Construcción con Python o Langflow"':
+    - region "Construcción de agentes":
+      - toolbar "Modo y contexto del agente":
+        - navigation "Forma de construir agentes":
+          - button "Python 12" [pressed]:
+            - generic: </>
+            - strong: Python
+            - emphasis: "12"
+          - button "Langflow 0":
+            - generic: ◇
+            - strong: Langflow
+            - emphasis: "0"
+        - generic: Agente activo
+        - combobox "Agente Python activo":
+          - option "Agente principal · borrador"
+          - option "GIPUZKOA 360 · borrador" [selected]
+          - option "GIPUZKOA 360 · v1"
+          - option "GIPUZKOA 360 · Visita sanitaria · v4"
+          - option "GIPUZKOA 360 vNext R14 binding 094745b · v1"
+          - option "GIPUZKOA 360 vNext R13 patch3 3951b290 · v1"
+          - option "GIPUZKOA 360 vNext R12 b4feb978 · borrador"
+          - option "GIPUZKOA 360 · Versión final · v6"
+          - option "GIPUZKOA 360 · RC2 compact · v1"
+          - option "GIPUZKOA 360 · RC2 runtime · v1"
+          - option "GIPUZKOA 360 · RC1 exacto · v1"
+          - option "GIPUZKOA 360 · integración jurado · v3"
+        - button "Ocultar agentes y archivos" [expanded]:
+          - generic: ▤
+          - generic: Archivos
+        - button "Nuevo agente":
+          - generic: +
+          - text: Nuevo agente
+        - button "Preparar con IA"
+        - button "Cerrar preparación" [expanded]
+      - complementary "Agentes Python y sus archivos":
+        - generic: PYTHON
+        - strong: Agentes del equipo
+        - article:
+          - button "Agente principal raíz · borrador":
+            - generic: A
+            - strong: Agente principal
+            - generic: raíz · borrador
+        - article:
+          - button "GIPUZKOA 360 agentes/gipuzkoa_360_2 · borrador":
+            - generic: A
+            - strong: GIPUZKOA 360
+            - generic: agentes/gipuzkoa_360_2 · borrador
+          - generic "Acciones de GIPUZKOA 360": •••
+        - article:
+          - button "GIPUZKOA 360 agentes/gipuzkoa_360 · versión v1":
+            - generic: A
+            - strong: GIPUZKOA 360
+            - generic: agentes/gipuzkoa_360 · versión v1
+          - generic "Acciones de GIPUZKOA 360": •••
+        - article:
+          - button "GIPUZKOA 360 · Visita sanitaria agentes/gipuzkoa_360_visita_sanitaria · versión v4":
+            - generic: A
+            - strong: GIPUZKOA 360 · Visita sanitaria
+            - generic: agentes/gipuzkoa_360_visita_sanitaria · versión v4
+          - generic "Acciones de GIPUZKOA 360 · Visita sanitaria": •••
+        - article:
+          - button "GIPUZKOA 360 vNext R14 binding 094745b agentes/gipuzkoa_360_vnext_r14_binding_094745b · versión v1":
+            - generic: A
+            - strong: GIPUZKOA 360 vNext R14 binding 094745b
+            - generic: agentes/gipuzkoa_360_vnext_r14_binding_094745b · versión v1
+          - generic "Acciones de GIPUZKOA 360 vNext R14 binding 094745b": •••
+        - article:
+          - button "GIPUZKOA 360 vNext R13 patch3 3951b290 agentes/gipuzkoa_360_vnext_r13_patch3_3951b290 · versión v1":
+            - generic: A
+            - strong: GIPUZKOA 360 vNext R13 patch3 3951b290
+            - generic: agentes/gipuzkoa_360_vnext_r13_patch3_3951b290 · versión v1
+          - generic "Acciones de GIPUZKOA 360 vNext R13 patch3 3951b290": •••
+        - article:
+          - button "GIPUZKOA 360 vNext R12 b4feb978 agentes/gipuzkoa_360_vnext_r12_b4feb978 · borrador":
+            - generic: A
+            - strong: GIPUZKOA 360 vNext R12 b4feb978
+            - generic: agentes/gipuzkoa_360_vnext_r12_b4feb978 · borrador
+          - generic "Acciones de GIPUZKOA 360 vNext R12 b4feb978": •••
+        - article:
+          - button "GIPUZKOA 360 · Versión final agentes/gipuzkoa_360_integracion_work_2 · versión v6":
+            - generic: A
+            - strong: GIPUZKOA 360 · Versión final
+            - generic: agentes/gipuzkoa_360_integracion_work_2 · versión v6
+          - generic "Acciones de GIPUZKOA 360 · Versión final": •••
+        - article:
+          - button "GIPUZKOA 360 · RC2 compact agentes/gipuzkoa_360_rc2_compact · versión v1":
+            - generic: A
+            - strong: GIPUZKOA 360 · RC2 compact
+            - generic: agentes/gipuzkoa_360_rc2_compact · versión v1
+          - generic "Acciones de GIPUZKOA 360 · RC2 compact": •••
+        - article:
+          - button "GIPUZKOA 360 · RC2 runtime agentes/gipuzkoa_360_rc2_runtime · versión v1":
+            - generic: A
+            - strong: GIPUZKOA 360 · RC2 runtime
+            - generic: agentes/gipuzkoa_360_rc2_runtime · versión v1
+          - generic "Acciones de GIPUZKOA 360 · RC2 runtime": •••
+        - article:
+          - button "GIPUZKOA 360 · RC1 exacto agentes/gipuzkoa_360_rc1_exacto · versión v1":
+            - generic: A
+            - strong: GIPUZKOA 360 · RC1 exacto
+            - generic: agentes/gipuzkoa_360_rc1_exacto · versión v1
+          - generic "Acciones de GIPUZKOA 360 · RC1 exacto": •••
+        - article:
+          - button "GIPUZKOA 360 · integración jurado agentes/gipuzkoa_360_integracion_jurado · versión v3":
+            - generic: A
+            - strong: GIPUZKOA 360 · integración jurado
+            - generic: agentes/gipuzkoa_360_integracion_jurado · versión v3
+          - generic "Acciones de GIPUZKOA 360 · integración jurado": •••
+        - generic: ARCHIVOS DEL AGENTE
+        - strong: agentes/gipuzkoa_360_2
+        - button "PY ejecucion.py Funciones que puede ejecutar":
+          - generic: PY
+          - strong: ejecucion.py
+          - generic: Funciones que puede ejecutar
+        - button "PY main.py Prompt, modelo y configuración":
+          - generic: PY
+          - strong: main.py
+          - generic: Prompt, modelo y configuración
+        - button "PY tools.py Funciones que puede ejecutar":
+          - generic: PY
+          - strong: tools.py
+          - generic: Funciones que puede ejecutar
+      - toolbar "Acciones del archivo activo":
+        - generic: agentes/gipuzkoa_360_2/tools.py
+        - generic: Guardado
+        - link "Descargar":
+          - /url: https://app.gipuzkoa-ai-hackathon.com/api/studio/files/file_2d09c28974414507834b3efd75775d05/content?download=1
+        - button "▶ Comprobar preparación"
+      - generic "Editor de agentes/gipuzkoa_360_2/tools.py":
+        - generic: "2318"
+        - generic: "2319"
+        - generic: "2320"
+        - generic: "2321"
+        - generic: "2322"
+        - generic: "2323"
+        - generic: "2324"
+        - generic: "2325"
+        - generic: "2326"
+        - generic: "2327"
+        - generic: "2328"
+        - generic: "2329"
+        - generic: "2330"
+        - generic: "2331"
+        - generic: "2332"
+        - generic: "2333"
+        - generic: "2334"
+        - generic: "2335"
+        - generic: "2336"
+        - generic: "2337"
+        - generic: "2338"
+        - generic: "2339"
+        - generic: "2340"
+        - generic: "2341"
+        - generic: "2342"
+        - generic: "2343"
+        - generic: "2344"
+        - generic: "2345"
+        - generic: "2346"
+        - generic: "2347"
+        - generic: "2348"
+        - generic: "2349"
+        - generic: "2350"
+        - generic: "2351"
+        - generic: "2352"
+        - generic: "2353"
+        - generic: "2354"
+        - generic: "2355"
+        - generic: "2356"
+        - generic: "2357"
+        - generic: "2358"
+        - generic: "2359"
+        - generic: "2360"
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - textbox:
+          - generic: "\"\"\"Generated two-editor Studio tool bundle. Edit source modules, not this file.\"\"\""
+          - generic: "except (DataContractError,ValueError):"
+          - generic: "return None,_r20_error_view(name,'binding','entity_not_found',['municipios'],allowed={'municipios':[v['municipality_name'] for v in repo.municipalities()]})"
+          - generic: if len(set(codes))!=len(codes):return None,_r20_error_view(name,'binding','duplicate_entities',['municipios'])
+          - generic: "if name=='simular_retirar_servicio':"
+          - generic: services=territorial.DataRepository(root/'datos_preparados').services()
+          - generic: choices=[s['service_id'] for s in services if s['service_category']==mapped['categoria_servicio']]
+          - generic: "if mapped['service_id'] not in choices:"
+          - generic: return None,_r20_error_view(name,'binding','entity_not_found',['service_id'],message='Identidad inexistente en esa categoría. Observa primero un resultado de acceso; no inventes un código.')
+          - generic: return (engine,mapped),None
+          - generic: "def public_call(name, arguments, request_id, *, root=None):"
+          - generic: "\"\"\"One public call, no retry loop. Error views never expose partial numbers.\"\"\""
+          - generic: "try:"
+          - generic: root=_workspace_root(root)
+          - generic: translated,error=_r20_arguments(name,arguments,root)
+          - generic: "if error:"
+          - generic: error['request_id']=request_id
+          - generic: return canonical(error)
+          - generic: engine,mapped=translated
+          - generic: result=execute(engine,mapped,request_id,root=root)
+          - generic: view=strict_loads(public_result(result,root=root))
+          - generic: view['capability_id']=name
+          - generic: "view['public_input']={'tool':name,'arguments':arguments} if view['status']=='valid' else {'tool':name}"
+          - generic: "if view['status']!='valid':"
+          - generic: "err=view.get('error') or {};code=err.get('code','unverified_result')"
+          - generic: observed=code=='observed_transport_failure' and not err.get('invalid_fields')
+          - generic: "err.update(error_class='observed_transport_failure' if observed else 'invalid_arguments' if code in {'invalid_arguments','entity_not_found','service_not_found','municipality_not_found'} else 'contract_or_data_failure',retry_same_arguments=observed,retry_same_call=observed,maximum_identical_retries=1 if observed else 0,required_next_information=err.get('invalid_fields') or err.get('available_options') or None,corrected_call_possible=False)"
+          - generic: if name=='simular_cambiar_umbral':err['invalid_fields']=['umbral_actual_km' if x=='umbral_km' else x for x in err.get('invalid_fields',[])]
+          - generic: view['error']=err;view['claims']=[]
+          - generic: elif name=='consultar_capacidades':view=_r20_capabilities(view)
+          - generic: "elif name in {'analizar_acceso_general','analizar_acceso_municipios'}:"
+          - generic: "# Identity is a non-numeric observation from the SAME validated raw"
+          - generic: "# rows as the distance claims, not a new dataset or inferred value."
+          - generic: raw=strict_loads(result['raw_result_json'])
+          - generic: "selected={c['entity_id'] for c in view['claims'] if c['entity_type']=='municipality'}"
+          - generic: "view['observed_services']=[{'municipality_code':row['municipality_code'],'municipality_name':row['municipality_name'],'service_id':row['nearest_service_id'],'categoria_servicio':mapped['categoria_servicio'],'evidence_path':f'/data/{i}/nearest_service_id','raw_result_sha256':result['raw_result_sha256'],'source_ids':list(dict.fromkeys(s for c in view['claims'] for s in c['source_ids'])),'meaning':'identidad del registro más cercano, no asignación sanitaria'} for i,row in enumerate(raw['data']) if row['municipality_code'] in selected]"
+          - generic: encoded=canonical(view)
+          - generic: if len(encoded.encode('utf-8'))>MAX_PUBLIC_BYTES:raise ContractViolation('public:payload_too_large')
+          - generic: return encoded
+          - generic: "except Exception:"
+          - generic: "return canonical({'schema_version':VERSION,'request_id':request_id,'capability_id':name,'status':'error','claims':[],"
+          - generic: "'error':{'code':'public_adapter_unverified','error_class':'contract_or_data_failure','invalid_fields':[],'retry_same_arguments':False,'retry_same_call':False,'allowed_values':{},'required_next_information':None,'corrected_call_possible':False,'message':'No se ha podido verificar la petición o el resultado. No hay cifras verificadas.'}})"
+      - separator "Cambiar altura de la consola"
+      - strong: Consola
+      - generic: Plantilla aislada preparada
+      - button "Ampliar"
+      - button "Ocultar"
+      - generic: Ejecución completada sin salida.
+      - region "Crear versión del agente":
+        - generic: CREAR VERSIÓN · agentes/gipuzkoa_360_2/main.py
+        - heading "Crear versión del agente" [level=2]
+        - paragraph: Fija una copia del código y los datos para probarla. La entrega se publica después, desde Entrega.
+        - button "Cerrar preparación de versión": ×
+        - alert:
+          - strong: No se pudo comprobar el agente
+          - paragraph: "Traceback (most recent call last): File \"/opt/studio/runtime_entry.py\", line 707, in main _write_result(result_path, {\"agent\": _discover_agent(path, workspace)}) ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^ File \"/opt/studio/runtime_entry.py\", line 461, in _discover_agent nested_tools = captured_tools(capture) File \"/opt/studio/runtime_entry.py\", line 458, in captured_tools raise ValueError(\"Cada agente admite hasta 10 tools con nombres únicos.\") ValueError: Cada agente admite hasta 10 tools con nombres únicos."
+        - generic: A
+        - generic: EMPIEZA POR EL CÓDIGO
+        - heading "Comprueba la preparación del agente" [level=3]
+        - paragraph: Comprobaremos las instrucciones, las herramientas y los archivos declarados. Después podrás crear una versión y conversar con ella en Pruebas.
+        - code: "def build_agent(model): return create_agent( model=model, tools=[mi_tool], system_prompt=construir_prompt(), )"
+        - button "Comprobar preparación"
