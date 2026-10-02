@@ -1,0 +1,22 @@
+{
+  "version_id": "agentv_488851cc28d143be972ced32584fc582",
+  "agent_folder": "agentes/gipuzkoa_360_3",
+  "runtime_sha": "b0096e9aeda533ed0a43f56bf98975becf4022d8",
+  "public_name": "GIPUZKOA 360",
+  "served_tool_count": 10,
+  "model": "openai:gpt-5.6-luna",
+  "internet": false,
+  "memory": true,
+  "source_readback": {
+    "agent_folder": "agentes/gipuzkoa_360_3",
+    "runtime_sha": "b0096e9aeda533ed0a43f56bf98975becf4022d8",
+    "main_equal": true,
+    "tools_equal": true,
+    "main_sha256": "ae795ab3a7a2d280b18c43cb2f24406e64584bd9095d4fb573986c66215d6b98",
+    "tools_sha256": "411e49f6b97a514ae827028cdcbace287d93dca4d027eedbf614b23ef3f2baed",
+    "unused_platform_scaffold": "ejecucion.py: not imported by either candidate file; not a member of the distributed runtime ZIP",
+    "observed_at": "2026-10-02T22:46:17.925Z"
+  },
+  "creation_connection_notice": "Connection Error: observed; new read confirms version saved; creation was not repeated; cause NOT_PROVEN",
+  "observed_at": "2026-10-02T22:53:54.610Z"
+}

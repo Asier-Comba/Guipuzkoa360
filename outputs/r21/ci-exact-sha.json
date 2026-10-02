@@ -1,0 +1,24 @@
+{
+  "runtime_sha": "b0096e9aeda533ed0a43f56bf98975becf4022d8",
+  "r21_validation_run": 37073444619,
+  "fast_ci_run": 37073444574,
+  "r21_jobs": [
+    {"id": 111057936628, "name": "R21-ubuntu-24.04", "conclusion": "success", "python": "780/780", "node": "17/17", "raw_parity": "901/901", "oracle": "7/7", "pytest_duration_s": 123.51, "artifact_id": 11255177319, "artifact_digest": "sha256:542dc721c14e94a33530e2f91671c8be8d27b99bccb10b458b43066496ce1ac2"},
+    {"id": 111057936266, "name": "R21-windows-latest", "conclusion": "success", "python": "780/780", "node": "17/17", "raw_parity": "901/901", "oracle": "7/7", "pytest_duration_s": 157.92, "artifact_id": 11255928032, "artifact_digest": "sha256:f395a8aba2c58a9260b82b8bc57d6cf35c80df57e8b17a5199543da85fe9688c"}
+  ],
+  "fast_jobs": [
+    {"id": 111057936463, "name": "release-ubuntu-24.04", "conclusion": "success"},
+    {"id": 111057936194, "name": "release-windows-latest", "conclusion": "success"}
+  ],
+  "association": "Both job checkout logs explicitly show exact runtime SHA; artifact workflow_run.head_sha independently matches it. First and second builds in both OS logs match local package and manifest.",
+  "zip_sha256": "a714bac1fa91caebe3e8ef6fb65259c4f11447120479ecf51dce4813cfba5dc2",
+  "manifest_sha256": "6d425d3e194e6fea016ae4a4b685ae2e50af978897278539d17b7bb03fad31b9",
+  "bytes": 240430,
+  "runtime_identity_before": "PASS",
+  "runtime_identity_after": "PASS",
+  "jury": "PASS",
+  "artifacts": "PASS",
+  "double_build": "PASS",
+  "diff_check": "PASS",
+  "portal_or_model_proof": false
+}
