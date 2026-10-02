@@ -128,14 +128,14 @@
     },
     {
       "arguments": {
-        "pregunta_o_dimension": "visita sanitaria desde domicilio con citas y tiempo real"
+        "pregunta_o_dimension": "predicción vivienda futura y recomendación"
       },
       "expectation": "honest_limit",
       "family": "unsupported",
       "group": "generated:unsupported",
       "id": "unsupported:04",
       "keep_view": true,
-      "prompt": "Estoy preparando un estudio. Desde mi domicilio de Errenteria, dime mañana la mejor cita disponible y cuánto tardaré con tráfico en tiempo real.",
+      "prompt": "Estoy preparando un estudio. Predice con estos datos qué vivienda será mejor en Errenteria en 2030 y recomiéndamela.",
       "tool": "consultar_capacidades"
     },
     {
@@ -159,7 +159,7 @@
       "group": "generated:subject",
       "id": "subject:09",
       "keep_view": true,
-      "prompt": "Explícamelo para una persona no técnica: ¿Qué porcentaje de los vecinos de Azpeitia de 65 años o más vive a menos de 2 km de hospitales?",
+      "prompt": "Explícamelo para una persona no técnica: ¿Cuántos hogares de Azpeitia quedan cubiertos por atención primaria dentro de 2 km?",
       "tool": "consultar_capacidades"
     },
     {
@@ -175,7 +175,7 @@
       "tool": "consultar_capacidades"
     }
   ],
-  "corpus_sha256": "a03d0dee4c9d244ee6541ffd8ce5d1b20d83eb3590d6a14c1f32a0c32dff00c5",
+  "corpus_sha256": "c98ab497aed72b2b18c63f7c652d4c220a156e9846cb9b7aa9393f807ffd81e4",
   "followups": [
     {
       "after_family": "ranking",

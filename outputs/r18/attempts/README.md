@@ -22,3 +22,13 @@ zero registry). The count stays156 but SHA changes. Therefore a SEPARATE fresh
 claim evaluation of that extension. No model responses informed the extension,
 sample selection was still before any portal message, and no runtime changed.
 Local complete suite was run once; exact-SHA CI checks fresh sources/corpus.
+# Remote regeneration gate — dc18e448
+
+Run 36997013100 approved 709 Python tests, Node, 489/489 raw parity,
+7 oracle cases and runtime identity on Ubuntu and Windows. Its final
+regeneration gate failed because the committed development corpus and
+real protocol still contained the earlier generator output. No portal
+response had been collected. Regenerating these two evidence files from
+the committed generator restores corpus c98ab497aed72b2b18c63f7c652d4c220a156e9846cb9b7aa9393f807ffd81e4.
+The agent ZIP and manifest are byte-identical; no runtime patch is involved.
+The new commit requires its own green remote gate before portal evaluation.
