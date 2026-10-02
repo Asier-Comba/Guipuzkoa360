@@ -1,0 +1,36 @@
+{
+  "case": {
+    "arguments": {
+      "accion": "change_threshold",
+      "categoria_servicio": "mental_health",
+      "nuevo_umbral_km": 6,
+      "umbral_km": 1
+    },
+    "expectation": "observed_grounded_result",
+    "family": "scenario",
+    "group": "generated:scenario",
+    "id": "scenario:04",
+    "keep_view": true,
+    "prompt": "Estoy preparando un estudio. Simula cambiar el umbral de distancia municipal a salud mental de 1 a 6 km. ¿Qué cambia y qué no demuestra?",
+    "tool": "simular_escenario"
+  },
+  "assessment": {
+    "pass": null,
+    "status": "INFRASTRUCTURE_BLOCKED",
+    "claims": "No tool trace or response; portal alert Failed to fetch; submitted prompt restored in composer; not counted as agent defect or valid execution",
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "unsupported": 0
+  },
+  "version_id": "agentv_cafd8f750b5741959fb29c4045743da1",
+  "observed_at": "2026-10-02T17:23:35.067Z",
+  "timing": {
+    "started_at": "2026-10-02T16:26:27.168Z",
+    "started_ms": 1790958387168,
+    "last_observation_s": 2864.918
+  },
+  "trace": "✦\nComprueba qué hace con tus datos\n\nEl chat utiliza la versión fija de este agente y ejecuta sus herramientas en un entorno aislado. Esta versión no tiene acceso a Internet. Empieza con una pregunta que permita revisar fuentes, incertidumbre y límites.\n\nExplica qué muestran los datos y cita las fuentes utilizadas.\n¿Qué incertidumbres cambian la interpretación del resultado?\nContrasta dos explicaciones posibles y busca un caso que contradiga la primera.\nIndica cuándo necesitarías validación humana.",
+  "outputs": []
+}

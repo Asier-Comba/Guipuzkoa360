@@ -1,0 +1,396 @@
+- region "Notifications alt+T"
+- generic "Connection Error:"
+- link "Saltar al contenido":
+  - /url: "#platform-main"
+- banner:
+  - link "Gipuzkoa AI Hackathon · MIT Media Lab City Science":
+    - /url: /area/
+    - strong: GIPUZKOA AI HACKATHON
+    - generic: MIT MEDIA LAB · CITY SCIENCE
+  - navigation "Áreas de la plataforma":
+    - link "Inicio":
+      - /url: /area/
+    - link "Formación":
+      - /url: /area/formacion/
+    - link "Equipo":
+      - /url: /hackathon/area/equipo/
+    - generic "Abrir secciones de Urban Challenge":
+      - generic: Urban Challenge
+      - generic: ⌄
+    - generic "Disponible para los equipos clasificados":
+      - generic: ◇
+      - generic: Final
+  - generic "Abrir menú de cuenta":
+    - generic: O
+    - strong: Oier Duñabeitia Berezo
+    - generic: Participante
+    - generic: ⌄
+- main:
+  - button "Proyecto GIPUZKOA 360":
+    - generic: Proyecto
+    - strong: GIPUZKOA 360
+  - tablist "Secciones del espacio de trabajo":
+    - 'tab "Resumen: Estado del proyecto y siguiente acción"':
+      - strong: Resumen
+    - 'tab "Datos: Archivos, mapas y procesamiento"':
+      - strong: Datos
+      - generic: "47"
+    - 'tab "Agentes: Construcción con Python o Langflow"':
+      - strong: Agentes
+      - generic: "11"
+    - 'tab "Pruebas: Verificación con versiones creadas" [selected]':
+      - strong: Pruebas
+      - generic: "9"
+    - 'tab "Entrega: Revisión y publicación del proyecto"':
+      - strong: Entrega
+    - 'tab "Asistente IA: Ayuda para analizar, editar y ejecutar el proyecto"':
+      - strong: Asistente IA
+  - generic "Estado del workspace":
+    - generic "Ver estado y actividad del workspace":
+      - generic: 1 persona
+    - button "Reiniciar el entorno del equipo":
+      - generic: ↻
+    - button "Ejemplo resuelto"
+    - button "?"
+  - 'tabpanel "Pruebas: Verificación con versiones creadas"':
+    - toolbar "Acciones de pruebas de agentes":
+      - heading "Banco de pruebas" [level=2]
+      - button "Ocultar conversaciones" [pressed]
+      - strong: "9"
+      - generic: versiones
+    - complementary:
+      - generic: CASOS GUARDADOS
+      - strong: Banco de pruebas
+      - generic: Probar versión
+      - combobox "Probar versión":
+        - option "Selecciona una versión para probar…" [selected]
+        - option "Python · GIPUZKOA 360 · v1"
+        - option "Python · GIPUZKOA 360 · Visita sanitaria · v4"
+        - option "Python · GIPUZKOA 360 vNext R14 binding 094745b · v1"
+        - option "Python · GIPUZKOA 360 vNext R13 patch3 3951b290 · v1"
+        - option "Python · GIPUZKOA 360 · Versión final · v6"
+        - option "Python · GIPUZKOA 360 · Final · v5"
+        - option "Python · urban-challenge-rc2-195b498 · v4"
+        - option "Python · urban-challenge-rc2-ae62080 · v3"
+        - option "Python · urban-challenge-rc2-d8ec018 · v2"
+        - option "Python · GIPUZKOA 360 integración Work 2 · v1"
+        - option "Python · GIPUZKOA 360 · RC2 compact · v1"
+        - option "Python · GIPUZKOA 360 · RC2 runtime · v1"
+        - option "Python · GIPUZKOA 360 · RC1 exacto · v1"
+        - option "Python · GIPUZKOA 360 · integración jurado · v3"
+        - option "Python · GIPUZKOA 360 · integración jurado · v2"
+        - option "Python · GIPUZKOA 360 · integración jurado · v1"
+      - button "Nueva conversación Python · GIPUZKOA 360 · v1 Sin ejecutar":
+        - strong: ¿Qué cinco municipios tienen mayor porcentaje de personas de…
+        - generic: Python · GIPUZKOA 360 · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Nueva conversación Python · GIPUZKOA 360 · v1 Sin ejecutar":
+        - strong: Todavía no tengo una pregunta concreta. ¿Qué podríamos estud…
+        - generic: Python · GIPUZKOA 360 · v1
+        - generic: Terminada · pendiente de revisar
+      - 'button "Explícamelo para una persona no técnica: En Getaria, ¿qué di… Python · GIPUZKOA 360 · Visita sanitaria · v4 Terminada · pendiente de revisar"':
+        - strong: "Explícamelo para una persona no técnica: En Getaria, ¿qué di…"
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v4
+        - generic: Terminada · pendiente de revisar
+      - button "Compara Legorreta y Alegia en porcentaje de población de 75 … Python · GIPUZKOA 360 · Visita sanitaria · v4 Terminada · pendiente de revisar":
+        - strong: Compara Legorreta y Alegia en porcentaje de población de 75 …
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v4
+        - generic: Terminada · pendiente de revisar
+      - 'button "Explícamelo para una persona no técnica: ¿Qué cinco municipi… Python · GIPUZKOA 360 · Visita sanitaria · v4 Terminada · pendiente de revisar"':
+        - strong: "Explícamelo para una persona no técnica: ¿Qué cinco municipi…"
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v4
+        - generic: Terminada · pendiente de revisar
+      - button "Estoy preparando un estudio. ¿Qué muestran los datos de Orio… Python · GIPUZKOA 360 · Visita sanitaria · v4 Terminada · pendiente de revisar":
+        - strong: Estoy preparando un estudio. ¿Qué muestran los datos de Orio…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v4
+        - generic: Terminada · pendiente de revisar
+      - button "Todavía no tengo una pregunta concreta sobre acceso sanitari… Python · GIPUZKOA 360 · Visita sanitaria · v4 Terminada · pendiente de revisar":
+        - strong: Todavía no tengo una pregunta concreta sobre acceso sanitari…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v4
+        - generic: Terminada · pendiente de revisar
+      - button "Quiero estudiar una visita sanitaria desde Ordizia. Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Quiero estudiar una visita sanitaria desde Ordizia.
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Mañana salgo desde mi casa. Dime a qué hora debería pedir ci… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Mañana salgo desde mi casa. Dime a qué hora debería pedir ci…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Salgo desde las paradas de Segura y tengo una consulta de 30… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Salgo desde las paradas de Segura y tengo una consulta de 30…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Compara Eibar y Tolosa para población de 75 o más años y exp… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Compara Eibar y Tolosa para población de 75 o más años y exp…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Cuéntame qué muestran los datos de Tolosa sobre población ma… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Cuéntame qué muestran los datos de Tolosa sobre población ma…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Hola. Estoy estudiando el acceso sanitario en Gipuzkoa pero … Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Hola. Estoy estudiando el acceso sanitario en Gipuzkoa pero …
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué otros orígenes admite este análisis y puedes decirme en… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: ¿Qué otros orígenes admite este análisis y puedes decirme en…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "En Aduna, ¿cuántas personas tienen 75 años o más y qué porce… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: En Aduna, ¿cuántas personas tienen 75 años o más y qué porce…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "En Aduna, ¿cuántas personas tienen 75 años o más y qué porce… Python · GIPUZKOA 360 · Visita sanitaria · v2 Terminada · pendiente de revisar":
+        - strong: En Aduna, ¿cuántas personas tienen 75 años o más y qué porce…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 · Visita sanitaria · v2 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 · Visita sanitaria · v2 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 · Visita sanitaria · v1 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 · Visita sanitaria · v1 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 vNext R14 binding 094745b · v1 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 vNext R14 binding 094745b · v1
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué muestran los datos de Aduna sobre población mayor y pre… Python · GIPUZKOA 360 vNext R13 patch3 3951b290 · v1 Terminada · pendiente de revisar":
+        - strong: ¿Qué muestran los datos de Aduna sobre población mayor y pre…
+        - generic: Python · GIPUZKOA 360 vNext R13 patch3 3951b290 · v1
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v4 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v4
+        - generic: Terminada · pendiente de revisar
+      - button "Explícame el caso de Aduna. Python · GIPUZKOA 360 · Versión final · v6 Terminada · pendiente de revisar":
+        - strong: Explícame el caso de Aduna.
+        - generic: Python · GIPUZKOA 360 · Versión final · v6
+        - generic: Terminada · pendiente de revisar
+      - button "¿En qué municipios de Gipuzkoa coinciden una mayor proporció… Python · GIPUZKOA 360 · Versión final · v6 Terminada · pendiente de revisar":
+        - strong: ¿En qué municipios de Gipuzkoa coinciden una mayor proporció…
+        - generic: Python · GIPUZKOA 360 · Versión final · v6
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v4 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v4
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v4 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v4
+        - generic: Terminada · pendiente de revisar
+      - button "que municipios de guipuzkoa tienen menos servicios sanitario… Python · GIPUZKOA 360 · integración jurado · v3 Terminada · pendiente de revisar":
+        - strong: que municipios de guipuzkoa tienen menos servicios sanitario…
+        - generic: Python · GIPUZKOA 360 · integración jurado · v3
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v4 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v4
+        - generic: Terminada · pendiente de revisar
+      - 'button "Simula un ESCENARIO HIPOTÉTICO: añadir un servicio de atenci… Python · GIPUZKOA 360 · Versión final · v4 Terminada · pendiente de revisar"':
+        - strong: "Simula un ESCENARIO HIPOTÉTICO: añadir un servicio de atenci…"
+        - generic: Python · GIPUZKOA 360 · Versión final · v4
+        - generic: Terminada · pendiente de revisar
+      - button "dame los datos de Aginaga Python · GIPUZKOA 360 · Versión final · v3 Terminada · pendiente de revisar":
+        - strong: dame los datos de Aginaga
+        - generic: Python · GIPUZKOA 360 · Versión final · v3
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v3 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Responde por separado y de forma breve a estos ocho intentos… Python · GIPUZKOA 360 · Versión final · v3 Terminada · pendiente de revisar":
+        - strong: Responde por separado y de forma breve a estos ocho intentos…
+        - generic: Python · GIPUZKOA 360 · Versión final · v3
+        - generic: Terminada · pendiente de revisar
+      - button "¿Cuáles son los 5 municipios con mayor porcentaje de poblaci… Python · GIPUZKOA 360 · Versión final · v3 Terminada · pendiente de revisar":
+        - strong: ¿Cuáles son los 5 municipios con mayor porcentaje de poblaci…
+        - generic: Python · GIPUZKOA 360 · Versión final · v3
+        - generic: Terminada · pendiente de revisar
+      - button "¿Cuáles son los 5 municipios con mayor porcentaje de poblaci… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: ¿Cuáles son los 5 municipios con mayor porcentaje de poblaci…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "¿Cuáles son los 5 municipios con mayor porcentaje de poblaci… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: ¿Cuáles son los 5 municipios con mayor porcentaje de poblaci…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Analiza la coincidencia usando “atención primaria” y “65+”, … Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: Analiza la coincidencia usando “atención primaria” y “65+”, …
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Compara Eibar y Tolosa para 75+ y atención primaria con umbr… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: Compara Eibar y Tolosa para 75+ y atención primaria con umbr…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Dame el resumen territorial de Donostia / San Sebastián para… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: Dame el resumen territorial de Donostia / San Sebastián para…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Consulta la fuente EUSTAT_EMH_2025. Indica institución, títu… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: Consulta la fuente EUSTAT_EMH_2025. Indica institución, títu…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v1 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v1
+        - generic: Terminada · pendiente de revisar
+      - 'button "Para Eibar, verifica salud mental con datos reales: número d… Python · GIPUZKOA 360 · RC2 compact · v1 Terminada · pendiente de revisar"':
+        - strong: "Para Eibar, verifica salud mental con datos reales: número d…"
+        - generic: Python · GIPUZKOA 360 · RC2 compact · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Analiza la coincidencia para 65+, atencion primaria, cuantil… Python · GIPUZKOA 360 · RC2 compact · v1 Terminada · pendiente de revisar":
+        - strong: Analiza la coincidencia para 65+, atencion primaria, cuantil…
+        - generic: Python · GIPUZKOA 360 · RC2 compact · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Dame el resumen territorial de Donostia / San Sebastián para… Python · GIPUZKOA 360 · RC2 compact · v1 Terminada · pendiente de revisar":
+        - strong: Dame el resumen territorial de Donostia / San Sebastián para…
+        - generic: Python · GIPUZKOA 360 · RC2 compact · v1
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · RC2 compact · v1 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · RC2 compact · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Consulta la fuente EUSTAT_EMH_2025. Indica institución, peri… Python · GIPUZKOA 360 · RC2 runtime · v1 Cancelada":
+        - strong: Consulta la fuente EUSTAT_EMH_2025. Indica institución, peri…
+        - generic: Python · GIPUZKOA 360 · RC2 runtime · v1
+        - generic: Cancelada
+      - button "Compara Eibar y Tolosa para 75+ y atención primaria con umbr… Python · GIPUZKOA 360 · RC2 runtime · v1 Cancelada":
+        - strong: Compara Eibar y Tolosa para 75+ y atención primaria con umbr…
+        - generic: Python · GIPUZKOA 360 · RC2 runtime · v1
+        - generic: Cancelada
+      - button "Consulta la fuente EUSTAT_EMH_2025 y resume institución, per… Python · GIPUZKOA 360 · RC2 runtime · v1 Terminada · pendiente de revisar":
+        - strong: Consulta la fuente EUSTAT_EMH_2025 y resume institución, per…
+        - generic: Python · GIPUZKOA 360 · RC2 runtime · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Consulta la fuente EUSTAT_EMH_2025. Indica institución, peri… Python · GIPUZKOA 360 · RC1 exacto · v1 Cancelada":
+        - strong: Consulta la fuente EUSTAT_EMH_2025. Indica institución, peri…
+        - generic: Python · GIPUZKOA 360 · RC1 exacto · v1
+        - generic: Cancelada
+      - button "Nueva conversación Python · GIPUZKOA 360 · integración jurado · v3 Sin ejecutar":
+        - strong: Nueva conversación
+        - generic: Python · GIPUZKOA 360 · integración jurado · v3
+        - generic: Sin ejecutar
+      - button "¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de … Python · GIPUZKOA 360 · integración jurado · v3 Fallida":
+        - strong: ¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de …
+        - generic: Python · GIPUZKOA 360 · integración jurado · v3
+        - generic: Fallida
+      - button "¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de … Python · GIPUZKOA 360 · integración jurado · v2 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de …
+        - generic: Python · GIPUZKOA 360 · integración jurado · v2
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de … Python · GIPUZKOA 360 · integración jurado · v1 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de …
+        - generic: Python · GIPUZKOA 360 · integración jurado · v1
+        - generic: Terminada · pendiente de revisar
+      - strong: Comparar versiones
+      - generic: Conserva esta prueba, crea una versión nueva y repite la misma pregunta en otra conversación.
+    - generic: AGENTE PYTHON · VERSIÓN PROBADA · V1
+    - heading "GIPUZKOA 360" [level=2]
+    - paragraph: Esta conversación mantiene la versión v1. Editar el borrador o crear otra versión no cambia esta prueba.
+    - generic: Memoria activa
+    - generic: Sin Internet
+    - generic: 6717 tokens · 2 llamadas
+    - generic "Revisar evidencia"
+    - strong: Última consulta · ejecución observada
+    - paragraph: 1 resultados de herramientas. No se observan errores de herramienta en esta consulta.
+    - paragraph: "Una ejecución terminada no evalúa la calidad del análisis. Revisad:"
+    - list:
+      - listitem: Contrasta una cifra decisiva con los datos y revisa el filtro y el denominador.
+      - listitem: Comprueba que la explicación responde a tu pregunta y distingue hechos de hipótesis.
+      - listitem: Anota qué falta por comprobar antes de utilizar el resultado.
+    - button "Descargar evidencia para revisar"
+    - paragraph: Incluye preguntas, respuestas y operaciones de esta conversación. Revisad el archivo antes de compartirlo en Entrega.
+    - log:
+      - article:
+        - generic: Tú
+        - paragraph: ¿Qué cinco municipios tienen mayor porcentaje de personas de 65 años o más? Explica la fuente y cómo se obtiene ese grupo.
+      - article:
+        - generic: GIPUZKOA 360
+        - strong: Tool · analizar_envejecimiento
+        - code: "{\"grupo_edad\":\"65\",\"medida\":\"percentage\",\"top_n\":5}"
+      - generic "Resultado de analizar_envejecimiento" [active]
+      - generic: "{\"age_group_derivations\":{\"65\":{\"institution\":\"Eustat - Instituto Vasco de Estadística\",\"limitation\":\"Recuento municipal agregado, no edad exacta ni circunstancias individuales; no se infiere un corte por año de nacimiento.\",\"meaning\":\"Población de 65 años o más en la referencia indicada.\",\"method\":\"Recuento del grupo 65+ de la consulta municipal, sexo total; pivote preparado. Porcentaje = recuento / población total × 100, redondeado a tres decimales.\",\"output_field\":\"population_65_plus\",\"reference_period\":\"2025-01-01\",\"source_field\":\"grupo de edad 65+ de la consulta Eustat preparada\",\"source_id\":\"EUSTAT_EMH_2025\"}},\"assumptions\":[],\"capability_id\":\"analizar_envejecimiento\",\"claims\":[{\"age_derivation_ref\":\"/age_group_derivations/65\",\"age_group\":\"65\",\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":{\"data_ref\":{\"field\":\"population_total\",\"municipality_code\":\"20026\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":290},\"derivation\":\"derived_exact\",\"entity_id\":\"20026\",\"entity_label\":\"Zerain\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/value\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"id\":\"claim-1\",\"label\":\"value\",\"metric_id\":\"value\",\"numerator\":{\"data_ref\":{\"field\":\"population_65_plus\",\"municipality_code\":\"20026\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":81},\"numeric_role\":\"analytical\",\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"subject\":\"proporción de población municipal del grupo de edad\",\"unit\":\"% de población\",\"value\":27.931},{\"age_derivation_ref\":\"/age_group_derivations/65\",\"age_group\":\"65\",\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":{\"data_ref\":{\"field\":\"population_total\",\"municipality_code\":\"20042\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":4076},\"derivation\":\"derived_exact\",\"entity_id\":\"20042\",\"entity_label\":\"Ibarra\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/1/value\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"id\":\"claim-2\",\"label\":\"value\",\"metric_id\":\"value\",\"numerator\":{\"data_ref\":{\"field\":\"population_65_plus\",\"municipality_code\":\"20042\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":1127},\"numeric_role\":\"analytical\",\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"subject\":\"proporción de población municipal del grupo de edad\",\"unit\":\"% de población\",\"value\":27.65},{\"age_derivation_ref\":\"/age_group_derivations/65\",\"age_group\":\"65\",\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":{\"data_ref\":{\"field\":\"population_total\",\"municipality_code\":\"20029\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":5364},\"derivation\":\"derived_exact\",\"entity_id\":\"20029\",\"entity_label\":\"Deba\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/2/value\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"id\":\"claim-3\",\"label\":\"value\",\"metric_id\":\"value\",\"numerator\":{\"data_ref\":{\"field\":\"population_65_plus\",\"municipality_code\":\"20029\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":1473},\"numeric_role\":\"analytical\",\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"subject\":\"proporción de población municipal del grupo de edad\",\"unit\":\"% de población\",\"value\":27.461},{\"age_derivation_ref\":\"/age_group_derivations/65\",\"age_group\":\"65\",\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":{\"data_ref\":{\"field\":\"population_total\",\"municipality_code\":\"20051\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":8377},\"derivation\":\"derived_exact\",\"entity_id\":\"20051\",\"entity_label\":\"Legazpi\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/3/value\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"id\":\"claim-4\",\"label\":\"value\",\"metric_id\":\"value\",\"numerator\":{\"data_ref\":{\"field\":\"population_65_plus\",\"municipality_code\":\"20051\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":2276},\"numeric_role\":\"analytical\",\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"subject\":\"proporción de población municipal del grupo de edad\",\"unit\":\"% de población\",\"value\":27.17},{\"age_derivation_ref\":\"/age_group_derivations/65\",\"age_group\":\"65\",\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":{\"data_ref\":{\"field\":\"population_total\",\"municipality_code\":\"20069\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":183388},\"derivation\":\"derived_exact\",\"entity_id\":\"20069\",\"entity_label\":\"Donostia / San Sebastián\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/4/value\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"id\":\"claim-5\",\"label\":\"value\",\"metric_id\":\"value\",\"numerator\":{\"data_ref\":{\"field\":\"population_65_plus\",\"municipality_code\":\"20069\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":48832},\"numeric_role\":\"analytical\",\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"subject\":\"proporción de población municipal del grupo de edad\",\"unit\":\"% de población\",\"value\":26.628}],\"effective_request\":{\"defaults_applied\":[\"periodo\"],\"effective_period\":\"2025-01-01\",\"municipality_codes\":[],\"municipality_labels\":[],\"operation\":\"analizar_envejecimiento\",\"parameters\":{\"grupo_edad\":\"65\",\"medida\":\"percentage\",\"periodo\":null,\"top_n\":5}},\"error\":null,\"evidence_policy\":{\"classification\":[\"AVAILABLE\",\"DERIVABLE_EXACTLY\",\"ESTIMABLE_WITH_ASSUMPTIONS\",\"NOT_AVAILABLE\"],\"derivation\":\"Operaciones transparentes sobre inputs observados compatibles; sin dato espacial de residentes no hay cobertura poblacional.\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"preserve\":[\"subject\",\"entity\",\"unit\",\"period\",\"source\",\"scope\",\"assumptions\"],\"recovery\":\"Un error aporta cero cifras; no repetir llamada y argumentos fallidos; una única recuperación inequívoca por causa.\"},\"input_semantics\":\"normalized_input y effective_request contienen parámetros; no cifras analíticas. defaults_applied son supuestos, no elecciones humanas observadas.\",\"limitations\":[\"El indicador describe estructura demográfica; no explica sus causas.\"],\"method\":\"Orden descendente de pct_65_plus; empates por nombre municipal.\",\"normalized_input\":{\"arguments\":{\"grupo_edad\":\"65\",\"medida\":\"percentage\",\"top_n\":5},\"tool\":\"analizar_envejecimiento\"},\"operation_semantics\":{\"interpretation\":\"orden del indicador, no necesidad individual\",\"measures\":\"recuento de personas o porcentaje sobre población municipal\",\"subject\":\"municipio\"},\"operational_metadata\":{\"counters\":[],\"execution\":{\"request_id\":\"1b748c7830c44cc3b068fc1249d88c15\",\"state\":\"completed\",\"tool\":\"analizar_envejecimiento\"},\"not_analytical_evidence\":true,\"selection\":{\"criterion\":\"Primeras entidades en el orden validado de la herramienta\",\"detail_mechanism\":\"Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.\",\"omitted_entities\":0,\"returned_entities\":5,\"total_entities\":5}},\"outcomes\":[],\"request_id\":\"1b748c7830c44cc3b068fc1249d88c15\",\"status\":\"valid\"}"
+      - article:
+        - generic: GIPUZKOA 360
+        - paragraph:
+          - text: Los cinco municipios con mayor
+          - strong: porcentaje de población de 65 años o más
+          - text: son, según la referencia demográfica de
+          - strong: Eustat (1 de enero de 2025)
+          - text: ":"
+        - table:
+          - rowgroup:
+            - row "Puesto Municipio 65 años o más Población total Porcentaje":
+              - columnheader "Puesto"
+              - columnheader "Municipio"
+              - columnheader "65 años o más"
+              - columnheader "Población total"
+              - columnheader "Porcentaje"
+          - rowgroup:
+            - row "1 Zerain 81 personas 290 27,931 %":
+              - cell "1"
+              - cell "Zerain"
+              - cell "81 personas"
+              - cell "290"
+              - cell "27,931 %":
+                - strong: 27,931 %
+            - row "2 Ibarra 1.127 personas 4.076 27,650 %":
+              - cell "2"
+              - cell "Ibarra"
+              - cell "1.127 personas"
+              - cell "4.076"
+              - cell "27,650 %":
+                - strong: 27,650 %
+            - row "3 Deba 1.473 personas 5.364 27,461 %":
+              - cell "3"
+              - cell "Deba"
+              - cell "1.473 personas"
+              - cell "5.364"
+              - cell "27,461 %":
+                - strong: 27,461 %
+            - row "4 Legazpi 2.276 personas 8.377 27,170 %":
+              - cell "4"
+              - cell "Legazpi"
+              - cell "2.276 personas"
+              - cell "8.377"
+              - cell "27,170 %":
+                - strong: 27,170 %
+            - row "5 Donostia / San Sebastián 48.832 personas 183.388 26,628 %":
+              - cell "5"
+              - cell "Donostia / San Sebastián"
+              - cell "48.832 personas"
+              - cell "183.388"
+              - cell "26,628 %":
+                - strong: 26,628 %
+        - paragraph:
+          - strong: "Cómo se obtiene el grupo:"
+          - text: se utiliza el recuento municipal agregado de personas de
+          - strong: 65 años o más
+          - text: ", con ambos sexos. El porcentaje se calcula como:"
+        - paragraph:
+          - strong: población de 65 años o más ÷ población total × 100
+        - paragraph: Los porcentajes están redondeados a tres decimales. El indicador describe la estructura demográfica municipal; no informa sobre edades exactas, circunstancias individuales ni las causas del envejecimiento.
+    - textbox "Escribe un mensaje…"
+    - button "Enviar" [disabled]
