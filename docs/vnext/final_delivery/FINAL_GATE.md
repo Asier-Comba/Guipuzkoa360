@@ -1,4 +1,30 @@
-# Gate vigente R17 — candidato validado, entrega privada
+# Gate vigente R18 — candidato offline; aceptación real pendiente
+
+R18_GENERAL_AGENT=PENDING_EXACT_SHA_CI_AND_REAL_SAMPLE.
+READY_FOR_HUMAN_FINAL_GATE=NO. PUBLICATION=PENDING_HUMAN.
+Nueva misión explícita posterior a R17 autoriza solo frontera semántica y
+razonamiento general. [HANDOFF_R18](../w2/HANDOFF_R18.md) contiene las nueve
+operaciones, inventario numérico, invariantes y reproducción; manifiesto
+canónico en scripts/vnext_agent/dist/r18. FINAL_MANIFEST.json que sigue en esta
+carpeta conserva la identidad histórica R17, no identifica el paquete R18.
+
+R17 quedó con un Medium en su auditoría general de ocho mensajes. Se conserva
+en FINAL_RELEASE_AUDIT.md y outputs/final_release, sin convertir su protocolo
+anterior de cuatro mensajes en aprobación general. Ese historial no acredita
+el nuevo agente. Solo main/tools del paquete nuevo cambian; otras23/15assets,
+W1 y v4 conservados. Rama R18 separada de exacto8f3ee977.
+
+Offline:28 pruebas nuevas; suite completa local una vez709/709 en675,06s;
+Node17/17; raw489/489 y7oracle en matriz inicial, sin findings después de
+corregir un verificador que confundía supresión de proyección inválida con
+drift. Matriz generada ampliada requiere su propio reporte exacto y SHA corpus.
+No afirmar todavía PASS conversacional, tiempos de modelo, version_id, CI
+exacto ni cero hallazgos reales. Track/confirmación/publicación solo humanos.
+HOLDOUT=SEALED_NOT_EXECUTED.
+
+## Histórico R17 — no aceptación vigente R18
+
+# Gate histórico R17 — candidato validado en protocolo acotado, entrega privada
 
 R17_FINAL_CANDIDATE=PASS para el protocolo acotado de cuatro mensajes:
 Aduna primera llamada válida; principal sanitaria; variación recalculada; cobertura/límites.

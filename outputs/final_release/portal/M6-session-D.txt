@@ -1,0 +1,405 @@
+- region "Notifications alt+T"
+- generic "Connection Error:"
+- link "Saltar al contenido":
+  - /url: "#platform-main"
+- banner:
+  - link "Gipuzkoa AI Hackathon · MIT Media Lab City Science":
+    - /url: /area/
+    - strong: GIPUZKOA AI HACKATHON
+    - generic: MIT MEDIA LAB · CITY SCIENCE
+  - navigation "Áreas de la plataforma":
+    - link "Inicio":
+      - /url: /area/
+    - link "Formación":
+      - /url: /area/formacion/
+    - link "Equipo":
+      - /url: /hackathon/area/equipo/
+    - generic "Abrir secciones de Urban Challenge":
+      - generic: Urban Challenge
+      - generic: ⌄
+    - generic "Disponible para los equipos clasificados":
+      - generic: ◇
+      - generic: Final
+  - generic "Abrir menú de cuenta":
+    - generic: O
+    - strong: Oier Duñabeitia Berezo
+    - generic: Participante
+    - generic: ⌄
+- main:
+  - button "Proyecto GIPUZKOA 360":
+    - generic: Proyecto
+    - strong: GIPUZKOA 360
+  - tablist "Secciones del espacio de trabajo":
+    - 'tab "Resumen: Estado del proyecto y siguiente acción"':
+      - strong: Resumen
+    - 'tab "Datos: Archivos, mapas y procesamiento"':
+      - strong: Datos
+      - generic: "47"
+    - 'tab "Agentes: Construcción con Python o Langflow"':
+      - strong: Agentes
+      - generic: "10"
+    - 'tab "Pruebas: Verificación con versiones creadas" [selected]':
+      - strong: Pruebas
+      - generic: "8"
+    - 'tab "Entrega: Revisión y publicación del proyecto"':
+      - strong: Entrega
+    - 'tab "Asistente IA: Ayuda para analizar, editar y ejecutar el proyecto"':
+      - strong: Asistente IA
+  - generic "Estado del workspace":
+    - generic "Ver estado y actividad del workspace":
+      - generic: 1 persona
+    - button "Reiniciar el entorno del equipo":
+      - generic: ↻
+    - button "Ejemplo resuelto"
+    - button "?"
+  - 'tabpanel "Pruebas: Verificación con versiones creadas"':
+    - toolbar "Acciones de pruebas de agentes":
+      - heading "Banco de pruebas" [level=2]
+      - button "Ocultar conversaciones" [pressed]
+      - strong: "8"
+      - generic: versiones
+    - complementary:
+      - generic: CASOS GUARDADOS
+      - strong: Banco de pruebas
+      - generic: Probar versión
+      - combobox "Probar versión":
+        - option "Selecciona una versión para probar…" [selected]
+        - option "Python · GIPUZKOA 360 · Visita sanitaria · v3"
+        - option "Python · GIPUZKOA 360 vNext R14 binding 094745b · v1"
+        - option "Python · GIPUZKOA 360 vNext R13 patch3 3951b290 · v1"
+        - option "Python · GIPUZKOA 360 · Versión final · v6"
+        - option "Python · GIPUZKOA 360 · Final · v5"
+        - option "Python · urban-challenge-rc2-195b498 · v4"
+        - option "Python · urban-challenge-rc2-ae62080 · v3"
+        - option "Python · urban-challenge-rc2-d8ec018 · v2"
+        - option "Python · GIPUZKOA 360 integración Work 2 · v1"
+        - option "Python · GIPUZKOA 360 · RC2 compact · v1"
+        - option "Python · GIPUZKOA 360 · RC2 runtime · v1"
+        - option "Python · GIPUZKOA 360 · RC1 exacto · v1"
+        - option "Python · GIPUZKOA 360 · integración jurado · v3"
+        - option "Python · GIPUZKOA 360 · integración jurado · v2"
+        - option "Python · GIPUZKOA 360 · integración jurado · v1"
+      - button "Salgo desde las paradas de Segura y tengo una consulta de 30… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Salgo desde las paradas de Segura y tengo una consulta de 30…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Compara Eibar y Tolosa para población de 75 o más años y exp… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Compara Eibar y Tolosa para población de 75 o más años y exp…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Cuéntame qué muestran los datos de Tolosa sobre población ma… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Cuéntame qué muestran los datos de Tolosa sobre población ma…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Hola. Estoy estudiando el acceso sanitario en Gipuzkoa pero … Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Hola. Estoy estudiando el acceso sanitario en Gipuzkoa pero …
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué otros orígenes admite este análisis y puedes decirme en… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: ¿Qué otros orígenes admite este análisis y puedes decirme en…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "En Aduna, ¿cuántas personas tienen 75 años o más y qué porce… Python · GIPUZKOA 360 · Visita sanitaria · v3 Terminada · pendiente de revisar":
+        - strong: En Aduna, ¿cuántas personas tienen 75 años o más y qué porce…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v3
+        - generic: Terminada · pendiente de revisar
+      - button "En Aduna, ¿cuántas personas tienen 75 años o más y qué porce… Python · GIPUZKOA 360 · Visita sanitaria · v2 Terminada · pendiente de revisar":
+        - strong: En Aduna, ¿cuántas personas tienen 75 años o más y qué porce…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 · Visita sanitaria · v2 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 · Visita sanitaria · v2 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 · Visita sanitaria · v1 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 · Visita sanitaria · v1 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 · Visita sanitaria · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Desde las paradas del centro de Zegama, quiero ir al Ambulat… Python · GIPUZKOA 360 vNext R14 binding 094745b · v1 Terminada · pendiente de revisar":
+        - strong: Desde las paradas del centro de Zegama, quiero ir al Ambulat…
+        - generic: Python · GIPUZKOA 360 vNext R14 binding 094745b · v1
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué muestran los datos de Aduna sobre población mayor y pre… Python · GIPUZKOA 360 vNext R13 patch3 3951b290 · v1 Terminada · pendiente de revisar":
+        - strong: ¿Qué muestran los datos de Aduna sobre población mayor y pre…
+        - generic: Python · GIPUZKOA 360 vNext R13 patch3 3951b290 · v1
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v4 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v4
+        - generic: Terminada · pendiente de revisar
+      - button "Explícame el caso de Aduna. Python · GIPUZKOA 360 · Versión final · v6 Terminada · pendiente de revisar":
+        - strong: Explícame el caso de Aduna.
+        - generic: Python · GIPUZKOA 360 · Versión final · v6
+        - generic: Terminada · pendiente de revisar
+      - button "¿En qué municipios de Gipuzkoa coinciden una mayor proporció… Python · GIPUZKOA 360 · Versión final · v6 Terminada · pendiente de revisar":
+        - strong: ¿En qué municipios de Gipuzkoa coinciden una mayor proporció…
+        - generic: Python · GIPUZKOA 360 · Versión final · v6
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v4 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v4
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v4 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v4
+        - generic: Terminada · pendiente de revisar
+      - button "que municipios de guipuzkoa tienen menos servicios sanitario… Python · GIPUZKOA 360 · integración jurado · v3 Terminada · pendiente de revisar":
+        - strong: que municipios de guipuzkoa tienen menos servicios sanitario…
+        - generic: Python · GIPUZKOA 360 · integración jurado · v3
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v4 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v4
+        - generic: Terminada · pendiente de revisar
+      - 'button "Simula un ESCENARIO HIPOTÉTICO: añadir un servicio de atenci… Python · GIPUZKOA 360 · Versión final · v4 Terminada · pendiente de revisar"':
+        - strong: "Simula un ESCENARIO HIPOTÉTICO: añadir un servicio de atenci…"
+        - generic: Python · GIPUZKOA 360 · Versión final · v4
+        - generic: Terminada · pendiente de revisar
+      - button "dame los datos de Aginaga Python · GIPUZKOA 360 · Versión final · v3 Terminada · pendiente de revisar":
+        - strong: dame los datos de Aginaga
+        - generic: Python · GIPUZKOA 360 · Versión final · v3
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v3 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v3
+        - generic: Terminada · pendiente de revisar
+      - button "Responde por separado y de forma breve a estos ocho intentos… Python · GIPUZKOA 360 · Versión final · v3 Terminada · pendiente de revisar":
+        - strong: Responde por separado y de forma breve a estos ocho intentos…
+        - generic: Python · GIPUZKOA 360 · Versión final · v3
+        - generic: Terminada · pendiente de revisar
+      - button "¿Cuáles son los 5 municipios con mayor porcentaje de poblaci… Python · GIPUZKOA 360 · Versión final · v3 Terminada · pendiente de revisar":
+        - strong: ¿Cuáles son los 5 municipios con mayor porcentaje de poblaci…
+        - generic: Python · GIPUZKOA 360 · Versión final · v3
+        - generic: Terminada · pendiente de revisar
+      - button "¿Cuáles son los 5 municipios con mayor porcentaje de poblaci… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: ¿Cuáles son los 5 municipios con mayor porcentaje de poblaci…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "¿Cuáles son los 5 municipios con mayor porcentaje de poblaci… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: ¿Cuáles son los 5 municipios con mayor porcentaje de poblaci…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Analiza la coincidencia usando “atención primaria” y “65+”, … Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: Analiza la coincidencia usando “atención primaria” y “65+”, …
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Compara Eibar y Tolosa para 75+ y atención primaria con umbr… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: Compara Eibar y Tolosa para 75+ y atención primaria con umbr…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Dame el resumen territorial de Donostia / San Sebastián para… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: Dame el resumen territorial de Donostia / San Sebastián para…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "Consulta la fuente EUSTAT_EMH_2025. Indica institución, títu… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: Consulta la fuente EUSTAT_EMH_2025. Indica institución, títu…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v2 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v2
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · Versión final · v1 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · Versión final · v1
+        - generic: Terminada · pendiente de revisar
+      - 'button "Para Eibar, verifica salud mental con datos reales: número d… Python · GIPUZKOA 360 · RC2 compact · v1 Terminada · pendiente de revisar"':
+        - strong: "Para Eibar, verifica salud mental con datos reales: número d…"
+        - generic: Python · GIPUZKOA 360 · RC2 compact · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Analiza la coincidencia para 65+, atencion primaria, cuantil… Python · GIPUZKOA 360 · RC2 compact · v1 Terminada · pendiente de revisar":
+        - strong: Analiza la coincidencia para 65+, atencion primaria, cuantil…
+        - generic: Python · GIPUZKOA 360 · RC2 compact · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Dame el resumen territorial de Donostia / San Sebastián para… Python · GIPUZKOA 360 · RC2 compact · v1 Terminada · pendiente de revisar":
+        - strong: Dame el resumen territorial de Donostia / San Sebastián para…
+        - generic: Python · GIPUZKOA 360 · RC2 compact · v1
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios coinciden en envejecimiento de 65 o más y ma… Python · GIPUZKOA 360 · RC2 compact · v1 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios coinciden en envejecimiento de 65 o más y ma…
+        - generic: Python · GIPUZKOA 360 · RC2 compact · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Consulta la fuente EUSTAT_EMH_2025. Indica institución, peri… Python · GIPUZKOA 360 · RC2 runtime · v1 Cancelada":
+        - strong: Consulta la fuente EUSTAT_EMH_2025. Indica institución, peri…
+        - generic: Python · GIPUZKOA 360 · RC2 runtime · v1
+        - generic: Cancelada
+      - button "Compara Eibar y Tolosa para 75+ y atención primaria con umbr… Python · GIPUZKOA 360 · RC2 runtime · v1 Cancelada":
+        - strong: Compara Eibar y Tolosa para 75+ y atención primaria con umbr…
+        - generic: Python · GIPUZKOA 360 · RC2 runtime · v1
+        - generic: Cancelada
+      - button "Consulta la fuente EUSTAT_EMH_2025 y resume institución, per… Python · GIPUZKOA 360 · RC2 runtime · v1 Terminada · pendiente de revisar":
+        - strong: Consulta la fuente EUSTAT_EMH_2025 y resume institución, per…
+        - generic: Python · GIPUZKOA 360 · RC2 runtime · v1
+        - generic: Terminada · pendiente de revisar
+      - button "Consulta la fuente EUSTAT_EMH_2025. Indica institución, peri… Python · GIPUZKOA 360 · RC1 exacto · v1 Cancelada":
+        - strong: Consulta la fuente EUSTAT_EMH_2025. Indica institución, peri…
+        - generic: Python · GIPUZKOA 360 · RC1 exacto · v1
+        - generic: Cancelada
+      - button "Nueva conversación Python · GIPUZKOA 360 · integración jurado · v3 Sin ejecutar":
+        - strong: Nueva conversación
+        - generic: Python · GIPUZKOA 360 · integración jurado · v3
+        - generic: Sin ejecutar
+      - button "¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de … Python · GIPUZKOA 360 · integración jurado · v3 Fallida":
+        - strong: ¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de …
+        - generic: Python · GIPUZKOA 360 · integración jurado · v3
+        - generic: Fallida
+      - button "¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de … Python · GIPUZKOA 360 · integración jurado · v2 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de …
+        - generic: Python · GIPUZKOA 360 · integración jurado · v2
+        - generic: Terminada · pendiente de revisar
+      - button "¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de … Python · GIPUZKOA 360 · integración jurado · v1 Terminada · pendiente de revisar":
+        - strong: ¿Qué municipios de Gipuzkoa coinciden en el cuantil 0,75 de …
+        - generic: Python · GIPUZKOA 360 · integración jurado · v1
+        - generic: Terminada · pendiente de revisar
+      - strong: Comparar versiones
+      - generic: Conserva esta prueba, crea una versión nueva y repite la misma pregunta en otra conversación.
+    - generic: AGENTE PYTHON · VERSIÓN PROBADA · V3
+    - heading "GIPUZKOA 360 · Visita sanitaria" [level=2]
+    - paragraph: Esta conversación mantiene la versión v3. Editar el borrador o crear otra versión no cambia esta prueba.
+    - generic: Memoria activa
+    - generic: Sin Internet
+    - generic: 27028 tokens · 2 llamadas
+    - generic "Revisar evidencia"
+    - log:
+      - article:
+        - generic: Tú
+        - paragraph: Salgo desde las paradas de Segura y tengo una consulta de 30 minutos en el Ambulatorio de Beasain el 29 de septiembre de 2026 a las 09:45. Quiero ir y volver. ¿Qué supondría?
+      - article:
+        - generic: GIPUZKOA 360 · Visita sanitaria
+        - strong: Tool · consultar_capacidades
+        - code: "{\"pregunta_o_dimension\":\"plan_visit\"}"
+      - generic "Resultado de consultar_capacidades"
+      - article:
+        - generic: GIPUZKOA 360 · Visita sanitaria
+        - strong: Tool · plan_visit
+        - code: "{\"origin_id\":\"segura_herriko_plaza_stops\",\"destination_id\":\"beasain_official_centre_anchor\",\"date\":\"2026-09-29\",\"appointment_time\":\"09:45\",\"duration_minutes\":30}"
+      - generic "Resultado de plan_visit"
+      - generic: "{\"assumptions\":[\"Los argumentos presentes en la llamada no acreditan por sí solos autoría humana.\",\"Paseo de referencia 50 m/min + 120 s por enlace completo y sentido.\"],\"capability_id\":\"plan_visit\",\"claims\":[{\"assumptions\":[\"Horario GTFS estático y paseo modelado; no duración real observada.\"],\"denominator\":null,\"derivation\":\"estimated_with_assumptions\",\"entity_id\":\"segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_label\":\"Viaje programado segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_type\":\"journey\",\"evidence_path\":\"/itinerary/total_s\",\"id\":\"claim-1\",\"label\":\"total_s\",\"metric_id\":\"total_s\",\"numerator\":null,\"period\":\"2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado;2026-09-29\",\"reference_periods\":[{\"period\":\"2026-09-28/2026-12-27\",\"source_id\":\"GTFS\"},{\"period\":\"2026-09-20\",\"source_id\":\"HEALTH_REGISTRY\"},{\"period\":\"Acquired 2026-09-29\",\"source_id\":\"OSM\"},{\"period\":\"supuesto del modelo de paseo, no periodo observado\",\"source_id\":\"MODEL\"},{\"period\":\"2026-09-29\",\"source_id\":\"USER\"},{\"period\":\"2026-09-29\",\"source_id\":\"MODEL_DEFAULTS\"},{\"period\":\"2026-09-29\",\"source_id\":\"DERIVED\"}],\"source_ids\":[\"GTFS\",\"HEALTH_REGISTRY\",\"OSM\",\"MODEL\",\"USER\",\"MODEL_DEFAULTS\",\"DERIVED\"],\"source_refs\":[{\"role\":\"official_schedule\",\"source_id\":\"GTFS\"},{\"role\":\"official_health_registry\",\"source_id\":\"HEALTH_REGISTRY\"},{\"role\":\"open_network\",\"source_id\":\"OSM\"},{\"role\":\"model_parameter\",\"source_id\":\"MODEL\"},{\"role\":\"agent_or_user_parameter\",\"source_id\":\"USER\"},{\"role\":\"model_parameter\",\"source_id\":\"MODEL_DEFAULTS\"},{\"role\":\"derived_metric\",\"source_id\":\"DERIVED\"}],\"unit\":\"s\",\"value\":9323},{\"assumptions\":[\"Horario GTFS estático y paseo modelado; no duración real observada.\"],\"denominator\":null,\"derivation\":\"estimated_with_assumptions\",\"entity_id\":\"segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_label\":\"Viaje programado segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_type\":\"journey\",\"evidence_path\":\"/components_s/initial_wait_s\",\"id\":\"claim-2\",\"label\":\"initial_wait_s\",\"metric_id\":\"initial_wait_s\",\"numerator\":null,\"period\":\"2026-09-29\",\"reference_periods\":[{\"period\":\"2026-09-29\",\"source_id\":\"MODEL_DEFAULTS\"}],\"source_ids\":[\"MODEL_DEFAULTS\"],\"source_refs\":[{\"role\":\"model_parameter\",\"source_id\":\"MODEL_DEFAULTS\"}],\"unit\":\"s\",\"value\":180},{\"assumptions\":[\"Horario GTFS estático y paseo modelado; no duración real observada.\"],\"denominator\":null,\"derivation\":\"estimated_with_assumptions\",\"entity_id\":\"segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_label\":\"Viaje programado segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_type\":\"journey\",\"evidence_path\":\"/components_s/outbound_vehicle_s\",\"id\":\"claim-3\",\"label\":\"outbound_vehicle_s\",\"metric_id\":\"outbound_vehicle_s\",\"numerator\":null,\"period\":\"2026-09-28/2026-12-27\",\"reference_periods\":[{\"period\":\"2026-09-28/2026-12-27\",\"source_id\":\"GTFS\"}],\"source_ids\":[\"GTFS\"],\"source_refs\":[{\"role\":\"official_schedule\",\"source_id\":\"GTFS\"}],\"unit\":\"s\",\"value\":1293},{\"assumptions\":[\"Horario GTFS estático y paseo modelado; no duración real observada.\"],\"denominator\":null,\"derivation\":\"estimated_with_assumptions\",\"entity_id\":\"segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_label\":\"Viaje programado segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_type\":\"journey\",\"evidence_path\":\"/components_s/destination_walk_outbound_s\",\"id\":\"claim-4\",\"label\":\"destination_walk_outbound_s\",\"metric_id\":\"destination_walk_outbound_s\",\"numerator\":null,\"period\":\"2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado;2026-09-29\",\"reference_periods\":[{\"period\":\"2026-09-28/2026-12-27\",\"source_id\":\"GTFS\"},{\"period\":\"2026-09-20\",\"source_id\":\"HEALTH_REGISTRY\"},{\"period\":\"Acquired 2026-09-29\",\"source_id\":\"OSM\"},{\"period\":\"supuesto del modelo de paseo, no periodo observado\",\"source_id\":\"MODEL\"},{\"period\":\"2026-09-29\",\"source_id\":\"USER\"},{\"period\":\"2026-09-29\",\"source_id\":\"MODEL_DEFAULTS\"},{\"period\":\"2026-09-29\",\"source_id\":\"DERIVED\"}],\"source_ids\":[\"GTFS\",\"HEALTH_REGISTRY\",\"OSM\",\"MODEL\",\"USER\",\"MODEL_DEFAULTS\",\"DERIVED\"],\"source_refs\":[{\"role\":\"official_schedule\",\"source_id\":\"GTFS\"},{\"role\":\"official_health_registry\",\"source_id\":\"HEALTH_REGISTRY\"},{\"role\":\"open_network\",\"source_id\":\"OSM\"},{\"role\":\"model_parameter\",\"source_id\":\"MODEL\"},{\"role\":\"agent_or_user_parameter\",\"source_id\":\"USER\"},{\"role\":\"model_parameter\",\"source_id\":\"MODEL_DEFAULTS\"},{\"role\":\"derived_metric\",\"source_id\":\"DERIVED\"}],\"unit\":\"s\",\"value\":420},{\"assumptions\":[\"Horario GTFS estático y paseo modelado; no duración real observada.\"],\"denominator\":null,\"derivation\":\"estimated_with_assumptions\",\"entity_id\":\"segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_label\":\"Viaje programado segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_type\":\"journey\",\"evidence_path\":\"/components_s/pre_appointment_wait_s\",\"id\":\"claim-5\",\"label\":\"pre_appointment_wait_s\",\"metric_id\":\"pre_appointment_wait_s\",\"numerator\":null,\"period\":\"2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado;2026-09-29\",\"reference_periods\":[{\"period\":\"2026-09-28/2026-12-27\",\"source_id\":\"GTFS\"},{\"period\":\"2026-09-20\",\"source_id\":\"HEALTH_REGISTRY\"},{\"period\":\"Acquired 2026-09-29\",\"source_id\":\"OSM\"},{\"period\":\"supuesto del modelo de paseo, no periodo observado\",\"source_id\":\"MODEL\"},{\"period\":\"2026-09-29\",\"source_id\":\"USER\"},{\"period\":\"2026-09-29\",\"source_id\":\"MODEL_DEFAULTS\"},{\"period\":\"2026-09-29\",\"source_id\":\"DERIVED\"}],\"source_ids\":[\"GTFS\",\"HEALTH_REGISTRY\",\"OSM\",\"MODEL\",\"USER\",\"MODEL_DEFAULTS\",\"DERIVED\"],\"source_refs\":[{\"role\":\"official_schedule\",\"source_id\":\"GTFS\"},{\"role\":\"official_health_registry\",\"source_id\":\"HEALTH_REGISTRY\"},{\"role\":\"open_network\",\"source_id\":\"OSM\"},{\"role\":\"model_parameter\",\"source_id\":\"MODEL\"},{\"role\":\"agent_or_user_parameter\",\"source_id\":\"USER\"},{\"role\":\"model_parameter\",\"source_id\":\"MODEL_DEFAULTS\"},{\"role\":\"derived_metric\",\"source_id\":\"DERIVED\"}],\"unit\":\"s\",\"value\":1254},{\"assumptions\":[\"Horario GTFS estático y paseo modelado; no duración real observada.\"],\"denominator\":null,\"derivation\":\"estimated_with_assumptions\",\"entity_id\":\"segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_label\":\"Viaje programado segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_type\":\"journey\",\"evidence_path\":\"/components_s/appointment_s\",\"id\":\"claim-6\",\"label\":\"appointment_s\",\"metric_id\":\"appointment_s\",\"numerator\":null,\"period\":\"2026-09-29\",\"reference_periods\":[{\"period\":\"2026-09-29\",\"source_id\":\"USER\"}],\"source_ids\":[\"USER\"],\"source_refs\":[{\"role\":\"agent_or_user_parameter\",\"source_id\":\"USER\"}],\"unit\":\"s\",\"value\":1800},{\"assumptions\":[\"Horario GTFS estático y paseo modelado; no duración real observada.\"],\"denominator\":null,\"derivation\":\"estimated_with_assumptions\",\"entity_id\":\"segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_label\":\"Viaje programado segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_type\":\"journey\",\"evidence_path\":\"/components_s/destination_walk_return_s\",\"id\":\"claim-7\",\"label\":\"destination_walk_return_s\",\"metric_id\":\"destination_walk_return_s\",\"numerator\":null,\"period\":\"2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado;2026-09-29\",\"reference_periods\":[{\"period\":\"2026-09-28/2026-12-27\",\"source_id\":\"GTFS\"},{\"period\":\"2026-09-20\",\"source_id\":\"HEALTH_REGISTRY\"},{\"period\":\"Acquired 2026-09-29\",\"source_id\":\"OSM\"},{\"period\":\"supuesto del modelo de paseo, no periodo observado\",\"source_id\":\"MODEL\"},{\"period\":\"2026-09-29\",\"source_id\":\"USER\"},{\"period\":\"2026-09-29\",\"source_id\":\"MODEL_DEFAULTS\"},{\"period\":\"2026-09-29\",\"source_id\":\"DERIVED\"}],\"source_ids\":[\"GTFS\",\"HEALTH_REGISTRY\",\"OSM\",\"MODEL\",\"USER\",\"MODEL_DEFAULTS\",\"DERIVED\"],\"source_refs\":[{\"role\":\"official_schedule\",\"source_id\":\"GTFS\"},{\"role\":\"official_health_registry\",\"source_id\":\"HEALTH_REGISTRY\"},{\"role\":\"open_network\",\"source_id\":\"OSM\"},{\"role\":\"model_parameter\",\"source_id\":\"MODEL\"},{\"role\":\"agent_or_user_parameter\",\"source_id\":\"USER\"},{\"role\":\"model_parameter\",\"source_id\":\"MODEL_DEFAULTS\"},{\"role\":\"derived_metric\",\"source_id\":\"DERIVED\"}],\"unit\":\"s\",\"value\":960},{\"assumptions\":[\"Horario GTFS estático y paseo modelado; no duración real observada.\"],\"denominator\":null,\"derivation\":\"estimated_with_assumptions\",\"entity_id\":\"segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_label\":\"Viaje programado segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_type\":\"journey\",\"evidence_path\":\"/components_s/return_wait_s\",\"id\":\"claim-8\",\"label\":\"return_wait_s\",\"metric_id\":\"return_wait_s\",\"numerator\":null,\"period\":\"2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado;2026-09-29\",\"reference_periods\":[{\"period\":\"2026-09-28/2026-12-27\",\"source_id\":\"GTFS\"},{\"period\":\"2026-09-20\",\"source_id\":\"HEALTH_REGISTRY\"},{\"period\":\"Acquired 2026-09-29\",\"source_id\":\"OSM\"},{\"period\":\"supuesto del modelo de paseo, no periodo observado\",\"source_id\":\"MODEL\"},{\"period\":\"2026-09-29\",\"source_id\":\"USER\"},{\"period\":\"2026-09-29\",\"source_id\":\"MODEL_DEFAULTS\"},{\"period\":\"2026-09-29\",\"source_id\":\"DERIVED\"}],\"source_ids\":[\"GTFS\",\"HEALTH_REGISTRY\",\"OSM\",\"MODEL\",\"USER\",\"MODEL_DEFAULTS\",\"DERIVED\"],\"source_refs\":[{\"role\":\"official_schedule\",\"source_id\":\"GTFS\"},{\"role\":\"official_health_registry\",\"source_id\":\"HEALTH_REGISTRY\"},{\"role\":\"open_network\",\"source_id\":\"OSM\"},{\"role\":\"model_parameter\",\"source_id\":\"MODEL\"},{\"role\":\"agent_or_user_parameter\",\"source_id\":\"USER\"},{\"role\":\"model_parameter\",\"source_id\":\"MODEL_DEFAULTS\"},{\"role\":\"derived_metric\",\"source_id\":\"DERIVED\"}],\"unit\":\"s\",\"value\":1711},{\"assumptions\":[\"Horario GTFS estático y paseo modelado; no duración real observada.\"],\"denominator\":null,\"derivation\":\"estimated_with_assumptions\",\"entity_id\":\"segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_label\":\"Viaje programado segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_type\":\"journey\",\"evidence_path\":\"/components_s/return_vehicle_s\",\"id\":\"claim-9\",\"label\":\"return_vehicle_s\",\"metric_id\":\"return_vehicle_s\",\"numerator\":null,\"period\":\"2026-09-28/2026-12-27\",\"reference_periods\":[{\"period\":\"2026-09-28/2026-12-27\",\"source_id\":\"GTFS\"}],\"source_ids\":[\"GTFS\"],\"source_refs\":[{\"role\":\"official_schedule\",\"source_id\":\"GTFS\"}],\"unit\":\"s\",\"value\":1705},{\"assumptions\":[\"Horario GTFS estático y paseo modelado; no duración real observada.\"],\"denominator\":null,\"derivation\":\"estimated_with_assumptions\",\"entity_id\":\"segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_label\":\"Viaje programado segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_type\":\"journey\",\"evidence_path\":\"/walking/outbound/total_metres\",\"id\":\"claim-10\",\"label\":\"total_metres\",\"metric_id\":\"total_metres\",\"numerator\":null,\"period\":\"2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado\",\"reference_periods\":[{\"period\":\"2026-09-28/2026-12-27\",\"source_id\":\"GTFS\"},{\"period\":\"2026-09-20\",\"source_id\":\"HEALTH_REGISTRY\"},{\"period\":\"Acquired 2026-09-29\",\"source_id\":\"OSM\"},{\"period\":\"supuesto del modelo de paseo, no periodo observado\",\"source_id\":\"MODEL\"}],\"source_ids\":[\"GTFS\",\"HEALTH_REGISTRY\",\"OSM\",\"MODEL\"],\"source_refs\":[{\"role\":\"official_schedule\",\"source_id\":\"GTFS\"},{\"role\":\"official_health_registry\",\"source_id\":\"HEALTH_REGISTRY\"},{\"role\":\"open_network\",\"source_id\":\"OSM\"},{\"role\":\"model_parameter\",\"source_id\":\"MODEL\"}],\"unit\":\"m\",\"value\":205.07964741035417},{\"assumptions\":[\"Horario GTFS estático y paseo modelado; no duración real observada.\"],\"denominator\":null,\"derivation\":\"estimated_with_assumptions\",\"entity_id\":\"segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_label\":\"Viaje programado segura_herriko_plaza_stops->beasain_official_centre_anchor@2026-09-29T09:45:00\",\"entity_type\":\"journey\",\"evidence_path\":\"/walking/return/total_metres\",\"id\":\"claim-11\",\"label\":\"total_metres\",\"metric_id\":\"total_metres\",\"numerator\":null,\"period\":\"2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado\",\"reference_periods\":[{\"period\":\"2026-09-28/2026-12-27\",\"source_id\":\"GTFS\"},{\"period\":\"2026-09-20\",\"source_id\":\"HEALTH_REGISTRY\"},{\"period\":\"Acquired 2026-09-29\",\"source_id\":\"OSM\"},{\"period\":\"supuesto del modelo de paseo, no periodo observado\",\"source_id\":\"MODEL\"}],\"source_ids\":[\"GTFS\",\"HEALTH_REGISTRY\",\"OSM\",\"MODEL\"],\"source_refs\":[{\"role\":\"official_schedule\",\"source_id\":\"GTFS\"},{\"role\":\"official_health_registry\",\"source_id\":\"HEALTH_REGISTRY\"},{\"role\":\"open_network\",\"source_id\":\"OSM\"},{\"role\":\"model_parameter\",\"source_id\":\"MODEL\"}],\"unit\":\"m\",\"value\":686.1157628496067}],\"effective_request\":{\"defaults_applied\":[\"arrival_margin_minutes\",\"boarding_margin_minutes\",\"return_deadline\",\"snapshot_id\",\"timezone\",\"walking_profile_id\"],\"effective_period\":\"2026-09-29\",\"municipality_codes\":[],\"municipality_labels\":[],\"operation\":\"plan_visit\",\"parameters\":{\"appointment_time\":\"09:45:00\",\"arrival_margin_minutes\":10,\"boarding_margin_minutes\":3,\"date\":\"2026-09-29\",\"destination_id\":\"beasain_official_centre_anchor\",\"duration_minutes\":30,\"origin_id\":\"segura_herriko_plaza_stops\",\"return_deadline\":null,\"timezone\":\"Europe/Madrid\",\"walking_profile_id\":\"poc_reference_50m_min_plus_120s\"}},\"error\":null,\"execution\":{\"request_id\":\"736d7614e28a402fb82507c93c0d4684\",\"state\":\"completed\",\"tool\":\"plan_visit\"},\"limitations\":[\"Entrada física NOT_VERIFIED; conflicto Bernedo Enea 1 / Zaldizurreta 2 pendiente de revisión humana.\",\"GTFS estático y tiempos timepoint=0 aproximados; no realtime, domicilio, cita ni accesibilidad garantizada.\"],\"method\":\"Combinación de servicios GO01 programados y paseo modelado hasta el punto oficial del centro; comprobación de identidad, parámetros y componentes.\",\"mobility\":{\"comparisons\":[],\"scenarios\":[{\"assumptions\":[\"50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.\",\"Solo GO01 directa; inicio y fin en paradas, no en domicilio.\"],\"components_s\":{\"appointment_s\":1800,\"destination_walk_outbound_s\":420,\"destination_walk_return_s\":960,\"initial_wait_s\":180,\"outbound_vehicle_s\":1293,\"pre_appointment_wait_s\":1254,\"return_vehicle_s\":1705,\"return_wait_s\":1711},\"destination_label\":\"Ambulatorio de Beasain\",\"effective_parameters\":{\"appointment_time\":\"09:45:00\",\"arrival_margin_minutes\":10,\"boarding_margin_minutes\":3,\"date\":\"2026-09-29\",\"destination_id\":\"beasain_official_centre_anchor\",\"duration_minutes\":30,\"origin_id\":\"segura_herriko_plaza_stops\",\"return_deadline\":null,\"timezone\":\"Europe/Madrid\",\"walking_profile_id\":\"poc_reference_50m_min_plus_120s\"},\"error\":null,\"health_destination\":{\"address\":\"Bernedo Enea 1\",\"address_conflict\":\"conflicting_current_sources\",\"centre_anchor\":\"CONFIRMED_OFFICIAL_POINT\",\"centre_id\":\"entityBC631DA5\",\"entrance_verification\":\"NOT_VERIFIED\",\"entrance_verified\":false,\"human_review_required\":true,\"modelled_access\":true,\"name\":\"Ambulatorio de Beasain\",\"source_refs\":[\"HEALTH_REGISTRY\",\"HEALTH_PAGE\",\"PADI_2026\"],\"wording\":\"El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.\"},\"index\":0,\"itinerary\":{\"origin_stop_id\":\"7801\",\"outbound\":{\"arrival_time\":\"09:17:06\",\"departure_time\":\"08:55:33\",\"drop_off_type\":0,\"from_stop_id\":\"7801\",\"from_stop_label\":\"Segura - Kale Nagusia 31 – Herriko Plaza\",\"from_stop_sequence\":10,\"from_timepoint\":0,\"pickup_type\":0,\"route_id\":\"1\",\"route_label\":\"GO01\",\"service_id\":\"LJ\",\"to_stop_id\":\"7219\",\"to_stop_label\":\"Beasain - Lokomotora Biribilgunea\",\"to_stop_sequence\":27,\"to_timepoint\":0,\"trip_id\":\"1_101_LJ_31500\"},\"return\":{\"arrival_time\":\"11:27:56\",\"departure_time\":\"10:59:31\",\"drop_off_type\":0,\"from_stop_id\":\"7218\",\"from_stop_label\":\"Beasain - San Inazio 10\",\"from_stop_sequence\":13,\"from_timepoint\":0,\"pickup_type\":0,\"route_id\":\"1\",\"route_label\":\"GO01\",\"service_id\":\"LJ\",\"to_stop_id\":\"7813\",\"to_stop_label\":\"Segura - Kale Nagusia 31 Parean – Herriko Plaza\",\"to_stop_sequence\":32,\"to_timepoint\":0,\"trip_id\":\"1_102_LJ_38700\"},\"return_slack_s\":1531,\"return_stop_id\":\"7813\",\"total_s\":9323},\"limitations\":[\"El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.\",\"No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.\",\"Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.\",\"Horarios GTFS aproximados programados, no información en tiempo real.\",\"Conflicto de dirección en listado PADI conservado; no se deduce traslado.\",\"Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real.\"],\"origin_label\":\"Paradas Herriko Plaza de Segura\",\"parameter_attribution\":[{\"attribution\":\"tool_argument_origin_unverified\",\"field\":\"appointment_time\",\"parameter_origin\":\"human_explicit\",\"value\":\"09:45:00\"},{\"attribution\":\"calculation_assumption\",\"field\":\"arrival_margin_minutes\",\"parameter_origin\":\"model_default\",\"value\":10},{\"attribution\":\"calculation_assumption\",\"field\":\"boarding_margin_minutes\",\"parameter_origin\":\"model_default\",\"value\":3},{\"attribution\":\"tool_argument_origin_unverified\",\"field\":\"date\",\"parameter_origin\":\"human_explicit\",\"value\":\"2026-09-29\"},{\"attribution\":\"tool_argument_origin_unverified\",\"field\":\"destination_id\",\"parameter_origin\":\"human_explicit\",\"value\":\"beasain_official_centre_anchor\"},{\"attribution\":\"tool_argument_origin_unverified\",\"field\":\"duration_minutes\",\"parameter_origin\":\"human_explicit\",\"value\":30},{\"attribution\":\"tool_argument_origin_unverified\",\"field\":\"origin_id\",\"parameter_origin\":\"human_explicit\",\"value\":\"segura_herriko_plaza_stops\"},{\"attribution\":\"calculation_assumption\",\"field\":\"return_deadline\",\"parameter_origin\":\"model_default\",\"value\":null},{\"attribution\":\"calculation_assumption\",\"field\":\"timezone\",\"parameter_origin\":\"model_default\",\"value\":\"Europe/Madrid\"},{\"attribution\":\"calculation_assumption\",\"field\":\"walking_profile_id\",\"parameter_origin\":\"model_default\",\"value\":\"poc_reference_50m_min_plus_120s\"}],\"scenario_kind\":\"health_visit\",\"scope\":\"origin_stop_presence_to_return_stop_arrival\",\"sources\":[{\"institution\":\"Moveuskadi / Goierrialdea\",\"publisher\":\"Moveuskadi / Goierrialdea\",\"reference_period\":\"2026-09-28/2026-12-27\",\"source_id\":\"GTFS\",\"source_role\":\"official_schedule\",\"title\":\"Horario GO01 Goierrialdea\",\"transformation\":\"Filas normalizadas del horario GO01; horas aproximadas, no tiempo real\",\"url\":\"https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip\"},{\"institution\":\"Open Data Euskadi\",\"publisher\":\"Open Data Euskadi\",\"reference_period\":\"2026-09-20\",\"source_id\":\"HEALTH_REGISTRY\",\"source_role\":\"official_health_registry\",\"title\":\"Registro de centros de salud públicos\",\"transformation\":\"entityBC631DA5 coordinates EPSG:4326\",\"url\":\"https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/\"},{\"institution\":\"Osakidetza\",\"publisher\":\"Osakidetza\",\"reference_period\":\"Observed 2026-09-29\",\"source_id\":\"HEALTH_PAGE\",\"source_role\":\"official_health_page\",\"title\":\"Ficha del Ambulatorio de Beasain\",\"transformation\":\"Specific centre name/address/telephone; publication date not stated\",\"url\":\"https://www.osakidetza.euskadi.eus/ambulatorio-de-beasain/webosk00-cercon/es/\"},{\"institution\":\"Osakidetza\",\"publisher\":\"Osakidetza\",\"reference_period\":\"2026-01\",\"source_id\":\"PADI_2026\",\"source_role\":\"official_health_page\",\"title\":\"Listado PADI de consultas dentales 2026\",\"transformation\":\"Page 4 dental consultation listing; address conflict retained\",\"url\":\"https://www.osakidetza.euskadi.eus/contenidos/informacion/salud_padi/es_def/adjuntos/padi-kontsultak-gipuzkoa.pdf\"},{\"institution\":\"OpenStreetMap contributors\",\"publisher\":\"OpenStreetMap contributors\",\"reference_period\":\"Acquired 2026-09-29\",\"source_id\":\"OSM\",\"source_role\":\"open_network\",\"title\":\"Derivado público de red peatonal\",\"transformation\":\"Derivado de red peatonal sin datos personales de edición ni cambios de geometría; ODbL 1.0\",\"url\":\"https://api.openstreetmap.org/api/0.6/map?bbox=-2.203,43.041,-2.190,43.052\"},{\"institution\":\"GIPUZKOA360\",\"publisher\":\"GIPUZKOA360\",\"reference_period\":\"supuesto del modelo de paseo, no periodo observado\",\"source_id\":\"MODEL\",\"source_role\":\"model_parameter\",\"title\":\"Perfil de paseo modelado\",\"transformation\":\"ceil(raw total metres/50)*60+120 per complete directed link; each connector <=100 m\",\"url\":null},{\"institution\":\"Entrada del agente\",\"publisher\":\"GIPUZKOA360 request/calculation\",\"reference_period\":\"2026-09-29\",\"source_id\":\"USER\",\"source_role\":\"user_input\",\"title\":\"Parámetros presentes en la petición\",\"transformation\":\"Campos recibidos en la consulta; no incluye los supuestos aplicados por el cálculo.\",\"url\":null},{\"institution\":\"GIPUZKOA 360, cálculo de visita sanitaria\",\"publisher\":\"GIPUZKOA360 request/calculation\",\"reference_period\":\"2026-09-29\",\"source_id\":\"MODEL_DEFAULTS\",\"source_role\":\"model_parameter\",\"title\":\"Supuestos aplicados al cálculo\",\"transformation\":\"Márgenes y perfil aplicados como supuestos del cálculo, no elecciones humanas observadas.\",\"url\":null},{\"institution\":\"GIPUZKOA 360, cálculo de visita sanitaria\",\"publisher\":\"GIPUZKOA360 request/calculation\",\"reference_period\":\"2026-09-29\",\"source_id\":\"DERIVED\",\"source_role\":\"derived_metric\",\"title\":\"Componentes calculados del itinerario\",\"transformation\":\"Intervals derived from explicit inputs, model defaults, schedule and walking model.\",\"url\":null}],\"status\":\"ok\",\"time_basis\":\"scheduled\",\"time_summary\":{\"initial_wait_s\":180,\"scope\":\"origin_stop_presence_to_return_stop_arrival\",\"scope_end_clock\":\"11:27:56\",\"scope_end_s\":41276,\"scope_start_clock\":\"08:52:33\",\"scope_start_s\":31953,\"total_hms\":\"2 h 35 min 23 s\",\"total_s\":9323},\"walking\":{\"outbound\":{\"entrance_verified\":false,\"modelled_access\":true,\"seconds\":420,\"source_refs\":[\"GTFS\",\"HEALTH_REGISTRY\",\"OSM\",\"MODEL\"],\"total_metres\":205.07964741035417},\"return\":{\"entrance_verified\":false,\"modelled_access\":true,\"seconds\":960,\"source_refs\":[\"GTFS\",\"HEALTH_REGISTRY\",\"OSM\",\"MODEL\"],\"total_metres\":686.1157628496067}}}]},\"normalized_input\":{\"arguments\":{\"appointment_time\":\"09:45\",\"date\":\"2026-09-29\",\"destination_id\":\"beasain_official_centre_anchor\",\"duration_minutes\":30,\"origin_id\":\"segura_herriko_plaza_stops\"},\"tool\":\"plan_visit\"},\"outcomes\":[{\"error\":null,\"index\":0,\"status\":\"ok\"}],\"request_id\":\"736d7614e28a402fb82507c93c0d4684\",\"selection\":{\"criterion\":\"Primeras entidades en el orden validado de la herramienta\",\"detail_mechanism\":\"Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.\",\"omitted_entities\":0,\"returned_entities\":0,\"total_entities\":0},\"status\":\"valid\"}"
+      - article:
+        - generic: GIPUZKOA 360 · Visita sanitaria
+        - paragraph:
+          - text: Para esa visita, el escenario
+          - strong: programado/modelado
+          - text: "sería:"
+        - list:
+          - strong: "Salida del ámbito:"
+          - text: 08:52:33 desde las paradas Herriko Plaza de Segura.
+          - strong: "GO01 de ida:"
+          - text: salida prevista
+          - strong: 08:55:33
+          - text: desde
+          - emphasis: Segura – Kale Nagusia 31 – Herriko Plaza
+          - text: ; llegada a
+          - emphasis: Beasain – Lokomotora Biribilgunea
+          - text: a
+          - strong: 09:17:06
+          - text: .
+          - strong: "Paseo modelado hasta el ambulatorio:"
+          - text: 7 minutos aproximadamente.
+          - strong: "Consulta:"
+          - text: 09:45–10:15, según los 30 minutos indicados.
+          - strong: "Regreso a la parada:"
+          - text: paseo modelado de unos 16 minutos hasta
+          - emphasis: Beasain – San Inazio 10
+          - text: .
+          - strong: "GO01 de vuelta:"
+          - text: salida
+          - strong: 10:59:31
+          - text: y llegada a
+          - emphasis: Segura – Kale Nagusia 31 Parean – Herriko Plaza
+          - text: a
+          - strong: 11:27:56
+          - text: .
+        - paragraph:
+          - strong: "Carga temporal completa:"
+          - strong:
+            - code: 2 h 35 min 23 s
+          - text: ", desde"
+          - strong: 08:52:33
+          - text: hasta
+          - strong: 11:27:56
+          - text: (
+          - code: total_s
+          - text: ":"
+          - strong: "9323"
+          - text: ). Incluye esperas, transporte, paseos modelados y la consulta.
+        - paragraph:
+          - text: Es un cálculo con horario GTFS estático de GO01 para
+          - strong: 2026-09-28/2026-12-27
+          - text: ", no información en tiempo real. El paseo usa un perfil de referencia modelado, no garantiza tiempos reales ni accesibilidad. El destino es un punto oficial modelado del Ambulatorio de Beasain; la entrada física no está verificada y se conserva un conflicto de dirección en las fuentes. La fuente sanitaria del centro figura observada el"
+          - strong: 29 de septiembre de 2026
+          - text: .
+      - article:
+        - generic: Tú
+        - paragraph: Ahora deja todo igual pero haz que la consulta dure 45 minutos.
+      - article:
+        - generic: GIPUZKOA 360 · Visita sanitaria
+        - strong: Tool · plan_visit
+        - code: "{\"origin_id\":\"segura_herriko_plaza_stops\",\"destination_id\":\"beasain_official_centre_anchor\",\"date\":\"2026-09-29\",\"appointment_time\":\"09:45\",\"duration_minutes\":45}"
+      - generic "Resultado de plan_visit"
+      - article:
+        - generic: GIPUZKOA 360 · Visita sanitaria
+        - paragraph:
+          - text: Con la consulta ampliada a
+          - strong: 45 minutos
+          - text: —de
+          - strong: 09:45 a 10:30
+          - text: "— y manteniendo todo lo demás igual, el itinerario sigue siendo viable con la misma vuelta:"
+        - list:
+          - strong: "Salida del ámbito:"
+          - text: 08:52:33 desde Herriko Plaza de Segura.
+          - strong: "GO01 de ida:"
+          - text: 08:55:33; llegada a Beasain a
+          - strong: 09:17:06
+          - text: .
+          - strong: "Paseo modelado al ambulatorio:"
+          - text: 7 minutos aproximadamente.
+          - strong: "Consulta:"
+          - text: 09:45–10:30.
+          - strong: "Paseo modelado a la parada de vuelta:"
+          - text: unos 16 minutos.
+          - strong: "GO01 de vuelta:"
+          - text: salida
+          - strong: 10:59:31
+          - text: desde
+          - emphasis: Beasain – San Inazio 10
+          - text: ; llegada a Segura a
+          - strong: 11:27:56
+          - text: .
+        - paragraph:
+          - strong: "Carga temporal completa:"
+          - strong:
+            - code: 2 h 35 min 23 s
+          - text: ", desde"
+          - strong: 08:52:33
+          - text: hasta
+          - strong: 11:27:56
+          - text: (
+          - code: total_s
+          - text: ":"
+          - strong: "9323"
+          - text: ). La espera para el regreso queda modelada en
+          - strong: 13 min 31 s
+          - text: después de la consulta.
+        - paragraph:
+          - text: El cálculo usa el horario GTFS estático de GO01 para
+          - strong: 2026-09-28/2026-12-27
+          - text: y paseo modelado; no es información en tiempo real ni garantiza accesibilidad o entrada física al centro.
+    - textbox "Escribe un mensaje…"
+    - button "Enviar" [disabled]

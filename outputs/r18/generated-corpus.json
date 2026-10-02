@@ -1,0 +1,2094 @@
+{
+  "cases": [
+    {
+      "arguments": {},
+      "expectation": "observed_grounded_result",
+      "family": "discovery",
+      "group": "generated:discovery",
+      "id": "discovery:00",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. Todavía no tengo una pregunta concreta sobre acceso sanitario en Gipuzkoa. ¿Qué podríamos estudiar y qué no sabes?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {},
+      "expectation": "observed_grounded_result",
+      "family": "discovery",
+      "group": "generated:discovery",
+      "id": "discovery:01",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: Todavía no tengo una pregunta concreta sobre acceso sanitario en Gipuzkoa. ¿Qué podríamos estudiar y qué no sabes?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {},
+      "expectation": "observed_grounded_result",
+      "family": "discovery",
+      "group": "generated:discovery",
+      "id": "discovery:02",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: Todavía no tengo una pregunta concreta sobre acceso sanitario en Gipuzkoa. ¿Qué podríamos estudiar y qué no sabes?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {},
+      "expectation": "observed_grounded_result",
+      "family": "discovery",
+      "group": "generated:discovery",
+      "id": "discovery:03",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. Todavía no tengo una pregunta concreta sobre acceso sanitario en Gipuzkoa. ¿Qué podríamos estudiar y qué no sabes?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {},
+      "expectation": "observed_grounded_result",
+      "family": "discovery",
+      "group": "generated:discovery",
+      "id": "discovery:04",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: Todavía no tengo una pregunta concreta sobre acceso sanitario en Gipuzkoa. ¿Qué podríamos estudiar y qué no sabes?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {},
+      "expectation": "observed_grounded_result",
+      "family": "discovery",
+      "group": "generated:discovery",
+      "id": "discovery:05",
+      "keep_view": true,
+      "prompt": "Todavía no tengo una pregunta concreta sobre acceso sanitario en Gipuzkoa. ¿Qué podríamos estudiar y qué no sabes?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {},
+      "expectation": "observed_grounded_result",
+      "family": "discovery",
+      "group": "generated:discovery",
+      "id": "discovery:06",
+      "keep_view": true,
+      "prompt": "Todavía no tengo una pregunta concreta sobre acceso sanitario en Gipuzkoa. ¿Qué podríamos estudiar y qué no sabes?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {},
+      "expectation": "observed_grounded_result",
+      "family": "discovery",
+      "group": "generated:discovery",
+      "id": "discovery:07",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. Todavía no tengo una pregunta concreta sobre acceso sanitario en Gipuzkoa. ¿Qué podríamos estudiar y qué no sabes?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {},
+      "expectation": "observed_grounded_result",
+      "family": "discovery",
+      "group": "generated:discovery",
+      "id": "discovery:08",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: Todavía no tengo una pregunta concreta sobre acceso sanitario en Gipuzkoa. ¿Qué podríamos estudiar y qué no sabes?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {},
+      "expectation": "observed_grounded_result",
+      "family": "discovery",
+      "group": "generated:discovery",
+      "id": "discovery:09",
+      "keep_view": true,
+      "prompt": "Todavía no tengo una pregunta concreta sobre acceso sanitario en Gipuzkoa. ¿Qué podríamos estudiar y qué no sabes?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {},
+      "expectation": "observed_grounded_result",
+      "family": "discovery",
+      "group": "generated:discovery",
+      "id": "discovery:10",
+      "keep_view": true,
+      "prompt": "Todavía no tengo una pregunta concreta sobre acceso sanitario en Gipuzkoa. ¿Qué podríamos estudiar y qué no sabes?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {},
+      "expectation": "observed_grounded_result",
+      "family": "discovery",
+      "group": "generated:discovery",
+      "id": "discovery:11",
+      "keep_view": true,
+      "prompt": "Todavía no tengo una pregunta concreta sobre acceso sanitario en Gipuzkoa. ¿Qué podríamos estudiar y qué no sabes?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "municipio": "Orexa"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "lookup",
+      "group": "generated:lookup",
+      "id": "lookup:00",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Qué muestran los datos de Orexa sobre población mayor?",
+      "tool": "obtener_resumen_territorial"
+    },
+    {
+      "arguments": {
+        "municipio": "Leintz-Gatzaga"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "lookup",
+      "group": "generated:lookup",
+      "id": "lookup:01",
+      "keep_view": true,
+      "prompt": "¿Qué muestran los datos de Leintz-Gatzaga sobre población mayor?",
+      "tool": "obtener_resumen_territorial"
+    },
+    {
+      "arguments": {
+        "municipio": "Abaltzisketa"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "lookup",
+      "group": "generated:lookup",
+      "id": "lookup:02",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué muestran los datos de Abaltzisketa sobre población mayor?",
+      "tool": "obtener_resumen_territorial"
+    },
+    {
+      "arguments": {
+        "municipio": "Beasain"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "lookup",
+      "group": "generated:lookup",
+      "id": "lookup:03",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: ¿Qué muestran los datos de Beasain sobre población mayor?",
+      "tool": "obtener_resumen_territorial"
+    },
+    {
+      "arguments": {
+        "municipio": "Belauntza"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "lookup",
+      "group": "generated:lookup",
+      "id": "lookup:04",
+      "keep_view": true,
+      "prompt": "¿Qué muestran los datos de Belauntza sobre población mayor?",
+      "tool": "obtener_resumen_territorial"
+    },
+    {
+      "arguments": {
+        "municipio": "Larraul"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "lookup",
+      "group": "generated:lookup",
+      "id": "lookup:05",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué muestran los datos de Larraul sobre población mayor?",
+      "tool": "obtener_resumen_territorial"
+    },
+    {
+      "arguments": {
+        "municipio": "Villabona"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "lookup",
+      "group": "generated:lookup",
+      "id": "lookup:06",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué muestran los datos de Villabona sobre población mayor?",
+      "tool": "obtener_resumen_territorial"
+    },
+    {
+      "arguments": {
+        "municipio": "Anoeta"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "lookup",
+      "group": "generated:lookup",
+      "id": "lookup:07",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Qué muestran los datos de Anoeta sobre población mayor?",
+      "tool": "obtener_resumen_territorial"
+    },
+    {
+      "arguments": {
+        "municipio": "Soraluze-Placencia de las Armas"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "lookup",
+      "group": "generated:lookup",
+      "id": "lookup:08",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Qué muestran los datos de Soraluze-Placencia de las Armas sobre población mayor?",
+      "tool": "obtener_resumen_territorial"
+    },
+    {
+      "arguments": {
+        "municipio": "Orio"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "lookup",
+      "group": "generated:lookup",
+      "id": "lookup:09",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué muestran los datos de Orio sobre población mayor?",
+      "tool": "obtener_resumen_territorial"
+    },
+    {
+      "arguments": {
+        "municipio": "Larraul"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "lookup",
+      "group": "generated:lookup",
+      "id": "lookup:10",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: ¿Qué muestran los datos de Larraul sobre población mayor?",
+      "tool": "obtener_resumen_territorial"
+    },
+    {
+      "arguments": {
+        "municipio": "Baliarrain"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "lookup",
+      "group": "generated:lookup",
+      "id": "lookup:11",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué muestran los datos de Baliarrain sobre población mayor?",
+      "tool": "obtener_resumen_territorial"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "65",
+        "medida": "percentage",
+        "top_n": 5
+      },
+      "expectation": "observed_grounded_result",
+      "family": "ranking",
+      "group": "generated:ranking",
+      "id": "ranking:00",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Qué cinco municipios tienen mayor porcentaje de personas de 65 años o más?",
+      "tool": "analizar_envejecimiento"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "75",
+        "medida": "percentage",
+        "top_n": 5
+      },
+      "expectation": "observed_grounded_result",
+      "family": "ranking",
+      "group": "generated:ranking",
+      "id": "ranking:01",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Qué cinco municipios tienen mayor porcentaje de personas de 75 años o más?",
+      "tool": "analizar_envejecimiento"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "65",
+        "medida": "percentage",
+        "top_n": 5
+      },
+      "expectation": "observed_grounded_result",
+      "family": "ranking",
+      "group": "generated:ranking",
+      "id": "ranking:02",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: ¿Qué cinco municipios tienen mayor porcentaje de personas de 65 años o más?",
+      "tool": "analizar_envejecimiento"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "75",
+        "medida": "percentage",
+        "top_n": 5
+      },
+      "expectation": "observed_grounded_result",
+      "family": "ranking",
+      "group": "generated:ranking",
+      "id": "ranking:03",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: ¿Qué cinco municipios tienen mayor porcentaje de personas de 75 años o más?",
+      "tool": "analizar_envejecimiento"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "65",
+        "medida": "percentage",
+        "top_n": 5
+      },
+      "expectation": "observed_grounded_result",
+      "family": "ranking",
+      "group": "generated:ranking",
+      "id": "ranking:04",
+      "keep_view": true,
+      "prompt": "¿Qué cinco municipios tienen mayor porcentaje de personas de 65 años o más?",
+      "tool": "analizar_envejecimiento"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "65",
+        "medida": "percentage",
+        "top_n": 5
+      },
+      "expectation": "observed_grounded_result",
+      "family": "ranking",
+      "group": "generated:ranking",
+      "id": "ranking:05",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué cinco municipios tienen mayor porcentaje de personas de 65 años o más?",
+      "tool": "analizar_envejecimiento"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "75",
+        "medida": "percentage",
+        "top_n": 5
+      },
+      "expectation": "observed_grounded_result",
+      "family": "ranking",
+      "group": "generated:ranking",
+      "id": "ranking:06",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Qué cinco municipios tienen mayor porcentaje de personas de 75 años o más?",
+      "tool": "analizar_envejecimiento"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "75",
+        "medida": "percentage",
+        "top_n": 5
+      },
+      "expectation": "observed_grounded_result",
+      "family": "ranking",
+      "group": "generated:ranking",
+      "id": "ranking:07",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué cinco municipios tienen mayor porcentaje de personas de 75 años o más?",
+      "tool": "analizar_envejecimiento"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "75",
+        "medida": "percentage",
+        "top_n": 5
+      },
+      "expectation": "observed_grounded_result",
+      "family": "ranking",
+      "group": "generated:ranking",
+      "id": "ranking:08",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: ¿Qué cinco municipios tienen mayor porcentaje de personas de 75 años o más?",
+      "tool": "analizar_envejecimiento"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "65",
+        "medida": "percentage",
+        "top_n": 5
+      },
+      "expectation": "observed_grounded_result",
+      "family": "ranking",
+      "group": "generated:ranking",
+      "id": "ranking:09",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: ¿Qué cinco municipios tienen mayor porcentaje de personas de 65 años o más?",
+      "tool": "analizar_envejecimiento"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "75",
+        "medida": "percentage",
+        "top_n": 5
+      },
+      "expectation": "observed_grounded_result",
+      "family": "ranking",
+      "group": "generated:ranking",
+      "id": "ranking:10",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: ¿Qué cinco municipios tienen mayor porcentaje de personas de 75 años o más?",
+      "tool": "analizar_envejecimiento"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "75",
+        "medida": "percentage",
+        "top_n": 5
+      },
+      "expectation": "observed_grounded_result",
+      "family": "ranking",
+      "group": "generated:ranking",
+      "id": "ranking:11",
+      "keep_view": true,
+      "prompt": "¿Qué cinco municipios tienen mayor porcentaje de personas de 75 años o más?",
+      "tool": "analizar_envejecimiento"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "65",
+        "municipios": [
+          "Oiartzun",
+          "Elgeta"
+        ]
+      },
+      "expectation": "observed_grounded_result",
+      "family": "comparison",
+      "group": "generated:comparison",
+      "id": "comparison:00",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: Compara Oiartzun y Elgeta en porcentaje de población de 65 años o más.",
+      "tool": "comparar_municipios"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "65",
+        "municipios": [
+          "Orio",
+          "Donostia / San Sebastián"
+        ]
+      },
+      "expectation": "observed_grounded_result",
+      "family": "comparison",
+      "group": "generated:comparison",
+      "id": "comparison:01",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: Compara Orio y Donostia / San Sebastián en porcentaje de población de 65 años o más.",
+      "tool": "comparar_municipios"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "65",
+        "municipios": [
+          "Irun",
+          "Asteasu"
+        ]
+      },
+      "expectation": "observed_grounded_result",
+      "family": "comparison",
+      "group": "generated:comparison",
+      "id": "comparison:02",
+      "keep_view": true,
+      "prompt": "Compara Irun y Asteasu en porcentaje de población de 65 años o más.",
+      "tool": "comparar_municipios"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "75",
+        "municipios": [
+          "Aizarnazabal",
+          "Mutriku"
+        ]
+      },
+      "expectation": "observed_grounded_result",
+      "family": "comparison",
+      "group": "generated:comparison",
+      "id": "comparison:03",
+      "keep_view": true,
+      "prompt": "Compara Aizarnazabal y Mutriku en porcentaje de población de 75 años o más.",
+      "tool": "comparar_municipios"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "75",
+        "municipios": [
+          "Irura",
+          "Orendain"
+        ]
+      },
+      "expectation": "observed_grounded_result",
+      "family": "comparison",
+      "group": "generated:comparison",
+      "id": "comparison:04",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: Compara Irura y Orendain en porcentaje de población de 75 años o más.",
+      "tool": "comparar_municipios"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "75",
+        "municipios": [
+          "Elgeta",
+          "Altzo"
+        ]
+      },
+      "expectation": "observed_grounded_result",
+      "family": "comparison",
+      "group": "generated:comparison",
+      "id": "comparison:05",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: Compara Elgeta y Altzo en porcentaje de población de 75 años o más.",
+      "tool": "comparar_municipios"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "75",
+        "municipios": [
+          "Legorreta",
+          "Alegia"
+        ]
+      },
+      "expectation": "observed_grounded_result",
+      "family": "comparison",
+      "group": "generated:comparison",
+      "id": "comparison:06",
+      "keep_view": true,
+      "prompt": "Compara Legorreta y Alegia en porcentaje de población de 75 años o más.",
+      "tool": "comparar_municipios"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "65",
+        "municipios": [
+          "Eskoriatza",
+          "Gaintza"
+        ]
+      },
+      "expectation": "observed_grounded_result",
+      "family": "comparison",
+      "group": "generated:comparison",
+      "id": "comparison:07",
+      "keep_view": true,
+      "prompt": "Compara Eskoriatza y Gaintza en porcentaje de población de 65 años o más.",
+      "tool": "comparar_municipios"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "65",
+        "municipios": [
+          "Beizama",
+          "Zaldibia"
+        ]
+      },
+      "expectation": "observed_grounded_result",
+      "family": "comparison",
+      "group": "generated:comparison",
+      "id": "comparison:08",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: Compara Beizama y Zaldibia en porcentaje de población de 65 años o más.",
+      "tool": "comparar_municipios"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "75",
+        "municipios": [
+          "Orexa",
+          "Aia"
+        ]
+      },
+      "expectation": "observed_grounded_result",
+      "family": "comparison",
+      "group": "generated:comparison",
+      "id": "comparison:09",
+      "keep_view": true,
+      "prompt": "Compara Orexa y Aia en porcentaje de población de 75 años o más.",
+      "tool": "comparar_municipios"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "65",
+        "municipios": [
+          "Abaltzisketa",
+          "Deba"
+        ]
+      },
+      "expectation": "observed_grounded_result",
+      "family": "comparison",
+      "group": "generated:comparison",
+      "id": "comparison:10",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. Compara Abaltzisketa y Deba en porcentaje de población de 65 años o más.",
+      "tool": "comparar_municipios"
+    },
+    {
+      "arguments": {
+        "grupo_edad": "65",
+        "municipios": [
+          "Hernialde",
+          "Arama"
+        ]
+      },
+      "expectation": "observed_grounded_result",
+      "family": "comparison",
+      "group": "generated:comparison",
+      "id": "comparison:11",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: Compara Hernialde y Arama en porcentaje de población de 65 años o más.",
+      "tool": "comparar_municipios"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "mental_health",
+        "municipios": [
+          "Gabiria"
+        ],
+        "umbral_km": 1
+      },
+      "expectation": "observed_grounded_result",
+      "family": "access",
+      "group": "generated:access",
+      "id": "access:00",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: En Gabiria, ¿qué distancia geométrica hay al registro de salud mental más cercano y queda dentro de 1 km?",
+      "tool": "analizar_acceso_servicios"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "mental_health",
+        "municipios": [
+          "Zestoa"
+        ],
+        "umbral_km": 5
+      },
+      "expectation": "observed_grounded_result",
+      "family": "access",
+      "group": "generated:access",
+      "id": "access:01",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: En Zestoa, ¿qué distancia geométrica hay al registro de salud mental más cercano y queda dentro de 5 km?",
+      "tool": "analizar_acceso_servicios"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "mental_health",
+        "municipios": [
+          "Ikaztegieta"
+        ],
+        "umbral_km": 2
+      },
+      "expectation": "observed_grounded_result",
+      "family": "access",
+      "group": "generated:access",
+      "id": "access:02",
+      "keep_view": true,
+      "prompt": "En Ikaztegieta, ¿qué distancia geométrica hay al registro de salud mental más cercano y queda dentro de 2 km?",
+      "tool": "analizar_acceso_servicios"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "primary_care",
+        "municipios": [
+          "Antzuola"
+        ],
+        "umbral_km": 5
+      },
+      "expectation": "observed_grounded_result",
+      "family": "access",
+      "group": "generated:access",
+      "id": "access:03",
+      "keep_view": true,
+      "prompt": "En Antzuola, ¿qué distancia geométrica hay al registro de atención primaria más cercano y queda dentro de 5 km?",
+      "tool": "analizar_acceso_servicios"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "mental_health",
+        "municipios": [
+          "Berastegi"
+        ],
+        "umbral_km": 5
+      },
+      "expectation": "observed_grounded_result",
+      "family": "access",
+      "group": "generated:access",
+      "id": "access:04",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: En Berastegi, ¿qué distancia geométrica hay al registro de salud mental más cercano y queda dentro de 5 km?",
+      "tool": "analizar_acceso_servicios"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "hospital",
+        "municipios": [
+          "Tolosa"
+        ],
+        "umbral_km": 1
+      },
+      "expectation": "observed_grounded_result",
+      "family": "access",
+      "group": "generated:access",
+      "id": "access:05",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. En Tolosa, ¿qué distancia geométrica hay al registro de hospitales más cercano y queda dentro de 1 km?",
+      "tool": "analizar_acceso_servicios"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "hospital",
+        "municipios": [
+          "Ataun"
+        ],
+        "umbral_km": 3
+      },
+      "expectation": "observed_grounded_result",
+      "family": "access",
+      "group": "generated:access",
+      "id": "access:06",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. En Ataun, ¿qué distancia geométrica hay al registro de hospitales más cercano y queda dentro de 3 km?",
+      "tool": "analizar_acceso_servicios"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "primary_care",
+        "municipios": [
+          "Leintz-Gatzaga"
+        ],
+        "umbral_km": 5
+      },
+      "expectation": "observed_grounded_result",
+      "family": "access",
+      "group": "generated:access",
+      "id": "access:07",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: En Leintz-Gatzaga, ¿qué distancia geométrica hay al registro de atención primaria más cercano y queda dentro de 5 km?",
+      "tool": "analizar_acceso_servicios"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "hospital",
+        "municipios": [
+          "Mendaro"
+        ],
+        "umbral_km": 3
+      },
+      "expectation": "observed_grounded_result",
+      "family": "access",
+      "group": "generated:access",
+      "id": "access:08",
+      "keep_view": true,
+      "prompt": "En Mendaro, ¿qué distancia geométrica hay al registro de hospitales más cercano y queda dentro de 3 km?",
+      "tool": "analizar_acceso_servicios"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "mental_health",
+        "municipios": [
+          "Legorreta"
+        ],
+        "umbral_km": 1
+      },
+      "expectation": "observed_grounded_result",
+      "family": "access",
+      "group": "generated:access",
+      "id": "access:09",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. En Legorreta, ¿qué distancia geométrica hay al registro de salud mental más cercano y queda dentro de 1 km?",
+      "tool": "analizar_acceso_servicios"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "mental_health",
+        "municipios": [
+          "Getaria"
+        ],
+        "umbral_km": 1
+      },
+      "expectation": "observed_grounded_result",
+      "family": "access",
+      "group": "generated:access",
+      "id": "access:10",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: En Getaria, ¿qué distancia geométrica hay al registro de salud mental más cercano y queda dentro de 1 km?",
+      "tool": "analizar_acceso_servicios"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "hospital",
+        "municipios": [
+          "Gaztelu"
+        ],
+        "umbral_km": 3
+      },
+      "expectation": "observed_grounded_result",
+      "family": "access",
+      "group": "generated:access",
+      "id": "access:11",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. En Gaztelu, ¿qué distancia geométrica hay al registro de hospitales más cercano y queda dentro de 3 km?",
+      "tool": "analizar_acceso_servicios"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "hospital",
+        "cuantil": 0.75,
+        "grupo_edad": "75",
+        "umbral_km": 1
+      },
+      "expectation": "observed_grounded_result",
+      "family": "cross_dimension",
+      "group": "generated:cross_dimension",
+      "id": "cross_dimension:00",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué municipios coinciden en proporción alta de población de 75 años o más y mayor distancia geométrica a hospitales? Usa nivel de exigencia 0,75 y umbral 1 km.",
+      "tool": "analizar_coincidencia"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "hospital",
+        "cuantil": 0.75,
+        "grupo_edad": "75",
+        "umbral_km": 5
+      },
+      "expectation": "observed_grounded_result",
+      "family": "cross_dimension",
+      "group": "generated:cross_dimension",
+      "id": "cross_dimension:01",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué municipios coinciden en proporción alta de población de 75 años o más y mayor distancia geométrica a hospitales? Usa nivel de exigencia 0,75 y umbral 5 km.",
+      "tool": "analizar_coincidencia"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "mental_health",
+        "cuantil": 0.75,
+        "grupo_edad": "65",
+        "umbral_km": 3
+      },
+      "expectation": "observed_grounded_result",
+      "family": "cross_dimension",
+      "group": "generated:cross_dimension",
+      "id": "cross_dimension:02",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué municipios coinciden en proporción alta de población de 65 años o más y mayor distancia geométrica a salud mental? Usa nivel de exigencia 0,75 y umbral 3 km.",
+      "tool": "analizar_coincidencia"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "mental_health",
+        "cuantil": 0.75,
+        "grupo_edad": "65",
+        "umbral_km": 1
+      },
+      "expectation": "observed_grounded_result",
+      "family": "cross_dimension",
+      "group": "generated:cross_dimension",
+      "id": "cross_dimension:03",
+      "keep_view": true,
+      "prompt": "¿Qué municipios coinciden en proporción alta de población de 65 años o más y mayor distancia geométrica a salud mental? Usa nivel de exigencia 0,75 y umbral 1 km.",
+      "tool": "analizar_coincidencia"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "primary_care",
+        "cuantil": 0.75,
+        "grupo_edad": "75",
+        "umbral_km": 2
+      },
+      "expectation": "observed_grounded_result",
+      "family": "cross_dimension",
+      "group": "generated:cross_dimension",
+      "id": "cross_dimension:04",
+      "keep_view": true,
+      "prompt": "¿Qué municipios coinciden en proporción alta de población de 75 años o más y mayor distancia geométrica a atención primaria? Usa nivel de exigencia 0,75 y umbral 2 km.",
+      "tool": "analizar_coincidencia"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "primary_care",
+        "cuantil": 0.75,
+        "grupo_edad": "65",
+        "umbral_km": 5
+      },
+      "expectation": "observed_grounded_result",
+      "family": "cross_dimension",
+      "group": "generated:cross_dimension",
+      "id": "cross_dimension:05",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué municipios coinciden en proporción alta de población de 65 años o más y mayor distancia geométrica a atención primaria? Usa nivel de exigencia 0,75 y umbral 5 km.",
+      "tool": "analizar_coincidencia"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "mental_health",
+        "cuantil": 0.75,
+        "grupo_edad": "65",
+        "umbral_km": 1
+      },
+      "expectation": "observed_grounded_result",
+      "family": "cross_dimension",
+      "group": "generated:cross_dimension",
+      "id": "cross_dimension:06",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué municipios coinciden en proporción alta de población de 65 años o más y mayor distancia geométrica a salud mental? Usa nivel de exigencia 0,75 y umbral 1 km.",
+      "tool": "analizar_coincidencia"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "hospital",
+        "cuantil": 0.75,
+        "grupo_edad": "75",
+        "umbral_km": 2
+      },
+      "expectation": "observed_grounded_result",
+      "family": "cross_dimension",
+      "group": "generated:cross_dimension",
+      "id": "cross_dimension:07",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Qué municipios coinciden en proporción alta de población de 75 años o más y mayor distancia geométrica a hospitales? Usa nivel de exigencia 0,75 y umbral 2 km.",
+      "tool": "analizar_coincidencia"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "primary_care",
+        "cuantil": 0.75,
+        "grupo_edad": "75",
+        "umbral_km": 2
+      },
+      "expectation": "observed_grounded_result",
+      "family": "cross_dimension",
+      "group": "generated:cross_dimension",
+      "id": "cross_dimension:08",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué municipios coinciden en proporción alta de población de 75 años o más y mayor distancia geométrica a atención primaria? Usa nivel de exigencia 0,75 y umbral 2 km.",
+      "tool": "analizar_coincidencia"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "mental_health",
+        "cuantil": 0.75,
+        "grupo_edad": "65",
+        "umbral_km": 3
+      },
+      "expectation": "observed_grounded_result",
+      "family": "cross_dimension",
+      "group": "generated:cross_dimension",
+      "id": "cross_dimension:09",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: ¿Qué municipios coinciden en proporción alta de población de 65 años o más y mayor distancia geométrica a salud mental? Usa nivel de exigencia 0,75 y umbral 3 km.",
+      "tool": "analizar_coincidencia"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "primary_care",
+        "cuantil": 0.75,
+        "grupo_edad": "75",
+        "umbral_km": 1
+      },
+      "expectation": "observed_grounded_result",
+      "family": "cross_dimension",
+      "group": "generated:cross_dimension",
+      "id": "cross_dimension:10",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué municipios coinciden en proporción alta de población de 75 años o más y mayor distancia geométrica a atención primaria? Usa nivel de exigencia 0,75 y umbral 1 km.",
+      "tool": "analizar_coincidencia"
+    },
+    {
+      "arguments": {
+        "categoria_servicio": "mental_health",
+        "cuantil": 0.75,
+        "grupo_edad": "65",
+        "umbral_km": 3
+      },
+      "expectation": "observed_grounded_result",
+      "family": "cross_dimension",
+      "group": "generated:cross_dimension",
+      "id": "cross_dimension:11",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: ¿Qué municipios coinciden en proporción alta de población de 65 años o más y mayor distancia geométrica a salud mental? Usa nivel de exigencia 0,75 y umbral 3 km.",
+      "tool": "analizar_coincidencia"
+    },
+    {
+      "arguments": {
+        "accion": "change_threshold",
+        "categoria_servicio": "hospital",
+        "nuevo_umbral_km": 2,
+        "umbral_km": 1
+      },
+      "expectation": "observed_grounded_result",
+      "family": "scenario",
+      "group": "generated:scenario",
+      "id": "scenario:00",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué cambiaría en la clasificación municipal por distancia a hospitales si el umbral pasara de 1 a 2 km? Es una hipótesis.",
+      "tool": "simular_escenario"
+    },
+    {
+      "arguments": {
+        "accion": "change_threshold",
+        "categoria_servicio": "primary_care",
+        "nuevo_umbral_km": 6,
+        "umbral_km": 1
+      },
+      "expectation": "observed_grounded_result",
+      "family": "scenario",
+      "group": "generated:scenario",
+      "id": "scenario:01",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Qué cambiaría en la clasificación municipal por distancia a atención primaria si el umbral pasara de 1 a 6 km? Es una hipótesis.",
+      "tool": "simular_escenario"
+    },
+    {
+      "arguments": {
+        "accion": "change_threshold",
+        "categoria_servicio": "hospital",
+        "nuevo_umbral_km": 2,
+        "umbral_km": 1
+      },
+      "expectation": "observed_grounded_result",
+      "family": "scenario",
+      "group": "generated:scenario",
+      "id": "scenario:02",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: ¿Qué cambiaría en la clasificación municipal por distancia a hospitales si el umbral pasara de 1 a 2 km? Es una hipótesis.",
+      "tool": "simular_escenario"
+    },
+    {
+      "arguments": {
+        "accion": "change_threshold",
+        "categoria_servicio": "mental_health",
+        "nuevo_umbral_km": 2,
+        "umbral_km": 1
+      },
+      "expectation": "observed_grounded_result",
+      "family": "scenario",
+      "group": "generated:scenario",
+      "id": "scenario:03",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué cambiaría en la clasificación municipal por distancia a salud mental si el umbral pasara de 1 a 2 km? Es una hipótesis.",
+      "tool": "simular_escenario"
+    },
+    {
+      "arguments": {
+        "accion": "change_threshold",
+        "categoria_servicio": "mental_health",
+        "nuevo_umbral_km": 2,
+        "umbral_km": 1
+      },
+      "expectation": "observed_grounded_result",
+      "family": "scenario",
+      "group": "generated:scenario",
+      "id": "scenario:04",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: ¿Qué cambiaría en la clasificación municipal por distancia a salud mental si el umbral pasara de 1 a 2 km? Es una hipótesis.",
+      "tool": "simular_escenario"
+    },
+    {
+      "arguments": {
+        "accion": "change_threshold",
+        "categoria_servicio": "hospital",
+        "nuevo_umbral_km": 4,
+        "umbral_km": 1
+      },
+      "expectation": "observed_grounded_result",
+      "family": "scenario",
+      "group": "generated:scenario",
+      "id": "scenario:05",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué cambiaría en la clasificación municipal por distancia a hospitales si el umbral pasara de 1 a 4 km? Es una hipótesis.",
+      "tool": "simular_escenario"
+    },
+    {
+      "arguments": {
+        "accion": "change_threshold",
+        "categoria_servicio": "hospital",
+        "nuevo_umbral_km": 4,
+        "umbral_km": 1
+      },
+      "expectation": "observed_grounded_result",
+      "family": "scenario",
+      "group": "generated:scenario",
+      "id": "scenario:06",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Qué cambiaría en la clasificación municipal por distancia a hospitales si el umbral pasara de 1 a 4 km? Es una hipótesis.",
+      "tool": "simular_escenario"
+    },
+    {
+      "arguments": {
+        "accion": "change_threshold",
+        "categoria_servicio": "hospital",
+        "nuevo_umbral_km": 3,
+        "umbral_km": 1
+      },
+      "expectation": "observed_grounded_result",
+      "family": "scenario",
+      "group": "generated:scenario",
+      "id": "scenario:07",
+      "keep_view": true,
+      "prompt": "¿Qué cambiaría en la clasificación municipal por distancia a hospitales si el umbral pasara de 1 a 3 km? Es una hipótesis.",
+      "tool": "simular_escenario"
+    },
+    {
+      "arguments": {
+        "accion": "change_threshold",
+        "categoria_servicio": "hospital",
+        "nuevo_umbral_km": 2,
+        "umbral_km": 1
+      },
+      "expectation": "observed_grounded_result",
+      "family": "scenario",
+      "group": "generated:scenario",
+      "id": "scenario:08",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué cambiaría en la clasificación municipal por distancia a hospitales si el umbral pasara de 1 a 2 km? Es una hipótesis.",
+      "tool": "simular_escenario"
+    },
+    {
+      "arguments": {
+        "accion": "change_threshold",
+        "categoria_servicio": "mental_health",
+        "nuevo_umbral_km": 2,
+        "umbral_km": 1
+      },
+      "expectation": "observed_grounded_result",
+      "family": "scenario",
+      "group": "generated:scenario",
+      "id": "scenario:09",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: ¿Qué cambiaría en la clasificación municipal por distancia a salud mental si el umbral pasara de 1 a 2 km? Es una hipótesis.",
+      "tool": "simular_escenario"
+    },
+    {
+      "arguments": {
+        "accion": "change_threshold",
+        "categoria_servicio": "mental_health",
+        "nuevo_umbral_km": 4,
+        "umbral_km": 1
+      },
+      "expectation": "observed_grounded_result",
+      "family": "scenario",
+      "group": "generated:scenario",
+      "id": "scenario:10",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: ¿Qué cambiaría en la clasificación municipal por distancia a salud mental si el umbral pasara de 1 a 4 km? Es una hipótesis.",
+      "tool": "simular_escenario"
+    },
+    {
+      "arguments": {
+        "accion": "change_threshold",
+        "categoria_servicio": "mental_health",
+        "nuevo_umbral_km": 6,
+        "umbral_km": 1
+      },
+      "expectation": "observed_grounded_result",
+      "family": "scenario",
+      "group": "generated:scenario",
+      "id": "scenario:11",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Qué cambiaría en la clasificación municipal por distancia a salud mental si el umbral pasara de 1 a 6 km? Es una hipótesis.",
+      "tool": "simular_escenario"
+    },
+    {
+      "arguments": {
+        "appointment_time": "09:30",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "segura_herriko_plaza_stops"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "mobility",
+      "group": "generated:mobility",
+      "id": "mobility:00",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: Desde Paradas Herriko Plaza de Segura, calcula una visita al Ambulatorio de Beasain el 29 de septiembre de 2026, con cita a las 09:30, consulta de 20 minutos y regreso a las paradas. ¿Cuánto ocupa todo?",
+      "tool": "plan_visit"
+    },
+    {
+      "arguments": {
+        "appointment_time": "09:45",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "idiazabal_center_stops"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "mobility",
+      "group": "generated:mobility",
+      "id": "mobility:01",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: Desde Paradas centrales de Idiazabal, calcula una visita al Ambulatorio de Beasain el 29 de septiembre de 2026, con cita a las 09:45, consulta de 20 minutos y regreso a las paradas. ¿Cuánto ocupa todo?",
+      "tool": "plan_visit"
+    },
+    {
+      "arguments": {
+        "appointment_time": "09:30",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 45,
+        "origin_id": "zegama_center_stops"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "mobility",
+      "group": "generated:mobility",
+      "id": "mobility:02",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: Desde Paradas centrales de Zegama, calcula una visita al Ambulatorio de Beasain el 29 de septiembre de 2026, con cita a las 09:30, consulta de 45 minutos y regreso a las paradas. ¿Cuánto ocupa todo?",
+      "tool": "plan_visit"
+    },
+    {
+      "arguments": {
+        "appointment_time": "09:45",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 45,
+        "origin_id": "idiazabal_center_stops"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "mobility",
+      "group": "generated:mobility",
+      "id": "mobility:03",
+      "keep_view": true,
+      "prompt": "Desde Paradas centrales de Idiazabal, calcula una visita al Ambulatorio de Beasain el 29 de septiembre de 2026, con cita a las 09:45, consulta de 45 minutos y regreso a las paradas. ¿Cuánto ocupa todo?",
+      "tool": "plan_visit"
+    },
+    {
+      "arguments": {
+        "appointment_time": "09:30",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 30,
+        "origin_id": "idiazabal_center_stops"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "mobility",
+      "group": "generated:mobility",
+      "id": "mobility:04",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. Desde Paradas centrales de Idiazabal, calcula una visita al Ambulatorio de Beasain el 29 de septiembre de 2026, con cita a las 09:30, consulta de 30 minutos y regreso a las paradas. ¿Cuánto ocupa todo?",
+      "tool": "plan_visit"
+    },
+    {
+      "arguments": {
+        "appointment_time": "09:30",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "idiazabal_center_stops"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "mobility",
+      "group": "generated:mobility",
+      "id": "mobility:05",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. Desde Paradas centrales de Idiazabal, calcula una visita al Ambulatorio de Beasain el 29 de septiembre de 2026, con cita a las 09:30, consulta de 20 minutos y regreso a las paradas. ¿Cuánto ocupa todo?",
+      "tool": "plan_visit"
+    },
+    {
+      "arguments": {
+        "appointment_time": "09:45",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 45,
+        "origin_id": "idiazabal_center_stops"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "mobility",
+      "group": "generated:mobility",
+      "id": "mobility:06",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: Desde Paradas centrales de Idiazabal, calcula una visita al Ambulatorio de Beasain el 29 de septiembre de 2026, con cita a las 09:45, consulta de 45 minutos y regreso a las paradas. ¿Cuánto ocupa todo?",
+      "tool": "plan_visit"
+    },
+    {
+      "arguments": {
+        "appointment_time": "09:45",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "segura_herriko_plaza_stops"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "mobility",
+      "group": "generated:mobility",
+      "id": "mobility:07",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: Desde Paradas Herriko Plaza de Segura, calcula una visita al Ambulatorio de Beasain el 29 de septiembre de 2026, con cita a las 09:45, consulta de 20 minutos y regreso a las paradas. ¿Cuánto ocupa todo?",
+      "tool": "plan_visit"
+    },
+    {
+      "arguments": {
+        "appointment_time": "09:30",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "segura_herriko_plaza_stops"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "mobility",
+      "group": "generated:mobility",
+      "id": "mobility:08",
+      "keep_view": true,
+      "prompt": "Desde Paradas Herriko Plaza de Segura, calcula una visita al Ambulatorio de Beasain el 29 de septiembre de 2026, con cita a las 09:30, consulta de 20 minutos y regreso a las paradas. ¿Cuánto ocupa todo?",
+      "tool": "plan_visit"
+    },
+    {
+      "arguments": {
+        "appointment_time": "09:30",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "mobility",
+      "group": "generated:mobility",
+      "id": "mobility:09",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: Desde Paradas centrales de Zegama, calcula una visita al Ambulatorio de Beasain el 29 de septiembre de 2026, con cita a las 09:30, consulta de 20 minutos y regreso a las paradas. ¿Cuánto ocupa todo?",
+      "tool": "plan_visit"
+    },
+    {
+      "arguments": {
+        "appointment_time": "09:45",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 30,
+        "origin_id": "segura_herriko_plaza_stops"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "mobility",
+      "group": "generated:mobility",
+      "id": "mobility:10",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. Desde Paradas Herriko Plaza de Segura, calcula una visita al Ambulatorio de Beasain el 29 de septiembre de 2026, con cita a las 09:45, consulta de 30 minutos y regreso a las paradas. ¿Cuánto ocupa todo?",
+      "tool": "plan_visit"
+    },
+    {
+      "arguments": {
+        "appointment_time": "09:45",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 45,
+        "origin_id": "idiazabal_center_stops"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "mobility",
+      "group": "generated:mobility",
+      "id": "mobility:11",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: Desde Paradas centrales de Idiazabal, calcula una visita al Ambulatorio de Beasain el 29 de septiembre de 2026, con cita a las 09:45, consulta de 45 minutos y regreso a las paradas. ¿Cuánto ocupa todo?",
+      "tool": "plan_visit"
+    },
+    {
+      "arguments": {
+        "source_id": "EUSTAT_EMH_2025"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "source",
+      "group": "generated:source",
+      "id": "source:00",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Cómo se obtienen los recuentos y porcentajes de población de 75 años o más, con qué fuente y fecha y qué limitación tienen?",
+      "tool": "consultar_fuente"
+    },
+    {
+      "arguments": {
+        "source_id": "EUSTAT_EMH_2025"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "source",
+      "group": "generated:source",
+      "id": "source:01",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: ¿Cómo se obtienen los recuentos y porcentajes de población de 75 años o más, con qué fuente y fecha y qué limitación tienen?",
+      "tool": "consultar_fuente"
+    },
+    {
+      "arguments": {
+        "source_id": "EUSTAT_EMH_2025"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "source",
+      "group": "generated:source",
+      "id": "source:02",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Cómo se obtienen los recuentos y porcentajes de población de 75 años o más, con qué fuente y fecha y qué limitación tienen?",
+      "tool": "consultar_fuente"
+    },
+    {
+      "arguments": {
+        "source_id": "EUSTAT_EMH_2025"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "source",
+      "group": "generated:source",
+      "id": "source:03",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Cómo se obtienen los recuentos y porcentajes de población de 75 años o más, con qué fuente y fecha y qué limitación tienen?",
+      "tool": "consultar_fuente"
+    },
+    {
+      "arguments": {
+        "source_id": "EUSTAT_EMH_2025"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "source",
+      "group": "generated:source",
+      "id": "source:04",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Cómo se obtienen los recuentos y porcentajes de población de 75 años o más, con qué fuente y fecha y qué limitación tienen?",
+      "tool": "consultar_fuente"
+    },
+    {
+      "arguments": {
+        "source_id": "EUSTAT_EMH_2025"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "source",
+      "group": "generated:source",
+      "id": "source:05",
+      "keep_view": true,
+      "prompt": "¿Cómo se obtienen los recuentos y porcentajes de población de 75 años o más, con qué fuente y fecha y qué limitación tienen?",
+      "tool": "consultar_fuente"
+    },
+    {
+      "arguments": {
+        "source_id": "EUSTAT_EMH_2025"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "source",
+      "group": "generated:source",
+      "id": "source:06",
+      "keep_view": true,
+      "prompt": "¿Cómo se obtienen los recuentos y porcentajes de población de 75 años o más, con qué fuente y fecha y qué limitación tienen?",
+      "tool": "consultar_fuente"
+    },
+    {
+      "arguments": {
+        "source_id": "EUSTAT_EMH_2025"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "source",
+      "group": "generated:source",
+      "id": "source:07",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Cómo se obtienen los recuentos y porcentajes de población de 75 años o más, con qué fuente y fecha y qué limitación tienen?",
+      "tool": "consultar_fuente"
+    },
+    {
+      "arguments": {
+        "source_id": "EUSTAT_EMH_2025"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "source",
+      "group": "generated:source",
+      "id": "source:08",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Cómo se obtienen los recuentos y porcentajes de población de 75 años o más, con qué fuente y fecha y qué limitación tienen?",
+      "tool": "consultar_fuente"
+    },
+    {
+      "arguments": {
+        "source_id": "EUSTAT_EMH_2025"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "source",
+      "group": "generated:source",
+      "id": "source:09",
+      "keep_view": true,
+      "prompt": "¿Cómo se obtienen los recuentos y porcentajes de población de 75 años o más, con qué fuente y fecha y qué limitación tienen?",
+      "tool": "consultar_fuente"
+    },
+    {
+      "arguments": {
+        "source_id": "EUSTAT_EMH_2025"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "source",
+      "group": "generated:source",
+      "id": "source:10",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Cómo se obtienen los recuentos y porcentajes de población de 75 años o más, con qué fuente y fecha y qué limitación tienen?",
+      "tool": "consultar_fuente"
+    },
+    {
+      "arguments": {
+        "source_id": "EUSTAT_EMH_2025"
+      },
+      "expectation": "observed_grounded_result",
+      "family": "source",
+      "group": "generated:source",
+      "id": "source:11",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Cómo se obtienen los recuentos y porcentajes de población de 75 años o más, con qué fuente y fecha y qué limitación tienen?",
+      "tool": "consultar_fuente"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "visita sanitaria desde domicilio con citas y tiempo real"
+      },
+      "expectation": "honest_limit",
+      "family": "unsupported",
+      "group": "generated:unsupported",
+      "id": "unsupported:00",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. Desde mi domicilio de Elgeta, dime mañana la mejor cita disponible y cuánto tardaré con tráfico en tiempo real.",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "visita sanitaria desde domicilio con citas y tiempo real"
+      },
+      "expectation": "honest_limit",
+      "family": "unsupported",
+      "group": "generated:unsupported",
+      "id": "unsupported:01",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: Desde mi domicilio de Orendain, dime mañana la mejor cita disponible y cuánto tardaré con tráfico en tiempo real.",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "visita sanitaria desde domicilio con citas y tiempo real"
+      },
+      "expectation": "honest_limit",
+      "family": "unsupported",
+      "group": "generated:unsupported",
+      "id": "unsupported:02",
+      "keep_view": true,
+      "prompt": "Desde mi domicilio de Mutiloa, dime mañana la mejor cita disponible y cuánto tardaré con tráfico en tiempo real.",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "visita sanitaria desde domicilio con citas y tiempo real"
+      },
+      "expectation": "honest_limit",
+      "family": "unsupported",
+      "group": "generated:unsupported",
+      "id": "unsupported:03",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. Desde mi domicilio de Urnieta, dime mañana la mejor cita disponible y cuánto tardaré con tráfico en tiempo real.",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "visita sanitaria desde domicilio con citas y tiempo real"
+      },
+      "expectation": "honest_limit",
+      "family": "unsupported",
+      "group": "generated:unsupported",
+      "id": "unsupported:04",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. Desde mi domicilio de Errenteria, dime mañana la mejor cita disponible y cuánto tardaré con tráfico en tiempo real.",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "visita sanitaria desde domicilio con citas y tiempo real"
+      },
+      "expectation": "honest_limit",
+      "family": "unsupported",
+      "group": "generated:unsupported",
+      "id": "unsupported:05",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: Desde mi domicilio de Belauntza, dime mañana la mejor cita disponible y cuánto tardaré con tráfico en tiempo real.",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "visita sanitaria desde domicilio con citas y tiempo real"
+      },
+      "expectation": "honest_limit",
+      "family": "unsupported",
+      "group": "generated:unsupported",
+      "id": "unsupported:06",
+      "keep_view": true,
+      "prompt": "Desde mi domicilio de Altzo, dime mañana la mejor cita disponible y cuánto tardaré con tráfico en tiempo real.",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "visita sanitaria desde domicilio con citas y tiempo real"
+      },
+      "expectation": "honest_limit",
+      "family": "unsupported",
+      "group": "generated:unsupported",
+      "id": "unsupported:07",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: Desde mi domicilio de Zestoa, dime mañana la mejor cita disponible y cuánto tardaré con tráfico en tiempo real.",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "visita sanitaria desde domicilio con citas y tiempo real"
+      },
+      "expectation": "honest_limit",
+      "family": "unsupported",
+      "group": "generated:unsupported",
+      "id": "unsupported:08",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. Desde mi domicilio de Baliarrain, dime mañana la mejor cita disponible y cuánto tardaré con tráfico en tiempo real.",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "visita sanitaria desde domicilio con citas y tiempo real"
+      },
+      "expectation": "honest_limit",
+      "family": "unsupported",
+      "group": "generated:unsupported",
+      "id": "unsupported:09",
+      "keep_view": true,
+      "prompt": "Desde mi domicilio de Ordizia, dime mañana la mejor cita disponible y cuánto tardaré con tráfico en tiempo real.",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "visita sanitaria desde domicilio con citas y tiempo real"
+      },
+      "expectation": "honest_limit",
+      "family": "unsupported",
+      "group": "generated:unsupported",
+      "id": "unsupported:10",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: Desde mi domicilio de Usurbil, dime mañana la mejor cita disponible y cuánto tardaré con tráfico en tiempo real.",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "visita sanitaria desde domicilio con citas y tiempo real"
+      },
+      "expectation": "honest_limit",
+      "family": "unsupported",
+      "group": "generated:unsupported",
+      "id": "unsupported:11",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: Desde mi domicilio de Orendain, dime mañana la mejor cita disponible y cuánto tardaré con tráfico en tiempo real.",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "causalidad de envejecimiento y distancia"
+      },
+      "expectation": "honest_limit",
+      "family": "causal",
+      "group": "generated:causal",
+      "id": "causal:00",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: Si Zizurkil tiene más población mayor y más distancia a servicios, ¿eso demuestra que la distancia causa envejecimiento?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "causalidad de envejecimiento y distancia"
+      },
+      "expectation": "honest_limit",
+      "family": "causal",
+      "group": "generated:causal",
+      "id": "causal:01",
+      "keep_view": true,
+      "prompt": "Si Orexa tiene más población mayor y más distancia a servicios, ¿eso demuestra que la distancia causa envejecimiento?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "causalidad de envejecimiento y distancia"
+      },
+      "expectation": "honest_limit",
+      "family": "causal",
+      "group": "generated:causal",
+      "id": "causal:02",
+      "keep_view": true,
+      "prompt": "Si Larraul tiene más población mayor y más distancia a servicios, ¿eso demuestra que la distancia causa envejecimiento?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "causalidad de envejecimiento y distancia"
+      },
+      "expectation": "honest_limit",
+      "family": "causal",
+      "group": "generated:causal",
+      "id": "causal:03",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: Si Zumarraga tiene más población mayor y más distancia a servicios, ¿eso demuestra que la distancia causa envejecimiento?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "causalidad de envejecimiento y distancia"
+      },
+      "expectation": "honest_limit",
+      "family": "causal",
+      "group": "generated:causal",
+      "id": "causal:04",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. Si Ibarra tiene más población mayor y más distancia a servicios, ¿eso demuestra que la distancia causa envejecimiento?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "causalidad de envejecimiento y distancia"
+      },
+      "expectation": "honest_limit",
+      "family": "causal",
+      "group": "generated:causal",
+      "id": "causal:05",
+      "keep_view": true,
+      "prompt": "Si Alkiza tiene más población mayor y más distancia a servicios, ¿eso demuestra que la distancia causa envejecimiento?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "causalidad de envejecimiento y distancia"
+      },
+      "expectation": "honest_limit",
+      "family": "causal",
+      "group": "generated:causal",
+      "id": "causal:06",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. Si Bergara tiene más población mayor y más distancia a servicios, ¿eso demuestra que la distancia causa envejecimiento?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "causalidad de envejecimiento y distancia"
+      },
+      "expectation": "honest_limit",
+      "family": "causal",
+      "group": "generated:causal",
+      "id": "causal:07",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. Si Usurbil tiene más población mayor y más distancia a servicios, ¿eso demuestra que la distancia causa envejecimiento?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "causalidad de envejecimiento y distancia"
+      },
+      "expectation": "honest_limit",
+      "family": "causal",
+      "group": "generated:causal",
+      "id": "causal:08",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. Si Altzaga tiene más población mayor y más distancia a servicios, ¿eso demuestra que la distancia causa envejecimiento?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "causalidad de envejecimiento y distancia"
+      },
+      "expectation": "honest_limit",
+      "family": "causal",
+      "group": "generated:causal",
+      "id": "causal:09",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: Si Alkiza tiene más población mayor y más distancia a servicios, ¿eso demuestra que la distancia causa envejecimiento?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "causalidad de envejecimiento y distancia"
+      },
+      "expectation": "honest_limit",
+      "family": "causal",
+      "group": "generated:causal",
+      "id": "causal:10",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. Si Villabona tiene más población mayor y más distancia a servicios, ¿eso demuestra que la distancia causa envejecimiento?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "causalidad de envejecimiento y distancia"
+      },
+      "expectation": "honest_limit",
+      "family": "causal",
+      "group": "generated:causal",
+      "id": "causal:11",
+      "keep_view": true,
+      "prompt": "Si Irun tiene más población mayor y más distancia a servicios, ¿eso demuestra que la distancia causa envejecimiento?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "distribución espacial de residentes dentro de radio"
+      },
+      "expectation": "honest_limit",
+      "family": "subject",
+      "group": "generated:subject",
+      "id": "subject:00",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Qué porcentaje de los vecinos de Deba de 65 años o más vive a menos de 1 km de salud mental?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "distribución espacial de residentes dentro de radio"
+      },
+      "expectation": "honest_limit",
+      "family": "subject",
+      "group": "generated:subject",
+      "id": "subject:01",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Qué porcentaje de los vecinos de Mendaro de 65 años o más vive a menos de 1 km de atención primaria?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "distribución espacial de residentes dentro de radio"
+      },
+      "expectation": "honest_limit",
+      "family": "subject",
+      "group": "generated:subject",
+      "id": "subject:02",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Qué porcentaje de los vecinos de Asteasu de 65 años o más vive a menos de 2 km de salud mental?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "distribución espacial de residentes dentro de radio"
+      },
+      "expectation": "honest_limit",
+      "family": "subject",
+      "group": "generated:subject",
+      "id": "subject:03",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué porcentaje de los vecinos de Albiztur de 75 años o más vive a menos de 2 km de atención primaria?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "distribución espacial de residentes dentro de radio"
+      },
+      "expectation": "honest_limit",
+      "family": "subject",
+      "group": "generated:subject",
+      "id": "subject:04",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: ¿Qué porcentaje de los vecinos de Eskoriatza de 75 años o más vive a menos de 5 km de salud mental?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "distribución espacial de residentes dentro de radio"
+      },
+      "expectation": "honest_limit",
+      "family": "subject",
+      "group": "generated:subject",
+      "id": "subject:05",
+      "keep_view": true,
+      "prompt": "¿Qué porcentaje de los vecinos de Olaberria de 65 años o más vive a menos de 1 km de hospitales?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "distribución espacial de residentes dentro de radio"
+      },
+      "expectation": "honest_limit",
+      "family": "subject",
+      "group": "generated:subject",
+      "id": "subject:06",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: ¿Qué porcentaje de los vecinos de Soraluze-Placencia de las Armas de 65 años o más vive a menos de 3 km de salud mental?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "distribución espacial de residentes dentro de radio"
+      },
+      "expectation": "honest_limit",
+      "family": "subject",
+      "group": "generated:subject",
+      "id": "subject:07",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Qué porcentaje de los vecinos de Ezkio-Itsaso de 75 años o más vive a menos de 5 km de salud mental?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "distribución espacial de residentes dentro de radio"
+      },
+      "expectation": "honest_limit",
+      "family": "subject",
+      "group": "generated:subject",
+      "id": "subject:08",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué porcentaje de los vecinos de Aizarnazabal de 65 años o más vive a menos de 3 km de atención primaria?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "distribución espacial de residentes dentro de radio"
+      },
+      "expectation": "honest_limit",
+      "family": "subject",
+      "group": "generated:subject",
+      "id": "subject:09",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Qué porcentaje de los vecinos de Azpeitia de 65 años o más vive a menos de 2 km de hospitales?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "distribución espacial de residentes dentro de radio"
+      },
+      "expectation": "honest_limit",
+      "family": "subject",
+      "group": "generated:subject",
+      "id": "subject:10",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: ¿Qué porcentaje de los vecinos de Irun de 75 años o más vive a menos de 1 km de salud mental?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "distribución espacial de residentes dentro de radio"
+      },
+      "expectation": "honest_limit",
+      "family": "subject",
+      "group": "generated:subject",
+      "id": "subject:11",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Qué porcentaje de los vecinos de Legorreta de 75 años o más vive a menos de 1 km de salud mental?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "capacidad citas calidad de atención sanitaria"
+      },
+      "expectation": "honest_limit",
+      "family": "capacity",
+      "group": "generated:capacity",
+      "id": "capacity:00",
+      "keep_view": true,
+      "prompt": "¿Los registros sanitarios de Arama me dicen cuántos médicos tienen, si quedan citas y si la atención es buena?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "capacidad citas calidad de atención sanitaria"
+      },
+      "expectation": "honest_limit",
+      "family": "capacity",
+      "group": "generated:capacity",
+      "id": "capacity:01",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Los registros sanitarios de Eskoriatza me dicen cuántos médicos tienen, si quedan citas y si la atención es buena?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "capacidad citas calidad de atención sanitaria"
+      },
+      "expectation": "honest_limit",
+      "family": "capacity",
+      "group": "generated:capacity",
+      "id": "capacity:02",
+      "keep_view": true,
+      "prompt": "¿Los registros sanitarios de Oiartzun me dicen cuántos médicos tienen, si quedan citas y si la atención es buena?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "capacidad citas calidad de atención sanitaria"
+      },
+      "expectation": "honest_limit",
+      "family": "capacity",
+      "group": "generated:capacity",
+      "id": "capacity:03",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Los registros sanitarios de Andoain me dicen cuántos médicos tienen, si quedan citas y si la atención es buena?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "capacidad citas calidad de atención sanitaria"
+      },
+      "expectation": "honest_limit",
+      "family": "capacity",
+      "group": "generated:capacity",
+      "id": "capacity:04",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: ¿Los registros sanitarios de Oiartzun me dicen cuántos médicos tienen, si quedan citas y si la atención es buena?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "capacidad citas calidad de atención sanitaria"
+      },
+      "expectation": "honest_limit",
+      "family": "capacity",
+      "group": "generated:capacity",
+      "id": "capacity:05",
+      "keep_view": true,
+      "prompt": "¿Los registros sanitarios de Alkiza me dicen cuántos médicos tienen, si quedan citas y si la atención es buena?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "capacidad citas calidad de atención sanitaria"
+      },
+      "expectation": "honest_limit",
+      "family": "capacity",
+      "group": "generated:capacity",
+      "id": "capacity:06",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Los registros sanitarios de Zizurkil me dicen cuántos médicos tienen, si quedan citas y si la atención es buena?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "capacidad citas calidad de atención sanitaria"
+      },
+      "expectation": "honest_limit",
+      "family": "capacity",
+      "group": "generated:capacity",
+      "id": "capacity:07",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: ¿Los registros sanitarios de Elgoibar me dicen cuántos médicos tienen, si quedan citas y si la atención es buena?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "capacidad citas calidad de atención sanitaria"
+      },
+      "expectation": "honest_limit",
+      "family": "capacity",
+      "group": "generated:capacity",
+      "id": "capacity:08",
+      "keep_view": true,
+      "prompt": "Explícamelo para una persona no técnica: ¿Los registros sanitarios de Alegia me dicen cuántos médicos tienen, si quedan citas y si la atención es buena?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "capacidad citas calidad de atención sanitaria"
+      },
+      "expectation": "honest_limit",
+      "family": "capacity",
+      "group": "generated:capacity",
+      "id": "capacity:09",
+      "keep_view": true,
+      "prompt": "Necesito entender esto: ¿Los registros sanitarios de Aia me dicen cuántos médicos tienen, si quedan citas y si la atención es buena?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "capacidad citas calidad de atención sanitaria"
+      },
+      "expectation": "honest_limit",
+      "family": "capacity",
+      "group": "generated:capacity",
+      "id": "capacity:10",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Los registros sanitarios de Azkoitia me dicen cuántos médicos tienen, si quedan citas y si la atención es buena?",
+      "tool": "consultar_capacidades"
+    },
+    {
+      "arguments": {
+        "pregunta_o_dimension": "capacidad citas calidad de atención sanitaria"
+      },
+      "expectation": "honest_limit",
+      "family": "capacity",
+      "group": "generated:capacity",
+      "id": "capacity:11",
+      "keep_view": true,
+      "prompt": "Estoy preparando un estudio. ¿Los registros sanitarios de Lazkao me dicen cuántos médicos tienen, si quedan citas y si la atención es buena?",
+      "tool": "consultar_capacidades"
+    }
+  ],
+  "classification": "DEVELOPMENT_OFFLINE_TOOL_EXPECTATIONS_NOT_LLM_ROUTING_NOT_HOLDOUT",
+  "seed": 1802026
+}
