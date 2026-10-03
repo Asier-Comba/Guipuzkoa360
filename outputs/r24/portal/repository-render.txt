@@ -1,0 +1,547 @@
+- link "Skip to content":
+  - /url: "#start-of-content"
+- banner "Global navigation menu":
+  - button "Open menu":
+  - link "Homepage (g then d)":
+    - /url: /
+  - navigation "Breadcrumbs":
+    - list:
+      - link "Asier-Comba":
+        - /url: /Asier-Comba
+        - generic: Asier-Comba
+      - link "Guipuzkoa360":
+        - /url: /Asier-Comba/Guipuzkoa360
+      - button "Switch repository (alt shift r)":
+  - button "Open quick search dialog, type / to search":
+    - text: Type
+    - generic: /
+    - text: to search
+  - link "Chat with Copilot":
+    - /url: /copilot
+  - button "Open Copilot…":
+  - button "Create new...":
+  - link "All issues":
+    - /url: /issues
+  - link "All pull requests":
+    - /url: /pulls
+  - link "All repositories":
+    - /url: /repos
+  - link "You have unread notifications (g then n)":
+    - /url: /notifications
+  - button "Open user navigation menu":
+    - img "Oier Duñabeitia"
+  - heading "Repository navigation" [level=2]
+  - navigation "Repository":
+    - list:
+      - link "Code":
+        - /url: /Asier-Comba/Guipuzkoa360
+        - generic: Code
+      - link "Issues (1)":
+        - /url: /Asier-Comba/Guipuzkoa360/issues
+        - generic: Issues
+        - generic: "1"
+        - generic: (1)
+      - link "Pull requests (14)":
+        - /url: /Asier-Comba/Guipuzkoa360/pulls
+        - generic: Pull requests
+        - generic: "14"
+        - generic: (14)
+      - link "Agents":
+        - /url: /Asier-Comba/Guipuzkoa360/agents?author=oierdu
+        - generic: Agents
+      - link "Actions":
+        - /url: /Asier-Comba/Guipuzkoa360/actions
+        - generic: Actions
+      - link "Projects":
+        - /url: /Asier-Comba/Guipuzkoa360/projects
+        - generic: Projects
+      - link "Wiki":
+        - /url: /Asier-Comba/Guipuzkoa360/wiki
+        - generic: Wiki
+      - link "Security and quality":
+        - /url: /Asier-Comba/Guipuzkoa360/security
+        - generic: Security and quality
+      - link "Insights":
+        - /url: /Asier-Comba/Guipuzkoa360/pulse
+        - generic: Insights
+      - link "Settings":
+        - /url: /Asier-Comba/Guipuzkoa360/settings
+        - generic: Settings
+- main:
+  - img "Asier-Comba"
+  - generic "Guipuzkoa360":
+    - strong:
+      - link "Guipuzkoa360":
+        - /url: /Asier-Comba/Guipuzkoa360
+  - generic: Public
+  - list:
+    - 'button "Watch: Participating in Asier-Comba/Guipuzkoa360. 0 users are watching this repository. Click to change subscription settings."':
+      - generic: Watch
+      - generic: "0"
+      - generic: (0)
+    - link "Fork your own copy of Asier-Comba/Guipuzkoa360":
+      - /url: /Asier-Comba/Guipuzkoa360/fork
+      - text: Fork
+      - generic: "0"
+      - generic: (0)
+    - button "See your forks of this repository":
+    - button "Star Asier-Comba/Guipuzkoa360":
+      - text: Star
+      - generic: "0"
+      - generic: (0)
+    - button "Star lists":
+  - button "main branch":
+    - generic: main
+  - link "39 Branches":
+    - /url: /Asier-Comba/Guipuzkoa360/branches
+    - strong: "39"
+    - text: Branches
+  - link "1 Tag":
+    - /url: /Asier-Comba/Guipuzkoa360/tags
+    - strong: "1"
+    - text: Tag
+  - combobox "Go to file"
+  - generic: t
+  - generic: T
+  - heading "Add file" [level=2]
+  - button "Add file":
+    - text: Add file
+  - button "Code":
+    - generic: Code
+  - heading "Latest commit" [level=2]
+  - link "oierdu":
+    - /url: /oierdu
+    - img "oierdu"
+  - link "commits by oierdu":
+    - /url: /Asier-Comba/Guipuzkoa360/commits?author=oierdu
+    - text: oierdu
+  - 'link "docs(presentation): humanize final jury surfaces"':
+    - /url: /Asier-Comba/Guipuzkoa360/commit/e213eaa9b73b0f8a4d1893e0269fe92fe6756955
+  - button "success":
+  - link "Commit e213eaa":
+    - /url: /Asier-Comba/Guipuzkoa360/commit/e213eaa9b73b0f8a4d1893e0269fe92fe6756955
+    - text: e213eaa
+  - text: ·
+  - generic "Sep 28, 2026, 12:13 GMT+2": Sep 28, 20265 days ago
+  - heading "History" [level=2]
+  - link "91 Commits":
+    - /url: /Asier-Comba/Guipuzkoa360/commits/main/
+    - generic: 91 Commits
+  - heading "Folders and files" [level=2]
+  - table "Folders and files":
+    - rowgroup:
+      - row "Name Last commit message Last commit date":
+        - columnheader "Name"
+        - columnheader "Last commit message":
+          - generic "Last commit message"
+        - columnheader "Last commit date":
+          - generic "Last commit date"
+    - rowgroup:
+      - 'row ".github/workflows, (Directory) ci(release): run exhaustive validation on final candidate Sep 26, 2026last week"':
+        - cell ".github/workflows, (Directory)":
+          - link ".github/workflows, (Directory)":
+            - /url: /Asier-Comba/Guipuzkoa360/tree/main/.github/workflows
+            - text: .github/workflows
+        - 'cell "ci(release): run exhaustive validation on final candidate"':
+          - 'link "ci(release): run exhaustive validation on final candidate"':
+            - /url: /Asier-Comba/Guipuzkoa360/commit/3e89fbf7e047adf9f6e1cd421819ec14b7d92f6f
+        - cell "Sep 26, 2026last week":
+          - generic: Sep 26, 2026last week
+      - 'row "agentes/gipuzkoa360, (Directory) fix: aclarar el alcance del contador de escenarios Sep 24, 2026last week"':
+        - cell "agentes/gipuzkoa360, (Directory)":
+          - link "agentes/gipuzkoa360, (Directory)":
+            - /url: /Asier-Comba/Guipuzkoa360/tree/main/agentes/gipuzkoa360
+            - text: agentes/gipuzkoa360
+        - 'cell "fix: aclarar el alcance del contador de escenarios"':
+          - 'link "fix: aclarar el alcance del contador de escenarios"':
+            - /url: /Asier-Comba/Guipuzkoa360/commit/195b4980fa5998b096c308296a55e452380b0371
+        - cell "Sep 24, 2026last week":
+          - generic: Sep 24, 2026last week
+      - 'row "analisis, (Directory) test(evaluation): add independent research-grade benchmark Sep 27, 2026last week"':
+        - cell "analisis, (Directory)":
+          - link "analisis, (Directory)":
+            - /url: /Asier-Comba/Guipuzkoa360/tree/main/analisis
+            - text: analisis
+        - 'cell "test(evaluation): add independent research-grade benchmark"':
+          - 'link "test(evaluation): add independent research-grade benchmark"':
+            - /url: /Asier-Comba/Guipuzkoa360/commit/be5fd28989548be8533af0304a4f45bca6f3eac7
+        - cell "Sep 27, 2026last week":
+          - generic: Sep 27, 2026last week
+      - 'row "datos_originales, (Directory) fix(data): make source and runtime hashes checkout-stable Sep 24, 2026last week"':
+        - cell "datos_originales, (Directory)":
+          - link "datos_originales, (Directory)":
+            - /url: /Asier-Comba/Guipuzkoa360/tree/main/datos_originales
+            - text: datos_originales
+        - 'cell "fix(data): make source and runtime hashes checkout-stable"':
+          - 'link "fix(data): make source and runtime hashes checkout-stable"':
+            - /url: /Asier-Comba/Guipuzkoa360/commit/f43ba04ac7ecbfb908b69951a56b1c08df1b09b3
+        - cell "Sep 24, 2026last week":
+          - generic: Sep 24, 2026last week
+      - 'row "datos_preparados, (Directory) feat(agent): implement deterministic Gipuzkoa 360 agent Sep 24, 2026last week"':
+        - cell "datos_preparados, (Directory)":
+          - link "datos_preparados, (Directory)":
+            - /url: /Asier-Comba/Guipuzkoa360/tree/main/datos_preparados
+            - text: datos_preparados
+        - 'cell "feat(agent): implement deterministic Gipuzkoa 360 agent"':
+          - 'link "feat(agent): implement deterministic Gipuzkoa 360 agent"':
+            - /url: /Asier-Comba/Guipuzkoa360/commit/92958878990b0dfda91752cae593859ca1502ece
+        - cell "Sep 24, 2026last week":
+          - generic: Sep 24, 2026last week
+      - 'row "docs, (Directory) docs(presentation): humanize final jury surfaces Sep 28, 20265 days ago"':
+        - cell "docs, (Directory)":
+          - link "docs, (Directory)":
+            - /url: /Asier-Comba/Guipuzkoa360/tree/main/docs
+            - text: docs
+        - 'cell "docs(presentation): humanize final jury surfaces"':
+          - 'link "docs(presentation): humanize final jury surfaces"':
+            - /url: /Asier-Comba/Guipuzkoa360/commit/e213eaa9b73b0f8a4d1893e0269fe92fe6756955
+        - cell "Sep 28, 20265 days ago":
+          - generic: Sep 28, 20265 days ago
+      - 'row "prototypes, (Directory) test(evaluation): tighten out-of-scope scoring and fingerprint harness Sep 25, 2026last week"':
+        - cell "prototypes, (Directory)":
+          - link "prototypes, (Directory)":
+            - /url: /Asier-Comba/Guipuzkoa360/tree/main/prototypes
+            - text: prototypes
+        - 'cell "test(evaluation): tighten out-of-scope scoring and fingerprint harness"':
+          - 'link "test(evaluation): tighten out-of-scope scoring and fingerprint harness"':
+            - /url: /Asier-Comba/Guipuzkoa360/commit/eae3b7026a8608946d31c718fabc10111c3fa16e
+        - cell "Sep 25, 2026last week":
+          - generic: Sep 25, 2026last week
+      - 'row "resultados, (Directory) docs(presentation): humanize final jury surfaces Sep 28, 20265 days ago"':
+        - cell "resultados, (Directory)":
+          - link "resultados, (Directory)":
+            - /url: /Asier-Comba/Guipuzkoa360/tree/main/resultados
+            - text: resultados
+        - 'cell "docs(presentation): humanize final jury surfaces"':
+          - 'link "docs(presentation): humanize final jury surfaces"':
+            - /url: /Asier-Comba/Guipuzkoa360/commit/e213eaa9b73b0f8a4d1893e0269fe92fe6756955
+        - cell "Sep 28, 20265 days ago":
+          - generic: Sep 28, 20265 days ago
+      - 'row "scripts, (Directory) docs(presentation): humanize final jury surfaces Sep 28, 20265 days ago"':
+        - cell "scripts, (Directory)":
+          - link "scripts, (Directory)":
+            - /url: /Asier-Comba/Guipuzkoa360/tree/main/scripts
+            - text: scripts
+        - 'cell "docs(presentation): humanize final jury surfaces"':
+          - 'link "docs(presentation): humanize final jury surfaces"':
+            - /url: /Asier-Comba/Guipuzkoa360/commit/e213eaa9b73b0f8a4d1893e0269fe92fe6756955
+        - cell "Sep 28, 20265 days ago":
+          - generic: Sep 28, 20265 days ago
+      - 'row "tests, (Directory) docs(product): reconcile final portal evidence across jury surfaces Sep 26, 2026last week"':
+        - cell "tests, (Directory)":
+          - link "tests, (Directory)":
+            - /url: /Asier-Comba/Guipuzkoa360/tree/main/tests
+            - text: tests
+        - 'cell "docs(product): reconcile final portal evidence across jury surfaces"':
+          - 'link "docs(product): reconcile final portal evidence across jury surfaces"':
+            - /url: /Asier-Comba/Guipuzkoa360/commit/694a5b3409c16252fdac8c476fc8365f639f6e98
+        - cell "Sep 26, 2026last week":
+          - generic: Sep 26, 2026last week
+      - 'row ".gitattributes, (File) build: canonizar ZIP y demostrar diferencia de EOL Sep 25, 2026last week"':
+        - cell ".gitattributes, (File)":
+          - link ".gitattributes, (File)":
+            - /url: /Asier-Comba/Guipuzkoa360/blob/main/.gitattributes
+            - text: .gitattributes
+        - 'cell "build: canonizar ZIP y demostrar diferencia de EOL"':
+          - 'link "build: canonizar ZIP y demostrar diferencia de EOL"':
+            - /url: /Asier-Comba/Guipuzkoa360/commit/5e7210ca94e4b147c4cfa74a7fda8839f5e3e5f9
+        - cell "Sep 25, 2026last week":
+          - generic: Sep 25, 2026last week
+      - 'row ".gitignore, (File) feat(agent): integrate real Work 1 data Sep 24, 2026last week"':
+        - cell ".gitignore, (File)":
+          - link ".gitignore, (File)":
+            - /url: /Asier-Comba/Guipuzkoa360/blob/main/.gitignore
+            - text: .gitignore
+        - 'cell "feat(agent): integrate real Work 1 data"':
+          - 'link "feat(agent): integrate real Work 1 data"':
+            - /url: /Asier-Comba/Guipuzkoa360/commit/45cb122c7b97b74aa252db1f68072d17aeb90fdf
+        - cell "Sep 24, 2026last week":
+          - generic: Sep 24, 2026last week
+      - 'row "FUENTES.md, (File) docs(data): document traceable Work 2 and Work 3 handoff Sep 24, 2026last week"':
+        - cell "FUENTES.md, (File)":
+          - link "FUENTES.md, (File)":
+            - /url: /Asier-Comba/Guipuzkoa360/blob/main/FUENTES.md
+            - text: FUENTES.md
+        - 'cell "docs(data): document traceable Work 2 and Work 3 handoff"':
+          - 'link "docs(data): document traceable Work 2 and Work 3 handoff"':
+            - /url: /Asier-Comba/Guipuzkoa360/commit/bf0a793419a7ee45ba663c342df8ab9df7d6bbad
+        - cell "Sep 24, 2026last week":
+          - generic: Sep 24, 2026last week
+      - 'row "README.md, (File) docs(presentation): humanize final jury surfaces Sep 28, 20265 days ago"':
+        - cell "README.md, (File)":
+          - link "README.md, (File)":
+            - /url: /Asier-Comba/Guipuzkoa360/blob/main/README.md
+            - text: README.md
+        - 'cell "docs(presentation): humanize final jury surfaces"':
+          - 'link "docs(presentation): humanize final jury surfaces"':
+            - /url: /Asier-Comba/Guipuzkoa360/commit/e213eaa9b73b0f8a4d1893e0269fe92fe6756955
+        - cell "Sep 28, 20265 days ago":
+          - generic: Sep 28, 20265 days ago
+      - 'row "pyproject.toml, (File) feat(agent): implement deterministic Gipuzkoa 360 agent Sep 24, 2026last week"':
+        - cell "pyproject.toml, (File)":
+          - link "pyproject.toml, (File)":
+            - /url: /Asier-Comba/Guipuzkoa360/blob/main/pyproject.toml
+            - text: pyproject.toml
+        - 'cell "feat(agent): implement deterministic Gipuzkoa 360 agent"':
+          - 'link "feat(agent): implement deterministic Gipuzkoa 360 agent"':
+            - /url: /Asier-Comba/Guipuzkoa360/commit/92958878990b0dfda91752cae593859ca1502ece
+        - cell "Sep 24, 2026last week":
+          - generic: Sep 24, 2026last week
+      - 'row "requirements.txt, (File) feat(data): ingest official demographic and health sources Sep 24, 2026last week"':
+        - cell "requirements.txt, (File)":
+          - link "requirements.txt, (File)":
+            - /url: /Asier-Comba/Guipuzkoa360/blob/main/requirements.txt
+            - text: requirements.txt
+        - 'cell "feat(data): ingest official demographic and health sources"':
+          - 'link "feat(data): ingest official demographic and health sources"':
+            - /url: /Asier-Comba/Guipuzkoa360/commit/e3043ae715abdfd62d666239a35c70fd939d23f9
+        - cell "Sep 24, 2026last week":
+          - generic: Sep 24, 2026last week
+  - heading "Repository files navigation" [level=2]
+  - navigation "Repository files":
+    - list:
+      - link "README":
+        - /url: "#"
+        - generic: README
+  - button "Edit file":
+  - button "Outline":
+  - article:
+    - heading "GIPUZKOA 360" [level=1]
+    - 'link "Permalink: GIPUZKOA 360"':
+      - /url: "#gipuzkoa-360"
+    - paragraph: Un agente para explorar dónde coinciden envejecimiento municipal y mayor distancia geométrica a servicios sanitarios en Gipuzkoa.
+    - paragraph: La pregunta se convierte en una operación reproducible sobre datos oficiales. Siete herramientas consultan fuentes, resumen y comparan municipios, analizan envejecimiento y proximidad, identifican coincidencias y simulan cambios hipotéticos. Al cambiar los parámetros del diálogo, el agente vuelve a calcular.
+    - paragraph:
+      - text: Pensado para
+      - strong: personal técnico municipal y territorial
+      - text: que necesita detectar patrones y contrastar diferencias entre municipios antes de profundizar con información sectorial adicional. No se afirma implantación administrativa ni validación con usuarios reales.
+    - heading "Ver el proyecto" [level=2]
+    - 'link "Permalink: Ver el proyecto"':
+      - /url: "#ver-el-proyecto"
+    - paragraph:
+      - text: Abra
+      - strong:
+        - link "la demo territorial":
+          - /url: /Asier-Comba/Guipuzkoa360/blob/main/resultados/demo.html
+      - text: "descargando el HTML: funciona sin servidor ni Internet. Sus tres consultas y el escenario son cálculos reales guardados; la conversación en vivo se realiza en el portal privado."
+      - link "Guion de demostración":
+        - /url: /Asier-Comba/Guipuzkoa360/blob/main/docs/DEMO.md
+      - text: .
+    - paragraph:
+      - text: "La entrada es única: pregunta, hallazgo y mapa. Después se puede cambiar el criterio, abrir «Cómo se calcula», comparar municipios o explorar Aduna. La página"
+      - link "Cómo se comprueba":
+        - /url: /Asier-Comba/Guipuzkoa360/blob/main/resultados/control_center.html
+      - text: explica la fiabilidad en lenguaje sencillo y conserva la validación técnica completa en un desplegable secundario.
+    - list:
+      - strong:
+        - link "Una página para el jurado":
+          - /url: /Asier-Comba/Guipuzkoa360/blob/main/docs/JURY_ONE_PAGER.md
+        - text: ":"
+      - text: problema, destinatario, evidencia y límite.
+      - strong:
+        - link "Guía para empezar":
+          - /url: /Asier-Comba/Guipuzkoa360/blob/main/docs/PRODUCT_GUIDE.md
+        - text: ":"
+      - text: qué preguntar, cómo leer los criterios y cómo comprobar una cifra.
+      - strong:
+        - link "44 preguntas del jurado":
+          - /url: /Asier-Comba/Guipuzkoa360/blob/main/docs/JURY_QA.md
+        - text: ":"
+      - text: respuestas breves con punteros de evidencia.
+    - paragraph:
+      - text: El
+      - strong: caso principal
+      - text: "identifica 7 municipios al combinar población de 65 o más años y mayor distancia geométrica a atención primaria. Una consulta distinta para mayores de 75 años, con otro criterio, identifica 4 municipios. Una tercera consulta para 65 o más años, con un nivel de exigencia mayor, identifica 2. Son tres preguntas diferentes: juntas demuestran que el agente recalcula cuando cambian la edad y los criterios."
+    - heading "Datos y límites" [level=2]
+    - 'link "Permalink: Datos y límites"':
+      - /url: "#datos-y-límites"
+    - table:
+      - rowgroup:
+        - row "Fuente Contenido Periodo":
+          - columnheader "Fuente"
+          - columnheader "Contenido"
+          - columnheader "Periodo"
+      - rowgroup:
+        - row "Eustat Población de 88 municipios 2025-01-01":
+          - cell "Eustat"
+          - cell "Población de 88 municipios"
+          - cell "2025-01-01"
+        - row "geoEuskadi Geometría municipal 2025-05-07":
+          - cell "geoEuskadi"
+          - cell "Geometría municipal"
+          - cell "2025-05-07"
+        - row "Open Data Euskadi 148 registros sanitarios públicos 2026-09-20":
+          - cell "Open Data Euskadi"
+          - cell "148 registros sanitarios públicos"
+          - cell "2026-09-20"
+    - paragraph: Distancia geométrica no es tiempo de viaje. Registro no es capacidad ni cita disponible. Coincidencia no demuestra causalidad. Escenario no es predicción. El punto municipal no está ponderado por población y las fuentes tienen fechas distintas. Una persona supervisa la interpretación.
+    - heading "Entender y reproducir" [level=2]
+    - 'link "Permalink: Entender y reproducir"':
+      - /url: "#entender-y-reproducir"
+    - paragraph:
+      - text: "La lectura principal se limita a seis documentos: este README,"
+      - link "Fuentes":
+        - /url: /Asier-Comba/Guipuzkoa360/blob/main/FUENTES.md
+      - text: ","
+      - link "Metodología":
+        - /url: /Asier-Comba/Guipuzkoa360/blob/main/docs/METODOLOGIA.md
+      - text: ","
+      - link "Validación":
+        - /url: /Asier-Comba/Guipuzkoa360/blob/main/docs/VALIDATION.md
+      - text: ","
+      - link "Pruebas automatizadas":
+        - /url: /Asier-Comba/Guipuzkoa360/blob/main/docs/BENCHMARKS.md
+      - text: "y"
+      - link "Demo":
+        - /url: /Asier-Comba/Guipuzkoa360/blob/main/docs/DEMO.md
+      - text: . La evidencia histórica y los informes de ingeniería son material de apoyo.
+    - paragraph: "Con Python 3.12 y Node, desde este repositorio:"
+    - generic: py -3.12 -m pip install -r requirements.txt py -3.12 -m pytest -q node --test tests/e2e/contract_flow.test.mjs py -3.12 scripts/release/build_jury_data.py node scripts/build_jury.mjs py -3.12 scripts/release/verify_final_artifacts.py py -3.12 scripts/benchmark/full_validation.py --output-dir analisis/final py -3.12 scripts/agent/build_portal_package.py
+    - button "Copy code to clipboard":
+    - paragraph: Se usan los datos versionados; reconstruir esta evidencia no requiere descargar fuentes nuevas. La instalación inicial de dependencias sí puede requerir red.
+    - heading "Equipo y contribuciones" [level=2]
+    - 'link "Permalink: Equipo y contribuciones"':
+      - /url: "#equipo-y-contribuciones"
+    - paragraph:
+      - strong: Oier Duñabeitia
+      - text: ": datos, geografía, calidad y reproducibilidad."
+      - strong: Asier Comba
+      - text: ": agente, validación y cierre técnico."
+      - strong: Hugo Fernández Díez
+      - text: ": producto, diseño visual, integración y pruebas conversacionales."
+      - link "Equipo y contribuciones":
+        - /url: /Asier-Comba/Guipuzkoa360/blob/main/docs/TEAM.md
+      - text: .
+    - paragraph: El cierre técnico está preparado para revisión. La publicación de la entrega requiere una decisión humana.
+  - heading "About" [level=2]
+  - paragraph: Agente territorial para explorar envejecimiento y distancia geométrica a servicios sanitarios en Gipuzkoa.
+  - generic "https://asier-comba.github.io/Guipuzkoa360/":
+    - link "asier-comba.github.io/Guipuzkoa360/":
+      - /url: https://asier-comba.github.io/Guipuzkoa360/
+  - heading "Topics" [level=3]
+  - link "city-science":
+    - /url: /topics/city-science
+  - link "data-agent":
+    - /url: /topics/data-agent
+  - link "geospatial":
+    - /url: /topics/geospatial
+  - link "gipuzkoa":
+    - /url: /topics/gipuzkoa
+  - heading "Resources" [level=3]
+  - link "Readme":
+    - /url: "#readme-ov-file"
+    - text: Readme
+  - link "Activity":
+    - /url: /Asier-Comba/Guipuzkoa360/activity
+    - text: Activity
+  - heading "Stars" [level=3]
+  - link "0 stars":
+    - /url: /Asier-Comba/Guipuzkoa360/stargazers
+    - strong: "0"
+    - text: stars
+  - heading "Watchers" [level=3]
+  - link "0 watching":
+    - /url: /Asier-Comba/Guipuzkoa360/watchers
+    - strong: "0"
+    - text: watching
+  - heading "Forks" [level=3]
+  - link "0 forks":
+    - /url: /Asier-Comba/Guipuzkoa360/forks
+    - strong: "0"
+    - text: forks
+  - link "Report repository":
+    - /url: /contact/report-content?content_url=https%3A%2F%2Fgithub.com%2FAsier-Comba%2FGuipuzkoa360&report=Asier-Comba+%28user%29
+  - heading "Releases" [level=2]:
+    - link "Releases":
+      - /url: /Asier-Comba/Guipuzkoa360/releases
+  - link "1tag":
+    - /url: /Asier-Comba/Guipuzkoa360/tags
+    - text: 1tag
+  - link "Create a new release":
+    - /url: /Asier-Comba/Guipuzkoa360/releases/new
+  - heading "Deployments (3)" [level=2]:
+    - link "Deployments":
+      - /url: /Asier-Comba/Guipuzkoa360/deployments
+    - generic: "3"
+    - generic: (3)
+  - list:
+    - link "github-pages":
+      - /url: /Asier-Comba/Guipuzkoa360/deployments/github-pages
+    - generic: Sep 28, 20265 days ago
+  - heading "Packages" [level=2]:
+    - link "Packages":
+      - /url: /users/Asier-Comba/packages?repo_name=Guipuzkoa360
+  - text: No packages published
+  - link "Publish your first package":
+    - /url: /Asier-Comba/Guipuzkoa360/packages
+  - heading "Contributors (3)" [level=2]:
+    - link "Contributors":
+      - /url: /Asier-Comba/Guipuzkoa360/graphs/contributors
+    - generic: "3"
+    - generic: (3)
+  - list:
+    - link "@oierdu":
+      - /url: /oierdu
+      - img "@oierdu"
+    - generic "oierdu Oier Duñabeitia":
+      - link "oierduOier Duñabeitia":
+        - /url: /oierdu
+        - strong: oierdu
+        - text: Oier Duñabeitia
+    - link "@Asier-Comba":
+      - /url: /Asier-Comba
+      - img "@Asier-Comba"
+    - generic "Asier-Comba Asier Comba":
+      - link "Asier-CombaAsier Comba":
+        - /url: /Asier-Comba
+        - strong: Asier-Comba
+        - text: Asier Comba
+    - link "@hugofdez10":
+      - /url: /hugofdez10
+      - img "@hugofdez10"
+    - generic "hugofdez10":
+      - link "hugofdez10":
+        - /url: /hugofdez10
+        - strong: hugofdez10
+  - heading "Languages" [level=2]
+  - 'progressbar "HTML: 82.1%"'
+  - 'progressbar "Python: 16.1%"'
+  - 'progressbar "JavaScript: 1.8%"'
+  - list:
+    - link "HTML 82.1%":
+      - /url: /Asier-Comba/Guipuzkoa360/search?l=html
+      - generic: HTML
+      - generic: 82.1%
+    - link "Python 16.1%":
+      - /url: /Asier-Comba/Guipuzkoa360/search?l=python
+      - generic: Python
+      - generic: 16.1%
+    - link "JavaScript 1.8%":
+      - /url: /Asier-Comba/Guipuzkoa360/search?l=javascript
+      - generic: JavaScript
+      - generic: 1.8%
+- contentinfo:
+  - heading "Footer" [level=2]
+  - link "GitHub Homepage":
+    - /url: https://github.com
+  - generic: © 2026 GitHub, Inc.
+  - navigation "Footer":
+    - heading "Footer navigation" [level=3]
+    - list "Footer navigation":
+      - link "Terms":
+        - /url: https://docs.github.com/site-policy/github-terms/github-terms-of-service
+      - link "Privacy":
+        - /url: https://docs.github.com/site-policy/privacy-policies/github-privacy-statement
+      - link "Security":
+        - /url: https://github.com/security
+      - link "Status":
+        - /url: https://www.githubstatus.com/
+      - link "Community":
+        - /url: https://github.community/
+      - link "Docs":
+        - /url: https://docs.github.com/
+      - link "Contact":
+        - /url: https://support.github.com?tags=dotcom-footer
+      - button "Manage cookies"
+      - button "Do not share my personal information"
+- alert
