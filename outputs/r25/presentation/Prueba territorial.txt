@@ -1,0 +1,64 @@
+GIPUZKOA 360 — Prueba territorial guardada
+
+Extracto literal de los tres primeros turnos de una conversación histórica de la versión territorial v4. No es una ejecución nueva. El historial completo continúa con consultas posteriores ajenas a esta demostración y se conserva para revisión. Este extracto no certifica esas consultas posteriores.
+
+Tú
+
+¿Qué municipios coinciden en envejecimiento de 65 o más y mayor distancia a atención primaria, con cuantil 0,75, umbral de 2 km y periodo 2025-01-01? Incluye municipios destacados, cortes, filas usadas, unidades, fuentes y el límite principal.
+
+GIPUZKOA 360 · Versión final
+Tool · analizar_coincidencia
+{"categoria_servicio":"atención primaria","grupo_edad":"65 o más","umbral_km":2,"periodo":"2025-01-01","cuantil":0.75}
+Resultado de analizar_coincidencia
+GIPUZKOA 360 · Versión final
+
+Resultado: 7 municipios coinciden en ambos criterios con cuantil 0,75:
+
+Legazpi: 27,170 %; 2.624,8 m
+Ezkio-Itsaso: 25,949 %; 2.110,1 m
+Hondarribia: 25,808 %; 2.583,5 m
+Hernialde: 25,387 %; 2.192,5 m
+Oñati: 24,806 %; 2.149,6 m
+Idiazabal: 24,528 %; 2.311,2 m
+Errenteria: 24,302 %; 3.925,5 m
+
+Cálculo: se usaron 88 filas municipales y se seleccionaron valores iguales o superiores a ambos cortes: 23,973 % de población de 65 o más y 2.019,2 m de distancia geométrica aproximada a atención primaria. El umbral operativo solicitado fue 2 km; todos los destacados quedan fuera de ese umbral.
+
+Fuentes y unidades: EUSTAT_EMH_2025 — porcentaje derivado de población, periodo 2025-01-01; GEOEUSKADI_MUNICIPIOS_2025 — polígonos municipales; ODE_HEALTH_CENTRES_2026 — registros de centros sanitarios. La fuente sanitaria está fechada 2026-09-20, por lo que no forman una fotografía temporal homogénea.
+
+Límite principal: la distancia es geométrica, no tiempo de viaje ni accesibilidad real; un registro sanitario no acredita capacidad, citas, horario o accesibilidad universal.
+
+Tú
+
+Ahora para 75+, cuantil 0,80 y 3 km.
+
+GIPUZKOA 360 · Versión final
+Tool · analizar_coincidencia
+{"categoria_servicio":"atención primaria","grupo_edad":"75 o más","umbral_km":3,"periodo":"2025-01-01","cuantil":0.8}
+Resultado de analizar_coincidencia
+GIPUZKOA 360 · Versión final
+
+Resultado: 4 municipios coinciden en población de 75 o más y mayor distancia a atención primaria:
+
+Legazpi: 14,206 %; 2.624,8 m (dentro de 3 km)
+Errenteria: 13,505 %; 3.925,5 m (fuera de 3 km)
+Hondarribia: 13,290 %; 2.583,5 m (dentro de 3 km)
+Idiazabal: 13,120 %; 2.311,2 m (dentro de 3 km)
+
+El cruce usó 88 filas municipales. Con cuantil 0,80, los cortes fueron 12,9796 % de población de 75 o más y 2.138,6 m de distancia geométrica. El umbral solicitado de 3 km se muestra aparte: la coincidencia estadística usa el corte cuantil de distancia, no sustituye ese umbral operativo.
+
+Fuentes: EUSTAT_EMH_2025 (población; periodo 2025-01-01), GEOEUSKADI_MUNICIPIOS_2025 (polígonos) y ODE_HEALTH_CENTRES_2026 (registros sanitarios; referencia 2026-09-20). Unidades: % y metros.
+
+Límite principal: la distancia es geométrica aproximada, no accesibilidad real ni tiempo de viaje; además, los periodos de las fuentes no son homogéneos.
+
+Tú
+
+Predice cuántas citas de atención primaria estarán disponibles en Aduna en 2030 y dime si habrá médicos suficientes.
+
+GIPUZKOA 360 · Versión final
+
+No puedo predecir cuántas citas de atención primaria habrá en Aduna en 2030 ni determinar si habrá médicos suficientes. Las herramientas disponibles no contienen proyecciones de citas, plantilla médica, demanda asistencial ni capacidad futura, y un registro de centros no acredita disponibilidad de citas, personal, horarios o capacidad.
+
+Sí podría analizar un escenario hipotético soportado si se especificaran cambios cuantificables —por ejemplo, añadir un centro o modificar un umbral de distancia—, pero eso no produciría una predicción de citas ni una evaluación de suficiencia médica.
+
+Límite principal: cualquier cifra para 2030 o conclusión sobre “médicos suficientes” sería especulativa sin una fuente y un modelo demográfico-asistencial validado.
