@@ -1,0 +1,221 @@
+{
+  "classification": "REAL_STUDIO_OBSERVATIONS_NOT_OFFLINE",
+  "runtime": "6e960e873972b06fbd9e5125e7a498eef61c6d3a",
+  "version": "agentv_0604ea1aa5e141269381e41f9f463c97",
+  "zip_sha256": "b88f44aaabeac6cf50ee7a0e3aaea7295737f0b00bfb47cc2e34c1240e63b2e0",
+  "manifest_sha256": "ceaed687082f4ab165e79ae828cd8f0b17ca51cd888669f9c21f0e3ab6ef9f62",
+  "messages": 12,
+  "critical": 0,
+  "high": 1,
+  "medium": 0,
+  "low": 2,
+  "unsupported_material_claims": 1,
+  "findings": [
+    {
+      "id": "R23-H01",
+      "severity": "HIGH",
+      "kind": "unsupported_material_scope_claim",
+      "quote": "Parte de las paradas, no del domicilio, y termina en un punto de referencia del ambulatorio, cuya puerta y accesibilidad no están verificadas.",
+      "observed_scope": "origin_stop_presence_to_return_stop_arrival",
+      "expected_end": "Paradas centrales de Zegama, 11:07:48",
+      "actual_total_s": 10691,
+      "actual_total_hms": "2h58m11s",
+      "explanation": "Final answer first gives correct complete-return interval, then contradicts its endpoint in the limitations. The centre anchor is an intermediate destination, not the end of the complete visit.",
+      "runtime": "6e960e873972b06fbd9e5125e7a498eef61c6d3a",
+      "version": "agentv_0604ea1aa5e141269381e41f9f463c97"
+    }
+  ],
+  "low_findings": [
+    {
+      "id": "R23-L01",
+      "case": "threshold-general",
+      "meaning": "Verbose limitations,style only"
+    },
+    {
+      "id": "R23-L02",
+      "case": "scenario-add",
+      "meaning": "Redundant signed longitude plus west cardinal; actual coordinates correct,style only"
+    }
+  ],
+  "results": [
+    {
+      "id": "threshold-general",
+      "status": "PASS",
+      "tool_observed_ms": 63341,
+      "output_observed_ms": 119654,
+      "response_observed_ms": 63341,
+      "latency_basis": "first observed upper bounds, not server telemetry",
+      "findings": []
+    },
+    {
+      "id": "threshold-zero",
+      "status": "PASS",
+      "tool_observed_ms": null,
+      "output_observed_ms": null,
+      "response_observed_ms": 31796,
+      "latency_basis": "first observed upper bounds, not server telemetry",
+      "findings": []
+    },
+    {
+      "id": "getaria",
+      "status": "PASS",
+      "tool_observed_ms": 93539,
+      "output_observed_ms": 110734,
+      "response_observed_ms": 93539,
+      "latency_basis": "first observed upper bounds, not server telemetry",
+      "findings": []
+    },
+    {
+      "id": "getaria-source",
+      "status": "PASS",
+      "tool_observed_ms": null,
+      "output_observed_ms": null,
+      "response_observed_ms": 25510,
+      "latency_basis": "first observed upper bounds, not server telemetry",
+      "findings": []
+    },
+    {
+      "id": "tolosa",
+      "status": "PASS",
+      "tool_observed_ms": 37864,
+      "output_observed_ms": 44846,
+      "response_observed_ms": 37864,
+      "latency_basis": "first observed upper bounds, not server telemetry",
+      "findings": []
+    },
+    {
+      "id": "tolosa-source",
+      "status": "PASS",
+      "tool_observed_ms": null,
+      "output_observed_ms": null,
+      "response_observed_ms": 48757,
+      "latency_basis": "first observed upper bounds, not server telemetry",
+      "findings": []
+    },
+    {
+      "id": "ranking",
+      "status": "PASS",
+      "tool_observed_ms": 56565,
+      "output_observed_ms": 71120,
+      "response_observed_ms": 56565,
+      "latency_basis": "first observed upper bounds, not server telemetry",
+      "findings": []
+    },
+    {
+      "id": "comparison",
+      "status": "PASS",
+      "tool_observed_ms": 60265,
+      "output_observed_ms": 85630,
+      "response_observed_ms": 60265,
+      "latency_basis": "first observed upper bounds, not server telemetry",
+      "findings": []
+    },
+    {
+      "id": "scenario-threshold",
+      "status": "PASS",
+      "tool_observed_ms": 63306,
+      "output_observed_ms": 79127,
+      "response_observed_ms": 63306,
+      "latency_basis": "first observed upper bounds, not server telemetry",
+      "findings": []
+    },
+    {
+      "id": "scenario-add",
+      "status": "PASS",
+      "tool_observed_ms": 58451,
+      "output_observed_ms": 95377,
+      "response_observed_ms": 58451,
+      "latency_basis": "first observed upper bounds, not server telemetry",
+      "findings": []
+    },
+    {
+      "id": "scenario-remove",
+      "status": "PASS",
+      "tool_observed_ms": 64600,
+      "output_observed_ms": 88909,
+      "response_observed_ms": 64600,
+      "latency_basis": "first observed upper bounds, not server telemetry",
+      "findings": []
+    },
+    {
+      "id": "health",
+      "status": "FAIL",
+      "tool_observed_ms": 64327,
+      "output_observed_ms": 127923,
+      "response_observed_ms": 64327,
+      "latency_basis": "first observed upper bounds, not server telemetry",
+      "findings": [
+        {
+          "id": "R23-H01",
+          "severity": "HIGH",
+          "kind": "unsupported_material_scope_claim",
+          "quote": "Parte de las paradas, no del domicilio, y termina en un punto de referencia del ambulatorio, cuya puerta y accesibilidad no están verificadas.",
+          "observed_scope": "origin_stop_presence_to_return_stop_arrival",
+          "expected_end": "Paradas centrales de Zegama, 11:07:48",
+          "actual_total_s": 10691,
+          "actual_total_hms": "2h58m11s",
+          "explanation": "Final answer first gives correct complete-return interval, then contradicts its endpoint in the limitations. The centre anchor is an intermediate destination, not the end of the complete visit.",
+          "runtime": "6e960e873972b06fbd9e5125e7a498eef61c6d3a",
+          "version": "agentv_0604ea1aa5e141269381e41f9f463c97"
+        }
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "id": "recovery",
+      "status": "NOT_RUN",
+      "reason": "Redundant after actual controlled recovery observed in threshold-general; no duplicate PASS test"
+    },
+    {
+      "id": "recovery-follow",
+      "status": "NOT_RUN",
+      "reason": "Redundant after actual controlled recovery observed in threshold-general; no duplicate PASS test"
+    },
+    {
+      "id": "health-follow",
+      "status": "NOT_RUN",
+      "reason": "STOP at first new material HIGH in health family"
+    },
+    {
+      "id": "unsupported",
+      "status": "NOT_RUN",
+      "reason": "STOP at first new material HIGH in health family"
+    },
+    {
+      "id": "ambiguity",
+      "status": "NOT_RUN",
+      "reason": "STOP at first new material HIGH in health family"
+    },
+    {
+      "id": "ambiguity-follow",
+      "status": "NOT_RUN",
+      "reason": "STOP at first new material HIGH in health family"
+    },
+    {
+      "id": "public-health",
+      "status": "NOT_RUN",
+      "reason": "STOP at first new material HIGH in health family"
+    },
+    {
+      "id": "public-follow",
+      "status": "NOT_RUN",
+      "reason": "STOP at first new material HIGH in health family"
+    },
+    {
+      "id": "public-sources",
+      "status": "NOT_RUN",
+      "reason": "STOP at first new material HIGH in health family"
+    }
+  ],
+  "threshold_semantics": "PASS",
+  "zero_distance_included": "PASS",
+  "r22_high_regression": "PASS",
+  "real_recovery": "PASS_OBSERVED_GENERAL_SELECTION",
+  "real_health": "FAIL_SCOPE_CLAIM_ARITHMETIC_PASS",
+  "agent_engineering_complete": false,
+  "ready_for_human_final_gate": false,
+  "delivery_changed": false,
+  "published": false,
+  "next": "Human decision R23 versus stable fallback after R23-H01; no automatic R24."
+}

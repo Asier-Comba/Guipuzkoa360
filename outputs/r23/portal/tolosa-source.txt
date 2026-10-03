@@ -1,0 +1,14 @@
+
+
+Tú
+
+¿De qué fuentes sale ese resultado y qué fecha corresponde a cada una?
+
+GIPUZKOA 360
+
+El resultado combina dos fuentes:
+
+Registro sanitario de hospitales: Gobierno Vasco – Departamento de Salud, con fecha 20/09/2026. Aporta la ubicación del hospital registrado.
+Punto de referencia municipal: Gobierno Vasco – geoEuskadi, con fecha 07/05/2025. Aporta el punto representativo de Tolosa desde el que se calcula la distancia.
+
+La distancia se calcula geométricamente entre ambos puntos; las fechas corresponden a fuentes distintas y no representan una evolución temporal de la distancia.

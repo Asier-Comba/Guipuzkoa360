@@ -1,0 +1,14 @@
+
+
+Tú
+
+¿De qué fuentes sale ese resultado y qué fecha corresponde a cada una?
+
+GIPUZKOA 360
+
+El resultado combina estas dos fuentes:
+
+Gobierno Vasco – Departamento de Salud: registro de servicios sanitarios, incluido el de salud mental más cercano. Fecha: 20/09/2026.
+Gobierno Vasco – geoEuskadi: punto representativo y cartografía del municipio de Getaria, desde el que se calcula la distancia. Fecha: 07/05/2025.
+
+La distancia de 2.913,3 metros se calcula geométricamente entre esos dos puntos; no es una distancia por carretera ni un tiempo de viaje.

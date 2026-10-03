@@ -1,0 +1,500 @@
+{
+  "id": "ranking",
+  "session": "fresh",
+  "prompt": "¿Qué cinco municipios tienen mayor porcentaje de personas de 65 años o más? Explica la fuente y cómo se obtiene ese grupo.",
+  "expected": "ranking65;Eustat2025-01-01;not birth-year75 rule",
+  "status": "PASS",
+  "version": "agentv_0604ea1aa5e141269381e41f9f463c97",
+  "runtime": "6e960e873972b06fbd9e5125e7a498eef61c6d3a",
+  "sent_at": "2026-10-03T07:54:07.385Z",
+  "start_ms": 1791014047385,
+  "latency_basis": "first observed upper bounds, not server telemetry",
+  "tool_observed_ms": 56565,
+  "response_observed_ms": 56565,
+  "output_observed_ms": 71120,
+  "notes": "65 ranking5 correct observed percentages/numerators/denominators: Zerain27.931,Ibarra27.650,Deba27.461,Legazpi27.170,Donostia26.628; Eustat2025-01-01; correct aggregated65 method,not75 birth cutoff.",
+  "findings": [],
+  "log": "Tú\n\n¿Qué cinco municipios tienen mayor porcentaje de personas de 65 años o más? Explica la fuente y cómo se obtiene ese grupo.\n\nGIPUZKOA 360\nTool · analizar_envejecimiento\n{\"grupo_edad\":\"65\",\"medida\":\"percentage\",\"top_n\":5}\nResultado de analizar_envejecimiento\n{\"age_group_derivations\":{\"65\":{\"institution\":\"Eustat - Instituto Vasco de Estadística\",\"limitation\":\"Recuento municipal agregado, no edad exacta ni circunstancias individuales; no se infiere un corte por año de nacimiento.\",\"meaning\":\"Población de 65 años o más en la referencia indicada.\",\"method\":\"Recuento del grupo 65+ de la consulta municipal, sexo total; pivote preparado. Porcentaje = recuento / población total × 100, redondeado a tres decimales.\",\"output_field\":\"population_65_plus\",\"reference_period\":\"2025-01-01\",\"source_field\":\"grupo de edad 65+ de la consulta Eustat preparada\",\"source_id\":\"EUSTAT_EMH_2025\"}},\"assumptions\":[],\"capability_id\":\"analizar_envejecimiento\",\"claims\":[{\"age_derivation_ref\":\"/age_group_derivations/65\",\"age_group\":\"65\",\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":{\"data_ref\":{\"field\":\"population_total\",\"municipality_code\":\"20026\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":290},\"derivation\":\"derived_exact\",\"entity_id\":\"20026\",\"entity_label\":\"Zerain\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/value\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"id\":\"claim-1\",\"label\":\"value\",\"metric_id\":\"value\",\"numerator\":{\"data_ref\":{\"field\":\"population_65_plus\",\"municipality_code\":\"20026\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":81},\"numeric_role\":\"analytical\",\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_attributions\":[{\"institution\":\"Eustat - Instituto Vasco de Estadística\",\"period\":\"2025-01-01\",\"public_role\":\"demografía municipal\",\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"subject\":\"proporción de población municipal del grupo de edad\",\"unit\":\"% de población\",\"value\":27.931},{\"age_derivation_ref\":\"/age_group_derivations/65\",\"age_group\":\"65\",\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":{\"data_ref\":{\"field\":\"population_total\",\"municipality_code\":\"20042\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":4076},\"derivation\":\"derived_exact\",\"entity_id\":\"20042\",\"entity_label\":\"Ibarra\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/1/value\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"id\":\"claim-2\",\"label\":\"value\",\"metric_id\":\"value\",\"numerator\":{\"data_ref\":{\"field\":\"population_65_plus\",\"municipality_code\":\"20042\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":1127},\"numeric_role\":\"analytical\",\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_attributions\":[{\"institution\":\"Eustat - Instituto Vasco de Estadística\",\"period\":\"2025-01-01\",\"public_role\":\"demografía municipal\",\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"subject\":\"proporción de población municipal del grupo de edad\",\"unit\":\"% de población\",\"value\":27.65},{\"age_derivation_ref\":\"/age_group_derivations/65\",\"age_group\":\"65\",\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":{\"data_ref\":{\"field\":\"population_total\",\"municipality_code\":\"20029\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":5364},\"derivation\":\"derived_exact\",\"entity_id\":\"20029\",\"entity_label\":\"Deba\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/2/value\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"id\":\"claim-3\",\"label\":\"value\",\"metric_id\":\"value\",\"numerator\":{\"data_ref\":{\"field\":\"population_65_plus\",\"municipality_code\":\"20029\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":1473},\"numeric_role\":\"analytical\",\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_attributions\":[{\"institution\":\"Eustat - Instituto Vasco de Estadística\",\"period\":\"2025-01-01\",\"public_role\":\"demografía municipal\",\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"subject\":\"proporción de población municipal del grupo de edad\",\"unit\":\"% de población\",\"value\":27.461},{\"age_derivation_ref\":\"/age_group_derivations/65\",\"age_group\":\"65\",\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":{\"data_ref\":{\"field\":\"population_total\",\"municipality_code\":\"20051\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":8377},\"derivation\":\"derived_exact\",\"entity_id\":\"20051\",\"entity_label\":\"Legazpi\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/3/value\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"id\":\"claim-4\",\"label\":\"value\",\"metric_id\":\"value\",\"numerator\":{\"data_ref\":{\"field\":\"population_65_plus\",\"municipality_code\":\"20051\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":2276},\"numeric_role\":\"analytical\",\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_attributions\":[{\"institution\":\"Eustat - Instituto Vasco de Estadística\",\"period\":\"2025-01-01\",\"public_role\":\"demografía municipal\",\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"subject\":\"proporción de población municipal del grupo de edad\",\"unit\":\"% de población\",\"value\":27.17},{\"age_derivation_ref\":\"/age_group_derivations/65\",\"age_group\":\"65\",\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":{\"data_ref\":{\"field\":\"population_total\",\"municipality_code\":\"20069\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":183388},\"derivation\":\"derived_exact\",\"entity_id\":\"20069\",\"entity_label\":\"Donostia / San Sebastián\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/4/value\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"id\":\"claim-5\",\"label\":\"value\",\"metric_id\":\"value\",\"numerator\":{\"data_ref\":{\"field\":\"population_65_plus\",\"municipality_code\":\"20069\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":48832},\"numeric_role\":\"analytical\",\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_attributions\":[{\"institution\":\"Eustat - Instituto Vasco de Estadística\",\"period\":\"2025-01-01\",\"public_role\":\"demografía municipal\",\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"subject\":\"proporción de población municipal del grupo de edad\",\"unit\":\"% de población\",\"value\":26.628}],\"effective_request\":{\"defaults_applied\":[\"periodo\"],\"effective_period\":\"2025-01-01\",\"municipality_codes\":[],\"municipality_labels\":[],\"operation\":\"analizar_envejecimiento\",\"parameters\":{\"grupo_edad\":\"65\",\"medida\":\"percentage\",\"periodo\":null,\"top_n\":5}},\"error\":null,\"evidence_policy\":{\"classification\":[\"AVAILABLE\",\"DERIVABLE_EXACTLY\",\"ESTIMABLE_WITH_ASSUMPTIONS\",\"NOT_AVAILABLE\"],\"derivation\":\"Operaciones transparentes sobre inputs observados compatibles; sin dato espacial de residentes no hay cobertura poblacional.\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"preserve\":[\"subject\",\"entity\",\"unit\",\"period\",\"source\",\"scope\",\"assumptions\"],\"recovery\":\"Un error aporta cero cifras; no repetir llamada y argumentos fallidos; una única recuperación inequívoca por causa.\"},\"input_semantics\":\"normalized_input y effective_request contienen parámetros; no cifras analíticas. defaults_applied son supuestos, no elecciones humanas observadas.\",\"limitations\":[\"El indicador describe estructura demográfica; no explica sus causas.\"],\"method\":\"Orden descendente de pct_65_plus; empates por nombre municipal.\",\"normalized_input\":{\"arguments\":{\"grupo_edad\":\"65\",\"medida\":\"percentage\",\"top_n\":5},\"tool\":\"analizar_envejecimiento\"},\"operation_semantics\":{\"interpretation\":\"orden del indicador, no necesidad individual\",\"measures\":\"recuento de personas o porcentaje sobre población municipal\",\"subject\":\"municipio\"},\"operational_metadata\":{\"counters\":[],\"execution\":{\"request_id\":\"c8d3751b32014b229e7c7acabe3a8bd0\",\"state\":\"completed\",\"tool\":\"analizar_envejecimiento\"},\"not_analytical_evidence\":true,\"selection\":{\"criterion\":\"Primeras entidades en el orden validado de la herramienta\",\"detail_mechanism\":\"Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.\",\"omitted_entities\":0,\"returned_entities\":5,\"total_entities\":5}},\"outcomes\":[],\"public_input\":{\"arguments\":{\"grupo_edad\":\"65\",\"medida\":\"percentage\",\"top_n\":5},\"tool\":\"analizar_envejecimiento\"},\"request_id\":\"c8d3751b32014b229e7c7acabe3a8bd0\",\"status\":\"valid\"}\nGIPUZKOA 360\n\nLos cinco municipios con mayor porcentaje de población de 65 años o más son:\n\nZerain: 27,931% — 81 de 290 personas\nIbarra: 27,650% — 1.127 de 4.076\nDeba: 27,461% — 1.473 de 5.364\nLegazpi: 27,170% — 2.276 de 8.377\nDonostia / San Sebastián: 26,628% — 48.832 de 183.388\n\nFuente: Eustat, Instituto Vasco de Estadística, población municipal de referencia a 1 de enero de 2025.\n\nCómo se obtiene el grupo: se utiliza el recuento municipal agregado de personas de 65 años o más, con ambos sexos, y se calcula:\n\npoblación de 65 años o más ÷ población total municipal × 100\n\nLos porcentajes están redondeados a tres decimales. Es un indicador de estructura demográfica municipal; no describe la edad exacta ni las circunstancias individuales de las personas.",
+  "turn_text": "Tú\n\n¿Qué cinco municipios tienen mayor porcentaje de personas de 65 años o más? Explica la fuente y cómo se obtiene ese grupo.\n\nGIPUZKOA 360\nTool · analizar_envejecimiento\n{\"grupo_edad\":\"65\",\"medida\":\"percentage\",\"top_n\":5}\nResultado de analizar_envejecimiento\n{\"age_group_derivations\":{\"65\":{\"institution\":\"Eustat - Instituto Vasco de Estadística\",\"limitation\":\"Recuento municipal agregado, no edad exacta ni circunstancias individuales; no se infiere un corte por año de nacimiento.\",\"meaning\":\"Población de 65 años o más en la referencia indicada.\",\"method\":\"Recuento del grupo 65+ de la consulta municipal, sexo total; pivote preparado. Porcentaje = recuento / población total × 100, redondeado a tres decimales.\",\"output_field\":\"population_65_plus\",\"reference_period\":\"2025-01-01\",\"source_field\":\"grupo de edad 65+ de la consulta Eustat preparada\",\"source_id\":\"EUSTAT_EMH_2025\"}},\"assumptions\":[],\"capability_id\":\"analizar_envejecimiento\",\"claims\":[{\"age_derivation_ref\":\"/age_group_derivations/65\",\"age_group\":\"65\",\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":{\"data_ref\":{\"field\":\"population_total\",\"municipality_code\":\"20026\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":290},\"derivation\":\"derived_exact\",\"entity_id\":\"20026\",\"entity_label\":\"Zerain\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/value\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"id\":\"claim-1\",\"label\":\"value\",\"metric_id\":\"value\",\"numerator\":{\"data_ref\":{\"field\":\"population_65_plus\",\"municipality_code\":\"20026\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":81},\"numeric_role\":\"analytical\",\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_attributions\":[{\"institution\":\"Eustat - Instituto Vasco de Estadística\",\"period\":\"2025-01-01\",\"public_role\":\"demografía municipal\",\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"subject\":\"proporción de población municipal del grupo de edad\",\"unit\":\"% de población\",\"value\":27.931},{\"age_derivation_ref\":\"/age_group_derivations/65\",\"age_group\":\"65\",\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":{\"data_ref\":{\"field\":\"population_total\",\"municipality_code\":\"20042\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":4076},\"derivation\":\"derived_exact\",\"entity_id\":\"20042\",\"entity_label\":\"Ibarra\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/1/value\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"id\":\"claim-2\",\"label\":\"value\",\"metric_id\":\"value\",\"numerator\":{\"data_ref\":{\"field\":\"population_65_plus\",\"municipality_code\":\"20042\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":1127},\"numeric_role\":\"analytical\",\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_attributions\":[{\"institution\":\"Eustat - Instituto Vasco de Estadística\",\"period\":\"2025-01-01\",\"public_role\":\"demografía municipal\",\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"subject\":\"proporción de población municipal del grupo de edad\",\"unit\":\"% de población\",\"value\":27.65},{\"age_derivation_ref\":\"/age_group_derivations/65\",\"age_group\":\"65\",\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":{\"data_ref\":{\"field\":\"population_total\",\"municipality_code\":\"20029\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":5364},\"derivation\":\"derived_exact\",\"entity_id\":\"20029\",\"entity_label\":\"Deba\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/2/value\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"id\":\"claim-3\",\"label\":\"value\",\"metric_id\":\"value\",\"numerator\":{\"data_ref\":{\"field\":\"population_65_plus\",\"municipality_code\":\"20029\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":1473},\"numeric_role\":\"analytical\",\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_attributions\":[{\"institution\":\"Eustat - Instituto Vasco de Estadística\",\"period\":\"2025-01-01\",\"public_role\":\"demografía municipal\",\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"subject\":\"proporción de población municipal del grupo de edad\",\"unit\":\"% de población\",\"value\":27.461},{\"age_derivation_ref\":\"/age_group_derivations/65\",\"age_group\":\"65\",\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":{\"data_ref\":{\"field\":\"population_total\",\"municipality_code\":\"20051\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":8377},\"derivation\":\"derived_exact\",\"entity_id\":\"20051\",\"entity_label\":\"Legazpi\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/3/value\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"id\":\"claim-4\",\"label\":\"value\",\"metric_id\":\"value\",\"numerator\":{\"data_ref\":{\"field\":\"population_65_plus\",\"municipality_code\":\"20051\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":2276},\"numeric_role\":\"analytical\",\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_attributions\":[{\"institution\":\"Eustat - Instituto Vasco de Estadística\",\"period\":\"2025-01-01\",\"public_role\":\"demografía municipal\",\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"subject\":\"proporción de población municipal del grupo de edad\",\"unit\":\"% de población\",\"value\":27.17},{\"age_derivation_ref\":\"/age_group_derivations/65\",\"age_group\":\"65\",\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":{\"data_ref\":{\"field\":\"population_total\",\"municipality_code\":\"20069\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":183388},\"derivation\":\"derived_exact\",\"entity_id\":\"20069\",\"entity_label\":\"Donostia / San Sebastián\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/4/value\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"id\":\"claim-5\",\"label\":\"value\",\"metric_id\":\"value\",\"numerator\":{\"data_ref\":{\"field\":\"population_65_plus\",\"municipality_code\":\"20069\",\"path\":\"datos_preparados/demografia.csv\",\"reference_period\":\"2025-01-01\"},\"evidence_path\":null,\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"unit\":\"personas\",\"value\":48832},\"numeric_role\":\"analytical\",\"period\":\"2025-01-01\",\"reference_periods\":[{\"period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_attributions\":[{\"institution\":\"Eustat - Instituto Vasco de Estadística\",\"period\":\"2025-01-01\",\"public_role\":\"demografía municipal\",\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"source_ids\":[\"EUSTAT_EMH_2025\"],\"source_refs\":[{\"role\":\"demographic_observation\",\"source_id\":\"EUSTAT_EMH_2025\"}],\"subject\":\"proporción de población municipal del grupo de edad\",\"unit\":\"% de población\",\"value\":26.628}],\"effective_request\":{\"defaults_applied\":[\"periodo\"],\"effective_period\":\"2025-01-01\",\"municipality_codes\":[],\"municipality_labels\":[],\"operation\":\"analizar_envejecimiento\",\"parameters\":{\"grupo_edad\":\"65\",\"medida\":\"percentage\",\"periodo\":null,\"top_n\":5}},\"error\":null,\"evidence_policy\":{\"classification\":[\"AVAILABLE\",\"DERIVABLE_EXACTLY\",\"ESTIMABLE_WITH_ASSUMPTIONS\",\"NOT_AVAILABLE\"],\"derivation\":\"Operaciones transparentes sobre inputs observados compatibles; sin dato espacial de residentes no hay cobertura poblacional.\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"preserve\":[\"subject\",\"entity\",\"unit\",\"period\",\"source\",\"scope\",\"assumptions\"],\"recovery\":\"Un error aporta cero cifras; no repetir llamada y argumentos fallidos; una única recuperación inequívoca por causa.\"},\"input_semantics\":\"normalized_input y effective_request contienen parámetros; no cifras analíticas. defaults_applied son supuestos, no elecciones humanas observadas.\",\"limitations\":[\"El indicador describe estructura demográfica; no explica sus causas.\"],\"method\":\"Orden descendente de pct_65_plus; empates por nombre municipal.\",\"normalized_input\":{\"arguments\":{\"grupo_edad\":\"65\",\"medida\":\"percentage\",\"top_n\":5},\"tool\":\"analizar_envejecimiento\"},\"operation_semantics\":{\"interpretation\":\"orden del indicador, no necesidad individual\",\"measures\":\"recuento de personas o porcentaje sobre población municipal\",\"subject\":\"municipio\"},\"operational_metadata\":{\"counters\":[],\"execution\":{\"request_id\":\"c8d3751b32014b229e7c7acabe3a8bd0\",\"state\":\"completed\",\"tool\":\"analizar_envejecimiento\"},\"not_analytical_evidence\":true,\"selection\":{\"criterion\":\"Primeras entidades en el orden validado de la herramienta\",\"detail_mechanism\":\"Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.\",\"omitted_entities\":0,\"returned_entities\":5,\"total_entities\":5}},\"outcomes\":[],\"public_input\":{\"arguments\":{\"grupo_edad\":\"65\",\"medida\":\"percentage\",\"top_n\":5},\"tool\":\"analizar_envejecimiento\"},\"request_id\":\"c8d3751b32014b229e7c7acabe3a8bd0\",\"status\":\"valid\"}\nGIPUZKOA 360\n\nLos cinco municipios con mayor porcentaje de población de 65 años o más son:\n\nZerain: 27,931% — 81 de 290 personas\nIbarra: 27,650% — 1.127 de 4.076\nDeba: 27,461% — 1.473 de 5.364\nLegazpi: 27,170% — 2.276 de 8.377\nDonostia / San Sebastián: 26,628% — 48.832 de 183.388\n\nFuente: Eustat, Instituto Vasco de Estadística, población municipal de referencia a 1 de enero de 2025.\n\nCómo se obtiene el grupo: se utiliza el recuento municipal agregado de personas de 65 años o más, con ambos sexos, y se calcula:\n\npoblación de 65 años o más ÷ población total municipal × 100\n\nLos porcentajes están redondeados a tres decimales. Es un indicador de estructura demográfica municipal; no describe la edad exacta ni las circunstancias individuales de las personas.",
+  "outputs": [
+    {
+      "age_group_derivations": {
+        "65": {
+          "institution": "Eustat - Instituto Vasco de Estadística",
+          "limitation": "Recuento municipal agregado, no edad exacta ni circunstancias individuales; no se infiere un corte por año de nacimiento.",
+          "meaning": "Población de 65 años o más en la referencia indicada.",
+          "method": "Recuento del grupo 65+ de la consulta municipal, sexo total; pivote preparado. Porcentaje = recuento / población total × 100, redondeado a tres decimales.",
+          "output_field": "population_65_plus",
+          "reference_period": "2025-01-01",
+          "source_field": "grupo de edad 65+ de la consulta Eustat preparada",
+          "source_id": "EUSTAT_EMH_2025"
+        }
+      },
+      "assumptions": [],
+      "capability_id": "analizar_envejecimiento",
+      "claims": [
+        {
+          "age_derivation_ref": "/age_group_derivations/65",
+          "age_group": "65",
+          "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+          "assumptions": [],
+          "denominator": {
+            "data_ref": {
+              "field": "population_total",
+              "municipality_code": "20026",
+              "path": "datos_preparados/demografia.csv",
+              "reference_period": "2025-01-01"
+            },
+            "evidence_path": null,
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 290
+          },
+          "derivation": "derived_exact",
+          "entity_id": "20026",
+          "entity_label": "Zerain",
+          "entity_type": "municipality",
+          "evidence_path": "/data/0/value",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "id": "claim-1",
+          "label": "value",
+          "metric_id": "value",
+          "numerator": {
+            "data_ref": {
+              "field": "population_65_plus",
+              "municipality_code": "20026",
+              "path": "datos_preparados/demografia.csv",
+              "reference_period": "2025-01-01"
+            },
+            "evidence_path": null,
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 81
+          },
+          "numeric_role": "analytical",
+          "period": "2025-01-01",
+          "reference_periods": [
+            {
+              "period": "2025-01-01",
+              "source_id": "EUSTAT_EMH_2025"
+            }
+          ],
+          "source_attributions": [
+            {
+              "institution": "Eustat - Instituto Vasco de Estadística",
+              "period": "2025-01-01",
+              "public_role": "demografía municipal",
+              "role": "demographic_observation",
+              "source_id": "EUSTAT_EMH_2025"
+            }
+          ],
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "source_refs": [
+            {
+              "role": "demographic_observation",
+              "source_id": "EUSTAT_EMH_2025"
+            }
+          ],
+          "subject": "proporción de población municipal del grupo de edad",
+          "unit": "% de población",
+          "value": 27.931
+        },
+        {
+          "age_derivation_ref": "/age_group_derivations/65",
+          "age_group": "65",
+          "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+          "assumptions": [],
+          "denominator": {
+            "data_ref": {
+              "field": "population_total",
+              "municipality_code": "20042",
+              "path": "datos_preparados/demografia.csv",
+              "reference_period": "2025-01-01"
+            },
+            "evidence_path": null,
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 4076
+          },
+          "derivation": "derived_exact",
+          "entity_id": "20042",
+          "entity_label": "Ibarra",
+          "entity_type": "municipality",
+          "evidence_path": "/data/1/value",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "id": "claim-2",
+          "label": "value",
+          "metric_id": "value",
+          "numerator": {
+            "data_ref": {
+              "field": "population_65_plus",
+              "municipality_code": "20042",
+              "path": "datos_preparados/demografia.csv",
+              "reference_period": "2025-01-01"
+            },
+            "evidence_path": null,
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 1127
+          },
+          "numeric_role": "analytical",
+          "period": "2025-01-01",
+          "reference_periods": [
+            {
+              "period": "2025-01-01",
+              "source_id": "EUSTAT_EMH_2025"
+            }
+          ],
+          "source_attributions": [
+            {
+              "institution": "Eustat - Instituto Vasco de Estadística",
+              "period": "2025-01-01",
+              "public_role": "demografía municipal",
+              "role": "demographic_observation",
+              "source_id": "EUSTAT_EMH_2025"
+            }
+          ],
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "source_refs": [
+            {
+              "role": "demographic_observation",
+              "source_id": "EUSTAT_EMH_2025"
+            }
+          ],
+          "subject": "proporción de población municipal del grupo de edad",
+          "unit": "% de población",
+          "value": 27.65
+        },
+        {
+          "age_derivation_ref": "/age_group_derivations/65",
+          "age_group": "65",
+          "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+          "assumptions": [],
+          "denominator": {
+            "data_ref": {
+              "field": "population_total",
+              "municipality_code": "20029",
+              "path": "datos_preparados/demografia.csv",
+              "reference_period": "2025-01-01"
+            },
+            "evidence_path": null,
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 5364
+          },
+          "derivation": "derived_exact",
+          "entity_id": "20029",
+          "entity_label": "Deba",
+          "entity_type": "municipality",
+          "evidence_path": "/data/2/value",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "id": "claim-3",
+          "label": "value",
+          "metric_id": "value",
+          "numerator": {
+            "data_ref": {
+              "field": "population_65_plus",
+              "municipality_code": "20029",
+              "path": "datos_preparados/demografia.csv",
+              "reference_period": "2025-01-01"
+            },
+            "evidence_path": null,
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 1473
+          },
+          "numeric_role": "analytical",
+          "period": "2025-01-01",
+          "reference_periods": [
+            {
+              "period": "2025-01-01",
+              "source_id": "EUSTAT_EMH_2025"
+            }
+          ],
+          "source_attributions": [
+            {
+              "institution": "Eustat - Instituto Vasco de Estadística",
+              "period": "2025-01-01",
+              "public_role": "demografía municipal",
+              "role": "demographic_observation",
+              "source_id": "EUSTAT_EMH_2025"
+            }
+          ],
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "source_refs": [
+            {
+              "role": "demographic_observation",
+              "source_id": "EUSTAT_EMH_2025"
+            }
+          ],
+          "subject": "proporción de población municipal del grupo de edad",
+          "unit": "% de población",
+          "value": 27.461
+        },
+        {
+          "age_derivation_ref": "/age_group_derivations/65",
+          "age_group": "65",
+          "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+          "assumptions": [],
+          "denominator": {
+            "data_ref": {
+              "field": "population_total",
+              "municipality_code": "20051",
+              "path": "datos_preparados/demografia.csv",
+              "reference_period": "2025-01-01"
+            },
+            "evidence_path": null,
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 8377
+          },
+          "derivation": "derived_exact",
+          "entity_id": "20051",
+          "entity_label": "Legazpi",
+          "entity_type": "municipality",
+          "evidence_path": "/data/3/value",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "id": "claim-4",
+          "label": "value",
+          "metric_id": "value",
+          "numerator": {
+            "data_ref": {
+              "field": "population_65_plus",
+              "municipality_code": "20051",
+              "path": "datos_preparados/demografia.csv",
+              "reference_period": "2025-01-01"
+            },
+            "evidence_path": null,
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 2276
+          },
+          "numeric_role": "analytical",
+          "period": "2025-01-01",
+          "reference_periods": [
+            {
+              "period": "2025-01-01",
+              "source_id": "EUSTAT_EMH_2025"
+            }
+          ],
+          "source_attributions": [
+            {
+              "institution": "Eustat - Instituto Vasco de Estadística",
+              "period": "2025-01-01",
+              "public_role": "demografía municipal",
+              "role": "demographic_observation",
+              "source_id": "EUSTAT_EMH_2025"
+            }
+          ],
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "source_refs": [
+            {
+              "role": "demographic_observation",
+              "source_id": "EUSTAT_EMH_2025"
+            }
+          ],
+          "subject": "proporción de población municipal del grupo de edad",
+          "unit": "% de población",
+          "value": 27.17
+        },
+        {
+          "age_derivation_ref": "/age_group_derivations/65",
+          "age_group": "65",
+          "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+          "assumptions": [],
+          "denominator": {
+            "data_ref": {
+              "field": "population_total",
+              "municipality_code": "20069",
+              "path": "datos_preparados/demografia.csv",
+              "reference_period": "2025-01-01"
+            },
+            "evidence_path": null,
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 183388
+          },
+          "derivation": "derived_exact",
+          "entity_id": "20069",
+          "entity_label": "Donostia / San Sebastián",
+          "entity_type": "municipality",
+          "evidence_path": "/data/4/value",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "id": "claim-5",
+          "label": "value",
+          "metric_id": "value",
+          "numerator": {
+            "data_ref": {
+              "field": "population_65_plus",
+              "municipality_code": "20069",
+              "path": "datos_preparados/demografia.csv",
+              "reference_period": "2025-01-01"
+            },
+            "evidence_path": null,
+            "period": "2025-01-01",
+            "source_id": "EUSTAT_EMH_2025",
+            "unit": "personas",
+            "value": 48832
+          },
+          "numeric_role": "analytical",
+          "period": "2025-01-01",
+          "reference_periods": [
+            {
+              "period": "2025-01-01",
+              "source_id": "EUSTAT_EMH_2025"
+            }
+          ],
+          "source_attributions": [
+            {
+              "institution": "Eustat - Instituto Vasco de Estadística",
+              "period": "2025-01-01",
+              "public_role": "demografía municipal",
+              "role": "demographic_observation",
+              "source_id": "EUSTAT_EMH_2025"
+            }
+          ],
+          "source_ids": [
+            "EUSTAT_EMH_2025"
+          ],
+          "source_refs": [
+            {
+              "role": "demographic_observation",
+              "source_id": "EUSTAT_EMH_2025"
+            }
+          ],
+          "subject": "proporción de población municipal del grupo de edad",
+          "unit": "% de población",
+          "value": 26.628
+        }
+      ],
+      "effective_request": {
+        "defaults_applied": [
+          "periodo"
+        ],
+        "effective_period": "2025-01-01",
+        "municipality_codes": [],
+        "municipality_labels": [],
+        "operation": "analizar_envejecimiento",
+        "parameters": {
+          "grupo_edad": "65",
+          "medida": "percentage",
+          "periodo": null,
+          "top_n": 5
+        }
+      },
+      "error": null,
+      "evidence_policy": {
+        "classification": [
+          "AVAILABLE",
+          "DERIVABLE_EXACTLY",
+          "ESTIMABLE_WITH_ASSUMPTIONS",
+          "NOT_AVAILABLE"
+        ],
+        "derivation": "Operaciones transparentes sobre inputs observados compatibles; sin dato espacial de residentes no hay cobertura poblacional.",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "preserve": [
+          "subject",
+          "entity",
+          "unit",
+          "period",
+          "source",
+          "scope",
+          "assumptions"
+        ],
+        "recovery": "Un error aporta cero cifras; no repetir llamada y argumentos fallidos; una única recuperación inequívoca por causa."
+      },
+      "input_semantics": "normalized_input y effective_request contienen parámetros; no cifras analíticas. defaults_applied son supuestos, no elecciones humanas observadas.",
+      "limitations": [
+        "El indicador describe estructura demográfica; no explica sus causas."
+      ],
+      "method": "Orden descendente de pct_65_plus; empates por nombre municipal.",
+      "normalized_input": {
+        "arguments": {
+          "grupo_edad": "65",
+          "medida": "percentage",
+          "top_n": 5
+        },
+        "tool": "analizar_envejecimiento"
+      },
+      "operation_semantics": {
+        "interpretation": "orden del indicador, no necesidad individual",
+        "measures": "recuento de personas o porcentaje sobre población municipal",
+        "subject": "municipio"
+      },
+      "operational_metadata": {
+        "counters": [],
+        "execution": {
+          "request_id": "c8d3751b32014b229e7c7acabe3a8bd0",
+          "state": "completed",
+          "tool": "analizar_envejecimiento"
+        },
+        "not_analytical_evidence": true,
+        "selection": {
+          "criterion": "Primeras entidades en el orden validado de la herramienta",
+          "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+          "omitted_entities": 0,
+          "returned_entities": 5,
+          "total_entities": 5
+        }
+      },
+      "outcomes": [],
+      "public_input": {
+        "arguments": {
+          "grupo_edad": "65",
+          "medida": "percentage",
+          "top_n": 5
+        },
+        "tool": "analizar_envejecimiento"
+      },
+      "request_id": "c8d3751b32014b229e7c7acabe3a8bd0",
+      "status": "valid"
+    }
+  ]
+}
