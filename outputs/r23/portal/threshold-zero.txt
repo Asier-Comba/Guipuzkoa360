@@ -1,0 +1,13 @@
+
+
+Tú
+
+Si la distancia geométrica calculada fuese exactamente 0 m y el límite fuese 2 km, ¿se consideraría dentro del umbral?
+
+GIPUZKOA 360
+
+Sí. Con un límite de 2 km (2.000 m), una distancia geométrica de exactamente 0 m se consideraría dentro del umbral, porque la regla es:
+
+distancia ≤ 2.000 m
+
+El valor 0 m está incluido. Esto solo describe la clasificación geométrica del punto municipal; no implica que toda la población tenga acceso efectivo al servicio.

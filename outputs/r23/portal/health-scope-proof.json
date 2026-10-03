@@ -1,0 +1,308 @@
+{
+  "finding": {
+    "id": "R23-H01",
+    "severity": "HIGH",
+    "kind": "unsupported_material_scope_claim",
+    "quote": "Parte de las paradas, no del domicilio, y termina en un punto de referencia del ambulatorio, cuya puerta y accesibilidad no están verificadas.",
+    "observed_scope": "origin_stop_presence_to_return_stop_arrival",
+    "expected_end": "Paradas centrales de Zegama, 11:07:48",
+    "actual_total_s": 10691,
+    "actual_total_hms": "2h58m11s",
+    "explanation": "Final answer first gives correct complete-return interval, then contradicts its endpoint in the limitations. The centre anchor is an intermediate destination, not the end of the complete visit.",
+    "runtime": "6e960e873972b06fbd9e5125e7a498eef61c6d3a",
+    "version": "agentv_0604ea1aa5e141269381e41f9f463c97"
+  },
+  "scenario": {
+    "assumptions": [
+      "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+      "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+    ],
+    "components_s": {
+      "appointment_s": 1200,
+      "destination_walk_outbound_s": 420,
+      "destination_walk_return_s": 960,
+      "initial_wait_s": 180,
+      "outbound_vehicle_s": 1651,
+      "pre_appointment_wait_s": 2572,
+      "return_vehicle_s": 2278,
+      "return_wait_s": 1430
+    },
+    "destination_label": "Ambulatorio de Beasain",
+    "effective_parameters": {
+      "appointment_time": "09:30:00",
+      "arrival_margin_minutes": 10,
+      "boarding_margin_minutes": 3,
+      "date": "2026-09-29",
+      "destination_id": "beasain_official_centre_anchor",
+      "duration_minutes": 20,
+      "origin_id": "zegama_center_stops",
+      "return_deadline": null,
+      "timezone": "Europe/Madrid",
+      "walking_profile_id": "poc_reference_50m_min_plus_120s"
+    },
+    "error": null,
+    "health_destination": {
+      "address": "Bernedo Enea 1",
+      "address_conflict": "conflicting_current_sources",
+      "centre_anchor": "CONFIRMED_OFFICIAL_POINT",
+      "centre_id": "entityBC631DA5",
+      "entrance_verification": "NOT_VERIFIED",
+      "entrance_verified": false,
+      "human_review_required": true,
+      "modelled_access": true,
+      "name": "Ambulatorio de Beasain",
+      "source_refs": [
+        "HEALTH_REGISTRY",
+        "HEALTH_PAGE",
+        "PADI_2026"
+      ],
+      "wording": "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada."
+    },
+    "index": 0,
+    "itinerary": {
+      "origin_stop_id": "8305",
+      "outbound": {
+        "arrival_time": "08:40:08",
+        "departure_time": "08:12:37",
+        "drop_off_type": 0,
+        "from_stop_id": "8305",
+        "from_stop_label": "Zegama - Elizalde 6 - Plaza",
+        "from_stop_sequence": 2,
+        "from_timepoint": 0,
+        "pickup_type": 0,
+        "route_id": "1",
+        "route_label": "GO01",
+        "service_id": "LJ",
+        "to_stop_id": "7219",
+        "to_stop_label": "Beasain - Lokomotora Biribilgunea",
+        "to_stop_sequence": 25,
+        "to_timepoint": 0,
+        "trip_id": "1_103_LJ_29400"
+      },
+      "return": {
+        "arrival_time": "11:07:48",
+        "departure_time": "10:29:50",
+        "drop_off_type": 0,
+        "from_stop_id": "7218",
+        "from_stop_label": "Beasain - San Inazio 10",
+        "from_stop_sequence": 8,
+        "from_timepoint": 0,
+        "pickup_type": 0,
+        "route_id": "1",
+        "route_label": "GO01",
+        "service_id": "LJ",
+        "to_stop_id": "8309",
+        "to_stop_label": "Zegama - Elizalde Kalea 4",
+        "to_stop_sequence": 35,
+        "to_timepoint": 0,
+        "trip_id": "1_106_LJ_37200"
+      },
+      "return_slack_s": 1250,
+      "return_stop_id": "8309",
+      "total_s": 10691
+    },
+    "limitations": [
+      "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+      "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+      "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+      "Horarios GTFS aproximados programados, no información en tiempo real.",
+      "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+      "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+    ],
+    "origin_label": "Paradas centrales de Zegama",
+    "parameter_attribution": [
+      {
+        "attribution": "tool_argument_origin_unverified",
+        "field": "appointment_time",
+        "parameter_origin": "human_explicit",
+        "value": "09:30:00"
+      },
+      {
+        "attribution": "calculation_assumption",
+        "field": "arrival_margin_minutes",
+        "parameter_origin": "model_default",
+        "value": 10
+      },
+      {
+        "attribution": "calculation_assumption",
+        "field": "boarding_margin_minutes",
+        "parameter_origin": "model_default",
+        "value": 3
+      },
+      {
+        "attribution": "tool_argument_origin_unverified",
+        "field": "date",
+        "parameter_origin": "human_explicit",
+        "value": "2026-09-29"
+      },
+      {
+        "attribution": "tool_argument_origin_unverified",
+        "field": "destination_id",
+        "parameter_origin": "human_explicit",
+        "value": "beasain_official_centre_anchor"
+      },
+      {
+        "attribution": "tool_argument_origin_unverified",
+        "field": "duration_minutes",
+        "parameter_origin": "human_explicit",
+        "value": 20
+      },
+      {
+        "attribution": "tool_argument_origin_unverified",
+        "field": "origin_id",
+        "parameter_origin": "human_explicit",
+        "value": "zegama_center_stops"
+      },
+      {
+        "attribution": "calculation_assumption",
+        "field": "return_deadline",
+        "parameter_origin": "model_default",
+        "value": null
+      },
+      {
+        "attribution": "calculation_assumption",
+        "field": "timezone",
+        "parameter_origin": "model_default",
+        "value": "Europe/Madrid"
+      },
+      {
+        "attribution": "calculation_assumption",
+        "field": "walking_profile_id",
+        "parameter_origin": "model_default",
+        "value": "poc_reference_50m_min_plus_120s"
+      }
+    ],
+    "scenario_kind": "health_visit",
+    "scope": "origin_stop_presence_to_return_stop_arrival",
+    "sources": [
+      {
+        "institution": "Moveuskadi / Goierrialdea",
+        "publisher": "Moveuskadi / Goierrialdea",
+        "reference_period": "2026-09-28/2026-12-27",
+        "source_id": "GTFS",
+        "source_role": "official_schedule",
+        "title": "Horario GO01 Goierrialdea",
+        "transformation": "Filas normalizadas del horario GO01; horas aproximadas, no tiempo real",
+        "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+      },
+      {
+        "institution": "Open Data Euskadi",
+        "publisher": "Open Data Euskadi",
+        "reference_period": "2026-09-20",
+        "source_id": "HEALTH_REGISTRY",
+        "source_role": "official_health_registry",
+        "title": "Registro de centros de salud públicos",
+        "transformation": "entityBC631DA5 coordinates EPSG:4326",
+        "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+      },
+      {
+        "institution": "Osakidetza",
+        "publisher": "Osakidetza",
+        "reference_period": "Observed 2026-09-29",
+        "source_id": "HEALTH_PAGE",
+        "source_role": "official_health_page",
+        "title": "Ficha del Ambulatorio de Beasain",
+        "transformation": "Specific centre name/address/telephone; publication date not stated",
+        "url": "https://www.osakidetza.euskadi.eus/ambulatorio-de-beasain/webosk00-cercon/es/"
+      },
+      {
+        "institution": "Osakidetza",
+        "publisher": "Osakidetza",
+        "reference_period": "2026-01",
+        "source_id": "PADI_2026",
+        "source_role": "official_health_page",
+        "title": "Listado PADI de consultas dentales 2026",
+        "transformation": "Page 4 dental consultation listing; address conflict retained",
+        "url": "https://www.osakidetza.euskadi.eus/contenidos/informacion/salud_padi/es_def/adjuntos/padi-kontsultak-gipuzkoa.pdf"
+      },
+      {
+        "institution": "OpenStreetMap contributors",
+        "publisher": "OpenStreetMap contributors",
+        "reference_period": "Acquired 2026-09-29",
+        "source_id": "OSM",
+        "source_role": "open_network",
+        "title": "Derivado público de red peatonal",
+        "transformation": "Derivado de red peatonal sin datos personales de edición ni cambios de geometría; ODbL 1.0",
+        "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-2.203,43.041,-2.190,43.052"
+      },
+      {
+        "institution": "GIPUZKOA360",
+        "publisher": "GIPUZKOA360",
+        "reference_period": "supuesto del modelo de paseo, no periodo observado",
+        "source_id": "MODEL",
+        "source_role": "model_parameter",
+        "title": "Perfil de paseo modelado",
+        "transformation": "ceil(raw total metres/50)*60+120 per complete directed link; each connector <=100 m",
+        "url": null
+      },
+      {
+        "institution": "Entrada del agente",
+        "publisher": "GIPUZKOA360 request/calculation",
+        "reference_period": "2026-09-29",
+        "source_id": "USER",
+        "source_role": "user_input",
+        "title": "Parámetros presentes en la petición",
+        "transformation": "Campos recibidos en la consulta; no incluye los supuestos aplicados por el cálculo.",
+        "url": null
+      },
+      {
+        "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+        "publisher": "GIPUZKOA360 request/calculation",
+        "reference_period": "2026-09-29",
+        "source_id": "MODEL_DEFAULTS",
+        "source_role": "model_parameter",
+        "title": "Supuestos aplicados al cálculo",
+        "transformation": "Márgenes y perfil aplicados como supuestos del cálculo, no elecciones humanas observadas.",
+        "url": null
+      },
+      {
+        "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+        "publisher": "GIPUZKOA360 request/calculation",
+        "reference_period": "2026-09-29",
+        "source_id": "DERIVED",
+        "source_role": "derived_metric",
+        "title": "Componentes calculados del itinerario",
+        "transformation": "Intervals derived from explicit inputs, model defaults, schedule and walking model.",
+        "url": null
+      }
+    ],
+    "status": "ok",
+    "time_basis": "scheduled",
+    "time_summary": {
+      "initial_wait_s": 180,
+      "scope": "origin_stop_presence_to_return_stop_arrival",
+      "scope_end_clock": "11:07:48",
+      "scope_end_s": 40068,
+      "scope_start_clock": "08:09:37",
+      "scope_start_s": 29377,
+      "total_hms": "2 h 58 min 11 s",
+      "total_s": 10691
+    },
+    "walking": {
+      "outbound": {
+        "entrance_verified": false,
+        "modelled_access": true,
+        "seconds": 420,
+        "source_refs": [
+          "GTFS",
+          "HEALTH_REGISTRY",
+          "OSM",
+          "MODEL"
+        ],
+        "total_metres": 205.07964741035417
+      },
+      "return": {
+        "entrance_verified": false,
+        "modelled_access": true,
+        "seconds": 960,
+        "source_refs": [
+          "GTFS",
+          "HEALTH_REGISTRY",
+          "OSM",
+          "MODEL"
+        ],
+        "total_metres": 686.1157628496067
+      }
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "generation": "R23",
+  "classification": "PREFROZEN_PLAN_NOT_OBSERVATIONS",
+  "stop_on": "first new material Critical/High/Medium; no R24",
+  "cases": [
+    {
+      "id": "threshold-general",
+      "session": "fresh",
+      "prompt": "Analiza para todos los municipios de Gipuzkoa la distancia geométrica a atención primaria con un límite de 2 km. ¿Qué significa y qué no mide?",
+      "expected": "analizar_acceso_general;2;inclusive <=2000;no positive-distance constraint",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "threshold-zero",
+      "session": "followup",
+      "prompt": "Si la distancia geométrica calculada fuese exactamente 0 m y el límite fuese 2 km, ¿se consideraría dentro del umbral?",
+      "expected": "YES 0<=2000;municipal geometry,not guarantee",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "getaria",
+      "session": "fresh",
+      "prompt": "Explícamelo para una persona no técnica: En Getaria, ¿qué distancia geométrica hay al registro de salud mental más cercano y queda dentro de 1 km?",
+      "expected": "selected;2913.3m;false",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "getaria-source",
+      "session": "followup",
+      "prompt": "¿De qué fuentes sale ese resultado y qué fecha corresponde a cada una?",
+      "expected": "Health2026-09-20;geo2025-05-07;joined attribution",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "tolosa",
+      "session": "fresh",
+      "prompt": "En Tolosa, ¿qué distancia geométrica hay desde el punto municipal al hospital registrado más cercano y queda dentro de 2 km?",
+      "expected": "selected;18670.9m;false",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "tolosa-source",
+      "session": "followup",
+      "prompt": "¿De qué fuentes sale ese resultado y qué fecha corresponde a cada una?",
+      "expected": "Health2026-09-20;geo2025-05-07",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "ranking",
+      "session": "fresh",
+      "prompt": "¿Qué cinco municipios tienen mayor porcentaje de personas de 65 años o más? Explica la fuente y cómo se obtiene ese grupo.",
+      "expected": "ranking65;Eustat2025-01-01;not birth-year75 rule",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "recovery",
+      "session": "fresh",
+      "prompt": "Resume el municipio «Donostii», que es como aparece en mi nota. Si la consulta no lo reconoce, pregunta antes de sustituirlo.",
+      "expected": "observed controlled error,no automatic replacement",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "recovery-follow",
+      "session": "followup",
+      "prompt": "Me refiero a Donostia / San Sebastián. Haz ahora el resumen con ese municipio.",
+      "expected": "new corrected call valid;observed recovery",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "comparison",
+      "session": "fresh",
+      "prompt": "Compara Legorreta y Alegia en personas de 65 años o más y su porcentaje. Explica las diferencias.",
+      "expected": "two fresh summary tools;compatible exact derived difference",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "scenario-threshold",
+      "session": "fresh",
+      "prompt": "Estoy preparando un estudio. Simula cambiar el umbral de distancia municipal a salud mental de 1 a 6 km. ¿Qué cambia y qué no demuestra?",
+      "expected": "scenario threshold;distances unchanged;not real improvement",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "scenario-add",
+      "session": "fresh",
+      "prompt": "Como hipótesis, añade un punto de atención primaria en latitud 43, longitud -2, WGS84, con umbral de 2 km. Compara las distancias municipales y explica lo que no demuestra.",
+      "expected": "hypothetical add;actual args;not prediction/recommendation",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "scenario-remove",
+      "session": "fresh",
+      "prompt": "Localiza el registro de atención primaria más cercano al punto municipal de Aduna y, usando su identificador real, simula retirarlo con límite de 2 km. ¿Qué cambiaría y qué no podemos afirmar?",
+      "expected": "selected then remove observed ID;no data deletion",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "health",
+      "session": "fresh",
+      "prompt": "Desde Zegama quiero ir al Ambulatorio de Beasain el 29/09/2026, con cita a las 09:30 y consulta de 20 minutos, y volver a las paradas. ¿Cuánto tiempo completo ocupa y qué límites tiene?",
+      "expected": "10691s;2h58m11s;scheduled/modelled,not realtime",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "health-follow",
+      "session": "followup",
+      "prompt": "¿Y si la cita fuese a las 09:45?",
+      "expected": "8591s;2h23m11s;35min conditional difference",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "unsupported",
+      "session": "fresh",
+      "prompt": "Estoy preparando un estudio. ¿Desde mi casa cuánto tardaría hoy, incluidos retrasos reales y citas libres?",
+      "expected": "no invented address,realtime,availability;explain unsupported",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "ambiguity",
+      "session": "fresh",
+      "prompt": "Quiero comparar otra hora para esa visita. ¿Puedes calcularla?",
+      "expected": "no confirmed visit in fresh context;ask material parameters",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "ambiguity-follow",
+      "session": "followup",
+      "prompt": "Me refiero a salir desde Zegama para una cita en el Ambulatorio de Beasain el 29/09/2026 a las 09:45, de 20 minutos, y volver a las paradas.",
+      "expected": "new valid health8591s;confirmed parameters",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "public-health",
+      "session": "fresh",
+      "prompt": "Desde Zegama quiero ir al Ambulatorio de Beasain el 29/09/2026, con cita a las 09:30 y consulta de 20 minutos, y volver a las paradas. ¿Cuánto tiempo completo ocupa y qué límites tiene?",
+      "expected": "10691s",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "public-follow",
+      "session": "followup",
+      "prompt": "¿Y si fuese a las 09:45 manteniendo lo demás igual?",
+      "expected": "8591s;35min conditional",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "public-sources",
+      "session": "followup",
+      "prompt": "¿De dónde salen estos datos y qué debo tener en cuenta antes de interpretarlos?",
+      "expected": "scheduledGTFS,health,walking model;correct attribution",
+      "status": "NOT_RUN"
+    }
+  ]
+}

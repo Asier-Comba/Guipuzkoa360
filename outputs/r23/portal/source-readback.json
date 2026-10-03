@@ -1,0 +1,8 @@
+{
+  "runtime": "6e960e873972b06fbd9e5125e7a498eef61c6d3a",
+  "folder": "agentes/gipuzkoa_360_5",
+  "main_exact": true,
+  "tools_exact": true,
+  "main_sha256": "e1bdcbdb3c2a926b70702bb9005d5d25cf1812bc200d855c8398c4098b59a4cc",
+  "tools_sha256": "251d835d8e4bf66e7ac475f3e16a27dd6b434a998cb5340f30205da54d616de9"
+}

@@ -1,0 +1,10 @@
+{
+  "version": "agentv_0604ea1aa5e141269381e41f9f463c97",
+  "runtime": "6e960e873972b06fbd9e5125e7a498eef61c6d3a",
+  "folder": "agentes/gipuzkoa_360_5",
+  "tools": 10,
+  "internet": false,
+  "context": 15,
+  "unused_platform_scaffold": "ejecucion.py, not imported or registered",
+  "zip_sha256": "b88f44aaabeac6cf50ee7a0e3aaea7295737f0b00bfb47cc2e34c1240e63b2e0"
+}
