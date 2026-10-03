@@ -1,0 +1,1128 @@
+{
+  "id": "05",
+  "prompt": "Todavía no tengo una pregunta concreta. ¿Qué podríamos estudiar sobre Gipuzkoa y qué no sabes?",
+  "sent_at": "2026-10-03T00:05:22.567Z",
+  "started_ms": 1790985922567,
+  "observations": [
+    {
+      "at": "2026-10-03T00:05:57.674Z",
+      "elapsed_ms": 35067,
+      "delta": "Tú\n\nTodavía no tengo una pregunta concreta. ¿Qué podríamos estudiar sobre Gipuzkoa y qué no sabes?\n\nGIPUZKOA 360\nTool · consultar_capacidades\n{}\nResultado de consultar_capacidades\nGIPUZKOA 360\n\nPodemos estudiar, con evidencia disponible:\n\nDemografía municipal: población de 65+ y 75+ por municipio, en recuento o porcentaje, y rankings entre los 88 municipios.\nProximidad geométrica a servicios sanitarios: distancia desde el punto representativo de cada municipio al registro más cercano de atención primaria, hospitales, salud mental u otros servicios.\nCruces descriptivos: comparar envejecimiento municipal y distancia a servicios. Esto muestra coincidencias, no causalidad ni necesidad individual.\nComparaciones entre municipios: consultar municipios concretos y comparar la misma métrica, unidad y referencia.\nEscenarios geométricos: añadir un punto sanitario hipotético, retirar un registro observado o cambiar el umbral de distancia. Son simulaciones condicionales, no previsiones ni recomendaciones.\nVisitas sanitarias programadas/modeladas: para tres orígenes concretos —Idiazabal, Segura y Zegama— hacia el Ambulatorio de Beasain, usando una fecha, hora y duración válidas. El resultado combina horario programado y paseo modelado; no es tiempo real ni disponibilidad de cita.\n\nLo que no sabemos con estas herramientas:\n\nCuántas personas viven realmente dentro de una distancia o cuánto población queda cubierta.\nEl tiempo real de viaje, el itinerario individual, la accesibilidad universal o la puerta exacta de entrada.\nSi un centro tiene capacidad, citas disponibles, personal suficiente o buena calidad.\nLa necesidad sanitaria individual, uso efectivo, satisfacción o resultados de salud.\nEl efecto causal del envejecimiento sobre la distancia o de abrir/cerrar un centro.\nEvolución histórica demográfica comparable: la referencia demográfica disponible es fija, del 1 de enero de 2025; las fuentes sanitarias y geográficas tienen sus propias fechas.\nAhorros, demanda futura o impacto real de una reorganización.\n\nUna primera pregunta útil sería: ¿quieres explorar demografía, acceso sanitario o una visita modelada?",
+      "busy": 0
+    }
+  ],
+  "baseline_log": "✦\nComprueba qué hace con tus datos\n\nEl chat utiliza la versión fija de este agente y ejecuta sus herramientas en un entorno aislado. Esta versión no tiene acceso a Internet. Empieza con una pregunta que permita revisar fuentes, incertidumbre y límites.\n\nExplica qué muestran los datos y cita las fuentes utilizadas.\n¿Qué incertidumbres cambian la interpretación del resultado?\nContrasta dos explicaciones posibles y busca un caso que contradiga la primera.\nIndica cuándo necesitarías validación humana.",
+  "first_tool_observed_ms": 35067,
+  "final_observed_ms": 35067,
+  "final_log": "Tú\n\nTodavía no tengo una pregunta concreta. ¿Qué podríamos estudiar sobre Gipuzkoa y qué no sabes?\n\nGIPUZKOA 360\nTool · consultar_capacidades\n{}\nResultado de consultar_capacidades\n{\"age_group_derivations\":{\"65\":{\"institution\":\"Eustat - Instituto Vasco de Estadística\",\"limitation\":\"Recuento municipal agregado, no edad exacta ni circunstancias individuales; no se infiere un corte por año de nacimiento.\",\"meaning\":\"Población de 65 años o más en la referencia indicada.\",\"method\":\"Recuento del grupo 65+ de la consulta municipal, sexo total; pivote preparado. Porcentaje = recuento / población total × 100, redondeado a tres decimales.\",\"output_field\":\"population_65_plus\",\"reference_period\":\"2025-01-01\",\"source_field\":\"grupo de edad 65+ de la consulta Eustat preparada\",\"source_id\":\"EUSTAT_EMH_2025\"},\"75\":{\"condition\":\"año de nacimiento <= 1949, incluido el grupo de años anteriores\",\"institution\":\"Eustat - Instituto Vasco de Estadística\",\"limitation\":\"Son recuentos municipales agregados, no edades exactas ni circunstancias individuales; el límite por año no identifica a los nacidos el propio 1 de enero de 1950.\",\"meaning\":\"A 1 de enero de 2025, quienes nacieron hasta 1949 ya habían cumplido al menos 75 años. La agrupación se basa en el año de nacimiento; no permite identificar cumpleaños individuales de quienes nacieron en 1950.\",\"method\":\"Suma de los recuentos por municipio y sexo total de los nacidos hasta 1949; porcentaje = recuento / población total × 100, redondeado a tres decimales.\",\"output_field\":\"population_75_plus\",\"reference_period\":\"2025-01-01\",\"source_field\":\"año de nacimiento\",\"source_id\":\"EUSTAT_EMH_2025\"}},\"assumptions\":[],\"capabilities\":[{\"coverage\":{\"entities\":88,\"periods\":[\"2025-01-01\",\"2026-09-20\",\"2025-05-07\"],\"scope\":\"Un municipio; demografía y cifras de servicio solo cuando tienen fuente ejecutada\",\"territory\":\"Gipuzkoa\"},\"derivation\":\"direct\",\"description\":\"Resumen municipal observado\",\"enabled\":true,\"id\":\"obtener_resumen_territorial\",\"input_fields\":[{\"allowed_values\":[],\"name\":\"municipio\",\"required\":true,\"type\":\"string\"}],\"periodo_demografico_actual\":\"2025-01-01\",\"periodo_demografico_explicacion\":\"La versión actual incorpora una única referencia demográfica disponible. Las fuentes sanitarias conservan sus propias fechas.\",\"semantic_contract\":{\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"limits\":\"fuentes con sus fechas distintas\",\"measures\":\"población agregada y registros sanitarios; distancias entre puntos\",\"numeric_evidence\":\"Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.\",\"subject\":\"municipio\"},\"semantic_limits\":[\"La ficha puede contener indicadores de servicios sin todas sus fuentes en la salida; esos valores no se promueven a claims.\",\"Los periodos de fuente no forman una fotografía temporal homogénea.\"],\"snapshot_policy\":\"Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública.\"},{\"coverage\":{\"entities\":88,\"periods\":[\"2025-01-01\"],\"scope\":\"Ranking municipal 65+ o 75+\",\"territory\":\"Gipuzkoa\"},\"derivation\":\"derived_exact\",\"description\":\"Ranking demográfico 65+ o 75+\",\"enabled\":true,\"id\":\"analizar_envejecimiento\",\"input_fields\":[{\"allowed_values\":[\"65\",\"75\"],\"name\":\"grupo_edad\",\"required\":false,\"type\":\"string\"},{\"allowed_values\":[\"percentage\",\"count\"],\"name\":\"medida\",\"required\":false,\"type\":\"string\"},{\"allowed_values\":[],\"name\":\"top_n\",\"required\":false,\"type\":\"integer\"}],\"semantic_contract\":{\"limits\":\"orden del indicador, no necesidad individual\",\"measures\":\"recuento de personas o porcentaje sobre población municipal\",\"numeric_evidence\":\"Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.\",\"subject\":\"municipio\"},\"semantic_limits\":[\"75+ se deriva de año de nacimiento; el resultado no identifica individuos.\",\"Los periodos de fuente no forman una fotografía temporal homogénea.\"],\"snapshot_policy\":\"Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública.\"},{\"coverage\":{\"entities\":88,\"periods\":[\"2026-09-20\",\"2025-05-07\"],\"scope\":\"88 municipios o subconjunto explícito; distancia geométrica\",\"territory\":\"Gipuzkoa\"},\"derivation\":\"derived_exact\",\"description\":\"Distancia geométrica y clasificación de los 88 puntos municipales, sin selección de municipios. No es población cubierta ni tiempo de viaje.\",\"enabled\":true,\"id\":\"analizar_acceso_general\",\"input_fields\":[{\"allowed_values\":[\"primary_care\",\"hospital\",\"mental_health\",\"other_health\"],\"name\":\"categoria_servicio\",\"required\":true,\"type\":\"string\"},{\"allowed_values\":[],\"exclusive_minimum\":0,\"finite\":true,\"maximum\":100,\"name\":\"umbral_km\",\"required\":true,\"type\":\"number\",\"unit\":\"km\"}],\"public_engine_mapping\":{\"operation\":\"analizar_acceso_servicios\",\"scope\":\"internal_only\"},\"semantic_contract\":{\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"limits\":\"no distribución de residentes\",\"measures\":\"distancia euclídea y clasificación municipal por umbral\",\"numeric_evidence\":\"Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.\",\"subject\":\"punto representativo municipal\"},\"semantic_limits\":[\"La distancia no es tiempo ni ruta; registro no implica apertura.\",\"Los periodos de fuente no forman una fotografía temporal homogénea.\"],\"snapshot_policy\":\"Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública.\"},{\"coverage\":{\"entities\":88,\"periods\":[\"2026-09-20\",\"2025-05-07\"],\"scope\":\"88 municipios o subconjunto explícito; distancia geométrica\",\"territory\":\"Gipuzkoa\"},\"derivation\":\"derived_exact\",\"description\":\"Distancia geométrica y clasificación de municipios concretos; lista obligatoria, resoluble, distinta y no vacía. Incluye identidad observada del registro más próximo.\",\"enabled\":true,\"id\":\"analizar_acceso_municipios\",\"input_fields\":[{\"allowed_values\":[\"primary_care\",\"hospital\",\"mental_health\",\"other_health\"],\"name\":\"categoria_servicio\",\"required\":true,\"type\":\"string\"},{\"allowed_values\":[],\"exclusive_minimum\":0,\"finite\":true,\"maximum\":100,\"name\":\"umbral_km\",\"required\":true,\"type\":\"number\",\"unit\":\"km\"},{\"allowed_values\":[],\"max_items\":88,\"min_items\":1,\"name\":\"municipios\",\"nullable\":false,\"required\":true,\"type\":\"string_array\",\"unique_resolved_entities\":true}],\"public_engine_mapping\":{\"operation\":\"analizar_acceso_servicios\",\"scope\":\"internal_only\"},\"semantic_contract\":{\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"limits\":\"no distribución de residentes\",\"measures\":\"distancia euclídea y clasificación municipal por umbral\",\"numeric_evidence\":\"Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.\",\"subject\":\"punto representativo municipal\"},\"semantic_limits\":[\"La distancia no es tiempo ni ruta; registro no implica apertura.\",\"Los periodos de fuente no forman una fotografía temporal homogénea.\"],\"snapshot_policy\":\"Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública.\"},{\"coverage\":{\"entities\":88,\"periods\":[\"2025-01-01\",\"2026-09-20\",\"2025-05-07\"],\"scope\":\"Cruce municipal de edad y distancia; cuantiles explícitos\",\"territory\":\"Gipuzkoa\"},\"derivation\":\"derived_exact\",\"description\":\"Cruce descriptivo de envejecimiento y distancia\",\"enabled\":true,\"id\":\"analizar_coincidencia\",\"input_fields\":[{\"allowed_values\":[\"primary_care\",\"hospital\",\"mental_health\",\"other_health\"],\"name\":\"categoria_servicio\",\"required\":true,\"type\":\"string\"},{\"allowed_values\":[\"65\",\"75\"],\"name\":\"grupo_edad\",\"required\":false,\"type\":\"string\"},{\"allowed_values\":[],\"name\":\"umbral_km\",\"required\":false,\"type\":\"number\"},{\"allowed_values\":[],\"name\":\"cuantil\",\"required\":false,\"type\":\"number\"}],\"semantic_contract\":{\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"limits\":\"coincidencia descriptiva, no causalidad ni cobertura poblacional\",\"measures\":\"proporción municipal de edad y distancia geométrica al registro\",\"numeric_evidence\":\"Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.\",\"subject\":\"municipio\"},\"semantic_limits\":[\"Coincidencia descriptiva no demuestra causalidad.\",\"Los periodos de fuente no forman una fotografía temporal homogénea.\"],\"snapshot_policy\":\"Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública.\"},{\"coverage\":{\"entities\":88,\"periods\":[\"2026-09-20\",\"2025-05-07\"],\"scope\":\"Contrafactual geométrico; no es pronóstico\",\"territory\":\"Gipuzkoa\"},\"derivation\":\"estimated_with_assumptions\",\"description\":\"Añadir un punto hipotético indicado en coordenadas WGS84; comparación condicional, no predicción ni recomendación.\",\"enabled\":true,\"id\":\"simular_anadir_servicio\",\"input_fields\":[{\"allowed_values\":[\"primary_care\",\"hospital\",\"mental_health\",\"other_health\"],\"name\":\"categoria_servicio\",\"required\":true,\"type\":\"string\"},{\"allowed_values\":[],\"crs\":\"EPSG:4326\",\"finite\":true,\"maximum\":90,\"minimum\":-90,\"name\":\"latitud\",\"required\":true,\"type\":\"number\"},{\"allowed_values\":[],\"crs\":\"EPSG:4326\",\"finite\":true,\"maximum\":180,\"minimum\":-180,\"name\":\"longitud\",\"required\":true,\"type\":\"number\"},{\"allowed_values\":[],\"exclusive_minimum\":0,\"finite\":true,\"maximum\":100,\"name\":\"umbral_km\",\"required\":true,\"type\":\"number\",\"unit\":\"km\"}],\"public_engine_mapping\":{\"operation\":\"simular_escenario\",\"scope\":\"internal_only\"},\"semantic_contract\":{\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"limits\":\"no predicción de uso, impacto o población beneficiada\",\"measures\":\"distancia desde punto municipal antes/después\",\"numeric_evidence\":\"Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.\",\"subject\":\"municipio en escenario hipotético\"},\"semantic_limits\":[\"Parámetros hipotéticos no son observaciones oficiales.\",\"Los periodos de fuente no forman una fotografía temporal homogénea.\"],\"snapshot_policy\":\"Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública.\"},{\"coverage\":{\"entities\":88,\"periods\":[\"2026-09-20\",\"2025-05-07\"],\"scope\":\"Contrafactual geométrico; no es pronóstico\",\"territory\":\"Gipuzkoa\"},\"derivation\":\"estimated_with_assumptions\",\"description\":\"Retirar hipotéticamente un registro de identidad observada en un resultado de acceso, nunca inventada; no modifica datos reales.\",\"enabled\":true,\"id\":\"simular_retirar_servicio\",\"input_fields\":[{\"allowed_values\":[\"primary_care\",\"hospital\",\"mental_health\",\"other_health\"],\"name\":\"categoria_servicio\",\"required\":true,\"type\":\"string\"},{\"allowed_values\":[],\"decision\":\"registered_identity_from_observed_access_result\",\"min_length\":1,\"name\":\"service_id\",\"required\":true,\"type\":\"string\"},{\"allowed_values\":[],\"exclusive_minimum\":0,\"finite\":true,\"maximum\":100,\"name\":\"umbral_km\",\"required\":true,\"type\":\"number\",\"unit\":\"km\"}],\"public_engine_mapping\":{\"operation\":\"simular_escenario\",\"scope\":\"internal_only\"},\"semantic_contract\":{\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"limits\":\"no predicción de uso, impacto o población beneficiada\",\"measures\":\"distancia desde punto municipal antes/después\",\"numeric_evidence\":\"Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.\",\"subject\":\"municipio en escenario hipotético\"},\"semantic_limits\":[\"Parámetros hipotéticos no son observaciones oficiales.\",\"Los periodos de fuente no forman una fotografía temporal homogénea.\"],\"snapshot_policy\":\"Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública.\"},{\"coverage\":{\"entities\":88,\"periods\":[\"2026-09-20\",\"2025-05-07\"],\"scope\":\"Contrafactual geométrico; no es pronóstico\",\"territory\":\"Gipuzkoa\"},\"derivation\":\"estimated_with_assumptions\",\"description\":\"Cambiar exclusivamente el umbral entre dos valores explícitos. No cambia registros ni distancias; no mide población cubierta.\",\"enabled\":true,\"id\":\"simular_cambiar_umbral\",\"input_fields\":[{\"allowed_values\":[\"primary_care\",\"hospital\",\"mental_health\",\"other_health\"],\"name\":\"categoria_servicio\",\"required\":true,\"type\":\"string\"},{\"allowed_values\":[],\"exclusive_minimum\":0,\"finite\":true,\"maximum\":100,\"name\":\"umbral_actual_km\",\"required\":true,\"type\":\"number\",\"unit\":\"km\"},{\"allowed_values\":[],\"exclusive_minimum\":0,\"finite\":true,\"maximum\":100,\"name\":\"nuevo_umbral_km\",\"required\":true,\"type\":\"number\",\"unit\":\"km\"}],\"public_engine_mapping\":{\"operation\":\"simular_escenario\",\"scope\":\"internal_only\"},\"semantic_contract\":{\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"limits\":\"no predicción de uso, impacto o población beneficiada\",\"measures\":\"distancia desde punto municipal antes/después\",\"numeric_evidence\":\"Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.\",\"subject\":\"municipio en escenario hipotético\"},\"semantic_limits\":[\"Parámetros hipotéticos no son observaciones oficiales.\",\"Los periodos de fuente no forman una fotografía temporal homogénea.\"],\"snapshot_policy\":\"Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública.\"},{\"coverage\":{\"entities\":9,\"periods\":[],\"scope\":\"Registro de operaciones disponibles y no disponibles\",\"territory\":\"capability_registry\"},\"derivation\":\"direct\",\"description\":\"Catálogo de diez herramientas públicas, fuentes completas y capacidades compuestas; sin argumentos. No ejecuta análisis.\",\"enabled\":true,\"id\":\"consultar_capacidades\",\"input_fields\":[],\"semantic_contract\":{\"limits\":\"catálogo no es resultado de análisis\",\"measures\":\"cobertura, campos y límites verificados\",\"numeric_evidence\":\"Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.\",\"subject\":\"operación\"},\"semantic_limits\":[\"La ficha no demuestra calidad conversacional del modelo.\",\"Los periodos de fuente no forman una fotografía temporal homogénea.\"]},{\"coverage\":{\"entities\":3,\"periods\":[\"2026-09-28/2026-12-27\",\"2026-09-20\",\"Observed 2026-09-29\",\"2026-01\",\"Acquired 2026-09-29\",\"supuesto del modelo de paseo, no periodo observado\",\"2026-09-29\"],\"scope\":\"health_visit modelled; validated date only; origin_stop_presence_to_return_stop_arrival; public single visit\",\"territory\":\"Goierrialdea\"},\"derivation\":\"estimated_with_assumptions\",\"description\":\"Una visita sanitaria programada/modelada por llamada; comparar mediante llamadas individuales y sus resultados válidos. Sin batch público.\",\"enabled\":true,\"id\":\"plan_visit\",\"input_fields\":[{\"allowed_values\":[],\"name\":\"origin_id\",\"required\":true,\"type\":\"string\"},{\"allowed_values\":[],\"name\":\"destination_id\",\"required\":true,\"type\":\"string\"},{\"allowed_values\":[],\"name\":\"date\",\"required\":true,\"type\":\"string\"},{\"allowed_values\":[],\"name\":\"appointment_time\",\"required\":true,\"type\":\"string\"},{\"allowed_values\":[],\"name\":\"duration_minutes\",\"required\":true,\"type\":\"integer\"}],\"semantic_contract\":{\"limits\":\"no domicilio, tiempo real, capacidad, citas ni entrada verificada\",\"measures\":\"intervalo completo, componentes en segundos y paseo modelado\",\"numeric_evidence\":\"Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.\",\"subject\":\"visita programada/modelada entre paradas\"},\"semantic_limits\":[\"Paseo modelado y tiempo GTFS programado, no llegada real.\",\"Unknown no significa ausencia de transporte; no viable no es fallo de red.\",\"Los argumentos de la tool no acreditan autoría humana.\"]}],\"capability_id\":\"consultar_capacidades\",\"claims\":[],\"composed_capabilities\":[{\"callable_tool\":false,\"id\":\"municipal_comparison\",\"limits\":\"Misma métrica, sujeto, unidad y periodos compatibles; diferencias porcentuales en puntos porcentuales.\",\"meaning\":\"Comparación municipal por composición de consultas nuevas, no herramienta adicional.\",\"steps\":[\"obtener_resumen_territorial for each municipality\",\"compare observed compatible claims\"]},{\"callable_tool\":false,\"id\":\"source_explanation\",\"meaning\":\"Explicar institución, fecha, método y límites de la fuente utilizada, sin pedir códigos al usuario.\",\"steps\":[\"provenance in observed analytic output\",\"consultar_capacidades for source cards if needed\"]}],\"effective_request\":{\"defaults_applied\":[\"pregunta_o_dimension\"],\"effective_period\":null,\"municipality_codes\":[],\"municipality_labels\":[],\"operation\":\"consultar_capacidades\",\"parameters\":{\"pregunta_o_dimension\":null}},\"error\":null,\"evidence_policy\":{\"classification\":[\"AVAILABLE\",\"DERIVABLE_EXACTLY\",\"ESTIMABLE_WITH_ASSUMPTIONS\",\"NOT_AVAILABLE\"],\"derivation\":\"Operaciones transparentes sobre inputs observados compatibles; sin dato espacial de residentes no hay cobertura poblacional.\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"preserve\":[\"subject\",\"entity\",\"unit\",\"period\",\"source\",\"scope\",\"assumptions\"],\"recovery\":\"Un error aporta cero cifras; no repetir llamada y argumentos fallidos; una única recuperación inequívoca por causa.\"},\"input_semantics\":\"normalized_input y effective_request contienen parámetros; no cifras analíticas. defaults_applied son supuestos, no elecciones humanas observadas.\",\"limitations\":[\"Una capacidad deshabilitada no se puede ejecutar.\",\"El registro no sustituye una prueba conversacional en portal.\"],\"method\":\"Consulta de las operaciones disponibles, sus fuentes y límites.\",\"mobility_catalog\":{\"comparison\":{\"batch_supported\":false,\"cross_origin_comparison\":\"side_by_side_only; numeric delta is not supported across origins\",\"mode\":\"individual_calls\",\"procedure\":\"Execute one plan_visit per scenario, observe every output, then compare only valid compatible results. Differences are conditional, not observed savings or recommendations.\"},\"destination\":{\"centre_id\":\"entityBC631DA5\",\"destination_id\":\"beasain_official_centre_anchor\",\"name\":\"Ambulatorio de Beasain\",\"reference_point_meaning\":\"El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.\",\"verification\":{\"centre_anchor\":\"CONFIRMED_OFFICIAL_POINT\",\"centre_identity\":\"CONFIRMED\",\"entrance_verified\":false,\"modelled_access\":true}},\"modelling_assumptions\":{\"arrival_margin_minutes\":10,\"boarding_margin_minutes\":3,\"meaning\":\"Supuestos de cálculo; no son decisiones observadas del usuario ni argumentos públicos.\",\"walking_profile\":\"Paseo modelado de referencia: 50 m/min más 120 s por enlace completo\"},\"origin_options\":[{\"municipality_name\":\"Idiazabal\",\"name\":\"Paradas centrales de Idiazabal\",\"origin_id\":\"idiazabal_center_stops\"},{\"municipality_name\":\"Segura\",\"name\":\"Paradas Herriko Plaza de Segura\",\"origin_id\":\"segura_herriko_plaza_stops\"},{\"municipality_name\":\"Zegama\",\"name\":\"Paradas centrales de Zegama\",\"origin_id\":\"zegama_center_stops\"}],\"ranges\":{\"duration_minutes\":{\"maximum\":720,\"minimum\":1}},\"request_fields\":[\"origin_id\",\"destination_id\",\"date\",\"appointment_time\",\"duration_minutes\"],\"required_fields\":[\"origin_id\",\"destination_id\",\"date\",\"appointment_time\",\"duration_minutes\"],\"restrictions\":[\"GO01 direct only\",\"static schedule; not realtime\",\"same civil day\",\"origin stop presence to return stop arrival\",\"validated date only\",\"not assigned centre, appointment availability, universal accessibility or verified entrance\"],\"scenario_kind\":\"health_visit\",\"validated_date\":\"2026-09-29\",\"walking_profile\":{\"id\":\"poc_reference_50m_min_plus_120s\",\"label\":\"Paseo modelado de referencia: 50 m/min más 120 s por enlace completo\"}},\"normalized_input\":{\"arguments\":{},\"tool\":\"consultar_capacidades\"},\"operation_semantics\":{\"interpretation\":\"catálogo no es resultado de análisis\",\"measures\":\"cobertura, campos y límites verificados\",\"subject\":\"operación\"},\"operational_metadata\":{\"counters\":[],\"execution\":{\"request_id\":\"88072ca788e54ccc8de08b9278093296\",\"state\":\"completed\",\"tool\":\"consultar_capacidades\"},\"not_analytical_evidence\":true,\"selection\":{\"criterion\":\"Primeras entidades en el orden validado de la herramienta\",\"detail_mechanism\":\"Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.\",\"omitted_entities\":0,\"returned_entities\":0,\"total_entities\":0}},\"outcomes\":[],\"public_input\":{\"arguments\":{},\"tool\":\"consultar_capacidades\"},\"public_tool_count\":10,\"request_id\":\"88072ca788e54ccc8de08b9278093296\",\"sources_catalog\":[{\"download_date\":\"2026-09-24\",\"institution\":\"Eustat - Instituto Vasco de Estadística\",\"license\":\"Creative Commons (según ficha Eustat de la operación 010154)\",\"limitations\":[\"75+ se deriva de año de nacimiento <=1949 a 2025-01-01.\"],\"method\":\"Consulta PXWeb por municipio, sexo total y periodo 2025-01-01; pivote de total/65+ y suma de nacidos hasta 1949 para 75+.\",\"notes\":[\"Códigos municipales Eustat/INE de cinco caracteres conservados como texto.\"],\"original_file\":\"datos_originales/eustat_demografia_2025.csv\",\"prepared_files\":[\"datos_preparados/demografia.csv\",\"datos_preparados/municipios.csv\"],\"reference_period\":\"2025-01-01\",\"source_id\":\"EUSTAT_EMH_2025\",\"source_type\":\"official\",\"territory\":\"Gipuzkoa, 88 municipios\",\"title\":\"Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo\",\"unit\":\"personas\",\"url\":\"https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px\"},{\"download_date\":\"2026-09-24\",\"institution\":\"Gobierno Vasco - Departamento de Salud\",\"license\":\"Licencia abierta indicada por Open Data Euskadi; atribución y fecha obligatorias\",\"limitations\":[\"La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad.\"],\"method\":\"Filtro Provincia=Gipuzkoa, normalización de tipo y unión espacial within en EPSG:4326.\",\"notes\":[\"Asignación municipal por punto dentro de polígono oficial.\"],\"original_file\":\"datos_originales/centros-salud.xlsx\",\"prepared_files\":[\"datos_preparados/servicios.csv\",\"datos_preparados/runtime_servicios.csv\"],\"reference_period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\",\"source_type\":\"official\",\"territory\":\"Euskadi; filtrado a Gipuzkoa\",\"title\":\"Centros de salud, ambulatorios y hospitales públicos de Euskadi\",\"unit\":\"registro de centro sanitario público\",\"url\":\"https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/\"},{\"download_date\":\"2026-09-24\",\"institution\":\"Gobierno Vasco - geoEuskadi\",\"license\":\"Uso permitido citando Eusko Jaurlaritza / Gobierno Vasco\",\"limitations\":[\"El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007.\"],\"method\":\"Filtro por territorio y catálogo Eustat; área y simplificación calculadas en EPSG:25830.\",\"notes\":[\"CRS original y de cálculo: EPSG:25830; publicación runtime: EPSG:4326.\"],\"original_file\":\"datos_originales/MUNICIPIOS_5000_ETRS89.zip\",\"prepared_files\":[\"datos_preparados/municipios.geojson\",\"datos_preparados/runtime_municipios.geojson\",\"datos_preparados/runtime_municipality_points.csv\"],\"reference_period\":\"2025-05-07\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\",\"source_type\":\"official\",\"territory\":\"Euskadi; filtrado a Gipuzkoa\",\"title\":\"Límites Administrativos del País Vasco - Municipios 1:5.000\",\"unit\":\"polígono municipal\",\"url\":\"https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/\"},{\"download_date\":null,\"input_source_ids\":[\"EUSTAT_EMH_2025\",\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"],\"institution\":\"DeustoAI Labs\",\"license\":\"Hereda las condiciones de atribución de las tres fuentes ascendentes\",\"limitations\":[\"La distancia no es tiempo de viaje ni accesibilidad individual.\",\"Los periodos de las fuentes ascendentes no son idénticos.\"],\"method\":\"Conteos por municipio, tasas por 10.000 personas de 65+/75+ y distancia euclídea en metros desde el punto representativo municipal al servicio más cercano, calculada en EPSG:25830.\",\"notes\":[\"No es una fuente externa; registra el linaje de las transformaciones reproducibles.\"],\"original_file\":null,\"prepared_files\":[\"datos_preparados/municipios.csv\",\"datos_preparados/runtime_municipios.geojson\",\"datos_preparados/runtime_municipality_points.csv\"],\"producer\":\"GIPUZKOA 360\",\"reference_period\":\"demography=2025-01-01;services=2026-09-20;geography=2025-05-07\",\"source_id\":\"G360_DERIVED_MUNICIPAL_METRICS_V1\",\"source_type\":\"derived\",\"territory\":\"Gipuzkoa, 88 municipios\",\"title\":\"Métricas municipales derivadas de GIPUZKOA 360\",\"unit\":\"indicador municipal\",\"upstream_source_ids\":[\"EUSTAT_EMH_2025\",\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"],\"url\":\"https://github.com/Asier-Comba/Guipuzkoa360/blob/work/data-foundation/FUENTES.md\"},{\"institution\":\"Gobierno Vasco / Moveuskadi\",\"limitations\":[\"No es tiempo real ni acceso sanitario.\"],\"publisher\":\"Gobierno Vasco / Moveuskadi\",\"reference_period\":\"2026-09-29\",\"role\":\"official_schedule\",\"source_id\":\"W1_GTFS@2026-09-29\",\"source_sha256\":\"3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4\",\"title\":\"Horario GO01 usado por legacy stop_only\",\"unit\":\"horario programado\",\"url\":\"https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip\"},{\"institution\":\"Entrada del agente\",\"limitations\":[\"La presencia en la llamada no acredita autoría humana.\"],\"publisher\":\"Entrada de la llamada legacy\",\"reference_period\":\"2026-09-29\",\"role\":\"user_parameter\",\"source_id\":\"W2_USER@2026-09-29\",\"source_sha256\":null,\"title\":\"Parámetros presentes en la llamada legacy\",\"unit\":\"parámetros aplicados\",\"url\":null},{\"institution\":\"Proveedor W1 0.2.0\",\"limitations\":[\"No son elecciones humanas observadas.\"],\"publisher\":\"W1 stop_only 0.2.0\",\"reference_period\":\"2026-09-29\",\"role\":\"modelling_assumption\",\"source_id\":\"W1_MODEL@2026-09-29\",\"source_sha256\":\"62e00c04edb96ccde0a5ce4fe81574452ddcacdb4c173b030ca49b000f5a084b\",\"title\":\"Supuestos y defaults de W1 stop_only\",\"unit\":\"parámetros modelados\",\"url\":null},{\"institution\":\"Proveedor W1 0.2.0\",\"limitations\":[\"Derivación condicionada por el snapshot y sus supuestos.\"],\"publisher\":\"W1 deterministic provider 0.2.0\",\"reference_period\":\"2026-09-29\",\"role\":\"derived_network\",\"source_id\":\"W1_DERIVED@2026-09-29\",\"source_sha256\":\"c97842617f3077c2eec1892653361b4471a18e1c64f8127b808b9968401cb834\",\"title\":\"Componentes calculados por legacy stop_only\",\"unit\":\"segundos calculados\",\"url\":null},{\"institution\":\"Moveuskadi / Goierrialdea\",\"limitations\":[\"Los tiempos timepoint=0 son aproximados/interpolados; no son tiempo real.\"],\"reference_period\":\"2026-09-28/2026-12-27\",\"role\":\"official_schedule\",\"source_id\":\"GTFS\",\"source_sha256\":\"3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4\",\"title\":\"Horario GO01 Goierrialdea\",\"unit\":\"horarios programados\",\"url\":\"https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip\"},{\"institution\":\"Open Data Euskadi\",\"limitations\":[\"El punto oficial no verifica la puerta física de entrada.\"],\"reference_period\":\"2026-09-20\",\"role\":\"official_health_registry\",\"source_id\":\"HEALTH_REGISTRY\",\"source_sha256\":\"87a2b8ea3309678ff743e2f267320b94216c3d1e4f52b578bdd0a77bd8bf29ab\",\"title\":\"Registro de centros de salud públicos\",\"unit\":\"centro y coordenadas\",\"url\":\"https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/\"},{\"institution\":\"Osakidetza\",\"limitations\":[\"La fecha de publicación no consta; las condiciones específicas de reutilización no están verificadas.\"],\"reference_period\":\"Observed 2026-09-29\",\"role\":\"official_health_page\",\"source_id\":\"HEALTH_PAGE\",\"source_sha256\":\"7ba21b4f78f79b55d5761f427582daaef48097245142c9cb259288dc923f3160\",\"title\":\"Ficha del Ambulatorio de Beasain\",\"unit\":\"identidad y dirección\",\"url\":\"https://www.osakidetza.euskadi.eus/ambulatorio-de-beasain/webosk00-cercon/es/\"},{\"institution\":\"Osakidetza\",\"limitations\":[\"Listado dental, no prueba traslado ni dos sedes; conflicto de dirección pendiente de revisión.\"],\"reference_period\":\"2026-01\",\"role\":\"official_health_page\",\"source_id\":\"PADI_2026\",\"source_sha256\":\"6cf5d40245eb29c9c98785d03aba518c44677104b71625db36c3f2801455ac10\",\"title\":\"Listado PADI de consultas dentales 2026\",\"unit\":\"dirección en listado\",\"url\":\"https://www.osakidetza.euskadi.eus/contenidos/informacion/salud_padi/es_def/adjuntos/padi-kontsultak-gipuzkoa.pdf\"},{\"institution\":\"OpenStreetMap contributors\",\"limitations\":[\"La red y el paseo son un modelo; no verifican accesibilidad, cruces ni puerta.\"],\"reference_period\":\"Acquired 2026-09-29\",\"role\":\"open_network\",\"source_id\":\"OSM\",\"source_sha256\":\"0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865\",\"title\":\"Derivado público de red peatonal\",\"unit\":\"metros de red modelada\",\"url\":\"https://api.openstreetmap.org/api/0.6/map?bbox=-2.203,43.041,-2.190,43.052\"},{\"institution\":\"GIPUZKOA360\",\"limitations\":[\"50 m/min más 120 s por enlace completo; no es una medición individual.\"],\"reference_period\":\"R5.1\",\"role\":\"model_parameter\",\"source_id\":\"MODEL\",\"source_sha256\":\"0f3a02e69f8065f892ce19a0115ae7e3c661c32725bd37a423f3d283ae1a2a7d\",\"title\":\"Perfil de paseo W1 R5.1\",\"unit\":\"segundos modelados\",\"url\":null},{\"institution\":\"Entrada del agente\",\"limitations\":[\"human_explicit en W1 significa presente en la llamada; W2 no acredita por sí solo autoría humana.\"],\"reference_period\":\"2026-09-29\",\"role\":\"agent_or_user_parameter\",\"source_id\":\"USER\",\"source_sha256\":null,\"title\":\"Parámetros presentes en la petición a W1\",\"unit\":\"parámetros\",\"url\":null},{\"institution\":\"Proveedor W1 0.3.1\",\"limitations\":[\"No son elecciones humanas observadas.\"],\"reference_period\":\"2026-09-29\",\"role\":\"model_parameter\",\"source_id\":\"MODEL_DEFAULTS\",\"source_sha256\":null,\"title\":\"Defaults aplicados por W1\",\"unit\":\"parámetros\",\"url\":null},{\"institution\":\"Proveedor W1 0.3.1\",\"limitations\":[\"Cálculo determinista condicionado por datos y supuestos fijados.\"],\"reference_period\":\"2026-09-29\",\"role\":\"derived_metric\",\"source_id\":\"DERIVED\",\"source_sha256\":null,\"title\":\"Componentes calculados del itinerario\",\"unit\":\"segundos\",\"url\":null}],\"status\":\"valid\"}\nGIPUZKOA 360\n\nPodemos estudiar, con evidencia disponible:\n\nDemografía municipal: población de 65+ y 75+ por municipio, en recuento o porcentaje, y rankings entre los 88 municipios.\nProximidad geométrica a servicios sanitarios: distancia desde el punto representativo de cada municipio al registro más cercano de atención primaria, hospitales, salud mental u otros servicios.\nCruces descriptivos: comparar envejecimiento municipal y distancia a servicios. Esto muestra coincidencias, no causalidad ni necesidad individual.\nComparaciones entre municipios: consultar municipios concretos y comparar la misma métrica, unidad y referencia.\nEscenarios geométricos: añadir un punto sanitario hipotético, retirar un registro observado o cambiar el umbral de distancia. Son simulaciones condicionales, no previsiones ni recomendaciones.\nVisitas sanitarias programadas/modeladas: para tres orígenes concretos —Idiazabal, Segura y Zegama— hacia el Ambulatorio de Beasain, usando una fecha, hora y duración válidas. El resultado combina horario programado y paseo modelado; no es tiempo real ni disponibilidad de cita.\n\nLo que no sabemos con estas herramientas:\n\nCuántas personas viven realmente dentro de una distancia o cuánto población queda cubierta.\nEl tiempo real de viaje, el itinerario individual, la accesibilidad universal o la puerta exacta de entrada.\nSi un centro tiene capacidad, citas disponibles, personal suficiente o buena calidad.\nLa necesidad sanitaria individual, uso efectivo, satisfacción o resultados de salud.\nEl efecto causal del envejecimiento sobre la distancia o de abrir/cerrar un centro.\nEvolución histórica demográfica comparable: la referencia demográfica disponible es fija, del 1 de enero de 2025; las fuentes sanitarias y geográficas tienen sus propias fechas.\nAhorros, demanda futura o impacto real de una reorganización.\n\nUna primera pregunta útil sería: ¿quieres explorar demografía, acceso sanitario o una visita modelada?",
+  "outputs": [
+    {
+      "age_group_derivations": {
+        "65": {
+          "institution": "Eustat - Instituto Vasco de Estadística",
+          "limitation": "Recuento municipal agregado, no edad exacta ni circunstancias individuales; no se infiere un corte por año de nacimiento.",
+          "meaning": "Población de 65 años o más en la referencia indicada.",
+          "method": "Recuento del grupo 65+ de la consulta municipal, sexo total; pivote preparado. Porcentaje = recuento / población total × 100, redondeado a tres decimales.",
+          "output_field": "population_65_plus",
+          "reference_period": "2025-01-01",
+          "source_field": "grupo de edad 65+ de la consulta Eustat preparada",
+          "source_id": "EUSTAT_EMH_2025"
+        },
+        "75": {
+          "condition": "año de nacimiento <= 1949, incluido el grupo de años anteriores",
+          "institution": "Eustat - Instituto Vasco de Estadística",
+          "limitation": "Son recuentos municipales agregados, no edades exactas ni circunstancias individuales; el límite por año no identifica a los nacidos el propio 1 de enero de 1950.",
+          "meaning": "A 1 de enero de 2025, quienes nacieron hasta 1949 ya habían cumplido al menos 75 años. La agrupación se basa en el año de nacimiento; no permite identificar cumpleaños individuales de quienes nacieron en 1950.",
+          "method": "Suma de los recuentos por municipio y sexo total de los nacidos hasta 1949; porcentaje = recuento / población total × 100, redondeado a tres decimales.",
+          "output_field": "population_75_plus",
+          "reference_period": "2025-01-01",
+          "source_field": "año de nacimiento",
+          "source_id": "EUSTAT_EMH_2025"
+        }
+      },
+      "assumptions": [],
+      "capabilities": [
+        {
+          "coverage": {
+            "entities": 88,
+            "periods": [
+              "2025-01-01",
+              "2026-09-20",
+              "2025-05-07"
+            ],
+            "scope": "Un municipio; demografía y cifras de servicio solo cuando tienen fuente ejecutada",
+            "territory": "Gipuzkoa"
+          },
+          "derivation": "direct",
+          "description": "Resumen municipal observado",
+          "enabled": true,
+          "id": "obtener_resumen_territorial",
+          "input_fields": [
+            {
+              "allowed_values": [],
+              "name": "municipio",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "periodo_demografico_actual": "2025-01-01",
+          "periodo_demografico_explicacion": "La versión actual incorpora una única referencia demográfica disponible. Las fuentes sanitarias conservan sus propias fechas.",
+          "semantic_contract": {
+            "forbidden_inferences": [
+              "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+              "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+              "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+              "Asociación no prueba causalidad; escenario no predice ni recomienda."
+            ],
+            "limits": "fuentes con sus fechas distintas",
+            "measures": "población agregada y registros sanitarios; distancias entre puntos",
+            "numeric_evidence": "Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.",
+            "subject": "municipio"
+          },
+          "semantic_limits": [
+            "La ficha puede contener indicadores de servicios sin todas sus fuentes en la salida; esos valores no se promueven a claims.",
+            "Los periodos de fuente no forman una fotografía temporal homogénea."
+          ],
+          "snapshot_policy": "Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública."
+        },
+        {
+          "coverage": {
+            "entities": 88,
+            "periods": [
+              "2025-01-01"
+            ],
+            "scope": "Ranking municipal 65+ o 75+",
+            "territory": "Gipuzkoa"
+          },
+          "derivation": "derived_exact",
+          "description": "Ranking demográfico 65+ o 75+",
+          "enabled": true,
+          "id": "analizar_envejecimiento",
+          "input_fields": [
+            {
+              "allowed_values": [
+                "65",
+                "75"
+              ],
+              "name": "grupo_edad",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "allowed_values": [
+                "percentage",
+                "count"
+              ],
+              "name": "medida",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "allowed_values": [],
+              "name": "top_n",
+              "required": false,
+              "type": "integer"
+            }
+          ],
+          "semantic_contract": {
+            "limits": "orden del indicador, no necesidad individual",
+            "measures": "recuento de personas o porcentaje sobre población municipal",
+            "numeric_evidence": "Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.",
+            "subject": "municipio"
+          },
+          "semantic_limits": [
+            "75+ se deriva de año de nacimiento; el resultado no identifica individuos.",
+            "Los periodos de fuente no forman una fotografía temporal homogénea."
+          ],
+          "snapshot_policy": "Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública."
+        },
+        {
+          "coverage": {
+            "entities": 88,
+            "periods": [
+              "2026-09-20",
+              "2025-05-07"
+            ],
+            "scope": "88 municipios o subconjunto explícito; distancia geométrica",
+            "territory": "Gipuzkoa"
+          },
+          "derivation": "derived_exact",
+          "description": "Distancia geométrica y clasificación de los 88 puntos municipales, sin selección de municipios. No es población cubierta ni tiempo de viaje.",
+          "enabled": true,
+          "id": "analizar_acceso_general",
+          "input_fields": [
+            {
+              "allowed_values": [
+                "primary_care",
+                "hospital",
+                "mental_health",
+                "other_health"
+              ],
+              "name": "categoria_servicio",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "allowed_values": [],
+              "exclusive_minimum": 0,
+              "finite": true,
+              "maximum": 100,
+              "name": "umbral_km",
+              "required": true,
+              "type": "number",
+              "unit": "km"
+            }
+          ],
+          "public_engine_mapping": {
+            "operation": "analizar_acceso_servicios",
+            "scope": "internal_only"
+          },
+          "semantic_contract": {
+            "forbidden_inferences": [
+              "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+              "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+              "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+              "Asociación no prueba causalidad; escenario no predice ni recomienda."
+            ],
+            "limits": "no distribución de residentes",
+            "measures": "distancia euclídea y clasificación municipal por umbral",
+            "numeric_evidence": "Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.",
+            "subject": "punto representativo municipal"
+          },
+          "semantic_limits": [
+            "La distancia no es tiempo ni ruta; registro no implica apertura.",
+            "Los periodos de fuente no forman una fotografía temporal homogénea."
+          ],
+          "snapshot_policy": "Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública."
+        },
+        {
+          "coverage": {
+            "entities": 88,
+            "periods": [
+              "2026-09-20",
+              "2025-05-07"
+            ],
+            "scope": "88 municipios o subconjunto explícito; distancia geométrica",
+            "territory": "Gipuzkoa"
+          },
+          "derivation": "derived_exact",
+          "description": "Distancia geométrica y clasificación de municipios concretos; lista obligatoria, resoluble, distinta y no vacía. Incluye identidad observada del registro más próximo.",
+          "enabled": true,
+          "id": "analizar_acceso_municipios",
+          "input_fields": [
+            {
+              "allowed_values": [
+                "primary_care",
+                "hospital",
+                "mental_health",
+                "other_health"
+              ],
+              "name": "categoria_servicio",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "allowed_values": [],
+              "exclusive_minimum": 0,
+              "finite": true,
+              "maximum": 100,
+              "name": "umbral_km",
+              "required": true,
+              "type": "number",
+              "unit": "km"
+            },
+            {
+              "allowed_values": [],
+              "max_items": 88,
+              "min_items": 1,
+              "name": "municipios",
+              "nullable": false,
+              "required": true,
+              "type": "string_array",
+              "unique_resolved_entities": true
+            }
+          ],
+          "public_engine_mapping": {
+            "operation": "analizar_acceso_servicios",
+            "scope": "internal_only"
+          },
+          "semantic_contract": {
+            "forbidden_inferences": [
+              "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+              "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+              "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+              "Asociación no prueba causalidad; escenario no predice ni recomienda."
+            ],
+            "limits": "no distribución de residentes",
+            "measures": "distancia euclídea y clasificación municipal por umbral",
+            "numeric_evidence": "Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.",
+            "subject": "punto representativo municipal"
+          },
+          "semantic_limits": [
+            "La distancia no es tiempo ni ruta; registro no implica apertura.",
+            "Los periodos de fuente no forman una fotografía temporal homogénea."
+          ],
+          "snapshot_policy": "Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública."
+        },
+        {
+          "coverage": {
+            "entities": 88,
+            "periods": [
+              "2025-01-01",
+              "2026-09-20",
+              "2025-05-07"
+            ],
+            "scope": "Cruce municipal de edad y distancia; cuantiles explícitos",
+            "territory": "Gipuzkoa"
+          },
+          "derivation": "derived_exact",
+          "description": "Cruce descriptivo de envejecimiento y distancia",
+          "enabled": true,
+          "id": "analizar_coincidencia",
+          "input_fields": [
+            {
+              "allowed_values": [
+                "primary_care",
+                "hospital",
+                "mental_health",
+                "other_health"
+              ],
+              "name": "categoria_servicio",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "allowed_values": [
+                "65",
+                "75"
+              ],
+              "name": "grupo_edad",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "allowed_values": [],
+              "name": "umbral_km",
+              "required": false,
+              "type": "number"
+            },
+            {
+              "allowed_values": [],
+              "name": "cuantil",
+              "required": false,
+              "type": "number"
+            }
+          ],
+          "semantic_contract": {
+            "forbidden_inferences": [
+              "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+              "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+              "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+              "Asociación no prueba causalidad; escenario no predice ni recomienda."
+            ],
+            "limits": "coincidencia descriptiva, no causalidad ni cobertura poblacional",
+            "measures": "proporción municipal de edad y distancia geométrica al registro",
+            "numeric_evidence": "Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.",
+            "subject": "municipio"
+          },
+          "semantic_limits": [
+            "Coincidencia descriptiva no demuestra causalidad.",
+            "Los periodos de fuente no forman una fotografía temporal homogénea."
+          ],
+          "snapshot_policy": "Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública."
+        },
+        {
+          "coverage": {
+            "entities": 88,
+            "periods": [
+              "2026-09-20",
+              "2025-05-07"
+            ],
+            "scope": "Contrafactual geométrico; no es pronóstico",
+            "territory": "Gipuzkoa"
+          },
+          "derivation": "estimated_with_assumptions",
+          "description": "Añadir un punto hipotético indicado en coordenadas WGS84; comparación condicional, no predicción ni recomendación.",
+          "enabled": true,
+          "id": "simular_anadir_servicio",
+          "input_fields": [
+            {
+              "allowed_values": [
+                "primary_care",
+                "hospital",
+                "mental_health",
+                "other_health"
+              ],
+              "name": "categoria_servicio",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "allowed_values": [],
+              "crs": "EPSG:4326",
+              "finite": true,
+              "maximum": 90,
+              "minimum": -90,
+              "name": "latitud",
+              "required": true,
+              "type": "number"
+            },
+            {
+              "allowed_values": [],
+              "crs": "EPSG:4326",
+              "finite": true,
+              "maximum": 180,
+              "minimum": -180,
+              "name": "longitud",
+              "required": true,
+              "type": "number"
+            },
+            {
+              "allowed_values": [],
+              "exclusive_minimum": 0,
+              "finite": true,
+              "maximum": 100,
+              "name": "umbral_km",
+              "required": true,
+              "type": "number",
+              "unit": "km"
+            }
+          ],
+          "public_engine_mapping": {
+            "operation": "simular_escenario",
+            "scope": "internal_only"
+          },
+          "semantic_contract": {
+            "forbidden_inferences": [
+              "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+              "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+              "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+              "Asociación no prueba causalidad; escenario no predice ni recomienda."
+            ],
+            "limits": "no predicción de uso, impacto o población beneficiada",
+            "measures": "distancia desde punto municipal antes/después",
+            "numeric_evidence": "Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.",
+            "subject": "municipio en escenario hipotético"
+          },
+          "semantic_limits": [
+            "Parámetros hipotéticos no son observaciones oficiales.",
+            "Los periodos de fuente no forman una fotografía temporal homogénea."
+          ],
+          "snapshot_policy": "Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública."
+        },
+        {
+          "coverage": {
+            "entities": 88,
+            "periods": [
+              "2026-09-20",
+              "2025-05-07"
+            ],
+            "scope": "Contrafactual geométrico; no es pronóstico",
+            "territory": "Gipuzkoa"
+          },
+          "derivation": "estimated_with_assumptions",
+          "description": "Retirar hipotéticamente un registro de identidad observada en un resultado de acceso, nunca inventada; no modifica datos reales.",
+          "enabled": true,
+          "id": "simular_retirar_servicio",
+          "input_fields": [
+            {
+              "allowed_values": [
+                "primary_care",
+                "hospital",
+                "mental_health",
+                "other_health"
+              ],
+              "name": "categoria_servicio",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "allowed_values": [],
+              "decision": "registered_identity_from_observed_access_result",
+              "min_length": 1,
+              "name": "service_id",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "allowed_values": [],
+              "exclusive_minimum": 0,
+              "finite": true,
+              "maximum": 100,
+              "name": "umbral_km",
+              "required": true,
+              "type": "number",
+              "unit": "km"
+            }
+          ],
+          "public_engine_mapping": {
+            "operation": "simular_escenario",
+            "scope": "internal_only"
+          },
+          "semantic_contract": {
+            "forbidden_inferences": [
+              "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+              "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+              "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+              "Asociación no prueba causalidad; escenario no predice ni recomienda."
+            ],
+            "limits": "no predicción de uso, impacto o población beneficiada",
+            "measures": "distancia desde punto municipal antes/después",
+            "numeric_evidence": "Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.",
+            "subject": "municipio en escenario hipotético"
+          },
+          "semantic_limits": [
+            "Parámetros hipotéticos no son observaciones oficiales.",
+            "Los periodos de fuente no forman una fotografía temporal homogénea."
+          ],
+          "snapshot_policy": "Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública."
+        },
+        {
+          "coverage": {
+            "entities": 88,
+            "periods": [
+              "2026-09-20",
+              "2025-05-07"
+            ],
+            "scope": "Contrafactual geométrico; no es pronóstico",
+            "territory": "Gipuzkoa"
+          },
+          "derivation": "estimated_with_assumptions",
+          "description": "Cambiar exclusivamente el umbral entre dos valores explícitos. No cambia registros ni distancias; no mide población cubierta.",
+          "enabled": true,
+          "id": "simular_cambiar_umbral",
+          "input_fields": [
+            {
+              "allowed_values": [
+                "primary_care",
+                "hospital",
+                "mental_health",
+                "other_health"
+              ],
+              "name": "categoria_servicio",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "allowed_values": [],
+              "exclusive_minimum": 0,
+              "finite": true,
+              "maximum": 100,
+              "name": "umbral_actual_km",
+              "required": true,
+              "type": "number",
+              "unit": "km"
+            },
+            {
+              "allowed_values": [],
+              "exclusive_minimum": 0,
+              "finite": true,
+              "maximum": 100,
+              "name": "nuevo_umbral_km",
+              "required": true,
+              "type": "number",
+              "unit": "km"
+            }
+          ],
+          "public_engine_mapping": {
+            "operation": "simular_escenario",
+            "scope": "internal_only"
+          },
+          "semantic_contract": {
+            "forbidden_inferences": [
+              "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+              "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+              "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+              "Asociación no prueba causalidad; escenario no predice ni recomienda."
+            ],
+            "limits": "no predicción de uso, impacto o población beneficiada",
+            "measures": "distancia desde punto municipal antes/después",
+            "numeric_evidence": "Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.",
+            "subject": "municipio en escenario hipotético"
+          },
+          "semantic_limits": [
+            "Parámetros hipotéticos no son observaciones oficiales.",
+            "Los periodos de fuente no forman una fotografía temporal homogénea."
+          ],
+          "snapshot_policy": "Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública."
+        },
+        {
+          "coverage": {
+            "entities": 9,
+            "periods": [],
+            "scope": "Registro de operaciones disponibles y no disponibles",
+            "territory": "capability_registry"
+          },
+          "derivation": "direct",
+          "description": "Catálogo de diez herramientas públicas, fuentes completas y capacidades compuestas; sin argumentos. No ejecuta análisis.",
+          "enabled": true,
+          "id": "consultar_capacidades",
+          "input_fields": [],
+          "semantic_contract": {
+            "limits": "catálogo no es resultado de análisis",
+            "measures": "cobertura, campos y límites verificados",
+            "numeric_evidence": "Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.",
+            "subject": "operación"
+          },
+          "semantic_limits": [
+            "La ficha no demuestra calidad conversacional del modelo.",
+            "Los periodos de fuente no forman una fotografía temporal homogénea."
+          ]
+        },
+        {
+          "coverage": {
+            "entities": 3,
+            "periods": [
+              "2026-09-28/2026-12-27",
+              "2026-09-20",
+              "Observed 2026-09-29",
+              "2026-01",
+              "Acquired 2026-09-29",
+              "supuesto del modelo de paseo, no periodo observado",
+              "2026-09-29"
+            ],
+            "scope": "health_visit modelled; validated date only; origin_stop_presence_to_return_stop_arrival; public single visit",
+            "territory": "Goierrialdea"
+          },
+          "derivation": "estimated_with_assumptions",
+          "description": "Una visita sanitaria programada/modelada por llamada; comparar mediante llamadas individuales y sus resultados válidos. Sin batch público.",
+          "enabled": true,
+          "id": "plan_visit",
+          "input_fields": [
+            {
+              "allowed_values": [],
+              "name": "origin_id",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "allowed_values": [],
+              "name": "destination_id",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "allowed_values": [],
+              "name": "date",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "allowed_values": [],
+              "name": "appointment_time",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "allowed_values": [],
+              "name": "duration_minutes",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "semantic_contract": {
+            "limits": "no domicilio, tiempo real, capacidad, citas ni entrada verificada",
+            "measures": "intervalo completo, componentes en segundos y paseo modelado",
+            "numeric_evidence": "Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.",
+            "subject": "visita programada/modelada entre paradas"
+          },
+          "semantic_limits": [
+            "Paseo modelado y tiempo GTFS programado, no llegada real.",
+            "Unknown no significa ausencia de transporte; no viable no es fallo de red.",
+            "Los argumentos de la tool no acreditan autoría humana."
+          ]
+        }
+      ],
+      "capability_id": "consultar_capacidades",
+      "claims": [],
+      "composed_capabilities": [
+        {
+          "callable_tool": false,
+          "id": "municipal_comparison",
+          "limits": "Misma métrica, sujeto, unidad y periodos compatibles; diferencias porcentuales en puntos porcentuales.",
+          "meaning": "Comparación municipal por composición de consultas nuevas, no herramienta adicional.",
+          "steps": [
+            "obtener_resumen_territorial for each municipality",
+            "compare observed compatible claims"
+          ]
+        },
+        {
+          "callable_tool": false,
+          "id": "source_explanation",
+          "meaning": "Explicar institución, fecha, método y límites de la fuente utilizada, sin pedir códigos al usuario.",
+          "steps": [
+            "provenance in observed analytic output",
+            "consultar_capacidades for source cards if needed"
+          ]
+        }
+      ],
+      "effective_request": {
+        "defaults_applied": [
+          "pregunta_o_dimension"
+        ],
+        "effective_period": null,
+        "municipality_codes": [],
+        "municipality_labels": [],
+        "operation": "consultar_capacidades",
+        "parameters": {
+          "pregunta_o_dimension": null
+        }
+      },
+      "error": null,
+      "evidence_policy": {
+        "classification": [
+          "AVAILABLE",
+          "DERIVABLE_EXACTLY",
+          "ESTIMABLE_WITH_ASSUMPTIONS",
+          "NOT_AVAILABLE"
+        ],
+        "derivation": "Operaciones transparentes sobre inputs observados compatibles; sin dato espacial de residentes no hay cobertura poblacional.",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "preserve": [
+          "subject",
+          "entity",
+          "unit",
+          "period",
+          "source",
+          "scope",
+          "assumptions"
+        ],
+        "recovery": "Un error aporta cero cifras; no repetir llamada y argumentos fallidos; una única recuperación inequívoca por causa."
+      },
+      "input_semantics": "normalized_input y effective_request contienen parámetros; no cifras analíticas. defaults_applied son supuestos, no elecciones humanas observadas.",
+      "limitations": [
+        "Una capacidad deshabilitada no se puede ejecutar.",
+        "El registro no sustituye una prueba conversacional en portal."
+      ],
+      "method": "Consulta de las operaciones disponibles, sus fuentes y límites.",
+      "mobility_catalog": {
+        "comparison": {
+          "batch_supported": false,
+          "cross_origin_comparison": "side_by_side_only; numeric delta is not supported across origins",
+          "mode": "individual_calls",
+          "procedure": "Execute one plan_visit per scenario, observe every output, then compare only valid compatible results. Differences are conditional, not observed savings or recommendations."
+        },
+        "destination": {
+          "centre_id": "entityBC631DA5",
+          "destination_id": "beasain_official_centre_anchor",
+          "name": "Ambulatorio de Beasain",
+          "reference_point_meaning": "El paseo termina en un punto de referencia modelado del centro; no representa una puerta física verificada.",
+          "verification": {
+            "centre_anchor": "CONFIRMED_OFFICIAL_POINT",
+            "centre_identity": "CONFIRMED",
+            "entrance_verified": false,
+            "modelled_access": true
+          }
+        },
+        "modelling_assumptions": {
+          "arrival_margin_minutes": 10,
+          "boarding_margin_minutes": 3,
+          "meaning": "Supuestos de cálculo; no son decisiones observadas del usuario ni argumentos públicos.",
+          "walking_profile": "Paseo modelado de referencia: 50 m/min más 120 s por enlace completo"
+        },
+        "origin_options": [
+          {
+            "municipality_name": "Idiazabal",
+            "name": "Paradas centrales de Idiazabal",
+            "origin_id": "idiazabal_center_stops"
+          },
+          {
+            "municipality_name": "Segura",
+            "name": "Paradas Herriko Plaza de Segura",
+            "origin_id": "segura_herriko_plaza_stops"
+          },
+          {
+            "municipality_name": "Zegama",
+            "name": "Paradas centrales de Zegama",
+            "origin_id": "zegama_center_stops"
+          }
+        ],
+        "ranges": {
+          "duration_minutes": {
+            "maximum": 720,
+            "minimum": 1
+          }
+        },
+        "request_fields": [
+          "origin_id",
+          "destination_id",
+          "date",
+          "appointment_time",
+          "duration_minutes"
+        ],
+        "required_fields": [
+          "origin_id",
+          "destination_id",
+          "date",
+          "appointment_time",
+          "duration_minutes"
+        ],
+        "restrictions": [
+          "GO01 direct only",
+          "static schedule; not realtime",
+          "same civil day",
+          "origin stop presence to return stop arrival",
+          "validated date only",
+          "not assigned centre, appointment availability, universal accessibility or verified entrance"
+        ],
+        "scenario_kind": "health_visit",
+        "validated_date": "2026-09-29",
+        "walking_profile": {
+          "id": "poc_reference_50m_min_plus_120s",
+          "label": "Paseo modelado de referencia: 50 m/min más 120 s por enlace completo"
+        }
+      },
+      "normalized_input": {
+        "arguments": {},
+        "tool": "consultar_capacidades"
+      },
+      "operation_semantics": {
+        "interpretation": "catálogo no es resultado de análisis",
+        "measures": "cobertura, campos y límites verificados",
+        "subject": "operación"
+      },
+      "operational_metadata": {
+        "counters": [],
+        "execution": {
+          "request_id": "88072ca788e54ccc8de08b9278093296",
+          "state": "completed",
+          "tool": "consultar_capacidades"
+        },
+        "not_analytical_evidence": true,
+        "selection": {
+          "criterion": "Primeras entidades en el orden validado de la herramienta",
+          "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+          "omitted_entities": 0,
+          "returned_entities": 0,
+          "total_entities": 0
+        }
+      },
+      "outcomes": [],
+      "public_input": {
+        "arguments": {},
+        "tool": "consultar_capacidades"
+      },
+      "public_tool_count": 10,
+      "request_id": "88072ca788e54ccc8de08b9278093296",
+      "sources_catalog": [
+        {
+          "download_date": "2026-09-24",
+          "institution": "Eustat - Instituto Vasco de Estadística",
+          "license": "Creative Commons (según ficha Eustat de la operación 010154)",
+          "limitations": [
+            "75+ se deriva de año de nacimiento <=1949 a 2025-01-01."
+          ],
+          "method": "Consulta PXWeb por municipio, sexo total y periodo 2025-01-01; pivote de total/65+ y suma de nacidos hasta 1949 para 75+.",
+          "notes": [
+            "Códigos municipales Eustat/INE de cinco caracteres conservados como texto."
+          ],
+          "original_file": "datos_originales/eustat_demografia_2025.csv",
+          "prepared_files": [
+            "datos_preparados/demografia.csv",
+            "datos_preparados/municipios.csv"
+          ],
+          "reference_period": "2025-01-01",
+          "source_id": "EUSTAT_EMH_2025",
+          "source_type": "official",
+          "territory": "Gipuzkoa, 88 municipios",
+          "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+          "unit": "personas",
+          "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px"
+        },
+        {
+          "download_date": "2026-09-24",
+          "institution": "Gobierno Vasco - Departamento de Salud",
+          "license": "Licencia abierta indicada por Open Data Euskadi; atribución y fecha obligatorias",
+          "limitations": [
+            "La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad."
+          ],
+          "method": "Filtro Provincia=Gipuzkoa, normalización de tipo y unión espacial within en EPSG:4326.",
+          "notes": [
+            "Asignación municipal por punto dentro de polígono oficial."
+          ],
+          "original_file": "datos_originales/centros-salud.xlsx",
+          "prepared_files": [
+            "datos_preparados/servicios.csv",
+            "datos_preparados/runtime_servicios.csv"
+          ],
+          "reference_period": "2026-09-20",
+          "source_id": "ODE_HEALTH_CENTRES_2026",
+          "source_type": "official",
+          "territory": "Euskadi; filtrado a Gipuzkoa",
+          "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+          "unit": "registro de centro sanitario público",
+          "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+        },
+        {
+          "download_date": "2026-09-24",
+          "institution": "Gobierno Vasco - geoEuskadi",
+          "license": "Uso permitido citando Eusko Jaurlaritza / Gobierno Vasco",
+          "limitations": [
+            "El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007."
+          ],
+          "method": "Filtro por territorio y catálogo Eustat; área y simplificación calculadas en EPSG:25830.",
+          "notes": [
+            "CRS original y de cálculo: EPSG:25830; publicación runtime: EPSG:4326."
+          ],
+          "original_file": "datos_originales/MUNICIPIOS_5000_ETRS89.zip",
+          "prepared_files": [
+            "datos_preparados/municipios.geojson",
+            "datos_preparados/runtime_municipios.geojson",
+            "datos_preparados/runtime_municipality_points.csv"
+          ],
+          "reference_period": "2025-05-07",
+          "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+          "source_type": "official",
+          "territory": "Euskadi; filtrado a Gipuzkoa",
+          "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+          "unit": "polígono municipal",
+          "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/"
+        },
+        {
+          "download_date": null,
+          "input_source_ids": [
+            "EUSTAT_EMH_2025",
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ],
+          "institution": "DeustoAI Labs",
+          "license": "Hereda las condiciones de atribución de las tres fuentes ascendentes",
+          "limitations": [
+            "La distancia no es tiempo de viaje ni accesibilidad individual.",
+            "Los periodos de las fuentes ascendentes no son idénticos."
+          ],
+          "method": "Conteos por municipio, tasas por 10.000 personas de 65+/75+ y distancia euclídea en metros desde el punto representativo municipal al servicio más cercano, calculada en EPSG:25830.",
+          "notes": [
+            "No es una fuente externa; registra el linaje de las transformaciones reproducibles."
+          ],
+          "original_file": null,
+          "prepared_files": [
+            "datos_preparados/municipios.csv",
+            "datos_preparados/runtime_municipios.geojson",
+            "datos_preparados/runtime_municipality_points.csv"
+          ],
+          "producer": "GIPUZKOA 360",
+          "reference_period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+          "source_id": "G360_DERIVED_MUNICIPAL_METRICS_V1",
+          "source_type": "derived",
+          "territory": "Gipuzkoa, 88 municipios",
+          "title": "Métricas municipales derivadas de GIPUZKOA 360",
+          "unit": "indicador municipal",
+          "upstream_source_ids": [
+            "EUSTAT_EMH_2025",
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ],
+          "url": "https://github.com/Asier-Comba/Guipuzkoa360/blob/work/data-foundation/FUENTES.md"
+        },
+        {
+          "institution": "Gobierno Vasco / Moveuskadi",
+          "limitations": [
+            "No es tiempo real ni acceso sanitario."
+          ],
+          "publisher": "Gobierno Vasco / Moveuskadi",
+          "reference_period": "2026-09-29",
+          "role": "official_schedule",
+          "source_id": "W1_GTFS@2026-09-29",
+          "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+          "title": "Horario GO01 usado por legacy stop_only",
+          "unit": "horario programado",
+          "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+        },
+        {
+          "institution": "Entrada del agente",
+          "limitations": [
+            "La presencia en la llamada no acredita autoría humana."
+          ],
+          "publisher": "Entrada de la llamada legacy",
+          "reference_period": "2026-09-29",
+          "role": "user_parameter",
+          "source_id": "W2_USER@2026-09-29",
+          "source_sha256": null,
+          "title": "Parámetros presentes en la llamada legacy",
+          "unit": "parámetros aplicados",
+          "url": null
+        },
+        {
+          "institution": "Proveedor W1 0.2.0",
+          "limitations": [
+            "No son elecciones humanas observadas."
+          ],
+          "publisher": "W1 stop_only 0.2.0",
+          "reference_period": "2026-09-29",
+          "role": "modelling_assumption",
+          "source_id": "W1_MODEL@2026-09-29",
+          "source_sha256": "62e00c04edb96ccde0a5ce4fe81574452ddcacdb4c173b030ca49b000f5a084b",
+          "title": "Supuestos y defaults de W1 stop_only",
+          "unit": "parámetros modelados",
+          "url": null
+        },
+        {
+          "institution": "Proveedor W1 0.2.0",
+          "limitations": [
+            "Derivación condicionada por el snapshot y sus supuestos."
+          ],
+          "publisher": "W1 deterministic provider 0.2.0",
+          "reference_period": "2026-09-29",
+          "role": "derived_network",
+          "source_id": "W1_DERIVED@2026-09-29",
+          "source_sha256": "c97842617f3077c2eec1892653361b4471a18e1c64f8127b808b9968401cb834",
+          "title": "Componentes calculados por legacy stop_only",
+          "unit": "segundos calculados",
+          "url": null
+        },
+        {
+          "institution": "Moveuskadi / Goierrialdea",
+          "limitations": [
+            "Los tiempos timepoint=0 son aproximados/interpolados; no son tiempo real."
+          ],
+          "reference_period": "2026-09-28/2026-12-27",
+          "role": "official_schedule",
+          "source_id": "GTFS",
+          "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+          "title": "Horario GO01 Goierrialdea",
+          "unit": "horarios programados",
+          "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+        },
+        {
+          "institution": "Open Data Euskadi",
+          "limitations": [
+            "El punto oficial no verifica la puerta física de entrada."
+          ],
+          "reference_period": "2026-09-20",
+          "role": "official_health_registry",
+          "source_id": "HEALTH_REGISTRY",
+          "source_sha256": "87a2b8ea3309678ff743e2f267320b94216c3d1e4f52b578bdd0a77bd8bf29ab",
+          "title": "Registro de centros de salud públicos",
+          "unit": "centro y coordenadas",
+          "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+        },
+        {
+          "institution": "Osakidetza",
+          "limitations": [
+            "La fecha de publicación no consta; las condiciones específicas de reutilización no están verificadas."
+          ],
+          "reference_period": "Observed 2026-09-29",
+          "role": "official_health_page",
+          "source_id": "HEALTH_PAGE",
+          "source_sha256": "7ba21b4f78f79b55d5761f427582daaef48097245142c9cb259288dc923f3160",
+          "title": "Ficha del Ambulatorio de Beasain",
+          "unit": "identidad y dirección",
+          "url": "https://www.osakidetza.euskadi.eus/ambulatorio-de-beasain/webosk00-cercon/es/"
+        },
+        {
+          "institution": "Osakidetza",
+          "limitations": [
+            "Listado dental, no prueba traslado ni dos sedes; conflicto de dirección pendiente de revisión."
+          ],
+          "reference_period": "2026-01",
+          "role": "official_health_page",
+          "source_id": "PADI_2026",
+          "source_sha256": "6cf5d40245eb29c9c98785d03aba518c44677104b71625db36c3f2801455ac10",
+          "title": "Listado PADI de consultas dentales 2026",
+          "unit": "dirección en listado",
+          "url": "https://www.osakidetza.euskadi.eus/contenidos/informacion/salud_padi/es_def/adjuntos/padi-kontsultak-gipuzkoa.pdf"
+        },
+        {
+          "institution": "OpenStreetMap contributors",
+          "limitations": [
+            "La red y el paseo son un modelo; no verifican accesibilidad, cruces ni puerta."
+          ],
+          "reference_period": "Acquired 2026-09-29",
+          "role": "open_network",
+          "source_id": "OSM",
+          "source_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+          "title": "Derivado público de red peatonal",
+          "unit": "metros de red modelada",
+          "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-2.203,43.041,-2.190,43.052"
+        },
+        {
+          "institution": "GIPUZKOA360",
+          "limitations": [
+            "50 m/min más 120 s por enlace completo; no es una medición individual."
+          ],
+          "reference_period": "R5.1",
+          "role": "model_parameter",
+          "source_id": "MODEL",
+          "source_sha256": "0f3a02e69f8065f892ce19a0115ae7e3c661c32725bd37a423f3d283ae1a2a7d",
+          "title": "Perfil de paseo W1 R5.1",
+          "unit": "segundos modelados",
+          "url": null
+        },
+        {
+          "institution": "Entrada del agente",
+          "limitations": [
+            "human_explicit en W1 significa presente en la llamada; W2 no acredita por sí solo autoría humana."
+          ],
+          "reference_period": "2026-09-29",
+          "role": "agent_or_user_parameter",
+          "source_id": "USER",
+          "source_sha256": null,
+          "title": "Parámetros presentes en la petición a W1",
+          "unit": "parámetros",
+          "url": null
+        },
+        {
+          "institution": "Proveedor W1 0.3.1",
+          "limitations": [
+            "No son elecciones humanas observadas."
+          ],
+          "reference_period": "2026-09-29",
+          "role": "model_parameter",
+          "source_id": "MODEL_DEFAULTS",
+          "source_sha256": null,
+          "title": "Defaults aplicados por W1",
+          "unit": "parámetros",
+          "url": null
+        },
+        {
+          "institution": "Proveedor W1 0.3.1",
+          "limitations": [
+            "Cálculo determinista condicionado por datos y supuestos fijados."
+          ],
+          "reference_period": "2026-09-29",
+          "role": "derived_metric",
+          "source_id": "DERIVED",
+          "source_sha256": null,
+          "title": "Componentes calculados del itinerario",
+          "unit": "segundos",
+          "url": null
+        }
+      ],
+      "status": "valid"
+    }
+  ],
+  "version_id": "agentv_f43156f686694933951b3340d53996b4",
+  "runtime_sha": "202352adc10e90a4b98125387af8e0ff7a438073",
+  "assessment": {
+    "result": "PASS",
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "unsupported_material_claims": 0,
+    "low_findings": [
+      "Respuesta extensa y una incorrección gramatical («cuánto población»); estilo solamente, sin parche."
+    ],
+    "checks": [
+      "catalog first",
+      "10 tools observed",
+      "88 municipalities observed",
+      "3 origins exact from catalog",
+      "conditional scenarios and scheduled/modelled visit limits",
+      "no unsupported forecast/realtime/resident-radius"
+    ],
+    "claim_grounding": [
+      {
+        "claim": "88 municipalities;65+/75+;4categories;3namedorigins;2025-01-01 demographicreference",
+        "classification": "SUPPORTED_BY_TOOL"
+      }
+    ]
+  },
+  "latency_note": "First observed upper bounds; folded output becomes observable only when expanded. Not exact server latency."
+}

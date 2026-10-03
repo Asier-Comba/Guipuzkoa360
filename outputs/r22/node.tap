@@ -1,0 +1,112 @@
+TAP version 13
+# Subtest: pregunta → herramienta → dato → resultado → visualización → fuente
+ok 1 - pregunta → herramienta → dato → resultado → visualización → fuente
+  ---
+  duration_ms: 203.9778
+  type: 'test'
+  ...
+# Subtest: falla si una fuente no se puede rastrear
+ok 2 - falla si una fuente no se puede rastrear
+  ---
+  duration_ms: 178.7069
+  type: 'test'
+  ...
+# Subtest: falla si el resultado no enlaza con una salida de herramienta
+ok 3 - falla si el resultado no enlaza con una salida de herramienta
+  ---
+  duration_ms: 161.3873
+  type: 'test'
+  ...
+# Subtest: falla si un dato real carece de origen
+ok 4 - falla si un dato real carece de origen
+  ---
+  duration_ms: 164.0343
+  type: 'test'
+  ...
+# Subtest: geometría de Work 1 se enlaza por código sin cambiar las cifras
+ok 5 - geometría de Work 1 se enlaza por código sin cambiar las cifras
+  ---
+  duration_ms: 348.3523
+  type: 'test'
+  ...
+# Subtest: rechaza umbral negativo
+ok 6 - rechaza umbral negativo
+  ---
+  duration_ms: 158.3011
+  type: 'test'
+  ...
+# Subtest: rechaza grupo de edad inesperado
+ok 7 - rechaza grupo de edad inesperado
+  ---
+  duration_ms: 166.3619
+  type: 'test'
+  ...
+# Subtest: rechaza tipo de población incorrecto
+ok 8 - rechaza tipo de población incorrecto
+  ---
+  duration_ms: 178.3491
+  type: 'test'
+  ...
+# Subtest: rechaza denominador cero
+ok 9 - rechaza denominador cero
+  ---
+  duration_ms: 165.1466
+  type: 'test'
+  ...
+# Subtest: rechaza municipio duplicado
+ok 10 - rechaza municipio duplicado
+  ---
+  duration_ms: 174.9293
+  type: 'test'
+  ...
+# Subtest: rechaza edad 75 mayor que 65
+ok 11 - rechaza edad 75 mayor que 65
+  ---
+  duration_ms: 188.0915
+  type: 'test'
+  ...
+# Subtest: rechaza distancia NaN convertida a null
+ok 12 - rechaza distancia NaN convertida a null
+  ---
+  duration_ms: 170.7365
+  type: 'test'
+  ...
+# Subtest: rechaza source_id desconocido
+ok 13 - rechaza source_id desconocido
+  ---
+  duration_ms: 169.4364
+  type: 'test'
+  ...
+# Subtest: rechaza escenario con unidad inexistente
+ok 14 - rechaza escenario con unidad inexistente
+  ---
+  duration_ms: 173.1786
+  type: 'test'
+  ...
+# Subtest: rechaza traza que finge agente con fixture
+ok 15 - rechaza traza que finge agente con fixture
+  ---
+  duration_ms: 158.1462
+  type: 'test'
+  ...
+# Subtest: rechaza fecha inválida
+ok 16 - rechaza fecha inválida
+  ---
+  duration_ms: 166.4408
+  type: 'test'
+  ...
+# Subtest: acepta umbral extremo y escenario ausente sin fabricar cifras
+ok 17 - acepta umbral extremo y escenario ausente sin fabricar cifras
+  ---
+  duration_ms: 335.7015
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3568.6361

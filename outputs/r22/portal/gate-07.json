@@ -1,0 +1,1086 @@
+{
+  "id": "07",
+  "prompt": "Analiza para todos los municipios de Gipuzkoa la distancia geométrica a atención primaria con un límite de 2 km. ¿Qué significa y qué no mide?",
+  "sent_at": "2026-10-03T00:09:56.207Z",
+  "started_ms": 1790986196207,
+  "observations": [
+    {
+      "at": "2026-10-03T00:10:42.901Z",
+      "elapsed_ms": 46626,
+      "delta": "Tú\n\nAnaliza para todos los municipios de Gipuzkoa la distancia geométrica a atención primaria con un límite de 2 km. ¿Qué significa y qué no mide?\n\nGIPUZKOA 360\nTool · analizar_acceso_general\n{\"categoria_servicio\":\"primary_care\",\"umbral_km\":2}\nResultado de analizar_acceso_general\nGIPUZKOA 360\n\nLa consulta se ejecutó con un límite de exigencia de 2 km: se considera dentro solo si la distancia geométrica al registro de atención primaria más cercano es mayor que 0 y menor o igual que 2 km.\n\nImportante: el resultado recibido contiene solo 10 de los 88 municipios, por lo que no permite afirmar la clasificación de todo Gipuzkoa. En esos 10 casos, ninguno quedó dentro de 2 km:\n\nHernani: 5.882,0 m\nOiartzun: 4.438,1 m\nErrenteria: 3.925,5 m\nBeasain: 3.617,3 m\nUrnieta: 3.563,1 m\nAretxabaleta: 3.509,2 m\nAlkiza: 2.855,9 m\nPasaia: 2.813,4 m\nAduna: 2.756,2 m\nLegazpi: 2.624,8 m\nQué significa\n\nMide la distancia en línea recta, en metros, desde el punto representativo de cada municipio hasta el registro sanitario de atención primaria más cercano, y lo compara con el umbral de 2 km. Es una clasificación territorial de proximidad geométrica.\n\nQué no mide\n\nNo mide:\n\nla distancia por carretera o a pie ni el tiempo de viaje;\nla accesibilidad individual de los residentes;\ncuántas personas viven dentro de 2 km;\nqué proporción de la población está cubierta;\nsi el centro está abierto, tiene capacidad, citas disponibles o accesibilidad universal;\nla asignación sanitaria de cada persona;\nla calidad o disponibilidad efectiva de la atención.\n\nAdemás, el punto municipal no está ponderado por población: un municipio puede clasificarse por la posición de ese punto aunque sus habitantes estén distribuidos muy lejos de él. La fuente combina cartografía municipal con un registro de ubicaciones sanitarias; el registro más cercano no demuestra por sí mismo que preste atención efectiva a toda la población.",
+      "busy": 0
+    }
+  ],
+  "baseline_log": "✦\nComprueba qué hace con tus datos\n\nEl chat utiliza la versión fija de este agente y ejecuta sus herramientas en un entorno aislado. Esta versión no tiene acceso a Internet. Empieza con una pregunta que permita revisar fuentes, incertidumbre y límites.\n\nExplica qué muestran los datos y cita las fuentes utilizadas.\n¿Qué incertidumbres cambian la interpretación del resultado?\nContrasta dos explicaciones posibles y busca un caso que contradiga la primera.\nIndica cuándo necesitarías validación humana.",
+  "first_tool_observed_ms": 46626,
+  "final_observed_ms": 46626,
+  "final_log": "Tú\n\nAnaliza para todos los municipios de Gipuzkoa la distancia geométrica a atención primaria con un límite de 2 km. ¿Qué significa y qué no mide?\n\nGIPUZKOA 360\nTool · analizar_acceso_general\n{\"categoria_servicio\":\"primary_care\",\"umbral_km\":2}\nResultado de analizar_acceso_general\n{\"assumptions\":[],\"capability_id\":\"analizar_acceso_general\",\"claims\":[{\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":null,\"derivation\":\"direct\",\"entity_id\":\"20040\",\"entity_label\":\"Hernani\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/0/nearest_distance_m\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\"],\"id\":\"claim-1\",\"label\":\"nearest_distance_m\",\"metric_id\":\"nearest_distance_m\",\"numerator\":null,\"numeric_role\":\"analytical\",\"period\":\"2026-09-20;2025-05-07\",\"reference_periods\":[{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"},{\"period\":\"2025-05-07\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"}],\"source_attributions\":[{\"institution\":\"Gobierno Vasco - geoEuskadi\",\"period\":\"2025-05-07\",\"public_role\":\"punto municipal/cartografía\",\"role\":\"municipal_reference_point\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"},{\"institution\":\"Gobierno Vasco - Departamento de Salud\",\"period\":\"2026-09-20\",\"public_role\":\"registro sanitario\",\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"],\"source_refs\":[{\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"},{\"role\":\"municipal_reference_point\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"}],\"subject\":\"punto representativo municipal y registro sanitario\",\"unit\":\"m\",\"value\":5882.0},{\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":null,\"derivation\":\"direct\",\"entity_id\":\"20063\",\"entity_label\":\"Oiartzun\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/1/nearest_distance_m\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\"],\"id\":\"claim-2\",\"label\":\"nearest_distance_m\",\"metric_id\":\"nearest_distance_m\",\"numerator\":null,\"numeric_role\":\"analytical\",\"period\":\"2026-09-20;2025-05-07\",\"reference_periods\":[{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"},{\"period\":\"2025-05-07\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"}],\"source_attributions\":[{\"institution\":\"Gobierno Vasco - geoEuskadi\",\"period\":\"2025-05-07\",\"public_role\":\"punto municipal/cartografía\",\"role\":\"municipal_reference_point\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"},{\"institution\":\"Gobierno Vasco - Departamento de Salud\",\"period\":\"2026-09-20\",\"public_role\":\"registro sanitario\",\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"],\"source_refs\":[{\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"},{\"role\":\"municipal_reference_point\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"}],\"subject\":\"punto representativo municipal y registro sanitario\",\"unit\":\"m\",\"value\":4438.1},{\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":null,\"derivation\":\"direct\",\"entity_id\":\"20067\",\"entity_label\":\"Errenteria\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/2/nearest_distance_m\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\"],\"id\":\"claim-3\",\"label\":\"nearest_distance_m\",\"metric_id\":\"nearest_distance_m\",\"numerator\":null,\"numeric_role\":\"analytical\",\"period\":\"2026-09-20;2025-05-07\",\"reference_periods\":[{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"},{\"period\":\"2025-05-07\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"}],\"source_attributions\":[{\"institution\":\"Gobierno Vasco - geoEuskadi\",\"period\":\"2025-05-07\",\"public_role\":\"punto municipal/cartografía\",\"role\":\"municipal_reference_point\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"},{\"institution\":\"Gobierno Vasco - Departamento de Salud\",\"period\":\"2026-09-20\",\"public_role\":\"registro sanitario\",\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"],\"source_refs\":[{\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"},{\"role\":\"municipal_reference_point\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"}],\"subject\":\"punto representativo municipal y registro sanitario\",\"unit\":\"m\",\"value\":3925.5},{\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":null,\"derivation\":\"direct\",\"entity_id\":\"20019\",\"entity_label\":\"Beasain\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/3/nearest_distance_m\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\"],\"id\":\"claim-4\",\"label\":\"nearest_distance_m\",\"metric_id\":\"nearest_distance_m\",\"numerator\":null,\"numeric_role\":\"analytical\",\"period\":\"2026-09-20;2025-05-07\",\"reference_periods\":[{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"},{\"period\":\"2025-05-07\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"}],\"source_attributions\":[{\"institution\":\"Gobierno Vasco - geoEuskadi\",\"period\":\"2025-05-07\",\"public_role\":\"punto municipal/cartografía\",\"role\":\"municipal_reference_point\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"},{\"institution\":\"Gobierno Vasco - Departamento de Salud\",\"period\":\"2026-09-20\",\"public_role\":\"registro sanitario\",\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"],\"source_refs\":[{\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"},{\"role\":\"municipal_reference_point\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"}],\"subject\":\"punto representativo municipal y registro sanitario\",\"unit\":\"m\",\"value\":3617.3},{\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":null,\"derivation\":\"direct\",\"entity_id\":\"20072\",\"entity_label\":\"Urnieta\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/4/nearest_distance_m\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\"],\"id\":\"claim-5\",\"label\":\"nearest_distance_m\",\"metric_id\":\"nearest_distance_m\",\"numerator\":null,\"numeric_role\":\"analytical\",\"period\":\"2026-09-20;2025-05-07\",\"reference_periods\":[{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"},{\"period\":\"2025-05-07\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"}],\"source_attributions\":[{\"institution\":\"Gobierno Vasco - geoEuskadi\",\"period\":\"2025-05-07\",\"public_role\":\"punto municipal/cartografía\",\"role\":\"municipal_reference_point\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"},{\"institution\":\"Gobierno Vasco - Departamento de Salud\",\"period\":\"2026-09-20\",\"public_role\":\"registro sanitario\",\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"],\"source_refs\":[{\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"},{\"role\":\"municipal_reference_point\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"}],\"subject\":\"punto representativo municipal y registro sanitario\",\"unit\":\"m\",\"value\":3563.1},{\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":null,\"derivation\":\"direct\",\"entity_id\":\"20013\",\"entity_label\":\"Aretxabaleta\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/5/nearest_distance_m\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\"],\"id\":\"claim-6\",\"label\":\"nearest_distance_m\",\"metric_id\":\"nearest_distance_m\",\"numerator\":null,\"numeric_role\":\"analytical\",\"period\":\"2026-09-20;2025-05-07\",\"reference_periods\":[{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"},{\"period\":\"2025-05-07\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"}],\"source_attributions\":[{\"institution\":\"Gobierno Vasco - geoEuskadi\",\"period\":\"2025-05-07\",\"public_role\":\"punto municipal/cartografía\",\"role\":\"municipal_reference_point\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"},{\"institution\":\"Gobierno Vasco - Departamento de Salud\",\"period\":\"2026-09-20\",\"public_role\":\"registro sanitario\",\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"],\"source_refs\":[{\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"},{\"role\":\"municipal_reference_point\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"}],\"subject\":\"punto representativo municipal y registro sanitario\",\"unit\":\"m\",\"value\":3509.2},{\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":null,\"derivation\":\"direct\",\"entity_id\":\"20006\",\"entity_label\":\"Alkiza\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/6/nearest_distance_m\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\"],\"id\":\"claim-7\",\"label\":\"nearest_distance_m\",\"metric_id\":\"nearest_distance_m\",\"numerator\":null,\"numeric_role\":\"analytical\",\"period\":\"2026-09-20;2025-05-07\",\"reference_periods\":[{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"},{\"period\":\"2025-05-07\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"}],\"source_attributions\":[{\"institution\":\"Gobierno Vasco - geoEuskadi\",\"period\":\"2025-05-07\",\"public_role\":\"punto municipal/cartografía\",\"role\":\"municipal_reference_point\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"},{\"institution\":\"Gobierno Vasco - Departamento de Salud\",\"period\":\"2026-09-20\",\"public_role\":\"registro sanitario\",\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"],\"source_refs\":[{\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"},{\"role\":\"municipal_reference_point\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"}],\"subject\":\"punto representativo municipal y registro sanitario\",\"unit\":\"m\",\"value\":2855.9},{\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":null,\"derivation\":\"direct\",\"entity_id\":\"20064\",\"entity_label\":\"Pasaia\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/7/nearest_distance_m\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\"],\"id\":\"claim-8\",\"label\":\"nearest_distance_m\",\"metric_id\":\"nearest_distance_m\",\"numerator\":null,\"numeric_role\":\"analytical\",\"period\":\"2026-09-20;2025-05-07\",\"reference_periods\":[{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"},{\"period\":\"2025-05-07\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"}],\"source_attributions\":[{\"institution\":\"Gobierno Vasco - geoEuskadi\",\"period\":\"2025-05-07\",\"public_role\":\"punto municipal/cartografía\",\"role\":\"municipal_reference_point\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"},{\"institution\":\"Gobierno Vasco - Departamento de Salud\",\"period\":\"2026-09-20\",\"public_role\":\"registro sanitario\",\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"],\"source_refs\":[{\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"},{\"role\":\"municipal_reference_point\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"}],\"subject\":\"punto representativo municipal y registro sanitario\",\"unit\":\"m\",\"value\":2813.4},{\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":null,\"derivation\":\"direct\",\"entity_id\":\"20002\",\"entity_label\":\"Aduna\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/8/nearest_distance_m\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\"],\"id\":\"claim-9\",\"label\":\"nearest_distance_m\",\"metric_id\":\"nearest_distance_m\",\"numerator\":null,\"numeric_role\":\"analytical\",\"period\":\"2026-09-20;2025-05-07\",\"reference_periods\":[{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"},{\"period\":\"2025-05-07\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"}],\"source_attributions\":[{\"institution\":\"Gobierno Vasco - geoEuskadi\",\"period\":\"2025-05-07\",\"public_role\":\"punto municipal/cartografía\",\"role\":\"municipal_reference_point\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"},{\"institution\":\"Gobierno Vasco - Departamento de Salud\",\"period\":\"2026-09-20\",\"public_role\":\"registro sanitario\",\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"],\"source_refs\":[{\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"},{\"role\":\"municipal_reference_point\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"}],\"subject\":\"punto representativo municipal y registro sanitario\",\"unit\":\"m\",\"value\":2756.2},{\"allowed_transformations\":\"Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.\",\"assumptions\":[],\"denominator\":null,\"derivation\":\"direct\",\"entity_id\":\"20051\",\"entity_label\":\"Legazpi\",\"entity_type\":\"municipality\",\"evidence_path\":\"/data/9/nearest_distance_m\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\"],\"id\":\"claim-10\",\"label\":\"nearest_distance_m\",\"metric_id\":\"nearest_distance_m\",\"numerator\":null,\"numeric_role\":\"analytical\",\"period\":\"2026-09-20;2025-05-07\",\"reference_periods\":[{\"period\":\"2026-09-20\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"},{\"period\":\"2025-05-07\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"}],\"source_attributions\":[{\"institution\":\"Gobierno Vasco - geoEuskadi\",\"period\":\"2025-05-07\",\"public_role\":\"punto municipal/cartografía\",\"role\":\"municipal_reference_point\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"},{\"institution\":\"Gobierno Vasco - Departamento de Salud\",\"period\":\"2026-09-20\",\"public_role\":\"registro sanitario\",\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"}],\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"],\"source_refs\":[{\"role\":\"service_location\",\"source_id\":\"ODE_HEALTH_CENTRES_2026\"},{\"role\":\"municipal_reference_point\",\"source_id\":\"GEOEUSKADI_MUNICIPIOS_2025\"}],\"subject\":\"punto representativo municipal y registro sanitario\",\"unit\":\"m\",\"value\":2624.8}],\"effective_request\":{\"defaults_applied\":[\"municipios\",\"periodo\"],\"effective_period\":null,\"municipality_codes\":[],\"municipality_labels\":[],\"operation\":\"analizar_acceso_servicios\",\"parameters\":{\"categoria_servicio\":\"primary_care\",\"municipios\":null,\"periodo\":null,\"umbral_km\":2}},\"error\":null,\"evidence_policy\":{\"classification\":[\"AVAILABLE\",\"DERIVABLE_EXACTLY\",\"ESTIMABLE_WITH_ASSUMPTIONS\",\"NOT_AVAILABLE\"],\"derivation\":\"Operaciones transparentes sobre inputs observados compatibles; sin dato espacial de residentes no hay cobertura poblacional.\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\",\"Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.\",\"Asociación no prueba causalidad; escenario no predice ni recomienda.\"],\"preserve\":[\"subject\",\"entity\",\"unit\",\"period\",\"source\",\"scope\",\"assumptions\"],\"recovery\":\"Un error aporta cero cifras; no repetir llamada y argumentos fallidos; una única recuperación inequívoca por causa.\"},\"input_semantics\":\"normalized_input y effective_request contienen parámetros; no cifras analíticas. defaults_applied son supuestos, no elecciones humanas observadas.\",\"limitations\":[\"Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.\",\"El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.\",\"La existencia registrada no acredita apertura, capacidad ni accesibilidad universal.\"],\"method\":\"Distancia euclídea en EPSG:25830 desde representative_point() del polígono municipal al punto del servicio más cercano de la categoría.\",\"municipal_classifications\":[{\"entity_id\":\"20040\",\"entity_label\":\"Hernani\",\"evidence_path\":\"/data/0/within_threshold\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\"],\"metric_id\":\"within_threshold\",\"source_ids\":[\"GEOEUSKADI_MUNICIPIOS_2025\",\"ODE_HEALTH_CENTRES_2026\"],\"subject\":\"punto representativo municipal\",\"unit\":\"clasificación booleana municipal\",\"value\":false},{\"entity_id\":\"20063\",\"entity_label\":\"Oiartzun\",\"evidence_path\":\"/data/1/within_threshold\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\"],\"metric_id\":\"within_threshold\",\"source_ids\":[\"GEOEUSKADI_MUNICIPIOS_2025\",\"ODE_HEALTH_CENTRES_2026\"],\"subject\":\"punto representativo municipal\",\"unit\":\"clasificación booleana municipal\",\"value\":false},{\"entity_id\":\"20067\",\"entity_label\":\"Errenteria\",\"evidence_path\":\"/data/2/within_threshold\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\"],\"metric_id\":\"within_threshold\",\"source_ids\":[\"GEOEUSKADI_MUNICIPIOS_2025\",\"ODE_HEALTH_CENTRES_2026\"],\"subject\":\"punto representativo municipal\",\"unit\":\"clasificación booleana municipal\",\"value\":false},{\"entity_id\":\"20019\",\"entity_label\":\"Beasain\",\"evidence_path\":\"/data/3/within_threshold\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\"],\"metric_id\":\"within_threshold\",\"source_ids\":[\"GEOEUSKADI_MUNICIPIOS_2025\",\"ODE_HEALTH_CENTRES_2026\"],\"subject\":\"punto representativo municipal\",\"unit\":\"clasificación booleana municipal\",\"value\":false},{\"entity_id\":\"20072\",\"entity_label\":\"Urnieta\",\"evidence_path\":\"/data/4/within_threshold\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\"],\"metric_id\":\"within_threshold\",\"source_ids\":[\"GEOEUSKADI_MUNICIPIOS_2025\",\"ODE_HEALTH_CENTRES_2026\"],\"subject\":\"punto representativo municipal\",\"unit\":\"clasificación booleana municipal\",\"value\":false},{\"entity_id\":\"20013\",\"entity_label\":\"Aretxabaleta\",\"evidence_path\":\"/data/5/within_threshold\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\"],\"metric_id\":\"within_threshold\",\"source_ids\":[\"GEOEUSKADI_MUNICIPIOS_2025\",\"ODE_HEALTH_CENTRES_2026\"],\"subject\":\"punto representativo municipal\",\"unit\":\"clasificación booleana municipal\",\"value\":false},{\"entity_id\":\"20006\",\"entity_label\":\"Alkiza\",\"evidence_path\":\"/data/6/within_threshold\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\"],\"metric_id\":\"within_threshold\",\"source_ids\":[\"GEOEUSKADI_MUNICIPIOS_2025\",\"ODE_HEALTH_CENTRES_2026\"],\"subject\":\"punto representativo municipal\",\"unit\":\"clasificación booleana municipal\",\"value\":false},{\"entity_id\":\"20064\",\"entity_label\":\"Pasaia\",\"evidence_path\":\"/data/7/within_threshold\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\"],\"metric_id\":\"within_threshold\",\"source_ids\":[\"GEOEUSKADI_MUNICIPIOS_2025\",\"ODE_HEALTH_CENTRES_2026\"],\"subject\":\"punto representativo municipal\",\"unit\":\"clasificación booleana municipal\",\"value\":false},{\"entity_id\":\"20002\",\"entity_label\":\"Aduna\",\"evidence_path\":\"/data/8/within_threshold\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\"],\"metric_id\":\"within_threshold\",\"source_ids\":[\"GEOEUSKADI_MUNICIPIOS_2025\",\"ODE_HEALTH_CENTRES_2026\"],\"subject\":\"punto representativo municipal\",\"unit\":\"clasificación booleana municipal\",\"value\":false},{\"entity_id\":\"20051\",\"entity_label\":\"Legazpi\",\"evidence_path\":\"/data/9/within_threshold\",\"forbidden_inferences\":[\"No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.\",\"Un municipio clasificado por distancia no es una persona con acceso efectivo.\"],\"metric_id\":\"within_threshold\",\"source_ids\":[\"GEOEUSKADI_MUNICIPIOS_2025\",\"ODE_HEALTH_CENTRES_2026\"],\"subject\":\"punto representativo municipal\",\"unit\":\"clasificación booleana municipal\",\"value\":false}],\"normalized_input\":{\"arguments\":{\"categoria_servicio\":\"primary_care\",\"umbral_km\":2},\"tool\":\"analizar_acceso_servicios\"},\"observed_services\":[{\"categoria_servicio\":\"primary_care\",\"evidence_path\":\"/data/0/nearest_service_id\",\"meaning\":\"identidad del registro más cercano, no asignación sanitaria\",\"municipality_code\":\"20040\",\"municipality_name\":\"Hernani\",\"raw_result_sha256\":\"0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7\",\"service_id\":\"entity8CC93949\",\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"]},{\"categoria_servicio\":\"primary_care\",\"evidence_path\":\"/data/1/nearest_service_id\",\"meaning\":\"identidad del registro más cercano, no asignación sanitaria\",\"municipality_code\":\"20063\",\"municipality_name\":\"Oiartzun\",\"raw_result_sha256\":\"0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7\",\"service_id\":\"entity84DCE82C\",\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"]},{\"categoria_servicio\":\"primary_care\",\"evidence_path\":\"/data/2/nearest_service_id\",\"meaning\":\"identidad del registro más cercano, no asignación sanitaria\",\"municipality_code\":\"20067\",\"municipality_name\":\"Errenteria\",\"raw_result_sha256\":\"0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7\",\"service_id\":\"entity84DCE82C\",\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"]},{\"categoria_servicio\":\"primary_care\",\"evidence_path\":\"/data/3/nearest_service_id\",\"meaning\":\"identidad del registro más cercano, no asignación sanitaria\",\"municipality_code\":\"20019\",\"municipality_name\":\"Beasain\",\"raw_result_sha256\":\"0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7\",\"service_id\":\"entityBC631DA5\",\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"]},{\"categoria_servicio\":\"primary_care\",\"evidence_path\":\"/data/4/nearest_service_id\",\"meaning\":\"identidad del registro más cercano, no asignación sanitaria\",\"municipality_code\":\"20072\",\"municipality_name\":\"Urnieta\",\"raw_result_sha256\":\"0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7\",\"service_id\":\"entity8CC93949\",\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"]},{\"categoria_servicio\":\"primary_care\",\"evidence_path\":\"/data/5/nearest_service_id\",\"meaning\":\"identidad del registro más cercano, no asignación sanitaria\",\"municipality_code\":\"20013\",\"municipality_name\":\"Aretxabaleta\",\"raw_result_sha256\":\"0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7\",\"service_id\":\"entity74310650\",\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"]},{\"categoria_servicio\":\"primary_care\",\"evidence_path\":\"/data/6/nearest_service_id\",\"meaning\":\"identidad del registro más cercano, no asignación sanitaria\",\"municipality_code\":\"20006\",\"municipality_name\":\"Alkiza\",\"raw_result_sha256\":\"0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7\",\"service_id\":\"entityB9C373D0\",\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"]},{\"categoria_servicio\":\"primary_care\",\"evidence_path\":\"/data/7/nearest_service_id\",\"meaning\":\"identidad del registro más cercano, no asignación sanitaria\",\"municipality_code\":\"20064\",\"municipality_name\":\"Pasaia\",\"raw_result_sha256\":\"0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7\",\"service_id\":\"entity4B0E440D\",\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"]},{\"categoria_servicio\":\"primary_care\",\"evidence_path\":\"/data/8/nearest_service_id\",\"meaning\":\"identidad del registro más cercano, no asignación sanitaria\",\"municipality_code\":\"20002\",\"municipality_name\":\"Aduna\",\"raw_result_sha256\":\"0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7\",\"service_id\":\"entityF0E8348B\",\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"]},{\"categoria_servicio\":\"primary_care\",\"evidence_path\":\"/data/9/nearest_service_id\",\"meaning\":\"identidad del registro más cercano, no asignación sanitaria\",\"municipality_code\":\"20051\",\"municipality_name\":\"Legazpi\",\"raw_result_sha256\":\"0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7\",\"service_id\":\"entity94B2E778\",\"source_ids\":[\"ODE_HEALTH_CENTRES_2026\",\"GEOEUSKADI_MUNICIPIOS_2025\"]}],\"operation_semantics\":{\"interpretation\":\"no distribución de residentes\",\"measures\":\"distancia euclídea y clasificación municipal por umbral\",\"subject\":\"punto representativo municipal\"},\"operational_metadata\":{\"counters\":[],\"execution\":{\"request_id\":\"e7db081ef4f8489eab40fc6a6bd40691\",\"state\":\"completed\",\"tool\":\"analizar_acceso_servicios\"},\"not_analytical_evidence\":true,\"selection\":{\"criterion\":\"Primeras entidades en el orden validado de la herramienta\",\"detail_mechanism\":\"Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.\",\"omitted_entities\":78,\"returned_entities\":10,\"total_entities\":88}},\"outcomes\":[],\"public_input\":{\"arguments\":{\"categoria_servicio\":\"primary_care\",\"umbral_km\":2},\"tool\":\"analizar_acceso_general\"},\"request_id\":\"e7db081ef4f8489eab40fc6a6bd40691\",\"status\":\"valid\"}\nGIPUZKOA 360\n\nLa consulta se ejecutó con un límite de exigencia de 2 km: se considera dentro solo si la distancia geométrica al registro de atención primaria más cercano es mayor que 0 y menor o igual que 2 km.\n\nImportante: el resultado recibido contiene solo 10 de los 88 municipios, por lo que no permite afirmar la clasificación de todo Gipuzkoa. En esos 10 casos, ninguno quedó dentro de 2 km:\n\nHernani: 5.882,0 m\nOiartzun: 4.438,1 m\nErrenteria: 3.925,5 m\nBeasain: 3.617,3 m\nUrnieta: 3.563,1 m\nAretxabaleta: 3.509,2 m\nAlkiza: 2.855,9 m\nPasaia: 2.813,4 m\nAduna: 2.756,2 m\nLegazpi: 2.624,8 m\nQué significa\n\nMide la distancia en línea recta, en metros, desde el punto representativo de cada municipio hasta el registro sanitario de atención primaria más cercano, y lo compara con el umbral de 2 km. Es una clasificación territorial de proximidad geométrica.\n\nQué no mide\n\nNo mide:\n\nla distancia por carretera o a pie ni el tiempo de viaje;\nla accesibilidad individual de los residentes;\ncuántas personas viven dentro de 2 km;\nqué proporción de la población está cubierta;\nsi el centro está abierto, tiene capacidad, citas disponibles o accesibilidad universal;\nla asignación sanitaria de cada persona;\nla calidad o disponibilidad efectiva de la atención.\n\nAdemás, el punto municipal no está ponderado por población: un municipio puede clasificarse por la posición de ese punto aunque sus habitantes estén distribuidos muy lejos de él. La fuente combina cartografía municipal con un registro de ubicaciones sanitarias; el registro más cercano no demuestra por sí mismo que preste atención efectiva a toda la población.",
+  "outputs": [
+    {
+      "assumptions": [],
+      "capability_id": "analizar_acceso_general",
+      "claims": [
+        {
+          "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+          "assumptions": [],
+          "denominator": null,
+          "derivation": "direct",
+          "entity_id": "20040",
+          "entity_label": "Hernani",
+          "entity_type": "municipality",
+          "evidence_path": "/data/0/nearest_distance_m",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+          ],
+          "id": "claim-1",
+          "label": "nearest_distance_m",
+          "metric_id": "nearest_distance_m",
+          "numerator": null,
+          "numeric_role": "analytical",
+          "period": "2026-09-20;2025-05-07",
+          "reference_periods": [
+            {
+              "period": "2026-09-20",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            },
+            {
+              "period": "2025-05-07",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            }
+          ],
+          "source_attributions": [
+            {
+              "institution": "Gobierno Vasco - geoEuskadi",
+              "period": "2025-05-07",
+              "public_role": "punto municipal/cartografía",
+              "role": "municipal_reference_point",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            },
+            {
+              "institution": "Gobierno Vasco - Departamento de Salud",
+              "period": "2026-09-20",
+              "public_role": "registro sanitario",
+              "role": "service_location",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            }
+          ],
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ],
+          "source_refs": [
+            {
+              "role": "service_location",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            },
+            {
+              "role": "municipal_reference_point",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            }
+          ],
+          "subject": "punto representativo municipal y registro sanitario",
+          "unit": "m",
+          "value": 5882
+        },
+        {
+          "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+          "assumptions": [],
+          "denominator": null,
+          "derivation": "direct",
+          "entity_id": "20063",
+          "entity_label": "Oiartzun",
+          "entity_type": "municipality",
+          "evidence_path": "/data/1/nearest_distance_m",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+          ],
+          "id": "claim-2",
+          "label": "nearest_distance_m",
+          "metric_id": "nearest_distance_m",
+          "numerator": null,
+          "numeric_role": "analytical",
+          "period": "2026-09-20;2025-05-07",
+          "reference_periods": [
+            {
+              "period": "2026-09-20",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            },
+            {
+              "period": "2025-05-07",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            }
+          ],
+          "source_attributions": [
+            {
+              "institution": "Gobierno Vasco - geoEuskadi",
+              "period": "2025-05-07",
+              "public_role": "punto municipal/cartografía",
+              "role": "municipal_reference_point",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            },
+            {
+              "institution": "Gobierno Vasco - Departamento de Salud",
+              "period": "2026-09-20",
+              "public_role": "registro sanitario",
+              "role": "service_location",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            }
+          ],
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ],
+          "source_refs": [
+            {
+              "role": "service_location",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            },
+            {
+              "role": "municipal_reference_point",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            }
+          ],
+          "subject": "punto representativo municipal y registro sanitario",
+          "unit": "m",
+          "value": 4438.1
+        },
+        {
+          "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+          "assumptions": [],
+          "denominator": null,
+          "derivation": "direct",
+          "entity_id": "20067",
+          "entity_label": "Errenteria",
+          "entity_type": "municipality",
+          "evidence_path": "/data/2/nearest_distance_m",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+          ],
+          "id": "claim-3",
+          "label": "nearest_distance_m",
+          "metric_id": "nearest_distance_m",
+          "numerator": null,
+          "numeric_role": "analytical",
+          "period": "2026-09-20;2025-05-07",
+          "reference_periods": [
+            {
+              "period": "2026-09-20",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            },
+            {
+              "period": "2025-05-07",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            }
+          ],
+          "source_attributions": [
+            {
+              "institution": "Gobierno Vasco - geoEuskadi",
+              "period": "2025-05-07",
+              "public_role": "punto municipal/cartografía",
+              "role": "municipal_reference_point",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            },
+            {
+              "institution": "Gobierno Vasco - Departamento de Salud",
+              "period": "2026-09-20",
+              "public_role": "registro sanitario",
+              "role": "service_location",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            }
+          ],
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ],
+          "source_refs": [
+            {
+              "role": "service_location",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            },
+            {
+              "role": "municipal_reference_point",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            }
+          ],
+          "subject": "punto representativo municipal y registro sanitario",
+          "unit": "m",
+          "value": 3925.5
+        },
+        {
+          "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+          "assumptions": [],
+          "denominator": null,
+          "derivation": "direct",
+          "entity_id": "20019",
+          "entity_label": "Beasain",
+          "entity_type": "municipality",
+          "evidence_path": "/data/3/nearest_distance_m",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+          ],
+          "id": "claim-4",
+          "label": "nearest_distance_m",
+          "metric_id": "nearest_distance_m",
+          "numerator": null,
+          "numeric_role": "analytical",
+          "period": "2026-09-20;2025-05-07",
+          "reference_periods": [
+            {
+              "period": "2026-09-20",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            },
+            {
+              "period": "2025-05-07",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            }
+          ],
+          "source_attributions": [
+            {
+              "institution": "Gobierno Vasco - geoEuskadi",
+              "period": "2025-05-07",
+              "public_role": "punto municipal/cartografía",
+              "role": "municipal_reference_point",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            },
+            {
+              "institution": "Gobierno Vasco - Departamento de Salud",
+              "period": "2026-09-20",
+              "public_role": "registro sanitario",
+              "role": "service_location",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            }
+          ],
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ],
+          "source_refs": [
+            {
+              "role": "service_location",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            },
+            {
+              "role": "municipal_reference_point",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            }
+          ],
+          "subject": "punto representativo municipal y registro sanitario",
+          "unit": "m",
+          "value": 3617.3
+        },
+        {
+          "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+          "assumptions": [],
+          "denominator": null,
+          "derivation": "direct",
+          "entity_id": "20072",
+          "entity_label": "Urnieta",
+          "entity_type": "municipality",
+          "evidence_path": "/data/4/nearest_distance_m",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+          ],
+          "id": "claim-5",
+          "label": "nearest_distance_m",
+          "metric_id": "nearest_distance_m",
+          "numerator": null,
+          "numeric_role": "analytical",
+          "period": "2026-09-20;2025-05-07",
+          "reference_periods": [
+            {
+              "period": "2026-09-20",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            },
+            {
+              "period": "2025-05-07",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            }
+          ],
+          "source_attributions": [
+            {
+              "institution": "Gobierno Vasco - geoEuskadi",
+              "period": "2025-05-07",
+              "public_role": "punto municipal/cartografía",
+              "role": "municipal_reference_point",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            },
+            {
+              "institution": "Gobierno Vasco - Departamento de Salud",
+              "period": "2026-09-20",
+              "public_role": "registro sanitario",
+              "role": "service_location",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            }
+          ],
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ],
+          "source_refs": [
+            {
+              "role": "service_location",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            },
+            {
+              "role": "municipal_reference_point",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            }
+          ],
+          "subject": "punto representativo municipal y registro sanitario",
+          "unit": "m",
+          "value": 3563.1
+        },
+        {
+          "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+          "assumptions": [],
+          "denominator": null,
+          "derivation": "direct",
+          "entity_id": "20013",
+          "entity_label": "Aretxabaleta",
+          "entity_type": "municipality",
+          "evidence_path": "/data/5/nearest_distance_m",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+          ],
+          "id": "claim-6",
+          "label": "nearest_distance_m",
+          "metric_id": "nearest_distance_m",
+          "numerator": null,
+          "numeric_role": "analytical",
+          "period": "2026-09-20;2025-05-07",
+          "reference_periods": [
+            {
+              "period": "2026-09-20",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            },
+            {
+              "period": "2025-05-07",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            }
+          ],
+          "source_attributions": [
+            {
+              "institution": "Gobierno Vasco - geoEuskadi",
+              "period": "2025-05-07",
+              "public_role": "punto municipal/cartografía",
+              "role": "municipal_reference_point",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            },
+            {
+              "institution": "Gobierno Vasco - Departamento de Salud",
+              "period": "2026-09-20",
+              "public_role": "registro sanitario",
+              "role": "service_location",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            }
+          ],
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ],
+          "source_refs": [
+            {
+              "role": "service_location",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            },
+            {
+              "role": "municipal_reference_point",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            }
+          ],
+          "subject": "punto representativo municipal y registro sanitario",
+          "unit": "m",
+          "value": 3509.2
+        },
+        {
+          "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+          "assumptions": [],
+          "denominator": null,
+          "derivation": "direct",
+          "entity_id": "20006",
+          "entity_label": "Alkiza",
+          "entity_type": "municipality",
+          "evidence_path": "/data/6/nearest_distance_m",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+          ],
+          "id": "claim-7",
+          "label": "nearest_distance_m",
+          "metric_id": "nearest_distance_m",
+          "numerator": null,
+          "numeric_role": "analytical",
+          "period": "2026-09-20;2025-05-07",
+          "reference_periods": [
+            {
+              "period": "2026-09-20",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            },
+            {
+              "period": "2025-05-07",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            }
+          ],
+          "source_attributions": [
+            {
+              "institution": "Gobierno Vasco - geoEuskadi",
+              "period": "2025-05-07",
+              "public_role": "punto municipal/cartografía",
+              "role": "municipal_reference_point",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            },
+            {
+              "institution": "Gobierno Vasco - Departamento de Salud",
+              "period": "2026-09-20",
+              "public_role": "registro sanitario",
+              "role": "service_location",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            }
+          ],
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ],
+          "source_refs": [
+            {
+              "role": "service_location",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            },
+            {
+              "role": "municipal_reference_point",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            }
+          ],
+          "subject": "punto representativo municipal y registro sanitario",
+          "unit": "m",
+          "value": 2855.9
+        },
+        {
+          "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+          "assumptions": [],
+          "denominator": null,
+          "derivation": "direct",
+          "entity_id": "20064",
+          "entity_label": "Pasaia",
+          "entity_type": "municipality",
+          "evidence_path": "/data/7/nearest_distance_m",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+          ],
+          "id": "claim-8",
+          "label": "nearest_distance_m",
+          "metric_id": "nearest_distance_m",
+          "numerator": null,
+          "numeric_role": "analytical",
+          "period": "2026-09-20;2025-05-07",
+          "reference_periods": [
+            {
+              "period": "2026-09-20",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            },
+            {
+              "period": "2025-05-07",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            }
+          ],
+          "source_attributions": [
+            {
+              "institution": "Gobierno Vasco - geoEuskadi",
+              "period": "2025-05-07",
+              "public_role": "punto municipal/cartografía",
+              "role": "municipal_reference_point",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            },
+            {
+              "institution": "Gobierno Vasco - Departamento de Salud",
+              "period": "2026-09-20",
+              "public_role": "registro sanitario",
+              "role": "service_location",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            }
+          ],
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ],
+          "source_refs": [
+            {
+              "role": "service_location",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            },
+            {
+              "role": "municipal_reference_point",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            }
+          ],
+          "subject": "punto representativo municipal y registro sanitario",
+          "unit": "m",
+          "value": 2813.4
+        },
+        {
+          "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+          "assumptions": [],
+          "denominator": null,
+          "derivation": "direct",
+          "entity_id": "20002",
+          "entity_label": "Aduna",
+          "entity_type": "municipality",
+          "evidence_path": "/data/8/nearest_distance_m",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+          ],
+          "id": "claim-9",
+          "label": "nearest_distance_m",
+          "metric_id": "nearest_distance_m",
+          "numerator": null,
+          "numeric_role": "analytical",
+          "period": "2026-09-20;2025-05-07",
+          "reference_periods": [
+            {
+              "period": "2026-09-20",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            },
+            {
+              "period": "2025-05-07",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            }
+          ],
+          "source_attributions": [
+            {
+              "institution": "Gobierno Vasco - geoEuskadi",
+              "period": "2025-05-07",
+              "public_role": "punto municipal/cartografía",
+              "role": "municipal_reference_point",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            },
+            {
+              "institution": "Gobierno Vasco - Departamento de Salud",
+              "period": "2026-09-20",
+              "public_role": "registro sanitario",
+              "role": "service_location",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            }
+          ],
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ],
+          "source_refs": [
+            {
+              "role": "service_location",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            },
+            {
+              "role": "municipal_reference_point",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            }
+          ],
+          "subject": "punto representativo municipal y registro sanitario",
+          "unit": "m",
+          "value": 2756.2
+        },
+        {
+          "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+          "assumptions": [],
+          "denominator": null,
+          "derivation": "direct",
+          "entity_id": "20051",
+          "entity_label": "Legazpi",
+          "entity_type": "municipality",
+          "evidence_path": "/data/9/nearest_distance_m",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+          ],
+          "id": "claim-10",
+          "label": "nearest_distance_m",
+          "metric_id": "nearest_distance_m",
+          "numerator": null,
+          "numeric_role": "analytical",
+          "period": "2026-09-20;2025-05-07",
+          "reference_periods": [
+            {
+              "period": "2026-09-20",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            },
+            {
+              "period": "2025-05-07",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            }
+          ],
+          "source_attributions": [
+            {
+              "institution": "Gobierno Vasco - geoEuskadi",
+              "period": "2025-05-07",
+              "public_role": "punto municipal/cartografía",
+              "role": "municipal_reference_point",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            },
+            {
+              "institution": "Gobierno Vasco - Departamento de Salud",
+              "period": "2026-09-20",
+              "public_role": "registro sanitario",
+              "role": "service_location",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            }
+          ],
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ],
+          "source_refs": [
+            {
+              "role": "service_location",
+              "source_id": "ODE_HEALTH_CENTRES_2026"
+            },
+            {
+              "role": "municipal_reference_point",
+              "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+            }
+          ],
+          "subject": "punto representativo municipal y registro sanitario",
+          "unit": "m",
+          "value": 2624.8
+        }
+      ],
+      "effective_request": {
+        "defaults_applied": [
+          "municipios",
+          "periodo"
+        ],
+        "effective_period": null,
+        "municipality_codes": [],
+        "municipality_labels": [],
+        "operation": "analizar_acceso_servicios",
+        "parameters": {
+          "categoria_servicio": "primary_care",
+          "municipios": null,
+          "periodo": null,
+          "umbral_km": 2
+        }
+      },
+      "error": null,
+      "evidence_policy": {
+        "classification": [
+          "AVAILABLE",
+          "DERIVABLE_EXACTLY",
+          "ESTIMABLE_WITH_ASSUMPTIONS",
+          "NOT_AVAILABLE"
+        ],
+        "derivation": "Operaciones transparentes sobre inputs observados compatibles; sin dato espacial de residentes no hay cobertura poblacional.",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "preserve": [
+          "subject",
+          "entity",
+          "unit",
+          "period",
+          "source",
+          "scope",
+          "assumptions"
+        ],
+        "recovery": "Un error aporta cero cifras; no repetir llamada y argumentos fallidos; una única recuperación inequívoca por causa."
+      },
+      "input_semantics": "normalized_input y effective_request contienen parámetros; no cifras analíticas. defaults_applied son supuestos, no elecciones humanas observadas.",
+      "limitations": [
+        "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+        "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+        "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal."
+      ],
+      "method": "Distancia euclídea en EPSG:25830 desde representative_point() del polígono municipal al punto del servicio más cercano de la categoría.",
+      "municipal_classifications": [
+        {
+          "entity_id": "20040",
+          "entity_label": "Hernani",
+          "evidence_path": "/data/0/within_threshold",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+          ],
+          "metric_id": "within_threshold",
+          "source_ids": [
+            "GEOEUSKADI_MUNICIPIOS_2025",
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "subject": "punto representativo municipal",
+          "unit": "clasificación booleana municipal",
+          "value": false
+        },
+        {
+          "entity_id": "20063",
+          "entity_label": "Oiartzun",
+          "evidence_path": "/data/1/within_threshold",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+          ],
+          "metric_id": "within_threshold",
+          "source_ids": [
+            "GEOEUSKADI_MUNICIPIOS_2025",
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "subject": "punto representativo municipal",
+          "unit": "clasificación booleana municipal",
+          "value": false
+        },
+        {
+          "entity_id": "20067",
+          "entity_label": "Errenteria",
+          "evidence_path": "/data/2/within_threshold",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+          ],
+          "metric_id": "within_threshold",
+          "source_ids": [
+            "GEOEUSKADI_MUNICIPIOS_2025",
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "subject": "punto representativo municipal",
+          "unit": "clasificación booleana municipal",
+          "value": false
+        },
+        {
+          "entity_id": "20019",
+          "entity_label": "Beasain",
+          "evidence_path": "/data/3/within_threshold",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+          ],
+          "metric_id": "within_threshold",
+          "source_ids": [
+            "GEOEUSKADI_MUNICIPIOS_2025",
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "subject": "punto representativo municipal",
+          "unit": "clasificación booleana municipal",
+          "value": false
+        },
+        {
+          "entity_id": "20072",
+          "entity_label": "Urnieta",
+          "evidence_path": "/data/4/within_threshold",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+          ],
+          "metric_id": "within_threshold",
+          "source_ids": [
+            "GEOEUSKADI_MUNICIPIOS_2025",
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "subject": "punto representativo municipal",
+          "unit": "clasificación booleana municipal",
+          "value": false
+        },
+        {
+          "entity_id": "20013",
+          "entity_label": "Aretxabaleta",
+          "evidence_path": "/data/5/within_threshold",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+          ],
+          "metric_id": "within_threshold",
+          "source_ids": [
+            "GEOEUSKADI_MUNICIPIOS_2025",
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "subject": "punto representativo municipal",
+          "unit": "clasificación booleana municipal",
+          "value": false
+        },
+        {
+          "entity_id": "20006",
+          "entity_label": "Alkiza",
+          "evidence_path": "/data/6/within_threshold",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+          ],
+          "metric_id": "within_threshold",
+          "source_ids": [
+            "GEOEUSKADI_MUNICIPIOS_2025",
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "subject": "punto representativo municipal",
+          "unit": "clasificación booleana municipal",
+          "value": false
+        },
+        {
+          "entity_id": "20064",
+          "entity_label": "Pasaia",
+          "evidence_path": "/data/7/within_threshold",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+          ],
+          "metric_id": "within_threshold",
+          "source_ids": [
+            "GEOEUSKADI_MUNICIPIOS_2025",
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "subject": "punto representativo municipal",
+          "unit": "clasificación booleana municipal",
+          "value": false
+        },
+        {
+          "entity_id": "20002",
+          "entity_label": "Aduna",
+          "evidence_path": "/data/8/within_threshold",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+          ],
+          "metric_id": "within_threshold",
+          "source_ids": [
+            "GEOEUSKADI_MUNICIPIOS_2025",
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "subject": "punto representativo municipal",
+          "unit": "clasificación booleana municipal",
+          "value": false
+        },
+        {
+          "entity_id": "20051",
+          "entity_label": "Legazpi",
+          "evidence_path": "/data/9/within_threshold",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+          ],
+          "metric_id": "within_threshold",
+          "source_ids": [
+            "GEOEUSKADI_MUNICIPIOS_2025",
+            "ODE_HEALTH_CENTRES_2026"
+          ],
+          "subject": "punto representativo municipal",
+          "unit": "clasificación booleana municipal",
+          "value": false
+        }
+      ],
+      "normalized_input": {
+        "arguments": {
+          "categoria_servicio": "primary_care",
+          "umbral_km": 2
+        },
+        "tool": "analizar_acceso_servicios"
+      },
+      "observed_services": [
+        {
+          "categoria_servicio": "primary_care",
+          "evidence_path": "/data/0/nearest_service_id",
+          "meaning": "identidad del registro más cercano, no asignación sanitaria",
+          "municipality_code": "20040",
+          "municipality_name": "Hernani",
+          "raw_result_sha256": "0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7",
+          "service_id": "entity8CC93949",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ]
+        },
+        {
+          "categoria_servicio": "primary_care",
+          "evidence_path": "/data/1/nearest_service_id",
+          "meaning": "identidad del registro más cercano, no asignación sanitaria",
+          "municipality_code": "20063",
+          "municipality_name": "Oiartzun",
+          "raw_result_sha256": "0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7",
+          "service_id": "entity84DCE82C",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ]
+        },
+        {
+          "categoria_servicio": "primary_care",
+          "evidence_path": "/data/2/nearest_service_id",
+          "meaning": "identidad del registro más cercano, no asignación sanitaria",
+          "municipality_code": "20067",
+          "municipality_name": "Errenteria",
+          "raw_result_sha256": "0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7",
+          "service_id": "entity84DCE82C",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ]
+        },
+        {
+          "categoria_servicio": "primary_care",
+          "evidence_path": "/data/3/nearest_service_id",
+          "meaning": "identidad del registro más cercano, no asignación sanitaria",
+          "municipality_code": "20019",
+          "municipality_name": "Beasain",
+          "raw_result_sha256": "0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7",
+          "service_id": "entityBC631DA5",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ]
+        },
+        {
+          "categoria_servicio": "primary_care",
+          "evidence_path": "/data/4/nearest_service_id",
+          "meaning": "identidad del registro más cercano, no asignación sanitaria",
+          "municipality_code": "20072",
+          "municipality_name": "Urnieta",
+          "raw_result_sha256": "0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7",
+          "service_id": "entity8CC93949",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ]
+        },
+        {
+          "categoria_servicio": "primary_care",
+          "evidence_path": "/data/5/nearest_service_id",
+          "meaning": "identidad del registro más cercano, no asignación sanitaria",
+          "municipality_code": "20013",
+          "municipality_name": "Aretxabaleta",
+          "raw_result_sha256": "0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7",
+          "service_id": "entity74310650",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ]
+        },
+        {
+          "categoria_servicio": "primary_care",
+          "evidence_path": "/data/6/nearest_service_id",
+          "meaning": "identidad del registro más cercano, no asignación sanitaria",
+          "municipality_code": "20006",
+          "municipality_name": "Alkiza",
+          "raw_result_sha256": "0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7",
+          "service_id": "entityB9C373D0",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ]
+        },
+        {
+          "categoria_servicio": "primary_care",
+          "evidence_path": "/data/7/nearest_service_id",
+          "meaning": "identidad del registro más cercano, no asignación sanitaria",
+          "municipality_code": "20064",
+          "municipality_name": "Pasaia",
+          "raw_result_sha256": "0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7",
+          "service_id": "entity4B0E440D",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ]
+        },
+        {
+          "categoria_servicio": "primary_care",
+          "evidence_path": "/data/8/nearest_service_id",
+          "meaning": "identidad del registro más cercano, no asignación sanitaria",
+          "municipality_code": "20002",
+          "municipality_name": "Aduna",
+          "raw_result_sha256": "0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7",
+          "service_id": "entityF0E8348B",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ]
+        },
+        {
+          "categoria_servicio": "primary_care",
+          "evidence_path": "/data/9/nearest_service_id",
+          "meaning": "identidad del registro más cercano, no asignación sanitaria",
+          "municipality_code": "20051",
+          "municipality_name": "Legazpi",
+          "raw_result_sha256": "0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7",
+          "service_id": "entity94B2E778",
+          "source_ids": [
+            "ODE_HEALTH_CENTRES_2026",
+            "GEOEUSKADI_MUNICIPIOS_2025"
+          ]
+        }
+      ],
+      "operation_semantics": {
+        "interpretation": "no distribución de residentes",
+        "measures": "distancia euclídea y clasificación municipal por umbral",
+        "subject": "punto representativo municipal"
+      },
+      "operational_metadata": {
+        "counters": [],
+        "execution": {
+          "request_id": "e7db081ef4f8489eab40fc6a6bd40691",
+          "state": "completed",
+          "tool": "analizar_acceso_servicios"
+        },
+        "not_analytical_evidence": true,
+        "selection": {
+          "criterion": "Primeras entidades en el orden validado de la herramienta",
+          "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+          "omitted_entities": 78,
+          "returned_entities": 10,
+          "total_entities": 88
+        }
+      },
+      "outcomes": [],
+      "public_input": {
+        "arguments": {
+          "categoria_servicio": "primary_care",
+          "umbral_km": 2
+        },
+        "tool": "analizar_acceso_general"
+      },
+      "request_id": "e7db081ef4f8489eab40fc6a6bd40691",
+      "status": "valid"
+    }
+  ],
+  "version_id": "agentv_f43156f686694933951b3340d53996b4",
+  "runtime_sha": "202352adc10e90a4b98125387af8e0ff7a438073",
+  "assessment": {
+    "result": "FAIL",
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 0,
+    "unsupported_material_claims": 1,
+    "findings": [
+      {
+        "id": "R22-REAL-H01",
+        "severity": "HIGH",
+        "category": "unsupported_material_method_claim",
+        "quote": "se considera dentro solo si la distancia geométrica al registro de atención primaria más cercano es mayor que 0 y menor o igual que 2 km.",
+        "actual_call": {
+          "tool": "analizar_acceso_general",
+          "arguments": {
+            "categoria_servicio": "primary_care",
+            "umbral_km": 2
+          }
+        },
+        "expected": "Within threshold means distance is present and distance <= threshold_km*1000. Zero distance is included. >0 validates the threshold parameter, not the calculated distance.",
+        "evidence": "Frozen portal/tools.py line566: bool(distance is not None and distance <= threshold_km * 1000). Argument validation line989 applies 0<value<=100 to umbral_km, not distance.",
+        "impact": "Incorrect stated classification rule excludes a valid zero-distance point; material method claim is not supported by output or engine."
+      }
+    ],
+    "checks": [
+      "correct tool and valid arguments",
+      "all ten reported distances and classifications supported",
+      "honest explicit10/88 projection caveat; not population coverage",
+      "source mapping in all claims remains correct"
+    ],
+    "not_findings": [
+      "The final response does not claim all88 classifications: actual public view exposes ten and metadata says78 omitted. This is retained as observed scope, not mislabeled as an invented global count."
+    ],
+    "stop": "First real HIGH: remaining targeted/general/public messages not sent; no R23, no code modification, no Delivery change."
+  },
+  "latency_note": "First observed upper bounds; folded output becomes observable only when expanded. Not exact server latency."
+}

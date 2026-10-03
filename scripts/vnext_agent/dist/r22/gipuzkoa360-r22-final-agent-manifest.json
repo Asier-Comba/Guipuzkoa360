@@ -1,0 +1,152 @@
+{
+  "base_r21_manifest_sha256": "6d425d3e194e6fea016ae4a4b685ae2e50af978897278539d17b7bb03fad31b9",
+  "base_r21_tested_runtime": "b0096e9aeda533ed0a43f56bf98975becf4022d8",
+  "base_r21_zip_sha256": "a714bac1fa91caebe3e8ef6fb65259c4f11447120479ecf51dce4813cfba5dc2",
+  "bytes": 241884,
+  "changed_members": [
+    "main.py",
+    "tools.py"
+  ],
+  "context_assets_changed": [],
+  "context_paths": [
+    "FUENTES.md",
+    "docs/METODOLOGIA.md",
+    "contracts/vnext/evidence-v1.1.schema.json",
+    "contracts/vnext/capability-v1.1.schema.json",
+    "datos_preparados/municipios.csv",
+    "datos_preparados/demografia.csv",
+    "datos_preparados/runtime_municipality_points.csv",
+    "datos_preparados/runtime_servicios.csv",
+    "datos_preparados/metadata_sources.json",
+    "datos_preparados/data_contract.json",
+    "datos_preparados/vnext/capabilities.json",
+    "datos_preparados/vnext/operational_catalog_r6.json",
+    "datos_preparados/vnext/consumer_labels_r7.json",
+    "datos_preparados/vnext/mobility_sources.json",
+    "datos_preparados/vnext/w1_r6_runtime.zip"
+  ],
+  "limit_bytes": 25165824,
+  "members": {
+    "FUENTES.md": {
+      "bytes": 6963,
+      "sha256": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de"
+    },
+    "contracts/vnext/capability-v1.1.schema.json": {
+      "bytes": 3527,
+      "sha256": "66ab0036ce3a529dad3d51d193fa05970fd795bbefcab477281e5df055ff2f0b"
+    },
+    "contracts/vnext/capability-v1.schema.json": {
+      "bytes": 3396,
+      "sha256": "1ad14eb4a825d426958d29fde54104f6d4b45e60f2e25ccc5920af23df435d4c"
+    },
+    "contracts/vnext/evidence-v1.1.schema.json": {
+      "bytes": 7357,
+      "sha256": "6fbd22a567cc5a8d8ce17fd1968c52fc92448526bf81103e2768486d724d9ad0"
+    },
+    "contracts/vnext/evidence-v1.schema.json": {
+      "bytes": 4726,
+      "sha256": "81f1162cb90a65394d96e8735f6403050094eea29a9c17648426282dfc3dc191"
+    },
+    "datos_preparados/data_contract.json": {
+      "bytes": 5274,
+      "sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae"
+    },
+    "datos_preparados/demografia.csv": {
+      "bytes": 6161,
+      "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96"
+    },
+    "datos_preparados/metadata_sources.json": {
+      "bytes": 4833,
+      "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa"
+    },
+    "datos_preparados/municipios.csv": {
+      "bytes": 30075,
+      "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d"
+    },
+    "datos_preparados/runtime_municipality_points.csv": {
+      "bytes": 8689,
+      "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11"
+    },
+    "datos_preparados/runtime_servicios.csv": {
+      "bytes": 25258,
+      "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece"
+    },
+    "datos_preparados/vnext/capabilities.json": {
+      "bytes": 26605,
+      "sha256": "d51c17a5ab9b2902382991abe215b77c879eb73a63df0a1ae5affb317c8e5b89"
+    },
+    "datos_preparados/vnext/consumer_labels_r7.json": {
+      "bytes": 3152,
+      "sha256": "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799"
+    },
+    "datos_preparados/vnext/mobility_sources.json": {
+      "bytes": 5622,
+      "sha256": "a5ba0b7a9ee0ad85366e89ee888de2635013c148d005dcf9ecb94d24215bc445"
+    },
+    "datos_preparados/vnext/operational_catalog_r6.json": {
+      "bytes": 2651,
+      "sha256": "c7bd3cc8ffe50956ce839bec0ef90a13578160a4d5b4053b09673d2dc4c4ec17"
+    },
+    "datos_preparados/vnext/w1_conformance_r7.json": {
+      "bytes": 286413,
+      "sha256": "4eb364265710336ecdd86b2c541953f130f3b0a80bbefc9cf1f27904bac55dea"
+    },
+    "datos_preparados/vnext/w1_r6_runtime.zip": {
+      "bytes": 129365,
+      "sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910"
+    },
+    "docs/METODOLOGIA.md": {
+      "bytes": 1210,
+      "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7"
+    },
+    "main.py": {
+      "bytes": 11894,
+      "sha256": "319ef78f04d5873d257f393e623eb1c6156e7ef8e22aca51c5070ad9ed5ef037"
+    },
+    "scripts/vnext_agent/w1_pin.json": {
+      "bytes": 1869,
+      "sha256": "51d75ca9a8b06afab0ee53ba960d914fdc63ef5e8c7d77be33e3a47b479059c3"
+    },
+    "tests/vnext_agent/test_contracts.py": {
+      "bytes": 10615,
+      "sha256": "8182f101056b37a9d9356bb05b81cb0b209571e0b5a4f57c7551a1760f0c76f0"
+    },
+    "tests/vnext_agent/test_health_r10.py": {
+      "bytes": 8422,
+      "sha256": "6c9c44e65355af5afe7e6c365502eca1b7a3208ad0f1aec743886c1b702ca216"
+    },
+    "tests/vnext_agent/test_mobility_binding.py": {
+      "bytes": 6784,
+      "sha256": "c1dfaccca55db59815c87b385a66cc51a9611cc820f49bef6c2f1d649f252311"
+    },
+    "tests/vnext_agent/test_r12_generated.py": {
+      "bytes": 10724,
+      "sha256": "2da6d2107d81665c32d5ecf061dd2dd16e80a8189d6417b0ed8c55f5d3e8ab23"
+    },
+    "tools.py": {
+      "bytes": 227652,
+      "sha256": "b25b297a5788770d7a2fb81666756939cc61d0f8c7c64a115a7129975bb24e65"
+    }
+  },
+  "members_count": 25,
+  "package": "GIPUZKOA360_R22_final_agent",
+  "portal_real_agent": "NOT_RUN",
+  "public_tools": [
+    "obtener_resumen_territorial",
+    "analizar_envejecimiento",
+    "analizar_acceso_general",
+    "analizar_acceso_municipios",
+    "analizar_coincidencia",
+    "simular_anadir_servicio",
+    "simular_retirar_servicio",
+    "simular_cambiar_umbral",
+    "consultar_capacidades",
+    "plan_visit"
+  ],
+  "runtime_delta": "Atomic public source attribution and communication principle only; complete R21 tools prefix and 23 other members unchanged",
+  "sha256": "6f7912c17f06c81f637dea26ea8bb49287f56c7c41099c20cb11b4ef98373c47",
+  "source_delta_sha256": "4c21a4e9265a992da5cf34f3e2f1a9842a4b955c99786dbb6ee239a82d5342c5",
+  "uncompressed_bytes": 839237,
+  "v4_changed": false,
+  "w1_runtime_changed": false
+}

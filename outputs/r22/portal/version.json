@@ -1,0 +1,9 @@
+{
+  "version_id": "agentv_f43156f686694933951b3340d53996b4",
+  "runtime_sha": "202352adc10e90a4b98125387af8e0ff7a438073",
+  "folder": "agentes/gipuzkoa_360_4",
+  "tools": 10,
+  "internet": false,
+  "observation": "Created via validated version and test action; new first option, empty conversation",
+  "observed_at": "2026-10-03T00:01:42.990Z"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "01",
+  "prompt": "Explícamelo para una persona no técnica: En Getaria, ¿qué distancia geométrica hay al registro de salud mental más cercano y queda dentro de 1 km?",
+  "sent_at": "2026-10-03T00:01:42.993Z",
+  "started_ms": 1790985702993,
+  "observations": [
+    {
+      "at": "2026-10-03T00:01:56.024Z",
+      "elapsed_ms": 13031,
+      "text": "✦\nComprueba qué hace con tus datos\n\nEl chat utiliza la versión fija de este agente y ejecuta sus herramientas en un entorno aislado. Esta versión no tiene acceso a Internet. Empieza con una pregunta que permita revisar fuentes, incertidumbre y límites.\n\nExplica qué muestran los datos y cita las fuentes utilizadas.\n¿Qué incertidumbres cambian la interpretación del resultado?\nContrasta dos explicaciones posibles y busca un caso que contradiga la primera.\nIndica cuándo necesitarías validación humana.\nEl agente está trabajando…"
+    },
+    {
+      "at": "2026-10-03T00:02:22.544Z",
+      "elapsed_ms": 39551,
+      "text": "Tú\n\nExplícamelo para una persona no técnica: En Getaria, ¿qué distancia geométrica hay al registro de salud mental más cercano y queda dentro de 1 km?\n\nGIPUZKOA 360\nTool · analizar_acceso_municipios\n{\"categoria_servicio\":\"mental_health\",\"umbral_km\":1,\"municipios\":[\"Getaria\"]}\nResultado de analizar_acceso_municipios\nGIPUZKOA 360\n\nEn Getaria, la distancia geométrica al registro de salud mental más cercano es de 2.913,3 metros, es decir, aproximadamente 2,9 km.\n\nPor tanto, no queda dentro de 1 km. Es una distancia en línea recta desde el punto representativo del municipio, no un tiempo ni una ruta real de desplazamiento."
+    }
+  ],
+  "first_tool_observed_ms": 39551,
+  "final_observed_ms": 39551
+}
