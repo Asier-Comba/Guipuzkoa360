@@ -1,0 +1,129 @@
+Saltar al contenido
+GIPUZKOA AI HACKATHON
+MIT MEDIA LAB · CITY SCIENCE
+Inicio
+Formación
+Equipo
+Urban Challenge
+⌄
+◇
+Final
+O
+Oier Duñabeitia Berezo
+Participante
+⌄
+URBAN CHALLENGE · GUÍA DE APOYO
+Guía del reto
+
+Qué construir, cómo acotarlo y dónde encontrar datos
+
+Abrir espacio de trabajo
+→
+El reto
+Qué debe hacer el agente
+Temas
+Ámbitos y subtemas
+Datos
+Fuentes para empezar
+Entrega
+Qué entregar y cómo
+ENTREGA DEL EQUIPO
+Un agente que funcione y una ficha que explique para qué sirve
+
+Preparad ambos en el espacio de trabajo y confirmad la publicación en Entrega.
+Fecha: 4 de octubre de 2026. Calendario · Bases vigentes.
+
+OBLIGATORIO
+Lo que revisará el jurado
+Pregunta situada en Gipuzkoa, destinatario y utilidad
+Fuentes y datos preparados identificados
+Una versión funcional del agente
+Una prueba de la pregunta principal, una variación y un límite
+Al menos una cifra contrastada directamente con los datos
+OPCIONAL
+Materiales que pueden ayudar
+Mapas, HTML o imágenes
+Informes, vídeos, archivos o enlaces
+Cómo preparar y publicar la entrega
+01
+Completad la ficha en Resumen
+
+Guardad nombre, territorio, pregunta de investigación, quién utilizará el resultado y para qué servirá. Esa información formará la ficha pública del proyecto.
+
+Abrir Resumen
+→
+02
+Preparad una versión funcional
+
+En Agentes, cread la versión que queréis presentar. Conversad con ella en Pruebas para comprobar que consulta los datos, responde a lo pedido y reconoce sus límites. Comprobad al menos una cifra con la fuente.
+
+Crear una versión del agente la deja disponible para probarla y seleccionarla. La entrega del equipo se publica en el paso 4.
+
+Abrir Agentes
+→
+03
+Elegid qué presentar en Entrega
+
+Seleccionad la versión que presentáis. Podéis añadir texto, enlaces, archivos o conversaciones de prueba para explicar el proyecto. Crear otra versión en Agentes no cambia esta selección.
+
+Para que se entienda · orientación opcional
+
+Mostrad una pregunta y su resultado. Explicad qué datos y herramientas utilizó el agente, qué permite comprender y qué sigue sin poder afirmar.
+
+El formato es libre: texto, vídeo, PDF, HTML, imágenes o enlaces. No hay vídeo obligatorio ni un número mínimo de pruebas.
+
+Abrir Entrega
+→
+04
+Revisad y pulsad «Publicar entrega»
+
+Necesitáis un equipo activo de 3–4 personas confirmadas y elegir el track preferente. Abrid «Vista previa de lo que compartiréis», revisad la ficha y los materiales, marcad la confirmación y pulsad «Publicar entrega».
+
+Después, abrid la ficha pública y comprobad que contiene lo que queríais presentar.
+
+Qué significa el track preferente
+
+Elegís vuestra primera opción para la final: equipos industriales o equipos de servicios. Si no resultáis seleccionados en ese track, se os valorará también para el otro. Elegir un track no os excluye del otro.
+
+Guardar, publicar y actualizar
+
+Guardar borrador conserva los cambios privados. Publicar entrega comparte la ficha y los materiales seleccionados. Si ya publicasteis, los cambios se comparten al pulsar Actualizar entrega.
+
+EVALUACIÓN
+Qué se valora
+
+Estos son los criterios publicados. Las orientaciones no añaden materiales obligatorios.
+
+Utilidad para comprender el problema urbano
+
+Se entiende qué pregunta resuelve, a quién ayuda y para qué puede servir el análisis.
+
+25%
+Calidad del análisis, fuentes y trazabilidad
+
+Se justifican las comparaciones y los métodos; cada resultado puede seguirse hasta los datos y operaciones de origen.
+
+25%
+Funcionamiento del agente y uso de herramientas
+
+El agente ejecuta las operaciones adecuadas a la consulta y utiliza sus resultados al responder.
+
+25%
+Claridad de las respuestas y artefactos
+
+Las explicaciones, tablas, mapas o informes permiten interpretar el resultado y sus unidades.
+
+15%
+Fiabilidad, límites y supervisión humana
+
+Reconoce datos ausentes, distingue hechos de hipótesis y explica cuándo hace falta revisión humana.
+
+10%
+
+En caso de empate: funcionamiento del agente, calidad del análisis y utilidad, por ese orden; si persiste, revisión adicional del jurado.
+
+No puntúan el progreso formativo ni el uso de una tecnología concreta. Añadid varios agentes solo si ayudan a resolver vuestro problema.
+
+¿Necesitáis ayuda? Asistente IA para datos y código · Contactar con Iván
+
+Convocatoria 2026 · Calendario y convocatoria ↗ · Bases de participación

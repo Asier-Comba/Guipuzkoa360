@@ -1,0 +1,77 @@
+[
+  {
+    "path": "FUENTES.md",
+    "sha256": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de",
+    "match": true
+  },
+  {
+    "path": "docs/METODOLOGIA.md",
+    "sha256": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7",
+    "match": true
+  },
+  {
+    "path": "contracts/vnext/evidence-v1.1.schema.json",
+    "sha256": "6fbd22a567cc5a8d8ce17fd1968c52fc92448526bf81103e2768486d724d9ad0",
+    "match": true
+  },
+  {
+    "path": "contracts/vnext/capability-v1.1.schema.json",
+    "sha256": "66ab0036ce3a529dad3d51d193fa05970fd795bbefcab477281e5df055ff2f0b",
+    "match": true
+  },
+  {
+    "path": "datos_preparados/municipios.csv",
+    "sha256": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
+    "match": true
+  },
+  {
+    "path": "datos_preparados/demografia.csv",
+    "sha256": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96",
+    "match": true
+  },
+  {
+    "path": "datos_preparados/runtime_municipality_points.csv",
+    "sha256": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11",
+    "match": true
+  },
+  {
+    "path": "datos_preparados/runtime_servicios.csv",
+    "sha256": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece",
+    "match": true
+  },
+  {
+    "path": "datos_preparados/metadata_sources.json",
+    "sha256": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
+    "match": true
+  },
+  {
+    "path": "datos_preparados/data_contract.json",
+    "sha256": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae",
+    "match": true
+  },
+  {
+    "path": "datos_preparados/vnext/capabilities.json",
+    "sha256": "d51c17a5ab9b2902382991abe215b77c879eb73a63df0a1ae5affb317c8e5b89",
+    "match": true
+  },
+  {
+    "path": "datos_preparados/vnext/operational_catalog_r6.json",
+    "sha256": "c7bd3cc8ffe50956ce839bec0ef90a13578160a4d5b4053b09673d2dc4c4ec17",
+    "match": true
+  },
+  {
+    "path": "datos_preparados/vnext/consumer_labels_r7.json",
+    "sha256": "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799",
+    "match": true
+  },
+  {
+    "path": "datos_preparados/vnext/mobility_sources.json",
+    "sha256": "a5ba0b7a9ee0ad85366e89ee888de2635013c148d005dcf9ecb94d24215bc445",
+    "match": true
+  },
+  {
+    "path": "datos_preparados/vnext/w1_r6_runtime.zip",
+    "sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+    "match": true
+  }
+]

@@ -1,0 +1,4444 @@
+[
+  {
+    "age_group_derivations": {
+      "65": {
+        "institution": "Eustat - Instituto Vasco de Estadística",
+        "limitation": "Recuento municipal agregado, no edad exacta ni circunstancias individuales; no se infiere un corte por año de nacimiento.",
+        "meaning": "Población de 65 años o más en la referencia indicada.",
+        "method": "Recuento del grupo 65+ de la consulta municipal, sexo total; pivote preparado. Porcentaje = recuento / población total × 100, redondeado a tres decimales.",
+        "output_field": "population_65_plus",
+        "reference_period": "2025-01-01",
+        "source_field": "grupo de edad 65+ de la consulta Eustat preparada",
+        "source_id": "EUSTAT_EMH_2025"
+      },
+      "75": {
+        "condition": "año de nacimiento <= 1949, incluido el grupo de años anteriores",
+        "institution": "Eustat - Instituto Vasco de Estadística",
+        "limitation": "Son recuentos municipales agregados, no edades exactas ni circunstancias individuales; el límite por año no identifica a los nacidos el propio 1 de enero de 1950.",
+        "meaning": "A 1 de enero de 2025, quienes nacieron hasta 1949 ya habían cumplido al menos 75 años. La agrupación se basa en el año de nacimiento; no permite identificar cumpleaños individuales de quienes nacieron en 1950.",
+        "method": "Suma de los recuentos por municipio y sexo total de los nacidos hasta 1949; porcentaje = recuento / población total × 100, redondeado a tres decimales.",
+        "output_field": "population_75_plus",
+        "reference_period": "2025-01-01",
+        "source_field": "año de nacimiento",
+        "source_id": "EUSTAT_EMH_2025"
+      }
+    },
+    "assumptions": [],
+    "capabilities": [
+      {
+        "coverage": {
+          "entities": 88,
+          "periods": [
+            "2025-01-01",
+            "2026-09-20",
+            "2025-05-07"
+          ],
+          "scope": "Un municipio; demografía y cifras de servicio solo cuando tienen fuente ejecutada",
+          "territory": "Gipuzkoa"
+        },
+        "derivation": "direct",
+        "description": "Resumen municipal observado",
+        "enabled": true,
+        "id": "obtener_resumen_territorial",
+        "input_fields": [
+          {
+            "allowed_values": [],
+            "name": "municipio",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "periodo_demografico_actual": "2025-01-01",
+        "periodo_demografico_explicacion": "La versión actual incorpora una única referencia demográfica disponible. Las fuentes sanitarias conservan sus propias fechas.",
+        "semantic_contract": {
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "limits": "fuentes con sus fechas distintas",
+          "measures": "población agregada y registros sanitarios; distancias entre puntos",
+          "numeric_evidence": "Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.",
+          "subject": "municipio"
+        },
+        "semantic_limits": [
+          "La ficha puede contener indicadores de servicios sin todas sus fuentes en la salida; esos valores no se promueven a claims.",
+          "Los periodos de fuente no forman una fotografía temporal homogénea."
+        ],
+        "snapshot_policy": "Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública."
+      },
+      {
+        "coverage": {
+          "entities": 88,
+          "periods": [
+            "2025-01-01"
+          ],
+          "scope": "Ranking municipal 65+ o 75+",
+          "territory": "Gipuzkoa"
+        },
+        "derivation": "derived_exact",
+        "description": "Ranking demográfico 65+ o 75+",
+        "enabled": true,
+        "id": "analizar_envejecimiento",
+        "input_fields": [
+          {
+            "allowed_values": [
+              "65",
+              "75"
+            ],
+            "name": "grupo_edad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowed_values": [
+              "percentage",
+              "count"
+            ],
+            "name": "medida",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "name": "top_n",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "semantic_contract": {
+          "limits": "orden del indicador, no necesidad individual",
+          "measures": "recuento de personas o porcentaje sobre población municipal",
+          "numeric_evidence": "Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.",
+          "subject": "municipio"
+        },
+        "semantic_limits": [
+          "75+ se deriva de año de nacimiento; el resultado no identifica individuos.",
+          "Los periodos de fuente no forman una fotografía temporal homogénea."
+        ],
+        "snapshot_policy": "Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública."
+      },
+      {
+        "coverage": {
+          "entities": 88,
+          "periods": [
+            "2026-09-20",
+            "2025-05-07"
+          ],
+          "scope": "88 municipios o subconjunto explícito; distancia geométrica",
+          "territory": "Gipuzkoa"
+        },
+        "derivation": "derived_exact",
+        "description": "Distancia geométrica y clasificación de los 88 puntos municipales, sin selección de municipios. No es población cubierta ni tiempo de viaje.",
+        "enabled": true,
+        "id": "analizar_acceso_general",
+        "input_fields": [
+          {
+            "allowed_values": [
+              "primary_care",
+              "hospital",
+              "mental_health",
+              "other_health"
+            ],
+            "name": "categoria_servicio",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "exclusive_minimum": 0,
+            "finite": true,
+            "maximum": 100,
+            "name": "umbral_km",
+            "required": true,
+            "type": "number",
+            "unit": "km"
+          }
+        ],
+        "public_engine_mapping": {
+          "operation": "analizar_acceso_servicios",
+          "scope": "internal_only"
+        },
+        "semantic_contract": {
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "limits": "no distribución de residentes",
+          "measures": "distancia euclídea y clasificación municipal por umbral",
+          "numeric_evidence": "Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.",
+          "subject": "punto representativo municipal"
+        },
+        "semantic_limits": [
+          "La distancia no es tiempo ni ruta; registro no implica apertura.",
+          "Los periodos de fuente no forman una fotografía temporal homogénea."
+        ],
+        "snapshot_policy": "Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública."
+      },
+      {
+        "coverage": {
+          "entities": 88,
+          "periods": [
+            "2026-09-20",
+            "2025-05-07"
+          ],
+          "scope": "88 municipios o subconjunto explícito; distancia geométrica",
+          "territory": "Gipuzkoa"
+        },
+        "derivation": "derived_exact",
+        "description": "Distancia geométrica y clasificación de municipios concretos; lista obligatoria, resoluble, distinta y no vacía. Incluye identidad observada del registro más próximo.",
+        "enabled": true,
+        "id": "analizar_acceso_municipios",
+        "input_fields": [
+          {
+            "allowed_values": [
+              "primary_care",
+              "hospital",
+              "mental_health",
+              "other_health"
+            ],
+            "name": "categoria_servicio",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "exclusive_minimum": 0,
+            "finite": true,
+            "maximum": 100,
+            "name": "umbral_km",
+            "required": true,
+            "type": "number",
+            "unit": "km"
+          },
+          {
+            "allowed_values": [],
+            "max_items": 88,
+            "min_items": 1,
+            "name": "municipios",
+            "nullable": false,
+            "required": true,
+            "type": "string_array",
+            "unique_resolved_entities": true
+          }
+        ],
+        "public_engine_mapping": {
+          "operation": "analizar_acceso_servicios",
+          "scope": "internal_only"
+        },
+        "semantic_contract": {
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "limits": "no distribución de residentes",
+          "measures": "distancia euclídea y clasificación municipal por umbral",
+          "numeric_evidence": "Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.",
+          "subject": "punto representativo municipal"
+        },
+        "semantic_limits": [
+          "La distancia no es tiempo ni ruta; registro no implica apertura.",
+          "Los periodos de fuente no forman una fotografía temporal homogénea."
+        ],
+        "snapshot_policy": "Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública."
+      },
+      {
+        "coverage": {
+          "entities": 88,
+          "periods": [
+            "2025-01-01",
+            "2026-09-20",
+            "2025-05-07"
+          ],
+          "scope": "Cruce municipal de edad y distancia; cuantiles explícitos",
+          "territory": "Gipuzkoa"
+        },
+        "derivation": "derived_exact",
+        "description": "Cruce descriptivo de envejecimiento y distancia",
+        "enabled": true,
+        "id": "analizar_coincidencia",
+        "input_fields": [
+          {
+            "allowed_values": [
+              "primary_care",
+              "hospital",
+              "mental_health",
+              "other_health"
+            ],
+            "name": "categoria_servicio",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowed_values": [
+              "65",
+              "75"
+            ],
+            "name": "grupo_edad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "name": "umbral_km",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "allowed_values": [],
+            "name": "cuantil",
+            "required": false,
+            "type": "number"
+          }
+        ],
+        "semantic_contract": {
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "limits": "coincidencia descriptiva, no causalidad ni cobertura poblacional",
+          "measures": "proporción municipal de edad y distancia geométrica al registro",
+          "numeric_evidence": "Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.",
+          "subject": "municipio"
+        },
+        "semantic_limits": [
+          "Coincidencia descriptiva no demuestra causalidad.",
+          "Los periodos de fuente no forman una fotografía temporal homogénea."
+        ],
+        "snapshot_policy": "Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública."
+      },
+      {
+        "coverage": {
+          "entities": 88,
+          "periods": [
+            "2026-09-20",
+            "2025-05-07"
+          ],
+          "scope": "Contrafactual geométrico; no es pronóstico",
+          "territory": "Gipuzkoa"
+        },
+        "derivation": "estimated_with_assumptions",
+        "description": "Añadir un punto hipotético indicado en coordenadas WGS84; comparación condicional, no predicción ni recomendación.",
+        "enabled": true,
+        "id": "simular_anadir_servicio",
+        "input_fields": [
+          {
+            "allowed_values": [
+              "primary_care",
+              "hospital",
+              "mental_health",
+              "other_health"
+            ],
+            "name": "categoria_servicio",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "crs": "EPSG:4326",
+            "finite": true,
+            "maximum": 90,
+            "minimum": -90,
+            "name": "latitud",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "allowed_values": [],
+            "crs": "EPSG:4326",
+            "finite": true,
+            "maximum": 180,
+            "minimum": -180,
+            "name": "longitud",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "allowed_values": [],
+            "exclusive_minimum": 0,
+            "finite": true,
+            "maximum": 100,
+            "name": "umbral_km",
+            "required": true,
+            "type": "number",
+            "unit": "km"
+          }
+        ],
+        "public_engine_mapping": {
+          "operation": "simular_escenario",
+          "scope": "internal_only"
+        },
+        "semantic_contract": {
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "limits": "no predicción de uso, impacto o población beneficiada",
+          "measures": "distancia desde punto municipal antes/después",
+          "numeric_evidence": "Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.",
+          "subject": "municipio en escenario hipotético"
+        },
+        "semantic_limits": [
+          "Parámetros hipotéticos no son observaciones oficiales.",
+          "Los periodos de fuente no forman una fotografía temporal homogénea."
+        ],
+        "snapshot_policy": "Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública."
+      },
+      {
+        "coverage": {
+          "entities": 88,
+          "periods": [
+            "2026-09-20",
+            "2025-05-07"
+          ],
+          "scope": "Contrafactual geométrico; no es pronóstico",
+          "territory": "Gipuzkoa"
+        },
+        "derivation": "estimated_with_assumptions",
+        "description": "Retirar hipotéticamente un registro de identidad observada en un resultado de acceso, nunca inventada; no modifica datos reales.",
+        "enabled": true,
+        "id": "simular_retirar_servicio",
+        "input_fields": [
+          {
+            "allowed_values": [
+              "primary_care",
+              "hospital",
+              "mental_health",
+              "other_health"
+            ],
+            "name": "categoria_servicio",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "decision": "registered_identity_from_observed_access_result",
+            "min_length": 1,
+            "name": "service_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "exclusive_minimum": 0,
+            "finite": true,
+            "maximum": 100,
+            "name": "umbral_km",
+            "required": true,
+            "type": "number",
+            "unit": "km"
+          }
+        ],
+        "public_engine_mapping": {
+          "operation": "simular_escenario",
+          "scope": "internal_only"
+        },
+        "semantic_contract": {
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "limits": "no predicción de uso, impacto o población beneficiada",
+          "measures": "distancia desde punto municipal antes/después",
+          "numeric_evidence": "Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.",
+          "subject": "municipio en escenario hipotético"
+        },
+        "semantic_limits": [
+          "Parámetros hipotéticos no son observaciones oficiales.",
+          "Los periodos de fuente no forman una fotografía temporal homogénea."
+        ],
+        "snapshot_policy": "Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública."
+      },
+      {
+        "coverage": {
+          "entities": 88,
+          "periods": [
+            "2026-09-20",
+            "2025-05-07"
+          ],
+          "scope": "Contrafactual geométrico; no es pronóstico",
+          "territory": "Gipuzkoa"
+        },
+        "derivation": "estimated_with_assumptions",
+        "description": "Cambiar exclusivamente el umbral entre dos valores explícitos. No cambia registros ni distancias; no mide población cubierta.",
+        "enabled": true,
+        "id": "simular_cambiar_umbral",
+        "input_fields": [
+          {
+            "allowed_values": [
+              "primary_care",
+              "hospital",
+              "mental_health",
+              "other_health"
+            ],
+            "name": "categoria_servicio",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "exclusive_minimum": 0,
+            "finite": true,
+            "maximum": 100,
+            "name": "umbral_actual_km",
+            "required": true,
+            "type": "number",
+            "unit": "km"
+          },
+          {
+            "allowed_values": [],
+            "exclusive_minimum": 0,
+            "finite": true,
+            "maximum": 100,
+            "name": "nuevo_umbral_km",
+            "required": true,
+            "type": "number",
+            "unit": "km"
+          }
+        ],
+        "public_engine_mapping": {
+          "operation": "simular_escenario",
+          "scope": "internal_only"
+        },
+        "semantic_contract": {
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "limits": "no predicción de uso, impacto o población beneficiada",
+          "measures": "distancia desde punto municipal antes/después",
+          "numeric_evidence": "Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.",
+          "subject": "municipio en escenario hipotético"
+        },
+        "semantic_limits": [
+          "Parámetros hipotéticos no son observaciones oficiales.",
+          "Los periodos de fuente no forman una fotografía temporal homogénea."
+        ],
+        "snapshot_policy": "Referencias fijas versionadas; las fechas de fuentes siguen en resultados/procedencia. No hay selección histórica pública."
+      },
+      {
+        "coverage": {
+          "entities": 9,
+          "periods": [],
+          "scope": "Registro de operaciones disponibles y no disponibles",
+          "territory": "capability_registry"
+        },
+        "derivation": "direct",
+        "description": "Catálogo de diez herramientas públicas, fuentes completas y capacidades compuestas; sin argumentos. No ejecuta análisis.",
+        "enabled": true,
+        "id": "consultar_capacidades",
+        "input_fields": [],
+        "semantic_contract": {
+          "limits": "catálogo no es resultado de análisis",
+          "measures": "cobertura, campos y límites verificados",
+          "numeric_evidence": "Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.",
+          "subject": "operación"
+        },
+        "semantic_limits": [
+          "La ficha no demuestra calidad conversacional del modelo.",
+          "Los periodos de fuente no forman una fotografía temporal homogénea."
+        ]
+      },
+      {
+        "coverage": {
+          "entities": 3,
+          "periods": [
+            "2026-09-28/2026-12-27",
+            "2026-09-20",
+            "Observed 2026-09-29",
+            "2026-01",
+            "Acquired 2026-09-29",
+            "supuesto del modelo de paseo, no periodo observado",
+            "2026-09-29"
+          ],
+          "scope": "health_visit modelled; validated date only; origin_stop_presence_to_return_stop_arrival; public single visit",
+          "territory": "Goierrialdea"
+        },
+        "derivation": "estimated_with_assumptions",
+        "description": "Una visita sanitaria programada/modelada por llamada; comparar mediante llamadas individuales y sus resultados válidos. Sin batch público.",
+        "enabled": true,
+        "id": "plan_visit",
+        "input_fields": [
+          {
+            "allowed_values": [],
+            "name": "origin_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "name": "destination_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "name": "date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "name": "appointment_time",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowed_values": [],
+            "name": "duration_minutes",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "semantic_contract": {
+          "limits": "no domicilio, tiempo real, capacidad, citas ni entrada verificada",
+          "measures": "intervalo completo, componentes en segundos y paseo modelado",
+          "numeric_evidence": "Solo salida válida de ejecución; conservar unidades, entidades, fechas y fuentes.",
+          "subject": "visita programada/modelada entre paradas"
+        },
+        "semantic_limits": [
+          "Paseo modelado y tiempo GTFS programado, no llegada real.",
+          "Unknown no significa ausencia de transporte; no viable no es fallo de red.",
+          "Los argumentos de la tool no acreditan autoría humana."
+        ]
+      }
+    ],
+    "capability_id": "consultar_capacidades",
+    "claims": [],
+    "composed_capabilities": [
+      {
+        "callable_tool": false,
+        "id": "municipal_comparison",
+        "limits": "Misma métrica, sujeto, unidad y periodos compatibles; diferencias porcentuales en puntos porcentuales.",
+        "meaning": "Comparación municipal por composición de consultas nuevas, no herramienta adicional.",
+        "steps": [
+          "obtener_resumen_territorial for each municipality",
+          "compare observed compatible claims"
+        ]
+      },
+      {
+        "callable_tool": false,
+        "id": "source_explanation",
+        "meaning": "Explicar institución, fecha, método y límites de la fuente utilizada, sin pedir códigos al usuario.",
+        "steps": [
+          "provenance in observed analytic output",
+          "consultar_capacidades for source cards if needed"
+        ]
+      }
+    ],
+    "effective_request": {
+      "defaults_applied": [
+        "pregunta_o_dimension"
+      ],
+      "effective_period": null,
+      "municipality_codes": [],
+      "municipality_labels": [],
+      "operation": "consultar_capacidades",
+      "parameters": {
+        "pregunta_o_dimension": null
+      }
+    },
+    "error": null,
+    "evidence_policy": {
+      "classification": [
+        "AVAILABLE",
+        "DERIVABLE_EXACTLY",
+        "ESTIMABLE_WITH_ASSUMPTIONS",
+        "NOT_AVAILABLE"
+      ],
+      "derivation": "Operaciones transparentes sobre inputs observados compatibles; sin dato espacial de residentes no hay cobertura poblacional.",
+      "forbidden_inferences": [
+        "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+        "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+        "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+        "Asociación no prueba causalidad; escenario no predice ni recomienda."
+      ],
+      "preserve": [
+        "subject",
+        "entity",
+        "unit",
+        "period",
+        "source",
+        "scope",
+        "assumptions"
+      ],
+      "recovery": "Un error aporta cero cifras; no repetir llamada y argumentos fallidos; una única recuperación inequívoca por causa."
+    },
+    "input_semantics": "normalized_input y effective_request contienen parámetros; no cifras analíticas. defaults_applied son supuestos, no elecciones humanas observadas.",
+    "limitations": [
+      "Una capacidad deshabilitada no se puede ejecutar.",
+      "El registro no sustituye una prueba conversacional en portal."
+    ],
+    "method": "Consulta de las operaciones disponibles, sus fuentes y límites.",
+    "mobility_catalog": {
+      "comparison": {
+        "batch_supported": false,
+        "cross_origin_comparison": "side_by_side_only; numeric delta is not supported across origins",
+        "mode": "individual_calls",
+        "procedure": "Execute one plan_visit per scenario, observe every output, then compare only valid compatible results. Differences are conditional, not observed savings or recommendations."
+      },
+      "destination": {
+        "centre_id": "entityBC631DA5",
+        "destination_id": "beasain_official_centre_anchor",
+        "name": "Ambulatorio de Beasain",
+        "reference_point_meaning": "Punto de referencia modelado utilizado para el acceso al centro durante la parte intermedia de la visita; no es el final del intervalo completo ni representa una entrada física verificada.",
+        "verification": {
+          "centre_anchor": "CONFIRMED_OFFICIAL_POINT",
+          "centre_identity": "CONFIRMED",
+          "entrance_verified": false,
+          "modelled_access": true
+        }
+      },
+      "modelling_assumptions": {
+        "arrival_margin_minutes": 10,
+        "boarding_margin_minutes": 3,
+        "meaning": "Supuestos de cálculo; no son decisiones observadas del usuario ni argumentos públicos.",
+        "walking_profile": "Paseo modelado de referencia: 50 m/min más 120 s por enlace completo"
+      },
+      "origin_options": [
+        {
+          "municipality_name": "Idiazabal",
+          "name": "Paradas centrales de Idiazabal",
+          "origin_id": "idiazabal_center_stops"
+        },
+        {
+          "municipality_name": "Segura",
+          "name": "Paradas Herriko Plaza de Segura",
+          "origin_id": "segura_herriko_plaza_stops"
+        },
+        {
+          "municipality_name": "Zegama",
+          "name": "Paradas centrales de Zegama",
+          "origin_id": "zegama_center_stops"
+        }
+      ],
+      "ranges": {
+        "duration_minutes": {
+          "maximum": 720,
+          "minimum": 1
+        }
+      },
+      "request_fields": [
+        "origin_id",
+        "destination_id",
+        "date",
+        "appointment_time",
+        "duration_minutes"
+      ],
+      "required_fields": [
+        "origin_id",
+        "destination_id",
+        "date",
+        "appointment_time",
+        "duration_minutes"
+      ],
+      "restrictions": [
+        "GO01 direct only",
+        "static schedule; not realtime",
+        "same civil day",
+        "origin stop presence to return stop arrival",
+        "validated date only",
+        "not assigned centre, appointment availability, universal accessibility or verified entrance"
+      ],
+      "scenario_kind": "health_visit",
+      "validated_date": "2026-09-29",
+      "walking_profile": {
+        "id": "poc_reference_50m_min_plus_120s",
+        "label": "Paseo modelado de referencia: 50 m/min más 120 s por enlace completo"
+      }
+    },
+    "normalized_input": {
+      "arguments": {},
+      "tool": "consultar_capacidades"
+    },
+    "operation_semantics": {
+      "interpretation": "catálogo no es resultado de análisis",
+      "measures": "cobertura, campos y límites verificados",
+      "subject": "operación"
+    },
+    "operational_metadata": {
+      "counters": [],
+      "execution": {
+        "request_id": "5d7c53c7937a49c1a08303dd103ab4fe",
+        "state": "completed",
+        "tool": "consultar_capacidades"
+      },
+      "not_analytical_evidence": true,
+      "selection": {
+        "criterion": "Primeras entidades en el orden validado de la herramienta",
+        "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+        "omitted_entities": 0,
+        "returned_entities": 0,
+        "total_entities": 0
+      }
+    },
+    "outcomes": [],
+    "public_input": {
+      "arguments": {},
+      "tool": "consultar_capacidades"
+    },
+    "public_tool_count": 10,
+    "request_id": "5d7c53c7937a49c1a08303dd103ab4fe",
+    "sources_catalog": [
+      {
+        "download_date": "2026-09-24",
+        "institution": "Eustat - Instituto Vasco de Estadística",
+        "license": "Creative Commons (según ficha Eustat de la operación 010154)",
+        "limitations": [
+          "75+ se deriva de año de nacimiento <=1949 a 2025-01-01."
+        ],
+        "method": "Consulta PXWeb por municipio, sexo total y periodo 2025-01-01; pivote de total/65+ y suma de nacidos hasta 1949 para 75+.",
+        "notes": [
+          "Códigos municipales Eustat/INE de cinco caracteres conservados como texto."
+        ],
+        "original_file": "datos_originales/eustat_demografia_2025.csv",
+        "prepared_files": [
+          "datos_preparados/demografia.csv",
+          "datos_preparados/municipios.csv"
+        ],
+        "reference_period": "2025-01-01",
+        "source_id": "EUSTAT_EMH_2025",
+        "source_type": "official",
+        "territory": "Gipuzkoa, 88 municipios",
+        "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+        "unit": "personas",
+        "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px"
+      },
+      {
+        "download_date": "2026-09-24",
+        "institution": "Gobierno Vasco - Departamento de Salud",
+        "license": "Licencia abierta indicada por Open Data Euskadi; atribución y fecha obligatorias",
+        "limitations": [
+          "La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad."
+        ],
+        "method": "Filtro Provincia=Gipuzkoa, normalización de tipo y unión espacial within en EPSG:4326.",
+        "notes": [
+          "Asignación municipal por punto dentro de polígono oficial."
+        ],
+        "original_file": "datos_originales/centros-salud.xlsx",
+        "prepared_files": [
+          "datos_preparados/servicios.csv",
+          "datos_preparados/runtime_servicios.csv"
+        ],
+        "reference_period": "2026-09-20",
+        "source_id": "ODE_HEALTH_CENTRES_2026",
+        "source_type": "official",
+        "territory": "Euskadi; filtrado a Gipuzkoa",
+        "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+        "unit": "registro de centro sanitario público",
+        "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+      },
+      {
+        "download_date": "2026-09-24",
+        "institution": "Gobierno Vasco - geoEuskadi",
+        "license": "Uso permitido citando Eusko Jaurlaritza / Gobierno Vasco",
+        "limitations": [
+          "El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007."
+        ],
+        "method": "Filtro por territorio y catálogo Eustat; área y simplificación calculadas en EPSG:25830.",
+        "notes": [
+          "CRS original y de cálculo: EPSG:25830; publicación runtime: EPSG:4326."
+        ],
+        "original_file": "datos_originales/MUNICIPIOS_5000_ETRS89.zip",
+        "prepared_files": [
+          "datos_preparados/municipios.geojson",
+          "datos_preparados/runtime_municipios.geojson",
+          "datos_preparados/runtime_municipality_points.csv"
+        ],
+        "reference_period": "2025-05-07",
+        "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+        "source_type": "official",
+        "territory": "Euskadi; filtrado a Gipuzkoa",
+        "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+        "unit": "polígono municipal",
+        "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/"
+      },
+      {
+        "download_date": null,
+        "input_source_ids": [
+          "EUSTAT_EMH_2025",
+          "ODE_HEALTH_CENTRES_2026",
+          "GEOEUSKADI_MUNICIPIOS_2025"
+        ],
+        "institution": "DeustoAI Labs",
+        "license": "Hereda las condiciones de atribución de las tres fuentes ascendentes",
+        "limitations": [
+          "La distancia no es tiempo de viaje ni accesibilidad individual.",
+          "Los periodos de las fuentes ascendentes no son idénticos."
+        ],
+        "method": "Conteos por municipio, tasas por 10.000 personas de 65+/75+ y distancia euclídea en metros desde el punto representativo municipal al servicio más cercano, calculada en EPSG:25830.",
+        "notes": [
+          "No es una fuente externa; registra el linaje de las transformaciones reproducibles."
+        ],
+        "original_file": null,
+        "prepared_files": [
+          "datos_preparados/municipios.csv",
+          "datos_preparados/runtime_municipios.geojson",
+          "datos_preparados/runtime_municipality_points.csv"
+        ],
+        "producer": "GIPUZKOA 360",
+        "reference_period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+        "source_id": "G360_DERIVED_MUNICIPAL_METRICS_V1",
+        "source_type": "derived",
+        "territory": "Gipuzkoa, 88 municipios",
+        "title": "Métricas municipales derivadas de GIPUZKOA 360",
+        "unit": "indicador municipal",
+        "upstream_source_ids": [
+          "EUSTAT_EMH_2025",
+          "ODE_HEALTH_CENTRES_2026",
+          "GEOEUSKADI_MUNICIPIOS_2025"
+        ],
+        "url": "https://github.com/Asier-Comba/Guipuzkoa360/blob/work/data-foundation/FUENTES.md"
+      },
+      {
+        "institution": "Gobierno Vasco / Moveuskadi",
+        "limitations": [
+          "No es tiempo real ni acceso sanitario."
+        ],
+        "publisher": "Gobierno Vasco / Moveuskadi",
+        "reference_period": "2026-09-29",
+        "role": "official_schedule",
+        "source_id": "W1_GTFS@2026-09-29",
+        "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+        "title": "Horario GO01 usado por legacy stop_only",
+        "unit": "horario programado",
+        "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+      },
+      {
+        "institution": "Entrada del agente",
+        "limitations": [
+          "La presencia en la llamada no acredita autoría humana."
+        ],
+        "publisher": "Entrada de la llamada legacy",
+        "reference_period": "2026-09-29",
+        "role": "user_parameter",
+        "source_id": "W2_USER@2026-09-29",
+        "source_sha256": null,
+        "title": "Parámetros presentes en la llamada legacy",
+        "unit": "parámetros aplicados",
+        "url": null
+      },
+      {
+        "institution": "Proveedor W1 0.2.0",
+        "limitations": [
+          "No son elecciones humanas observadas."
+        ],
+        "publisher": "W1 stop_only 0.2.0",
+        "reference_period": "2026-09-29",
+        "role": "modelling_assumption",
+        "source_id": "W1_MODEL@2026-09-29",
+        "source_sha256": "62e00c04edb96ccde0a5ce4fe81574452ddcacdb4c173b030ca49b000f5a084b",
+        "title": "Supuestos y defaults de W1 stop_only",
+        "unit": "parámetros modelados",
+        "url": null
+      },
+      {
+        "institution": "Proveedor W1 0.2.0",
+        "limitations": [
+          "Derivación condicionada por el snapshot y sus supuestos."
+        ],
+        "publisher": "W1 deterministic provider 0.2.0",
+        "reference_period": "2026-09-29",
+        "role": "derived_network",
+        "source_id": "W1_DERIVED@2026-09-29",
+        "source_sha256": "c97842617f3077c2eec1892653361b4471a18e1c64f8127b808b9968401cb834",
+        "title": "Componentes calculados por legacy stop_only",
+        "unit": "segundos calculados",
+        "url": null
+      },
+      {
+        "institution": "Moveuskadi / Goierrialdea",
+        "limitations": [
+          "Los tiempos timepoint=0 son aproximados/interpolados; no son tiempo real."
+        ],
+        "reference_period": "2026-09-28/2026-12-27",
+        "role": "official_schedule",
+        "source_id": "GTFS",
+        "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+        "title": "Horario GO01 Goierrialdea",
+        "unit": "horarios programados",
+        "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+      },
+      {
+        "institution": "Open Data Euskadi",
+        "limitations": [
+          "El punto oficial no verifica la puerta física de entrada."
+        ],
+        "reference_period": "2026-09-20",
+        "role": "official_health_registry",
+        "source_id": "HEALTH_REGISTRY",
+        "source_sha256": "87a2b8ea3309678ff743e2f267320b94216c3d1e4f52b578bdd0a77bd8bf29ab",
+        "title": "Registro de centros de salud públicos",
+        "unit": "centro y coordenadas",
+        "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+      },
+      {
+        "institution": "Osakidetza",
+        "limitations": [
+          "La fecha de publicación no consta; las condiciones específicas de reutilización no están verificadas."
+        ],
+        "reference_period": "Observed 2026-09-29",
+        "role": "official_health_page",
+        "source_id": "HEALTH_PAGE",
+        "source_sha256": "7ba21b4f78f79b55d5761f427582daaef48097245142c9cb259288dc923f3160",
+        "title": "Ficha del Ambulatorio de Beasain",
+        "unit": "identidad y dirección",
+        "url": "https://www.osakidetza.euskadi.eus/ambulatorio-de-beasain/webosk00-cercon/es/"
+      },
+      {
+        "institution": "Osakidetza",
+        "limitations": [
+          "Listado dental, no prueba traslado ni dos sedes; conflicto de dirección pendiente de revisión."
+        ],
+        "reference_period": "2026-01",
+        "role": "official_health_page",
+        "source_id": "PADI_2026",
+        "source_sha256": "6cf5d40245eb29c9c98785d03aba518c44677104b71625db36c3f2801455ac10",
+        "title": "Listado PADI de consultas dentales 2026",
+        "unit": "dirección en listado",
+        "url": "https://www.osakidetza.euskadi.eus/contenidos/informacion/salud_padi/es_def/adjuntos/padi-kontsultak-gipuzkoa.pdf"
+      },
+      {
+        "institution": "OpenStreetMap contributors",
+        "limitations": [
+          "La red y el paseo son un modelo; no verifican accesibilidad, cruces ni puerta."
+        ],
+        "reference_period": "Acquired 2026-09-29",
+        "role": "open_network",
+        "source_id": "OSM",
+        "source_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+        "title": "Derivado público de red peatonal",
+        "unit": "metros de red modelada",
+        "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-2.203,43.041,-2.190,43.052"
+      },
+      {
+        "institution": "GIPUZKOA360",
+        "limitations": [
+          "50 m/min más 120 s por enlace completo; no es una medición individual."
+        ],
+        "reference_period": "R5.1",
+        "role": "model_parameter",
+        "source_id": "MODEL",
+        "source_sha256": "0f3a02e69f8065f892ce19a0115ae7e3c661c32725bd37a423f3d283ae1a2a7d",
+        "title": "Perfil de paseo W1 R5.1",
+        "unit": "segundos modelados",
+        "url": null
+      },
+      {
+        "institution": "Entrada del agente",
+        "limitations": [
+          "human_explicit en W1 significa presente en la llamada; W2 no acredita por sí solo autoría humana."
+        ],
+        "reference_period": "2026-09-29",
+        "role": "agent_or_user_parameter",
+        "source_id": "USER",
+        "source_sha256": null,
+        "title": "Parámetros presentes en la petición a W1",
+        "unit": "parámetros",
+        "url": null
+      },
+      {
+        "institution": "Proveedor W1 0.3.1",
+        "limitations": [
+          "No son elecciones humanas observadas."
+        ],
+        "reference_period": "2026-09-29",
+        "role": "model_parameter",
+        "source_id": "MODEL_DEFAULTS",
+        "source_sha256": null,
+        "title": "Defaults aplicados por W1",
+        "unit": "parámetros",
+        "url": null
+      },
+      {
+        "institution": "Proveedor W1 0.3.1",
+        "limitations": [
+          "Cálculo determinista condicionado por datos y supuestos fijados."
+        ],
+        "reference_period": "2026-09-29",
+        "role": "derived_metric",
+        "source_id": "DERIVED",
+        "source_sha256": null,
+        "title": "Componentes calculados del itinerario",
+        "unit": "segundos",
+        "url": null
+      }
+    ],
+    "status": "valid"
+  },
+  {
+    "assumptions": [
+      "Los argumentos presentes en la llamada no acreditan por sí solos autoría humana.",
+      "Paseo de referencia 50 m/min + 120 s por enlace completo y sentido."
+    ],
+    "capability_id": "plan_visit",
+    "claims": [
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_type": "journey",
+        "evidence_path": "/itinerary/total_s",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-1",
+        "label": "total_s",
+        "metric_id": "total_s",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado;2026-09-29",
+        "reference_periods": [
+          {
+            "period": "2026-09-28/2026-12-27",
+            "source_id": "GTFS"
+          },
+          {
+            "period": "2026-09-20",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "period": "Acquired 2026-09-29",
+            "source_id": "OSM"
+          },
+          {
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "source_id": "MODEL"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "USER"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "DERIVED"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "magnitud calculada",
+            "role": "derived_metric",
+            "source_id": "DERIVED"
+          },
+          {
+            "institution": "Moveuskadi / Goierrialdea",
+            "period": "2026-09-28/2026-12-27",
+            "public_role": "horario programado",
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "institution": "Open Data Euskadi",
+            "period": "2026-09-20",
+            "public_role": "registro sanitario",
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "institution": "GIPUZKOA360",
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "institution": "OpenStreetMap contributors",
+            "period": "Acquired 2026-09-29",
+            "public_role": "red peatonal",
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "institution": "Entrada del agente",
+            "period": "2026-09-29",
+            "public_role": "parámetro recibido en la consulta",
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          }
+        ],
+        "source_ids": [
+          "GTFS",
+          "HEALTH_REGISTRY",
+          "OSM",
+          "MODEL",
+          "USER",
+          "MODEL_DEFAULTS",
+          "DERIVED"
+        ],
+        "source_refs": [
+          {
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "role": "derived_metric",
+            "source_id": "DERIVED"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "s",
+        "value": 10691
+      },
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_type": "journey",
+        "evidence_path": "/components_s/initial_wait_s",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-2",
+        "label": "initial_wait_s",
+        "metric_id": "initial_wait_s",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-29",
+        "reference_periods": [
+          {
+            "period": "2026-09-29",
+            "source_id": "MODEL_DEFAULTS"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          }
+        ],
+        "source_ids": [
+          "MODEL_DEFAULTS"
+        ],
+        "source_refs": [
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "s",
+        "value": 180
+      },
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_type": "journey",
+        "evidence_path": "/components_s/outbound_vehicle_s",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-3",
+        "label": "outbound_vehicle_s",
+        "metric_id": "outbound_vehicle_s",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-28/2026-12-27",
+        "reference_periods": [
+          {
+            "period": "2026-09-28/2026-12-27",
+            "source_id": "GTFS"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "Moveuskadi / Goierrialdea",
+            "period": "2026-09-28/2026-12-27",
+            "public_role": "horario programado",
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          }
+        ],
+        "source_ids": [
+          "GTFS"
+        ],
+        "source_refs": [
+          {
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "s",
+        "value": 1651
+      },
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_type": "journey",
+        "evidence_path": "/components_s/destination_walk_outbound_s",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-4",
+        "label": "destination_walk_outbound_s",
+        "metric_id": "destination_walk_outbound_s",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado;2026-09-29",
+        "reference_periods": [
+          {
+            "period": "2026-09-28/2026-12-27",
+            "source_id": "GTFS"
+          },
+          {
+            "period": "2026-09-20",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "period": "Acquired 2026-09-29",
+            "source_id": "OSM"
+          },
+          {
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "source_id": "MODEL"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "USER"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "DERIVED"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "magnitud calculada",
+            "role": "derived_metric",
+            "source_id": "DERIVED"
+          },
+          {
+            "institution": "Moveuskadi / Goierrialdea",
+            "period": "2026-09-28/2026-12-27",
+            "public_role": "horario programado",
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "institution": "Open Data Euskadi",
+            "period": "2026-09-20",
+            "public_role": "registro sanitario",
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "institution": "GIPUZKOA360",
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "institution": "OpenStreetMap contributors",
+            "period": "Acquired 2026-09-29",
+            "public_role": "red peatonal",
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "institution": "Entrada del agente",
+            "period": "2026-09-29",
+            "public_role": "parámetro recibido en la consulta",
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          }
+        ],
+        "source_ids": [
+          "GTFS",
+          "HEALTH_REGISTRY",
+          "OSM",
+          "MODEL",
+          "USER",
+          "MODEL_DEFAULTS",
+          "DERIVED"
+        ],
+        "source_refs": [
+          {
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "role": "derived_metric",
+            "source_id": "DERIVED"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "s",
+        "value": 420
+      },
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_type": "journey",
+        "evidence_path": "/components_s/pre_appointment_wait_s",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-5",
+        "label": "pre_appointment_wait_s",
+        "metric_id": "pre_appointment_wait_s",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado;2026-09-29",
+        "reference_periods": [
+          {
+            "period": "2026-09-28/2026-12-27",
+            "source_id": "GTFS"
+          },
+          {
+            "period": "2026-09-20",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "period": "Acquired 2026-09-29",
+            "source_id": "OSM"
+          },
+          {
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "source_id": "MODEL"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "USER"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "DERIVED"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "magnitud calculada",
+            "role": "derived_metric",
+            "source_id": "DERIVED"
+          },
+          {
+            "institution": "Moveuskadi / Goierrialdea",
+            "period": "2026-09-28/2026-12-27",
+            "public_role": "horario programado",
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "institution": "Open Data Euskadi",
+            "period": "2026-09-20",
+            "public_role": "registro sanitario",
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "institution": "GIPUZKOA360",
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "institution": "OpenStreetMap contributors",
+            "period": "Acquired 2026-09-29",
+            "public_role": "red peatonal",
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "institution": "Entrada del agente",
+            "period": "2026-09-29",
+            "public_role": "parámetro recibido en la consulta",
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          }
+        ],
+        "source_ids": [
+          "GTFS",
+          "HEALTH_REGISTRY",
+          "OSM",
+          "MODEL",
+          "USER",
+          "MODEL_DEFAULTS",
+          "DERIVED"
+        ],
+        "source_refs": [
+          {
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "role": "derived_metric",
+            "source_id": "DERIVED"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "s",
+        "value": 2572
+      },
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_type": "journey",
+        "evidence_path": "/components_s/appointment_s",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-6",
+        "label": "appointment_s",
+        "metric_id": "appointment_s",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-29",
+        "reference_periods": [
+          {
+            "period": "2026-09-29",
+            "source_id": "USER"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "Entrada del agente",
+            "period": "2026-09-29",
+            "public_role": "parámetro recibido en la consulta",
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          }
+        ],
+        "source_ids": [
+          "USER"
+        ],
+        "source_refs": [
+          {
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "s",
+        "value": 1200
+      },
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_type": "journey",
+        "evidence_path": "/components_s/destination_walk_return_s",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-7",
+        "label": "destination_walk_return_s",
+        "metric_id": "destination_walk_return_s",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado;2026-09-29",
+        "reference_periods": [
+          {
+            "period": "2026-09-28/2026-12-27",
+            "source_id": "GTFS"
+          },
+          {
+            "period": "2026-09-20",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "period": "Acquired 2026-09-29",
+            "source_id": "OSM"
+          },
+          {
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "source_id": "MODEL"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "USER"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "DERIVED"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "magnitud calculada",
+            "role": "derived_metric",
+            "source_id": "DERIVED"
+          },
+          {
+            "institution": "Moveuskadi / Goierrialdea",
+            "period": "2026-09-28/2026-12-27",
+            "public_role": "horario programado",
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "institution": "Open Data Euskadi",
+            "period": "2026-09-20",
+            "public_role": "registro sanitario",
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "institution": "GIPUZKOA360",
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "institution": "OpenStreetMap contributors",
+            "period": "Acquired 2026-09-29",
+            "public_role": "red peatonal",
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "institution": "Entrada del agente",
+            "period": "2026-09-29",
+            "public_role": "parámetro recibido en la consulta",
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          }
+        ],
+        "source_ids": [
+          "GTFS",
+          "HEALTH_REGISTRY",
+          "OSM",
+          "MODEL",
+          "USER",
+          "MODEL_DEFAULTS",
+          "DERIVED"
+        ],
+        "source_refs": [
+          {
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "role": "derived_metric",
+            "source_id": "DERIVED"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "s",
+        "value": 960
+      },
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_type": "journey",
+        "evidence_path": "/components_s/return_wait_s",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-8",
+        "label": "return_wait_s",
+        "metric_id": "return_wait_s",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado;2026-09-29",
+        "reference_periods": [
+          {
+            "period": "2026-09-28/2026-12-27",
+            "source_id": "GTFS"
+          },
+          {
+            "period": "2026-09-20",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "period": "Acquired 2026-09-29",
+            "source_id": "OSM"
+          },
+          {
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "source_id": "MODEL"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "USER"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "DERIVED"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "magnitud calculada",
+            "role": "derived_metric",
+            "source_id": "DERIVED"
+          },
+          {
+            "institution": "Moveuskadi / Goierrialdea",
+            "period": "2026-09-28/2026-12-27",
+            "public_role": "horario programado",
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "institution": "Open Data Euskadi",
+            "period": "2026-09-20",
+            "public_role": "registro sanitario",
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "institution": "GIPUZKOA360",
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "institution": "OpenStreetMap contributors",
+            "period": "Acquired 2026-09-29",
+            "public_role": "red peatonal",
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "institution": "Entrada del agente",
+            "period": "2026-09-29",
+            "public_role": "parámetro recibido en la consulta",
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          }
+        ],
+        "source_ids": [
+          "GTFS",
+          "HEALTH_REGISTRY",
+          "OSM",
+          "MODEL",
+          "USER",
+          "MODEL_DEFAULTS",
+          "DERIVED"
+        ],
+        "source_refs": [
+          {
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "role": "derived_metric",
+            "source_id": "DERIVED"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "s",
+        "value": 1430
+      },
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_type": "journey",
+        "evidence_path": "/components_s/return_vehicle_s",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-9",
+        "label": "return_vehicle_s",
+        "metric_id": "return_vehicle_s",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-28/2026-12-27",
+        "reference_periods": [
+          {
+            "period": "2026-09-28/2026-12-27",
+            "source_id": "GTFS"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "Moveuskadi / Goierrialdea",
+            "period": "2026-09-28/2026-12-27",
+            "public_role": "horario programado",
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          }
+        ],
+        "source_ids": [
+          "GTFS"
+        ],
+        "source_refs": [
+          {
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "s",
+        "value": 2278
+      },
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_type": "journey",
+        "evidence_path": "/walking/outbound/total_metres",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-10",
+        "label": "total_metres",
+        "metric_id": "total_metres",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado",
+        "reference_periods": [
+          {
+            "period": "2026-09-28/2026-12-27",
+            "source_id": "GTFS"
+          },
+          {
+            "period": "2026-09-20",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "period": "Acquired 2026-09-29",
+            "source_id": "OSM"
+          },
+          {
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "source_id": "MODEL"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "Moveuskadi / Goierrialdea",
+            "period": "2026-09-28/2026-12-27",
+            "public_role": "horario programado",
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "institution": "Open Data Euskadi",
+            "period": "2026-09-20",
+            "public_role": "registro sanitario",
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "institution": "GIPUZKOA360",
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "institution": "OpenStreetMap contributors",
+            "period": "Acquired 2026-09-29",
+            "public_role": "red peatonal",
+            "role": "open_network",
+            "source_id": "OSM"
+          }
+        ],
+        "source_ids": [
+          "GTFS",
+          "HEALTH_REGISTRY",
+          "OSM",
+          "MODEL"
+        ],
+        "source_refs": [
+          {
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "m",
+        "value": 205.07964741035417
+      },
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:30:00",
+        "entity_type": "journey",
+        "evidence_path": "/walking/return/total_metres",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-11",
+        "label": "total_metres",
+        "metric_id": "total_metres",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado",
+        "reference_periods": [
+          {
+            "period": "2026-09-28/2026-12-27",
+            "source_id": "GTFS"
+          },
+          {
+            "period": "2026-09-20",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "period": "Acquired 2026-09-29",
+            "source_id": "OSM"
+          },
+          {
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "source_id": "MODEL"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "Moveuskadi / Goierrialdea",
+            "period": "2026-09-28/2026-12-27",
+            "public_role": "horario programado",
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "institution": "Open Data Euskadi",
+            "period": "2026-09-20",
+            "public_role": "registro sanitario",
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "institution": "GIPUZKOA360",
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "institution": "OpenStreetMap contributors",
+            "period": "Acquired 2026-09-29",
+            "public_role": "red peatonal",
+            "role": "open_network",
+            "source_id": "OSM"
+          }
+        ],
+        "source_ids": [
+          "GTFS",
+          "HEALTH_REGISTRY",
+          "OSM",
+          "MODEL"
+        ],
+        "source_refs": [
+          {
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "m",
+        "value": 686.1157628496067
+      }
+    ],
+    "effective_request": {
+      "defaults_applied": [
+        "arrival_margin_minutes",
+        "boarding_margin_minutes",
+        "return_deadline",
+        "snapshot_id",
+        "timezone",
+        "walking_profile_id"
+      ],
+      "effective_period": "2026-09-29",
+      "municipality_codes": [],
+      "municipality_labels": [],
+      "operation": "plan_visit",
+      "parameters": {
+        "appointment_time": "09:30:00",
+        "arrival_margin_minutes": 10,
+        "boarding_margin_minutes": 3,
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops",
+        "return_deadline": null,
+        "timezone": "Europe/Madrid",
+        "walking_profile_id": "poc_reference_50m_min_plus_120s"
+      }
+    },
+    "error": null,
+    "evidence_policy": {
+      "classification": [
+        "AVAILABLE",
+        "DERIVABLE_EXACTLY",
+        "ESTIMABLE_WITH_ASSUMPTIONS",
+        "NOT_AVAILABLE"
+      ],
+      "derivation": "Operaciones transparentes sobre inputs observados compatibles; sin dato espacial de residentes no hay cobertura poblacional.",
+      "forbidden_inferences": [
+        "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+        "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+        "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+        "Asociación no prueba causalidad; escenario no predice ni recomienda."
+      ],
+      "preserve": [
+        "subject",
+        "entity",
+        "unit",
+        "period",
+        "source",
+        "scope",
+        "assumptions"
+      ],
+      "recovery": "Un error aporta cero cifras; no repetir llamada y argumentos fallidos; una única recuperación inequívoca por causa."
+    },
+    "input_semantics": "normalized_input y effective_request contienen parámetros; no cifras analíticas. defaults_applied son supuestos, no elecciones humanas observadas.",
+    "limitations": [
+      "Entrada física NOT_VERIFIED; conflicto Bernedo Enea 1 / Zaldizurreta 2 pendiente de revisión humana.",
+      "GTFS estático y tiempos timepoint=0 aproximados; no realtime, domicilio, cita ni accesibilidad garantizada."
+    ],
+    "method": "Combinación de servicios GO01 programados y paseo modelado hasta el punto oficial del centro; comprobación de identidad, parámetros y componentes.",
+    "mobility": {
+      "comparisons": [],
+      "scenarios": [
+        {
+          "assumptions": [
+            "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+            "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+          ],
+          "components_s": {
+            "appointment_s": 1200,
+            "destination_walk_outbound_s": 420,
+            "destination_walk_return_s": 960,
+            "initial_wait_s": 180,
+            "outbound_vehicle_s": 1651,
+            "pre_appointment_wait_s": 2572,
+            "return_vehicle_s": 2278,
+            "return_wait_s": 1430
+          },
+          "destination_label": "Ambulatorio de Beasain",
+          "duration_ledger": {
+            "answer_table_markdown": "| Componente | Duración |\n|---|---:|\n| Espera inicial en la parada | 0 h 3 min 0 s |\n| Autobús de ida | 0 h 27 min 31 s |\n| Paseo modelado de ida | 0 h 7 min 0 s |\n| Espera en destino antes de la cita | 0 h 42 min 52 s |\n| Consulta | 0 h 20 min 0 s |\n| Paseo modelado de regreso | 0 h 16 min 0 s |\n| Espera del autobús de regreso | 0 h 23 min 50 s |\n| Autobús de regreso | 0 h 37 min 58 s |\n| **Total** | **2 h 58 min 11 s** |",
+            "component_sum_seconds": 10691,
+            "components": [
+              {
+                "component_id": "initial_wait_s",
+                "end_clock": "08:12:37",
+                "evidence_path": "/components_s/initial_wait_s",
+                "human": "0 h 3 min 0 s",
+                "label": "Espera inicial en la parada",
+                "seconds": 180,
+                "start_clock": "08:09:37"
+              },
+              {
+                "component_id": "outbound_vehicle_s",
+                "end_clock": "08:40:08",
+                "evidence_path": "/components_s/outbound_vehicle_s",
+                "human": "0 h 27 min 31 s",
+                "label": "Autobús de ida",
+                "seconds": 1651,
+                "start_clock": "08:12:37"
+              },
+              {
+                "component_id": "destination_walk_outbound_s",
+                "end_clock": "08:47:08",
+                "evidence_path": "/components_s/destination_walk_outbound_s",
+                "human": "0 h 7 min 0 s",
+                "label": "Paseo modelado de ida",
+                "seconds": 420,
+                "start_clock": "08:40:08"
+              },
+              {
+                "component_id": "pre_appointment_wait_s",
+                "end_clock": "09:30:00",
+                "evidence_path": "/components_s/pre_appointment_wait_s",
+                "human": "0 h 42 min 52 s",
+                "label": "Espera en destino antes de la cita",
+                "seconds": 2572,
+                "start_clock": "08:47:08"
+              },
+              {
+                "component_id": "appointment_s",
+                "end_clock": "09:50:00",
+                "evidence_path": "/components_s/appointment_s",
+                "human": "0 h 20 min 0 s",
+                "label": "Consulta",
+                "seconds": 1200,
+                "start_clock": "09:30:00"
+              },
+              {
+                "component_id": "destination_walk_return_s",
+                "end_clock": "10:06:00",
+                "evidence_path": "/components_s/destination_walk_return_s",
+                "human": "0 h 16 min 0 s",
+                "label": "Paseo modelado de regreso",
+                "seconds": 960,
+                "start_clock": "09:50:00"
+              },
+              {
+                "component_id": "return_wait_s",
+                "end_clock": "10:29:50",
+                "evidence_path": "/components_s/return_wait_s",
+                "human": "0 h 23 min 50 s",
+                "label": "Espera del autobús de regreso",
+                "seconds": 1430,
+                "start_clock": "10:06:00"
+              },
+              {
+                "component_id": "return_vehicle_s",
+                "end_clock": "11:07:48",
+                "evidence_path": "/components_s/return_vehicle_s",
+                "human": "0 h 37 min 58 s",
+                "label": "Autobús de regreso",
+                "seconds": 2278,
+                "start_clock": "10:29:50"
+              }
+            ],
+            "end_clock": "11:07:48",
+            "margin_relationship": "Los ocho componentes son consecutivos y no se solapan. Los márgenes exigidos ya están incluidos en las esperas; no se suman otra vez. El margen de regreso no es otro trayecto.",
+            "partition_verified": true,
+            "presentation_rule": "Reproduce la tabla completa sin agrupar, omitir ni recalcular filas. Total es resumen, no otro sumando. Conserva el alcance, fuentes, supuestos y límites del escenario.",
+            "start_clock": "08:09:37",
+            "total_human": "2 h 58 min 11 s",
+            "total_seconds": 10691
+          },
+          "effective_parameters": {
+            "appointment_time": "09:30:00",
+            "arrival_margin_minutes": 10,
+            "boarding_margin_minutes": 3,
+            "date": "2026-09-29",
+            "destination_id": "beasain_official_centre_anchor",
+            "duration_minutes": 20,
+            "origin_id": "zegama_center_stops",
+            "return_deadline": null,
+            "timezone": "Europe/Madrid",
+            "walking_profile_id": "poc_reference_50m_min_plus_120s"
+          },
+          "error": null,
+          "health_destination": {
+            "address": "Bernedo Enea 1",
+            "address_conflict": "conflicting_current_sources",
+            "centre_anchor": "CONFIRMED_OFFICIAL_POINT",
+            "centre_id": "entityBC631DA5",
+            "entrance_verification": "NOT_VERIFIED",
+            "entrance_verified": false,
+            "human_review_required": true,
+            "kind": "intermediate_health_anchor",
+            "modelled_access": true,
+            "name": "Ambulatorio de Beasain",
+            "source_refs": [
+              "HEALTH_REGISTRY",
+              "HEALTH_PAGE",
+              "PADI_2026"
+            ],
+            "wording": "Punto de referencia modelado utilizado para el acceso al centro durante la parte intermedia de la visita; no es el final del intervalo completo ni representa una entrada física verificada."
+          },
+          "index": 0,
+          "itinerary": {
+            "origin_stop_id": "8305",
+            "outbound": {
+              "arrival_time": "08:40:08",
+              "departure_time": "08:12:37",
+              "drop_off_type": 0,
+              "from_stop_id": "8305",
+              "from_stop_label": "Zegama - Elizalde 6 - Plaza",
+              "from_stop_sequence": 2,
+              "from_timepoint": 0,
+              "pickup_type": 0,
+              "route_id": "1",
+              "route_label": "GO01",
+              "service_id": "LJ",
+              "to_stop_id": "7219",
+              "to_stop_label": "Beasain - Lokomotora Biribilgunea",
+              "to_stop_sequence": 25,
+              "to_timepoint": 0,
+              "trip_id": "1_103_LJ_29400"
+            },
+            "return": {
+              "arrival_time": "11:07:48",
+              "departure_time": "10:29:50",
+              "drop_off_type": 0,
+              "from_stop_id": "7218",
+              "from_stop_label": "Beasain - San Inazio 10",
+              "from_stop_sequence": 8,
+              "from_timepoint": 0,
+              "pickup_type": 0,
+              "route_id": "1",
+              "route_label": "GO01",
+              "service_id": "LJ",
+              "to_stop_id": "8309",
+              "to_stop_label": "Zegama - Elizalde Kalea 4",
+              "to_stop_sequence": 35,
+              "to_timepoint": 0,
+              "trip_id": "1_106_LJ_37200"
+            },
+            "return_slack_s": 1250,
+            "return_stop_id": "8309",
+            "total_s": 10691
+          },
+          "journey_scope": {
+            "authority": "time_summary defines the complete interval; health_destination is intermediate",
+            "end": {
+              "clock": "11:07:48",
+              "kind": "return_stop_arrival",
+              "meaning": "Fin del intervalo completo al llegar de vuelta a las paradas del origen, después de la consulta y del regreso; no en el centro sanitario ni en el domicilio.",
+              "origin_id": "zegama_center_stops",
+              "origin_label": "Paradas centrales de Zegama",
+              "seconds": 40068,
+              "stop_id": "8309",
+              "stop_label": "Zegama - Elizalde Kalea 4"
+            },
+            "health_destination": {
+              "centre_id": "entityBC631DA5",
+              "destination_id": "beasain_official_centre_anchor",
+              "entrance_verified": false,
+              "kind": "intermediate_health_anchor",
+              "label": "Ambulatorio de Beasain",
+              "meaning": "Punto de referencia modelado utilizado para el acceso al centro durante la parte intermedia de la visita; no es el final del intervalo completo ni representa una entrada física verificada."
+            },
+            "includes_return_trip": true,
+            "scope_kind": "origin_stop_presence_to_return_stop_arrival",
+            "start": {
+              "clock": "08:09:37",
+              "kind": "origin_stop_presence",
+              "meaning": "Inicio del intervalo completo por presencia en la parada de origen, antes de la salida del autobús; no desde el domicilio.",
+              "origin_id": "zegama_center_stops",
+              "origin_label": "Paradas centrales de Zegama",
+              "seconds": 29377,
+              "stop_id": "8305",
+              "stop_label": "Zegama - Elizalde 6 - Plaza",
+              "vehicle_departure_clock": "08:12:37"
+            }
+          },
+          "limitations": [
+            "Punto de referencia modelado utilizado para el acceso al centro durante la parte intermedia de la visita; no es el final del intervalo completo ni representa una entrada física verificada.",
+            "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+            "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+            "Horarios GTFS aproximados programados, no información en tiempo real.",
+            "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+            "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+          ],
+          "origin_label": "Paradas centrales de Zegama",
+          "parameter_attribution": [
+            {
+              "attribution": "tool_argument_origin_unverified",
+              "field": "appointment_time",
+              "parameter_origin": "human_explicit",
+              "value": "09:30:00"
+            },
+            {
+              "attribution": "calculation_assumption",
+              "field": "arrival_margin_minutes",
+              "parameter_origin": "model_default",
+              "value": 10
+            },
+            {
+              "attribution": "calculation_assumption",
+              "field": "boarding_margin_minutes",
+              "parameter_origin": "model_default",
+              "value": 3
+            },
+            {
+              "attribution": "tool_argument_origin_unverified",
+              "field": "date",
+              "parameter_origin": "human_explicit",
+              "value": "2026-09-29"
+            },
+            {
+              "attribution": "tool_argument_origin_unverified",
+              "field": "destination_id",
+              "parameter_origin": "human_explicit",
+              "value": "beasain_official_centre_anchor"
+            },
+            {
+              "attribution": "tool_argument_origin_unverified",
+              "field": "duration_minutes",
+              "parameter_origin": "human_explicit",
+              "value": 20
+            },
+            {
+              "attribution": "tool_argument_origin_unverified",
+              "field": "origin_id",
+              "parameter_origin": "human_explicit",
+              "value": "zegama_center_stops"
+            },
+            {
+              "attribution": "calculation_assumption",
+              "field": "return_deadline",
+              "parameter_origin": "model_default",
+              "value": null
+            },
+            {
+              "attribution": "calculation_assumption",
+              "field": "timezone",
+              "parameter_origin": "model_default",
+              "value": "Europe/Madrid"
+            },
+            {
+              "attribution": "calculation_assumption",
+              "field": "walking_profile_id",
+              "parameter_origin": "model_default",
+              "value": "poc_reference_50m_min_plus_120s"
+            }
+          ],
+          "scenario_kind": "health_visit",
+          "scope": "origin_stop_presence_to_return_stop_arrival",
+          "sources": [
+            {
+              "institution": "Moveuskadi / Goierrialdea",
+              "publisher": "Moveuskadi / Goierrialdea",
+              "reference_period": "2026-09-28/2026-12-27",
+              "source_id": "GTFS",
+              "source_role": "official_schedule",
+              "title": "Horario GO01 Goierrialdea",
+              "transformation": "Filas normalizadas del horario GO01; horas aproximadas, no tiempo real",
+              "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+            },
+            {
+              "institution": "Open Data Euskadi",
+              "publisher": "Open Data Euskadi",
+              "reference_period": "2026-09-20",
+              "source_id": "HEALTH_REGISTRY",
+              "source_role": "official_health_registry",
+              "title": "Registro de centros de salud públicos",
+              "transformation": "entityBC631DA5 coordinates EPSG:4326",
+              "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+            },
+            {
+              "institution": "Osakidetza",
+              "publisher": "Osakidetza",
+              "reference_period": "Observed 2026-09-29",
+              "source_id": "HEALTH_PAGE",
+              "source_role": "official_health_page",
+              "title": "Ficha del Ambulatorio de Beasain",
+              "transformation": "Specific centre name/address/telephone; publication date not stated",
+              "url": "https://www.osakidetza.euskadi.eus/ambulatorio-de-beasain/webosk00-cercon/es/"
+            },
+            {
+              "institution": "Osakidetza",
+              "publisher": "Osakidetza",
+              "reference_period": "2026-01",
+              "source_id": "PADI_2026",
+              "source_role": "official_health_page",
+              "title": "Listado PADI de consultas dentales 2026",
+              "transformation": "Page 4 dental consultation listing; address conflict retained",
+              "url": "https://www.osakidetza.euskadi.eus/contenidos/informacion/salud_padi/es_def/adjuntos/padi-kontsultak-gipuzkoa.pdf"
+            },
+            {
+              "institution": "OpenStreetMap contributors",
+              "publisher": "OpenStreetMap contributors",
+              "reference_period": "Acquired 2026-09-29",
+              "source_id": "OSM",
+              "source_role": "open_network",
+              "title": "Derivado público de red peatonal",
+              "transformation": "Derivado de red peatonal sin datos personales de edición ni cambios de geometría; ODbL 1.0",
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-2.203,43.041,-2.190,43.052"
+            },
+            {
+              "institution": "GIPUZKOA360",
+              "publisher": "GIPUZKOA360",
+              "reference_period": "supuesto del modelo de paseo, no periodo observado",
+              "source_id": "MODEL",
+              "source_role": "model_parameter",
+              "title": "Perfil de paseo modelado",
+              "transformation": "ceil(raw total metres/50)*60+120 per complete directed link; each connector <=100 m",
+              "url": null
+            },
+            {
+              "institution": "Entrada del agente",
+              "publisher": "GIPUZKOA360 request/calculation",
+              "reference_period": "2026-09-29",
+              "source_id": "USER",
+              "source_role": "user_input",
+              "title": "Parámetros presentes en la petición",
+              "transformation": "Campos recibidos en la consulta; no incluye los supuestos aplicados por el cálculo.",
+              "url": null
+            },
+            {
+              "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+              "publisher": "GIPUZKOA360 request/calculation",
+              "reference_period": "2026-09-29",
+              "source_id": "MODEL_DEFAULTS",
+              "source_role": "model_parameter",
+              "title": "Supuestos aplicados al cálculo",
+              "transformation": "Márgenes y perfil aplicados como supuestos del cálculo, no elecciones humanas observadas.",
+              "url": null
+            },
+            {
+              "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+              "publisher": "GIPUZKOA360 request/calculation",
+              "reference_period": "2026-09-29",
+              "source_id": "DERIVED",
+              "source_role": "derived_metric",
+              "title": "Componentes calculados del itinerario",
+              "transformation": "Intervals derived from explicit inputs, model defaults, schedule and walking model.",
+              "url": null
+            }
+          ],
+          "status": "ok",
+          "time_basis": "scheduled",
+          "time_summary": {
+            "initial_wait_s": 180,
+            "scope": "origin_stop_presence_to_return_stop_arrival",
+            "scope_end_clock": "11:07:48",
+            "scope_end_s": 40068,
+            "scope_start_clock": "08:09:37",
+            "scope_start_s": 29377,
+            "total_hms": "2 h 58 min 11 s",
+            "total_s": 10691
+          },
+          "walking": {
+            "outbound": {
+              "entrance_verified": false,
+              "modelled_access": true,
+              "seconds": 420,
+              "source_refs": [
+                "GTFS",
+                "HEALTH_REGISTRY",
+                "OSM",
+                "MODEL"
+              ],
+              "total_metres": 205.07964741035417
+            },
+            "return": {
+              "entrance_verified": false,
+              "modelled_access": true,
+              "seconds": 960,
+              "source_refs": [
+                "GTFS",
+                "HEALTH_REGISTRY",
+                "OSM",
+                "MODEL"
+              ],
+              "total_metres": 686.1157628496067
+            }
+          }
+        }
+      ]
+    },
+    "normalized_input": {
+      "arguments": {
+        "appointment_time": "09:30",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops"
+      },
+      "tool": "plan_visit"
+    },
+    "numeric_semantics": {
+      "itinerary": "Tiempos y segundos programados de vehículo; no observación de viaje real.",
+      "parameters": "duration_minutes y márgenes: minutos como parámetros; velocidad de paseo: supuesto. índices/contadores: operativos.",
+      "sources": "Fecha de servicio, validez del horario y fecha de red son referencias distintas; parámetros no son fuentes de observación.",
+      "time_summary": "total_s y componentes: segundos; total_hms es su formato verificado. scope_* define todo el intervalo, no la salida del autobús.",
+      "walking": "total_metres en metros y seconds en segundos modelados; coordenadas centre_anchor WGS84 son localización, no accesibilidad."
+    },
+    "operation_semantics": {
+      "interpretation": "no domicilio, tiempo real, capacidad, citas ni entrada verificada",
+      "measures": "intervalo completo, componentes en segundos y paseo modelado",
+      "subject": "visita programada/modelada entre paradas"
+    },
+    "operational_metadata": {
+      "counters": [],
+      "execution": {
+        "request_id": "b91aeea731e1496cb460d07f55a1b815",
+        "state": "completed",
+        "tool": "plan_visit"
+      },
+      "not_analytical_evidence": true,
+      "selection": {
+        "criterion": "Primeras entidades en el orden validado de la herramienta",
+        "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+        "omitted_entities": 0,
+        "returned_entities": 0,
+        "total_entities": 0
+      }
+    },
+    "outcomes": [
+      {
+        "error": null,
+        "index": 0,
+        "status": "ok"
+      }
+    ],
+    "public_input": {
+      "arguments": {
+        "request": {
+          "appointment_time": "09:30",
+          "date": "2026-09-29",
+          "destination_id": "beasain_official_centre_anchor",
+          "duration_minutes": 20,
+          "origin_id": "zegama_center_stops"
+        }
+      },
+      "tool": "plan_visit"
+    },
+    "request_id": "b91aeea731e1496cb460d07f55a1b815",
+    "status": "valid"
+  },
+  {
+    "assumptions": [
+      "Los argumentos presentes en la llamada no acreditan por sí solos autoría humana.",
+      "Paseo de referencia 50 m/min + 120 s por enlace completo y sentido."
+    ],
+    "capability_id": "plan_visit",
+    "claims": [
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_type": "journey",
+        "evidence_path": "/itinerary/total_s",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-1",
+        "label": "total_s",
+        "metric_id": "total_s",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado;2026-09-29",
+        "reference_periods": [
+          {
+            "period": "2026-09-28/2026-12-27",
+            "source_id": "GTFS"
+          },
+          {
+            "period": "2026-09-20",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "period": "Acquired 2026-09-29",
+            "source_id": "OSM"
+          },
+          {
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "source_id": "MODEL"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "USER"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "DERIVED"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "magnitud calculada",
+            "role": "derived_metric",
+            "source_id": "DERIVED"
+          },
+          {
+            "institution": "Moveuskadi / Goierrialdea",
+            "period": "2026-09-28/2026-12-27",
+            "public_role": "horario programado",
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "institution": "Open Data Euskadi",
+            "period": "2026-09-20",
+            "public_role": "registro sanitario",
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "institution": "GIPUZKOA360",
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "institution": "OpenStreetMap contributors",
+            "period": "Acquired 2026-09-29",
+            "public_role": "red peatonal",
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "institution": "Entrada del agente",
+            "period": "2026-09-29",
+            "public_role": "parámetro recibido en la consulta",
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          }
+        ],
+        "source_ids": [
+          "GTFS",
+          "HEALTH_REGISTRY",
+          "OSM",
+          "MODEL",
+          "USER",
+          "MODEL_DEFAULTS",
+          "DERIVED"
+        ],
+        "source_refs": [
+          {
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "role": "derived_metric",
+            "source_id": "DERIVED"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "s",
+        "value": 8591
+      },
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_type": "journey",
+        "evidence_path": "/components_s/initial_wait_s",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-2",
+        "label": "initial_wait_s",
+        "metric_id": "initial_wait_s",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-29",
+        "reference_periods": [
+          {
+            "period": "2026-09-29",
+            "source_id": "MODEL_DEFAULTS"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          }
+        ],
+        "source_ids": [
+          "MODEL_DEFAULTS"
+        ],
+        "source_refs": [
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "s",
+        "value": 180
+      },
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_type": "journey",
+        "evidence_path": "/components_s/outbound_vehicle_s",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-3",
+        "label": "outbound_vehicle_s",
+        "metric_id": "outbound_vehicle_s",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-28/2026-12-27",
+        "reference_periods": [
+          {
+            "period": "2026-09-28/2026-12-27",
+            "source_id": "GTFS"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "Moveuskadi / Goierrialdea",
+            "period": "2026-09-28/2026-12-27",
+            "public_role": "horario programado",
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          }
+        ],
+        "source_ids": [
+          "GTFS"
+        ],
+        "source_refs": [
+          {
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "s",
+        "value": 1769
+      },
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_type": "journey",
+        "evidence_path": "/components_s/destination_walk_outbound_s",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-4",
+        "label": "destination_walk_outbound_s",
+        "metric_id": "destination_walk_outbound_s",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado;2026-09-29",
+        "reference_periods": [
+          {
+            "period": "2026-09-28/2026-12-27",
+            "source_id": "GTFS"
+          },
+          {
+            "period": "2026-09-20",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "period": "Acquired 2026-09-29",
+            "source_id": "OSM"
+          },
+          {
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "source_id": "MODEL"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "USER"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "DERIVED"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "magnitud calculada",
+            "role": "derived_metric",
+            "source_id": "DERIVED"
+          },
+          {
+            "institution": "Moveuskadi / Goierrialdea",
+            "period": "2026-09-28/2026-12-27",
+            "public_role": "horario programado",
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "institution": "Open Data Euskadi",
+            "period": "2026-09-20",
+            "public_role": "registro sanitario",
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "institution": "GIPUZKOA360",
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "institution": "OpenStreetMap contributors",
+            "period": "Acquired 2026-09-29",
+            "public_role": "red peatonal",
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "institution": "Entrada del agente",
+            "period": "2026-09-29",
+            "public_role": "parámetro recibido en la consulta",
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          }
+        ],
+        "source_ids": [
+          "GTFS",
+          "HEALTH_REGISTRY",
+          "OSM",
+          "MODEL",
+          "USER",
+          "MODEL_DEFAULTS",
+          "DERIVED"
+        ],
+        "source_refs": [
+          {
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "role": "derived_metric",
+            "source_id": "DERIVED"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "s",
+        "value": 420
+      },
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_type": "journey",
+        "evidence_path": "/components_s/pre_appointment_wait_s",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-5",
+        "label": "pre_appointment_wait_s",
+        "metric_id": "pre_appointment_wait_s",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado;2026-09-29",
+        "reference_periods": [
+          {
+            "period": "2026-09-28/2026-12-27",
+            "source_id": "GTFS"
+          },
+          {
+            "period": "2026-09-20",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "period": "Acquired 2026-09-29",
+            "source_id": "OSM"
+          },
+          {
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "source_id": "MODEL"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "USER"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "DERIVED"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "magnitud calculada",
+            "role": "derived_metric",
+            "source_id": "DERIVED"
+          },
+          {
+            "institution": "Moveuskadi / Goierrialdea",
+            "period": "2026-09-28/2026-12-27",
+            "public_role": "horario programado",
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "institution": "Open Data Euskadi",
+            "period": "2026-09-20",
+            "public_role": "registro sanitario",
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "institution": "GIPUZKOA360",
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "institution": "OpenStreetMap contributors",
+            "period": "Acquired 2026-09-29",
+            "public_role": "red peatonal",
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "institution": "Entrada del agente",
+            "period": "2026-09-29",
+            "public_role": "parámetro recibido en la consulta",
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          }
+        ],
+        "source_ids": [
+          "GTFS",
+          "HEALTH_REGISTRY",
+          "OSM",
+          "MODEL",
+          "USER",
+          "MODEL_DEFAULTS",
+          "DERIVED"
+        ],
+        "source_refs": [
+          {
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "role": "derived_metric",
+            "source_id": "DERIVED"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "s",
+        "value": 1254
+      },
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_type": "journey",
+        "evidence_path": "/components_s/appointment_s",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-6",
+        "label": "appointment_s",
+        "metric_id": "appointment_s",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-29",
+        "reference_periods": [
+          {
+            "period": "2026-09-29",
+            "source_id": "USER"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "Entrada del agente",
+            "period": "2026-09-29",
+            "public_role": "parámetro recibido en la consulta",
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          }
+        ],
+        "source_ids": [
+          "USER"
+        ],
+        "source_refs": [
+          {
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "s",
+        "value": 1200
+      },
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_type": "journey",
+        "evidence_path": "/components_s/destination_walk_return_s",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-7",
+        "label": "destination_walk_return_s",
+        "metric_id": "destination_walk_return_s",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado;2026-09-29",
+        "reference_periods": [
+          {
+            "period": "2026-09-28/2026-12-27",
+            "source_id": "GTFS"
+          },
+          {
+            "period": "2026-09-20",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "period": "Acquired 2026-09-29",
+            "source_id": "OSM"
+          },
+          {
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "source_id": "MODEL"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "USER"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "DERIVED"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "magnitud calculada",
+            "role": "derived_metric",
+            "source_id": "DERIVED"
+          },
+          {
+            "institution": "Moveuskadi / Goierrialdea",
+            "period": "2026-09-28/2026-12-27",
+            "public_role": "horario programado",
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "institution": "Open Data Euskadi",
+            "period": "2026-09-20",
+            "public_role": "registro sanitario",
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "institution": "GIPUZKOA360",
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "institution": "OpenStreetMap contributors",
+            "period": "Acquired 2026-09-29",
+            "public_role": "red peatonal",
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "institution": "Entrada del agente",
+            "period": "2026-09-29",
+            "public_role": "parámetro recibido en la consulta",
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          }
+        ],
+        "source_ids": [
+          "GTFS",
+          "HEALTH_REGISTRY",
+          "OSM",
+          "MODEL",
+          "USER",
+          "MODEL_DEFAULTS",
+          "DERIVED"
+        ],
+        "source_refs": [
+          {
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "role": "derived_metric",
+            "source_id": "DERIVED"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "s",
+        "value": 960
+      },
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_type": "journey",
+        "evidence_path": "/components_s/return_wait_s",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-8",
+        "label": "return_wait_s",
+        "metric_id": "return_wait_s",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado;2026-09-29",
+        "reference_periods": [
+          {
+            "period": "2026-09-28/2026-12-27",
+            "source_id": "GTFS"
+          },
+          {
+            "period": "2026-09-20",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "period": "Acquired 2026-09-29",
+            "source_id": "OSM"
+          },
+          {
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "source_id": "MODEL"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "USER"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "period": "2026-09-29",
+            "source_id": "DERIVED"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "magnitud calculada",
+            "role": "derived_metric",
+            "source_id": "DERIVED"
+          },
+          {
+            "institution": "Moveuskadi / Goierrialdea",
+            "period": "2026-09-28/2026-12-27",
+            "public_role": "horario programado",
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "institution": "Open Data Euskadi",
+            "period": "2026-09-20",
+            "public_role": "registro sanitario",
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "institution": "GIPUZKOA360",
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+            "period": "2026-09-29",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "institution": "OpenStreetMap contributors",
+            "period": "Acquired 2026-09-29",
+            "public_role": "red peatonal",
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "institution": "Entrada del agente",
+            "period": "2026-09-29",
+            "public_role": "parámetro recibido en la consulta",
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          }
+        ],
+        "source_ids": [
+          "GTFS",
+          "HEALTH_REGISTRY",
+          "OSM",
+          "MODEL",
+          "USER",
+          "MODEL_DEFAULTS",
+          "DERIVED"
+        ],
+        "source_refs": [
+          {
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "role": "agent_or_user_parameter",
+            "source_id": "USER"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL_DEFAULTS"
+          },
+          {
+            "role": "derived_metric",
+            "source_id": "DERIVED"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "s",
+        "value": 530
+      },
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_type": "journey",
+        "evidence_path": "/components_s/return_vehicle_s",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-9",
+        "label": "return_vehicle_s",
+        "metric_id": "return_vehicle_s",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-28/2026-12-27",
+        "reference_periods": [
+          {
+            "period": "2026-09-28/2026-12-27",
+            "source_id": "GTFS"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "Moveuskadi / Goierrialdea",
+            "period": "2026-09-28/2026-12-27",
+            "public_role": "horario programado",
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          }
+        ],
+        "source_ids": [
+          "GTFS"
+        ],
+        "source_refs": [
+          {
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "s",
+        "value": 2278
+      },
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_type": "journey",
+        "evidence_path": "/walking/outbound/total_metres",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-10",
+        "label": "total_metres",
+        "metric_id": "total_metres",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado",
+        "reference_periods": [
+          {
+            "period": "2026-09-28/2026-12-27",
+            "source_id": "GTFS"
+          },
+          {
+            "period": "2026-09-20",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "period": "Acquired 2026-09-29",
+            "source_id": "OSM"
+          },
+          {
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "source_id": "MODEL"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "Moveuskadi / Goierrialdea",
+            "period": "2026-09-28/2026-12-27",
+            "public_role": "horario programado",
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "institution": "Open Data Euskadi",
+            "period": "2026-09-20",
+            "public_role": "registro sanitario",
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "institution": "GIPUZKOA360",
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "institution": "OpenStreetMap contributors",
+            "period": "Acquired 2026-09-29",
+            "public_role": "red peatonal",
+            "role": "open_network",
+            "source_id": "OSM"
+          }
+        ],
+        "source_ids": [
+          "GTFS",
+          "HEALTH_REGISTRY",
+          "OSM",
+          "MODEL"
+        ],
+        "source_refs": [
+          {
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "m",
+        "value": 205.07964741035417
+      },
+      {
+        "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+        "assumptions": [
+          "Horario GTFS estático y paseo modelado; no duración real observada."
+        ],
+        "denominator": null,
+        "derivation": "estimated_with_assumptions",
+        "entity_id": "zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_label": "Viaje programado zegama_center_stops->beasain_official_centre_anchor@2026-09-29T09:45:00",
+        "entity_type": "journey",
+        "evidence_path": "/walking/return/total_metres",
+        "forbidden_inferences": [
+          "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+          "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+          "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+          "Asociación no prueba causalidad; escenario no predice ni recomienda."
+        ],
+        "id": "claim-11",
+        "label": "total_metres",
+        "metric_id": "total_metres",
+        "numerator": null,
+        "numeric_role": "analytical",
+        "period": "2026-09-28/2026-12-27;2026-09-20;Acquired 2026-09-29;supuesto del modelo de paseo, no periodo observado",
+        "reference_periods": [
+          {
+            "period": "2026-09-28/2026-12-27",
+            "source_id": "GTFS"
+          },
+          {
+            "period": "2026-09-20",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "period": "Acquired 2026-09-29",
+            "source_id": "OSM"
+          },
+          {
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "source_id": "MODEL"
+          }
+        ],
+        "source_attributions": [
+          {
+            "institution": "Moveuskadi / Goierrialdea",
+            "period": "2026-09-28/2026-12-27",
+            "public_role": "horario programado",
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "institution": "Open Data Euskadi",
+            "period": "2026-09-20",
+            "public_role": "registro sanitario",
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "institution": "GIPUZKOA360",
+            "period": "supuesto del modelo de paseo, no periodo observado",
+            "public_role": "supuesto del cálculo",
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          },
+          {
+            "institution": "OpenStreetMap contributors",
+            "period": "Acquired 2026-09-29",
+            "public_role": "red peatonal",
+            "role": "open_network",
+            "source_id": "OSM"
+          }
+        ],
+        "source_ids": [
+          "GTFS",
+          "HEALTH_REGISTRY",
+          "OSM",
+          "MODEL"
+        ],
+        "source_refs": [
+          {
+            "role": "official_schedule",
+            "source_id": "GTFS"
+          },
+          {
+            "role": "official_health_registry",
+            "source_id": "HEALTH_REGISTRY"
+          },
+          {
+            "role": "open_network",
+            "source_id": "OSM"
+          },
+          {
+            "role": "model_parameter",
+            "source_id": "MODEL"
+          }
+        ],
+        "subject": "visita programada/modelada entre paradas",
+        "unit": "m",
+        "value": 686.1157628496067
+      }
+    ],
+    "effective_request": {
+      "defaults_applied": [
+        "arrival_margin_minutes",
+        "boarding_margin_minutes",
+        "return_deadline",
+        "snapshot_id",
+        "timezone",
+        "walking_profile_id"
+      ],
+      "effective_period": "2026-09-29",
+      "municipality_codes": [],
+      "municipality_labels": [],
+      "operation": "plan_visit",
+      "parameters": {
+        "appointment_time": "09:45:00",
+        "arrival_margin_minutes": 10,
+        "boarding_margin_minutes": 3,
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops",
+        "return_deadline": null,
+        "timezone": "Europe/Madrid",
+        "walking_profile_id": "poc_reference_50m_min_plus_120s"
+      }
+    },
+    "error": null,
+    "evidence_policy": {
+      "classification": [
+        "AVAILABLE",
+        "DERIVABLE_EXACTLY",
+        "ESTIMABLE_WITH_ASSUMPTIONS",
+        "NOT_AVAILABLE"
+      ],
+      "derivation": "Operaciones transparentes sobre inputs observados compatibles; sin dato espacial de residentes no hay cobertura poblacional.",
+      "forbidden_inferences": [
+        "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+        "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+        "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+        "Asociación no prueba causalidad; escenario no predice ni recomienda."
+      ],
+      "preserve": [
+        "subject",
+        "entity",
+        "unit",
+        "period",
+        "source",
+        "scope",
+        "assumptions"
+      ],
+      "recovery": "Un error aporta cero cifras; no repetir llamada y argumentos fallidos; una única recuperación inequívoca por causa."
+    },
+    "input_semantics": "normalized_input y effective_request contienen parámetros; no cifras analíticas. defaults_applied son supuestos, no elecciones humanas observadas.",
+    "limitations": [
+      "Entrada física NOT_VERIFIED; conflicto Bernedo Enea 1 / Zaldizurreta 2 pendiente de revisión humana.",
+      "GTFS estático y tiempos timepoint=0 aproximados; no realtime, domicilio, cita ni accesibilidad garantizada."
+    ],
+    "method": "Combinación de servicios GO01 programados y paseo modelado hasta el punto oficial del centro; comprobación de identidad, parámetros y componentes.",
+    "mobility": {
+      "comparisons": [],
+      "scenarios": [
+        {
+          "assumptions": [
+            "50 m/min y 120 s por enlace completo y sentido; hipótesis no específica por edad.",
+            "Solo GO01 directa; inicio y fin en paradas, no en domicilio."
+          ],
+          "components_s": {
+            "appointment_s": 1200,
+            "destination_walk_outbound_s": 420,
+            "destination_walk_return_s": 960,
+            "initial_wait_s": 180,
+            "outbound_vehicle_s": 1769,
+            "pre_appointment_wait_s": 1254,
+            "return_vehicle_s": 2278,
+            "return_wait_s": 530
+          },
+          "destination_label": "Ambulatorio de Beasain",
+          "duration_ledger": {
+            "answer_table_markdown": "| Componente | Duración |\n|---|---:|\n| Espera inicial en la parada | 0 h 3 min 0 s |\n| Autobús de ida | 0 h 29 min 29 s |\n| Paseo modelado de ida | 0 h 7 min 0 s |\n| Espera en destino antes de la cita | 0 h 20 min 54 s |\n| Consulta | 0 h 20 min 0 s |\n| Paseo modelado de regreso | 0 h 16 min 0 s |\n| Espera del autobús de regreso | 0 h 8 min 50 s |\n| Autobús de regreso | 0 h 37 min 58 s |\n| **Total** | **2 h 23 min 11 s** |",
+            "component_sum_seconds": 8591,
+            "components": [
+              {
+                "component_id": "initial_wait_s",
+                "end_clock": "08:47:37",
+                "evidence_path": "/components_s/initial_wait_s",
+                "human": "0 h 3 min 0 s",
+                "label": "Espera inicial en la parada",
+                "seconds": 180,
+                "start_clock": "08:44:37"
+              },
+              {
+                "component_id": "outbound_vehicle_s",
+                "end_clock": "09:17:06",
+                "evidence_path": "/components_s/outbound_vehicle_s",
+                "human": "0 h 29 min 29 s",
+                "label": "Autobús de ida",
+                "seconds": 1769,
+                "start_clock": "08:47:37"
+              },
+              {
+                "component_id": "destination_walk_outbound_s",
+                "end_clock": "09:24:06",
+                "evidence_path": "/components_s/destination_walk_outbound_s",
+                "human": "0 h 7 min 0 s",
+                "label": "Paseo modelado de ida",
+                "seconds": 420,
+                "start_clock": "09:17:06"
+              },
+              {
+                "component_id": "pre_appointment_wait_s",
+                "end_clock": "09:45:00",
+                "evidence_path": "/components_s/pre_appointment_wait_s",
+                "human": "0 h 20 min 54 s",
+                "label": "Espera en destino antes de la cita",
+                "seconds": 1254,
+                "start_clock": "09:24:06"
+              },
+              {
+                "component_id": "appointment_s",
+                "end_clock": "10:05:00",
+                "evidence_path": "/components_s/appointment_s",
+                "human": "0 h 20 min 0 s",
+                "label": "Consulta",
+                "seconds": 1200,
+                "start_clock": "09:45:00"
+              },
+              {
+                "component_id": "destination_walk_return_s",
+                "end_clock": "10:21:00",
+                "evidence_path": "/components_s/destination_walk_return_s",
+                "human": "0 h 16 min 0 s",
+                "label": "Paseo modelado de regreso",
+                "seconds": 960,
+                "start_clock": "10:05:00"
+              },
+              {
+                "component_id": "return_wait_s",
+                "end_clock": "10:29:50",
+                "evidence_path": "/components_s/return_wait_s",
+                "human": "0 h 8 min 50 s",
+                "label": "Espera del autobús de regreso",
+                "seconds": 530,
+                "start_clock": "10:21:00"
+              },
+              {
+                "component_id": "return_vehicle_s",
+                "end_clock": "11:07:48",
+                "evidence_path": "/components_s/return_vehicle_s",
+                "human": "0 h 37 min 58 s",
+                "label": "Autobús de regreso",
+                "seconds": 2278,
+                "start_clock": "10:29:50"
+              }
+            ],
+            "end_clock": "11:07:48",
+            "margin_relationship": "Los ocho componentes son consecutivos y no se solapan. Los márgenes exigidos ya están incluidos en las esperas; no se suman otra vez. El margen de regreso no es otro trayecto.",
+            "partition_verified": true,
+            "presentation_rule": "Reproduce la tabla completa sin agrupar, omitir ni recalcular filas. Total es resumen, no otro sumando. Conserva el alcance, fuentes, supuestos y límites del escenario.",
+            "start_clock": "08:44:37",
+            "total_human": "2 h 23 min 11 s",
+            "total_seconds": 8591
+          },
+          "effective_parameters": {
+            "appointment_time": "09:45:00",
+            "arrival_margin_minutes": 10,
+            "boarding_margin_minutes": 3,
+            "date": "2026-09-29",
+            "destination_id": "beasain_official_centre_anchor",
+            "duration_minutes": 20,
+            "origin_id": "zegama_center_stops",
+            "return_deadline": null,
+            "timezone": "Europe/Madrid",
+            "walking_profile_id": "poc_reference_50m_min_plus_120s"
+          },
+          "error": null,
+          "health_destination": {
+            "address": "Bernedo Enea 1",
+            "address_conflict": "conflicting_current_sources",
+            "centre_anchor": "CONFIRMED_OFFICIAL_POINT",
+            "centre_id": "entityBC631DA5",
+            "entrance_verification": "NOT_VERIFIED",
+            "entrance_verified": false,
+            "human_review_required": true,
+            "kind": "intermediate_health_anchor",
+            "modelled_access": true,
+            "name": "Ambulatorio de Beasain",
+            "source_refs": [
+              "HEALTH_REGISTRY",
+              "HEALTH_PAGE",
+              "PADI_2026"
+            ],
+            "wording": "Punto de referencia modelado utilizado para el acceso al centro durante la parte intermedia de la visita; no es el final del intervalo completo ni representa una entrada física verificada."
+          },
+          "index": 0,
+          "itinerary": {
+            "origin_stop_id": "8305",
+            "outbound": {
+              "arrival_time": "09:17:06",
+              "departure_time": "08:47:37",
+              "drop_off_type": 0,
+              "from_stop_id": "8305",
+              "from_stop_label": "Zegama - Elizalde 6 - Plaza",
+              "from_stop_sequence": 2,
+              "from_timepoint": 0,
+              "pickup_type": 0,
+              "route_id": "1",
+              "route_label": "GO01",
+              "service_id": "LJ",
+              "to_stop_id": "7219",
+              "to_stop_label": "Beasain - Lokomotora Biribilgunea",
+              "to_stop_sequence": 27,
+              "to_timepoint": 0,
+              "trip_id": "1_101_LJ_31500"
+            },
+            "return": {
+              "arrival_time": "11:07:48",
+              "departure_time": "10:29:50",
+              "drop_off_type": 0,
+              "from_stop_id": "7218",
+              "from_stop_label": "Beasain - San Inazio 10",
+              "from_stop_sequence": 8,
+              "from_timepoint": 0,
+              "pickup_type": 0,
+              "route_id": "1",
+              "route_label": "GO01",
+              "service_id": "LJ",
+              "to_stop_id": "8309",
+              "to_stop_label": "Zegama - Elizalde Kalea 4",
+              "to_stop_sequence": 35,
+              "to_timepoint": 0,
+              "trip_id": "1_106_LJ_37200"
+            },
+            "return_slack_s": 350,
+            "return_stop_id": "8309",
+            "total_s": 8591
+          },
+          "journey_scope": {
+            "authority": "time_summary defines the complete interval; health_destination is intermediate",
+            "end": {
+              "clock": "11:07:48",
+              "kind": "return_stop_arrival",
+              "meaning": "Fin del intervalo completo al llegar de vuelta a las paradas del origen, después de la consulta y del regreso; no en el centro sanitario ni en el domicilio.",
+              "origin_id": "zegama_center_stops",
+              "origin_label": "Paradas centrales de Zegama",
+              "seconds": 40068,
+              "stop_id": "8309",
+              "stop_label": "Zegama - Elizalde Kalea 4"
+            },
+            "health_destination": {
+              "centre_id": "entityBC631DA5",
+              "destination_id": "beasain_official_centre_anchor",
+              "entrance_verified": false,
+              "kind": "intermediate_health_anchor",
+              "label": "Ambulatorio de Beasain",
+              "meaning": "Punto de referencia modelado utilizado para el acceso al centro durante la parte intermedia de la visita; no es el final del intervalo completo ni representa una entrada física verificada."
+            },
+            "includes_return_trip": true,
+            "scope_kind": "origin_stop_presence_to_return_stop_arrival",
+            "start": {
+              "clock": "08:44:37",
+              "kind": "origin_stop_presence",
+              "meaning": "Inicio del intervalo completo por presencia en la parada de origen, antes de la salida del autobús; no desde el domicilio.",
+              "origin_id": "zegama_center_stops",
+              "origin_label": "Paradas centrales de Zegama",
+              "seconds": 31477,
+              "stop_id": "8305",
+              "stop_label": "Zegama - Elizalde 6 - Plaza",
+              "vehicle_departure_clock": "08:47:37"
+            }
+          },
+          "limitations": [
+            "Punto de referencia modelado utilizado para el acceso al centro durante la parte intermedia de la visita; no es el final del intervalo completo ni representa una entrada física verificada.",
+            "No puerta-a-puerta, asignación sanitaria, cita disponible ni accesibilidad universal.",
+            "Pendientes, cruces, barreras y condiciones temporales no incorporados al tiempo; validar en campo.",
+            "Horarios GTFS aproximados programados, no información en tiempo real.",
+            "Conflicto de dirección en listado PADI conservado; no se deduce traslado.",
+            "Óptimo limitado a paradas y red admitidas; fuera del bbox no implica ausencia de conexión real."
+          ],
+          "origin_label": "Paradas centrales de Zegama",
+          "parameter_attribution": [
+            {
+              "attribution": "tool_argument_origin_unverified",
+              "field": "appointment_time",
+              "parameter_origin": "human_explicit",
+              "value": "09:45:00"
+            },
+            {
+              "attribution": "calculation_assumption",
+              "field": "arrival_margin_minutes",
+              "parameter_origin": "model_default",
+              "value": 10
+            },
+            {
+              "attribution": "calculation_assumption",
+              "field": "boarding_margin_minutes",
+              "parameter_origin": "model_default",
+              "value": 3
+            },
+            {
+              "attribution": "tool_argument_origin_unverified",
+              "field": "date",
+              "parameter_origin": "human_explicit",
+              "value": "2026-09-29"
+            },
+            {
+              "attribution": "tool_argument_origin_unverified",
+              "field": "destination_id",
+              "parameter_origin": "human_explicit",
+              "value": "beasain_official_centre_anchor"
+            },
+            {
+              "attribution": "tool_argument_origin_unverified",
+              "field": "duration_minutes",
+              "parameter_origin": "human_explicit",
+              "value": 20
+            },
+            {
+              "attribution": "tool_argument_origin_unverified",
+              "field": "origin_id",
+              "parameter_origin": "human_explicit",
+              "value": "zegama_center_stops"
+            },
+            {
+              "attribution": "calculation_assumption",
+              "field": "return_deadline",
+              "parameter_origin": "model_default",
+              "value": null
+            },
+            {
+              "attribution": "calculation_assumption",
+              "field": "timezone",
+              "parameter_origin": "model_default",
+              "value": "Europe/Madrid"
+            },
+            {
+              "attribution": "calculation_assumption",
+              "field": "walking_profile_id",
+              "parameter_origin": "model_default",
+              "value": "poc_reference_50m_min_plus_120s"
+            }
+          ],
+          "scenario_kind": "health_visit",
+          "scope": "origin_stop_presence_to_return_stop_arrival",
+          "sources": [
+            {
+              "institution": "Moveuskadi / Goierrialdea",
+              "publisher": "Moveuskadi / Goierrialdea",
+              "reference_period": "2026-09-28/2026-12-27",
+              "source_id": "GTFS",
+              "source_role": "official_schedule",
+              "title": "Horario GO01 Goierrialdea",
+              "transformation": "Filas normalizadas del horario GO01; horas aproximadas, no tiempo real",
+              "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+            },
+            {
+              "institution": "Open Data Euskadi",
+              "publisher": "Open Data Euskadi",
+              "reference_period": "2026-09-20",
+              "source_id": "HEALTH_REGISTRY",
+              "source_role": "official_health_registry",
+              "title": "Registro de centros de salud públicos",
+              "transformation": "entityBC631DA5 coordinates EPSG:4326",
+              "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+            },
+            {
+              "institution": "Osakidetza",
+              "publisher": "Osakidetza",
+              "reference_period": "Observed 2026-09-29",
+              "source_id": "HEALTH_PAGE",
+              "source_role": "official_health_page",
+              "title": "Ficha del Ambulatorio de Beasain",
+              "transformation": "Specific centre name/address/telephone; publication date not stated",
+              "url": "https://www.osakidetza.euskadi.eus/ambulatorio-de-beasain/webosk00-cercon/es/"
+            },
+            {
+              "institution": "Osakidetza",
+              "publisher": "Osakidetza",
+              "reference_period": "2026-01",
+              "source_id": "PADI_2026",
+              "source_role": "official_health_page",
+              "title": "Listado PADI de consultas dentales 2026",
+              "transformation": "Page 4 dental consultation listing; address conflict retained",
+              "url": "https://www.osakidetza.euskadi.eus/contenidos/informacion/salud_padi/es_def/adjuntos/padi-kontsultak-gipuzkoa.pdf"
+            },
+            {
+              "institution": "OpenStreetMap contributors",
+              "publisher": "OpenStreetMap contributors",
+              "reference_period": "Acquired 2026-09-29",
+              "source_id": "OSM",
+              "source_role": "open_network",
+              "title": "Derivado público de red peatonal",
+              "transformation": "Derivado de red peatonal sin datos personales de edición ni cambios de geometría; ODbL 1.0",
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-2.203,43.041,-2.190,43.052"
+            },
+            {
+              "institution": "GIPUZKOA360",
+              "publisher": "GIPUZKOA360",
+              "reference_period": "supuesto del modelo de paseo, no periodo observado",
+              "source_id": "MODEL",
+              "source_role": "model_parameter",
+              "title": "Perfil de paseo modelado",
+              "transformation": "ceil(raw total metres/50)*60+120 per complete directed link; each connector <=100 m",
+              "url": null
+            },
+            {
+              "institution": "Entrada del agente",
+              "publisher": "GIPUZKOA360 request/calculation",
+              "reference_period": "2026-09-29",
+              "source_id": "USER",
+              "source_role": "user_input",
+              "title": "Parámetros presentes en la petición",
+              "transformation": "Campos recibidos en la consulta; no incluye los supuestos aplicados por el cálculo.",
+              "url": null
+            },
+            {
+              "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+              "publisher": "GIPUZKOA360 request/calculation",
+              "reference_period": "2026-09-29",
+              "source_id": "MODEL_DEFAULTS",
+              "source_role": "model_parameter",
+              "title": "Supuestos aplicados al cálculo",
+              "transformation": "Márgenes y perfil aplicados como supuestos del cálculo, no elecciones humanas observadas.",
+              "url": null
+            },
+            {
+              "institution": "GIPUZKOA 360, cálculo de visita sanitaria",
+              "publisher": "GIPUZKOA360 request/calculation",
+              "reference_period": "2026-09-29",
+              "source_id": "DERIVED",
+              "source_role": "derived_metric",
+              "title": "Componentes calculados del itinerario",
+              "transformation": "Intervals derived from explicit inputs, model defaults, schedule and walking model.",
+              "url": null
+            }
+          ],
+          "status": "ok",
+          "time_basis": "scheduled",
+          "time_summary": {
+            "initial_wait_s": 180,
+            "scope": "origin_stop_presence_to_return_stop_arrival",
+            "scope_end_clock": "11:07:48",
+            "scope_end_s": 40068,
+            "scope_start_clock": "08:44:37",
+            "scope_start_s": 31477,
+            "total_hms": "2 h 23 min 11 s",
+            "total_s": 8591
+          },
+          "walking": {
+            "outbound": {
+              "entrance_verified": false,
+              "modelled_access": true,
+              "seconds": 420,
+              "source_refs": [
+                "GTFS",
+                "HEALTH_REGISTRY",
+                "OSM",
+                "MODEL"
+              ],
+              "total_metres": 205.07964741035417
+            },
+            "return": {
+              "entrance_verified": false,
+              "modelled_access": true,
+              "seconds": 960,
+              "source_refs": [
+                "GTFS",
+                "HEALTH_REGISTRY",
+                "OSM",
+                "MODEL"
+              ],
+              "total_metres": 686.1157628496067
+            }
+          }
+        }
+      ]
+    },
+    "normalized_input": {
+      "arguments": {
+        "appointment_time": "09:45",
+        "date": "2026-09-29",
+        "destination_id": "beasain_official_centre_anchor",
+        "duration_minutes": 20,
+        "origin_id": "zegama_center_stops"
+      },
+      "tool": "plan_visit"
+    },
+    "numeric_semantics": {
+      "itinerary": "Tiempos y segundos programados de vehículo; no observación de viaje real.",
+      "parameters": "duration_minutes y márgenes: minutos como parámetros; velocidad de paseo: supuesto. índices/contadores: operativos.",
+      "sources": "Fecha de servicio, validez del horario y fecha de red son referencias distintas; parámetros no son fuentes de observación.",
+      "time_summary": "total_s y componentes: segundos; total_hms es su formato verificado. scope_* define todo el intervalo, no la salida del autobús.",
+      "walking": "total_metres en metros y seconds en segundos modelados; coordenadas centre_anchor WGS84 son localización, no accesibilidad."
+    },
+    "operation_semantics": {
+      "interpretation": "no domicilio, tiempo real, capacidad, citas ni entrada verificada",
+      "measures": "intervalo completo, componentes en segundos y paseo modelado",
+      "subject": "visita programada/modelada entre paradas"
+    },
+    "operational_metadata": {
+      "counters": [],
+      "execution": {
+        "request_id": "8a894321f8b8413d944b0d39e83ae9a1",
+        "state": "completed",
+        "tool": "plan_visit"
+      },
+      "not_analytical_evidence": true,
+      "selection": {
+        "criterion": "Primeras entidades en el orden validado de la herramienta",
+        "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+        "omitted_entities": 0,
+        "returned_entities": 0,
+        "total_entities": 0
+      }
+    },
+    "outcomes": [
+      {
+        "error": null,
+        "index": 0,
+        "status": "ok"
+      }
+    ],
+    "public_input": {
+      "arguments": {
+        "request": {
+          "appointment_time": "09:45",
+          "date": "2026-09-29",
+          "destination_id": "beasain_official_centre_anchor",
+          "duration_minutes": 20,
+          "origin_id": "zegama_center_stops"
+        }
+      },
+      "tool": "plan_visit"
+    },
+    "request_id": "8a894321f8b8413d944b0d39e83ae9a1",
+    "status": "valid"
+  }
+]

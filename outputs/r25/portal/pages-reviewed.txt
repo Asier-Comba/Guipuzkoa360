@@ -1,0 +1,241 @@
+Saltar al contenido
+GIPUZKOA 360
+Preguntar al territorio. Comprobar la respuesta.
+Resultado principal
+Comparar municipios
+Escenario Aduna
+Cómo se comprueba
+Resultados guardados y reproducibles · cada cifra conserva su fuente y sus límites · esta página no es una conversación en vivo
+
+GIPUZKOA 360
+
+Explora dónde coinciden una población más envejecida y una mayor distancia a servicios sanitarios en Gipuzkoa.
+
+El mapa muestra el resultado principal y permite cambiar la edad o el nivel de exigencia, consultar un municipio y comprobar de dónde sale cada cifra.
+
+Eustat · 01/01/2025 · geoEuskadi · 07/05/2025 · registros sanitarios · 20/09/2026. Las fuentes tienen fechas distintas.
+
+Cambiar criterio:
+Caso principal · 65+
+Otra consulta · 75+
+Criterio más exigente · 65+
+Ver cómo se calcula
+Explorar un municipio
+Dónde se cumple el criterio
+Gipuzkoa · Norte ↑
+Cumple ambos criterios
+No cumple ambos
+Municipio consultado
+
+geoEuskadi · contornos simplificados. Sin red viaria. Selector y tabla permiten consultar municipios pequeños.
+
+Consultar un municipio del mapa
+Abaltzisketa
+Aduna
+Aia
+Aizarnazabal
+Albiztur
+Alegia
+Alkiza
+Altzaga
+Altzo
+Amezketa
+Andoain
+Anoeta
+Antzuola
+Arama
+Aretxabaleta
+Arrasate/Mondragón
+Asteasu
+Astigarraga
+Ataun
+Azkoitia
+Azpeitia
+Baliarrain
+Beasain
+Beizama
+Belauntza
+Berastegi
+Bergara
+Berrobi
+Bidania-Goiatz
+Deba
+Donostia / San Sebastián
+Eibar
+Elduain
+Elgeta
+Elgoibar
+Errenteria
+Errezil
+Eskoriatza
+Ezkio-Itsaso
+Gabiria
+Gaintza
+Gaztelu
+Getaria
+Hernani
+Hernialde
+Hondarribia
+Ibarra
+Idiazabal
+Ikaztegieta
+Irun
+Irura
+Itsasondo
+Larraul
+Lasarte-Oria
+Lazkao
+Leaburu
+Legazpi
+Legorreta
+Leintz-Gatzaga
+Lezo
+Lizartza
+Mendaro
+Mutiloa
+Mutriku
+Oiartzun
+Olaberria
+Oñati
+Ordizia
+Orendain
+Orexa
+Orio
+Ormaiztegi
+Pasaia
+Segura
+Soraluze-Placencia de las Armas
+Tolosa
+Urnieta
+Urretxu
+Usurbil
+Villabona
+Zaldibia
+Zarautz
+Zegama
+Zerain
+Zestoa
+Zizurkil
+Zumaia
+Zumarraga
+
+Legazpi · 14,206 % de población 75+ · 2.624,8 m · Cumple ambos criterios.
+
+4
+
+municipios cumplen ambos criterios.
+Otro grupo de edad y otro criterio · población de 75 o más
+
+No es un ranking de necesidad sanitaria. Distancia no es tiempo, capacidad ni citas.
+
+Municipios que cumplen el criterio
+
+Orden alfabético; no indica prioridad de intervención.
+
+Otro grupo de edad y otro criterio · atención primaria
+Municipio	75+ (%)	Distancia geométrica	Dentro de 3 km
+Errenteria	13,505 %	3.925,5 m	No
+Hondarribia	13,290 %	2.583,5 m	Sí
+Idiazabal	13,120 %	2.311,2 m	Sí
+Legazpi	14,206 %	2.624,8 m	Sí
+
+Los municipios destacados están entre los valores más altos tanto en envejecimiento como en distancia. Los kilómetros son una referencia adicional de proximidad y no deciden por sí solos la selección.
+
+Cómo se calcula: tres consultas diferentes
+La pregunta pone en marcha un cálculo
+Pregunta
+Elige operación
+Calcula
+Deja trazabilidad
+Explica la respuesta
+
+Una operación repetible calcula los indicadores. El agente interpreta la consulta y explica la evidencia; su explicación también necesita revisión. En el portal, cada cambio de criterio inicia un cálculo nuevo.
+
+7 operaciones del agente
+Resumen territorial
+
+¿Qué población e indicadores tiene Aduna?
+
+Comparación
+
+¿En qué difieren Eibar y Tolosa?
+
+Envejecimiento
+
+¿Qué proporción tiene 65 o más años?
+
+Distancia a registros
+
+¿A qué distancia geométrica está el registro más cercano?
+
+Coincidencia
+
+¿Dónde se alcanzan los dos cortes?
+
+Escenario hipotético
+
+¿Qué cambia al añadir o retirar un registro?
+
+Fuentes
+
+¿De dónde sale esta cifra y qué limita su uso?
+
+Preguntas para seguir explorando
+
+MÉTODO Y LÍMITES
+
+Qué mide la distancia, y qué no
+Proporción municipal
+
+Personas del grupo de edad / población total × 100. El grupo 75+ se deriva de nacidos hasta 1949 para 01/01/2025.
+
+Distancia geométrica
+
+Línea recta desde un punto representativo hasta el registro más cercano, en coordenadas métricas. Sin rutas, tiempo de viaje, capacidad ni citas.
+
+Coincidencia descriptiva
+
+Se deben alcanzar los dos cortes. No prueba causalidad ni ordena prioridades. El punto no está ponderado por población.
+
+Ver método exacto y límites del cálculo seleccionado
+
+ORIGEN DE LOS DATOS
+
+Tres fuentes, tres fechas distintas
+
+Población de 2025 y registros de 2026: no es una fotografía temporal homogénea ni una serie de evolución.
+
+Eustat · 2025
+
+Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo · 2025-01-01
+
+Consultar fuente original
+Ficha, transformación y límites
+geoEuskadi · 2025
+
+Límites Administrativos del País Vasco - Municipios 1:5.000 · 2025-05-07
+
+Consultar fuente original
+Ficha, transformación y límites
+Open Data Euskadi · 2026
+
+Centros de salud, ambulatorios y hospitales públicos de Euskadi · 2026-09-20
+
+Consultar fuente original
+Ficha, transformación y límites
+
+TRAZABILIDAD
+
+Cómo se obtuvo
+
+De la operación al dato y sus límites. La salida técnica queda disponible para revisar una afirmación concreta.
+
+Ver operación, parámetros, filas, unidades y fuentes
+Identidad y huellas de los archivos de entrada
+
+Descargar evidencia de producto · Descargar filas y geometría completas
+
+Si una pregunta no se puede responder
+GIPUZKOA 360 · DeustoAI Labs
+Oier Duñabeitia · Asier Comba · Hugo Fernández Díez
+Exploración territorial con revisión humana.
