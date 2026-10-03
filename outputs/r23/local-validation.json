@@ -1,0 +1,23 @@
+{
+  "classification": "AUTHOR_LOCAL_NOT_PORTAL_OR_LLM",
+  "python": {"passed": 836, "failed": 0, "seconds": 526.14, "junit": "outputs/r23/local-pytest.xml"},
+  "focal_threshold": {"passed": 14, "failed": 0},
+  "node": {"passed": 17, "failed": 0},
+  "raw_parity": "901/901",
+  "oracle": "7/7",
+  "fuzz": 5000,
+  "source_attributions": 10399,
+  "runtime_identity": "PASS",
+  "jury_gate": "PASS",
+  "artifact_gate": "PASS",
+  "double_build": "PASS",
+  "diff_check": "PASS",
+  "offline_critical": 0,
+  "offline_high": 0,
+  "offline_medium": 0,
+  "zip_sha256": "b88f44aaabeac6cf50ee7a0e3aaea7295737f0b00bfb47cc2e34c1240e63b2e0",
+  "manifest_sha256": "ceaed687082f4ab165e79ae828cd8f0b17ca51cd888669f9c21f0e3ab6ef9f62",
+  "bytes": 242911,
+  "changed_package_members": ["main.py", "tools.py"],
+  "real_agent": "NOT_RUN"
+}
