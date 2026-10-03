@@ -1,0 +1,9 @@
+{
+  "runtime_sha": "202352adc10e90a4b98125387af8e0ff7a438073",
+  "agent_folder": "agentes/gipuzkoa_360_4",
+  "main_sha256": "319ef78f04d5873d257f393e623eb1c6156e7ef8e22aca51c5070ad9ed5ef037",
+  "tools_sha256": "b25b297a5788770d7a2fb81666756939cc61d0f8c7c64a115a7129975bb24e65",
+  "main_exact": true,
+  "tools_exact": true,
+  "observed_at": "2026-10-02T23:53:04.764Z"
+}

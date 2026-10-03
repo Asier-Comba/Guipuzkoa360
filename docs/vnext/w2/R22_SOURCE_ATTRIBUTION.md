@@ -88,3 +88,13 @@ Final human confirmation, merging and publication remain forbidden.
 Actual report: `outputs/r22/offline-audit.json`; full Python report:
 `outputs/r22/local-pytest.xml`. These are local evidence, not CI or Studio
 evidence. CI and real acceptance must refer to this exact new package.
+
+## Real acceptance closure
+
+Exact-runtime Ubuntu and Windows CI passed. The new private Studio version
+validated ten tools, but real acceptance stopped at message 7 with a HIGH:
+the answer incorrectly required calculated distance >0 for within-threshold
+classification. The source/period fix passed the observed Getaria and Tolosa
+follow-ups; this does not authorize a full release. See
+[R22_PORTAL_GATE.md](R22_PORTAL_GATE.md) and the exact captured transcripts.
+No subsequent questions, automatic patch, Delivery changes or publication.
