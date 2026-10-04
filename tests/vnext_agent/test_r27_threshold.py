@@ -183,7 +183,8 @@ def test_frozen_members_double_build_and_no_special_cases():
     assert first == second
     with zipfile.ZipFile(io.BytesIO(build.blob(build.BASE_ZIP))) as old, zipfile.ZipFile(build.ZIP) as new:
         assert old.namelist() == new.namelist()
-        assert [n for n in old.namelist() if old.read(n) != new.read(n)] == ['tools.py']
+        assert [n for n in old.namelist() if old.read(n) != new.read(n)] == ['main.py', 'tools.py']
+        assert new.read('main.py') == (build.PORTAL / 'main.py').read_bytes()
         assert new.read('tools.py').startswith(old.read('tools.py'))
     text = (build.ROOT / 'scripts/vnext_agent/r27_threshold.py').read_text(encoding='utf-8')
     assert not any(token in text for token in ('Legazpi', '20051', '2624.8'))
