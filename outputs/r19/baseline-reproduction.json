@@ -1,0 +1,1189 @@
+{
+  "classification": "R18_OFFLINE_DEFECT_REPRODUCTION_NOT_LLM_REPLAY",
+  "findings": [
+    "M01 optional empty strings",
+    "M02 age65 attached age75 semantics",
+    "M03 identical invalid access arguments reproducible; real retry behavior documented in preserved R18 traces"
+  ],
+  "observed_real_trace_root": "../gipuzkoa360-r18/outputs/r18/portal",
+  "records": {
+    "access_dot": {
+      "claims": 0,
+      "error": {
+        "available_options": [],
+        "code": "invalid_arguments",
+        "message": "arguments:periodo:unsupported_period:available=['2026-09-20', '2025-05-07']",
+        "origin": "domain",
+        "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+      },
+      "execute_calls": 1,
+      "outcomes": [],
+      "provenance_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "public_bytes": 1900,
+      "public_sha256_except_code": "7371941968cd58f3be7691da6bff4554b7b9a26b8a58ef2cb6aea8786fcba121",
+      "raw_contains_ok": false,
+      "raw_exposed_publicly": false,
+      "raw_sha256": null,
+      "raw_status": null,
+      "status": "error",
+      "totals_s": [],
+      "view": {
+        "assumptions": [],
+        "capability_id": "analizar_acceso_servicios",
+        "claims": [],
+        "effective_request": null,
+        "error": {
+          "available_options": [],
+          "code": "invalid_arguments",
+          "message": "arguments:periodo:unsupported_period:available=['2026-09-20', '2025-05-07']",
+          "origin": "domain",
+          "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+        },
+        "evidence_policy": {
+          "classification": [
+            "AVAILABLE",
+            "DERIVABLE_EXACTLY",
+            "ESTIMABLE_WITH_ASSUMPTIONS",
+            "NOT_AVAILABLE"
+          ],
+          "derivation": "Operaciones transparentes sobre inputs observados compatibles; sin dato espacial de residentes no hay cobertura poblacional.",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "preserve": [
+            "subject",
+            "entity",
+            "unit",
+            "period",
+            "source",
+            "scope",
+            "assumptions"
+          ],
+          "recovery": "Un error aporta cero cifras; no repetir llamada y argumentos fallidos; una única recuperación inequívoca por causa."
+        },
+        "execution": {
+          "request_id": "R15_AUDIT_FIXED_REQUEST",
+          "state": "failed",
+          "tool": "analizar_acceso_servicios"
+        },
+        "limitations": [],
+        "method": "",
+        "normalized_input": {
+          "arguments": {
+            "categoria_servicio": "mental_health",
+            "municipios": [
+              "Getaria"
+            ],
+            "periodo": ".",
+            "umbral_km": 1
+          },
+          "tool": "analizar_acceso_servicios"
+        },
+        "outcomes": [],
+        "request_id": "R15_AUDIT_FIXED_REQUEST",
+        "selection": {
+          "criterion": "Todas las entidades solicitadas explícitamente",
+          "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+          "omitted_entities": 0,
+          "returned_entities": 0,
+          "total_entities": 0
+        },
+        "status": "error"
+      }
+    },
+    "access_empty_0": {
+      "claims": 0,
+      "error": {
+        "available_options": [],
+        "code": "invalid_arguments",
+        "message": "arguments:periodo:invalid_value",
+        "origin": "domain",
+        "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+      },
+      "execute_calls": 1,
+      "outcomes": [],
+      "provenance_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "public_bytes": 1855,
+      "public_sha256_except_code": "80589f22c02498280b673b18ad3a8fe0a4bc9758fc762528784ff5e5a087f5fa",
+      "raw_contains_ok": false,
+      "raw_exposed_publicly": false,
+      "raw_sha256": null,
+      "raw_status": null,
+      "status": "error",
+      "totals_s": [],
+      "view": {
+        "assumptions": [],
+        "capability_id": "analizar_acceso_servicios",
+        "claims": [],
+        "effective_request": null,
+        "error": {
+          "available_options": [],
+          "code": "invalid_arguments",
+          "message": "arguments:periodo:invalid_value",
+          "origin": "domain",
+          "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+        },
+        "evidence_policy": {
+          "classification": [
+            "AVAILABLE",
+            "DERIVABLE_EXACTLY",
+            "ESTIMABLE_WITH_ASSUMPTIONS",
+            "NOT_AVAILABLE"
+          ],
+          "derivation": "Operaciones transparentes sobre inputs observados compatibles; sin dato espacial de residentes no hay cobertura poblacional.",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "preserve": [
+            "subject",
+            "entity",
+            "unit",
+            "period",
+            "source",
+            "scope",
+            "assumptions"
+          ],
+          "recovery": "Un error aporta cero cifras; no repetir llamada y argumentos fallidos; una única recuperación inequívoca por causa."
+        },
+        "execution": {
+          "request_id": "R15_AUDIT_FIXED_REQUEST",
+          "state": "failed",
+          "tool": "analizar_acceso_servicios"
+        },
+        "limitations": [],
+        "method": "",
+        "normalized_input": {
+          "arguments": {
+            "categoria_servicio": "mental_health",
+            "municipios": [
+              "Getaria"
+            ],
+            "periodo": "",
+            "umbral_km": 1
+          },
+          "tool": "analizar_acceso_servicios"
+        },
+        "outcomes": [],
+        "request_id": "R15_AUDIT_FIXED_REQUEST",
+        "selection": {
+          "criterion": "Todas las entidades solicitadas explícitamente",
+          "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+          "omitted_entities": 0,
+          "returned_entities": 0,
+          "total_entities": 0
+        },
+        "status": "error"
+      }
+    },
+    "access_empty_1": {
+      "claims": 0,
+      "error": {
+        "available_options": [],
+        "code": "invalid_arguments",
+        "message": "arguments:periodo:invalid_value",
+        "origin": "domain",
+        "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+      },
+      "execute_calls": 1,
+      "outcomes": [],
+      "provenance_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "public_bytes": 1855,
+      "public_sha256_except_code": "80589f22c02498280b673b18ad3a8fe0a4bc9758fc762528784ff5e5a087f5fa",
+      "raw_contains_ok": false,
+      "raw_exposed_publicly": false,
+      "raw_sha256": null,
+      "raw_status": null,
+      "status": "error",
+      "totals_s": [],
+      "view": {
+        "assumptions": [],
+        "capability_id": "analizar_acceso_servicios",
+        "claims": [],
+        "effective_request": null,
+        "error": {
+          "available_options": [],
+          "code": "invalid_arguments",
+          "message": "arguments:periodo:invalid_value",
+          "origin": "domain",
+          "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+        },
+        "evidence_policy": {
+          "classification": [
+            "AVAILABLE",
+            "DERIVABLE_EXACTLY",
+            "ESTIMABLE_WITH_ASSUMPTIONS",
+            "NOT_AVAILABLE"
+          ],
+          "derivation": "Operaciones transparentes sobre inputs observados compatibles; sin dato espacial de residentes no hay cobertura poblacional.",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "preserve": [
+            "subject",
+            "entity",
+            "unit",
+            "period",
+            "source",
+            "scope",
+            "assumptions"
+          ],
+          "recovery": "Un error aporta cero cifras; no repetir llamada y argumentos fallidos; una única recuperación inequívoca por causa."
+        },
+        "execution": {
+          "request_id": "R15_AUDIT_FIXED_REQUEST",
+          "state": "failed",
+          "tool": "analizar_acceso_servicios"
+        },
+        "limitations": [],
+        "method": "",
+        "normalized_input": {
+          "arguments": {
+            "categoria_servicio": "mental_health",
+            "municipios": [
+              "Getaria"
+            ],
+            "periodo": "",
+            "umbral_km": 1
+          },
+          "tool": "analizar_acceso_servicios"
+        },
+        "outcomes": [],
+        "request_id": "R15_AUDIT_FIXED_REQUEST",
+        "selection": {
+          "criterion": "Todas las entidades solicitadas explícitamente",
+          "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+          "omitted_entities": 0,
+          "returned_entities": 0,
+          "total_entities": 0
+        },
+        "status": "error"
+      }
+    },
+    "access_empty_2": {
+      "claims": 0,
+      "error": {
+        "available_options": [],
+        "code": "invalid_arguments",
+        "message": "arguments:periodo:invalid_value",
+        "origin": "domain",
+        "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+      },
+      "execute_calls": 1,
+      "outcomes": [],
+      "provenance_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "public_bytes": 1855,
+      "public_sha256_except_code": "80589f22c02498280b673b18ad3a8fe0a4bc9758fc762528784ff5e5a087f5fa",
+      "raw_contains_ok": false,
+      "raw_exposed_publicly": false,
+      "raw_sha256": null,
+      "raw_status": null,
+      "status": "error",
+      "totals_s": [],
+      "view": {
+        "assumptions": [],
+        "capability_id": "analizar_acceso_servicios",
+        "claims": [],
+        "effective_request": null,
+        "error": {
+          "available_options": [],
+          "code": "invalid_arguments",
+          "message": "arguments:periodo:invalid_value",
+          "origin": "domain",
+          "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+        },
+        "evidence_policy": {
+          "classification": [
+            "AVAILABLE",
+            "DERIVABLE_EXACTLY",
+            "ESTIMABLE_WITH_ASSUMPTIONS",
+            "NOT_AVAILABLE"
+          ],
+          "derivation": "Operaciones transparentes sobre inputs observados compatibles; sin dato espacial de residentes no hay cobertura poblacional.",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "preserve": [
+            "subject",
+            "entity",
+            "unit",
+            "period",
+            "source",
+            "scope",
+            "assumptions"
+          ],
+          "recovery": "Un error aporta cero cifras; no repetir llamada y argumentos fallidos; una única recuperación inequívoca por causa."
+        },
+        "execution": {
+          "request_id": "R15_AUDIT_FIXED_REQUEST",
+          "state": "failed",
+          "tool": "analizar_acceso_servicios"
+        },
+        "limitations": [],
+        "method": "",
+        "normalized_input": {
+          "arguments": {
+            "categoria_servicio": "mental_health",
+            "municipios": [
+              "Getaria"
+            ],
+            "periodo": "",
+            "umbral_km": 1
+          },
+          "tool": "analizar_acceso_servicios"
+        },
+        "outcomes": [],
+        "request_id": "R15_AUDIT_FIXED_REQUEST",
+        "selection": {
+          "criterion": "Todas las entidades solicitadas explícitamente",
+          "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+          "omitted_entities": 0,
+          "returned_entities": 0,
+          "total_entities": 0
+        },
+        "status": "error"
+      }
+    },
+    "access_supported": {
+      "claims": 1,
+      "error": null,
+      "execute_calls": 1,
+      "outcomes": [],
+      "provenance_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "public_bytes": 4475,
+      "public_sha256_except_code": "820706130be708c3ba312dba97dd7d63db86f804a05b9105149c1d582d6f4518",
+      "raw_contains_ok": true,
+      "raw_exposed_publicly": false,
+      "raw_sha256": "1607a99e928cbd0b94af5795b956e4b1145ff51cbb80913efab210bc27963658",
+      "raw_status": "ok",
+      "status": "valid",
+      "totals_s": [],
+      "view": {
+        "assumptions": [],
+        "capability_id": "analizar_acceso_servicios",
+        "claims": [
+          {
+            "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+            "assumptions": [],
+            "denominator": null,
+            "derivation": "direct",
+            "entity_id": "20039",
+            "entity_label": "Getaria",
+            "entity_type": "municipality",
+            "evidence_path": "/data/0/nearest_distance_m",
+            "forbidden_inferences": [
+              "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+              "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+            ],
+            "id": "claim-1",
+            "label": "nearest_distance_m",
+            "metric_id": "nearest_distance_m",
+            "numerator": null,
+            "numeric_role": "analytical",
+            "period": "2026-09-20;2025-05-07",
+            "reference_periods": [
+              {
+                "period": "2026-09-20",
+                "source_id": "ODE_HEALTH_CENTRES_2026"
+              },
+              {
+                "period": "2025-05-07",
+                "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+              }
+            ],
+            "source_ids": [
+              "ODE_HEALTH_CENTRES_2026",
+              "GEOEUSKADI_MUNICIPIOS_2025"
+            ],
+            "source_refs": [
+              {
+                "role": "service_location",
+                "source_id": "ODE_HEALTH_CENTRES_2026"
+              },
+              {
+                "role": "municipal_reference_point",
+                "source_id": "GEOEUSKADI_MUNICIPIOS_2025"
+              }
+            ],
+            "subject": "punto representativo municipal y registro sanitario",
+            "unit": "m",
+            "value": 2913.3
+          }
+        ],
+        "effective_request": {
+          "defaults_applied": [],
+          "effective_period": null,
+          "municipality_codes": [
+            "20039"
+          ],
+          "municipality_labels": [
+            "Getaria"
+          ],
+          "operation": "analizar_acceso_servicios",
+          "parameters": {
+            "categoria_servicio": "mental_health",
+            "municipios": [
+              "Getaria"
+            ],
+            "periodo": null,
+            "umbral_km": 1
+          }
+        },
+        "error": null,
+        "evidence_policy": {
+          "classification": [
+            "AVAILABLE",
+            "DERIVABLE_EXACTLY",
+            "ESTIMABLE_WITH_ASSUMPTIONS",
+            "NOT_AVAILABLE"
+          ],
+          "derivation": "Operaciones transparentes sobre inputs observados compatibles; sin dato espacial de residentes no hay cobertura poblacional.",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "preserve": [
+            "subject",
+            "entity",
+            "unit",
+            "period",
+            "source",
+            "scope",
+            "assumptions"
+          ],
+          "recovery": "Un error aporta cero cifras; no repetir llamada y argumentos fallidos; una única recuperación inequívoca por causa."
+        },
+        "input_semantics": "normalized_input y effective_request contienen parámetros; no cifras analíticas. defaults_applied son supuestos, no elecciones humanas observadas.",
+        "limitations": [
+          "Es distancia geométrica aproximada, no distancia de red, tiempo de viaje ni acceso peatonal real.",
+          "El punto representativo municipal no está ponderado por población y no representa dónde vive cada persona.",
+          "La existencia registrada no acredita apertura, capacidad ni accesibilidad universal."
+        ],
+        "method": "Distancia euclídea en EPSG:25830 desde representative_point() del polígono municipal al punto del servicio más cercano de la categoría.",
+        "municipal_classifications": [
+          {
+            "entity_id": "20039",
+            "entity_label": "Getaria",
+            "evidence_path": "/data/0/within_threshold",
+            "forbidden_inferences": [
+              "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+              "Un municipio clasificado por distancia no es una persona con acceso efectivo."
+            ],
+            "metric_id": "within_threshold",
+            "source_ids": [
+              "GEOEUSKADI_MUNICIPIOS_2025",
+              "ODE_HEALTH_CENTRES_2026"
+            ],
+            "subject": "punto representativo municipal",
+            "unit": "clasificación booleana municipal",
+            "value": false
+          }
+        ],
+        "normalized_input": {
+          "arguments": {
+            "categoria_servicio": "mental_health",
+            "municipios": [
+              "Getaria"
+            ],
+            "periodo": null,
+            "umbral_km": 1
+          },
+          "tool": "analizar_acceso_servicios"
+        },
+        "operation_semantics": {
+          "interpretation": "no distribución de residentes",
+          "measures": "distancia euclídea y clasificación municipal por umbral",
+          "subject": "punto representativo municipal"
+        },
+        "operational_metadata": {
+          "counters": [],
+          "execution": {
+            "request_id": "R15_AUDIT_FIXED_REQUEST",
+            "state": "completed",
+            "tool": "analizar_acceso_servicios"
+          },
+          "not_analytical_evidence": true,
+          "selection": {
+            "criterion": "Todas las entidades solicitadas explícitamente",
+            "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+            "omitted_entities": 0,
+            "returned_entities": 1,
+            "total_entities": 1
+          }
+        },
+        "outcomes": [],
+        "request_id": "R15_AUDIT_FIXED_REQUEST",
+        "status": "valid"
+      }
+    },
+    "comparison_empty": {
+      "claims": 0,
+      "error": {
+        "available_options": [],
+        "code": "invalid_arguments",
+        "message": "arguments:categoria_servicio:invalid_value",
+        "origin": "domain",
+        "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+      },
+      "execute_calls": 1,
+      "outcomes": [],
+      "provenance_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "public_bytes": 1868,
+      "public_sha256_except_code": "4ff1c1aff37b38ffa144fff0b8077a588b9566315f8ef8f11951a5c4457987e0",
+      "raw_contains_ok": false,
+      "raw_exposed_publicly": false,
+      "raw_sha256": null,
+      "raw_status": null,
+      "status": "error",
+      "totals_s": [],
+      "view": {
+        "assumptions": [],
+        "capability_id": "comparar_municipios",
+        "claims": [],
+        "effective_request": null,
+        "error": {
+          "available_options": [],
+          "code": "invalid_arguments",
+          "message": "arguments:categoria_servicio:invalid_value",
+          "origin": "domain",
+          "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+        },
+        "evidence_policy": {
+          "classification": [
+            "AVAILABLE",
+            "DERIVABLE_EXACTLY",
+            "ESTIMABLE_WITH_ASSUMPTIONS",
+            "NOT_AVAILABLE"
+          ],
+          "derivation": "Operaciones transparentes sobre inputs observados compatibles; sin dato espacial de residentes no hay cobertura poblacional.",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "preserve": [
+            "subject",
+            "entity",
+            "unit",
+            "period",
+            "source",
+            "scope",
+            "assumptions"
+          ],
+          "recovery": "Un error aporta cero cifras; no repetir llamada y argumentos fallidos; una única recuperación inequívoca por causa."
+        },
+        "execution": {
+          "request_id": "R15_AUDIT_FIXED_REQUEST",
+          "state": "failed",
+          "tool": "comparar_municipios"
+        },
+        "limitations": [],
+        "method": "",
+        "normalized_input": {
+          "arguments": {
+            "categoria_servicio": "",
+            "grupo_edad": "75",
+            "municipios": [
+              "Legorreta",
+              "Alegia"
+            ],
+            "periodo": null,
+            "umbral_km": 1.0
+          },
+          "tool": "comparar_municipios"
+        },
+        "outcomes": [],
+        "request_id": "R15_AUDIT_FIXED_REQUEST",
+        "selection": {
+          "criterion": "Todas las entidades solicitadas explícitamente",
+          "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+          "omitted_entities": 0,
+          "returned_entities": 0,
+          "total_entities": 0
+        },
+        "status": "error"
+      }
+    },
+    "discovery_empty": {
+      "claims": 0,
+      "error": {
+        "available_options": [],
+        "code": "invalid_arguments",
+        "message": "arguments:pregunta_o_dimension:invalid_value",
+        "origin": "domain",
+        "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+      },
+      "execute_calls": 1,
+      "outcomes": [],
+      "provenance_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "public_bytes": 1803,
+      "public_sha256_except_code": "a1f6cee9367527539cbceced679b71cfd531d197567af577e51dc82cf3652675",
+      "raw_contains_ok": false,
+      "raw_exposed_publicly": false,
+      "raw_sha256": null,
+      "raw_status": null,
+      "status": "error",
+      "totals_s": [],
+      "view": {
+        "assumptions": [],
+        "capability_id": "consultar_capacidades",
+        "claims": [],
+        "effective_request": null,
+        "error": {
+          "available_options": [],
+          "code": "invalid_arguments",
+          "message": "arguments:pregunta_o_dimension:invalid_value",
+          "origin": "domain",
+          "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+        },
+        "evidence_policy": {
+          "classification": [
+            "AVAILABLE",
+            "DERIVABLE_EXACTLY",
+            "ESTIMABLE_WITH_ASSUMPTIONS",
+            "NOT_AVAILABLE"
+          ],
+          "derivation": "Operaciones transparentes sobre inputs observados compatibles; sin dato espacial de residentes no hay cobertura poblacional.",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "preserve": [
+            "subject",
+            "entity",
+            "unit",
+            "period",
+            "source",
+            "scope",
+            "assumptions"
+          ],
+          "recovery": "Un error aporta cero cifras; no repetir llamada y argumentos fallidos; una única recuperación inequívoca por causa."
+        },
+        "execution": {
+          "request_id": "R15_AUDIT_FIXED_REQUEST",
+          "state": "failed",
+          "tool": "consultar_capacidades"
+        },
+        "limitations": [],
+        "method": "",
+        "normalized_input": {
+          "arguments": {
+            "pregunta_o_dimension": ""
+          },
+          "tool": "consultar_capacidades"
+        },
+        "outcomes": [],
+        "request_id": "R15_AUDIT_FIXED_REQUEST",
+        "selection": {
+          "criterion": "Primeras entidades en el orden validado de la herramienta",
+          "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+          "omitted_entities": 0,
+          "returned_entities": 0,
+          "total_entities": 0
+        },
+        "status": "error"
+      }
+    },
+    "ranking65": {
+      "claims": 5,
+      "error": null,
+      "execute_calls": 1,
+      "outcomes": [],
+      "provenance_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "public_bytes": 9259,
+      "public_sha256_except_code": "0c0696643ade033c3073be2c2d4929f67a0b2d7e33bc313f72512b9cfd18e404",
+      "raw_contains_ok": true,
+      "raw_exposed_publicly": false,
+      "raw_sha256": "bc7ceb33f87514b5d1e7a180934f9f2cb828ea92d7b0a455bf238e84e0cd7052",
+      "raw_status": "ok",
+      "status": "valid",
+      "totals_s": [],
+      "view": {
+        "age_group_derivation": {
+          "condition": "año de nacimiento <= 1949, incluido el grupo de años anteriores",
+          "institution": "Eustat - Instituto Vasco de Estadística",
+          "limitation": "Son recuentos municipales agregados, no edades exactas ni circunstancias individuales; el límite por año no identifica a los nacidos el propio 1 de enero de 1950.",
+          "meaning": "A 1 de enero de 2025, quienes nacieron hasta 1949 ya habían cumplido al menos 75 años. La agrupación se basa en el año de nacimiento; no permite identificar cumpleaños individuales de quienes nacieron en 1950.",
+          "method": "Suma de los recuentos por municipio y sexo total de los nacidos hasta 1949; porcentaje = recuento / población total × 100, redondeado a tres decimales.",
+          "output_field": "population_75_plus",
+          "reference_period": "2025-01-01",
+          "source_field": "año de nacimiento",
+          "source_id": "EUSTAT_EMH_2025"
+        },
+        "assumptions": [],
+        "capability_id": "analizar_envejecimiento",
+        "claims": [
+          {
+            "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+            "assumptions": [],
+            "denominator": {
+              "data_ref": {
+                "field": "population_total",
+                "municipality_code": "20026",
+                "path": "datos_preparados/demografia.csv",
+                "reference_period": "2025-01-01"
+              },
+              "evidence_path": null,
+              "period": "2025-01-01",
+              "source_id": "EUSTAT_EMH_2025",
+              "unit": "personas",
+              "value": 290
+            },
+            "derivation": "derived_exact",
+            "entity_id": "20026",
+            "entity_label": "Zerain",
+            "entity_type": "municipality",
+            "evidence_path": "/data/0/value",
+            "id": "claim-1",
+            "label": "value",
+            "metric_id": "value",
+            "numerator": {
+              "data_ref": {
+                "field": "population_65_plus",
+                "municipality_code": "20026",
+                "path": "datos_preparados/demografia.csv",
+                "reference_period": "2025-01-01"
+              },
+              "evidence_path": null,
+              "period": "2025-01-01",
+              "source_id": "EUSTAT_EMH_2025",
+              "unit": "personas",
+              "value": 81
+            },
+            "numeric_role": "analytical",
+            "period": "2025-01-01",
+            "reference_periods": [
+              {
+                "period": "2025-01-01",
+                "source_id": "EUSTAT_EMH_2025"
+              }
+            ],
+            "source_ids": [
+              "EUSTAT_EMH_2025"
+            ],
+            "source_refs": [
+              {
+                "role": "demographic_observation",
+                "source_id": "EUSTAT_EMH_2025"
+              }
+            ],
+            "subject": "proporción de población municipal del grupo de edad",
+            "unit": "% de población",
+            "value": 27.931
+          },
+          {
+            "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+            "assumptions": [],
+            "denominator": {
+              "data_ref": {
+                "field": "population_total",
+                "municipality_code": "20042",
+                "path": "datos_preparados/demografia.csv",
+                "reference_period": "2025-01-01"
+              },
+              "evidence_path": null,
+              "period": "2025-01-01",
+              "source_id": "EUSTAT_EMH_2025",
+              "unit": "personas",
+              "value": 4076
+            },
+            "derivation": "derived_exact",
+            "entity_id": "20042",
+            "entity_label": "Ibarra",
+            "entity_type": "municipality",
+            "evidence_path": "/data/1/value",
+            "id": "claim-2",
+            "label": "value",
+            "metric_id": "value",
+            "numerator": {
+              "data_ref": {
+                "field": "population_65_plus",
+                "municipality_code": "20042",
+                "path": "datos_preparados/demografia.csv",
+                "reference_period": "2025-01-01"
+              },
+              "evidence_path": null,
+              "period": "2025-01-01",
+              "source_id": "EUSTAT_EMH_2025",
+              "unit": "personas",
+              "value": 1127
+            },
+            "numeric_role": "analytical",
+            "period": "2025-01-01",
+            "reference_periods": [
+              {
+                "period": "2025-01-01",
+                "source_id": "EUSTAT_EMH_2025"
+              }
+            ],
+            "source_ids": [
+              "EUSTAT_EMH_2025"
+            ],
+            "source_refs": [
+              {
+                "role": "demographic_observation",
+                "source_id": "EUSTAT_EMH_2025"
+              }
+            ],
+            "subject": "proporción de población municipal del grupo de edad",
+            "unit": "% de población",
+            "value": 27.65
+          },
+          {
+            "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+            "assumptions": [],
+            "denominator": {
+              "data_ref": {
+                "field": "population_total",
+                "municipality_code": "20029",
+                "path": "datos_preparados/demografia.csv",
+                "reference_period": "2025-01-01"
+              },
+              "evidence_path": null,
+              "period": "2025-01-01",
+              "source_id": "EUSTAT_EMH_2025",
+              "unit": "personas",
+              "value": 5364
+            },
+            "derivation": "derived_exact",
+            "entity_id": "20029",
+            "entity_label": "Deba",
+            "entity_type": "municipality",
+            "evidence_path": "/data/2/value",
+            "id": "claim-3",
+            "label": "value",
+            "metric_id": "value",
+            "numerator": {
+              "data_ref": {
+                "field": "population_65_plus",
+                "municipality_code": "20029",
+                "path": "datos_preparados/demografia.csv",
+                "reference_period": "2025-01-01"
+              },
+              "evidence_path": null,
+              "period": "2025-01-01",
+              "source_id": "EUSTAT_EMH_2025",
+              "unit": "personas",
+              "value": 1473
+            },
+            "numeric_role": "analytical",
+            "period": "2025-01-01",
+            "reference_periods": [
+              {
+                "period": "2025-01-01",
+                "source_id": "EUSTAT_EMH_2025"
+              }
+            ],
+            "source_ids": [
+              "EUSTAT_EMH_2025"
+            ],
+            "source_refs": [
+              {
+                "role": "demographic_observation",
+                "source_id": "EUSTAT_EMH_2025"
+              }
+            ],
+            "subject": "proporción de población municipal del grupo de edad",
+            "unit": "% de población",
+            "value": 27.461
+          },
+          {
+            "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+            "assumptions": [],
+            "denominator": {
+              "data_ref": {
+                "field": "population_total",
+                "municipality_code": "20051",
+                "path": "datos_preparados/demografia.csv",
+                "reference_period": "2025-01-01"
+              },
+              "evidence_path": null,
+              "period": "2025-01-01",
+              "source_id": "EUSTAT_EMH_2025",
+              "unit": "personas",
+              "value": 8377
+            },
+            "derivation": "derived_exact",
+            "entity_id": "20051",
+            "entity_label": "Legazpi",
+            "entity_type": "municipality",
+            "evidence_path": "/data/3/value",
+            "id": "claim-4",
+            "label": "value",
+            "metric_id": "value",
+            "numerator": {
+              "data_ref": {
+                "field": "population_65_plus",
+                "municipality_code": "20051",
+                "path": "datos_preparados/demografia.csv",
+                "reference_period": "2025-01-01"
+              },
+              "evidence_path": null,
+              "period": "2025-01-01",
+              "source_id": "EUSTAT_EMH_2025",
+              "unit": "personas",
+              "value": 2276
+            },
+            "numeric_role": "analytical",
+            "period": "2025-01-01",
+            "reference_periods": [
+              {
+                "period": "2025-01-01",
+                "source_id": "EUSTAT_EMH_2025"
+              }
+            ],
+            "source_ids": [
+              "EUSTAT_EMH_2025"
+            ],
+            "source_refs": [
+              {
+                "role": "demographic_observation",
+                "source_id": "EUSTAT_EMH_2025"
+              }
+            ],
+            "subject": "proporción de población municipal del grupo de edad",
+            "unit": "% de población",
+            "value": 27.17
+          },
+          {
+            "allowed_transformations": "Solo operaciones exactas compatibles; conservar entidad, sujeto, fuentes, fechas y supuestos.",
+            "assumptions": [],
+            "denominator": {
+              "data_ref": {
+                "field": "population_total",
+                "municipality_code": "20069",
+                "path": "datos_preparados/demografia.csv",
+                "reference_period": "2025-01-01"
+              },
+              "evidence_path": null,
+              "period": "2025-01-01",
+              "source_id": "EUSTAT_EMH_2025",
+              "unit": "personas",
+              "value": 183388
+            },
+            "derivation": "derived_exact",
+            "entity_id": "20069",
+            "entity_label": "Donostia / San Sebastián",
+            "entity_type": "municipality",
+            "evidence_path": "/data/4/value",
+            "id": "claim-5",
+            "label": "value",
+            "metric_id": "value",
+            "numerator": {
+              "data_ref": {
+                "field": "population_65_plus",
+                "municipality_code": "20069",
+                "path": "datos_preparados/demografia.csv",
+                "reference_period": "2025-01-01"
+              },
+              "evidence_path": null,
+              "period": "2025-01-01",
+              "source_id": "EUSTAT_EMH_2025",
+              "unit": "personas",
+              "value": 48832
+            },
+            "numeric_role": "analytical",
+            "period": "2025-01-01",
+            "reference_periods": [
+              {
+                "period": "2025-01-01",
+                "source_id": "EUSTAT_EMH_2025"
+              }
+            ],
+            "source_ids": [
+              "EUSTAT_EMH_2025"
+            ],
+            "source_refs": [
+              {
+                "role": "demographic_observation",
+                "source_id": "EUSTAT_EMH_2025"
+              }
+            ],
+            "subject": "proporción de población municipal del grupo de edad",
+            "unit": "% de población",
+            "value": 26.628
+          }
+        ],
+        "effective_request": {
+          "defaults_applied": [],
+          "effective_period": "2025-01-01",
+          "municipality_codes": [],
+          "municipality_labels": [],
+          "operation": "analizar_envejecimiento",
+          "parameters": {
+            "grupo_edad": "65",
+            "medida": "percentage",
+            "periodo": null,
+            "top_n": 5
+          }
+        },
+        "error": null,
+        "evidence_policy": {
+          "classification": [
+            "AVAILABLE",
+            "DERIVABLE_EXACTLY",
+            "ESTIMABLE_WITH_ASSUMPTIONS",
+            "NOT_AVAILABLE"
+          ],
+          "derivation": "Operaciones transparentes sobre inputs observados compatibles; sin dato espacial de residentes no hay cobertura poblacional.",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "preserve": [
+            "subject",
+            "entity",
+            "unit",
+            "period",
+            "source",
+            "scope",
+            "assumptions"
+          ],
+          "recovery": "Un error aporta cero cifras; no repetir llamada y argumentos fallidos; una única recuperación inequívoca por causa."
+        },
+        "input_semantics": "normalized_input y effective_request contienen parámetros; no cifras analíticas. defaults_applied son supuestos, no elecciones humanas observadas.",
+        "limitations": [
+          "El indicador describe estructura demográfica; no explica sus causas."
+        ],
+        "method": "Orden descendente de pct_65_plus; empates por nombre municipal.",
+        "normalized_input": {
+          "arguments": {
+            "grupo_edad": "65",
+            "medida": "percentage",
+            "periodo": null,
+            "top_n": 5
+          },
+          "tool": "analizar_envejecimiento"
+        },
+        "operation_semantics": {
+          "interpretation": "orden del indicador, no necesidad individual",
+          "measures": "recuento de personas o porcentaje sobre población municipal",
+          "subject": "municipio"
+        },
+        "operational_metadata": {
+          "counters": [],
+          "execution": {
+            "request_id": "R15_AUDIT_FIXED_REQUEST",
+            "state": "completed",
+            "tool": "analizar_envejecimiento"
+          },
+          "not_analytical_evidence": true,
+          "selection": {
+            "criterion": "Primeras entidades en el orden validado de la herramienta",
+            "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+            "omitted_entities": 0,
+            "returned_entities": 5,
+            "total_entities": 5
+          }
+        },
+        "outcomes": [],
+        "request_id": "R15_AUDIT_FIXED_REQUEST",
+        "status": "valid"
+      }
+    },
+    "ranking_empty": {
+      "claims": 0,
+      "error": {
+        "available_options": [],
+        "code": "invalid_arguments",
+        "message": "arguments:periodo:invalid_value",
+        "origin": "domain",
+        "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+      },
+      "execute_calls": 1,
+      "outcomes": [],
+      "provenance_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "public_bytes": 1834,
+      "public_sha256_except_code": "d5b467fca10ff52253e5dbd6680bfe1fbe2588dff083df1e53b6303d6bb7f0c9",
+      "raw_contains_ok": false,
+      "raw_exposed_publicly": false,
+      "raw_sha256": null,
+      "raw_status": null,
+      "status": "error",
+      "totals_s": [],
+      "view": {
+        "assumptions": [],
+        "capability_id": "analizar_envejecimiento",
+        "claims": [],
+        "effective_request": null,
+        "error": {
+          "available_options": [],
+          "code": "invalid_arguments",
+          "message": "arguments:periodo:invalid_value",
+          "origin": "domain",
+          "safe_next_action": "Revisar los valores disponibles; si el fallo persiste, no usar el resultado."
+        },
+        "evidence_policy": {
+          "classification": [
+            "AVAILABLE",
+            "DERIVABLE_EXACTLY",
+            "ESTIMABLE_WITH_ASSUMPTIONS",
+            "NOT_AVAILABLE"
+          ],
+          "derivation": "Operaciones transparentes sobre inputs observados compatibles; sin dato espacial de residentes no hay cobertura poblacional.",
+          "forbidden_inferences": [
+            "No hay distribución espacial de residentes: no calcular personas, hogares o porcentaje de población dentro de un radio.",
+            "Un municipio clasificado por distancia no es una persona con acceso efectivo.",
+            "Registro no prueba capacidad, disponibilidad, calidad ni atención asignada.",
+            "Asociación no prueba causalidad; escenario no predice ni recomienda."
+          ],
+          "preserve": [
+            "subject",
+            "entity",
+            "unit",
+            "period",
+            "source",
+            "scope",
+            "assumptions"
+          ],
+          "recovery": "Un error aporta cero cifras; no repetir llamada y argumentos fallidos; una única recuperación inequívoca por causa."
+        },
+        "execution": {
+          "request_id": "R15_AUDIT_FIXED_REQUEST",
+          "state": "failed",
+          "tool": "analizar_envejecimiento"
+        },
+        "limitations": [],
+        "method": "",
+        "normalized_input": {
+          "arguments": {
+            "grupo_edad": "75",
+            "medida": "percentage",
+            "periodo": "",
+            "top_n": 10
+          },
+          "tool": "analizar_envejecimiento"
+        },
+        "outcomes": [],
+        "request_id": "R15_AUDIT_FIXED_REQUEST",
+        "selection": {
+          "criterion": "Primeras entidades en el orden validado de la herramienta",
+          "detail_mechanism": "Nueva consulta acotada con municipio(s) explícitos mediante las herramientas territoriales existentes; no hay lectura de rutas ni descarga de evidencia en el portal.",
+          "omitted_entities": 0,
+          "returned_entities": 0,
+          "total_entities": 0
+        },
+        "status": "error"
+      }
+    }
+  },
+  "zip_sha256": "57fe8ccab8ab3613c0729aa9a4b25702dbaead5d74bfb6216e8bbe117c421256"
+}

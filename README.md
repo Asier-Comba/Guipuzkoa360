@@ -1,6 +1,14 @@
 # GIPUZKOA 360
 
-Un agente para explorar dónde coinciden envejecimiento municipal y mayor distancia geométrica a servicios sanitarios en Gipuzkoa.
+¿Cuánto tiempo ocupa una visita sanitaria cuando dependemos del autobús?
+
+Combinamos dos niveles: exploramos los 88 municipios de Gipuzkoa para detectar dónde estudiar el acceso sanitario y, en los trayectos con datos suficientes, calculamos la visita completa: viaje, esperas, paseo, consulta y regreso.
+
+Una consulta de veinte minutos desde las paradas de Zegama al Ambulatorio de Beasain, el 29 de septiembre de 2026 a las 09:30, ocupa **2 h 58 min 11 s** en el escenario calculado. A las 09:45, manteniendo lo demás, ocupa **2 h 23 min 11 s**: 35 minutos menos entre escenarios programados, no un ahorro observado ni una recomendación. Usamos horarios programados y paseo modelado, no tiempos reales desde casa.
+
+Pensado para equipos técnicos de movilidad, cuidados y planificación territorial. La visita está acotada a las paradas admitidas de Zegama, Segura e Idiazabal y a la fecha indicada; no conocemos citas disponibles, capacidad asistencial ni una entrada física verificada. [Explicación, fuentes y límites](docs/vnext/final_delivery/DELIVERY_COPY.md).
+
+## Análisis territorial inicial
 
 La pregunta se convierte en una operación reproducible sobre datos oficiales. Siete herramientas consultan fuentes, resumen y comparan municipios, analizan envejecimiento y proximidad, identifican coincidencias y simulan cambios hipotéticos. Al cambiar los parámetros del diálogo, el agente vuelve a calcular.
 
@@ -8,7 +16,7 @@ Pensado para **personal técnico municipal y territorial** que necesita detectar
 
 ## Ver el proyecto
 
-Abra **[la demo territorial](resultados/demo.html)** descargando el HTML: funciona sin servidor ni Internet. Sus tres consultas y el escenario son cálculos reales guardados; la conversación en vivo se realiza en el portal privado. [Guion de demostración](docs/DEMO.md).
+Abra **[la visualización del análisis territorial inicial](resultados/demo.html)** descargando el HTML: funciona sin servidor ni Internet. Sus tres consultas y el escenario son cálculos reales guardados; no demuestra la visita sanitaria. La conversación del agente se realiza en el portal privado. [Guion de demostración territorial](docs/DEMO.md).
 
 La entrada es única: pregunta, hallazgo y mapa. Después se puede cambiar el criterio, abrir «Cómo se calcula», comparar municipios o explorar Aduna. La página [Cómo se comprueba](resultados/control_center.html) explica la fiabilidad en lenguaje sencillo y conserva la validación técnica completa en un desplegable secundario.
 
@@ -49,6 +57,6 @@ Se usan los datos versionados; reconstruir esta evidencia no requiere descargar 
 
 ## Equipo y contribuciones
 
-**Oier Duñabeitia**: datos, geografía, calidad y reproducibilidad. **Asier Comba**: agente, validación y cierre técnico. **Hugo Fernández Díez**: producto, diseño visual, integración y pruebas conversacionales. [Equipo y contribuciones](docs/TEAM.md).
+DeustoAI Labs — Universidad de Deusto. **Oier Duñabeitia Berezo**: datos, geografía, calidad y reproducibilidad. **Asier Comba Lopez**: agente, validación y cierre técnico. **Hugo Fernández Díez**: producto, diseño visual, integración y pruebas conversacionales. [Equipo y contribuciones](docs/TEAM.md).
 
 El cierre técnico está preparado para revisión. La publicación de la entrega requiere una decisión humana.

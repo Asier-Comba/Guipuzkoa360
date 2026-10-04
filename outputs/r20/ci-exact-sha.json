@@ -1,0 +1,37 @@
+{
+  "runtime_sha": "81c42da2e8ab7074074d9f114d4ac7990e715da4",
+  "observed_at": "2026-10-02 18:25:46 UTC",
+  "runs": [
+    {
+      "id": 37046444701,
+      "name": "Release fast CI",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 98,
+      "jobs_url": "https://api.github.com/repos/Asier-Comba/Guipuzkoa360/actions/runs/37046444701/jobs",
+      "logs_url": "https://api.github.com/repos/Asier-Comba/Guipuzkoa360/actions/runs/37046444701/logs",
+      "workflow_id": 367020747
+    },
+    {
+      "id": 37046444655,
+      "name": "R20 final-agent surface validation",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 2,
+      "jobs_url": "https://api.github.com/repos/Asier-Comba/Guipuzkoa360/actions/runs/37046444655/jobs",
+      "logs_url": "https://api.github.com/repos/Asier-Comba/Guipuzkoa360/actions/runs/37046444655/logs",
+      "workflow_id": 373360598
+    }
+  ],
+  "python": 763,
+  "node": 17,
+  "raw_parity": "660/660",
+  "oracle": "7/7",
+  "negative": 200,
+  "fuzz": 5000,
+  "metamorphic": 11,
+  "zip_sha256": "9a271888b414168d06d92dad1b9a9ee594ee0209f78f0abee8d85925cdb6e33e",
+  "manifest_sha256": "0362aa249756275f6377cf9b3d3e4859f1f01ad856e0e5663e5cc12150030081",
+  "bytes": 240004,
+  "scope": "Exact-SHA fresh complete CI, both operating systems; not real LLM"
+}

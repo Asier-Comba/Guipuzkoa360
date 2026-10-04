@@ -1,0 +1,14 @@
+{
+  "head": "e501b45745fd7cc283ca0fa559d9965ca6fda9ee",
+  "version_id": "agentv_cafd8f750b5741959fb29c4045743da1",
+  "main_sha256": "3895d4b2bd0761b69b92e0ce449c1dad09df81a2be44676cebaea5bae2faf484",
+  "tools_sha256": "d4b119205c6eed6088d026ae59416261572edc581dd6155dfb1ea8107c86eabb",
+  "main_bytes": 10517,
+  "tools_bytes": 208474,
+  "preparation": "9 tools, simplified signatures observed; 15 context assets",
+  "extra_portal_template": "ejecucion.py unused, not imported",
+  "model": "openai:gpt-5.6-luna",
+  "memory": true,
+  "internet": false,
+  "prior_messages": 0
+}

@@ -1,0 +1,759 @@
+{
+  "project": "GIPUZKOA 360",
+  "candidate": "R17_FINAL_CANDIDATE_PASS_BOUNDED_REAL_PROTOCOL",
+  "base_r16_head": "c859a26396838d59a52b8d91f1eda5ef6b69e4cd",
+  "runtime_tested_head": "77ac63d5b68a3ecbf51461e3aaa0de0566d6f2c3",
+  "documentary_head_binding": "Exact final head and corresponding CI in PR22 checkpoint; no runtime changes after runtime_tested_head",
+  "package_path": "scripts/vnext_agent/dist/r17/gipuzkoa360-r17-final-agent.zip",
+  "package_bytes": 231758,
+  "package_sha256": "1b263724110c68efab69c14e479f50ed2d101f935c6c83102bb0e5d4c699dc79",
+  "manifest_path": "scripts/vnext_agent/dist/r17/gipuzkoa360-r17-final-agent-manifest.json",
+  "manifest_sha256": "246f703e1e1881fe984598fe7b428b1b18380c43e7555c03fca2b53dd1982fee",
+  "changed_members": [
+    "main.py",
+    "tools.py"
+  ],
+  "members_count": 25,
+  "context_assets": 15,
+  "other_members": "23_BYTE_IDENTICAL_TO_R16",
+  "w1_runtime_changed": false,
+  "v4_preserved": true,
+  "v4": "195b4980fa5998b096c308296a55e452380b0371",
+  "public_resumen_fields": [
+    "municipio"
+  ],
+  "demography": {
+    "rows": 88,
+    "only_period": "2025-01-01",
+    "aduna": {
+      "population_75_plus": 36,
+      "population_total": 507,
+      "pct_75_plus": 7.101
+    },
+    "derivation": "Birth year <=1949 incl earlier group; sum by municipality/sex total; percentage=count/total*100,3 decimals; aggregate-year granularity, not exact individual birthdays"
+  },
+  "metadata_audit": {
+    "status": "PASS",
+    "retained_historical_source_ids": "W1_*/W2_* only as traceability identifier values; never free prose/institution titles",
+    "raw_claims_changed": false
+  },
+  "offline_validation": {
+    "classification": "AUTHOR_DELTA_CHECK_NOT_INDEPENDENT",
+    "focused": 13,
+    "cases": 335,
+    "raw_parity": 335,
+    "oracle": 7,
+    "time_summaries": 41,
+    "findings": 0,
+    "local_python": 681,
+    "local_full_runs": 1,
+    "local_elapsed_s": 304.04,
+    "node": 17,
+    "identity": 14,
+    "jury": "PASS",
+    "artifacts": "PASS",
+    "two_builds_identical": true
+  },
+  "ci": {
+    "runtime_tested_head": "77ac63d5b68a3ecbf51461e3aaa0de0566d6f2c3",
+    "r17_run": 36928182340,
+    "fast_run": 36928182347,
+    "ubuntu": {
+      "status": "PASS",
+      "job": 110590589306,
+      "python": 681,
+      "node": 17
+    },
+    "windows": {
+      "status": "PASS",
+      "job": 110590589440,
+      "python": 681,
+      "node": 17
+    },
+    "final_documentary_ci": "Verified after push, exact SHA and run IDs fixed in PR22 checkpoint"
+  },
+  "current_agent": {
+    "version_id": "agentv_64c72bcb772143968038a2f620944bf1",
+    "name": "GIPUZKOA 360 · Visita sanitaria · v3",
+    "model": "openai:gpt-5.6-luna",
+    "memory": true,
+    "internet": false,
+    "tools": 9,
+    "summary_input_fields": [
+      "municipio"
+    ],
+    "visit_input_fields": [
+      "origin_id",
+      "destination_id",
+      "date",
+      "appointment_time",
+      "duration_minutes"
+    ],
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "results": {
+      "aduna": "PASS",
+      "main": "PASS",
+      "variation": "PASS",
+      "limit_coverage": "PASS"
+    },
+    "real_tranche": {
+      "used": 4,
+      "maximum": 4,
+      "remaining": 0
+    },
+    "latencies_ms": {
+      "measurement": "Upper bounds send to observed UI final; no exact server/p95/tool-output streaming timing",
+      "M1": 37809,
+      "M2": 104501,
+      "M3": 61762,
+      "M4": 56332,
+      "time_to_tool": "NOT_OBSERVED_SEPARATELY",
+      "time_to_output": "NOT_OBSERVED_SEPARATELY"
+    },
+    "findings": [
+      {
+        "severity": "Low",
+        "case": "M4",
+        "description": "Origin IDs and English realtime in an otherwise correct limit response; stylistic only, not selected for public delivery; no runtime patch."
+      }
+    ],
+    "r16_v2_untouched": true
+  },
+  "contrast": {
+    "main_s": 10691,
+    "main_hms": "2 h 58 min 11 s",
+    "scope_start": "08:09:37",
+    "scope_end": "11:07:48",
+    "bus_departure": "08:12:37",
+    "variation_s": 8591,
+    "variation_hms": "2 h 23 min 11 s",
+    "variation_start": "08:44:37",
+    "signed_delta_s": -2100,
+    "signed_delta_minutes": -35,
+    "interpretation": "Conditional same-origin scheduled/modelled scenarios, not observed saving or recommendation"
+  },
+  "identity": {
+    "method": "UI download main/tools and 15 context assets after creation, 17 matches; definition freezes context paths; not a frozen version ZIP export",
+    "report": "outputs/r17/portal/workspace-file-identity.json",
+    "main_sha256": "ced461f9473ccf9370170c3301eb52dc5ff1382f1c29ce57557dbd50d9d76450",
+    "tools_sha256": "c9bcb26795f01dca925d43bfed4ad0e917496aa4f8d6afe74e14285b881642cb",
+    "w1_zip_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910"
+  },
+  "delivery": {
+    "content_complete": true,
+    "public_copy_human": true,
+    "public_internal_jargon": 0,
+    "selected_version": "agentv_64c72bcb772143968038a2f620944bf1",
+    "selected_conversation": "Session B, two completed turns, main09:30 and variation09:45, no retries",
+    "selected_files": [],
+    "selected_links": [
+      "https://asier-comba.github.io/Guipuzkoa360/",
+      "https://github.com/Asier-Comba/Guipuzkoa360"
+    ],
+    "demo_label": "visualización del screening territorial",
+    "team_confirmed": 3,
+    "team": "DeustoAI Labs — Universidad de Deusto",
+    "members": [
+      "Oier Duñabeitia Berezo",
+      "Asier Comba Lopez",
+      "Hugo Fernández Díez"
+    ],
+    "portal_status": "PRIVATE_DRAFT_SAVED",
+    "preview_reviewed": true,
+    "second_review": true,
+    "platform_evaluation": "sin evaluar; not claimed as official evaluation",
+    "renderer_observation": "Empty Response labels for tool events and literal Markdown in preview; preserved, not edited",
+    "track": null,
+    "final_confirmation": false,
+    "published": false,
+    "public_copy": "docs/vnext/final_delivery/DELIVERY_COPY.md",
+    "preview": "outputs/r17/portal/delivery-preview.txt"
+  },
+  "PORTAL_REAL_AGENT": "PASS_BOUNDED_FOUR_MESSAGES",
+  "RELEASE_GO": "NO",
+  "TRACK": "PENDING_HUMAN_SELECTION",
+  "FINAL_CONFIRMATION": "PENDING_HUMAN",
+  "PUBLICATION": "PENDING_HUMAN",
+  "HOLDOUT": "SEALED_NOT_EXECUTED",
+  "next_exact_action": "Human chooses preferred track, performs final preview, checks the publication acknowledgement and clicks Publicar entrega.",
+  "historical_r16": {
+  "PORTAL_LLM": "R16_REAL_MAIN_A_VARIATION_SOURCE_LIMIT_MAIN_B_PASS_ADUNA_STRICT_FAIL_RECOVERED",
+  "RELEASE_GO": "NO",
+  "V4_PRESERVED": "YES",
+  "W1_RUNTIME_CHANGED": "NO",
+  "audit_base": "69bcc6ead9ce444a884aa2b15469bd3b519775f5",
+  "audit_head": "FINAL_DOCUMENTARY_HEAD_AND_SAME_SHA_CI_IN_PR21_CHECKPOINT",
+  "candidate": "R16_PRESENTATION_ONLY_REAL_C0_H0_WITH_RECOVERED_MEDIUM_STRICT_PROTOCOL_NOT_ALL_GREEN",
+  "ci": {
+    "runtime_tested_head": "d4dd2e65434c6c7f9f33c74ef1041b0f136cde69",
+    "r16_run": 36892707817,
+    "fast_run": 36892707797,
+    "ubuntu": {
+      "status": "PASS",
+      "python": 668,
+      "node": 17
+    },
+    "windows": {
+      "status": "PASS",
+      "python": 668,
+      "node": 17
+    },
+    "final_documentary_head": "Exact head and corresponding runs fixed in PR21 checkpoint; runtime/package identical"
+  },
+  "contrast": {
+    "interpretation": "Conditional difference between two scheduled/modelled scenarios with other inputs held constant; not observed saving, prediction or recommendation",
+    "left_case": "MAIN",
+    "left_total_s": 10691,
+    "right_case": "VARIATION",
+    "right_total_s": 8591,
+    "signed_delta_minutes": -35,
+    "signed_delta_s": -2100,
+    "verification": "Two independent raw-source reconstructions, then right minus left"
+  },
+  "current_agent": {
+    "version_id": "agentv_f4ca979c0c5b415da187711e96ba2c4d",
+    "name": "GIPUZKOA 360 · Visita sanitaria · v2",
+    "model": "openai:gpt-5.6-luna",
+    "memory": true,
+    "internet": false,
+    "tools": 9,
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "low": 2,
+    "status": "M1_M4_PASS_M5_STRICT_FAIL_INVALID_EMPTY_PERIOD_RECOVERED_NO_IDENTICAL_RETRY",
+    "results": {
+      "main_A": "PASS",
+      "variation": "PASS",
+      "source_limit_coverage": "PASS",
+      "main_B_clean": "PASS",
+      "aduna": "FAIL"
+    },
+    "real_tranche": {
+      "used": 5,
+      "maximum": 5,
+      "remaining": 0
+    },
+    "latencies": {
+      "unit": "seconds",
+      "measurement": "upper_bounds_send_to_observed_final_not_exact",
+      "main_A": 85.89,
+      "variation": 36.992,
+      "source_limit_coverage": 76.004,
+      "main_B_clean": 81.352,
+      "aduna": 114.682,
+      "time_to_tool": "NOT_OBSERVED",
+      "time_to_output": "NOT_OBSERVED"
+    },
+    "findings": [
+      {
+        "severity": "Medium",
+        "description": "First Aduna call sends periodo empty; bounded recovery yields correct 36/507 and 7.101%; no identical invalid retry."
+      },
+      {
+        "severity": "Low",
+        "description": "Residual Rxx/W1/provider nomenclature in source provenance metadata, not observed final answers."
+      },
+      {
+        "severity": "Low",
+        "description": "75+ final explains birth-year derivation but omits <=1949 cutoff; compact source attribution completed in delivery copy."
+      }
+    ]
+  },
+  "distribution": {
+    "OSM": "OpenStreetMap contributors; ODbL1.0",
+    "health_derivative": "PINNED_DERIVED_NOT_RAW",
+    "raw_HTML_PADI": "EXCLUDED_NOT_VERIFIED"
+  },
+  "holdout": "SEALED_NOT_EXECUTED",
+  "links": [
+    "https://asier-comba.github.io/Guipuzkoa360/",
+    "https://github.com/Asier-Comba/Guipuzkoa360"
+  ],
+  "manifest_sha256": "a46415845f86c5c22ad648965b45e5bd109c839e9cb6cc14daee0ef37d7f788e",
+  "members": [
+    "Oier Duñabeitia Berezo",
+    "Asier Comba Lopez",
+    "Hugo Fernández Díez"
+  ],
+  "next_exact_action": "Coordinator delta review and explicit human decision on recovered Aduna Medium; then human preview, track selection, confirmation and publication.",
+  "package_bytes": 229844,
+  "package_path": "scripts/vnext_agent/dist/r16/gipuzkoa360-r16-final-agent.zip",
+  "package_sha256": "374af43fa6ce58b513a10477fc216215c7472f54bd28eada4fc0908da6f3dd6c",
+  "project": "GIPUZKOA 360",
+  "publication": "PENDING_HUMAN_GATE",
+  "sources": {
+    "health_truth_source_facts": [
+      {
+        "publisher": "Moveuskadi / Goierrialdea",
+        "reference_period": "2026-09-28/2026-12-27",
+        "retrieved_date": "2026-09-29",
+        "source_id": "GTFS",
+        "source_role": "official_schedule",
+        "source_sha256": "3276fcae7bfa5002a39a2a094fef6637603de2e50648a46a436b314db27832a4",
+        "transformation": "R4 normalized GO01 rows, unchanged; approximate stop times, no realtime",
+        "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfs_goierrialdea.zip"
+      },
+      {
+        "publisher": "Open Data Euskadi",
+        "reference_period": "2026-09-20",
+        "retrieved_date": "2026-09-24",
+        "source_id": "HEALTH_REGISTRY",
+        "source_role": "official_health_registry",
+        "source_sha256": "87a2b8ea3309678ff743e2f267320b94216c3d1e4f52b578bdd0a77bd8bf29ab",
+        "transformation": "entityBC631DA5 coordinates EPSG:4326",
+        "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+      },
+      {
+        "publisher": "Osakidetza",
+        "reference_period": "Observed 2026-09-29",
+        "retrieved_date": "2026-09-29",
+        "source_id": "HEALTH_PAGE",
+        "source_role": "official_health_page",
+        "source_sha256": "7ba21b4f78f79b55d5761f427582daaef48097245142c9cb259288dc923f3160",
+        "transformation": "Specific centre name/address/telephone; publication date not stated",
+        "url": "https://www.osakidetza.euskadi.eus/ambulatorio-de-beasain/webosk00-cercon/es/"
+      },
+      {
+        "publisher": "Osakidetza",
+        "reference_period": "2026-01",
+        "retrieved_date": "2026-09-29",
+        "source_id": "PADI_2026",
+        "source_role": "official_health_page",
+        "source_sha256": "6cf5d40245eb29c9c98785d03aba518c44677104b71625db36c3f2801455ac10",
+        "transformation": "Page 4 dental consultation listing; address conflict retained",
+        "url": "https://www.osakidetza.euskadi.eus/contenidos/informacion/salud_padi/es_def/adjuntos/padi-kontsultak-gipuzkoa.pdf"
+      },
+      {
+        "publisher": "OpenStreetMap contributors",
+        "reference_period": "Acquired 2026-09-29",
+        "retrieved_date": "2026-09-29",
+        "source_id": "OSM",
+        "source_role": "open_network",
+        "source_sha256": "0f09edd3324ab4feceddaf0392a33723244404881d3d3efb0a591991ea3df865",
+        "transformation": "R4 public derivative removes editor/contact metadata; R5 canonicalizes XML line endings to LF for hashing, no geometry change; ODbL 1.0",
+        "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-2.203,43.041,-2.190,43.052"
+      },
+      {
+        "publisher": "GIPUZKOA360",
+        "reference_period": "R5.1",
+        "retrieved_date": "2026-09-29",
+        "source_id": "MODEL",
+        "source_role": "model_parameter",
+        "source_sha256": "0f3a02e69f8065f892ce19a0115ae7e3c661c32725bd37a423f3d283ae1a2a7d",
+        "transformation": "ceil(raw total metres/50)*60+120 per complete directed link; each connector <=100 m",
+        "url": null
+      },
+      {
+        "publisher": "GIPUZKOA360 request/calculation",
+        "reference_period": "2026-09-29",
+        "retrieved_date": null,
+        "source_id": "USER",
+        "source_role": "user_input",
+        "source_sha256": "cdf06815793be0a00bf58f36e7c445ecc7bf0b27001b6eaed575c1ab9b254271",
+        "transformation": "Only fields explicitly supplied by the caller; no provider defaults.",
+        "url": null
+      },
+      {
+        "publisher": "GIPUZKOA360 request/calculation",
+        "reference_period": "2026-09-29",
+        "retrieved_date": null,
+        "source_id": "MODEL_DEFAULTS",
+        "source_role": "model_parameter",
+        "source_sha256": "e5f563e38a8c094f01468a02a55f06b560faa668926878fbcc347dfd14a438e3",
+        "transformation": "Defaults applied by provider_r6; not observed human choices.",
+        "url": null
+      },
+      {
+        "publisher": "GIPUZKOA360 request/calculation",
+        "reference_period": "2026-09-29",
+        "retrieved_date": null,
+        "source_id": "DERIVED",
+        "source_role": "derived_metric",
+        "source_sha256": "586083f6861a087c6560d00a531972dbb3dfad3acc9edd6e1217eb601a2bf30f",
+        "transformation": "Intervals derived from explicit inputs, model defaults, schedule and walking model.",
+        "url": null
+      }
+    ],
+    "territorial_metadata": [
+      {
+        "download_date": "2026-09-24",
+        "institution": "Eustat - Instituto Vasco de Estadística",
+        "license": "Creative Commons (según ficha Eustat de la operación 010154)",
+        "limitations": [
+          "75+ se deriva de año de nacimiento <=1949 a 2025-01-01."
+        ],
+        "method": "Consulta PXWeb por municipio, sexo total y periodo 2025-01-01; pivote de total/65+ y suma de nacidos hasta 1949 para 75+.",
+        "notes": [
+          "Códigos municipales Eustat/INE de cinco caracteres conservados como texto."
+        ],
+        "original_file": "datos_originales/eustat_demografia_2025.csv",
+        "prepared_files": [
+          "datos_preparados/demografia.csv",
+          "datos_preparados/municipios.csv"
+        ],
+        "reference_period": "2025-01-01",
+        "source_id": "EUSTAT_EMH_2025",
+        "source_type": "official",
+        "territory": "Gipuzkoa, 88 municipios",
+        "title": "Población de la C.A. de Euskadi por ámbitos territoriales, edad y sexo",
+        "unit": "personas",
+        "url": "https://www.eustat.eus/bankupx/api/v1/es/DB/PX_010154_cepv1_ep06b.px"
+      },
+      {
+        "download_date": "2026-09-24",
+        "institution": "Gobierno Vasco - Departamento de Salud",
+        "license": "Licencia abierta indicada por Open Data Euskadi; atribución y fecha obligatorias",
+        "limitations": [
+          "La presencia de un centro no mide capacidad, disponibilidad de citas ni calidad."
+        ],
+        "method": "Filtro Provincia=Gipuzkoa, normalización de tipo y unión espacial within en EPSG:4326.",
+        "notes": [
+          "Asignación municipal por punto dentro de polígono oficial."
+        ],
+        "original_file": "datos_originales/centros-salud.xlsx",
+        "prepared_files": [
+          "datos_preparados/servicios.csv",
+          "datos_preparados/runtime_servicios.csv"
+        ],
+        "reference_period": "2026-09-20",
+        "source_id": "ODE_HEALTH_CENTRES_2026",
+        "source_type": "official",
+        "territory": "Euskadi; filtrado a Gipuzkoa",
+        "title": "Centros de salud, ambulatorios y hospitales públicos de Euskadi",
+        "unit": "registro de centro sanitario público",
+        "url": "https://opendata.euskadi.eus/catalogo/-/centros-de-salud-publicos-en-euskadi/"
+      },
+      {
+        "download_date": "2026-09-24",
+        "institution": "Gobierno Vasco - geoEuskadi",
+        "license": "Uso permitido citando Eusko Jaurlaritza / Gobierno Vasco",
+        "limitations": [
+          "El propio catálogo advierte que no es cartografía oficial conforme a Ley 7/1986 y RD 1545/2007."
+        ],
+        "method": "Filtro por territorio y catálogo Eustat; área y simplificación calculadas en EPSG:25830.",
+        "notes": [
+          "CRS original y de cálculo: EPSG:25830; publicación runtime: EPSG:4326."
+        ],
+        "original_file": "datos_originales/MUNICIPIOS_5000_ETRS89.zip",
+        "prepared_files": [
+          "datos_preparados/municipios.geojson",
+          "datos_preparados/runtime_municipios.geojson",
+          "datos_preparados/runtime_municipality_points.csv"
+        ],
+        "reference_period": "2025-05-07",
+        "source_id": "GEOEUSKADI_MUNICIPIOS_2025",
+        "source_type": "official",
+        "territory": "Euskadi; filtrado a Gipuzkoa",
+        "title": "Límites Administrativos del País Vasco - Municipios 1:5.000",
+        "unit": "polígono municipal",
+        "url": "https://www.geo.euskadi.eus/limites-administrativos-del-pais-vasco/webgeo00-dataset/es/"
+      },
+      {
+        "download_date": null,
+        "input_source_ids": [
+          "EUSTAT_EMH_2025",
+          "ODE_HEALTH_CENTRES_2026",
+          "GEOEUSKADI_MUNICIPIOS_2025"
+        ],
+        "institution": "DeustoAI Labs",
+        "license": "Hereda las condiciones de atribución de las tres fuentes ascendentes",
+        "limitations": [
+          "La distancia no es tiempo de viaje ni accesibilidad individual.",
+          "Los periodos de las fuentes ascendentes no son idénticos."
+        ],
+        "method": "Conteos por municipio, tasas por 10.000 personas de 65+/75+ y distancia euclídea en metros desde el punto representativo municipal al servicio más cercano, calculada en EPSG:25830.",
+        "notes": [
+          "No es una fuente externa; registra el linaje de las transformaciones reproducibles."
+        ],
+        "original_file": null,
+        "prepared_files": [
+          "datos_preparados/municipios.csv",
+          "datos_preparados/runtime_municipios.geojson",
+          "datos_preparados/runtime_municipality_points.csv"
+        ],
+        "producer": "GIPUZKOA 360",
+        "reference_period": "demography=2025-01-01;services=2026-09-20;geography=2025-05-07",
+        "source_id": "G360_DERIVED_MUNICIPAL_METRICS_V1",
+        "source_type": "derived",
+        "territory": "Gipuzkoa, 88 municipios",
+        "title": "Métricas municipales derivadas de GIPUZKOA 360",
+        "unit": "indicador municipal",
+        "upstream_source_ids": [
+          "EUSTAT_EMH_2025",
+          "ODE_HEALTH_CENTRES_2026",
+          "GEOEUSKADI_MUNICIPIOS_2025"
+        ],
+        "url": "https://github.com/Asier-Comba/Guipuzkoa360/blob/work/data-foundation/FUENTES.md"
+      }
+    ]
+  },
+  "team": "DeustoAI Labs — Universidad de Deusto",
+  "track": "PENDING_HUMAN_SELECTION",
+  "v4": "195b4980fa5998b096c308296a55e452380b0371",
+  "w1_historical_medium": 3,
+  "identity_status": "17_UI_DOWNLOADED_FILES_MATCH_CANONICAL_PACKAGE_15_ASSETS_W1_AND_V4_PRESERVED",
+  "manifest_path": "scripts/vnext_agent/dist/r16/gipuzkoa360-r16-final-agent-manifest.json",
+  "handoff_path": "docs/vnext/w2/HANDOFF_R16.md",
+  "historical_r14": {
+    "source_commit": "3a8e2b0948bb06df87af7a0f5769a369da568eff",
+    "audit_base": "4bf975511ecea46c25662becfccb65713d381aa0",
+    "evidence_scope": "Published W1 R14 offline audit only; never an R15 acceptance or current benchmark",
+    "hotfix_sha": "094745b26bc57aee5cc1a5e003401743d96a914f",
+    "package_sha256": "9c6fa5c692df178afe36366c6291e7c0e7c3da06134381b09d853f55d6707252",
+    "package_bytes": 226337,
+    "package_url": "https://github.com/Asier-Comba/Guipuzkoa360/blob/094745b26bc57aee5cc1a5e003401743d96a914f/scripts/vnext_agent/dist/r14/gipuzkoa360-r14-binding.zip",
+    "manifest_sha256": "d6c0122b475284c468fdfc3e343b9ab0d9d175cf20513048c915281cedf4e911",
+    "manifest_url": "https://github.com/Asier-Comba/Guipuzkoa360/blob/094745b26bc57aee5cc1a5e003401743d96a914f/scripts/vnext_agent/dist/r14/gipuzkoa360-r14-binding-manifest.json",
+    "ci": {
+      "hotfix": 36765784442,
+      "this_audit": "Exact same-SHA result in final checkpoint",
+      "w1_r14": 36770251523,
+      "w3_f4fd0a3": 36774476469
+    },
+    "reports": {
+      "capability_claim_audit.json": {
+        "bytes": 1267,
+        "path": "resultados/vnext/final_benchmark/capability_claim_audit.json",
+        "sha256": "513f2717bda8901bc6e07d96f4391ab38c629e18def0733d9df66b28c2f48445"
+      },
+      "common_raw.json": {
+        "bytes": 252267,
+        "path": "resultados/vnext/final_benchmark/common_raw.json",
+        "sha256": "36434cd56e8f720645839f5f473c886934dedddf8b3d1741b68c3d1eefef9a39"
+      },
+      "common_source_identity.json": {
+        "bytes": 649,
+        "path": "resultados/vnext/final_benchmark/common_source_identity.json",
+        "sha256": "9d0317cc40fc542b1a3bf1b6699de513da9cee055a0df76e3b5aeea48d60f684"
+      },
+      "common_summary.json": {
+        "bytes": 251,
+        "path": "resultados/vnext/final_benchmark/common_summary.json",
+        "sha256": "96b2330790986694c9df5d284a07f2e2c69de4889fba9c55a364f6905ee4cfc7"
+      },
+      "holdout_seal.json": {
+        "bytes": 1216,
+        "path": "resultados/vnext/final_benchmark/holdout_seal.json",
+        "sha256": "a390457ba4735d74dd00eddbf987709a6856923d252a77cde64b60a152004da4"
+      },
+      "public_raw.json": {
+        "bytes": 1131388,
+        "path": "resultados/vnext/final_benchmark/public_raw.json",
+        "sha256": "5d03dd4a22ef4d7769245eb5dae5f585397934adbda98091bf780894a0c2203f"
+      },
+      "public_summary.json": {
+        "bytes": 6714,
+        "path": "resultados/vnext/final_benchmark/public_summary.json",
+        "sha256": "bf280a543e13cced65d19066c3705f87f3c32b34355e123c199d2da2208b7f9c"
+      },
+      "release_state.json": {
+        "bytes": 429,
+        "path": "resultados/vnext/final_benchmark/release_state.json",
+        "sha256": "c17fae07aad87a843607cfc79cb8936780ca933e40b6ef8a04994a1ecb5e09e8"
+      },
+      "upstream_identity.json": {
+        "bytes": 2727,
+        "path": "resultados/vnext/final_benchmark/upstream_identity.json",
+        "sha256": "b4114162a69217e9915dced5be9681fdad3b7ea10a27a1d021b12dd2ada34258"
+      }
+    }
+  },
+  "public_agent_contract": {
+    "plan_visit_required_fields": [
+      "origin_id",
+      "destination_id",
+      "date",
+      "appointment_time",
+      "duration_minutes"
+    ],
+    "plan_visit_optional_fields": [],
+    "plan_visit_batch": false,
+    "comparison": "Execute individual plan_visit calls, observe their outputs and compare only valid compatible results; across origins side-by-side only, without a numeric delta.",
+    "engine_contract": "Internal optional fields, defaults, legacy and batch capabilities remain internal; not additional public parameters.",
+    "parameter_provenance": "Only five public fields are sent; provider defaults remain MODEL_DEFAULTS, not asserted human choices.",
+    "period_policy": {
+      "demographic_selector": {
+        "tools": [
+          "obtener_resumen_territorial",
+          "comparar_municipios",
+          "analizar_envejecimiento",
+          "analizar_coincidencia"
+        ],
+        "allowed_values": [
+          "2025-01-01"
+        ],
+        "omitted_or_null": "Single available period; otherwise ask for an explicit period, never select latest implicitly"
+      },
+      "source_reference_only": {
+        "tools": [
+          "analizar_acceso_servicios",
+          "simular_escenario"
+        ],
+        "allowed_values": [
+          "2026-09-20",
+          "2025-05-07"
+        ],
+        "omitted_or_null": "Preserve current sources and their distinct reference periods; not a historical filter or homogeneous snapshot"
+      },
+      "explicit_invalid": "Reject empty/whitespace, wrong types and unsupported periods without numeric claims"
+    },
+    "numeric_provenance": "Existing source method is projected generally by consultar_fuente, alongside period and limitations. The 75+ birth-year derivation remains accessible; no number, formula, source or raw data changed."
+  },
+  "document_provenance": {
+    "imported_from": "3a8e2b0948bb06df87af7a0f5769a369da568eff",
+    "current_scope": "R16 real validation evidence and human delivery copy; historic R14/R15 preserved separately",
+    "author_delta_check": "PASS_NOT_INDEPENDENT_ACCEPTANCE",
+    "capture_directory": "outputs/r16/portal",
+    "local_reports_directory": "outputs/r16/local"
+  },
+  "package_identity": {
+    "main_sha256": "0c78ef33de07a403f35b2d6016fe78a8fb84012ef7edd0e8f5bfeac00065550a",
+    "main_bytes": 11744,
+    "tools_sha256": "15809478a34813298e48702a3241fa830e5499b30cc16c8d385deddadd8cd6d7",
+    "tools_bytes": 183540,
+    "uncompressed_bytes": 794975,
+    "members_count": 25,
+    "inventory_vs_r15": "IDENTICAL",
+    "changed_members_vs_r15": [
+      "main.py",
+      "tools.py"
+    ],
+    "context_asset_count": 15,
+    "context_assets_vs_r15": "BYTE_IDENTICAL",
+    "context_assets_sha256": {
+      "contracts/vnext/capability-v1.1.schema.json": "66ab0036ce3a529dad3d51d193fa05970fd795bbefcab477281e5df055ff2f0b",
+      "contracts/vnext/evidence-v1.1.schema.json": "6fbd22a567cc5a8d8ce17fd1968c52fc92448526bf81103e2768486d724d9ad0",
+      "datos_preparados/data_contract.json": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae",
+      "datos_preparados/demografia.csv": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96",
+      "datos_preparados/metadata_sources.json": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
+      "datos_preparados/municipios.csv": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
+      "datos_preparados/runtime_municipality_points.csv": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11",
+      "datos_preparados/runtime_servicios.csv": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece",
+      "datos_preparados/vnext/capabilities.json": "d51c17a5ab9b2902382991abe215b77c879eb73a63df0a1ae5affb317c8e5b89",
+      "datos_preparados/vnext/consumer_labels_r7.json": "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799",
+      "datos_preparados/vnext/mobility_sources.json": "a5ba0b7a9ee0ad85366e89ee888de2635013c148d005dcf9ecb94d24215bc445",
+      "datos_preparados/vnext/operational_catalog_r6.json": "c7bd3cc8ffe50956ce839bec0ef90a13578160a4d5b4053b09673d2dc4c4ec17",
+      "datos_preparados/vnext/w1_r6_runtime.zip": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+      "docs/METODOLOGIA.md": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7",
+      "FUENTES.md": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de"
+    },
+    "member_inventory_and_diff": "Hash-pinned canonical R16 package manifest",
+    "w1_zip_sha256": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+    "r15_overwritten": false,
+    "portal_extra_file": "Generated execution scaffold; unused by imports/tools; not included in canonical ZIP"
+  },
+  "historical_r15": {
+    "head": "69bcc6ead9ce444a884aa2b15469bd3b519775f5",
+    "zip_sha256": "f937ed8124ba1107c78d2a516c5404626a97b9efe38b576a03b6cd98f781efd0",
+    "manifest_sha256": "95c78e2a26ae8a55e0e6ec772905e04a74620d2c18b282a605522ff0154eed76",
+    "bytes": 228025,
+    "real_version_id": "agentv_01e227c426b24d5dab43473d3d5bd8eb",
+    "real_counts": {
+      "critical": 0,
+      "high": 1,
+      "medium": 2,
+      "low": 1
+    },
+    "budget": {
+      "used": 12,
+      "total": 12
+    },
+    "package_identity": {
+      "main_sha256": "5d08e34bfefc9a5cca43f6ea9af09d4e71f0b0f64cad0b38449bbfb19640fb34",
+      "main_bytes": 10653,
+      "tools_sha256": "49b0fb3f0e09c7d10132ba803a0e8274f9188ffcff7b466f6f6775f577cce3de",
+      "tools_bytes": 178863,
+      "uncompressed_bytes": 789207,
+      "members_count": 25,
+      "inventory_vs_r14": "IDENTICAL",
+      "changed_members_vs_r14": [
+        "main.py",
+        "tools.py"
+      ],
+      "context_asset_count": 15,
+      "context_assets_vs_r14": "BYTE_IDENTICAL",
+      "context_assets_sha256": {
+        "contracts/vnext/capability-v1.1.schema.json": "66ab0036ce3a529dad3d51d193fa05970fd795bbefcab477281e5df055ff2f0b",
+        "contracts/vnext/evidence-v1.1.schema.json": "6fbd22a567cc5a8d8ce17fd1968c52fc92448526bf81103e2768486d724d9ad0",
+        "datos_preparados/data_contract.json": "2c8934c0ca6c89dee52754a7d6ca547aa12a08d2934aa283b6646bc553b25eae",
+        "datos_preparados/demografia.csv": "22777db279fa1f42a4f96172c2983d26acedafff5561da74d1d43b6dfef87a96",
+        "datos_preparados/metadata_sources.json": "f5da840393b9c59676cc626b1ff205c61da1ba4c9e0363ea12bf652a8f4507aa",
+        "datos_preparados/municipios.csv": "e323880baeab6f76896f97c0097522b5910778a983902bc8d256b36dade65f6d",
+        "datos_preparados/runtime_municipality_points.csv": "9b33e7e2e08131d82eb039e53ce01e904d4a591542f854c7684cec9330f7ba11",
+        "datos_preparados/runtime_servicios.csv": "95f514c540733dfe7f83d70a4b46c9c275706ade3084ac2ebf30f581883bbece",
+        "datos_preparados/vnext/capabilities.json": "d51c17a5ab9b2902382991abe215b77c879eb73a63df0a1ae5affb317c8e5b89",
+        "datos_preparados/vnext/consumer_labels_r7.json": "f0804b646d0473531e4f9ad12e31dc1ee7ee50cab69576bc95a0485b8da62799",
+        "datos_preparados/vnext/mobility_sources.json": "a5ba0b7a9ee0ad85366e89ee888de2635013c148d005dcf9ecb94d24215bc445",
+        "datos_preparados/vnext/operational_catalog_r6.json": "c7bd3cc8ffe50956ce839bec0ef90a13578160a4d5b4053b09673d2dc4c4ec17",
+        "datos_preparados/vnext/w1_r6_runtime.zip": "c66d44af702eb3410fcea05ae8711f537214f675e83a7fda38c39c3b39a1b910",
+        "docs/METODOLOGIA.md": "881bf8e7e90edf69faf6e49bf253826540a39f3784504bf8ab9e71febc8067b7",
+        "FUENTES.md": "95996bd75aa70c3b00d8808231619baebeedd54cd1b1f7e579def009847d82de"
+      },
+      "member_inventory_and_diff": "See members and member_diff_vs_r14 in hash-pinned package manifest",
+      "r14_overwritten": false
+    },
+    "document_provenance": {
+      "imported_from": "3a8e2b0948bb06df87af7a0f5769a369da568eff",
+      "w3_evidence_commit": "f4fd0a3c79ff2827c19a1200c0c76f7c5815eab7",
+      "changes": "Technical contract/identity reconciliation only; product copy preserved except concrete technical contradictions",
+      "portal_budget": {
+        "used": 5,
+        "total": 12,
+        "remaining": 7
+      },
+      "r15_real_agent": "NOT_RETESTED",
+      "full_served_r14_schema": "NOT_OBSERVED"
+    },
+    "evidence_scope": "Historical R15; not retrospectively changed by R16"
+  },
+  "runtime_tested_head": "d4dd2e65434c6c7f9f33c74ef1041b0f136cde69",
+  "offline_validation": {
+    "focused": 116,
+    "author_cases": 333,
+    "raw_parity": 333,
+    "oracle": 7,
+    "invalid": 231,
+    "time_summaries": 41,
+    "findings": 0,
+    "local_full": {
+      "pass": 667,
+      "fail": 1,
+      "failure": "Historical R12 subprocess timeout with negative remaining time; cause not demonstrated; original retained"
+    },
+    "targeted_recheck": {
+      "pass": 1,
+      "fail": 0
+    },
+    "node": 17,
+    "identity": 14,
+    "jury": "PASS",
+    "artifacts": "PASS",
+    "two_builds_identical": true,
+    "independent_acceptance": "NOT_CLAIMED"
+  },
+  "delivery": {
+    "content_complete": true,
+    "portal_copy_final": true,
+    "preview_reviewed": true,
+    "portal_status": "PRIVATE_DRAFT_SAVED",
+    "selected_version": "agentv_f4ca979c0c5b415da187711e96ba2c4d",
+    "conversation": "Session A, three completed turns, reviewed before selection",
+    "selected_files": [],
+    "selected_links": [
+      "https://asier-comba.github.io/Guipuzkoa360/",
+      "https://github.com/Asier-Comba/Guipuzkoa360"
+    ],
+    "track": null,
+    "final_confirmation": false,
+    "published": false,
+    "portal_evaluation_label": "sin evaluar",
+    "technical_release_ready": false,
+    "strict_protocol": "FAIL_M5",
+    "public_copy": "docs/vnext/final_delivery/DELIVERY_COPY.md"
+  }
+  }
+}

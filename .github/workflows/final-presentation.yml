@@ -1,0 +1,19 @@
+name: Final threshold presentation
+on:
+  pull_request:
+  push:
+    branches: [final/entrega-r28-guard]
+permissions:
+  contents: read
+env:
+  PYTHONUTF8: '1'
+jobs:
+  guard:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12.10'
+      - run: python -m pip install pytest
+      - run: python -m pytest -q tests/vnext_agent/test_final_threshold_answer.py

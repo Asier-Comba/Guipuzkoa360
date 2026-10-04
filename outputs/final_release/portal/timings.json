@@ -1,0 +1,18 @@
+{
+  "message_count": 8,
+  "version": "agentv_64c72bcb772143968038a2f620944bf1",
+  "send_to_first_observed_completion_upper_bound_ms": [
+    303984,
+    78692,
+    33018,
+    86313,
+    85120,
+    75714,
+    56935,
+    61626
+  ],
+  "tool_latency": "NOT_OBSERVED",
+  "output_latency": "NOT_OBSERVED",
+  "exact_response_latency": "NOT_OBSERVED",
+  "note": "Polling bounds include time spent on audit tasks; not exact platform execution latency."
+}

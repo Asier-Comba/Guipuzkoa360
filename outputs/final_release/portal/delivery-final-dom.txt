@@ -1,0 +1,200 @@
+- region "Notifications alt+T"
+- generic "Connection Error:"
+- link "Saltar al contenido":
+  - /url: "#platform-main"
+- banner:
+  - link "Gipuzkoa AI Hackathon · MIT Media Lab City Science":
+    - /url: /area/
+    - strong: GIPUZKOA AI HACKATHON
+    - generic: MIT MEDIA LAB · CITY SCIENCE
+  - navigation "Áreas de la plataforma":
+    - link "Inicio":
+      - /url: /area/
+    - link "Formación":
+      - /url: /area/formacion/
+    - link "Equipo":
+      - /url: /hackathon/area/equipo/
+    - generic "Abrir secciones de Urban Challenge":
+      - generic: Urban Challenge
+      - generic: ⌄
+    - generic "Disponible para los equipos clasificados":
+      - generic: ◇
+      - generic: Final
+  - generic "Abrir menú de cuenta":
+    - generic: O
+    - strong: Oier Duñabeitia Berezo
+    - generic: Participante
+    - generic: ⌄
+- main:
+  - button "Proyecto GIPUZKOA 360":
+    - generic: Proyecto
+    - strong: GIPUZKOA 360
+  - tablist "Secciones del espacio de trabajo":
+    - 'tab "Resumen: Estado del proyecto y siguiente acción"':
+      - strong: Resumen
+    - 'tab "Datos: Archivos, mapas y procesamiento"':
+      - strong: Datos
+      - generic: "47"
+    - 'tab "Agentes: Construcción con Python o Langflow"':
+      - strong: Agentes
+      - generic: "10"
+    - 'tab "Pruebas: Verificación con versiones creadas"':
+      - strong: Pruebas
+      - generic: "8"
+    - 'tab "Entrega: Revisión y publicación del proyecto" [selected]':
+      - strong: Entrega
+    - 'tab "Asistente IA: Ayuda para analizar, editar y ejecutar el proyecto"':
+      - strong: Asistente IA
+  - generic "Estado del workspace":
+    - generic "Ver estado y actividad del workspace":
+      - generic: 1 persona
+    - button "Reiniciar el entorno del equipo":
+      - generic: ↻
+    - button "Ejemplo resuelto"
+    - button "?"
+  - 'tabpanel "Entrega: Revisión y publicación del proyecto"':
+    - heading "Publica el proyecto del equipo" [level=2]
+    - paragraph: La entrega reúne la definición del reto y una versión fija del agente. Los materiales visuales y las conversaciones sirven para explicar la evidencia, pero son opcionales.
+    - generic: Borrador privado
+    - region "Qué es obligatorio y qué es opcional":
+      - generic: OBLIGATORIO
+      - strong: Ficha completa + versión del agente + track + equipo confirmado
+      - generic: OPCIONAL
+      - strong: Explicación, mapas, informes, enlaces y conversaciones revisadas
+    - region "GIPUZKOA 360":
+      - generic: VISTA PREVIA
+      - generic: Gipuzkoa.
+      - heading "GIPUZKOA 360" [level=1]
+      - paragraph: Combinamos un análisis de los 88 municipios para detectar dónde estudiar el acceso sanitario con el cálculo de una visita completa en los trayectos disponibles. Así hacemos visibles el viaje, las esperas, el paseo, la consulta y el regreso, con sus fuentes y límites.
+      - term: Pregunta de investigación
+      - definition: ¿Cómo cambia la carga temporal de una visita sanitaria para personas que dependen del transporte público cuando cambia el municipio de origen, la hora de la cita o su duración?
+      - term: Quién utilizará el resultado
+      - definition: Equipos técnicos de movilidad, cuidados y planificación territorial.
+      - generic: DeustoAI Labs
+      - generic: GIPUZKOA 360 · Visita sanitaria · v3
+      - generic: 12 ejecuciones terminadas de esta versión · sin evaluar
+    - region "Materiales de la entrega":
+      - heading "1. Elige la versión que presentas" [level=2]
+      - generic: Versión que presentáis
+      - combobox "Versión que presentáis":
+        - option "Selecciona una versión creada"
+        - option "GIPUZKOA 360 · Visita sanitaria · v3" [selected]
+        - option "GIPUZKOA 360 vNext R14 binding 094745b · v1"
+        - option "GIPUZKOA 360 vNext R13 patch3 3951b290 · v1"
+        - option "GIPUZKOA 360 · Versión final · v6"
+        - option "GIPUZKOA 360 · Final · v5"
+        - option "urban-challenge-rc2-195b498 · v4"
+        - option "urban-challenge-rc2-ae62080 · v3"
+        - option "urban-challenge-rc2-d8ec018 · v2"
+        - option "GIPUZKOA 360 integración Work 2 · v1"
+        - option "GIPUZKOA 360 · RC2 compact · v1"
+        - option "GIPUZKOA 360 · RC2 runtime · v1"
+        - option "GIPUZKOA 360 · RC1 exacto · v1"
+        - option "GIPUZKOA 360 · integración jurado · v3"
+        - option "GIPUZKOA 360 · integración jurado · v2"
+        - option "GIPUZKOA 360 · integración jurado · v1"
+      - paragraph: Crear otra versión en Agentes no cambia esta selección. Publicar entrega comparte la versión elegida aquí y los materiales seleccionados.
+      - heading "2. Añade materiales que ayuden a entenderla · opcional" [level=2]
+      - paragraph: La ficha de Resumen ya explica el proyecto. Aquí podéis mostrar un resultado, un mapa o una conversación revisada si aportan evidencia.
+      - generic: Explicación breve · opcional
+      - textbox "Explicación breve · opcional":
+        - /placeholder: Podéis explicar para qué sirve, mostrar un resultado y señalar sus límites.
+        - text: "Hemos construido GIPUZKOA 360 para entender cuánto ocupa una visita sanitaria cuando dependemos del autobús: no solo el viaje, también las esperas, el paseo, la consulta y el regreso. Primero exploramos los 88 municipios para detectar dónde merece la pena estudiar el acceso. Después calculamos la visita completa en los trayectos con datos suficientes. En la conversación seleccionada, una consulta de 20 minutos desde las paradas de Zegama al Ambulatorio de Beasain el 29 de septiembre de 2026, a las 09:30, ocupa 2 h 58 min 11 s (10.691 s): de 08:09:37 a 11:07:48. El autobús sale a las 08:12:37; los tres minutos anteriores son espera inicial. Manteniendo todo igual y cambiando la cita a las 09:45, nuestro agente vuelve a calcular: 2 h 23 min 11 s (8.591 s). Son 35 minutos menos entre dos escenarios programados, no un ahorro observado ni una recomendación. El cálculo de visitas admite Zegama, Segura e Idiazabal y la fecha indicada. Usamos horarios programados y paseo modelado; empezamos y terminamos en paradas, no en el domicilio. No conocemos disponibilidad de citas ni capacidad asistencial, y no hemos verificado la entrada física del centro: conservamos un conflicto de dirección entre fuentes. Fuentes: Moveuskadi/Goierrialdea (horarios del 28/09 al 27/12/2026), Open Data Euskadi (centros, 20/09/2026), Osakidetza (ficha consultada el 29/09/2026) y © OpenStreetMap contributors, ODbL 1.0 (red obtenida el 29/09/2026). La población procede de Eustat, a 01/01/2025; son fuentes con fechas distintas, no una fotografía temporal homogénea. El primer enlace es una visualización del análisis territorial inicial, no una demo de la visita sanitaria. El segundo contiene el código y las fuentes. Hemos contrastado las cifras de la conversación con los datos del cálculo. Somos DeustoAI Labs — Universidad de Deusto: Oier Duñabeitia Berezo, Asier Comba Lopez y Hugo Fernández Díez."
+      - generic: Enlaces · 2/20 · opcionales, uno por línea
+      - textbox "Enlaces · 2/20 · opcionales, uno por línea":
+        - /placeholder: https://…
+        - text: https://asier-comba.github.io/Guipuzkoa360/ https://github.com/Asier-Comba/Guipuzkoa360
+      - heading "Archivos · opcionales" [level=3]
+      - paragraph: Mapas, informes, imágenes o vídeos que ayuden a entender el resultado. Hasta 100 MB por archivo. El código y los datos necesarios ya forman parte de la versión del agente.
+      - generic: Subir materiales
+      - button "Subir materiales"
+      - generic: Archivos seleccionados · 0/20
+      - searchbox "Archivos seleccionados · 0/20"
+      - button "Buscar en todos los archivos"
+      - checkbox "entrega/exec_e2b14af680fb4b0682ed10eb247eb4f5/demo.html"
+      - generic: entrega/exec_e2b14af680fb4b0682ed10eb247eb4f5/demo.html
+      - paragraph: Publicar conserva una copia de los archivos marcados. Editarlos o moverlos a la papelera no cambia esa copia; actualizar la entrega publica la nueva selección.
+      - generic "Compartir conversaciones de prueba · opcional"
+      - paragraph: Se guardará una copia del texto de preguntas y respuestas de las conversaciones seleccionadas. Revisadlas antes de hacerlas públicas. No se exige un número de pruebas.
+      - paragraph: 1/10 conversaciones seleccionadas. Para mostrar operaciones, descarga y revisa la evidencia desde Pruebas y adjunta el archivo si te resulta útil.
+      - checkbox "Quiero estudiar una visita sanitaria desde Ordizia. · 1 ejecución terminada"
+      - generic: Quiero estudiar una visita sanitaria desde Ordizia. · 1 ejecución terminada
+      - checkbox "Mañana salgo desde mi casa. Dime a qué hora debería pedir ci… · 1 ejecución terminada"
+      - generic: Mañana salgo desde mi casa. Dime a qué hora debería pedir ci… · 1 ejecución terminada
+      - checkbox "Salgo desde las paradas de Segura y tengo una consulta de 30… · 2 ejecuciones terminadas"
+      - generic: Salgo desde las paradas de Segura y tengo una consulta de 30… · 2 ejecuciones terminadas
+      - checkbox "Compara Eibar y Tolosa para población de 75 o más años y exp… · 1 ejecución terminada"
+      - generic: Compara Eibar y Tolosa para población de 75 o más años y exp… · 1 ejecución terminada
+      - checkbox "Cuéntame qué muestran los datos de Tolosa sobre población ma… · 2 ejecuciones terminadas"
+      - generic: Cuéntame qué muestran los datos de Tolosa sobre población ma… · 2 ejecuciones terminadas
+      - checkbox "Hola. Estoy estudiando el acceso sanitario en Gipuzkoa pero … · 1 ejecución terminada"
+      - generic: Hola. Estoy estudiando el acceso sanitario en Gipuzkoa pero … · 1 ejecución terminada
+      - checkbox "¿Qué otros orígenes admite este análisis y puedes decirme en… · 1 ejecución terminada"
+      - generic: ¿Qué otros orígenes admite este análisis y puedes decirme en… · 1 ejecución terminada
+      - checkbox "Desde las paradas del centro de Zegama, quiero ir al Ambulat… · 2 ejecuciones terminadas" [checked]
+      - generic: Desde las paradas del centro de Zegama, quiero ir al Ambulat… · 2 ejecuciones terminadas
+      - checkbox "En Aduna, ¿cuántas personas tienen 75 años o más y qué porce… · 1 ejecución terminada"
+      - generic: En Aduna, ¿cuántas personas tienen 75 años o más y qué porce… · 1 ejecución terminada
+      - button "Guardar borrador"
+      - button "Vista previa de lo que compartiréis"
+      - region "Vista previa completa de la entrega":
+        - heading "GIPUZKOA 360" [level=3]
+        - term: Territorio
+        - definition: Gipuzkoa.
+        - term: Pregunta de investigación
+        - definition: ¿Cómo cambia la carga temporal de una visita sanitaria para personas que dependen del transporte público cuando cambia el municipio de origen, la hora de la cita o su duración?
+        - term: Quién utilizará el resultado
+        - definition: Equipos técnicos de movilidad, cuidados y planificación territorial.
+        - term: Para qué servirá
+        - definition: Combinamos un análisis de los 88 municipios para detectar dónde estudiar el acceso sanitario con el cálculo de una visita completa en los trayectos disponibles. Así hacemos visibles el viaje, las esperas, el paseo, la consulta y el regreso, con sus fuentes y límites.
+        - paragraph: Categoría por elegir
+        - paragraph: GIPUZKOA 360 · Visita sanitaria · v3
+        - paragraph: "Hemos construido GIPUZKOA 360 para entender cuánto ocupa una visita sanitaria cuando dependemos del autobús: no solo el viaje, también las esperas, el paseo, la consulta y el regreso. Primero exploramos los 88 municipios para detectar dónde merece la pena estudiar el acceso. Después calculamos la visita completa en los trayectos con datos suficientes. En la conversación seleccionada, una consulta de 20 minutos desde las paradas de Zegama al Ambulatorio de Beasain el 29 de septiembre de 2026, a las 09:30, ocupa 2 h 58 min 11 s (10.691 s): de 08:09:37 a 11:07:48. El autobús sale a las 08:12:37; los tres minutos anteriores son espera inicial. Manteniendo todo igual y cambiando la cita a las 09:45, nuestro agente vuelve a calcular: 2 h 23 min 11 s (8.591 s). Son 35 minutos menos entre dos escenarios programados, no un ahorro observado ni una recomendación. El cálculo de visitas admite Zegama, Segura e Idiazabal y la fecha indicada. Usamos horarios programados y paseo modelado; empezamos y terminamos en paradas, no en el domicilio. No conocemos disponibilidad de citas ni capacidad asistencial, y no hemos verificado la entrada física del centro: conservamos un conflicto de dirección entre fuentes. Fuentes: Moveuskadi/Goierrialdea (horarios del 28/09 al 27/12/2026), Open Data Euskadi (centros, 20/09/2026), Osakidetza (ficha consultada el 29/09/2026) y © OpenStreetMap contributors, ODbL 1.0 (red obtenida el 29/09/2026). La población procede de Eustat, a 01/01/2025; son fuentes con fechas distintas, no una fotografía temporal homogénea. El primer enlace es una visualización del análisis territorial inicial, no una demo de la visita sanitaria. El segundo contiene el código y las fuentes. Hemos contrastado las cifras de la conversación con los datos del cálculo. Somos DeustoAI Labs — Universidad de Deusto: Oier Duñabeitia Berezo, Asier Comba Lopez y Hugo Fernández Díez."
+        - list:
+          - listitem: https://asier-comba.github.io/Guipuzkoa360/
+          - listitem: https://github.com/Asier-Comba/Guipuzkoa360
+        - generic "Desde las paradas del centro de Zegama, quiero ir al Ambulat…" [active]
+        - strong: Pregunta
+        - paragraph: Desde las paradas del centro de Zegama, quiero ir al Ambulatorio de Beasain el 29 de septiembre de 2026 para una consulta a las 09:30 que dura 20 minutos y regresar. ¿Qué carga temporal completa resultaría con los datos disponibles?
+        - strong: Respuesta
+        - paragraph
+        - strong: Respuesta
+        - paragraph
+        - strong: Respuesta
+        - paragraph: La **carga temporal completa modelada** sería de **2 h 58 min 11 s (10.691 s)**. - **Intervalo completo:** de **08:09:37 a 11:07:48** - **Ámbito:** desde la presencia en la parada de origen hasta la llegada a la parada de regreso. - **Salida de Zegama:** GO01 desde **Zegama - Elizalde 6 - Plaza**, 08:12:37. - **Llegada prevista a la parada de Beasain:** 08:40:08. - **Consulta:** 09:30–09:50. - **Regreso:** salida modelada desde **Beasain - San Inazio 10**, 10:29:50; llegada a **Zegama - Elizalde Kalea 4**, 11:07:48. **Desglose de la carga:** | Componente | Tiempo | |---|---:| | Espera inicial | 3 min | | Vehículo de ida | 27 min 31 s | | Paseo modelado hasta el ambulatorio | 7 min | | Espera previa a la consulta | 42 min 52 s | | Consulta | 20 min | | Paseo modelado de regreso | 16 min | | Espera para el regreso | 23 min 50 s | | Vehículo de vuelta | 37 min 58 s | | **Total** | **2 h 58 min 11 s** | Es un cálculo con **horario programado GTFS** —periodo **2026-09-28/2026-12-27**— y paseo modelado con el perfil disponible; no es tiempo real ni un trayecto puerta a puerta. El destino es un punto oficial modelado del Ambulatorio de Beasain, no una entrada física verificada. La dirección presenta un conflicto entre fuentes, que queda pendiente de revisión humana.
+        - strong: Pregunta
+        - paragraph: Mantén todo igual pero cambia la cita a las 09:45. Recalcula y compárala con la anterior.
+        - strong: Respuesta
+        - paragraph
+        - strong: Respuesta
+        - paragraph: "La nueva carga temporal modelada para la cita de las **09:45** es de **2 h 23 min 11 s (8.591 s)**. | | Cita 09:30 | Cita 09:45 | |---|---:|---:| | Intervalo completo | 08:09:37–11:07:48 | 08:44:37–11:07:48 | | Espera inicial | 3 min | 3 min | | Vehículo de ida | 27 min 31 s | 29 min 29 s | | Paseo hasta el ambulatorio | 7 min | 7 min | | Espera previa | 42 min 52 s | 20 min 54 s | | Consulta | 20 min | 20 min | | Paseo de regreso | 16 min | 16 min | | Espera de regreso | 23 min 50 s | 8 min 50 s | | Vehículo de vuelta | 37 min 58 s | 37 min 58 s | | **Carga total** | **2 h 58 min 11 s** | **2 h 23 min 11 s** | Con los horarios programados observados, el escenario de las **09:45** abarca **35 minutos menos** que el de las 09:30. La salida de ida sería a las **08:47:37**, llegada a la parada de Beasain a las **09:17:06**, y el regreso mantendría la misma salida, **10:29:50**, con llegada a Zegama a las **11:07:48**. La comparación es condicional a los mismos parámetros: GO01 estático —periodo **2026-09-28/2026-12-27**—, paseo modelado y ámbito desde la presencia en la parada hasta la llegada a la parada de regreso. No es tiempo real, ni supone una recomendación, disponibilidad de cita o acceso puerta a puerta."
+        - paragraph: La ficha pública mostrará la definición, el nombre de la versión y estos materiales. El código y los datos de la versión podrán ser inspeccionados por la organización desde su acceso autorizado.
+      - status
+    - complementary:
+      - generic: 3. REVISIÓN FINAL
+      - strong: 3/4
+      - list:
+        - generic: ✓
+        - strong: Equipo de 3–4 personas
+        - generic: 3 personas confirmadas. Puedes trabajar y guardar borradores mientras completas el equipo.
+        - generic: ✓
+        - strong: Definición completa
+        - generic: Nombre, territorio, pregunta, destinatario y utilidad del resultado.
+        - generic: ✓
+        - strong: Versión reproducible
+        - generic: Seleccionad la versión concreta que queréis presentar.
+        - generic: ·
+        - strong: Track preferente
+        - generic: Vuestra primera opción para la selección.
+      - generic: Track preferente
+      - combobox "Track preferente El track es vuestra modalidad preferente para la final. Elegid equipos industriales o de servicios; si no entráis en la primera opción, también se os valorará para la otra.":
+        - option "Seleccionad vuestro track preferente" [selected]
+        - option "Equipos industriales"
+        - option "Equipos de servicios"
+      - generic: El track es vuestra modalidad preferente para la final. Elegid equipos industriales o de servicios; si no entráis en la primera opción, también se os valorará para la otra.
+      - paragraph:
+        - text: Antes de publicar, contrastad una cifra de la versión elegida y revisad sus conclusiones y límites.
+        - button "Revisar en Pruebas"
+      - checkbox "He revisado la ficha, la versión y los materiales seleccionados. Entiendo que se harán públicos." [disabled]
+      - generic: He revisado la ficha, la versión y los materiales seleccionados. Entiendo que se harán públicos.
+      - button "Publicar entrega" [disabled]

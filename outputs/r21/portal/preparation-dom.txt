@@ -1,0 +1,314 @@
+- region "Notifications alt+T"
+- generic "Connection Error:"
+- link "Saltar al contenido":
+  - /url: "#platform-main"
+- banner:
+  - link "Gipuzkoa AI Hackathon · MIT Media Lab City Science":
+    - /url: /area/
+    - strong: GIPUZKOA AI HACKATHON
+    - generic: MIT MEDIA LAB · CITY SCIENCE
+  - navigation "Áreas de la plataforma":
+    - link "Inicio":
+      - /url: /area/
+    - link "Formación":
+      - /url: /area/formacion/
+    - link "Equipo":
+      - /url: /hackathon/area/equipo/
+    - generic "Abrir secciones de Urban Challenge":
+      - generic: Urban Challenge
+      - generic: ⌄
+    - generic "Disponible para los equipos clasificados":
+      - generic: ◇
+      - generic: Final
+  - generic "Abrir menú de cuenta":
+    - generic: O
+    - strong: Oier Duñabeitia Berezo
+    - generic: Participante
+    - generic: ⌄
+- main:
+  - button "Proyecto GIPUZKOA 360":
+    - generic: Proyecto
+    - strong: GIPUZKOA 360
+  - tablist "Secciones del espacio de trabajo":
+    - 'tab "Resumen: Estado del proyecto y siguiente acción"':
+      - strong: Resumen
+    - 'tab "Datos: Archivos, mapas y procesamiento"':
+      - strong: Datos
+      - generic: "47"
+    - 'tab "Agentes: Construcción con Python o Langflow" [selected]':
+      - strong: Agentes
+      - generic: "13"
+    - 'tab "Pruebas: Verificación con versiones creadas"':
+      - strong: Pruebas
+      - generic: "9"
+    - 'tab "Entrega: Revisión y publicación del proyecto"':
+      - strong: Entrega
+    - 'tab "Asistente IA: Ayuda para analizar, editar y ejecutar el proyecto"':
+      - strong: Asistente IA
+  - generic "Estado del workspace":
+    - generic "Ver estado y actividad del workspace":
+      - generic: 1 persona
+    - button "Reiniciar el entorno del equipo":
+      - generic: ↻
+    - button "Ayuda de Agentes · Python": Ayuda
+    - button "Ejemplo resuelto"
+    - button "?"
+  - 'tabpanel "Agentes: Construcción con Python o Langflow"':
+    - region "Construcción de agentes":
+      - toolbar "Modo y contexto del agente":
+        - navigation "Forma de construir agentes":
+          - button "Python 13" [pressed]:
+            - generic: </>
+            - strong: Python
+            - emphasis: "13"
+          - button "Langflow 0":
+            - generic: ◇
+            - strong: Langflow
+            - emphasis: "0"
+        - generic: Agente activo
+        - combobox "Agente Python activo":
+          - option "Agente principal · borrador"
+          - option "GIPUZKOA 360 · borrador" [selected]
+          - option "GIPUZKOA 360 · borrador"
+          - option "GIPUZKOA 360 · v1"
+          - option "GIPUZKOA 360 · Visita sanitaria · v4"
+          - option "GIPUZKOA 360 vNext R14 binding 094745b · v1"
+          - option "GIPUZKOA 360 vNext R13 patch3 3951b290 · v1"
+          - option "GIPUZKOA 360 vNext R12 b4feb978 · borrador"
+          - option "GIPUZKOA 360 · Versión final · v6"
+          - option "GIPUZKOA 360 · RC2 compact · v1"
+          - option "GIPUZKOA 360 · RC2 runtime · v1"
+          - option "GIPUZKOA 360 · RC1 exacto · v1"
+          - option "GIPUZKOA 360 · integración jurado · v3"
+        - button "Ocultar agentes y archivos" [expanded]:
+          - generic: ▤
+          - generic: Archivos
+        - button "Nuevo agente":
+          - generic: +
+          - text: Nuevo agente
+        - button "Preparar con IA"
+        - button "Crear versión del agente"
+      - complementary "Agentes Python y sus archivos":
+        - generic: PYTHON
+        - strong: Agentes del equipo
+        - article:
+          - button "Agente principal raíz · borrador":
+            - generic: A
+            - strong: Agente principal
+            - generic: raíz · borrador
+        - article:
+          - button "GIPUZKOA 360 agentes/gipuzkoa_360_3 · borrador":
+            - generic: A
+            - strong: GIPUZKOA 360
+            - generic: agentes/gipuzkoa_360_3 · borrador
+          - generic "Acciones de GIPUZKOA 360": •••
+        - article:
+          - button "GIPUZKOA 360 agentes/gipuzkoa_360_2 · borrador":
+            - generic: A
+            - strong: GIPUZKOA 360
+            - generic: agentes/gipuzkoa_360_2 · borrador
+          - generic "Acciones de GIPUZKOA 360": •••
+        - article:
+          - button "GIPUZKOA 360 agentes/gipuzkoa_360 · versión v1":
+            - generic: A
+            - strong: GIPUZKOA 360
+            - generic: agentes/gipuzkoa_360 · versión v1
+          - generic "Acciones de GIPUZKOA 360": •••
+        - article:
+          - button "GIPUZKOA 360 · Visita sanitaria agentes/gipuzkoa_360_visita_sanitaria · versión v4":
+            - generic: A
+            - strong: GIPUZKOA 360 · Visita sanitaria
+            - generic: agentes/gipuzkoa_360_visita_sanitaria · versión v4
+          - generic "Acciones de GIPUZKOA 360 · Visita sanitaria": •••
+        - article:
+          - button "GIPUZKOA 360 vNext R14 binding 094745b agentes/gipuzkoa_360_vnext_r14_binding_094745b · versión v1":
+            - generic: A
+            - strong: GIPUZKOA 360 vNext R14 binding 094745b
+            - generic: agentes/gipuzkoa_360_vnext_r14_binding_094745b · versión v1
+          - generic "Acciones de GIPUZKOA 360 vNext R14 binding 094745b": •••
+        - article:
+          - button "GIPUZKOA 360 vNext R13 patch3 3951b290 agentes/gipuzkoa_360_vnext_r13_patch3_3951b290 · versión v1":
+            - generic: A
+            - strong: GIPUZKOA 360 vNext R13 patch3 3951b290
+            - generic: agentes/gipuzkoa_360_vnext_r13_patch3_3951b290 · versión v1
+          - generic "Acciones de GIPUZKOA 360 vNext R13 patch3 3951b290": •••
+        - article:
+          - button "GIPUZKOA 360 vNext R12 b4feb978 agentes/gipuzkoa_360_vnext_r12_b4feb978 · borrador":
+            - generic: A
+            - strong: GIPUZKOA 360 vNext R12 b4feb978
+            - generic: agentes/gipuzkoa_360_vnext_r12_b4feb978 · borrador
+          - generic "Acciones de GIPUZKOA 360 vNext R12 b4feb978": •••
+        - article:
+          - button "GIPUZKOA 360 · Versión final agentes/gipuzkoa_360_integracion_work_2 · versión v6":
+            - generic: A
+            - strong: GIPUZKOA 360 · Versión final
+            - generic: agentes/gipuzkoa_360_integracion_work_2 · versión v6
+          - generic "Acciones de GIPUZKOA 360 · Versión final": •••
+        - article:
+          - button "GIPUZKOA 360 · RC2 compact agentes/gipuzkoa_360_rc2_compact · versión v1":
+            - generic: A
+            - strong: GIPUZKOA 360 · RC2 compact
+            - generic: agentes/gipuzkoa_360_rc2_compact · versión v1
+          - generic "Acciones de GIPUZKOA 360 · RC2 compact": •••
+        - article:
+          - button "GIPUZKOA 360 · RC2 runtime agentes/gipuzkoa_360_rc2_runtime · versión v1":
+            - generic: A
+            - strong: GIPUZKOA 360 · RC2 runtime
+            - generic: agentes/gipuzkoa_360_rc2_runtime · versión v1
+          - generic "Acciones de GIPUZKOA 360 · RC2 runtime": •••
+        - article:
+          - button "GIPUZKOA 360 · RC1 exacto agentes/gipuzkoa_360_rc1_exacto · versión v1":
+            - generic: A
+            - strong: GIPUZKOA 360 · RC1 exacto
+            - generic: agentes/gipuzkoa_360_rc1_exacto · versión v1
+          - generic "Acciones de GIPUZKOA 360 · RC1 exacto": •••
+        - article:
+          - button "GIPUZKOA 360 · integración jurado agentes/gipuzkoa_360_integracion_jurado · versión v3":
+            - generic: A
+            - strong: GIPUZKOA 360 · integración jurado
+            - generic: agentes/gipuzkoa_360_integracion_jurado · versión v3
+          - generic "Acciones de GIPUZKOA 360 · integración jurado": •••
+        - generic: ARCHIVOS DEL AGENTE
+        - strong: agentes/gipuzkoa_360_3
+        - button "PY ejecucion.py Funciones que puede ejecutar":
+          - generic: PY
+          - strong: ejecucion.py
+          - generic: Funciones que puede ejecutar
+        - button "PY main.py Prompt, modelo y configuración":
+          - generic: PY
+          - strong: main.py
+          - generic: Prompt, modelo y configuración
+        - button "PY tools.py Funciones que puede ejecutar":
+          - generic: PY
+          - strong: tools.py
+          - generic: Funciones que puede ejecutar
+      - toolbar "Acciones del archivo activo":
+        - generic: agentes/gipuzkoa_360_3/main.py
+        - generic: Guardado
+        - link "Descargar":
+          - /url: https://app.gipuzkoa-ai-hackathon.com/api/studio/files/file_f804933c408b47ca8a93cb062dcb5180/content?download=1
+        - button "▶ Comprobar preparación"
+      - generic "Editor de agentes/gipuzkoa_360_3/main.py":
+        - generic: "41"
+        - generic: "42"
+        - generic: "43"
+        - generic: "44"
+        - generic: "45"
+        - generic: "46"
+        - generic: "47"
+        - generic: "48"
+        - generic: "49"
+        - generic: "50"
+        - generic: "51"
+        - generic: "52"
+        - generic: "53"
+        - generic: "54"
+        - generic: "55"
+        - generic: "56"
+        - generic: "57"
+        - generic: "58"
+        - generic: "59"
+        - generic: "60"
+        - generic: "61"
+        - generic: "62"
+        - generic: "63"
+        - generic: "64"
+        - generic: "65"
+        - generic: "66"
+        - generic: "67"
+        - generic: "68"
+        - generic: "69"
+        - generic: "70"
+        - generic: "71"
+        - generic: "72"
+        - generic: "73"
+        - generic: "74"
+        - generic: "75"
+        - generic: "76"
+        - generic: "77"
+        - generic: "78"
+        - generic: "79"
+        - generic: "80"
+        - generic: "81"
+        - generic: "82"
+        - generic: "83"
+        - generic: "84"
+        - generic: "85"
+        - generic: "86"
+        - generic: "87"
+        - generic: "88"
+        - generic: "89"
+        - generic: "90"
+        - generic: "91"
+        - generic: "92"
+        - generic: "93"
+        - generic: "94"
+        - generic: "95"
+        - generic: "96"
+        - generic: "97"
+        - generic: "98"
+        - generic: "99"
+        - generic: "100"
+        - generic: "101"
+        - generic: "102"
+        - generic: "103"
+        - generic: "104"
+        - generic: "105"
+        - generic: "106"
+        - generic: "107"
+        - generic: "108"
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - generic: ⌄
+        - textbox:
+          - generic: "\"\"\"Candidate coordinator for the portal-provided LLM and deterministic tools.\"\"\""
+          - generic: "@tool"
+          - generic: "def obtener_resumen_territorial(municipio: str) -> str:"
+          - generic: "\"\"\"Resumen observado de un municipio por nombre o código. Usa la única referencia demográfica disponible, indicada en el resultado. Las fuentes sanitarias conservan sus propias fechas.\"\"\""
+          - generic: "return _run(\"obtener_resumen_territorial\", {\"municipio\": municipio})"
+          - generic: "@tool"
+          - generic: "def analizar_envejecimiento(grupo_edad: Literal['65', '75'] = '65', medida: Literal['percentage', 'count'] = 'percentage', top_n: int = 10) -> str:"
+          - generic: "\"\"\"Ordena municipios por porcentaje o recuento del grupo de edad. top_n: entero 1–100. La referencia demográfica es fija y figura en la salida; no selecciona años históricos.\"\"\""
+          - generic: return _run('analizar_envejecimiento', locals())
+          - generic: "@tool"
+          - generic: "def analizar_coincidencia(categoria_servicio: Literal['primary_care', 'hospital', 'mental_health', 'other_health'], grupo_edad: Literal['65', '75'] = '65', umbral_km: float = 1.0, cuantil: float = 0.75) -> str:"
+          - generic: "\"\"\"Cruce descriptivo entre proporción municipal de edad y distancia desde punto municipal a registro. umbral_km: >0 y <=100 km; cuantil: nivel de exigencia entre 0.5 y 0.95. Snapshots fijas con fechas distintas. No mide causalidad ni residentes próximos ni cobertura individual.\"\"\""
+          - generic: return _run('analizar_coincidencia', locals())
+          - generic: "@tool"
+          - generic: def plan_visit(
+          - generic: "origin_id: str,"
+          - generic: "destination_id: str,"
+          - generic: "date: str,"
+          - generic: "appointment_time: str,"
+          - generic: "duration_minutes: int,"
+          - generic: ") -> str:"
+          - generic: "\"\"\"Plan one scheduled/modelled health visit using exactly five required fields. Get IDs, validated date and duration bounds from consultar_capacidades. date is YYYY-MM-DD, appointment_time is HH:MM, duration_minutes is integer minutes. Calculation assumptions stay internal. To compare, call once per visit and compare observed valid outputs. No realtime, appointment availability, verified entrance or door-to-door.\"\"\""
+          - generic: "request = {"
+          - generic: "\"origin_id\": origin_id,"
+          - generic: "\"destination_id\": destination_id,"
+          - generic: "\"date\": date,"
+          - generic: "\"appointment_time\": appointment_time,"
+          - generic: "\"duration_minutes\": duration_minutes,"
+          - generic: "}"
+          - generic: "return _run(\"plan_visit\", {\"request\": request})"
+          - generic: "\"\"\"Build-time public action wrappers. No analytical implementation here.\"\"\""
+          - generic: "def _run(name: str, args: dict[str, Any]) -> str:"
+          - generic: "try:"
+          - generic: root = evidence._workspace_root()
+          - generic: "except evidence.ContractViolation:"
+          - generic: root = None
+          - generic: return evidence.public_call(name, args, uuid4().hex, root=root)
+          - generic: "@tool"
+          - generic: "def analizar_acceso_general(categoria_servicio: Literal['primary_care', 'hospital', 'mental_health', 'other_health'], umbral_km: float) -> str:"
+      - separator "Cambiar altura de la consola"
+      - strong: Consola
+      - generic: Ejecución aislada completada
+      - button "Ampliar"
+      - button "Ocultar"
+      - generic: Ejecución completada sin salida.

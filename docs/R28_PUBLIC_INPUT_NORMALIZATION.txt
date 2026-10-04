@@ -1,0 +1,56 @@
+R28 bounded public visit input normalization
+
+Base: PR34, 33bb86de68fe6da68d68196b681e8bbf5f67902a.
+Authorization: PR34 comments 5979643296 and 5981054712; final takeover mission.
+
+Observed R27 failure: an independent supported comparison used public labels and
+DD/MM/YYYY and returned comparison_unverified. No infrastructure cause is inferred.
+
+Only tools.py changes versus the integrated R27 distribution. main.py, its ten
+tools/five-field visit signature, prompt/presentation guards, all context members,
+provider, data, snapshot, mathematical engine and threshold ledger are preserved.
+
+Before the existing request/comparison path, public plan_visit resolves origin ID,
+municipality name or origin label and destination ID or official destination label.
+The catalogue loader verifies existing pinned catalogue/consumer-label SHA256s.
+Matching uses the existing casefold/Unicode accent/whitespace normalizer. Exact
+canonical IDs retain identity; noncanonical matches must resolve to exactly one ID.
+Unknown or ambiguous labels fail closed with named invalid fields and supported
+public labels. No substring/fuzzy match or manually listed municipality exception.
+
+Date grammar is explicitly YYYY-MM-DD or DD/MM/YYYY, with calendar validation.
+DD/MM/YYYY means day/month/year, including dates where day and month are <=12;
+this is a documented input grammar, not locale inference. Other separators,
+two-digit years, loose-width dates and relative dates are rejected. Normalizing a
+calendar date does not expand the provider's supported service-date coverage.
+
+Canonical calls return the preceding implementation's exact serialized output.
+Normalized calls retain original public_input and expose canonical_arguments and
+changed_fields separately. Analytical claims/raw results/effective parameters are
+unchanged. The full existing verification still executes after normalization.
+
+Reproduce build: python -m scripts.vnext_agent.build_r28
+Focused properties: python -m pytest -q tests/vnext_agent/test_r28_inputs.py
+Full raw/oracle/fuzz gate: python -m scripts.vnext_agent.verify_r28
+Full test environment on Windows: set PYTHONUTF8=1 for parent and child processes.
+CI workflow: .github/workflows/r28-validation.yml, Linux and Windows.
+Double build requires equal ZIP and manifest hashes; compare both CI artifacts.
+
+Validation-process incident preserved: the first local full-suite attempt ran
+alongside a focused historical health-suite diagnostic that rebuilt the same
+historical R15 ZIP. The focused diagnostic observed BadZipFile during concurrent
+rebuild. That diagnostic is not candidate failure evidence. The full suite was
+interrupted and restarted without concurrent historical rebuilds, with UTF-8
+inherited by child processes. Do not use the interrupted attempt as acceptance.
+
+Offline validation is not a portal/LLM acceptance claim. One immutable portal
+version and eight no-retry real cases remain mandatory. Stop on material failure.
+No main merge, no R29, no publication; final confirmation remains human.
+
+Focused first pass: seven tests passed; one verifier assertion incorrectly demanded
+an unchanged threshold evidence code fingerprint after intentionally changing
+tools.py. A direct two-package observation isolated the sole difference to
+threshold_transition_ledger.evidence_versions.code_sha256; raw results, data and
+contract fingerprints matched. The corrected verifier checks each code fingerprint
+against its actual ZIP member, then requires exact equality of all remaining fields.
+No runtime workaround or suppression of mathematical differences was introduced.

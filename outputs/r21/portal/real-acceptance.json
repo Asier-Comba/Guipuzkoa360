@@ -1,0 +1,39 @@
+{
+  "classification": "REAL_STUDIO_OBSERVATIONS_NOT_SIMULATED",
+  "runtime_sha": "b0096e9aeda533ed0a43f56bf98975becf4022d8",
+  "zip_sha256": "a714bac1fa91caebe3e8ef6fb65259c4f11447120479ecf51dce4813cfba5dc2",
+  "manifest_sha256": "6d425d3e194e6fea016ae4a4b685ae2e50af978897278539d17b7bb03fad31b9",
+  "version_id": "agentv_488851cc28d143be972ced32584fc582",
+  "protocol_sha256": "9166debb4d54458e54413f3da875543ddc55ab79a9a9348369dfb2ec57ab1928",
+  "served_tools": 10,
+  "messages": 3,
+  "critical": 0,
+  "high": 1,
+  "medium": 0,
+  "low": 1,
+  "unsupported_material_claims": 2,
+  "targeted": [
+    {
+      "id": "01",
+      "result": "PASS_WITH_LOW_VERBOSITY"
+    },
+    {
+      "id": "02",
+      "result": "PASS"
+    },
+    {
+      "id": "03",
+      "result": "FAIL_HIGH_SOURCE_PERIOD_ATTRIBUTION"
+    }
+  ],
+  "remaining_targeted": "NOT_EXECUTED_STOP",
+  "general_sample": "NOT_EXECUTED_STOP",
+  "public_conversation": "NOT_CREATED_STOP",
+  "delivery": "UNCHANGED_PRIVATE; new candidate not selected",
+  "presentation": "NOT_CREATED_CONDITIONAL_GATE_FAILED",
+  "agent_engineering_complete": false,
+  "ready_for_human_final_gate": false,
+  "holdout": "SEALED_NOT_EXECUTED",
+  "latency_measurement": "Observed upper bounds only, not actual model event times;case02 conservative pre-send lower bound;case01 final response observation delayed by evidence review.",
+  "stop": "User R21section25: first realCritical/High/Medium stops testing; noR22 orpatch."
+}

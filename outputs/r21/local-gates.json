@@ -1,0 +1,21 @@
+{
+  "classification": "AUTHOR_OFFLINE_NOT_PORTAL_OR_LLM",
+  "python": {"passed": 780, "failed": 0, "duration_s": 414.62, "evidence": "outputs/r21/local-pytest.xml", "environment": "Python 3.12.14; PYTHONUTF8=1"},
+  "node": {"passed": 17, "failed": 0},
+  "raw_parity": {"passed": 901, "total": 901},
+  "oracle": {"passed": 7, "total": 7},
+  "composed_comparisons": 26,
+  "metamorphic_properties": {"passed": 14, "total": 14},
+  "negative_cases": 195,
+  "malformed_input_fuzz": 5000,
+  "offline_findings": [],
+  "runtime_identity": "PASS: 14 legacy v4 files at 195b4980fa5998b096c308296a55e452380b0371",
+  "jury_gate": "PASS",
+  "artifact_gate": "PASS",
+  "diff_check": "PASS",
+  "independent_builds": {"same_bytes": true, "zip_sha256": "a714bac1fa91caebe3e8ef6fb65259c4f11447120479ecf51dce4813cfba5dc2", "manifest_sha256": "6d425d3e194e6fea016ae4a4b685ae2e50af978897278539d17b7bb03fad31b9", "bytes": 240430},
+  "real_messages": 0,
+  "portal": "NOT_RUN",
+  "holdout": "SEALED_NOT_EXECUTED",
+  "initial_verifier_attempts": "15 PASS / 2 FAIL caused by canonical dictionary key order and null URLs for non-web provenance; fixed in verifier, not runtime. Initial audit used an unsupported test-only origin spelling and an already-loaded pre-correction order assertion. No results transferred from either attempt."
+}

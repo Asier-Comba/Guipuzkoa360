@@ -1,0 +1,5453 @@
+{
+  "attribution_claims": 10399,
+  "base": "81c42da2e8ab7074074d9f114d4ac7990e715da4",
+  "base_r21": "f955669adb2920718b5b888b916681fc00dc3593",
+  "base_r25_runtime": "f955669adb2920718b5b888b916681fc00dc3593",
+  "changed_members": [
+    "main.py",
+    "tools.py"
+  ],
+  "classification": "AUTHOR_OFFLINE_NOT_PORTAL_OR_LLM",
+  "comparison_boundary": "New time pairs tested separately; existing single requests mapped only appointment_time -> appointment_times singleton. Raw results/effective requests/claims must remain equal.",
+  "composed_comparisons": 26,
+  "corpus": 264,
+  "expanded_corpus_calls": 297,
+  "findings": [],
+  "focal": 245,
+  "fuzz": 5000,
+  "generation": "R26",
+  "manifest_sha256": "dae1dfee59ebbd8839b3ab7468be9c04b4e0d9abd621e933a751824575b40a3e",
+  "metamorphic": {
+    "age_isolation": true,
+    "all_88_names_codes": true,
+    "both_age_methods_catalog": true,
+    "boundary_rejection": true,
+    "claim_grounding": true,
+    "code_name_equivalence": true,
+    "composed_comparison": true,
+    "defaults_equivalence": true,
+    "entity_substitution": true,
+    "public_health_totals": true,
+    "selector_order": true,
+    "source_cards_complete": true,
+    "source_stability": true,
+    "threshold_only": true
+  },
+  "model_calls": 0,
+  "negative": 195,
+  "oracle": 7,
+  "parity_policy": "All raw/effective requests/claims unchanged; remove ONLY additive source_attributions before claim equality",
+  "public_tools": 10,
+  "raw_cases": 901,
+  "raw_parity": 901,
+  "records": [
+    {
+      "id": "general:primary_care",
+      "issues": [],
+      "raw_sha256": "73aae3d64c8b70760e6770eb5541a09e8db8414407a600b0ae4a591541e49089",
+      "status": "valid"
+    },
+    {
+      "id": "selected:primary_care:Getaria",
+      "issues": [],
+      "raw_sha256": "70c3409ec9385e1226e2377d905c8c43a0eb7c95868c9b013b64ca8b229a82e1",
+      "status": "valid"
+    },
+    {
+      "id": "selected:primary_care:Aduna",
+      "issues": [],
+      "raw_sha256": "b9830ce9008b01ffbd6cf32c00b57a268f916f611c7f363e542a17aa555bd1b1",
+      "status": "valid"
+    },
+    {
+      "id": "selected:primary_care:Eibar",
+      "issues": [],
+      "raw_sha256": "e0a6f609ea6e28f7095a94525ee1ba5386b8156835148edc75b20333f0d1427f",
+      "status": "valid"
+    },
+    {
+      "id": "selected:primary_care:Tolosa",
+      "issues": [],
+      "raw_sha256": "d98c4a03a0165b43f5d2de92cfbf99dcc257afb29065446fda666238f8e6151d",
+      "status": "valid"
+    },
+    {
+      "id": "change:primary_care:1:6",
+      "issues": [],
+      "raw_sha256": "421e71129fc3d4f092e66a0cdbcf0c345c52ea68a65fd801ba997e287282282b",
+      "status": "valid"
+    },
+    {
+      "id": "change:primary_care:2:3",
+      "issues": [],
+      "raw_sha256": "4f48a49435d8f94d5bbb26f694a85c9ff24892eca4cc93f16ee5e8af72a68713",
+      "status": "valid"
+    },
+    {
+      "id": "change:primary_care:100:1",
+      "issues": [],
+      "raw_sha256": "11f308ddfa0dc12017738d370e6596302cbb0443bc83fb051acbf5a54e8151ba",
+      "status": "valid"
+    },
+    {
+      "id": "change:primary_care:1:1",
+      "issues": [],
+      "raw_sha256": "bb9711a4ed78de3af1825c51367a99d413ab810463361da4907cac0c7d3892bf",
+      "status": "valid"
+    },
+    {
+      "id": "add:primary_care",
+      "issues": [],
+      "raw_sha256": "e440bab5ddac97a2501a350df24d7d19e086906631e1029a3e0215ccf0aa3ad2",
+      "status": "valid"
+    },
+    {
+      "id": "general:mental_health",
+      "issues": [],
+      "raw_sha256": "c1c371cd933da2132da13bae69226cadb6663cb89ee39c54bd18bc77e16b52bb",
+      "status": "valid"
+    },
+    {
+      "id": "selected:mental_health:Getaria",
+      "issues": [],
+      "raw_sha256": "1607a99e928cbd0b94af5795b956e4b1145ff51cbb80913efab210bc27963658",
+      "status": "valid"
+    },
+    {
+      "id": "selected:mental_health:Aduna",
+      "issues": [],
+      "raw_sha256": "ef6445436a2cd354b3f51fd7c5ddc53568c96d17b5e14dc147483c0452c52c9d",
+      "status": "valid"
+    },
+    {
+      "id": "selected:mental_health:Eibar",
+      "issues": [],
+      "raw_sha256": "7664c1de7098dfa0c586d68caf9764dd5a18d080196d3e70930cfa39c801fc55",
+      "status": "valid"
+    },
+    {
+      "id": "selected:mental_health:Tolosa",
+      "issues": [],
+      "raw_sha256": "913bdd51f709d9cbbec8182254e52ef5b32fa521ab0cc4ca40a9b82d864c3a8c",
+      "status": "valid"
+    },
+    {
+      "id": "change:mental_health:1:6",
+      "issues": [],
+      "raw_sha256": "62c45fe61545615071bd520a6c45d64da7baf1e4a8a4a011f796d5719f70e4c3",
+      "status": "valid"
+    },
+    {
+      "id": "change:mental_health:2:3",
+      "issues": [],
+      "raw_sha256": "972eeca1d905bce96974ffb007a41d558d5d83302ab25ba936b770c72b19081c",
+      "status": "valid"
+    },
+    {
+      "id": "change:mental_health:100:1",
+      "issues": [],
+      "raw_sha256": "ac24baca5b5a8d8b93cb29b5bfcf13d9a37968cd6200d2242c4ca71e611e7161",
+      "status": "valid"
+    },
+    {
+      "id": "change:mental_health:1:1",
+      "issues": [],
+      "raw_sha256": "e82fd54f06e3d15f5981e981c167b85b313fe3477494c7e2a9d54300bc8b7c6b",
+      "status": "valid"
+    },
+    {
+      "id": "add:mental_health",
+      "issues": [],
+      "raw_sha256": "1d1dd2e331871ef86dd3883a7839f925c3229f1ec4b9d8ad7543b9169ca7c5de",
+      "status": "valid"
+    },
+    {
+      "id": "general:hospital",
+      "issues": [],
+      "raw_sha256": "f189be9461a102cb2d3319fc1d71df73b6a1427c963b5183459b45d9086a1548",
+      "status": "valid"
+    },
+    {
+      "id": "selected:hospital:Getaria",
+      "issues": [],
+      "raw_sha256": "03685bf011d3bbd0ca9ba0fe45eefe024abb22488489fa74050c0127282b1617",
+      "status": "valid"
+    },
+    {
+      "id": "selected:hospital:Aduna",
+      "issues": [],
+      "raw_sha256": "bb2b3adaa489b7769ffc9ded1b4814513e62ca59360f3bc97f7229886201275c",
+      "status": "valid"
+    },
+    {
+      "id": "selected:hospital:Eibar",
+      "issues": [],
+      "raw_sha256": "e13053004721070122f169110c4899a787a758c8073931db70f10d4f5586367c",
+      "status": "valid"
+    },
+    {
+      "id": "selected:hospital:Tolosa",
+      "issues": [],
+      "raw_sha256": "8a5235a397929e0b53366b1eab8399bfd488c6f299d951599e326ce0bff88f8a",
+      "status": "valid"
+    },
+    {
+      "id": "change:hospital:1:6",
+      "issues": [],
+      "raw_sha256": "6395b8585bca49dcfd9eb030c29180dcd1f673e3ad7a69cecee738140e0e8149",
+      "status": "valid"
+    },
+    {
+      "id": "change:hospital:2:3",
+      "issues": [],
+      "raw_sha256": "4387982989632f9ceb0990c28a1266b184ba56c4901d843bdb50db196fb3260e",
+      "status": "valid"
+    },
+    {
+      "id": "change:hospital:100:1",
+      "issues": [],
+      "raw_sha256": "20301b5c9e33d7405a866901e4ab1dd15752499a373f71019b3d8e7acc44af54",
+      "status": "valid"
+    },
+    {
+      "id": "change:hospital:1:1",
+      "issues": [],
+      "raw_sha256": "ed3a46bf2842c6690e41969c57c5aa81d11f350235e54bab73c67fb0839cea0b",
+      "status": "valid"
+    },
+    {
+      "id": "add:hospital",
+      "issues": [],
+      "raw_sha256": "90d982aca98b1ec06f859ac932a586a5575019b7a0da6c51cba688ff3bdf9515",
+      "status": "valid"
+    },
+    {
+      "id": "general:other_health",
+      "issues": [],
+      "raw_sha256": "690bbd7ced6c9730fd485734a46ac4a4ff79b5c52962ac8a5ae065823d7d5b51",
+      "status": "valid"
+    },
+    {
+      "id": "selected:other_health:Getaria",
+      "issues": [],
+      "raw_sha256": "e11e881654907546ee81e590d503e71d5106cbf88fb1bca6007d295585c2756b",
+      "status": "valid"
+    },
+    {
+      "id": "selected:other_health:Aduna",
+      "issues": [],
+      "raw_sha256": "cb3fba8db06e4ee216c6b896d0d2038ceb878954e162af0387f72973337ab0de",
+      "status": "valid"
+    },
+    {
+      "id": "selected:other_health:Eibar",
+      "issues": [],
+      "raw_sha256": "8902f39437e66f159ddeb01417264951fdb40f033997545e8948ef5fab9f4959",
+      "status": "valid"
+    },
+    {
+      "id": "selected:other_health:Tolosa",
+      "issues": [],
+      "raw_sha256": "821e9db46a7520ac795eedcbcfd8f22ec03a84f4d8581f5a8806fa426b361f6d",
+      "status": "valid"
+    },
+    {
+      "id": "change:other_health:1:6",
+      "issues": [],
+      "raw_sha256": "a56b53dbf90c073ee230f0bd20c31204e0ee2f6d7783d4ec7cdc1d139650012f",
+      "status": "valid"
+    },
+    {
+      "id": "change:other_health:2:3",
+      "issues": [],
+      "raw_sha256": "09f2c602bfb5ff8540e18a8f4572b02db8217bb8b8406505579cdcb87c8fc570",
+      "status": "valid"
+    },
+    {
+      "id": "change:other_health:100:1",
+      "issues": [],
+      "raw_sha256": "6a5abeb14461ff026ee47a7cde0fda9dd801dba8f5e3c6c274ecc8ae7e0b4d06",
+      "status": "valid"
+    },
+    {
+      "id": "change:other_health:1:1",
+      "issues": [],
+      "raw_sha256": "8a0f354af491e6cdbcac83240a9490727f80748e7a139ab77a2bf49e0bd07280",
+      "status": "valid"
+    },
+    {
+      "id": "add:other_health",
+      "issues": [],
+      "raw_sha256": "3c0dd728bc24a310bc54c58caac396a6309b81a650c2ed2c33115ff1408b8ddb",
+      "status": "valid"
+    },
+    {
+      "id": "caps",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "summary",
+      "issues": [],
+      "raw_sha256": "379a0c368db3ec1a56728d72b946d43718c4c6eb8c1307c9b70a310e0789dbca",
+      "status": "valid"
+    },
+    {
+      "id": "source",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "rank65",
+      "issues": [],
+      "raw_sha256": "bc7ceb33f87514b5d1e7a180934f9f2cb828ea92d7b0a455bf238e84e0cd7052",
+      "status": "valid"
+    },
+    {
+      "id": "compare65:0",
+      "issues": [],
+      "raw_sha256": "e863eaaa53bd20638637eaa4cefe0ae666a4f1d48947d031c70013e00e23d1c4",
+      "status": "valid"
+    },
+    {
+      "id": "compare65:1",
+      "issues": [],
+      "raw_sha256": "f8a61d107c3caf59be7e11a007503fda2976ecb65070ac7c876ebf460d1e356a",
+      "status": "valid"
+    },
+    {
+      "id": "compare_reverse65:0",
+      "issues": [],
+      "raw_sha256": "f8a61d107c3caf59be7e11a007503fda2976ecb65070ac7c876ebf460d1e356a",
+      "status": "valid"
+    },
+    {
+      "id": "compare_reverse65:1",
+      "issues": [],
+      "raw_sha256": "e863eaaa53bd20638637eaa4cefe0ae666a4f1d48947d031c70013e00e23d1c4",
+      "status": "valid"
+    },
+    {
+      "id": "coincidence65",
+      "issues": [],
+      "raw_sha256": "655aebdc8866755edd3e34f64750179c25f836d3302d014232ae1e6322ea937c",
+      "status": "valid"
+    },
+    {
+      "id": "rank75",
+      "issues": [],
+      "raw_sha256": "8b20c13ceef09d7f56909cc52125b0fa64b87af6a0ad971d5d7408778fb2bcec",
+      "status": "valid"
+    },
+    {
+      "id": "compare75:0",
+      "issues": [],
+      "raw_sha256": "e863eaaa53bd20638637eaa4cefe0ae666a4f1d48947d031c70013e00e23d1c4",
+      "status": "valid"
+    },
+    {
+      "id": "compare75:1",
+      "issues": [],
+      "raw_sha256": "f8a61d107c3caf59be7e11a007503fda2976ecb65070ac7c876ebf460d1e356a",
+      "status": "valid"
+    },
+    {
+      "id": "compare_reverse75:0",
+      "issues": [],
+      "raw_sha256": "f8a61d107c3caf59be7e11a007503fda2976ecb65070ac7c876ebf460d1e356a",
+      "status": "valid"
+    },
+    {
+      "id": "compare_reverse75:1",
+      "issues": [],
+      "raw_sha256": "e863eaaa53bd20638637eaa4cefe0ae666a4f1d48947d031c70013e00e23d1c4",
+      "status": "valid"
+    },
+    {
+      "id": "coincidence75",
+      "issues": [],
+      "raw_sha256": "5678f9de00f7b413792d3dfe5eeded5b6876bd2afc9d1f67552d605b8d645c47",
+      "status": "valid"
+    },
+    {
+      "id": "selector:['Getaria', 'Eibar']",
+      "issues": [],
+      "raw_sha256": "9380ba45b7dcd7144fd7545d0a592d752507cf7375aa9136f9a3cd0bac0a7d91",
+      "status": "valid"
+    },
+    {
+      "id": "selector:['Eibar', 'Getaria']",
+      "issues": [],
+      "raw_sha256": "9380ba45b7dcd7144fd7545d0a592d752507cf7375aa9136f9a3cd0bac0a7d91",
+      "status": "valid"
+    },
+    {
+      "id": "selector:['20039']",
+      "issues": [],
+      "raw_sha256": "1607a99e928cbd0b94af5795b956e4b1145ff51cbb80913efab210bc27963658",
+      "status": "valid"
+    },
+    {
+      "id": "selector:['Getaria']",
+      "issues": [],
+      "raw_sha256": "1607a99e928cbd0b94af5795b956e4b1145ff51cbb80913efab210bc27963658",
+      "status": "valid"
+    },
+    {
+      "id": "defaults:omitted",
+      "issues": [],
+      "raw_sha256": "ad7dda445b888a60abccbf415eb70a54cf696054f3b48c498f7b6772dbbf8049",
+      "status": "valid"
+    },
+    {
+      "id": "defaults:explicit",
+      "issues": [],
+      "raw_sha256": "ad7dda445b888a60abccbf415eb70a54cf696054f3b48c498f7b6772dbbf8049",
+      "status": "valid"
+    },
+    {
+      "id": "repeat_source:57",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "repeat_source:58",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20001:municipality_name",
+      "issues": [],
+      "raw_sha256": "c172be38d3f05dcbad62b59cf757510c78132e78582c7803287127285a79cd7c",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20001:municipality_code",
+      "issues": [],
+      "raw_sha256": "c172be38d3f05dcbad62b59cf757510c78132e78582c7803287127285a79cd7c",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20002:municipality_name",
+      "issues": [],
+      "raw_sha256": "379a0c368db3ec1a56728d72b946d43718c4c6eb8c1307c9b70a310e0789dbca",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20002:municipality_code",
+      "issues": [],
+      "raw_sha256": "379a0c368db3ec1a56728d72b946d43718c4c6eb8c1307c9b70a310e0789dbca",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20003:municipality_name",
+      "issues": [],
+      "raw_sha256": "26975ca29c7269566b6b855a582480a8483f4709178ec073318e2c2a8b4ab8c1",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20003:municipality_code",
+      "issues": [],
+      "raw_sha256": "26975ca29c7269566b6b855a582480a8483f4709178ec073318e2c2a8b4ab8c1",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20004:municipality_name",
+      "issues": [],
+      "raw_sha256": "b711494407154ddbebcbd056a734cb9eac9025ca05377e6b92e5c95e13d1d16a",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20004:municipality_code",
+      "issues": [],
+      "raw_sha256": "b711494407154ddbebcbd056a734cb9eac9025ca05377e6b92e5c95e13d1d16a",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20005:municipality_name",
+      "issues": [],
+      "raw_sha256": "a8c586662a22666c73394352affeb8db634366929405ce23656af8cbaec0f5f2",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20005:municipality_code",
+      "issues": [],
+      "raw_sha256": "a8c586662a22666c73394352affeb8db634366929405ce23656af8cbaec0f5f2",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20006:municipality_name",
+      "issues": [],
+      "raw_sha256": "f89b96ab68ef580b118efbd44b4ccc19bd17d6a84103f17463b52418b24a4a1a",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20006:municipality_code",
+      "issues": [],
+      "raw_sha256": "f89b96ab68ef580b118efbd44b4ccc19bd17d6a84103f17463b52418b24a4a1a",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20007:municipality_name",
+      "issues": [],
+      "raw_sha256": "bb164477f990ac4ed2831000768ab3c684f18b0cfb1ed2c02808967549b280ee",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20007:municipality_code",
+      "issues": [],
+      "raw_sha256": "bb164477f990ac4ed2831000768ab3c684f18b0cfb1ed2c02808967549b280ee",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20008:municipality_name",
+      "issues": [],
+      "raw_sha256": "46eee7fdaa9f0e195114bf87280852ddcc133b4e0c16d13e909682280f1cb22c",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20008:municipality_code",
+      "issues": [],
+      "raw_sha256": "46eee7fdaa9f0e195114bf87280852ddcc133b4e0c16d13e909682280f1cb22c",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20009:municipality_name",
+      "issues": [],
+      "raw_sha256": "db04579ccd9847aefabca0739bb99b33a41ac7e3e1eab90685f128246b6ea536",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20009:municipality_code",
+      "issues": [],
+      "raw_sha256": "db04579ccd9847aefabca0739bb99b33a41ac7e3e1eab90685f128246b6ea536",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20010:municipality_name",
+      "issues": [],
+      "raw_sha256": "6250140730da6ddf86a39247f810031a0d22ed8329680821e8bedbc838b83ad2",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20010:municipality_code",
+      "issues": [],
+      "raw_sha256": "6250140730da6ddf86a39247f810031a0d22ed8329680821e8bedbc838b83ad2",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20011:municipality_name",
+      "issues": [],
+      "raw_sha256": "2d151e2d3d7f3a0433d80a826f4ece253a1db35d86e02e74edf75c9199c667b6",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20011:municipality_code",
+      "issues": [],
+      "raw_sha256": "2d151e2d3d7f3a0433d80a826f4ece253a1db35d86e02e74edf75c9199c667b6",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20012:municipality_name",
+      "issues": [],
+      "raw_sha256": "8f999dc9503455ff1d92a49afd6c1c05cbf17915310b24a747bbd34ece5e8628",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20012:municipality_code",
+      "issues": [],
+      "raw_sha256": "8f999dc9503455ff1d92a49afd6c1c05cbf17915310b24a747bbd34ece5e8628",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20013:municipality_name",
+      "issues": [],
+      "raw_sha256": "ee1d3540f171ed9bf404cbf9dfddc3b157fe5a72202343b513f54614b0aa19b0",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20013:municipality_code",
+      "issues": [],
+      "raw_sha256": "ee1d3540f171ed9bf404cbf9dfddc3b157fe5a72202343b513f54614b0aa19b0",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20014:municipality_name",
+      "issues": [],
+      "raw_sha256": "deab408d375748bd8e639b7dab4fe7cc19fbc1048102e7b8bf332fb24ad70b4f",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20014:municipality_code",
+      "issues": [],
+      "raw_sha256": "deab408d375748bd8e639b7dab4fe7cc19fbc1048102e7b8bf332fb24ad70b4f",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20015:municipality_name",
+      "issues": [],
+      "raw_sha256": "a95603b41bbdc3701a787a77d2906645c0c1900f803c9a3cbec07133e2148ee1",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20015:municipality_code",
+      "issues": [],
+      "raw_sha256": "a95603b41bbdc3701a787a77d2906645c0c1900f803c9a3cbec07133e2148ee1",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20016:municipality_name",
+      "issues": [],
+      "raw_sha256": "62e072cf09c66c9a1c427c49d08125d1364b1e2fff09e321686a9f60be600e3f",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20016:municipality_code",
+      "issues": [],
+      "raw_sha256": "62e072cf09c66c9a1c427c49d08125d1364b1e2fff09e321686a9f60be600e3f",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20017:municipality_name",
+      "issues": [],
+      "raw_sha256": "2bd9f2205b7c17c8c57c294da20f8631a932311f760e0bddeb6083e27998e160",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20017:municipality_code",
+      "issues": [],
+      "raw_sha256": "2bd9f2205b7c17c8c57c294da20f8631a932311f760e0bddeb6083e27998e160",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20018:municipality_name",
+      "issues": [],
+      "raw_sha256": "3c8a2122722b5edb9e97a64fbd9b9b2a5f8981e34b0686ff7e247c8efe4aff20",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20018:municipality_code",
+      "issues": [],
+      "raw_sha256": "3c8a2122722b5edb9e97a64fbd9b9b2a5f8981e34b0686ff7e247c8efe4aff20",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20019:municipality_name",
+      "issues": [],
+      "raw_sha256": "6e63893818d82d8082a54d97d95a934eaff7c2141d3b99ddb7bedf72069088e7",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20019:municipality_code",
+      "issues": [],
+      "raw_sha256": "6e63893818d82d8082a54d97d95a934eaff7c2141d3b99ddb7bedf72069088e7",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20020:municipality_name",
+      "issues": [],
+      "raw_sha256": "639b1165477be56c823dc946dd3edaa22b2871717903ecdbc12b0d6d018413a7",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20020:municipality_code",
+      "issues": [],
+      "raw_sha256": "639b1165477be56c823dc946dd3edaa22b2871717903ecdbc12b0d6d018413a7",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20021:municipality_name",
+      "issues": [],
+      "raw_sha256": "36ff9dd8141d9e8418412beee91cc847bc5ca72c45a60c465052bf667b0afe56",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20021:municipality_code",
+      "issues": [],
+      "raw_sha256": "36ff9dd8141d9e8418412beee91cc847bc5ca72c45a60c465052bf667b0afe56",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20022:municipality_name",
+      "issues": [],
+      "raw_sha256": "996a7b8649a4d4b3984ac7ba5e90fac9a15eae2f1765a2afdc3a2e4c8038d605",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20022:municipality_code",
+      "issues": [],
+      "raw_sha256": "996a7b8649a4d4b3984ac7ba5e90fac9a15eae2f1765a2afdc3a2e4c8038d605",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20023:municipality_name",
+      "issues": [],
+      "raw_sha256": "77defd5141a8347f984aa3830687f4431feb7cbc7b5a90242aff64610cf296b5",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20023:municipality_code",
+      "issues": [],
+      "raw_sha256": "77defd5141a8347f984aa3830687f4431feb7cbc7b5a90242aff64610cf296b5",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20024:municipality_name",
+      "issues": [],
+      "raw_sha256": "e900eb253648c69fdf3a035b3a6c7295cf8ee4fd7e95f1f33f66ae682b114e6f",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20024:municipality_code",
+      "issues": [],
+      "raw_sha256": "e900eb253648c69fdf3a035b3a6c7295cf8ee4fd7e95f1f33f66ae682b114e6f",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20025:municipality_name",
+      "issues": [],
+      "raw_sha256": "8196c90b5e3a62e8528fbd3d982af0cec7f40b31b7601eaeba33996879a145f9",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20025:municipality_code",
+      "issues": [],
+      "raw_sha256": "8196c90b5e3a62e8528fbd3d982af0cec7f40b31b7601eaeba33996879a145f9",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20026:municipality_name",
+      "issues": [],
+      "raw_sha256": "d867918c6b77b5e454b99d0a3ae6fde1c9eec0d5369d32a1133b750a9464a85b",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20026:municipality_code",
+      "issues": [],
+      "raw_sha256": "d867918c6b77b5e454b99d0a3ae6fde1c9eec0d5369d32a1133b750a9464a85b",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20027:municipality_name",
+      "issues": [],
+      "raw_sha256": "d5cb744c1ec3081fb741b503794cfc47dcf8f5d0e0a5257ed9ba0d6b5fcfad53",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20027:municipality_code",
+      "issues": [],
+      "raw_sha256": "d5cb744c1ec3081fb741b503794cfc47dcf8f5d0e0a5257ed9ba0d6b5fcfad53",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20028:municipality_name",
+      "issues": [],
+      "raw_sha256": "f7e5a5ace125ac7d8740f607ec70f861108d106683813d6999aa2b76405b3a60",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20028:municipality_code",
+      "issues": [],
+      "raw_sha256": "f7e5a5ace125ac7d8740f607ec70f861108d106683813d6999aa2b76405b3a60",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20029:municipality_name",
+      "issues": [],
+      "raw_sha256": "99ebc9aff01e312d6f002094074c34d1ba681070eacecc3c51f132e1706bf028",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20029:municipality_code",
+      "issues": [],
+      "raw_sha256": "99ebc9aff01e312d6f002094074c34d1ba681070eacecc3c51f132e1706bf028",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20030:municipality_name",
+      "issues": [],
+      "raw_sha256": "e863eaaa53bd20638637eaa4cefe0ae666a4f1d48947d031c70013e00e23d1c4",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20030:municipality_code",
+      "issues": [],
+      "raw_sha256": "e863eaaa53bd20638637eaa4cefe0ae666a4f1d48947d031c70013e00e23d1c4",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20031:municipality_name",
+      "issues": [],
+      "raw_sha256": "2a4e3c0a2a9e5001a22bf87686a6d124749e97d7dfce0b69e212fa52a6faa9d7",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20031:municipality_code",
+      "issues": [],
+      "raw_sha256": "2a4e3c0a2a9e5001a22bf87686a6d124749e97d7dfce0b69e212fa52a6faa9d7",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20032:municipality_name",
+      "issues": [],
+      "raw_sha256": "1103e63df60db6b10d9e9c857e58865d24afd73c51c70f6e11243c90acb0cbec",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20032:municipality_code",
+      "issues": [],
+      "raw_sha256": "1103e63df60db6b10d9e9c857e58865d24afd73c51c70f6e11243c90acb0cbec",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20033:municipality_name",
+      "issues": [],
+      "raw_sha256": "2bff1121b2c321051fb879a1b7562148bb76e8ac47c22b561d4c0ccc20f6f552",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20033:municipality_code",
+      "issues": [],
+      "raw_sha256": "2bff1121b2c321051fb879a1b7562148bb76e8ac47c22b561d4c0ccc20f6f552",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20034:municipality_name",
+      "issues": [],
+      "raw_sha256": "ec81d56116c091de230f69b6005d44779574f6244df51c511b5f5aee9953fba8",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20034:municipality_code",
+      "issues": [],
+      "raw_sha256": "ec81d56116c091de230f69b6005d44779574f6244df51c511b5f5aee9953fba8",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20035:municipality_name",
+      "issues": [],
+      "raw_sha256": "7b42efd0bb8fdd98546e24ae6f42f3f5e9d8ccce0e0552ea5f48499c098bccf1",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20035:municipality_code",
+      "issues": [],
+      "raw_sha256": "7b42efd0bb8fdd98546e24ae6f42f3f5e9d8ccce0e0552ea5f48499c098bccf1",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20036:municipality_name",
+      "issues": [],
+      "raw_sha256": "66e2cd1352fe12babff0da3ac848cb3f1fdd42b73601005cada0e3c7af2ef7ad",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20036:municipality_code",
+      "issues": [],
+      "raw_sha256": "66e2cd1352fe12babff0da3ac848cb3f1fdd42b73601005cada0e3c7af2ef7ad",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20037:municipality_name",
+      "issues": [],
+      "raw_sha256": "f5d0300b91ed1c2516e29d48343aa36f83a97de37763e4f0ac9f85e433884817",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20037:municipality_code",
+      "issues": [],
+      "raw_sha256": "f5d0300b91ed1c2516e29d48343aa36f83a97de37763e4f0ac9f85e433884817",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20038:municipality_name",
+      "issues": [],
+      "raw_sha256": "2ef40cef0a0f7940868923bae6203d53d5eff4b8d0239193e4a190da5ed57ddd",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20038:municipality_code",
+      "issues": [],
+      "raw_sha256": "2ef40cef0a0f7940868923bae6203d53d5eff4b8d0239193e4a190da5ed57ddd",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20039:municipality_name",
+      "issues": [],
+      "raw_sha256": "4c715dbb711a9ffc48efebf4af9cc2d1b3f5f0bb32115690ef859b0d4914ba99",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20039:municipality_code",
+      "issues": [],
+      "raw_sha256": "4c715dbb711a9ffc48efebf4af9cc2d1b3f5f0bb32115690ef859b0d4914ba99",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20040:municipality_name",
+      "issues": [],
+      "raw_sha256": "c9869f092e26a4df1c029975dc9fbdd9d507b31965786b95b6e8abfd69884582",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20040:municipality_code",
+      "issues": [],
+      "raw_sha256": "c9869f092e26a4df1c029975dc9fbdd9d507b31965786b95b6e8abfd69884582",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20041:municipality_name",
+      "issues": [],
+      "raw_sha256": "7cc2b98fda8f333ed4958ce59089a888ca1a0a1a1e0cbea573b49e42d32db2a7",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20041:municipality_code",
+      "issues": [],
+      "raw_sha256": "7cc2b98fda8f333ed4958ce59089a888ca1a0a1a1e0cbea573b49e42d32db2a7",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20042:municipality_name",
+      "issues": [],
+      "raw_sha256": "848e7a95307a0e8012a72323ba94168122804f9e15792d4de4f3e7859853a1fa",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20042:municipality_code",
+      "issues": [],
+      "raw_sha256": "848e7a95307a0e8012a72323ba94168122804f9e15792d4de4f3e7859853a1fa",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20043:municipality_name",
+      "issues": [],
+      "raw_sha256": "78fa2b61fe685b6c6cc9e6c46abfd4ac71a740e82706bc608d0b6e2d14091be7",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20043:municipality_code",
+      "issues": [],
+      "raw_sha256": "78fa2b61fe685b6c6cc9e6c46abfd4ac71a740e82706bc608d0b6e2d14091be7",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20044:municipality_name",
+      "issues": [],
+      "raw_sha256": "8823c3634ee0ef658211104cbb3de638a993b5e659050818aaa18a1124a63a62",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20044:municipality_code",
+      "issues": [],
+      "raw_sha256": "8823c3634ee0ef658211104cbb3de638a993b5e659050818aaa18a1124a63a62",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20045:municipality_name",
+      "issues": [],
+      "raw_sha256": "db0c7496bff469940a720e767bb368e34efbfca38d9c8fb1d56a5af5ef744e5a",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20045:municipality_code",
+      "issues": [],
+      "raw_sha256": "db0c7496bff469940a720e767bb368e34efbfca38d9c8fb1d56a5af5ef744e5a",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20046:municipality_name",
+      "issues": [],
+      "raw_sha256": "786fb6ce4011d5c4cd98d9c64a7dbd370de89dd149ab9208b97f5de06aba0af2",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20046:municipality_code",
+      "issues": [],
+      "raw_sha256": "786fb6ce4011d5c4cd98d9c64a7dbd370de89dd149ab9208b97f5de06aba0af2",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20047:municipality_name",
+      "issues": [],
+      "raw_sha256": "f023f0f007adc0fca1c35d090a9a91c90fdec57964fe27b0cc107907ba8f78f3",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20047:municipality_code",
+      "issues": [],
+      "raw_sha256": "f023f0f007adc0fca1c35d090a9a91c90fdec57964fe27b0cc107907ba8f78f3",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20048:municipality_name",
+      "issues": [],
+      "raw_sha256": "f2b98addc2c3d7dddda33a1d66686ac353212a30a5947c85ed9bedbe8256daf6",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20048:municipality_code",
+      "issues": [],
+      "raw_sha256": "f2b98addc2c3d7dddda33a1d66686ac353212a30a5947c85ed9bedbe8256daf6",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20049:municipality_name",
+      "issues": [],
+      "raw_sha256": "26c0de33371d83069d2eac1fbda773d9a1ab5d2ec5d87c727d1db13d4c3442fb",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20049:municipality_code",
+      "issues": [],
+      "raw_sha256": "26c0de33371d83069d2eac1fbda773d9a1ab5d2ec5d87c727d1db13d4c3442fb",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20050:municipality_name",
+      "issues": [],
+      "raw_sha256": "c519b35dfbd4b0f8d28096c455f459e11730ac3c6006dbf3962f2e93fef9615e",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20050:municipality_code",
+      "issues": [],
+      "raw_sha256": "c519b35dfbd4b0f8d28096c455f459e11730ac3c6006dbf3962f2e93fef9615e",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20051:municipality_name",
+      "issues": [],
+      "raw_sha256": "420738d1ff993899cf882c030174f506513420468b5af346df2bce6c04931ac0",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20051:municipality_code",
+      "issues": [],
+      "raw_sha256": "420738d1ff993899cf882c030174f506513420468b5af346df2bce6c04931ac0",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20052:municipality_name",
+      "issues": [],
+      "raw_sha256": "071c94532f111c073b9c28dbb950981a1acb89b78849767110926a788f4d33ac",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20052:municipality_code",
+      "issues": [],
+      "raw_sha256": "071c94532f111c073b9c28dbb950981a1acb89b78849767110926a788f4d33ac",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20053:municipality_name",
+      "issues": [],
+      "raw_sha256": "bd039876bfeb96ad9c275ba1684d305acb6693f76a15ae75a272a5d93cae5c8f",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20053:municipality_code",
+      "issues": [],
+      "raw_sha256": "bd039876bfeb96ad9c275ba1684d305acb6693f76a15ae75a272a5d93cae5c8f",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20054:municipality_name",
+      "issues": [],
+      "raw_sha256": "5a4fe354f4001ffc7f24915aff6cff2a7e499066fd70f8f6a4fe2b8c9fa433ed",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20054:municipality_code",
+      "issues": [],
+      "raw_sha256": "5a4fe354f4001ffc7f24915aff6cff2a7e499066fd70f8f6a4fe2b8c9fa433ed",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20055:municipality_name",
+      "issues": [],
+      "raw_sha256": "61d2fc0023a6112915c369a76c8206e5467c9feb609707dff750b5acb094356a",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20055:municipality_code",
+      "issues": [],
+      "raw_sha256": "61d2fc0023a6112915c369a76c8206e5467c9feb609707dff750b5acb094356a",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20056:municipality_name",
+      "issues": [],
+      "raw_sha256": "7bb635c4f47c878a8c4e7c032a764768b8ac6512cd6a212c68fa604dfdc3afc5",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20056:municipality_code",
+      "issues": [],
+      "raw_sha256": "7bb635c4f47c878a8c4e7c032a764768b8ac6512cd6a212c68fa604dfdc3afc5",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20057:municipality_name",
+      "issues": [],
+      "raw_sha256": "8b339341421b301b69d2428e6ffbf2624fcdb19e5e14f82fc42813897204c98c",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20057:municipality_code",
+      "issues": [],
+      "raw_sha256": "8b339341421b301b69d2428e6ffbf2624fcdb19e5e14f82fc42813897204c98c",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20058:municipality_name",
+      "issues": [],
+      "raw_sha256": "46b3bae7ac1a1a301ef02fad483ef65a4b31714211aa44c43ba1071230d44d6e",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20058:municipality_code",
+      "issues": [],
+      "raw_sha256": "46b3bae7ac1a1a301ef02fad483ef65a4b31714211aa44c43ba1071230d44d6e",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20059:municipality_name",
+      "issues": [],
+      "raw_sha256": "d233aac49b0f3c1f63d3ce97d92b153d6b7fe30067e312ae532d2385ec8b2683",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20059:municipality_code",
+      "issues": [],
+      "raw_sha256": "d233aac49b0f3c1f63d3ce97d92b153d6b7fe30067e312ae532d2385ec8b2683",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20060:municipality_name",
+      "issues": [],
+      "raw_sha256": "040a0520a2c4e41dcb476ede2e5dc1c8a5a3ddab554a1ee36916a96eceb20556",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20060:municipality_code",
+      "issues": [],
+      "raw_sha256": "040a0520a2c4e41dcb476ede2e5dc1c8a5a3ddab554a1ee36916a96eceb20556",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20061:municipality_name",
+      "issues": [],
+      "raw_sha256": "f2a54af3a0f541b21f1816be5c71c65bacc86a892b922ad436bf104e77495fc6",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20061:municipality_code",
+      "issues": [],
+      "raw_sha256": "f2a54af3a0f541b21f1816be5c71c65bacc86a892b922ad436bf104e77495fc6",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20062:municipality_name",
+      "issues": [],
+      "raw_sha256": "5b59f1eff0f425456e743ed895fbccb39289917231293bee0153220bd2c3c8ac",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20062:municipality_code",
+      "issues": [],
+      "raw_sha256": "5b59f1eff0f425456e743ed895fbccb39289917231293bee0153220bd2c3c8ac",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20063:municipality_name",
+      "issues": [],
+      "raw_sha256": "8026ad00745125cc1d8620fa847dafac8300164cfaa7f3e2987b0407196a34e8",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20063:municipality_code",
+      "issues": [],
+      "raw_sha256": "8026ad00745125cc1d8620fa847dafac8300164cfaa7f3e2987b0407196a34e8",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20064:municipality_name",
+      "issues": [],
+      "raw_sha256": "0b6b529b444efd8c2fafc858656b0ccef57db471f4adba38b2ea1da5655dea61",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20064:municipality_code",
+      "issues": [],
+      "raw_sha256": "0b6b529b444efd8c2fafc858656b0ccef57db471f4adba38b2ea1da5655dea61",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20065:municipality_name",
+      "issues": [],
+      "raw_sha256": "1fc84503e4f30be5931fba0ae0da997bc33419db64ba73c6bea8feb65e4cb74e",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20065:municipality_code",
+      "issues": [],
+      "raw_sha256": "1fc84503e4f30be5931fba0ae0da997bc33419db64ba73c6bea8feb65e4cb74e",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20066:municipality_name",
+      "issues": [],
+      "raw_sha256": "483fe1778dfd10c273f540e12ea2e2667d4078b34329cb4f5348a39cead9d912",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20066:municipality_code",
+      "issues": [],
+      "raw_sha256": "483fe1778dfd10c273f540e12ea2e2667d4078b34329cb4f5348a39cead9d912",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20067:municipality_name",
+      "issues": [],
+      "raw_sha256": "d092bdc5ff543ac6f4c2da662b73e53565f13f9e2e249e4e44a39462b06ff708",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20067:municipality_code",
+      "issues": [],
+      "raw_sha256": "d092bdc5ff543ac6f4c2da662b73e53565f13f9e2e249e4e44a39462b06ff708",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20068:municipality_name",
+      "issues": [],
+      "raw_sha256": "00d6d56c9b0da7aa895d94e6ac2b9e7b04cc3b814d76a897f10607b6bfbe1d69",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20068:municipality_code",
+      "issues": [],
+      "raw_sha256": "00d6d56c9b0da7aa895d94e6ac2b9e7b04cc3b814d76a897f10607b6bfbe1d69",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20069:municipality_name",
+      "issues": [],
+      "raw_sha256": "9edfda69ef3aed2eb21dfa9f134fcbd2b1d05fe4c21924062e34c2a5b5bcb325",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20069:municipality_code",
+      "issues": [],
+      "raw_sha256": "9edfda69ef3aed2eb21dfa9f134fcbd2b1d05fe4c21924062e34c2a5b5bcb325",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20070:municipality_name",
+      "issues": [],
+      "raw_sha256": "4f90e5e4a69f8876a0e9cb800a2d6ba231647abab6923114ce0926bbdd06a034",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20070:municipality_code",
+      "issues": [],
+      "raw_sha256": "4f90e5e4a69f8876a0e9cb800a2d6ba231647abab6923114ce0926bbdd06a034",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20071:municipality_name",
+      "issues": [],
+      "raw_sha256": "f8a61d107c3caf59be7e11a007503fda2976ecb65070ac7c876ebf460d1e356a",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20071:municipality_code",
+      "issues": [],
+      "raw_sha256": "f8a61d107c3caf59be7e11a007503fda2976ecb65070ac7c876ebf460d1e356a",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20072:municipality_name",
+      "issues": [],
+      "raw_sha256": "7fc747d4955f954b8d49c571ab5e6a090f974207a5cdbd9b7a3167916e28504a",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20072:municipality_code",
+      "issues": [],
+      "raw_sha256": "7fc747d4955f954b8d49c571ab5e6a090f974207a5cdbd9b7a3167916e28504a",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20073:municipality_name",
+      "issues": [],
+      "raw_sha256": "3d5f20190fdd2e0a354418bb48b84d7a946a529d79c1308fee4290e36fb2eb8a",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20073:municipality_code",
+      "issues": [],
+      "raw_sha256": "3d5f20190fdd2e0a354418bb48b84d7a946a529d79c1308fee4290e36fb2eb8a",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20074:municipality_name",
+      "issues": [],
+      "raw_sha256": "18cab22dd17ff8f6d1527e4b945d01300e91a26e0b19811d249be7b7d38ca987",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20074:municipality_code",
+      "issues": [],
+      "raw_sha256": "18cab22dd17ff8f6d1527e4b945d01300e91a26e0b19811d249be7b7d38ca987",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20075:municipality_name",
+      "issues": [],
+      "raw_sha256": "826a211f56f9779dd1f6d57a778cc0844282a85044de2c3cf4b7aa7fdd728ab7",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20075:municipality_code",
+      "issues": [],
+      "raw_sha256": "826a211f56f9779dd1f6d57a778cc0844282a85044de2c3cf4b7aa7fdd728ab7",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20076:municipality_name",
+      "issues": [],
+      "raw_sha256": "9286f0d939af1e07bf85aad6b4204b14fc9c3dca88596bbe91aa42979561fed3",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20076:municipality_code",
+      "issues": [],
+      "raw_sha256": "9286f0d939af1e07bf85aad6b4204b14fc9c3dca88596bbe91aa42979561fed3",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20077:municipality_name",
+      "issues": [],
+      "raw_sha256": "509f49d63ad337063a96aa82501a4fe300eefa935db74cfcd7d382564d61745e",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20077:municipality_code",
+      "issues": [],
+      "raw_sha256": "509f49d63ad337063a96aa82501a4fe300eefa935db74cfcd7d382564d61745e",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20078:municipality_name",
+      "issues": [],
+      "raw_sha256": "13e5c5bc952cefe0641dedde3dcd4f343cc51303147b8d87fd5509166aab004b",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20078:municipality_code",
+      "issues": [],
+      "raw_sha256": "13e5c5bc952cefe0641dedde3dcd4f343cc51303147b8d87fd5509166aab004b",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20079:municipality_name",
+      "issues": [],
+      "raw_sha256": "6503f4a34604fddd71d77f90a5b4349db0c84c8573036778ef34177a0cc5f4a9",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20079:municipality_code",
+      "issues": [],
+      "raw_sha256": "6503f4a34604fddd71d77f90a5b4349db0c84c8573036778ef34177a0cc5f4a9",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20080:municipality_name",
+      "issues": [],
+      "raw_sha256": "e8c672c9247fd96b15f39a31f5f1e3b46d32bfd963684ee0034c91e89f45043d",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20080:municipality_code",
+      "issues": [],
+      "raw_sha256": "e8c672c9247fd96b15f39a31f5f1e3b46d32bfd963684ee0034c91e89f45043d",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20081:municipality_name",
+      "issues": [],
+      "raw_sha256": "2eb5ea9f71fc979df67a4fdecb0391911002d54359bb3a0fe3f70b18a828fc4a",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20081:municipality_code",
+      "issues": [],
+      "raw_sha256": "2eb5ea9f71fc979df67a4fdecb0391911002d54359bb3a0fe3f70b18a828fc4a",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20901:municipality_name",
+      "issues": [],
+      "raw_sha256": "6c812c9472d8795e5e94730e7d0012a5ed9fa943db5c125a7f14a90bf9184975",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20901:municipality_code",
+      "issues": [],
+      "raw_sha256": "6c812c9472d8795e5e94730e7d0012a5ed9fa943db5c125a7f14a90bf9184975",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20902:municipality_name",
+      "issues": [],
+      "raw_sha256": "b2c2ba3e2b5d724aaddb7af0b7610d68cb638d2a07c8db9f1d61c64764f76723",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20902:municipality_code",
+      "issues": [],
+      "raw_sha256": "b2c2ba3e2b5d724aaddb7af0b7610d68cb638d2a07c8db9f1d61c64764f76723",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20903:municipality_name",
+      "issues": [],
+      "raw_sha256": "d0565995679030e4cc15fd760a6b3b197cba7c2f7d0adfbddd2c406489506354",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20903:municipality_code",
+      "issues": [],
+      "raw_sha256": "d0565995679030e4cc15fd760a6b3b197cba7c2f7d0adfbddd2c406489506354",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20904:municipality_name",
+      "issues": [],
+      "raw_sha256": "9a1ea676d0c0e7453ae6136d4065241087ceddab0345529b99e6e4b786a9d33f",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20904:municipality_code",
+      "issues": [],
+      "raw_sha256": "9a1ea676d0c0e7453ae6136d4065241087ceddab0345529b99e6e4b786a9d33f",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20905:municipality_name",
+      "issues": [],
+      "raw_sha256": "03bb59ea1f60006a6a9e5509340adec6823f2c3fb7f4be9806d5ee963501e87e",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20905:municipality_code",
+      "issues": [],
+      "raw_sha256": "03bb59ea1f60006a6a9e5509340adec6823f2c3fb7f4be9806d5ee963501e87e",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20906:municipality_name",
+      "issues": [],
+      "raw_sha256": "94afe00dc07db0518c555bba140f219c1572fbf77722459f6636615fded1a4a3",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20906:municipality_code",
+      "issues": [],
+      "raw_sha256": "94afe00dc07db0518c555bba140f219c1572fbf77722459f6636615fded1a4a3",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20907:municipality_name",
+      "issues": [],
+      "raw_sha256": "1439ea51164fb2d87061aa455338fd6aa264936cb182cbffb2061824fa0b5dd4",
+      "status": "valid"
+    },
+    {
+      "id": "summary:20907:municipality_code",
+      "issues": [],
+      "raw_sha256": "1439ea51164fb2d87061aa455338fd6aa264936cb182cbffb2061824fa0b5dd4",
+      "status": "valid"
+    },
+    {
+      "id": "health:09:30",
+      "issues": [],
+      "raw_sha256": "cf0087ddb8fe570bc12d8806c36741d756c9d2fae169a9bd0dffe867896f91ab",
+      "status": "valid"
+    },
+    {
+      "id": "health:09:45",
+      "issues": [],
+      "raw_sha256": "fb23e6dccded434e448681261f986bc4824004295992b97e72b01062ed3cb5c5",
+      "status": "valid"
+    },
+    {
+      "id": "remove:primary_care",
+      "issues": [],
+      "raw_sha256": "c37da98ab169bd5881abbf535feca14d2f2a79aa52a4de4d8e65afde9a1d8573",
+      "status": "valid"
+    },
+    {
+      "id": "remove:hospital",
+      "issues": [],
+      "raw_sha256": "abbb19e3a6e89e3cf68b26b7285b9d72d6ccc97644010aca9c13284ada506093",
+      "status": "valid"
+    },
+    {
+      "id": "remove:mental_health",
+      "issues": [],
+      "raw_sha256": "584a5e451867074029d451d3f8f860da913521841abe90e073cbff2779b21be4",
+      "status": "valid"
+    },
+    {
+      "id": "remove:other_health",
+      "issues": [],
+      "raw_sha256": "094ae88d6260523fb98e3b0c578d8daa4da316ee1440762d4dc9e15b53e5922b",
+      "status": "valid"
+    },
+    {
+      "id": "discovery:00:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "discovery:01:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "discovery:02:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "discovery:03:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "discovery:04:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "discovery:05:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "discovery:06:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "discovery:07:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "discovery:08:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "discovery:09:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "discovery:10:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_lookup:00:0",
+      "issues": [],
+      "raw_sha256": "db04579ccd9847aefabca0739bb99b33a41ac7e3e1eab90685f128246b6ea536",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_lookup:01:0",
+      "issues": [],
+      "raw_sha256": "46b3bae7ac1a1a301ef02fad483ef65a4b31714211aa44c43ba1071230d44d6e",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_lookup:02:0",
+      "issues": [],
+      "raw_sha256": "420738d1ff993899cf882c030174f506513420468b5af346df2bce6c04931ac0",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_lookup:03:0",
+      "issues": [],
+      "raw_sha256": "9edfda69ef3aed2eb21dfa9f134fcbd2b1d05fe4c21924062e34c2a5b5bcb325",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_lookup:04:0",
+      "issues": [],
+      "raw_sha256": "94afe00dc07db0518c555bba140f219c1572fbf77722459f6636615fded1a4a3",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_lookup:05:0",
+      "issues": [],
+      "raw_sha256": "d092bdc5ff543ac6f4c2da662b73e53565f13f9e2e249e4e44a39462b06ff708",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_lookup:06:0",
+      "issues": [],
+      "raw_sha256": "639b1165477be56c823dc946dd3edaa22b2871717903ecdbc12b0d6d018413a7",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_lookup:07:0",
+      "issues": [],
+      "raw_sha256": "5a4fe354f4001ffc7f24915aff6cff2a7e499066fd70f8f6a4fe2b8c9fa433ed",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_lookup:08:0",
+      "issues": [],
+      "raw_sha256": "e863eaaa53bd20638637eaa4cefe0ae666a4f1d48947d031c70013e00e23d1c4",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_lookup:09:0",
+      "issues": [],
+      "raw_sha256": "a8c586662a22666c73394352affeb8db634366929405ce23656af8cbaec0f5f2",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_lookup:10:0",
+      "issues": [],
+      "raw_sha256": "8823c3634ee0ef658211104cbb3de638a993b5e659050818aaa18a1124a63a62",
+      "status": "valid"
+    },
+    {
+      "id": "ranking65:00:0",
+      "issues": [],
+      "raw_sha256": "bc7ceb33f87514b5d1e7a180934f9f2cb828ea92d7b0a455bf238e84e0cd7052",
+      "status": "valid"
+    },
+    {
+      "id": "ranking65:01:0",
+      "issues": [],
+      "raw_sha256": "bc7ceb33f87514b5d1e7a180934f9f2cb828ea92d7b0a455bf238e84e0cd7052",
+      "status": "valid"
+    },
+    {
+      "id": "ranking65:02:0",
+      "issues": [],
+      "raw_sha256": "bc7ceb33f87514b5d1e7a180934f9f2cb828ea92d7b0a455bf238e84e0cd7052",
+      "status": "valid"
+    },
+    {
+      "id": "ranking65:03:0",
+      "issues": [],
+      "raw_sha256": "bc7ceb33f87514b5d1e7a180934f9f2cb828ea92d7b0a455bf238e84e0cd7052",
+      "status": "valid"
+    },
+    {
+      "id": "ranking65:04:0",
+      "issues": [],
+      "raw_sha256": "bc7ceb33f87514b5d1e7a180934f9f2cb828ea92d7b0a455bf238e84e0cd7052",
+      "status": "valid"
+    },
+    {
+      "id": "ranking65:05:0",
+      "issues": [],
+      "raw_sha256": "bc7ceb33f87514b5d1e7a180934f9f2cb828ea92d7b0a455bf238e84e0cd7052",
+      "status": "valid"
+    },
+    {
+      "id": "ranking65:06:0",
+      "issues": [],
+      "raw_sha256": "bc7ceb33f87514b5d1e7a180934f9f2cb828ea92d7b0a455bf238e84e0cd7052",
+      "status": "valid"
+    },
+    {
+      "id": "ranking65:07:0",
+      "issues": [],
+      "raw_sha256": "bc7ceb33f87514b5d1e7a180934f9f2cb828ea92d7b0a455bf238e84e0cd7052",
+      "status": "valid"
+    },
+    {
+      "id": "ranking65:08:0",
+      "issues": [],
+      "raw_sha256": "bc7ceb33f87514b5d1e7a180934f9f2cb828ea92d7b0a455bf238e84e0cd7052",
+      "status": "valid"
+    },
+    {
+      "id": "ranking65:09:0",
+      "issues": [],
+      "raw_sha256": "bc7ceb33f87514b5d1e7a180934f9f2cb828ea92d7b0a455bf238e84e0cd7052",
+      "status": "valid"
+    },
+    {
+      "id": "ranking65:10:0",
+      "issues": [],
+      "raw_sha256": "bc7ceb33f87514b5d1e7a180934f9f2cb828ea92d7b0a455bf238e84e0cd7052",
+      "status": "valid"
+    },
+    {
+      "id": "ranking75:00:0",
+      "issues": [],
+      "raw_sha256": "23424e9fe7faaf77ceb1c183dd36dd74b89a1fb0f81f4817e1945a701e37445a",
+      "status": "valid"
+    },
+    {
+      "id": "ranking75:01:0",
+      "issues": [],
+      "raw_sha256": "23424e9fe7faaf77ceb1c183dd36dd74b89a1fb0f81f4817e1945a701e37445a",
+      "status": "valid"
+    },
+    {
+      "id": "ranking75:02:0",
+      "issues": [],
+      "raw_sha256": "23424e9fe7faaf77ceb1c183dd36dd74b89a1fb0f81f4817e1945a701e37445a",
+      "status": "valid"
+    },
+    {
+      "id": "ranking75:03:0",
+      "issues": [],
+      "raw_sha256": "23424e9fe7faaf77ceb1c183dd36dd74b89a1fb0f81f4817e1945a701e37445a",
+      "status": "valid"
+    },
+    {
+      "id": "ranking75:04:0",
+      "issues": [],
+      "raw_sha256": "23424e9fe7faaf77ceb1c183dd36dd74b89a1fb0f81f4817e1945a701e37445a",
+      "status": "valid"
+    },
+    {
+      "id": "ranking75:05:0",
+      "issues": [],
+      "raw_sha256": "23424e9fe7faaf77ceb1c183dd36dd74b89a1fb0f81f4817e1945a701e37445a",
+      "status": "valid"
+    },
+    {
+      "id": "ranking75:06:0",
+      "issues": [],
+      "raw_sha256": "23424e9fe7faaf77ceb1c183dd36dd74b89a1fb0f81f4817e1945a701e37445a",
+      "status": "valid"
+    },
+    {
+      "id": "ranking75:07:0",
+      "issues": [],
+      "raw_sha256": "23424e9fe7faaf77ceb1c183dd36dd74b89a1fb0f81f4817e1945a701e37445a",
+      "status": "valid"
+    },
+    {
+      "id": "ranking75:08:0",
+      "issues": [],
+      "raw_sha256": "23424e9fe7faaf77ceb1c183dd36dd74b89a1fb0f81f4817e1945a701e37445a",
+      "status": "valid"
+    },
+    {
+      "id": "ranking75:09:0",
+      "issues": [],
+      "raw_sha256": "23424e9fe7faaf77ceb1c183dd36dd74b89a1fb0f81f4817e1945a701e37445a",
+      "status": "valid"
+    },
+    {
+      "id": "ranking75:10:0",
+      "issues": [],
+      "raw_sha256": "23424e9fe7faaf77ceb1c183dd36dd74b89a1fb0f81f4817e1945a701e37445a",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:00:0",
+      "issues": [],
+      "raw_sha256": "f2a54af3a0f541b21f1816be5c71c65bacc86a892b922ad436bf104e77495fc6",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:00:1",
+      "issues": [],
+      "raw_sha256": "9edfda69ef3aed2eb21dfa9f134fcbd2b1d05fe4c21924062e34c2a5b5bcb325",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:01:0",
+      "issues": [],
+      "raw_sha256": "6250140730da6ddf86a39247f810031a0d22ed8329680821e8bedbc838b83ad2",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:01:1",
+      "issues": [],
+      "raw_sha256": "00d6d56c9b0da7aa895d94e6ac2b9e7b04cc3b814d76a897f10607b6bfbe1d69",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:02:0",
+      "issues": [],
+      "raw_sha256": "b2c2ba3e2b5d724aaddb7af0b7610d68cb638d2a07c8db9f1d61c64764f76723",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:02:1",
+      "issues": [],
+      "raw_sha256": "848e7a95307a0e8012a72323ba94168122804f9e15792d4de4f3e7859853a1fa",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:03:0",
+      "issues": [],
+      "raw_sha256": "6e63893818d82d8082a54d97d95a934eaff7c2141d3b99ddb7bedf72069088e7",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:03:1",
+      "issues": [],
+      "raw_sha256": "2a4e3c0a2a9e5001a22bf87686a6d124749e97d7dfce0b69e212fa52a6faa9d7",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:04:0",
+      "issues": [],
+      "raw_sha256": "deab408d375748bd8e639b7dab4fe7cc19fbc1048102e7b8bf332fb24ad70b4f",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:04:1",
+      "issues": [],
+      "raw_sha256": "77defd5141a8347f984aa3830687f4431feb7cbc7b5a90242aff64610cf296b5",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:05:0",
+      "issues": [],
+      "raw_sha256": "bb164477f990ac4ed2831000768ab3c684f18b0cfb1ed2c02808967549b280ee",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:05:1",
+      "issues": [],
+      "raw_sha256": "94afe00dc07db0518c555bba140f219c1572fbf77722459f6636615fded1a4a3",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:06:0",
+      "issues": [],
+      "raw_sha256": "8b339341421b301b69d2428e6ffbf2624fcdb19e5e14f82fc42813897204c98c",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:06:1",
+      "issues": [],
+      "raw_sha256": "8026ad00745125cc1d8620fa847dafac8300164cfaa7f3e2987b0407196a34e8",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:07:0",
+      "issues": [],
+      "raw_sha256": "996a7b8649a4d4b3984ac7ba5e90fac9a15eae2f1765a2afdc3a2e4c8038d605",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:07:1",
+      "issues": [],
+      "raw_sha256": "e863eaaa53bd20638637eaa4cefe0ae666a4f1d48947d031c70013e00e23d1c4",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:08:0",
+      "issues": [],
+      "raw_sha256": "9286f0d939af1e07bf85aad6b4204b14fc9c3dca88596bbe91aa42979561fed3",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:08:1",
+      "issues": [],
+      "raw_sha256": "00d6d56c9b0da7aa895d94e6ac2b9e7b04cc3b814d76a897f10607b6bfbe1d69",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:09:0",
+      "issues": [],
+      "raw_sha256": "2bd9f2205b7c17c8c57c294da20f8631a932311f760e0bddeb6083e27998e160",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:09:1",
+      "issues": [],
+      "raw_sha256": "e900eb253648c69fdf3a035b3a6c7295cf8ee4fd7e95f1f33f66ae682b114e6f",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:10:0",
+      "issues": [],
+      "raw_sha256": "379a0c368db3ec1a56728d72b946d43718c4c6eb8c1307c9b70a310e0789dbca",
+      "status": "valid"
+    },
+    {
+      "id": "comparison:10:1",
+      "issues": [],
+      "raw_sha256": "2ef40cef0a0f7940868923bae6203d53d5eff4b8d0239193e4a190da5ed57ddd",
+      "status": "valid"
+    },
+    {
+      "id": "access_global:00:0",
+      "issues": [],
+      "raw_sha256": "3d805e8a9fa98e2c6349444d208e7b877c34dbe3e2a68312298438a1b47f9261",
+      "status": "valid"
+    },
+    {
+      "id": "access_global:01:0",
+      "issues": [],
+      "raw_sha256": "73aae3d64c8b70760e6770eb5541a09e8db8414407a600b0ae4a591541e49089",
+      "status": "valid"
+    },
+    {
+      "id": "access_global:02:0",
+      "issues": [],
+      "raw_sha256": "d446ae275b4f0e45c1958672c701b610db536e0c2e24df559daceb722abc1e12",
+      "status": "valid"
+    },
+    {
+      "id": "access_global:03:0",
+      "issues": [],
+      "raw_sha256": "c91917aa57bff0df1f44a9549f144a76f35cf574c5f73f87cb67a2a755e87440",
+      "status": "valid"
+    },
+    {
+      "id": "access_global:04:0",
+      "issues": [],
+      "raw_sha256": "73aae3d64c8b70760e6770eb5541a09e8db8414407a600b0ae4a591541e49089",
+      "status": "valid"
+    },
+    {
+      "id": "access_global:05:0",
+      "issues": [],
+      "raw_sha256": "1f3ea38e1bc4bf1520e7a1ab3751959baa30090476ffacdc49464d4e11a03529",
+      "status": "valid"
+    },
+    {
+      "id": "access_global:06:0",
+      "issues": [],
+      "raw_sha256": "0ca16385840268ddccd81d64a4fddb33d17eb9e5075c30ae6ebbf7a9f5ac4ff7",
+      "status": "valid"
+    },
+    {
+      "id": "access_global:07:0",
+      "issues": [],
+      "raw_sha256": "f910654195144b0b4cf920594004f943cda1761abf0baf40bea362efc2a2ecd1",
+      "status": "valid"
+    },
+    {
+      "id": "access_global:08:0",
+      "issues": [],
+      "raw_sha256": "9d522c46b1a1d776120836d3fd63226f052374ea53b8d9b3578d007f538281c2",
+      "status": "valid"
+    },
+    {
+      "id": "access_global:09:0",
+      "issues": [],
+      "raw_sha256": "9d522c46b1a1d776120836d3fd63226f052374ea53b8d9b3578d007f538281c2",
+      "status": "valid"
+    },
+    {
+      "id": "access_global:10:0",
+      "issues": [],
+      "raw_sha256": "3d805e8a9fa98e2c6349444d208e7b877c34dbe3e2a68312298438a1b47f9261",
+      "status": "valid"
+    },
+    {
+      "id": "access_selected:00:0",
+      "issues": [],
+      "raw_sha256": "9b640a3a26115098ed7320c5a8f6fec4a434c3209a87d4ad5ed4386650460313",
+      "status": "valid"
+    },
+    {
+      "id": "access_selected:01:0",
+      "issues": [],
+      "raw_sha256": "2c4258ed75a1d00e2065438484add558f76c182d6ee92552943d61cb5d4ac006",
+      "status": "valid"
+    },
+    {
+      "id": "access_selected:02:0",
+      "issues": [],
+      "raw_sha256": "6d3bff6ebd6a241556d5ba894fe7aa9c80ec25057e9deaa01a96033fbd532ea4",
+      "status": "valid"
+    },
+    {
+      "id": "access_selected:03:0",
+      "issues": [],
+      "raw_sha256": "fa2ef6411398153ccffa19c2fc231bbb2436316b08aa1d0e935b93b7903ce8dd",
+      "status": "valid"
+    },
+    {
+      "id": "access_selected:04:0",
+      "issues": [],
+      "raw_sha256": "ef0603ee1504f38a5d20be30a07ee2563409e0e30ab3cf6d9a8153d7ec24fcc8",
+      "status": "valid"
+    },
+    {
+      "id": "access_selected:05:0",
+      "issues": [],
+      "raw_sha256": "81c941f0b4220195651270feaac734cb195f1de33fc92ce879ef10d3065c4e87",
+      "status": "valid"
+    },
+    {
+      "id": "access_selected:06:0",
+      "issues": [],
+      "raw_sha256": "5b151a75e34e70443f4caa5622d33c6b022947fc054e6d9daf813f4cf4ee380a",
+      "status": "valid"
+    },
+    {
+      "id": "access_selected:07:0",
+      "issues": [],
+      "raw_sha256": "a56a31bce7a9c1a6171de5dc943d1b838e267391ae95e2ca9ca59673e8f2501e",
+      "status": "valid"
+    },
+    {
+      "id": "access_selected:08:0",
+      "issues": [],
+      "raw_sha256": "15319e1e5734ee0b19fc74fc47b59f2cb0430c73987c93c776fbb3a6ee4e75e0",
+      "status": "valid"
+    },
+    {
+      "id": "access_selected:09:0",
+      "issues": [],
+      "raw_sha256": "a7f57aada3f19519ec0a806bfce8ea8b7c0d58376e940895bf946e6198eadf88",
+      "status": "valid"
+    },
+    {
+      "id": "access_selected:10:0",
+      "issues": [],
+      "raw_sha256": "612122717234763a07601fc5f81861fc9cbf4409c78fd4e58d4b428166b08ed8",
+      "status": "valid"
+    },
+    {
+      "id": "coincidence:00:0",
+      "issues": [],
+      "raw_sha256": "38ce0319f40effaa03e06c5fceb1c602535323523e2797cc7c96c64aee217ab6",
+      "status": "valid"
+    },
+    {
+      "id": "coincidence:01:0",
+      "issues": [],
+      "raw_sha256": "35a3dbc4683d27167301c59b27118be10b5f6ec5ac368db968416e2bc4283637",
+      "status": "valid"
+    },
+    {
+      "id": "coincidence:02:0",
+      "issues": [],
+      "raw_sha256": "833044beb915f66a59682ec4b9693618351c1033538aae4ff6417af09352beea",
+      "status": "valid"
+    },
+    {
+      "id": "coincidence:03:0",
+      "issues": [],
+      "raw_sha256": "048eff22d8bac5d004c7bac90f5f1ab0e22d764519c4930f813c4ebc70f3d904",
+      "status": "valid"
+    },
+    {
+      "id": "coincidence:04:0",
+      "issues": [],
+      "raw_sha256": "3dce609749f1078009b72dd3540c5cc6d0b9c972fb83792b5ab49f2e00d4cbea",
+      "status": "valid"
+    },
+    {
+      "id": "coincidence:05:0",
+      "issues": [],
+      "raw_sha256": "35a3dbc4683d27167301c59b27118be10b5f6ec5ac368db968416e2bc4283637",
+      "status": "valid"
+    },
+    {
+      "id": "coincidence:06:0",
+      "issues": [],
+      "raw_sha256": "052555b3c52c09c7faaa4940698ef2ec32f109a79dff736ccf425d8d25d15db1",
+      "status": "valid"
+    },
+    {
+      "id": "coincidence:07:0",
+      "issues": [],
+      "raw_sha256": "8bedf1c097ee25c2d0ca0b13291fdb3b60c5a603d687e90a7cb1fd03bc3df8cb",
+      "status": "valid"
+    },
+    {
+      "id": "coincidence:08:0",
+      "issues": [],
+      "raw_sha256": "8fc95c0a9e8608d48eeb7cf714b29d68f336bd46f8af7315a4d9b07c0e65958d",
+      "status": "valid"
+    },
+    {
+      "id": "coincidence:09:0",
+      "issues": [],
+      "raw_sha256": "d6f7dbef35fc09e258970b1456f06351ff26aa774f1908f0777c8fb82ac93dd8",
+      "status": "valid"
+    },
+    {
+      "id": "coincidence:10:0",
+      "issues": [],
+      "raw_sha256": "35a3dbc4683d27167301c59b27118be10b5f6ec5ac368db968416e2bc4283637",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_add:00:0",
+      "issues": [],
+      "raw_sha256": "f270a715a4a75097ae59c971a85a827e259a14ce3018fec03e123cbda0406d4d",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_add:01:0",
+      "issues": [],
+      "raw_sha256": "90d982aca98b1ec06f859ac932a586a5575019b7a0da6c51cba688ff3bdf9515",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_add:02:0",
+      "issues": [],
+      "raw_sha256": "e440bab5ddac97a2501a350df24d7d19e086906631e1029a3e0215ccf0aa3ad2",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_add:03:0",
+      "issues": [],
+      "raw_sha256": "3d409774e89b5c3254c95cc54e13bd9c9a81b2aa77f0d324ce1ca00d895692ad",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_add:04:0",
+      "issues": [],
+      "raw_sha256": "696a6d88e7960fc0446871ad54eb540ac6ab19bedb8d160cd85d0a1df99a9338",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_add:05:0",
+      "issues": [],
+      "raw_sha256": "5eda9c3074a3c948e28a87ab66139543f4834f4bc889feaaec92a83781850397",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_add:06:0",
+      "issues": [],
+      "raw_sha256": "1f4822f3968a11eb5d24c8d5038e9c3b40ca2fee3f31b7a83a499f40b28f0ff3",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_add:07:0",
+      "issues": [],
+      "raw_sha256": "74e27c7a495c3940432162751ec5b3a96799daf4761076f822bd36c5fed2d36c",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_add:08:0",
+      "issues": [],
+      "raw_sha256": "74e27c7a495c3940432162751ec5b3a96799daf4761076f822bd36c5fed2d36c",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_add:09:0",
+      "issues": [],
+      "raw_sha256": "7c571871d07670e622abbf3e6a0bd33f8d4ac1d331966eb20eebc8f4e00829fe",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_add:10:0",
+      "issues": [],
+      "raw_sha256": "3d409774e89b5c3254c95cc54e13bd9c9a81b2aa77f0d324ce1ca00d895692ad",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_remove:00:0",
+      "issues": [],
+      "raw_sha256": "b9830ce9008b01ffbd6cf32c00b57a268f916f611c7f363e542a17aa555bd1b1",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_remove:01:0",
+      "issues": [],
+      "raw_sha256": "95d819962cfc8c9fd7727529d034f13b9edf6f18e0150ca55ee35d2d560f5b98",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_remove:02:0",
+      "issues": [],
+      "raw_sha256": "240d97b9b54b6b282b5c16ce4d109e9ed4bd3d5ed98beb7a749ed78b4ffef84d",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_remove:03:0",
+      "issues": [],
+      "raw_sha256": "c02fb9619b0ddc87eb28f45b70c59f4019a880f4795d9d1cfeb92ce435da5b58",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_remove:04:0",
+      "issues": [],
+      "raw_sha256": "95d819962cfc8c9fd7727529d034f13b9edf6f18e0150ca55ee35d2d560f5b98",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_remove:05:0",
+      "issues": [],
+      "raw_sha256": "95d819962cfc8c9fd7727529d034f13b9edf6f18e0150ca55ee35d2d560f5b98",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_remove:06:0",
+      "issues": [],
+      "raw_sha256": "c02fb9619b0ddc87eb28f45b70c59f4019a880f4795d9d1cfeb92ce435da5b58",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_remove:07:0",
+      "issues": [],
+      "raw_sha256": "240d97b9b54b6b282b5c16ce4d109e9ed4bd3d5ed98beb7a749ed78b4ffef84d",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_remove:08:0",
+      "issues": [],
+      "raw_sha256": "072047e8b900aa62a0ef4e247dcbec969c16f69b064b12e6df7456d6361820f0",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_remove:09:0",
+      "issues": [],
+      "raw_sha256": "bb2b3adaa489b7769ffc9ded1b4814513e62ca59360f3bc97f7229886201275c",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_remove:10:0",
+      "issues": [],
+      "raw_sha256": "240d97b9b54b6b282b5c16ce4d109e9ed4bd3d5ed98beb7a749ed78b4ffef84d",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_threshold:00:0",
+      "issues": [],
+      "raw_sha256": "af35a9770a687ef53c170476a6e802cf1a99d73ac30172c9b3a5dc8d274a488c",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_threshold:01:0",
+      "issues": [],
+      "raw_sha256": "f6b2b5528c4d681066250ca4ec6f25451b9ded590a6df7b7862a80d0313d5142",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_threshold:02:0",
+      "issues": [],
+      "raw_sha256": "62c45fe61545615071bd520a6c45d64da7baf1e4a8a4a011f796d5719f70e4c3",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_threshold:03:0",
+      "issues": [],
+      "raw_sha256": "0d81969f68f66b4ba22f664cf7aff1c4251914657f4a35424ebaa5f3ad691914",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_threshold:04:0",
+      "issues": [],
+      "raw_sha256": "b1123a85025dc80dc7b441c7d8287e3b8545026abb88a0218eab0a1fa46b6466",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_threshold:05:0",
+      "issues": [],
+      "raw_sha256": "011383015f9b54b8dd9bc5c97342a346d96502fa33e23784f31946b3a2e2832a",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_threshold:06:0",
+      "issues": [],
+      "raw_sha256": "f6b2b5528c4d681066250ca4ec6f25451b9ded590a6df7b7862a80d0313d5142",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_threshold:07:0",
+      "issues": [],
+      "raw_sha256": "c52d3dc6d4f6144510453d8a95361fe6e505db2611d950537e57bce50d2b706b",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_threshold:08:0",
+      "issues": [],
+      "raw_sha256": "6395b8585bca49dcfd9eb030c29180dcd1f673e3ad7a69cecee738140e0e8149",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_threshold:09:0",
+      "issues": [],
+      "raw_sha256": "0d81969f68f66b4ba22f664cf7aff1c4251914657f4a35424ebaa5f3ad691914",
+      "status": "valid"
+    },
+    {
+      "id": "scenario_threshold:10:0",
+      "issues": [],
+      "raw_sha256": "011383015f9b54b8dd9bc5c97342a346d96502fa33e23784f31946b3a2e2832a",
+      "status": "valid"
+    },
+    {
+      "id": "source:00:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "source:01:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "source:02:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "source:03:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "source:04:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "source:05:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "source:06:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "source:07:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "source:08:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "source:09:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "source:10:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "health_visit:00:0",
+      "issues": [],
+      "raw_sha256": "2309b95697ba6e2e19a70c47c71a0c118007d1e3d87a53cf9cec6714e37d781c",
+      "status": "valid"
+    },
+    {
+      "id": "health_visit:01:0",
+      "issues": [],
+      "raw_sha256": "0cb63fd7f4c5ed838827003b7e9a3ff1465ca3516d133961c0c60c13cfe0b31f",
+      "status": "valid"
+    },
+    {
+      "id": "health_visit:02:0",
+      "issues": [],
+      "raw_sha256": "6f7b42a88bab0908cdf7a45fa7918340ab3bd17a23b89e011ebd4be49577b82c",
+      "status": "valid"
+    },
+    {
+      "id": "health_visit:03:0",
+      "issues": [],
+      "raw_sha256": "2309b95697ba6e2e19a70c47c71a0c118007d1e3d87a53cf9cec6714e37d781c",
+      "status": "valid"
+    },
+    {
+      "id": "health_visit:04:0",
+      "issues": [],
+      "raw_sha256": "cbe6780245c59a51cef5c7ca7cd9e345ad8e91c45d4747ee62e5ec733d261fcb",
+      "status": "valid"
+    },
+    {
+      "id": "health_visit:05:0",
+      "issues": [],
+      "raw_sha256": "cde0e2e2b2ca3ea2e99873ab9cdd1681a49c7c707f1807e4da304e83376cb478",
+      "status": "valid"
+    },
+    {
+      "id": "health_visit:06:0",
+      "issues": [],
+      "raw_sha256": "fb23e6dccded434e448681261f986bc4824004295992b97e72b01062ed3cb5c5",
+      "status": "valid"
+    },
+    {
+      "id": "health_visit:07:0",
+      "issues": [],
+      "raw_sha256": "cbe6780245c59a51cef5c7ca7cd9e345ad8e91c45d4747ee62e5ec733d261fcb",
+      "status": "valid"
+    },
+    {
+      "id": "health_visit:08:0",
+      "issues": [],
+      "raw_sha256": "fb23e6dccded434e448681261f986bc4824004295992b97e72b01062ed3cb5c5",
+      "status": "valid"
+    },
+    {
+      "id": "health_visit:09:0",
+      "issues": [],
+      "raw_sha256": "7ab9dffe37570b53bdb000f1bb1a24f27f7986ee871b947b34074d8578f3ab79",
+      "status": "valid"
+    },
+    {
+      "id": "health_visit:10:0",
+      "issues": [],
+      "raw_sha256": "19f687238433e023819f283ec94feb217b6f42c4f113cf076983801a614948b0",
+      "status": "valid"
+    },
+    {
+      "id": "health_followup:00:0",
+      "issues": [],
+      "raw_sha256": "7ab9dffe37570b53bdb000f1bb1a24f27f7986ee871b947b34074d8578f3ab79",
+      "status": "valid"
+    },
+    {
+      "id": "health_followup:01:0",
+      "issues": [],
+      "raw_sha256": "dd7b00158032a25090e27f895fbf0307d0f8e688be5bd85b5b527528937fd600",
+      "status": "valid"
+    },
+    {
+      "id": "health_followup:02:0",
+      "issues": [],
+      "raw_sha256": "19f687238433e023819f283ec94feb217b6f42c4f113cf076983801a614948b0",
+      "status": "valid"
+    },
+    {
+      "id": "health_followup:03:0",
+      "issues": [],
+      "raw_sha256": "3ff78b17fd6cad905afa478078d64515346700bcedf6c933d2c2731dfcbde1de",
+      "status": "valid"
+    },
+    {
+      "id": "health_followup:04:0",
+      "issues": [],
+      "raw_sha256": "b6f0e1f6257de675edbad4e177b363e944ea3ea2ae3e4aec99e562ae1fb29621",
+      "status": "valid"
+    },
+    {
+      "id": "health_followup:05:0",
+      "issues": [],
+      "raw_sha256": "3ff78b17fd6cad905afa478078d64515346700bcedf6c933d2c2731dfcbde1de",
+      "status": "valid"
+    },
+    {
+      "id": "health_followup:06:0",
+      "issues": [],
+      "raw_sha256": "fb23e6dccded434e448681261f986bc4824004295992b97e72b01062ed3cb5c5",
+      "status": "valid"
+    },
+    {
+      "id": "health_followup:07:0",
+      "issues": [],
+      "raw_sha256": "b6f0e1f6257de675edbad4e177b363e944ea3ea2ae3e4aec99e562ae1fb29621",
+      "status": "valid"
+    },
+    {
+      "id": "health_followup:08:0",
+      "issues": [],
+      "raw_sha256": "23fd37f8fd594fdc12bcda0579a6d814d72f26bcb713c64d2288a31b6deac9bf",
+      "status": "valid"
+    },
+    {
+      "id": "health_followup:09:0",
+      "issues": [],
+      "raw_sha256": "dd7b00158032a25090e27f895fbf0307d0f8e688be5bd85b5b527528937fd600",
+      "status": "valid"
+    },
+    {
+      "id": "health_followup:10:0",
+      "issues": [],
+      "raw_sha256": "0cb63fd7f4c5ed838827003b7e9a3ff1465ca3516d133961c0c60c13cfe0b31f",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:00:0",
+      "issues": [],
+      "raw_sha256": "e8c672c9247fd96b15f39a31f5f1e3b46d32bfd963684ee0034c91e89f45043d",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:00:1",
+      "issues": [],
+      "raw_sha256": "8823c3634ee0ef658211104cbb3de638a993b5e659050818aaa18a1124a63a62",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:01:0",
+      "issues": [],
+      "raw_sha256": "bd039876bfeb96ad9c275ba1684d305acb6693f76a15ae75a272a5d93cae5c8f",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:01:1",
+      "issues": [],
+      "raw_sha256": "03bb59ea1f60006a6a9e5509340adec6823f2c3fb7f4be9806d5ee963501e87e",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:02:0",
+      "issues": [],
+      "raw_sha256": "2bd9f2205b7c17c8c57c294da20f8631a932311f760e0bddeb6083e27998e160",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:02:1",
+      "issues": [],
+      "raw_sha256": "26975ca29c7269566b6b855a582480a8483f4709178ec073318e2c2a8b4ab8c1",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:03:0",
+      "issues": [],
+      "raw_sha256": "8f999dc9503455ff1d92a49afd6c1c05cbf17915310b24a747bbd34ece5e8628",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:03:1",
+      "issues": [],
+      "raw_sha256": "f5d0300b91ed1c2516e29d48343aa36f83a97de37763e4f0ac9f85e433884817",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:04:0",
+      "issues": [],
+      "raw_sha256": "5b59f1eff0f425456e743ed895fbccb39289917231293bee0153220bd2c3c8ac",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:04:1",
+      "issues": [],
+      "raw_sha256": "f2a54af3a0f541b21f1816be5c71c65bacc86a892b922ad436bf104e77495fc6",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:05:0",
+      "issues": [],
+      "raw_sha256": "5a4fe354f4001ffc7f24915aff6cff2a7e499066fd70f8f6a4fe2b8c9fa433ed",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:05:1",
+      "issues": [],
+      "raw_sha256": "e900eb253648c69fdf3a035b3a6c7295cf8ee4fd7e95f1f33f66ae682b114e6f",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:06:0",
+      "issues": [],
+      "raw_sha256": "2ef40cef0a0f7940868923bae6203d53d5eff4b8d0239193e4a190da5ed57ddd",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:06:1",
+      "issues": [],
+      "raw_sha256": "46b3bae7ac1a1a301ef02fad483ef65a4b31714211aa44c43ba1071230d44d6e",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:07:0",
+      "issues": [],
+      "raw_sha256": "2eb5ea9f71fc979df67a4fdecb0391911002d54359bb3a0fe3f70b18a828fc4a",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:07:1",
+      "issues": [],
+      "raw_sha256": "1fc84503e4f30be5931fba0ae0da997bc33419db64ba73c6bea8feb65e4cb74e",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:08:0",
+      "issues": [],
+      "raw_sha256": "848e7a95307a0e8012a72323ba94168122804f9e15792d4de4f3e7859853a1fa",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:08:1",
+      "issues": [],
+      "raw_sha256": "9a1ea676d0c0e7453ae6136d4065241087ceddab0345529b99e6e4b786a9d33f",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:09:0",
+      "issues": [],
+      "raw_sha256": "6c812c9472d8795e5e94730e7d0012a5ed9fa943db5c125a7f14a90bf9184975",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:09:1",
+      "issues": [],
+      "raw_sha256": "13e5c5bc952cefe0641dedde3dcd4f343cc51303147b8d87fd5509166aab004b",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:10:0",
+      "issues": [],
+      "raw_sha256": "36ff9dd8141d9e8418412beee91cc847bc5ca72c45a60c465052bf667b0afe56",
+      "status": "valid"
+    },
+    {
+      "id": "demographic_followup:10:1",
+      "issues": [],
+      "raw_sha256": "d233aac49b0f3c1f63d3ce97d92b153d6b7fe30067e312ae532d2385ec8b2683",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:00:0",
+      "issues": [],
+      "raw_sha256": "6c812c9472d8795e5e94730e7d0012a5ed9fa943db5c125a7f14a90bf9184975",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:00:1",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:01:0",
+      "issues": [],
+      "raw_sha256": "d867918c6b77b5e454b99d0a3ae6fde1c9eec0d5369d32a1133b750a9464a85b",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:01:1",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:02:0",
+      "issues": [],
+      "raw_sha256": "f2a54af3a0f541b21f1816be5c71c65bacc86a892b922ad436bf104e77495fc6",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:02:1",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:03:0",
+      "issues": [],
+      "raw_sha256": "f8a61d107c3caf59be7e11a007503fda2976ecb65070ac7c876ebf460d1e356a",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:03:1",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:04:0",
+      "issues": [],
+      "raw_sha256": "0b6b529b444efd8c2fafc858656b0ccef57db471f4adba38b2ea1da5655dea61",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:04:1",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:05:0",
+      "issues": [],
+      "raw_sha256": "7bb635c4f47c878a8c4e7c032a764768b8ac6512cd6a212c68fa604dfdc3afc5",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:05:1",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:06:0",
+      "issues": [],
+      "raw_sha256": "1439ea51164fb2d87061aa455338fd6aa264936cb182cbffb2061824fa0b5dd4",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:06:1",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:07:0",
+      "issues": [],
+      "raw_sha256": "5b59f1eff0f425456e743ed895fbccb39289917231293bee0153220bd2c3c8ac",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:07:1",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:08:0",
+      "issues": [],
+      "raw_sha256": "db04579ccd9847aefabca0739bb99b33a41ac7e3e1eab90685f128246b6ea536",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:08:1",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:09:0",
+      "issues": [],
+      "raw_sha256": "9286f0d939af1e07bf85aad6b4204b14fc9c3dca88596bbe91aa42979561fed3",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:09:1",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:10:0",
+      "issues": [],
+      "raw_sha256": "d0565995679030e4cc15fd760a6b3b197cba7c2f7d0adfbddd2c406489506354",
+      "status": "valid"
+    },
+    {
+      "id": "multitool:10:1",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "ambiguity:00:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "ambiguity:01:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "ambiguity:02:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "ambiguity:03:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "ambiguity:04:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "ambiguity:05:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "ambiguity:06:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "ambiguity:07:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "ambiguity:08:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "ambiguity:09:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "ambiguity:10:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "unsupported:00:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "unsupported:01:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "unsupported:02:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "unsupported:03:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "unsupported:04:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "unsupported:05:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "unsupported:06:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "unsupported:07:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "unsupported:08:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "unsupported:09:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "unsupported:10:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "wrong_period:00:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "wrong_period:01:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "wrong_period:02:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "wrong_period:03:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "wrong_period:04:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "wrong_period:05:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "wrong_period:06:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "wrong_period:07:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "wrong_period:08:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "wrong_period:09:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "wrong_period:10:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "realtime:00:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "realtime:01:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "realtime:02:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "realtime:03:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "realtime:04:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "realtime:05:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "realtime:06:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "realtime:07:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "realtime:08:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "realtime:09:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "realtime:10:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "causal:00:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "causal:01:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "causal:02:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "causal:03:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "causal:04:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "causal:05:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "causal:06:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "causal:07:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "causal:08:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "causal:09:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "causal:10:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "recommendation:00:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "recommendation:01:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "recommendation:02:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "recommendation:03:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "recommendation:04:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "recommendation:05:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "recommendation:06:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "recommendation:07:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "recommendation:08:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "recommendation:09:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "recommendation:10:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "population_radius:00:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "population_radius:01:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "population_radius:02:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "population_radius:03:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "population_radius:04:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "population_radius:05:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "population_radius:06:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "population_radius:07:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "population_radius:08:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "population_radius:09:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "population_radius:10:0",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "zero_records_capacity:00:0",
+      "issues": [],
+      "raw_sha256": "379a0c368db3ec1a56728d72b946d43718c4c6eb8c1307c9b70a310e0789dbca",
+      "status": "valid"
+    },
+    {
+      "id": "zero_records_capacity:01:0",
+      "issues": [],
+      "raw_sha256": "379a0c368db3ec1a56728d72b946d43718c4c6eb8c1307c9b70a310e0789dbca",
+      "status": "valid"
+    },
+    {
+      "id": "zero_records_capacity:02:0",
+      "issues": [],
+      "raw_sha256": "379a0c368db3ec1a56728d72b946d43718c4c6eb8c1307c9b70a310e0789dbca",
+      "status": "valid"
+    },
+    {
+      "id": "zero_records_capacity:03:0",
+      "issues": [],
+      "raw_sha256": "379a0c368db3ec1a56728d72b946d43718c4c6eb8c1307c9b70a310e0789dbca",
+      "status": "valid"
+    },
+    {
+      "id": "zero_records_capacity:04:0",
+      "issues": [],
+      "raw_sha256": "379a0c368db3ec1a56728d72b946d43718c4c6eb8c1307c9b70a310e0789dbca",
+      "status": "valid"
+    },
+    {
+      "id": "zero_records_capacity:05:0",
+      "issues": [],
+      "raw_sha256": "379a0c368db3ec1a56728d72b946d43718c4c6eb8c1307c9b70a310e0789dbca",
+      "status": "valid"
+    },
+    {
+      "id": "zero_records_capacity:06:0",
+      "issues": [],
+      "raw_sha256": "379a0c368db3ec1a56728d72b946d43718c4c6eb8c1307c9b70a310e0789dbca",
+      "status": "valid"
+    },
+    {
+      "id": "zero_records_capacity:07:0",
+      "issues": [],
+      "raw_sha256": "379a0c368db3ec1a56728d72b946d43718c4c6eb8c1307c9b70a310e0789dbca",
+      "status": "valid"
+    },
+    {
+      "id": "zero_records_capacity:08:0",
+      "issues": [],
+      "raw_sha256": "379a0c368db3ec1a56728d72b946d43718c4c6eb8c1307c9b70a310e0789dbca",
+      "status": "valid"
+    },
+    {
+      "id": "zero_records_capacity:09:0",
+      "issues": [],
+      "raw_sha256": "379a0c368db3ec1a56728d72b946d43718c4c6eb8c1307c9b70a310e0789dbca",
+      "status": "valid"
+    },
+    {
+      "id": "zero_records_capacity:10:0",
+      "issues": [],
+      "raw_sha256": "379a0c368db3ec1a56728d72b946d43718c4c6eb8c1307c9b70a310e0789dbca",
+      "status": "valid"
+    },
+    {
+      "id": "internal:compare65",
+      "issues": [],
+      "raw_sha256": "5fc424e59f3552f82113434b754c59fca81521df9832c80f174608721bc0a8e4",
+      "status": "valid"
+    },
+    {
+      "id": "internal:compare_reverse65",
+      "issues": [],
+      "raw_sha256": "08eb686baa0c6ae3b0df9819723d391346992838a6d1c2dd455b64358a3b066f",
+      "status": "valid"
+    },
+    {
+      "id": "internal:compare75",
+      "issues": [],
+      "raw_sha256": "8bbb0b3ec4202467040a0c4ebd2f60a990c71679f8d9ddb6d34c9a362fd0b008",
+      "status": "valid"
+    },
+    {
+      "id": "internal:compare_reverse75",
+      "issues": [],
+      "raw_sha256": "fbb2f50373ac377698bc39ff75a1adac2cb721f5c38c9e09cbc179a2e324b6cd",
+      "status": "valid"
+    },
+    {
+      "id": "internal:comparison:00",
+      "issues": [],
+      "raw_sha256": "96cca188d6afc68fefc633e3ff0c60ace913d429b4e09b165cbc4d5b678d192d",
+      "status": "valid"
+    },
+    {
+      "id": "internal:comparison:01",
+      "issues": [],
+      "raw_sha256": "2f5ed509bd98276adaa2155afafaea776f09154fe39783539ba134d0710a4715",
+      "status": "valid"
+    },
+    {
+      "id": "internal:comparison:02",
+      "issues": [],
+      "raw_sha256": "aca27859f88ba0049ea0b35a4aae4115f8d0744a4016f94bed40fed6d612e385",
+      "status": "valid"
+    },
+    {
+      "id": "internal:comparison:03",
+      "issues": [],
+      "raw_sha256": "c05237951afc79f0291bf87dff0fc40da7c0d9ef01c0347c5be6708aecf40a1d",
+      "status": "valid"
+    },
+    {
+      "id": "internal:comparison:04",
+      "issues": [],
+      "raw_sha256": "0c22da5d464f9021175e3892ab5654f953608a80809ec900d824a616d59ea78d",
+      "status": "valid"
+    },
+    {
+      "id": "internal:comparison:05",
+      "issues": [],
+      "raw_sha256": "91686c745b3705271ad71fd32c117ffab96a889d920ade25f7a45ce0d974d510",
+      "status": "valid"
+    },
+    {
+      "id": "internal:comparison:06",
+      "issues": [],
+      "raw_sha256": "4281b718b261ce387ee43c21871f489f0737e79afa42b50a1f047b1b868299a0",
+      "status": "valid"
+    },
+    {
+      "id": "internal:comparison:07",
+      "issues": [],
+      "raw_sha256": "e31cb2d4fef81be9ec416a2feff4303d507d1a582a8ba20dd0ab56ef80b23318",
+      "status": "valid"
+    },
+    {
+      "id": "internal:comparison:08",
+      "issues": [],
+      "raw_sha256": "815d78a793631cd4dc87f8a5b13a9c7a800ba735cd953909462562c14858e133",
+      "status": "valid"
+    },
+    {
+      "id": "internal:comparison:09",
+      "issues": [],
+      "raw_sha256": "6de027e1d35fb51e34c3f5a729e1f1ab244408c3faf0eb7758b9ae87c64d4ce2",
+      "status": "valid"
+    },
+    {
+      "id": "internal:comparison:10",
+      "issues": [],
+      "raw_sha256": "30d291268779c306b3d3283bcc319eae54e68a956ac59d0c2d6273551c28de83",
+      "status": "valid"
+    },
+    {
+      "id": "internal:demographic_followup:00",
+      "issues": [],
+      "raw_sha256": "b069d7a99d4b13c1ea6515b5a4e174b9b6893ebe915e3d6d18db8d47c65046db",
+      "status": "valid"
+    },
+    {
+      "id": "internal:demographic_followup:01",
+      "issues": [],
+      "raw_sha256": "ae74b9fc3a0f5c0738d1f181b8c8288965c7950e3c4beb72b9b0d8bcac8db7cd",
+      "status": "valid"
+    },
+    {
+      "id": "internal:demographic_followup:02",
+      "issues": [],
+      "raw_sha256": "03a7b66cd50f8e1b1b2ec3af94347030096303652f4d4730806e7ac2aecbd0b2",
+      "status": "valid"
+    },
+    {
+      "id": "internal:demographic_followup:03",
+      "issues": [],
+      "raw_sha256": "c0cd31a00b8b3694410281eda1ba9b8d2b36da99bca9528e964e4c055d41786d",
+      "status": "valid"
+    },
+    {
+      "id": "internal:demographic_followup:04",
+      "issues": [],
+      "raw_sha256": "7fd2648fb90cd8547110d751ea93744ae521fff88a7522b141797ef42502fe50",
+      "status": "valid"
+    },
+    {
+      "id": "internal:demographic_followup:05",
+      "issues": [],
+      "raw_sha256": "3e81ae8b52db380eb62d476835a0281030d6b0bab722f035846b5b6deaf2ea5f",
+      "status": "valid"
+    },
+    {
+      "id": "internal:demographic_followup:06",
+      "issues": [],
+      "raw_sha256": "540ab4624b4e693086e4963c1b5f74d8966e02cc2157b5ff051d2d49feb59a86",
+      "status": "valid"
+    },
+    {
+      "id": "internal:demographic_followup:07",
+      "issues": [],
+      "raw_sha256": "0b78203c944408189a20b2797168702472e9d3d2cdfdeca559b2c463d431390d",
+      "status": "valid"
+    },
+    {
+      "id": "internal:demographic_followup:08",
+      "issues": [],
+      "raw_sha256": "acb6c61dd613f187d78bf38cdbd6a631a8468e1ee37e7836a073997f4f0c799e",
+      "status": "valid"
+    },
+    {
+      "id": "internal:demographic_followup:09",
+      "issues": [],
+      "raw_sha256": "d34f1d3f15b537b9973854a0f10ac4e0e19458f32c08692437b4bbfa388a8c56",
+      "status": "valid"
+    },
+    {
+      "id": "internal:demographic_followup:10",
+      "issues": [],
+      "raw_sha256": "88420a9b409ae09d7eec6fad5ce8b87d618209a63123754c93bfceea8815c6b0",
+      "status": "valid"
+    },
+    {
+      "id": "health:idiazabal_center_stops:09:30:1",
+      "issues": [],
+      "raw_sha256": "bc2587f0470b392707a367b96614c0b202c3be9677e83a0387ca1372dabd062b",
+      "status": "valid"
+    },
+    {
+      "id": "health:idiazabal_center_stops:09:30:20",
+      "issues": [],
+      "raw_sha256": "865d0c8a7904c411a6a3ab9284f09cc7817e8b7c370b47b56900b65bc2e63d4f",
+      "status": "valid"
+    },
+    {
+      "id": "health:idiazabal_center_stops:09:30:27",
+      "issues": [],
+      "raw_sha256": "19360d6e742ef987e5c3013879ef526ea5f67ea8fcd3af7745d6345b57fd5c21",
+      "status": "valid"
+    },
+    {
+      "id": "health:idiazabal_center_stops:09:30:90",
+      "issues": [],
+      "raw_sha256": "c4da05e7c2591ca4338d4a5a1839e2b81bf376f91e1b1b951ad4b0702716390f",
+      "status": "valid"
+    },
+    {
+      "id": "health:idiazabal_center_stops:09:30:720",
+      "issues": [],
+      "raw_sha256": "477b09386605ae3c8c06b7b3024f8a48546285518387ff61141aa6b767c48e11",
+      "status": "no_data"
+    },
+    {
+      "id": "health:idiazabal_center_stops:09:45:1",
+      "issues": [],
+      "raw_sha256": "08262181ed8e6c091e53a73ce4c895ade1aad30edfd53a968f3733c9110aa6da",
+      "status": "valid"
+    },
+    {
+      "id": "health:idiazabal_center_stops:09:45:20",
+      "issues": [],
+      "raw_sha256": "b6f0e1f6257de675edbad4e177b363e944ea3ea2ae3e4aec99e562ae1fb29621",
+      "status": "valid"
+    },
+    {
+      "id": "health:idiazabal_center_stops:09:45:27",
+      "issues": [],
+      "raw_sha256": "1562d092efcc0956d9207f2bc2bb7b9de85bf98dcb381d73dbdc4f9acd4bfab9",
+      "status": "valid"
+    },
+    {
+      "id": "health:idiazabal_center_stops:09:45:90",
+      "issues": [],
+      "raw_sha256": "27e3862129a018090a8410fb92523e68ed9a0dba930ece00db2e5039f6e4a289",
+      "status": "valid"
+    },
+    {
+      "id": "health:idiazabal_center_stops:09:45:720",
+      "issues": [],
+      "raw_sha256": "e5349d530a2066065b666ad7a81c6b6a779fe887f4d98b60a0dff653b2f6a0e0",
+      "status": "no_data"
+    },
+    {
+      "id": "health:segura_herriko_plaza_stops:09:30:1",
+      "issues": [],
+      "raw_sha256": "938cc275dd070d0a135d0fb0da520c8b45cf36f4732d4c3d3706d452919249a3",
+      "status": "valid"
+    },
+    {
+      "id": "health:segura_herriko_plaza_stops:09:30:20",
+      "issues": [],
+      "raw_sha256": "cde0e2e2b2ca3ea2e99873ab9cdd1681a49c7c707f1807e4da304e83376cb478",
+      "status": "valid"
+    },
+    {
+      "id": "health:segura_herriko_plaza_stops:09:30:27",
+      "issues": [],
+      "raw_sha256": "60421397263aea16b07c0e3bc517cdca979127f34b515e3a52f8fa669343a92d",
+      "status": "valid"
+    },
+    {
+      "id": "health:segura_herriko_plaza_stops:09:30:90",
+      "issues": [],
+      "raw_sha256": "e611b6839810b9239e1e730e5ec122853a4fa2ad2a9a335c89c70ab3ca50b4e6",
+      "status": "valid"
+    },
+    {
+      "id": "health:segura_herriko_plaza_stops:09:30:720",
+      "issues": [],
+      "raw_sha256": "d4e09337442c5ec5a8d0502a3e228ed8f2527e722ac7b2ac28205ea32264cf96",
+      "status": "no_data"
+    },
+    {
+      "id": "health:segura_herriko_plaza_stops:09:45:1",
+      "issues": [],
+      "raw_sha256": "c13c7559cc47db9b945d598c40ba05eaed2a6513906b3bda5967f88f6856d0ff",
+      "status": "valid"
+    },
+    {
+      "id": "health:segura_herriko_plaza_stops:09:45:20",
+      "issues": [],
+      "raw_sha256": "3ff78b17fd6cad905afa478078d64515346700bcedf6c933d2c2731dfcbde1de",
+      "status": "valid"
+    },
+    {
+      "id": "health:segura_herriko_plaza_stops:09:45:27",
+      "issues": [],
+      "raw_sha256": "f1f75b4948a199ca076f220921ac82d24bdf9cfd2c965e4003f40bd565329d1d",
+      "status": "valid"
+    },
+    {
+      "id": "health:segura_herriko_plaza_stops:09:45:90",
+      "issues": [],
+      "raw_sha256": "92eb9399ed51666e020f8254f8cd5052c0c589a3b69f70c0387551d3ef51279c",
+      "status": "valid"
+    },
+    {
+      "id": "health:segura_herriko_plaza_stops:09:45:720",
+      "issues": [],
+      "raw_sha256": "f5bfb5c28d3230be3a03238af1800704da3478dc5776f778b653f19282c20491",
+      "status": "no_data"
+    },
+    {
+      "id": "health:zegama_center_stops:09:30:1",
+      "issues": [],
+      "raw_sha256": "f8f7401e260240babb4180aa8ea2fb9da3916fea4f1aa7ef912989bb39dd8fea",
+      "status": "valid"
+    },
+    {
+      "id": "health:zegama_center_stops:09:30:20",
+      "issues": [],
+      "raw_sha256": "cf0087ddb8fe570bc12d8806c36741d756c9d2fae169a9bd0dffe867896f91ab",
+      "status": "valid"
+    },
+    {
+      "id": "health:zegama_center_stops:09:30:27",
+      "issues": [],
+      "raw_sha256": "1712b4663eff6763ff5fd3eb5480831af3a7764e1a585a0054dc43c4a4bf962d",
+      "status": "valid"
+    },
+    {
+      "id": "health:zegama_center_stops:09:30:90",
+      "issues": [],
+      "raw_sha256": "e38a4624bf55abca2f4c0ee5645ac0488ebc87374613badf8da19260c358d864",
+      "status": "valid"
+    },
+    {
+      "id": "health:zegama_center_stops:09:30:720",
+      "issues": [],
+      "raw_sha256": "aa3d0f65fe5e6232f9f305b26a19ebc4f1fc57cfb943fbf7b41dcb4a17aa3668",
+      "status": "no_data"
+    },
+    {
+      "id": "health:zegama_center_stops:09:45:1",
+      "issues": [],
+      "raw_sha256": "ea8833fca30dda7c18555702016951aa74ed29654696a534c5904f09a9c05c45",
+      "status": "valid"
+    },
+    {
+      "id": "health:zegama_center_stops:09:45:20",
+      "issues": [],
+      "raw_sha256": "fb23e6dccded434e448681261f986bc4824004295992b97e72b01062ed3cb5c5",
+      "status": "valid"
+    },
+    {
+      "id": "health:zegama_center_stops:09:45:27",
+      "issues": [],
+      "raw_sha256": "a30b8fa751b4735f09d95783dd5341c573f87ebf7b078513a6d3f2487c73e5cc",
+      "status": "valid"
+    },
+    {
+      "id": "health:zegama_center_stops:09:45:90",
+      "issues": [],
+      "raw_sha256": "5c25e5f833d9fd5e84382155d25d71894d97f049a3f39330c030720ca104467d",
+      "status": "valid"
+    },
+    {
+      "id": "health:zegama_center_stops:09:45:720",
+      "issues": [],
+      "raw_sha256": "6956b4159e31c5b0b443b29e213199a9afd5d3199363c985cc5a9fcc1f23e566",
+      "status": "no_data"
+    },
+    {
+      "id": "conformance:health_defaults_omitted",
+      "issues": [],
+      "raw_sha256": "fb23e6dccded434e448681261f986bc4824004295992b97e72b01062ed3cb5c5",
+      "status": "valid"
+    },
+    {
+      "id": "conformance:health_defaults_explicit",
+      "issues": [],
+      "raw_sha256": "24d17e6a19932b0bf50a6aa5ef7cc6fceb40535343f2f9429318c0d29b85b989",
+      "status": "valid"
+    },
+    {
+      "id": "conformance:health_nondefault_margins",
+      "issues": [],
+      "raw_sha256": "6678c2ce01de8bc69da607383550bd4a111be8e868585665e1756b53be8305e3",
+      "status": "valid"
+    },
+    {
+      "id": "conformance:health_duration_changes_return",
+      "issues": [],
+      "raw_sha256": "97315adacb6dadb975e535dae13737e53ef02a1c0676c8efe359e23cc0ea9ee0",
+      "status": "valid"
+    },
+    {
+      "id": "conformance:health_no_feasible",
+      "issues": [],
+      "raw_sha256": "53b805afaf295dd580d8bfa3d81cf3fb1b4fcdd2835fda0aa508a1b16942d319",
+      "status": "no_data"
+    },
+    {
+      "id": "conformance:health_date_not_validated",
+      "issues": [],
+      "raw_sha256": "b7972f20eb86872ce2f8431b6ce2183a2a392a9e33f4676bc1a39dbb3dd0ddad",
+      "status": "error"
+    },
+    {
+      "id": "conformance:health_destination_unsupported",
+      "issues": [],
+      "raw_sha256": "a0b3ce824ec39796a93e6ffc9077938d2baee37e25571e09b6b289e2c5a16640",
+      "status": "unsupported"
+    },
+    {
+      "id": "conformance:health_profile_unsupported",
+      "issues": [],
+      "raw_sha256": "8aa916c2733eb646fe4181074f7c5fc8f22e63befb56cdc1bb6a5a9980af09f8",
+      "status": "error"
+    },
+    {
+      "id": "conformance:compare_same_origin_two_hours",
+      "issues": [],
+      "raw_sha256": "5226b3f131c791b04e0a2429ce95f5e816309e812a5565b1c733d7b303d9316b",
+      "status": "valid"
+    },
+    {
+      "id": "conformance:compare_duration",
+      "issues": [],
+      "raw_sha256": "384e928f41c0b559c69cdedb80bb53d867550595e40b60fa6eb871cb734d1e06",
+      "status": "valid"
+    },
+    {
+      "id": "conformance:compare_cross_origin",
+      "issues": [],
+      "raw_sha256": "c19644475868eba2f7f51f776ebef0c772e69def11d9f2ef0d0e780e0c7a9287",
+      "status": "valid"
+    },
+    {
+      "id": "conformance:legacy_r4_explicit",
+      "issues": [],
+      "raw_sha256": "cf70bb03a15be882688fcb64101b2a5fa61f3867728a8cb47313e6a83aa66b5a",
+      "status": "valid"
+    },
+    {
+      "id": "conformance:mixed_r4_r6",
+      "issues": [],
+      "raw_sha256": "a7744b29ba9d1f3b90c1cbe57a6b327c38e0d1a419b3270c84485bb6ff41e2b2",
+      "status": "valid"
+    },
+    {
+      "id": "conformance:invalid_structural",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "oracle:MAIN",
+      "issues": [],
+      "raw_sha256": "cf0087ddb8fe570bc12d8806c36741d756c9d2fae169a9bd0dffe867896f91ab",
+      "status": "valid"
+    },
+    {
+      "id": "oracle:VARIATION",
+      "issues": [],
+      "raw_sha256": "fb23e6dccded434e448681261f986bc4824004295992b97e72b01062ed3cb5c5",
+      "status": "valid"
+    },
+    {
+      "id": "oracle:DURATION",
+      "issues": [],
+      "raw_sha256": "97315adacb6dadb975e535dae13737e53ef02a1c0676c8efe359e23cc0ea9ee0",
+      "status": "valid"
+    },
+    {
+      "id": "oracle:LIMIT_DATE",
+      "issues": [],
+      "raw_sha256": "b7972f20eb86872ce2f8431b6ce2183a2a392a9e33f4676bc1a39dbb3dd0ddad",
+      "status": "error"
+    },
+    {
+      "id": "oracle:LIMIT_SCOPE",
+      "issues": [],
+      "raw_sha256": "58e14eada9f45d4a5c699762c5993c221cf9b700b1727d82f4a34d6f77a67973",
+      "status": "unsupported"
+    },
+    {
+      "id": "oracle:ERROR",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "oracle:UNKNOWN_SNAPSHOT",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "baseline:obtener_resumen_territorial",
+      "issues": [],
+      "raw_sha256": "6e63893818d82d8082a54d97d95a934eaff7c2141d3b99ddb7bedf72069088e7",
+      "status": "valid"
+    },
+    {
+      "id": "baseline:comparar_municipios",
+      "issues": [],
+      "raw_sha256": "99849107955ed9021280f65a300c139955633ab02f870415e8bc79558298b1e0",
+      "status": "valid"
+    },
+    {
+      "id": "baseline:analizar_envejecimiento",
+      "issues": [],
+      "raw_sha256": "ad7dda445b888a60abccbf415eb70a54cf696054f3b48c498f7b6772dbbf8049",
+      "status": "valid"
+    },
+    {
+      "id": "baseline:analizar_acceso_servicios",
+      "issues": [],
+      "raw_sha256": "32d1d856e1029ee28b7e715013d5910cda56bdb530aecd91535806931784c3ea",
+      "status": "valid"
+    },
+    {
+      "id": "baseline:analizar_coincidencia",
+      "issues": [],
+      "raw_sha256": "f9d74cf1aadebfa8b2d34ba341582af627dd6fc4063e6bb5ab8af8e5a78a2f68",
+      "status": "valid"
+    },
+    {
+      "id": "baseline:simular_escenario",
+      "issues": [],
+      "raw_sha256": "0d81969f68f66b4ba22f664cf7aff1c4251914657f4a35424ebaa5f3ad691914",
+      "status": "valid"
+    },
+    {
+      "id": "baseline:consultar_fuente",
+      "issues": [],
+      "raw_sha256": "4a89f10b7358e37c82544b75db59eef7659648682e5cc703ad62aa75be14966a",
+      "status": "valid"
+    },
+    {
+      "id": "baseline:consultar_capacidades",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "source:EUSTAT_EMH_2025",
+      "issues": [],
+      "raw_sha256": "cedc92d7c63f02b2458aac1a0d6db8795b5d67adef7171ab4ec97f1af5e0e02c",
+      "status": "valid"
+    },
+    {
+      "id": "source:ODE_HEALTH_CENTRES_2026",
+      "issues": [],
+      "raw_sha256": "15c9b3a44631f9ac14b447228ee230c1949e1a4000ab2f54f965621dbd08cd16",
+      "status": "valid"
+    },
+    {
+      "id": "source:GEOEUSKADI_MUNICIPIOS_2025",
+      "issues": [],
+      "raw_sha256": "ee341af3522a0fd92986113f55e10b7282b87e02e639e2ac43b08bce8382dda8",
+      "status": "valid"
+    },
+    {
+      "id": "source:G360_DERIVED_MUNICIPAL_METRICS_V1",
+      "issues": [],
+      "raw_sha256": "dc7a3778c83f8dad66454c12d2f7feefe71494e31b6874d07161e8d79c05e224",
+      "status": "valid"
+    },
+    {
+      "id": "source:W1_GTFS@2026-09-29",
+      "issues": [],
+      "raw_sha256": "1b75d839538ef1f60d19eccd067496d3c3fc688396275142a2161561b5774fa3",
+      "status": "valid"
+    },
+    {
+      "id": "source:W2_USER@2026-09-29",
+      "issues": [],
+      "raw_sha256": "15d42daab0e515fa4bf13cce7d51c09eca25ea7239b960fbee0e7f25ed881b5c",
+      "status": "valid"
+    },
+    {
+      "id": "source:W1_MODEL@2026-09-29",
+      "issues": [],
+      "raw_sha256": "24e55847f7bca38eb8446103f7691328b22a2d10d2dc2cec30ba9ef818b99e86",
+      "status": "valid"
+    },
+    {
+      "id": "source:W1_DERIVED@2026-09-29",
+      "issues": [],
+      "raw_sha256": "20419466419ff465d66aa07fa678f5a3d4adaca3dc7e4c87d118afca0655ae94",
+      "status": "valid"
+    },
+    {
+      "id": "source:GTFS",
+      "issues": [],
+      "raw_sha256": "e616bf98231c4afd055097fe395c3851f9604234f5acd92618b381fda5a8d91a",
+      "status": "valid"
+    },
+    {
+      "id": "source:HEALTH_REGISTRY",
+      "issues": [],
+      "raw_sha256": "4eba440bd65090d5f2a409498e27f3adb177cd9cb121563dd59a7301a139d897",
+      "status": "valid"
+    },
+    {
+      "id": "source:HEALTH_PAGE",
+      "issues": [],
+      "raw_sha256": "7eb8ee5d79f1e0db1580d2e2b56471dd70a0fad3d30e38305696f9c9c02d1690",
+      "status": "valid"
+    },
+    {
+      "id": "source:PADI_2026",
+      "issues": [],
+      "raw_sha256": "d1da8e7ed612c9468037cc5aee4106946f43a9fc26ba27f2c71cec0e218e0b6a",
+      "status": "valid"
+    },
+    {
+      "id": "source:OSM",
+      "issues": [],
+      "raw_sha256": "50cec841bae01560aeed391bd6f14db30cbe4846baf016f81189c1fc0d8ce2c5",
+      "status": "valid"
+    },
+    {
+      "id": "source:MODEL",
+      "issues": [],
+      "raw_sha256": "fdfdc387a7b09e65deabf59e1fa868cedbc40985e2b4277e2b3f1c65f1ee0029",
+      "status": "valid"
+    },
+    {
+      "id": "source:USER",
+      "issues": [],
+      "raw_sha256": "9a0d41632b623ce6bbd80b1034d29ab72a41e021d0245b783ed6d7f3d75caa4d",
+      "status": "valid"
+    },
+    {
+      "id": "source:MODEL_DEFAULTS",
+      "issues": [],
+      "raw_sha256": "b6a8c14ea5457fe26a8877e7666bf8798d12d031220dd4d04d224943ad54bf1d",
+      "status": "valid"
+    },
+    {
+      "id": "source:DERIVED",
+      "issues": [],
+      "raw_sha256": "6c7b357d16044e53e735b7afe1f80f55a36bcb624310cd5872860425df967a91",
+      "status": "valid"
+    },
+    {
+      "id": "malformed:obtener_resumen_territorial:municipio:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:obtener_resumen_territorial:municipio:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:obtener_resumen_territorial:municipio:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:obtener_resumen_territorial:municipio:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:obtener_resumen_territorial:municipio:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:obtener_resumen_territorial:periodo:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:obtener_resumen_territorial:periodo:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:obtener_resumen_territorial:periodo:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:obtener_resumen_territorial:periodo:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:obtener_resumen_territorial:periodo:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:municipios:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:municipios:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:municipios:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:municipios:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:municipios:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:grupo_edad:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:grupo_edad:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:grupo_edad:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:grupo_edad:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:grupo_edad:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:categoria_servicio:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:categoria_servicio:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:categoria_servicio:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:categoria_servicio:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:categoria_servicio:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:umbral_km:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:umbral_km:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:umbral_km:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:umbral_km:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:umbral_km:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:periodo:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:periodo:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:periodo:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:periodo:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:comparar_municipios:periodo:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_envejecimiento:grupo_edad:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_envejecimiento:grupo_edad:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_envejecimiento:grupo_edad:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_envejecimiento:grupo_edad:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_envejecimiento:grupo_edad:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_envejecimiento:medida:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_envejecimiento:medida:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_envejecimiento:medida:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_envejecimiento:medida:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_envejecimiento:medida:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_envejecimiento:periodo:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_envejecimiento:periodo:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_envejecimiento:periodo:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_envejecimiento:periodo:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_envejecimiento:periodo:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_envejecimiento:top_n:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_envejecimiento:top_n:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_envejecimiento:top_n:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_envejecimiento:top_n:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_envejecimiento:top_n:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_acceso_servicios:categoria_servicio:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_acceso_servicios:categoria_servicio:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_acceso_servicios:categoria_servicio:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_acceso_servicios:categoria_servicio:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_acceso_servicios:categoria_servicio:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_acceso_servicios:umbral_km:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_acceso_servicios:umbral_km:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_acceso_servicios:umbral_km:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_acceso_servicios:umbral_km:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_acceso_servicios:umbral_km:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_acceso_servicios:periodo:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_acceso_servicios:periodo:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_acceso_servicios:periodo:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_acceso_servicios:periodo:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_acceso_servicios:periodo:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_acceso_servicios:municipios:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_acceso_servicios:municipios:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_acceso_servicios:municipios:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_acceso_servicios:municipios:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_acceso_servicios:municipios:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:categoria_servicio:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:categoria_servicio:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:categoria_servicio:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:categoria_servicio:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:categoria_servicio:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:grupo_edad:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:grupo_edad:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:grupo_edad:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:grupo_edad:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:grupo_edad:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:umbral_km:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:umbral_km:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:umbral_km:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:umbral_km:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:umbral_km:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:periodo:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:periodo:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:periodo:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:periodo:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:periodo:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:cuantil:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:cuantil:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:cuantil:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:cuantil:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:analizar_coincidencia:cuantil:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:accion:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:accion:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:accion:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:accion:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:accion:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:categoria_servicio:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:categoria_servicio:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:categoria_servicio:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:categoria_servicio:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:categoria_servicio:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:umbral_km:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:umbral_km:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:umbral_km:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:umbral_km:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:umbral_km:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:periodo:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:periodo:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:periodo:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:periodo:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:periodo:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:latitud:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:latitud:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:latitud:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:latitud:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:latitud:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:longitud:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:longitud:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:longitud:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:longitud:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:longitud:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:service_id:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:service_id:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:service_id:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:service_id:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:service_id:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:nuevo_umbral_km:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:nuevo_umbral_km:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:nuevo_umbral_km:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:nuevo_umbral_km:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:simular_escenario:nuevo_umbral_km:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:consultar_fuente:source_id:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:consultar_fuente:source_id:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:consultar_fuente:source_id:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:consultar_fuente:source_id:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:consultar_fuente:source_id:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:consultar_capacidades:pregunta_o_dimension:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:consultar_capacidades:pregunta_o_dimension:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:consultar_capacidades:pregunta_o_dimension:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:consultar_capacidades:pregunta_o_dimension:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:consultar_capacidades:pregunta_o_dimension:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:origin_id:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:origin_id:1",
+      "issues": [],
+      "raw_sha256": "bc539620f5706116d228a22abca56429786d164513b683783705ab1a015f30e6",
+      "status": "unsupported"
+    },
+    {
+      "id": "malformed:plan_visit:origin_id:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:origin_id:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:origin_id:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:origin_id:5",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:origin_id:6",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:destination_id:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:destination_id:1",
+      "issues": [],
+      "raw_sha256": "631b00347c453740e2531c2e83938819e82c398dd5c67a7bcaf78a7fd4437c48",
+      "status": "unsupported"
+    },
+    {
+      "id": "malformed:plan_visit:destination_id:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:destination_id:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:destination_id:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:destination_id:5",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:destination_id:6",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:date:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:date:1",
+      "issues": [],
+      "raw_sha256": "c28971dceaecae25a7b9260edb2eecbc0105ec6e4f9d757b8b7b123e2bf106e8",
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:date:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:date:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:date:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:date:5",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:date:6",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:appointment_time:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:appointment_time:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:appointment_time:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:appointment_time:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:appointment_time:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:appointment_time:5",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:appointment_time:6",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:duration_minutes:0",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:duration_minutes:1",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:duration_minutes:2",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:duration_minutes:3",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:duration_minutes:4",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:duration_minutes:5",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "malformed:plan_visit:duration_minutes:6",
+      "issues": [],
+      "raw_sha256": "1c5344723d0d8354da06927891bc03edc3d21e52ecff56a6ddd87c6e8081b7d9",
+      "status": "error"
+    },
+    {
+      "id": "period:obtener_resumen_territorial:omitted",
+      "issues": [],
+      "raw_sha256": "6e63893818d82d8082a54d97d95a934eaff7c2141d3b99ddb7bedf72069088e7",
+      "status": "valid"
+    },
+    {
+      "id": "period:obtener_resumen_territorial:none",
+      "issues": [],
+      "raw_sha256": "6e63893818d82d8082a54d97d95a934eaff7c2141d3b99ddb7bedf72069088e7",
+      "status": "valid"
+    },
+    {
+      "id": "period:obtener_resumen_territorial:valid",
+      "issues": [],
+      "raw_sha256": "6e63893818d82d8082a54d97d95a934eaff7c2141d3b99ddb7bedf72069088e7",
+      "status": "valid"
+    },
+    {
+      "id": "period:obtener_resumen_territorial:empty",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:obtener_resumen_territorial:whitespace",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:obtener_resumen_territorial:wrong_type",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:obtener_resumen_territorial:unsupported",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:comparar_municipios:omitted",
+      "issues": [],
+      "raw_sha256": "99849107955ed9021280f65a300c139955633ab02f870415e8bc79558298b1e0",
+      "status": "valid"
+    },
+    {
+      "id": "period:comparar_municipios:none",
+      "issues": [],
+      "raw_sha256": "99849107955ed9021280f65a300c139955633ab02f870415e8bc79558298b1e0",
+      "status": "valid"
+    },
+    {
+      "id": "period:comparar_municipios:valid",
+      "issues": [],
+      "raw_sha256": "99849107955ed9021280f65a300c139955633ab02f870415e8bc79558298b1e0",
+      "status": "valid"
+    },
+    {
+      "id": "period:comparar_municipios:empty",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:comparar_municipios:whitespace",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:comparar_municipios:wrong_type",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:comparar_municipios:unsupported",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:analizar_envejecimiento:omitted",
+      "issues": [],
+      "raw_sha256": "ad7dda445b888a60abccbf415eb70a54cf696054f3b48c498f7b6772dbbf8049",
+      "status": "valid"
+    },
+    {
+      "id": "period:analizar_envejecimiento:none",
+      "issues": [],
+      "raw_sha256": "ad7dda445b888a60abccbf415eb70a54cf696054f3b48c498f7b6772dbbf8049",
+      "status": "valid"
+    },
+    {
+      "id": "period:analizar_envejecimiento:valid",
+      "issues": [],
+      "raw_sha256": "ad7dda445b888a60abccbf415eb70a54cf696054f3b48c498f7b6772dbbf8049",
+      "status": "valid"
+    },
+    {
+      "id": "period:analizar_envejecimiento:empty",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:analizar_envejecimiento:whitespace",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:analizar_envejecimiento:wrong_type",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:analizar_envejecimiento:unsupported",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:analizar_acceso_servicios:omitted",
+      "issues": [],
+      "raw_sha256": "32d1d856e1029ee28b7e715013d5910cda56bdb530aecd91535806931784c3ea",
+      "status": "valid"
+    },
+    {
+      "id": "period:analizar_acceso_servicios:none",
+      "issues": [],
+      "raw_sha256": "32d1d856e1029ee28b7e715013d5910cda56bdb530aecd91535806931784c3ea",
+      "status": "valid"
+    },
+    {
+      "id": "period:analizar_acceso_servicios:valid",
+      "issues": [],
+      "raw_sha256": "c9e0c39644f604b8bad9d3d82b14e7766ba071f81ba30a6557473f023d622879",
+      "status": "valid"
+    },
+    {
+      "id": "period:analizar_acceso_servicios:empty",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:analizar_acceso_servicios:whitespace",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:analizar_acceso_servicios:wrong_type",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:analizar_acceso_servicios:unsupported",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:analizar_coincidencia:omitted",
+      "issues": [],
+      "raw_sha256": "f9d74cf1aadebfa8b2d34ba341582af627dd6fc4063e6bb5ab8af8e5a78a2f68",
+      "status": "valid"
+    },
+    {
+      "id": "period:analizar_coincidencia:none",
+      "issues": [],
+      "raw_sha256": "f9d74cf1aadebfa8b2d34ba341582af627dd6fc4063e6bb5ab8af8e5a78a2f68",
+      "status": "valid"
+    },
+    {
+      "id": "period:analizar_coincidencia:valid",
+      "issues": [],
+      "raw_sha256": "f9d74cf1aadebfa8b2d34ba341582af627dd6fc4063e6bb5ab8af8e5a78a2f68",
+      "status": "valid"
+    },
+    {
+      "id": "period:analizar_coincidencia:empty",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:analizar_coincidencia:whitespace",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:analizar_coincidencia:wrong_type",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:analizar_coincidencia:unsupported",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:simular_escenario:omitted",
+      "issues": [],
+      "raw_sha256": "0d81969f68f66b4ba22f664cf7aff1c4251914657f4a35424ebaa5f3ad691914",
+      "status": "valid"
+    },
+    {
+      "id": "period:simular_escenario:none",
+      "issues": [],
+      "raw_sha256": "0d81969f68f66b4ba22f664cf7aff1c4251914657f4a35424ebaa5f3ad691914",
+      "status": "valid"
+    },
+    {
+      "id": "period:simular_escenario:valid",
+      "issues": [],
+      "raw_sha256": "604097eea3c27f7844094de67c9451f132043a9f5d3df7507465d65dea5e4134",
+      "status": "valid"
+    },
+    {
+      "id": "period:simular_escenario:empty",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:simular_escenario:whitespace",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:simular_escenario:wrong_type",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "period:simular_escenario:unsupported",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "boundary:threshold_zero",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "boundary:threshold_none",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "boundary:threshold_above",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "boundary:threshold_limit",
+      "issues": [],
+      "raw_sha256": "a4ec08d712e6cb37b64bff8f4384f86261c178fe8c946986df715ccde044845a",
+      "status": "valid"
+    },
+    {
+      "id": "boundary:top_zero",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "boundary:top_none",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "boundary:top_limit",
+      "issues": [],
+      "raw_sha256": "9612f2fff3e033e92547adfdb7706ab00de3458f0cc24873aaa81d4bc62556c2",
+      "status": "valid"
+    },
+    {
+      "id": "boundary:quantile_zero",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "boundary:quantile_limit",
+      "issues": [],
+      "raw_sha256": "55c56c603e241832814eccd8ede191b0fb0cb1a3bfb7057cf132adefb18d9f8c",
+      "status": "valid"
+    },
+    {
+      "id": "boundary:unknown_municipality",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "boundary:array_whitespace",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "boundary:array_prose",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "boundary:unsupported_category",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "boundary:unsupported_source",
+      "issues": [],
+      "raw_sha256": "f65132076462054c5cf8a350770e79c63bb12aef6e513b1d6434d125c7ad0bca",
+      "status": "error"
+    },
+    {
+      "id": "boundary:add_id_whitespace",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "boundary:unused_coordinates",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "boundary:unused_invalid_coordinates",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "boundary:valid_add",
+      "issues": [],
+      "raw_sha256": "e440bab5ddac97a2501a350df24d7d19e086906631e1029a3e0215ccf0aa3ad2",
+      "status": "valid"
+    },
+    {
+      "id": "regression:R13_nested",
+      "issues": [],
+      "raw_sha256": "cf0087ddb8fe570bc12d8806c36741d756c9d2fae169a9bd0dffe867896f91ab",
+      "status": "valid"
+    },
+    {
+      "id": "regression:R13_prose",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "regression:R14_public:return_deadline",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "regression:R14_public:snapshot_id",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "regression:R14_public:walking_profile_id",
+      "issues": [],
+      "raw_sha256": "8aa916c2733eb646fe4181074f7c5fc8f22e63befb56cdc1bb6a5a9980af09f8",
+      "status": "error"
+    },
+    {
+      "id": "regression:R14_public:arrival_margin_minutes",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "regression:R14_public:boarding_margin_minutes",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "regression:M05_internal",
+      "issues": [],
+      "raw_sha256": null,
+      "status": "error"
+    },
+    {
+      "id": "recovery:consultar_capacidades",
+      "issues": [],
+      "raw_sha256": "7c76d9c5876a30f03e0361e8b5d891558feac80522ec363e6413ae6e379ee662",
+      "status": "valid"
+    },
+    {
+      "id": "recovery:consultar_fuente",
+      "issues": [],
+      "raw_sha256": "4a89f10b7358e37c82544b75db59eef7659648682e5cc703ad62aa75be14966a",
+      "status": "valid"
+    },
+    {
+      "id": "recovery:obtener_resumen_territorial",
+      "issues": [],
+      "raw_sha256": "6e63893818d82d8082a54d97d95a934eaff7c2141d3b99ddb7bedf72069088e7",
+      "status": "valid"
+    },
+    {
+      "id": "recovery:plan_visit",
+      "issues": [],
+      "raw_sha256": "cf0087ddb8fe570bc12d8806c36741d756c9d2fae169a9bd0dffe867896f91ab",
+      "status": "valid"
+    }
+  ],
+  "status": "PASS",
+  "zip_sha256": "9716389b7094096195062e8bda9b9ddd4c0f21cedce09cee8496b6ae45f570c7"
+}

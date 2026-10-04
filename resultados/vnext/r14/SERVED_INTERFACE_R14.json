@@ -1,0 +1,64 @@
+{
+  "decorator": "identity fallback; platform schema NOT_OBSERVED",
+  "expected_schema": {
+    "additionalProperties": false,
+    "properties": {
+      "appointment_time": {
+        "type": "string"
+      },
+      "arrival_margin_minutes": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "boarding_margin_minutes": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "date": {
+        "type": "string"
+      },
+      "destination_id": {
+        "type": "string"
+      },
+      "duration_minutes": {
+        "type": "integer"
+      },
+      "origin_id": {
+        "type": "string"
+      },
+      "return_deadline": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "snapshot_id": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "walking_profile_id": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    },
+    "required": [
+      "origin_id",
+      "destination_id",
+      "date",
+      "appointment_time",
+      "duration_minutes"
+    ],
+    "type": "object"
+  },
+  "signature": "(origin_id: 'str', destination_id: 'str', date: 'str', appointment_time: 'str', duration_minutes: 'int', arrival_margin_minutes: 'int | None' = None, boarding_margin_minutes: 'int | None' = None, walking_profile_id: 'str | None' = None, snapshot_id: 'str | None' = None, return_deadline: 'str | None' = None) -> 'str'",
+  "status": "EXPECTED_LOCAL_SIGNATURE_NOT_STUDIO_SERVED",
+  "tools": 9
+}
