@@ -1,0 +1,214 @@
+{
+  "status": "valid",
+  "capability_id": "simular_cambiar_umbral",
+  "threshold_transition_ledger": {
+    "answer_table_markdown": "| Municipio | Distancia geométrica (m) | Antes | Después |\n|---|---:|---|---|\n| Alkiza | 2855.9 | Fuera | Dentro |\n| Pasaia | 2813.4 | Fuera | Dentro |\n| Aduna | 2756.2 | Fuera | Dentro |\n| Legazpi | 2624.8 | Fuera | Dentro |\n| Hondarribia | 2583.5 | Fuera | Dentro |\n| Altzo | 2477.2 | Fuera | Dentro |\n| Zizurkil | 2469.6 | Fuera | Dentro |\n| Idiazabal | 2311.2 | Fuera | Dentro |\n| Eskoriatza | 2261.6 | Fuera | Dentro |\n| Hernialde | 2192.5 | Fuera | Dentro |\n| Orio | 2190.3 | Fuera | Dentro |\n| Oñati | 2149.6 | Fuera | Dentro |\n| Asteasu | 2122.0 | Fuera | Dentro |\n| Ezkio-Itsaso | 2110.1 | Fuera | Dentro |\n| Elduain | 2064.3 | Fuera | Dentro |\n| Orendain | 2044.6 | Fuera | Dentro |\n| Zaldibia | 2010.8 | Fuera | Dentro |\n| Larraul | 2009.1 | Fuera | Dentro |\n| Deba | 2001.8 | Fuera | Dentro |",
+    "baseline_threshold_km": 2,
+    "baseline_threshold_m": 2000,
+    "changed_rows": [
+      {
+        "baseline_within_threshold": false,
+        "distance_m": 2855.9,
+        "evidence_path": "/data/6",
+        "municipality_code": "20006",
+        "municipality_name": "Alkiza",
+        "scenario_within_threshold": true,
+        "transition": "outside_to_inside"
+      },
+      {
+        "baseline_within_threshold": false,
+        "distance_m": 2813.4,
+        "evidence_path": "/data/7",
+        "municipality_code": "20064",
+        "municipality_name": "Pasaia",
+        "scenario_within_threshold": true,
+        "transition": "outside_to_inside"
+      },
+      {
+        "baseline_within_threshold": false,
+        "distance_m": 2756.2,
+        "evidence_path": "/data/8",
+        "municipality_code": "20002",
+        "municipality_name": "Aduna",
+        "scenario_within_threshold": true,
+        "transition": "outside_to_inside"
+      },
+      {
+        "baseline_within_threshold": false,
+        "distance_m": 2624.8,
+        "evidence_path": "/data/9",
+        "municipality_code": "20051",
+        "municipality_name": "Legazpi",
+        "scenario_within_threshold": true,
+        "transition": "outside_to_inside"
+      },
+      {
+        "baseline_within_threshold": false,
+        "distance_m": 2583.5,
+        "evidence_path": "/data/10",
+        "municipality_code": "20036",
+        "municipality_name": "Hondarribia",
+        "scenario_within_threshold": true,
+        "transition": "outside_to_inside"
+      },
+      {
+        "baseline_within_threshold": false,
+        "distance_m": 2477.2,
+        "evidence_path": "/data/11",
+        "municipality_code": "20007",
+        "municipality_name": "Altzo",
+        "scenario_within_threshold": true,
+        "transition": "outside_to_inside"
+      },
+      {
+        "baseline_within_threshold": false,
+        "distance_m": 2469.6,
+        "evidence_path": "/data/12",
+        "municipality_code": "20028",
+        "municipality_name": "Zizurkil",
+        "scenario_within_threshold": true,
+        "transition": "outside_to_inside"
+      },
+      {
+        "baseline_within_threshold": false,
+        "distance_m": 2311.2,
+        "evidence_path": "/data/13",
+        "municipality_code": "20043",
+        "municipality_name": "Idiazabal",
+        "scenario_within_threshold": true,
+        "transition": "outside_to_inside"
+      },
+      {
+        "baseline_within_threshold": false,
+        "distance_m": 2261.6,
+        "evidence_path": "/data/14",
+        "municipality_code": "20034",
+        "municipality_name": "Eskoriatza",
+        "scenario_within_threshold": true,
+        "transition": "outside_to_inside"
+      },
+      {
+        "baseline_within_threshold": false,
+        "distance_m": 2192.5,
+        "evidence_path": "/data/15",
+        "municipality_code": "20041",
+        "municipality_name": "Hernialde",
+        "scenario_within_threshold": true,
+        "transition": "outside_to_inside"
+      },
+      {
+        "baseline_within_threshold": false,
+        "distance_m": 2190.3,
+        "evidence_path": "/data/16",
+        "municipality_code": "20061",
+        "municipality_name": "Orio",
+        "scenario_within_threshold": true,
+        "transition": "outside_to_inside"
+      },
+      {
+        "baseline_within_threshold": false,
+        "distance_m": 2149.6,
+        "evidence_path": "/data/17",
+        "municipality_code": "20059",
+        "municipality_name": "Oñati",
+        "scenario_within_threshold": true,
+        "transition": "outside_to_inside"
+      },
+      {
+        "baseline_within_threshold": false,
+        "distance_m": 2122.0,
+        "evidence_path": "/data/18",
+        "municipality_code": "20014",
+        "municipality_name": "Asteasu",
+        "scenario_within_threshold": true,
+        "transition": "outside_to_inside"
+      },
+      {
+        "baseline_within_threshold": false,
+        "distance_m": 2110.1,
+        "evidence_path": "/data/19",
+        "municipality_code": "20035",
+        "municipality_name": "Ezkio-Itsaso",
+        "scenario_within_threshold": true,
+        "transition": "outside_to_inside"
+      },
+      {
+        "baseline_within_threshold": false,
+        "distance_m": 2064.3,
+        "evidence_path": "/data/20",
+        "municipality_code": "20031",
+        "municipality_name": "Elduain",
+        "scenario_within_threshold": true,
+        "transition": "outside_to_inside"
+      },
+      {
+        "baseline_within_threshold": false,
+        "distance_m": 2044.6,
+        "evidence_path": "/data/21",
+        "municipality_code": "20905",
+        "municipality_name": "Orendain",
+        "scenario_within_threshold": true,
+        "transition": "outside_to_inside"
+      },
+      {
+        "baseline_within_threshold": false,
+        "distance_m": 2010.8,
+        "evidence_path": "/data/22",
+        "municipality_code": "20078",
+        "municipality_name": "Zaldibia",
+        "scenario_within_threshold": true,
+        "transition": "outside_to_inside"
+      },
+      {
+        "baseline_within_threshold": false,
+        "distance_m": 2009.1,
+        "evidence_path": "/data/23",
+        "municipality_code": "20048",
+        "municipality_name": "Larraul",
+        "scenario_within_threshold": true,
+        "transition": "outside_to_inside"
+      },
+      {
+        "baseline_within_threshold": false,
+        "distance_m": 2001.8,
+        "evidence_path": "/data/24",
+        "municipality_code": "20029",
+        "municipality_name": "Deba",
+        "scenario_within_threshold": true,
+        "transition": "outside_to_inside"
+      }
+    ],
+    "classification_rule": "unrounded_distance_m <= threshold_m; distance_m is rounded display only",
+    "comparison_sentence": "Al pasar de 2 a 3 km, 19 municipios pasan de fuera a dentro del umbral y 0 pasan de dentro a fuera.",
+    "contract_version": "v1",
+    "counts": {
+      "inside_to_outside": 0,
+      "outside_to_inside": 19,
+      "stays_inside": 63,
+      "stays_outside": 6,
+      "total": 88
+    },
+    "evidence_versions": {
+      "code_sha256": "11ad66d22eb6c5e42a1c4d543fd7b7f7b7c5c91d276400e821ce6e2761765aff",
+      "contract_sha256": "6fbd22a567cc5a8d8ce17fd1968c52fc92448526bf81103e2768486d724d9ad0",
+      "data_sha256": "cd9047d4f5dc469ef53a86761fa41db74b917d10fb37de5611f39979d08a024c"
+    },
+    "presentation_rule": "Use this ledger as authority. Do not reconstruct threshold classifications from other rows or infer omitted municipalities.",
+    "raw_result_sha256": "4f48a49435d8f94d5bbb26f694a85c9ff24892eca4cc93f16ee5e8af72a68713",
+    "reference_period": "2026-09-20; 2025-05-07",
+    "scenario_threshold_km": 3,
+    "scenario_threshold_m": 3000,
+    "scope": "Complete partition of evaluated raw municipalities; not population coverage.",
+    "semantic_limit_sentence": "Cambiar el umbral es un escenario de clasificación: no cambia las distancias, no demuestra una mejora del acceso sanitario real ni mide población cubierta. No recomienda un umbral.",
+    "source_ids": [
+      "GEOEUSKADI_MUNICIPIOS_2025",
+      "ODE_HEALTH_CENTRES_2026"
+    ],
+    "threshold_direction": "increase",
+    "unchanged_counts": {
+      "inside": 63,
+      "outside": 6
+    },
+    "verified": true
+  }
+}
