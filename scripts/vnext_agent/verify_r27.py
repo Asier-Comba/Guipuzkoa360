@@ -1,4 +1,4 @@
-"""All R26 inherited raw, oracle, fault and property gates on R27 bytes."""
+"""All R26 inherited raw/oracle/fault/property gates on integrated R27 bytes."""
 import argparse
 import io
 import zipfile
@@ -11,8 +11,6 @@ def run(output):
     result = prior.run(output)
     import json
     report = json.loads(output.read_bytes())
-    # The inherited audit compares raw results against historical R20; do not
-    # mislabel its two changed members as the bounded R26 -> R27 delta.
     report['inherited_parity_changed_members'] = report.pop('changed_members')
     report['inherited_parity_base'] = report['base']
     report.pop('base_r21', None)
@@ -20,10 +18,15 @@ def run(output):
     with zipfile.ZipFile(io.BytesIO(build.blob(build.BASE_ZIP))) as old, zipfile.ZipFile(build.ZIP) as new:
         assert old.namelist() == new.namelist()
         changed = [n for n in old.namelist() if old.read(n) != new.read(n)]
-        assert changed == ['tools.py']
-    report.update(generation='R27', base_r26_runtime=build.BASE,
-        changed_members=changed, main_identical_to_r26=True, other_members_identical_to_r26=True,
-        projection_delta='Only additive threshold_transition_ledger; raw, effective requests and claims unchanged.')
+        assert changed == ['main.py', 'tools.py']
+    report.update(
+        generation='R27-integrated',
+        base_r26_runtime=build.BASE,
+        changed_members=changed,
+        main_identical_to_r26=False,
+        other_members_identical_to_r26=True,
+        projection_delta='Deterministic threshold-transition ledger plus bounded presentation guards; raw analytical data and healthcare engine unchanged.',
+    )
     output.write_text(json.dumps(report, ensure_ascii=False, sort_keys=True, indent=2) + '\n', encoding='utf-8', newline='\n')
     return {k: v for k, v in report.items() if k != 'records'}
 
