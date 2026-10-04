@@ -1,0 +1,57 @@
+R27 W3 HANDOFF — AGENT PRESENTATION / PRODUCT GUARDS
+
+BASE_SHA=d5c02a2f9a1d8b67b5a74c3569c7e98094b0eacd
+BRANCH=hotfix/r27-w3-agent-presentation
+OWNER=W3
+STATUS=READY_FOR_COORDINATOR_REVIEW
+NO_MAIN_MERGE=YES
+NO_PUBLICATION=YES
+
+Scope
+- Preserve the complete R26 prompt and all ten public tool signatures.
+- Add only three bounded presentation rules.
+- No core math, data, provider, distance or healthcare engine changes.
+- No hardcoded Legazpi, 2->3 km, 2624.8 m or benchmark answer.
+
+Rule 1 — threshold scenario presentation
+When simular_cambiar_umbral returns threshold_transition_ledger with verified=true, the model must use it as the complete authority and copy comparison_sentence, answer_table_markdown and semantic_limit_sentence. It must not reconstruct classification transitions from preview rows or infer omitted municipalities. Missing/unverified ledger fails closed.
+
+Rule 2 — home scope
+A request from home/domicile must not trigger a request for a street address or imply door-to-door routing is available. The agent explains that supported health visits start at catalogued stops/origins and offers only confirmed alternatives.
+
+Rule 3 — zero-count premise
+The agent must not claim that a municipality has zero registered services unless a public observed result explicitly exposes registered_service_count for the requested category. Distance is not a service count and cannot establish absence of care.
+
+Static guard
+tests/vnext_agent/test_r27_w3_presentation.py contains 29 parametrized checks:
+- exact preservation of the R26 base prompt;
+- exactly three additions;
+- required deterministic ledger fields and fail-closed wording;
+- home/address guard;
+- zero-count evidence guard;
+- all ten tool names and signatures unchanged;
+- Studio settings/context list unchanged;
+- no Legazpi or 2624.8 hardcoding.
+
+Product findings preserved from the interrupted W3 run
+- Official team roster observed in the portal:
+  Asier Comba Lopez
+  Oier Duñabeitia Berezo
+  Hugo Fernández Díez
+- The currently selected public conversation contains correct historical health results, but the delivery preview renders Markdown markers/headings literally. Preserve the original transcript; treat this as presentation-only and do not falsify/edit conversation evidence.
+- Current public explanation mentions Ordizia although the frozen mobility catalog supports Idiazabal, Segura and Zegama. Correct public copy during final delivery polish after the integrated R27 release gate.
+- The raw territorial engine contains a registered_service_count field, but R26 public summary does not expose it. Do not claim the agent verified a zero-service premise unless R27 public evidence explicitly exposes that count.
+
+Integration instruction
+W1 PR #32 is the deterministic engine authority. Coordinator should combine this W3 main.py prompt layer with W1 portal_r27/tools.py. The integrated runtime must then be rebuilt and validated before any portal version is created.
+
+Required integrated real acceptance
+- healthcare main + deterministic visit comparison;
+- independent healthcare comparison;
+- original Legazpi 2->3 km regression;
+- non-gold threshold scenario;
+- unsupported home/realtime/appointment/best-time limit;
+- sources/semantic limits;
+- Critical=0, High=0, material Medium=0, unsupported material claims=0.
+
+W3 does not claim portal acceptance or final release GO.
