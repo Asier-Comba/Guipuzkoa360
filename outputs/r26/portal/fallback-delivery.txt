@@ -1,0 +1,171 @@
+- region "Notifications alt+T"
+- generic "Connection Error:"
+- link "Saltar al contenido":
+  - /url: "#platform-main"
+- banner:
+  - link "Gipuzkoa AI Hackathon · MIT Media Lab City Science":
+    - /url: /area/
+    - strong: GIPUZKOA AI HACKATHON
+    - generic: MIT MEDIA LAB · CITY SCIENCE
+  - navigation "Áreas de la plataforma":
+    - link "Inicio":
+      - /url: /area/
+    - link "Formación":
+      - /url: /area/formacion/
+    - link "Equipo":
+      - /url: /hackathon/area/equipo/
+    - generic "Abrir secciones de Urban Challenge":
+      - generic: Urban Challenge
+      - generic: ⌄
+    - generic "Disponible para los equipos clasificados":
+      - generic: ◇
+      - generic: Final
+  - generic "Abrir menú de cuenta":
+    - generic: O
+    - strong: Oier Duñabeitia Berezo
+    - generic: Participante
+    - generic: ⌄
+- main:
+  - button "Proyecto GIPUZKOA 360":
+    - generic: Proyecto
+    - strong: GIPUZKOA 360
+  - tablist "Secciones del espacio de trabajo":
+    - 'tab "Resumen: Estado del proyecto y siguiente acción"':
+      - strong: Resumen
+    - 'tab "Datos: Archivos, mapas y procesamiento"':
+      - strong: Datos
+      - generic: "52"
+    - 'tab "Agentes: Construcción con Python o Langflow"':
+      - strong: Agentes
+      - generic: "18"
+    - 'tab "Pruebas: Verificación con versiones creadas"':
+      - strong: Pruebas
+      - generic: "14"
+    - 'tab "Entrega: Revisión y publicación del proyecto" [selected]':
+      - strong: Entrega
+    - 'tab "Asistente IA: Ayuda para analizar, editar y ejecutar el proyecto"':
+      - strong: Asistente IA
+  - generic "Estado del workspace":
+    - generic "Ver estado y actividad del workspace":
+      - generic: 1 persona
+    - button "Reiniciar el entorno del equipo":
+      - generic: ↻
+    - button "Ejemplo resuelto"
+    - button "?"
+  - 'tabpanel "Entrega: Revisión y publicación del proyecto"':
+    - heading "Publica el proyecto del equipo" [level=2]
+    - paragraph: La entrega reúne la definición del reto y una versión fija del agente. Los materiales visuales y las conversaciones sirven para explicar la evidencia, pero son opcionales.
+    - generic: Borrador privado
+    - region "Qué es obligatorio y qué es opcional":
+      - generic: OBLIGATORIO
+      - strong: Ficha completa + versión del agente + track + equipo confirmado
+      - generic: OPCIONAL
+      - strong: Explicación, mapas, informes, enlaces y conversaciones revisadas
+    - region "GIPUZKOA 360":
+      - generic: VISTA PREVIA
+      - generic: Gipuzkoa.
+      - heading "GIPUZKOA 360" [level=1]
+      - paragraph: "Explorar los 88 municipios, comparar envejecimiento y distancia a servicios registrados y contrastar escenarios hipotéticos. Cada resultado explica sus cifras, fuentes y límites. La distancia geométrica orienta un estudio posterior: no mide tiempos de viaje ni disponibilidad sanitaria."
+      - term: Pregunta de investigación
+      - definition: ¿En qué municipios de Gipuzkoa coinciden una mayor proporción de personas mayores y una mayor distancia geométrica a los servicios sanitarios registrados, y cómo cambia el resultado al variar la edad o el nivel de exigencia?
+      - term: Quién utilizará el resultado
+      - definition: Personal técnico municipal y territorial que necesita identificar dónde profundizar con estudios de cuidados y servicios.
+      - generic: DeustoAI Labs
+      - generic: urban-challenge-rc2-195b498 · v4
+      - generic: 19 ejecuciones terminadas de esta versión · sin evaluar
+    - region "Materiales de la entrega":
+      - heading "1. Elige la versión que presentas" [level=2]
+      - generic: Versión que presentáis
+      - combobox "Versión que presentáis":
+        - option "Selecciona una versión creada"
+        - option "GIPUZKOA 360 · Visita completa R25 · v1"
+        - option "GIPUZKOA 360 · v1"
+        - option "GIPUZKOA 360 · v1"
+        - option "GIPUZKOA 360 · v1"
+        - option "GIPUZKOA 360 · v1"
+        - option "GIPUZKOA 360 · v1"
+        - option "GIPUZKOA 360 · Visita sanitaria · v4"
+        - option "GIPUZKOA 360 · Visita sanitaria · v3"
+        - option "GIPUZKOA 360 · Visita sanitaria · v2"
+        - option "GIPUZKOA 360 · Visita sanitaria · v1"
+        - option "GIPUZKOA 360 vNext R14 binding 094745b · v1"
+        - option "GIPUZKOA 360 vNext R13 patch3 3951b290 · v1"
+        - option "GIPUZKOA 360 · Versión final · v6"
+        - option "GIPUZKOA 360 · Final · v5"
+        - option "urban-challenge-rc2-195b498 · v4" [selected]
+        - option "urban-challenge-rc2-ae62080 · v3"
+        - option "urban-challenge-rc2-d8ec018 · v2"
+        - option "GIPUZKOA 360 integración Work 2 · v1"
+        - option "GIPUZKOA 360 · RC2 compact · v1"
+        - option "GIPUZKOA 360 · RC2 runtime · v1"
+        - option "GIPUZKOA 360 · RC1 exacto · v1"
+        - option "GIPUZKOA 360 · integración jurado · v3"
+        - option "GIPUZKOA 360 · integración jurado · v2"
+        - option "GIPUZKOA 360 · integración jurado · v1"
+      - paragraph: Crear otra versión en Agentes no cambia esta selección. Publicar entrega comparte la versión elegida aquí y los materiales seleccionados.
+      - heading "2. Añade materiales que ayuden a entenderla · opcional" [level=2]
+      - paragraph: La ficha de Resumen ya explica el proyecto. Aquí podéis mostrar un resultado, un mapa o una conversación revisada si aportan evidencia.
+      - generic: Explicación breve · opcional
+      - textbox "Explicación breve · opcional":
+        - /placeholder: Podéis explicar para qué sirve, mostrar un resultado y señalar sus límites.
+        - text: "GIPUZKOA 360 ayuda a estudiar dónde coinciden envejecimiento y distancia geométrica a servicios sanitarios registrados. Está pensado para personal técnico municipal y territorial. El agente consulta datos de los 88 municipios, ejecuta cálculos reproducibles y explica las fuentes y los límites. En el caso principal, siete municipios superan simultáneamente los cortes de 23,973 % de población de 65 o más años y 2.019,2 metros hasta el registro de atención primaria más cercano al punto municipal. Legazpi muestra 27,170 % y 2.624,8 metros: cifras contrastadas con la salida de la herramienta. Al pasar a 75 o más años y elevar el nivel de exigencia del 75 al 80 %, aparecen cuatro municipios. Son consultas distintas, no una secuencia de mejora. El radio de referencia de 2 o 3 km es un indicador separado del corte estadístico. Cómo se calcula: el cuantil 0,75 o 0,80 fija cada corte sobre las 88 filas municipales; se seleccionan los valores iguales o superiores a ambos cortes. La distancia parte de un punto representativo del municipio, no de cada vivienda. Fuentes: Eustat, población a 01/01/2025; geoEuskadi, cartografía de 07/05/2025; Open Data Euskadi, registro sanitario de 20/09/2026. Las fechas difieren y no representan una fotografía temporal homogénea. Límites: la distancia geométrica no mide tiempos de viaje ni accesibilidad real. Cero servicios registrados no significa ausencia de atención. No conocemos citas disponibles, personal ni capacidad, y no predecimos la atención futura ni recomendamos inversiones. Primer enlace: Visualización del análisis territorial inicial. Segundo enlace: Código, datos preparados y metodología. DeustoAI Labs / Universidad de Deusto. Oier Duñabeitia, Asier Comba y Hugo Fernández."
+      - generic: Enlaces · 2/20 · opcionales, uno por línea
+      - textbox "Enlaces · 2/20 · opcionales, uno por línea":
+        - /placeholder: https://…
+        - text: https://asier-comba.github.io/Guipuzkoa360/ https://github.com/Asier-Comba/Guipuzkoa360
+      - heading "Archivos · opcionales" [level=3]
+      - paragraph: Mapas, informes, imágenes o vídeos que ayuden a entender el resultado. Hasta 100 MB por archivo. El código y los datos necesarios ya forman parte de la versión del agente.
+      - generic: Subir materiales
+      - button "Subir materiales"
+      - generic: Archivos seleccionados · 2/20
+      - searchbox "Archivos seleccionados · 2/20"
+      - button "Buscar en todos los archivos"
+      - checkbox "entrega/exec_068449da8d8249e6b4b66a329b780044/GIPUZKOA 360.pptx"
+      - generic: entrega/exec_068449da8d8249e6b4b66a329b780044/GIPUZKOA 360.pptx
+      - checkbox "entrega/exec_07940b39e69e4918ba08ba6c1c038c25/Prueba territorial.txt" [checked]
+      - generic: entrega/exec_07940b39e69e4918ba08ba6c1c038c25/Prueba territorial.txt
+      - checkbox "entrega/exec_5fb2c71efb6d4b0daff8ec86d9c747ff/GIPUZKOA 360.pptx"
+      - generic: entrega/exec_5fb2c71efb6d4b0daff8ec86d9c747ff/GIPUZKOA 360.pptx
+      - checkbox "entrega/exec_664856e502534fc0a6a508cbfbf0e243/GIPUZKOA 360.pptx" [checked]
+      - generic: entrega/exec_664856e502534fc0a6a508cbfbf0e243/GIPUZKOA 360.pptx
+      - checkbox "entrega/exec_96b5b377fedc4613b9f70616d1a9e8b0/GIPUZKOA 360.pptx"
+      - generic: entrega/exec_96b5b377fedc4613b9f70616d1a9e8b0/GIPUZKOA 360.pptx
+      - checkbox "entrega/exec_e2b14af680fb4b0682ed10eb247eb4f5/demo.html"
+      - generic: entrega/exec_e2b14af680fb4b0682ed10eb247eb4f5/demo.html
+      - paragraph: Publicar conserva una copia de los archivos marcados. Editarlos o moverlos a la papelera no cambia esa copia; actualizar la entrega publica la nueva selección.
+      - generic "Compartir conversaciones de prueba · opcional"
+      - button "Guardar borrador"
+      - button "Preparando vista previa…" [disabled]
+      - status
+    - complementary:
+      - generic: 3. REVISIÓN FINAL
+      - strong: 4/4
+      - list:
+        - generic: ✓
+        - strong: Equipo de 3–4 personas
+        - generic: 3 personas confirmadas. Puedes trabajar y guardar borradores mientras completas el equipo.
+        - generic: ✓
+        - strong: Definición completa
+        - generic: Nombre, territorio, pregunta, destinatario y utilidad del resultado.
+        - generic: ✓
+        - strong: Versión reproducible
+        - generic: Seleccionad la versión concreta que queréis presentar.
+        - generic: ✓
+        - strong: Track preferente
+        - generic: Vuestra primera opción para la selección.
+      - generic: Track preferente
+      - combobox "Track preferente El track es vuestra modalidad preferente para la final. Elegid equipos industriales o de servicios; si no entráis en la primera opción, también se os valorará para la otra.":
+        - option "Seleccionad vuestro track preferente"
+        - option "Equipos industriales"
+        - option "Equipos de servicios" [selected]
+      - generic: El track es vuestra modalidad preferente para la final. Elegid equipos industriales o de servicios; si no entráis en la primera opción, también se os valorará para la otra.
+      - paragraph:
+        - text: Antes de publicar, contrastad una cifra de la versión elegida y revisad sus conclusiones y límites.
+        - button "Revisar en Pruebas"
+      - checkbox "He revisado la ficha, la versión y los materiales seleccionados. Entiendo que se harán públicos."
+      - generic: He revisado la ficha, la versión y los materiales seleccionados. Entiendo que se harán públicos.
+      - button "Publicar entrega" [disabled]
+    - region "Usar el agente en vuestra web":
+      - heading "Usar el agente en vuestra web" [level=2]
+      - paragraph: Integrad una versión de vuestro agente en una web propia. Las respuestas usan sus herramientas y el presupuesto del equipo.
+      - button "Configurar conexión"
