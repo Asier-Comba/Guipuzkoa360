@@ -1,4 +1,4 @@
-"""R27 W1: append only the threshold ledger; exact frozen R26 main and assets."""
+"""R27 integrated: W1 threshold ledger + W3 bounded presentation guards."""
 import ast
 import io
 import json
@@ -27,13 +27,17 @@ def build():
     prior = json.loads(metadata)
     OUT.mkdir(parents=True, exist_ok=True)
     PORTAL.mkdir(parents=True, exist_ok=True)
+    candidate_main = (PORTAL / 'main.py').read_bytes().replace(b'\r\n', b'\n')
+    ast.parse(candidate_main)
     members = {}
     changed = []
     with zipfile.ZipFile(io.BytesIO(baseline)) as old, zipfile.ZipFile(ZIP, 'w') as new:
         for info in old.infolist():
             original = old.read(info.filename)
             data = original
-            if info.filename == 'tools.py':
+            if info.filename == 'main.py':
+                data = candidate_main
+            elif info.filename == 'tools.py':
                 data += b'\n\n' + (ROOT / 'scripts/vnext_agent/r27_threshold.py').read_bytes().replace(b'\r\n', b'\n')
             new.writestr(info, data, compress_type=zipfile.ZIP_DEFLATED, compresslevel=9)
             members[info.filename] = dict(bytes=len(data), sha256=sha(data))
@@ -42,13 +46,13 @@ def build():
             if info.filename in ('main.py', 'tools.py'):
                 ast.parse(data)
                 (PORTAL / info.filename).write_bytes(data)
-    assert changed == ['tools.py'] and len(members) == len(prior['members'])
-    report = {**prior, 'package': 'GIPUZKOA360_R27_W1_threshold_ledger', 'base_r26_runtime': BASE,
+    assert changed == ['main.py', 'tools.py'] and len(members) == len(prior['members'])
+    report = {**prior, 'package': 'GIPUZKOA360_R27_integrated_release_candidate', 'base_r26_runtime': BASE,
         'base_r26_zip_sha256': BASE_HASH, 'base_r26_manifest_sha256': BASE_MANIFEST_HASH,
         'sha256': sha(ZIP.read_bytes()), 'bytes': ZIP.stat().st_size, 'members': members,
         'changed_members': changed, 'context_assets_changed': [],
         'uncompressed_bytes': sum(x['bytes'] for x in members.values()),
-        'runtime_delta': 'Additive complete verified threshold_transition_ledger v1. main.py byte-identical to R26.',
+        'runtime_delta': 'W1 verified threshold_transition_ledger v1 plus three bounded W3 presentation guards; no data/provider/core arithmetic changes.',
         'portal_real_agent': 'NOT_RUN'}
     assert report['bytes'] < report['limit_bytes']
     MANIFEST.write_text(json.dumps(report, ensure_ascii=False, sort_keys=True, indent=2) + '\n', encoding='utf-8', newline='\n')
