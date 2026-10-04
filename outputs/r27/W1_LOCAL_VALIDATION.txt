@@ -1,0 +1,48 @@
+W1 R27 LOCAL VALIDATION — OFFLINE, NOT PORTAL ACCEPTANCE
+Date: 2026-10-04
+Base: d5c02a2f9a1d8b67b5a74c3569c7e98094b0eacd
+Runtime ZIP SHA256: 56142e6c07449fefc87e0a959e845f712f97b737ffa3a312695c146cf4f00e87
+Manifest SHA256: 092d58c8f2904b44cc0220a4f1693cc125b3a3ca17b4bd8e4c29d31a03b4b552
+Bytes: 249671
+
+Full pytest: 1039 PASS / 0 FAIL, 631.79 seconds.
+New threshold module: 46 tests included in full suite.
+Properties: 120 seeded random pairs, 96 actual-distance boundary pairs,
+24 category/pair combinations checked in both directions (48 executions),
+plus the actual Legazpi regression and synthetic exact/below/above/zero case.
+Four service categories. Complete partitions and changed sets independently
+computed from source coordinates. No failing threshold/property finding.
+Node: 17 PASS / 0 FAIL.
+Inherited raw parity: 901/901, oracle 7/7, 5000 malformed fuzz inputs,
+195 negative cases, 10399 attributed claims, 26 composed comparisons,
+14 metamorphic predicates PASS, findings [].
+Inherited parity compares against historical R20 raw evidence, not R26 prose.
+Separate packaged R26/R27 test verifies exact healthcare public-view parity
+over three origins and nine single/paired-time requests; schemas remain ten.
+Zegama 09:30/09:45, duration 20: 10691/8591 seconds, difference -2100.
+Segura 10:00/10:15, duration 30: 9323/11123 seconds, difference +1800.
+Jury gate: PASS. Artifact gate: PASS. Frozen v4 identity: PASS before/after.
+Only changed ZIP member relative to exact frozen R26: tools.py.
+main.py and every other member identical. Historical R26 unchanged.
+Double build: identical ZIP and manifest. Diff whitespace check: PASS.
+
+Real failure regression: 2 -> 3 km primary care produces 19 outside_to_inside,
+0 inside_to_outside, 63 stays_inside, 6 stays_outside; total 88 from raw rows.
+Legazpi occurs once, 2624.8 m display, false -> true. No model interpretation.
+Public example is 83859 UTF-8 bytes, within 120000-byte bound.
+Other complete transitions, including extremes, pass the same payload guard.
+
+Verifier history preserved in docs/R27_W1_HANDOFF.txt: initial Windows UTF-8
+harness error; an incorrect verifier assumption about public service counts.
+An intermediate full-suite run was stopped after that assumption was found;
+the final full-suite result above comes from the subsequent complete run.
+Neither issue was an engine arithmetic or healthcare result defect.
+
+LOW inherited limitation: raw registered counts exist, but the current public
+summary exposes demographic claims only. W3 must not claim count verification
+from that public call. No unrelated count projection or prompt change made.
+Home-address prompt handling remains W3 ownership.
+
+This file does not claim CI readiness. The draft PR checkpoint must identify
+the final commit SHA and successful Ubuntu/Windows runs on that exact SHA.
+No portal test, model response, merge or publication is claimed.
