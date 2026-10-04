@@ -12,8 +12,8 @@ BASE_MANIFEST = 'scripts/vnext_agent/dist/r26/gipuzkoa360-r26-final-agent-manife
 BASE_HASH = '9716389b7094096195062e8bda9b9ddd4c0f21cedce09cee8496b6ae45f570c7'
 BASE_MANIFEST_HASH = 'dae1dfee59ebbd8839b3ab7468be9c04b4e0d9abd621e933a751824575b40a3e'
 OUT = ROOT / 'scripts/vnext_agent/dist/r27'
-ZIP = OUT / 'gipuzkoa360-r27-w1-agent.zip'
-MANIFEST = OUT / 'gipuzkoa360-r27-w1-agent-manifest.json'
+ZIP = OUT / 'gipuzkoa360-r27-integrated-agent.zip'
+MANIFEST = OUT / 'gipuzkoa360-r27-integrated-agent-manifest.json'
 PORTAL = ROOT / 'agentes/gipuzkoa360_vnext/portal_r27'
 
 
