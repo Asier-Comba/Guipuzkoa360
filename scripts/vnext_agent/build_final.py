@@ -33,7 +33,7 @@ def build():
                   base_r28_zip_sha256=baseline['zip_sha256'], changed_members=['main.py'],
                   main_changed=True, members=members, sha256=sha(ZIP.read_bytes()),
                   bytes=ZIP.stat().st_size, uncompressed_bytes=sum(x['bytes'] for x in members.values()),
-                  runtime_delta='Verified threshold partition is rendered before another model call; R28 analytical tools and all context assets unchanged.')
+                  runtime_delta='Fresh verified threshold evidence presents explicit before/after totals using the portal-supported factory; R28 analytical tools and all context assets unchanged.')
     assert report['bytes'] < report['limit_bytes']
     MANIFEST.write_text(json.dumps(report,ensure_ascii=False,sort_keys=True,indent=2)+'\n',encoding='utf-8',newline='\n')
     return {'zip_sha256':report['sha256'],'manifest_sha256':sha(MANIFEST.read_bytes()),'bytes':report['bytes']}

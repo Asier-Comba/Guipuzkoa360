@@ -21,14 +21,9 @@ def coordinator(monkeypatch):
     return module
 
 
-def turn(payload, name='simular_cambiar_umbral'):
-    return [SimpleNamespace(type='human', content='change threshold'),
-            SimpleNamespace(type='tool', name=name, content=json.dumps(payload))]
-
-
 def test_observed_total_includes_newly_inside(coordinator):
     payload = json.loads(FIXTURE.read_bytes())
-    answer = coordinator._threshold_answer(turn(payload))
+    answer = coordinator._threshold_answer(json.dumps(payload))
     assert '| Dentro del umbral | 63 | 82 |' in answer
     assert '| Fuera del umbral | 25 | 6 |' in answer
     assert '| Municipios evaluados | 88 | 88 |' in answer
@@ -41,7 +36,7 @@ def test_reverse_threshold_partition(coordinator):
     ledger = payload['threshold_transition_ledger']
     ledger['baseline_threshold_km'], ledger['scenario_threshold_km'] = 3, 2
     ledger['counts']['outside_to_inside'], ledger['counts']['inside_to_outside'] = 0, 19
-    answer = coordinator._threshold_answer(turn(payload))
+    answer = coordinator._threshold_answer(json.dumps(payload))
     assert '| Dentro del umbral | 82 | 63 |' in answer
     assert '| Fuera del umbral | 6 | 25 |' in answer
 
@@ -56,48 +51,30 @@ def test_invalid_evidence_is_not_rendered(coordinator, kind):
     elif kind == 'partition': ledger['counts']['total'] = 87
     elif kind == 'row_count': ledger['changed_rows'].pop()
     elif kind == 'error': payload['status'] = 'error'
-    messages = turn(payload)
-    if kind == 'invalid_json': messages[-1].content = 'not JSON'
-    assert coordinator._threshold_answer(messages) is None
+    raw = 'not JSON' if kind == 'invalid_json' else json.dumps(payload)
+    assert coordinator._threshold_answer(raw) is None
 
 
-def test_historical_threshold_never_answers_new_question(coordinator):
-    messages = turn(json.loads(FIXTURE.read_bytes()))
-    messages.append(SimpleNamespace(type='human', content='different question'))
-    assert coordinator._threshold_answer(messages) is None
+def test_public_wrapper_uses_fresh_evidence(coordinator, monkeypatch):
+    calls = []
+    def execute(name, args):
+        calls.append((name, args))
+        return FIXTURE.read_text(encoding='utf-8')
+    monkeypatch.setattr(coordinator, '_run', execute)
+    answer = coordinator.simular_cambiar_umbral('primary_care', 2, 3)
+    assert calls == [('simular_cambiar_umbral', {'categoria_servicio':'primary_care',
+                      'umbral_actual_km':2, 'nuevo_umbral_km':3})]
+    assert '| Dentro del umbral | 63 | 82 |' in answer
 
 
-def test_other_tools_and_multiple_analyses_keep_reasoning(coordinator):
-    payload = json.loads(FIXTURE.read_bytes())
-    assert coordinator._threshold_answer(turn(payload, 'plan_visit')) is None
-    messages = turn(payload)
-    messages.append(copy.deepcopy(messages[-1]))
-    assert coordinator._threshold_answer(messages) is None
-
-
-def test_real_graph_finishes_from_tool_without_second_model_call(coordinator, monkeypatch):
-    pytest.importorskip('langchain')
-    from langchain_core.language_models.chat_models import BaseChatModel
-    from langchain_core.messages import AIMessage, HumanMessage
-    from langchain_core.outputs import ChatGeneration, ChatResult
-
-    class OneCallModel(BaseChatModel):
-        calls: int = 0
-
-        @property
-        def _llm_type(self): return 'threshold-regression-test'
-
-        def bind_tools(self, tools, **kwargs): return self
-
-        def _generate(self, messages, stop=None, run_manager=None, **kwargs):
-            self.calls += 1
-            assert self.calls == 1, 'The final threshold answer must bypass model arithmetic'
-            message = AIMessage(content='', tool_calls=[{'name':'simular_cambiar_umbral', 'args':{
-                'categoria_servicio':'primary_care', 'umbral_actual_km':2, 'nuevo_umbral_km':3}, 'id':'test-1'}])
-            return ChatResult(generations=[ChatGeneration(message=message)])
-
-    monkeypatch.setattr(coordinator, '_run', lambda name, args: FIXTURE.read_text(encoding='utf-8'))
-    model = OneCallModel()
-    result = coordinator.build_agent(model).invoke({'messages':[HumanMessage(content='Cambia 2 a 3 km')]})
-    assert model.calls == 1
-    assert '| Dentro del umbral | 63 | 82 |' in result['messages'][-1].content
+def test_portal_factory_needs_no_middleware(coordinator, monkeypatch):
+    seen = {}
+    def create_agent(**kwargs):
+        seen.update(kwargs)
+        return 'portal-agent'
+    monkeypatch.setitem(sys.modules, 'langchain.agents', SimpleNamespace(create_agent=create_agent))
+    model = object()
+    assert coordinator.build_agent(model) == 'portal-agent'
+    assert seen['model'] is model
+    assert len(seen['tools']) == 10
+    assert set(seen) == {'model', 'tools', 'system_prompt'}

@@ -120,7 +120,8 @@ def simular_retirar_servicio(categoria_servicio: Literal['primary_care', 'hospit
 @tool
 def simular_cambiar_umbral(categoria_servicio: Literal['primary_care', 'hospital', 'mental_health', 'other_health'], umbral_actual_km: float, nuevo_umbral_km: float) -> str:
     """Compara la clasificación de puntos municipales cambiando exclusivamente el umbral. Ambos umbrales obligatorios, finitos, >0 y <=100 km. Distancias y registros no cambian: no cuenta vecinos cubiertos ni demuestra mejora real de atención."""
-    return _run('simular_cambiar_umbral', locals())
+    raw = _run('simular_cambiar_umbral', locals())
+    return _threshold_answer(raw) or raw
 
 @tool
 def consultar_capacidades() -> str:
@@ -132,25 +133,12 @@ def consultar_capacidades() -> str:
 TOOLS = [obtener_resumen_territorial, analizar_envejecimiento, analizar_acceso_general, analizar_acceso_municipios, analizar_coincidencia, simular_anadir_servicio, simular_retirar_servicio, simular_cambiar_umbral, consultar_capacidades, plan_visit]
 
 
-def _threshold_answer(messages):
-    """Render the current turn's verified partition before another model call.
-
-    Historical results never answer a new question. Other analytical tools or
-    multiple scenarios keep their usual reasoning path.
-    """
+def _threshold_answer(payload):
+    """Present only the freshly executed tool result with explicit before/after totals."""
     import json
 
-    current = []
-    for message in reversed(messages):
-        if getattr(message, 'type', None) == 'human':
-            break
-        if getattr(message, 'type', None) == 'tool':
-            current.append(message)
-    analytical = [m for m in current if getattr(m, 'name', None) != 'consultar_capacidades']
-    if len(analytical) != 1 or getattr(analytical[0], 'name', None) != 'simular_cambiar_umbral':
-        return None
     try:
-        result = json.loads(analytical[0].content)
+        result = json.loads(payload)
         ledger = result['threshold_transition_ledger']
         counts = ledger['counts']
         keys = ('outside_to_inside', 'inside_to_outside', 'stays_inside', 'stays_outside')
@@ -184,17 +172,8 @@ def _threshold_answer(messages):
 
 
 def build_agent(model):
-    """Use the portal-provided model; no extra credentials or agent frameworks."""
+    """Use the portal-supported factory and injected model."""
     from langchain.agents import create_agent
-    from langchain.agents.middleware import before_model
-    from langchain.messages import AIMessage
+    return create_agent(model=model, tools=TOOLS, system_prompt=SYSTEM_PROMPT)
 
-    @before_model(can_jump_to=['end'])
-    def verified_threshold_answer(state, runtime):
-        answer = _threshold_answer(state['messages'])
-        if answer is None:
-            return None
-        return {'messages': [AIMessage(content=answer)], 'jump_to': 'end'}
-
-    return create_agent(model=model, tools=TOOLS, system_prompt=SYSTEM_PROMPT,
-                        middleware=[verified_threshold_answer])
+SYSTEM_PROMPT += '\n\nTHRESHOLD FINAL TABLE\nLa herramienta simular_cambiar_umbral entrega una respuesta verificada lista para presentar. Copia sus dos tablas completas y sus límites. Los totales Antes y Después ya incluyen todos los municipios: no los recalcules ni los sustituyas por recuentos de municipios que mantienen su clasificación. Conserva la lista completa de cambios y no añadas cifras.'
