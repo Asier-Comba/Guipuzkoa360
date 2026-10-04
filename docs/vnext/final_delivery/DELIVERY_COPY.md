@@ -36,7 +36,7 @@ El cálculo de visitas admite Zegama, Segura e Idiazabal y la fecha indicada. Us
 
 Fuentes: Moveuskadi/Goierrialdea (horarios del 28/09 al 27/12/2026), Open Data Euskadi (centros, 20/09/2026), Osakidetza (ficha consultada el 29/09/2026) y © OpenStreetMap contributors, ODbL 1.0 (red obtenida el 29/09/2026). La población procede de Eustat, a 01/01/2025; son fuentes con fechas distintas, no una fotografía temporal homogénea.
 
-El primer enlace es una visualización del análisis territorial inicial, no una demo de la visita sanitaria. El segundo contiene el código y las fuentes. Hemos contrastado las cifras de la conversación con los datos del cálculo.
+El primer enlace muestra la entrega final: ejemplos comprobados de visitas y acceso al mapa del análisis territorial. Son resultados guardados; la conversación se realiza en el portal. El segundo contiene el código y las fuentes. Hemos contrastado las cifras de la conversación con los datos del cálculo.
 
 Somos DeustoAI Labs — Universidad de Deusto: Oier Duñabeitia Berezo, Asier Comba Lopez y Hugo Fernández Díez.
 
@@ -72,7 +72,8 @@ No con estos datos. No conocemos el domicilio, las incidencias en tiempo real ni
 
 ## Materiales
 
-- [Visualización del screening territorial](https://asier-comba.github.io/Guipuzkoa360/): mapa y ejemplos municipales; no es una demo de la visita sanitaria ni una conversación en vivo.
+- [Web de la entrega final](https://asier-comba.github.io/Guipuzkoa360/): tres comparaciones de visitas comprobadas, presentación, fuentes y límites.
+- [Mapa del análisis territorial](https://asier-comba.github.io/Guipuzkoa360/demo.html): resultados municipales guardados. La conversación se realiza en el portal.
 - [Código y fuentes](https://github.com/Asier-Comba/Guipuzkoa360).
 - Conversación sanitaria revisada: pregunta principal, recálculo de la variación, fuentes y límites.
 
