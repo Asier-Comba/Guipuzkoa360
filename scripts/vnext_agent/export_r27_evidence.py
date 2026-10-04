@@ -1,4 +1,4 @@
-"""Capture reproducible W1 contract examples from the actual packaged public tools."""
+"""Capture reproducible integrated R27 contract examples from packaged public tools."""
 import json
 from pathlib import Path
 import subprocess
@@ -37,7 +37,7 @@ def run(output):
         registered_count_raw=records['registered']['raw']['data'][0]['service_indicators'],
         healthcare_regression=health,
         public_json_bytes=len(json.dumps(records['threshold']['view'], ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()),
-        portal_llm='NOT_RUN', main_changed=False, context_assets_changed=False)
+        portal_llm='NOT_RUN', main_changed=True, context_assets_changed=False)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, ensure_ascii=False, sort_keys=True, indent=2) + '\n', encoding='utf-8', newline='\n')
     return {k: v for k, v in report.items() if k not in ('threshold_transition_ledger', 'registered_count_claims', 'registered_count_raw', 'healthcare_regression')}
