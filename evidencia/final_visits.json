@@ -1,0 +1,76 @@
+{
+  "reviewed_on": "2026-10-04",
+  "service_date": "2026-09-29",
+  "portal_version": "GIPUZKOA 360 · R28 final · v2",
+  "code_revision": "a20026663f85c984b1acde54c6a77f294c4d44a4",
+  "integration": "https://github.com/Asier-Comba/Guipuzkoa360/pull/36",
+  "journey_scope": "From origin stops to the modelled Beasain health-centre point and back to origin stops.",
+  "limitations": [
+    "Stored verified examples; no new query is executed on this page.",
+    "Scheduled transport and modelled walking; no realtime or home-to-home route.",
+    "Conditional comparison, not observed savings or an appointment recommendation.",
+    "No appointment availability, healthcare capacity or verified physical entrance."
+  ],
+  "visits": {
+    "Zegama": {
+      "minutes": 20,
+      "comparison": "La cita de las 09:45 ocupa 35 minutos menos que la de las 09:30, bajo los mismos supuestos. El regreso tiene la misma hora.",
+      "options": [
+        {
+          "time": "09:30",
+          "total": "2 h 58 min 11 s",
+          "seconds": 10691,
+          "start": "08:09:37",
+          "end": "11:07:48"
+        },
+        {
+          "time": "09:45",
+          "total": "2 h 23 min 11 s",
+          "seconds": 8591,
+          "start": "08:44:37",
+          "end": "11:07:48"
+        }
+      ]
+    },
+    "Segura": {
+      "minutes": 30,
+      "comparison": "La cita de las 10:15 ocupa 30 minutos más que la de las 10:00, bajo los mismos supuestos. El regreso es una hora más tarde.",
+      "options": [
+        {
+          "time": "10:00",
+          "total": "2 h 35 min 23 s",
+          "seconds": 9323,
+          "start": "08:52:33",
+          "end": "11:27:56"
+        },
+        {
+          "time": "10:15",
+          "total": "3 h 5 min 23 s",
+          "seconds": 11123,
+          "start": "09:22:33",
+          "end": "12:27:56"
+        }
+      ]
+    },
+    "Idiazabal": {
+      "minutes": 25,
+      "comparison": "Las dos horas de cita tienen la misma duración calculada, el mismo inicio y el mismo regreso. La diferencia entre opciones es cero.",
+      "options": [
+        {
+          "time": "11:00",
+          "total": "2 h 16 min 30 s",
+          "seconds": 8190,
+          "start": "10:01:46",
+          "end": "12:18:16"
+        },
+        {
+          "time": "11:15",
+          "total": "2 h 16 min 30 s",
+          "seconds": 8190,
+          "start": "10:01:46",
+          "end": "12:18:16"
+        }
+      ]
+    }
+  }
+}
